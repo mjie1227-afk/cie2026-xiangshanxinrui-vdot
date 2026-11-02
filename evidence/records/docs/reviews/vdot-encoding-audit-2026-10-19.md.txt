@@ -1,0 +1,64 @@
+# vdot候选编码冲突检查
+
+日期：2026-10-19（Asia/Shanghai）。对象为当前锁定源码中的候选编码族，包含vm=0/1及全部三个寄存器编号。只做源码级静态检查和整数位运算，未生成RTL、构建或运行指令。
+
+## 1. 先确定检查对象
+
+```text
+31:26   25    24:20   19:15   14:12   11:7   6:0
+000000   vm     vs2     vs1     000      vd    0001011
+
+MATCH = 0x0000000b
+MASK  = 0xfc00707f
+识别条件：(instruction & MASK) == MATCH
+```
+
+识别MASK中的1表示该位必须匹配固定值，0表示不参与指令类别判断。它和运行时的v0数据掩码完全不同。vm不固定，所以识别MASK的第25位为0；不能沿用仅识别无掩码形式的0xfe00707f。
+
+三个5位寄存器字段及vm共16个自由位，因此本次检查的指令族有2×32×32×32=65,536个机器码。只搜索0x0220818b这个示例，不能覆盖整个指令族。
+
+两个匹配模式(valueA,maskA)和(valueB,maskB)存在交集，当且仅当：
+
+```text
+((valueA ^ valueB) & maskA & maskB) == 0
+```
+
+即所有双方都固定的位上，没有相互矛盾的要求。该规则覆盖带问号的通配模式，不能仅用字符串相等判断冲突。
+
+## 2. 本轮实际结果
+
+| 层次 | 检查结果 | 结论范围 |
+|---|---|---|
+| 当前Git身份 | XiangShan 16ae9ddc…；NEMU a48a11f2…；Rocket子模块也记录HEAD/status | 完整身份和Git命令退出码见原始JSON |
+| 香山主译码源表 | DecodeUnit实际拼入12个表；解析717个指令键，未解析项0，与候选交叠0 | 当前源码的符号键/字面BitPat范围，不是elaboration结果 |
+| 依赖声明 | Rocket CustomInstructions.CUSTOM0与候选有交叠 | 它未作为键进入本次717项主表；将来接入RoCC表必须重查 |
+| NEMU顶层 | table_main的28个文字模式（包含条件编译分支的并集）交叠0 | 当前候选会落到未识别指令；新增处理入口仍是后续实现任务 |
+| 指令族 | 65,536个唯一机器码，字段反解错误0，现有源表命中0 | 只是编码/译码模式检查，不是运行65,536条RTL指令 |
+| 检查器对照 | 相同/全通配模式能检出交叠；不同固定opcode/funct3能检出不相交；固定字段单比特变更不再被识别为候选 | 确认比较逻辑能发现故意构造的交叠，不能证明解析器等价于Scala编译器 |
+| 原始源码 | 本次读取的6份源文件结束时哈希相同 | 脚本没有修改工程源码 |
+
+原始记录：[encoding-audit.json](../../artifacts/vdot-spec-v0.1-2026-10-19/encoding-audit.json)。退出码0。
+
+NEMU的custom-1（0x2b）已有CONFIG_RV_AME条件分派，这不是当前custom-0的冲突。其CUSTOM_TENSOR长指令入口要求opcode[6:2]=01111，候选为00010，不进入该入口。候选低2位为11，进入32位译码路径。
+
+## 3. 为什么现在仍不能执行
+
+没有源表交叠意味着可以继续用这一分配作为工程候选，并不意味着硬件已支持。当前香山的isVecArith/isOPIVV等仍依据OP-V主opcode，NEMU也没有custom-0的vdot处理入口。必须补充向量分类、异常、拆分、调度/FU、写回，以及NEMU操作数提取/执行。
+
+后续必须在完整生成的译码表/RTL中确认唯一命中，再做现有指令回归和vdot实际执行。静态脚本只支持本次源码形态：若将来出现无法解析的键、动态表表达式或非字面定义，会报不完整而非自动宣称通过。它不会证明所有前端分类逻辑、生成优化或未来依赖版本无冲突。
+
+## 4. 本机复查方法
+
+WSL/Bash，工作目录为本规划工作区。脚本只读源码并写指定JSON，不启动Mill/Verilator/emu；用新文件名保留历史结果：
+
+```bash
+cd '/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot'
+python3 scripts/check_vdot_encoding.py \
+  --xs-env /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env \
+  --output artifacts/vdot-spec-v0.1-2026-10-19/encoding-audit-recheck.json
+echo $?
+```
+
+成功标志：退出0、unresolved=0、两个主译码来源的overlaps=0、candidate_words=65536、source_preserved=true。definition_only_overlaps必须人工解释，不能看到它非空就删定义，也不能直接忽略。
+
+服务器：此检查本机可做。完整译码生成、整核重编译及批量回归建议服务器执行，但同一构建目录仍只允许一个写入者。

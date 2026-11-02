@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-19",
+  "user_confirmed_edges": {
+    "buffer_slot3": 5088,
+    "buffer_slot1": 5090,
+    "buffer_slot0": 5092,
+    "decode_accept": 5112
+  },
+  "clarified_valid_signal": "decodeBufValid_0 clears at 5112; io_in_0_valid can remain 1 for the next instruction",
+  "images": [
+    {
+      "source_image": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\codex-clipboard-1dc51997-2fc0-4461-ab49-8b591ecb6c3e.png",
+      "archived_image": "artifacts\\vadd4-frontend-2026-10-19\\user-ibuffer-5087ps.png",
+      "marker_ps": 5087,
+      "sha256": "c9a97913bd329224955b59d21003a49df36ef28af8c4fbf40e268442c585ae4b",
+      "evidence_boundary": "IBuffer output and CtrlBlock input identify target; frontend ready=1 while DecodeStage ready=0"
+    },
+    {
+      "source_image": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\codex-clipboard-33c6a3c5-4390-4545-afee-0e478679ccca.png",
+      "archived_image": "artifacts\\vadd4-frontend-2026-10-19\\user-decode-buffer-5093ps.png",
+      "marker_ps": 5093,
+      "sha256": "dffd58dcfb8a1482e3a300e91074e5e920629a94e17e81ee5eb8987bf61827e3",
+      "evidence_boundary": "User red boxes mark successive earlier intervals; only buffer lane 0 valid at Marker"
+    },
+    {
+      "source_image": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\codex-clipboard-274f5167-bae4-4c7b-8803-8e62085bf360.png",
+      "archived_image": "artifacts\\vadd4-frontend-2026-10-19\\user-decode-accept-5111ps.png",
+      "marker_ps": 5111,
+      "sha256": "25f5f7877adf87fcf8505667f520523ddfdd6eba6b13b3dc8cbc67eb22df4090",
+      "evidence_boundary": "Target valid/ready before the 5112 ps edge; buffer valid clearing is supported by raw VCD samples"
+    }
+  ]
+}

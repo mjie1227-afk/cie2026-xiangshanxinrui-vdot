@@ -1,0 +1,117 @@
+{
+  "status": "pass",
+  "scope": "download/archive/member/full-sample checks; no new DUT run",
+  "archive_sha256": "48882ae468149dadc6aadb2303cb9d25f035f5feea49e13cd945c8e3baf54cc8",
+  "archive_bytes": 2233424,
+  "archive_members": 268,
+  "source_files": 264,
+  "source_bytes": 55489484,
+  "excluded": [
+    {
+      "path": "evidence/vdot-build-80mKCD/boot-flash.bin",
+      "bytes": 16,
+      "reason": "outside declared log/metadata scope"
+    }
+  ],
+  "source_runs": 10,
+  "timing_calls": 162,
+  "timing_formal_samples": 126,
+  "timing_warmups": 36,
+  "statistics_groups": 36,
+  "runs": [
+    {
+      "run": "vdot-rvv-equiv-8nvimb",
+      "reference_difftest_good_trap": true,
+      "saved_runtime_identities_match": true,
+      "current_remote_binaries_rehashed": false,
+      "elapsed": {
+        "build_wall_seconds": 3.726,
+        "architecture_wall_seconds": 680.93
+      },
+      "cases": 144,
+      "kernel_calls": 432,
+      "baselines": 2,
+      "scope": "application full-check marker and final counts; no per-call timing samples expected"
+    },
+    {
+      "run": "vdot-timing-retry-5vHUp8",
+      "reference_difftest_good_trap": true,
+      "saved_runtime_identities_match": true,
+      "current_remote_binaries_rehashed": false,
+      "elapsed": {
+        "architecture_timestamp_difference_seconds": 1479.0,
+        "resolution_seconds": 1,
+        "basis": "saved start/end wall-clock timestamps; not monotonic stage timing"
+      },
+      "calls": 42,
+      "warmups": 6,
+      "formal_samples": 36,
+      "statistics_groups": 6,
+      "log_json_csv_equal": true,
+      "order_counters_consumer_valid": true,
+      "recomputation_matches": true
+    },
+    {
+      "run": "vdot-chain-KiI3xX",
+      "reference_difftest_good_trap": true,
+      "saved_runtime_identities_match": true,
+      "current_remote_binaries_rehashed": false,
+      "elapsed": {
+        "build_wall_seconds": 2.424,
+        "architecture_wall_seconds": 1486.244
+      },
+      "calls": 40,
+      "warmups": 10,
+      "formal_samples": 30,
+      "statistics_groups": 10,
+      "log_json_csv_equal": true,
+      "order_counters_consumer_valid": true,
+      "recomputation_matches": true
+    },
+    {
+      "run": "vdot-tput-uLgHm6",
+      "reference_difftest_good_trap": true,
+      "saved_runtime_identities_match": true,
+      "current_remote_binaries_rehashed": false,
+      "elapsed": {
+        "build_wall_seconds": 2.022,
+        "architecture_wall_seconds": 1537.081
+      },
+      "calls": 40,
+      "warmups": 10,
+      "formal_samples": 30,
+      "statistics_groups": 10,
+      "log_json_csv_equal": true,
+      "order_counters_consumer_valid": true,
+      "recomputation_matches": true
+    },
+    {
+      "run": "vdot-e2e-bijzGZ",
+      "reference_difftest_good_trap": true,
+      "saved_runtime_identities_match": true,
+      "current_remote_binaries_rehashed": false,
+      "elapsed": {
+        "build_wall_seconds": 3.525,
+        "architecture_wall_seconds": 1651.336
+      },
+      "calls": 40,
+      "warmups": 10,
+      "formal_samples": 30,
+      "statistics_groups": 10,
+      "log_json_csv_equal": true,
+      "order_counters_consumer_valid": true,
+      "recomputation_matches": true
+    }
+  ],
+  "materialized_directory": "D:\\Mayyyyyy\\WorkSpaces\\日常工作区1\\2026比赛规划\\RISCV_vdot\\artifacts\\stage3-remote-archive-2026-10-27\\server-MIwNSR\\unpacked",
+  "collection_wall_seconds": 13.921,
+  "local_archive_verified": true,
+  "cwd": "D:\\Mayyyyyy\\WorkSpaces\\日常工作区1\\2026比赛规划\\RISCV_vdot",
+  "argv": [
+    "scripts/verify_stage3_archive.py"
+  ],
+  "python": "3.14.3",
+  "exit_code": 0,
+  "new_simulations": 0,
+  "new_builds": 0
+}

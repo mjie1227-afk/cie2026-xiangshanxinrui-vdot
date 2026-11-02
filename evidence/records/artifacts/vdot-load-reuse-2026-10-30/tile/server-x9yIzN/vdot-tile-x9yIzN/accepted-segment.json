@@ -1,0 +1,30 @@
+{
+  "status": "vdot-segment-raw-results-review-required",
+  "scope": "prewarmed segmented dot with equal final outputs; loads, compute, reduction, memory, fence and readback counted",
+  "performance_measured": true,
+  "cwd": "/root/private_data/mj/xiangshan",
+  "argv": [
+    "/root/private_data/mj/xiangshan/evidence/vdot-segment-package-BRvMIa/package/run.py",
+    "/root/private_data/mj/xiangshan/evidence/vdot-segment-package-BRvMIa/package",
+    "/root/private_data/mj/xiangshan/evidence/vdot-segment-Pw1wQ8"
+  ],
+  "python": "3.11.9 (main, Apr  5 2026, 19:32:29) [GCC 11.4.0]",
+  "seed": 1,
+  "stages": [
+    {
+      "name": "build",
+      "exit": 0,
+      "wall_seconds": 3.974
+    },
+    {
+      "name": "architecture",
+      "exit": 0,
+      "wall_seconds": 2951.748
+    }
+  ],
+  "calls": 52,
+  "samples": 39,
+  "warmups": 13,
+  "final_speedup_accepted": false,
+  "application": "/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-segment-v1/build/vdot-segment-v1-riscv64-xs.bin"
+}

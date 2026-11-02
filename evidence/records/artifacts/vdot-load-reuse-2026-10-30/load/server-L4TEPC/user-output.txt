@@ -1,0 +1,92 @@
+root@crdnotebook-2113190245586939906-xd3835-39498:~/private_data/mj/xiangshan# tail -f "/root/private_data/mj/xiangshan/evidence/vdot-load-retry-L4TEPC/console.log"
+BUILD_REUSED=1
+KERNEL={"name": "empty", "code_sha256": "be765865340518ac28b4a3e2f4fe6b524ed8b91e4bf10c721944dd58bb327cb9", "payload_begin": "0x800001ec", "payload_end": "0x800001ec", "group": 0, "mode": "empty", "expected_instret": 6, "static_instructions": 0}
+KERNEL={"name": "native_tu", "code_sha256": "f50815534c8cc5e72ec07ec9ee4b3d5e88d2182e7a390c54bfa1f21380d25b84", "payload_begin": "0x80000330", "payload_end": "0x800004e4", "group": 16, "mode": "tu", "expected_instret": 843, "static_instructions": 109}
+KERNEL={"name": "rvv_mf2_tu", "code_sha256": "cd2a16028e67d623c94426dd9eee51d31e5bb20aaa1e3daada922818c5e7620a", "payload_begin": "0x80000628", "payload_end": "0x8000084c", "group": 16, "mode": "tu", "expected_instret": 997, "static_instructions": 137}
+KERNEL={"name": "native_ta", "code_sha256": "c75099f36b6411297638bdb6a2b23bdea516cbfcd6fd6d0f7a0e249ab756f663", "payload_begin": "0x80000990", "payload_end": "0x80000b44", "group": 16, "mode": "ta", "expected_instret": 843, "static_instructions": 109}
+KERNEL={"name": "rvv_mf2_ta", "code_sha256": "91b57241b6464fd0870e62b1c49ff6b9bc2f06f11023d5f1d1bac50f74ad87eb", "payload_begin": "0x80000c88", "payload_end": "0x80000eac", "group": 16, "mode": "ta", "expected_instret": 997, "static_instructions": 137}
+KERNEL={"name": "native_ta_rr", "code_sha256": "aca84da9dc754f976ce6a090b8f095effcd23f90f68a0538814a0b0d2b4ff21b", "payload_begin": "0x80000ff0", "payload_end": "0x800011a4", "group": 16, "mode": "ta_rr", "expected_instret": 843, "static_instructions": 109}
+KERNEL={"name": "rvv_mf2_ta_rr", "code_sha256": "529c6db002e79d4edc962e4165be392b514d5dddb1656eaf5f1c5c8ea80c1d83", "payload_begin": "0x800012e8", "payload_end": "0x8000150c", "group": 16, "mode": "ta_rr", "expected_instret": 997, "static_instructions": 137}
+RUNNING=architecture wall_limit=10800
+PROGRESS stage=architecture elapsed_s=60 log_bytes=1062
+PROGRESS stage=architecture elapsed_s=120 log_bytes=1183
+PROGRESS stage=architecture elapsed_s=180 log_bytes=1320
+PROGRESS stage=architecture elapsed_s=240 log_bytes=1440
+PROGRESS stage=architecture elapsed_s=300 log_bytes=1574
+PROGRESS stage=architecture elapsed_s=360 log_bytes=1676
+PROGRESS stage=architecture elapsed_s=420 log_bytes=1817
+PROGRESS stage=architecture elapsed_s=480 log_bytes=1938
+PROGRESS stage=architecture elapsed_s=540 log_bytes=2075
+PROGRESS stage=architecture elapsed_s=600 log_bytes=2199
+PROGRESS stage=architecture elapsed_s=660 log_bytes=2338
+PROGRESS stage=architecture elapsed_s=720 log_bytes=2459
+PROGRESS stage=architecture elapsed_s=780 log_bytes=2598
+PROGRESS stage=architecture elapsed_s=840 log_bytes=2717
+PROGRESS stage=architecture elapsed_s=900 log_bytes=2856
+PROGRESS stage=architecture elapsed_s=960 log_bytes=2982
+PROGRESS stage=architecture elapsed_s=1020 log_bytes=3119
+PROGRESS stage=architecture elapsed_s=1080 log_bytes=3243
+PROGRESS stage=architecture elapsed_s=1140 log_bytes=3374
+PROGRESS stage=architecture elapsed_s=1200 log_bytes=3495
+PROGRESS stage=architecture elapsed_s=1260 log_bytes=3633
+PROGRESS stage=architecture elapsed_s=1320 log_bytes=3754
+PROGRESS stage=architecture elapsed_s=1380 log_bytes=3888
+PROGRESS stage=architecture elapsed_s=1440 log_bytes=4012
+PROGRESS stage=architecture elapsed_s=1500 log_bytes=4146
+PROGRESS stage=architecture elapsed_s=1560 log_bytes=4270
+PROGRESS stage=architecture elapsed_s=1620 log_bytes=4401
+PROGRESS stage=architecture elapsed_s=1680 log_bytes=4522
+PROGRESS stage=architecture elapsed_s=1740 log_bytes=4659
+PROGRESS stage=architecture elapsed_s=1800 log_bytes=4785
+PROGRESS stage=architecture elapsed_s=1860 log_bytes=4914
+PROGRESS stage=architecture elapsed_s=1920 log_bytes=5033
+PROGRESS stage=architecture elapsed_s=1980 log_bytes=5172
+PROGRESS stage=architecture elapsed_s=2040 log_bytes=5293
+PROGRESS stage=architecture elapsed_s=2100 log_bytes=5425
+PROGRESS stage=architecture elapsed_s=2160 log_bytes=5551
+PROGRESS stage=architecture elapsed_s=2220 log_bytes=5685
+PROGRESS stage=architecture elapsed_s=2280 log_bytes=5806
+PROGRESS stage=architecture elapsed_s=2340 log_bytes=5938
+PROGRESS stage=architecture elapsed_s=2400 log_bytes=6056
+PROGRESS stage=architecture elapsed_s=2460 log_bytes=6196
+PROGRESS stage=architecture elapsed_s=2520 log_bytes=6332
+PROGRESS stage=architecture elapsed_s=2580 log_bytes=6456
+PROGRESS stage=architecture elapsed_s=2640 log_bytes=6592
+PROGRESS stage=architecture elapsed_s=2700 log_bytes=6714
+PROGRESS stage=architecture elapsed_s=2760 log_bytes=6866
+PROGRESS stage=architecture elapsed_s=2820 log_bytes=6980
+PROGRESS stage=architecture elapsed_s=2880 log_bytes=7119
+PROGRESS stage=architecture elapsed_s=2940 log_bytes=7242
+PROGRESS stage=architecture elapsed_s=3000 log_bytes=7392
+PROGRESS stage=architecture elapsed_s=3060 log_bytes=7497
+PROGRESS stage=architecture elapsed_s=3120 log_bytes=7635
+PROGRESS stage=architecture elapsed_s=3180 log_bytes=7755
+PROGRESS stage=architecture elapsed_s=3240 log_bytes=7905
+PROGRESS stage=architecture elapsed_s=3300 log_bytes=8009
+PROGRESS stage=architecture elapsed_s=3360 log_bytes=8149
+PROGRESS stage=architecture elapsed_s=3420 log_bytes=8272
+PROGRESS stage=architecture elapsed_s=3480 log_bytes=8422
+PROGRESS stage=architecture elapsed_s=3540 log_bytes=8526
+PROGRESS stage=architecture elapsed_s=3600 log_bytes=8666
+PROGRESS stage=architecture elapsed_s=3660 log_bytes=8787
+PROGRESS stage=architecture elapsed_s=3720 log_bytes=8928
+PROGRESS stage=architecture elapsed_s=3780 log_bytes=9045
+PROGRESS stage=architecture elapsed_s=3840 log_bytes=9173
+PROGRESS stage=architecture elapsed_s=3900 log_bytes=9306
+PROGRESS stage=architecture elapsed_s=3960 log_bytes=9393
+ARCHITECTURE_EXIT=0
+The reference model is /root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so
+The first instruction of core 0 has commited. Difftest enabled.
+PASS VDOT_OPT_LOAD calls=98 samples=63 warmups=35 variants=7 outputs128=1 guards=1 inputs=1 state=1
+[PERF ][time=             1131402] SimTop.l_soc.core_with_l2.l2top.inner.l2cache.slices_1.mshrCtl: mshr_latency_maxCore 0: HIT GOOD TRAP at pc = 0x800018a2
+OPT_IDENTITIES={"/root/private_data/mj/xiangshan/vdot-mtval-fix-20261024/XiangShan/build/emu": "f9653532fd2a4b9f0d0cc08c131f7c258d4b62c46e672c6886d6643aad926850", "/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so": "11b9f6807c36ed860e0c64cc4e58d27216b19335ecde1ce5797ba2d1cd057b74", "/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/.config": "64282bca051b5dbc5fca742f4fbca2ade937a70f3c4d2ec93c1f4836aca5d9be", "/root/private_data/mj/xiangshan/evidence/vdot-build-80mKCD/boot-flash.bin": "fea548655a8b6eecacace83e2f4380a18b8aa83bce964c8aae4cffbe2f5a9724", "/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-load-v1/build/vdot-load-v1-riscv64-xs.bin": "6436b127636a046afa8e9451270be3a48023ff21f4b86a0c1c194e41d217f54f"}
+OPT_RAW={"variant": "empty", "kind": "empty", "mode": "empty", "group": 0, "dot_operations": 0, "outputs": 0, "dynamic_vector_loads": 0, "final_output_bytes": 0, "samples": 9, "raw_cycle_min": 100, "raw_cycle_median": 100, "raw_cycle_max": 101, "instret": 6, "formal_cycles": [100, 100, 100, 101, 100, 100, 100, 100, 100]}
+OPT_RAW={"variant": "native_tu", "kind": "native", "mode": "tu", "group": 16, "dot_operations": 128, "outputs": 8, "dynamic_vector_loads": 256, "final_output_bytes": 128, "samples": 9, "raw_cycle_min": 2238, "raw_cycle_median": 2239, "raw_cycle_max": 2241, "instret": 843, "formal_cycles": [2239, 2240, 2240, 2239, 2240, 2238, 2238, 2238, 2241]}
+OPT_RAW={"variant": "rvv_mf2_tu", "kind": "rvv_mf2", "mode": "tu", "group": 16, "dot_operations": 128, "outputs": 8, "dynamic_vector_loads": 256, "final_output_bytes": 128, "samples": 9, "raw_cycle_min": 2260, "raw_cycle_median": 2262, "raw_cycle_max": 2262, "instret": 997, "formal_cycles": [2262, 2261, 2260, 2262, 2262, 2262, 2262, 2262, 2260]}
+OPT_RAW={"variant": "native_ta", "kind": "native", "mode": "ta", "group": 16, "dot_operations": 128, "outputs": 8, "dynamic_vector_loads": 256, "final_output_bytes": 128, "samples": 9, "raw_cycle_min": 1231, "raw_cycle_median": 1235, "raw_cycle_max": 1236, "instret": 843, "formal_cycles": [1235, 1236, 1236, 1231, 1236, 1235, 1235, 1235, 1236]}
+OPT_RAW={"variant": "rvv_mf2_ta", "kind": "rvv_mf2", "mode": "ta", "group": 16, "dot_operations": 128, "outputs": 8, "dynamic_vector_loads": 256, "final_output_bytes": 128, "samples": 9, "raw_cycle_min": 1392, "raw_cycle_median": 1396, "raw_cycle_max": 1398, "instret": 997, "formal_cycles": [1398, 1397, 1396, 1392, 1396, 1393, 1398, 1398, 1396]}
+OPT_RAW={"variant": "native_ta_rr", "kind": "native", "mode": "ta_rr", "group": 16, "dot_operations": 128, "outputs": 8, "dynamic_vector_loads": 256, "final_output_bytes": 128, "samples": 9, "raw_cycle_min": 1087, "raw_cycle_median": 1089, "raw_cycle_max": 1090, "instret": 843, "formal_cycles": [1089, 1087, 1089, 1090, 1089, 1089, 1089, 1088, 1089]}
+OPT_RAW={"variant": "rvv_mf2_ta_rr", "kind": "rvv_mf2", "mode": "ta_rr", "group": 16, "dot_operations": 128, "outputs": 8, "dynamic_vector_loads": 256, "final_output_bytes": 128, "samples": 9, "raw_cycle_min": 1352, "raw_cycle_median": 1355, "raw_cycle_max": 1357, "instret": 997, "formal_cycles": [1357, 1354, 1352, 1357, 1355, 1357, 1357, 1354, 1352]}
+VDOT_OPT_READY experiment=load samples=63 warmups=35
+SCOPE=prewarmed_load_or_tile equal_output_control no_cold_DRAM_claim
+LOG_DIR=/root/private_data/mj/xiangshan/evidence/vdot-load-retry-L4TEPC

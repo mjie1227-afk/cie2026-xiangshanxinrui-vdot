@@ -1,0 +1,114 @@
+### 3.1 前端取指与送译码
+
+本次观察从FTQ发出的取指块请求开始，经ICache返回指令数据、IFU切分与预译码、IBuffer输出及后端入口缓冲，接到5112 ps的译码接收。取指阶段读取的是程序指令字；向量数组A、B的数据由程序中的`vle32.v`另行加载。
+
+#### 3.1.1 FTQ发出取指块请求
+
+在`frontend.inner_ftq`中，5079 ps的请求接口具有下列值：
+
+| 信号 | 5079 ps数值 | 作用 |
+|---|---|---|
+| `io_toIfu_req_valid / ready` | `1 / 1` | 当前请求有效，接收条件满足 |
+| `io_toIfu_req_bits_ftqIdx_flag / value` | `0 / 3` | 本次取指块的FTQ标识 |
+| `io_toIfu_req_bits_startAddr` | `0x80000134` | 当前取指块起始地址 |
+| `io_toIfu_req_bits_nextStartAddr` | `0x80000154` | 请求携带的下一取指块起始地址 |
+
+因此，FTQ `0/3`的请求在5080 ps上升沿被接受。沿后接口转为FTQ `0/4`，起始地址变为`0x80000154`；此时valid仍为1，表示后续请求连续到来。请求单位是取指块，起始地址不必等于块内每条指令的PC。
+
+![图2 FTQ取指请求](assets/vadd/frontend-ftq-marker5080ps.png)
+
+**图 2　FTQ取指请求（Marker=5080 ps）。** Marker处显示沿后的下一项`0/4`；向左读取5079 ps区间，前一项为`0/3`、startAddr=`0x80000134`且valid=ready=1。该图记录的是5080 ps接受沿前后的请求切换。
+
+#### 3.1.2 ICache应答与目标指令字
+
+5083 ps，在`frontend.inner_icache`观察到`io_fetch_resp_valid=1`，`io_fetch_resp_bits_vaddr_0=0x80000134`，与前述取指请求对应。`doubleline=1`表示此次请求涉及两个缓存行，`exception_0=exception_1=0`。同拍IFU的`f2_ftq_req_ftqIdx_flag/value=0/3`、`f2_fire=1`，表明F2持有相应取指块并满足向下一级推进的条件。
+
+![图3 ICache应答与IFU的F2身份](assets/vadd/frontend-icache-5083ps.png)
+
+**图 3　ICache应答与IFU的F2身份（Marker=5083 ps）。** 应答地址、有效信号、跨行标志、异常字段及FTQ身份可直接读出。512位data在图中显示截断，下面的位段值依据同一VCD的完整采样核对。
+
+`io_fetch_resp_bits_data[511:0]`的最低128位为：
+
+```text
+020661A7_021101D7_0205E107_02056087
+```
+
+每组8个十六进制字符为32位，右侧是最低位，下划线仅作分组：
+
+| data位段 | 指令字 | 对应地址与指令 |
+|---|---|---|
+| `[31:0]` | `0x02056087` | `0x80000140`：`vle32.v v1,(a0)` |
+| `[63:32]` | `0x0205e107` | `0x80000144`：`vle32.v v2,(a1)` |
+| **`[95:64]`** | **`0x021101d7`** | **`0x80000148`：目标`vadd.vv`** |
+| `[127:96]` | `0x020661a7` | `0x8000014c`：`vse32.v v3,(a2)` |
+
+该位段对应关系还需结合数据排列理解。本次请求起点`0x80000134`位于缓存行`0x80000100～0x8000013f`的末段，目标位于下一行`0x80000140～0x8000017f`。当前实现从两行中选择所需的8字节bank，仍按bank位置组合为一条512位总线；本次总线最低部分来自`0x80000140`，故目标在最低端向上8字节的`[95:64]`。
+
+IFU将这条返回数据复制拼接后按请求地址切分；本例`f2_cut_ptr_10/11=36/37`，对应复制后数据的两个16位半字，也就是原data的半字4/5。不能从data最低位起直接按“目标减请求起点”的20字节偏移提取指令。源码与采样入口见附录B、C。
+
+该ICache应答采用Valid接口，没有独立的`resp_ready`；其有效信号由内部发送条件产生。本例结合应答valid和IFU的`f2_fire`检查推进，不套用另一接口的ready。上述观察证明有效指令数据返回，未单独分析命中、缺失及补行过程。
+
+#### 3.1.3 IFU将目标送入IBuffer
+
+5085 ps，在`frontend.inner_ifu`的输出端读取：
+
+| 信号 | 数值 | 解释 |
+|---|---|---|
+| `io_toIbuffer_valid / ready` | `1 / 1` | 整个取指包有效且下游可接收 |
+| `io_toIbuffer_bits_pc_10` | `0x80000148` | 位置10的指令PC |
+| `io_toIbuffer_bits_instrs_10` | `0x021101d7` | 目标指令字 |
+| `io_toIbuffer_bits_valid` | `0xd555` | 包内各位置是否为有效指令起点 |
+| `io_toIbuffer_bits_enqEnable` | `0xd555` | 包内各位置是否允许入队 |
+| `io_toIbuffer_bits_ftqPtr_flag / value` | `0 / 3` | 与取指请求一致 |
+| 接收端`inner_ibuffer.io_flush` | `0` | 当前没有IBuffer冲刷 |
+
+两个位掩码的bit10均为1，配合整包valid/ready，确认目标在5086 ps上升沿被IBuffer接口接受。IFU位置按2字节编号：`(0x80000148−0x80000134)/2=10`；32位VADD占两个半字位置，其中位置10是其指令起点。
+
+![图4 IFU输出目标指令](assets/vadd/frontend-ifu-5085ps.png)
+
+**图 4　IFU输出目标指令（Marker=5085 ps）。** PC、指令字、FTQ `0/3`与位置10的两个有效掩码共同确定目标；图中FTQ value以二进制`011`显示。IBuffer的flush为0，5086 ps沿可接收该位置。
+
+#### 3.1.4 IBuffer送出与后端入口接收
+
+5087 ps，目标已经出现在`frontend.inner_ibuffer.io_out_5`：valid=1，PC/指令字匹配，FTQ仍为`0/3`，`ftqOffset=0xA`。`io_decodeCanAccept=1`且`io_flush=0`。IFU的位置10是半字位置，IBuffer的槽5是指令输出位置，两种编号不要求相等。
+
+接收端`backend.inner_ctrlBlock.io_frontend_cfVec_5`的valid=ready=1，但下一级`decode.io_in_5`为valid=1、ready=0：后端入口可以接收这条指令，译码级当拍尚不能接收。CtrlBlock中的`decodeBuf`暂存这批未被译码接受的指令。
+
+![图5 IBuffer输出与后端入口](assets/vadd/frontend-ibuffer-5087ps.png)
+
+**图 5　IBuffer输出与后端入口（Marker=5087 ps）。** IBuffer out5与CtrlBlock cfVec5指向同一目标；cfVec5的ready为1而decode输入槽5的ready为0。`decodeFromFrontendAcceptNum=010`为二进制2，表示这批指令中前两项被译码接受，目标随后保存到入口缓冲。
+
+此VCD没有单独列出IBuffer的out5 ready，故在其直连的CtrlBlock接收接口检查ready。5088 ps上升沿，目标完成后端入口交接，进入decodeBuf槽3；这与5112 ps的译码接收是两个事件。
+
+#### 3.1.5 decodeBuf中的保存与向前排列
+
+在`backend.inner_ctrlBlock`观察`decodeBufValid_n`、`decodeBufBits_n_pc/instr`。当前面的指令被译码接受时，剩余有效项向前排列：
+
+| 状态更新沿 | 稳定读数点 | 目标所在缓冲槽 | 有效身份 |
+|---|---|---|---|
+| 5088 ps | 5089 ps | 3 | Valid=1，PC=`0x80000148`，instr=`0x021101d7` |
+| 5090 ps | 5091 ps | 1 | 相同目标身份 |
+| 5092 ps | 5093 ps | 0 | 相同目标身份，FTQ=`0/3`、offset=`0xA` |
+
+这次变化对应前面依次有2、2、1条指令被译码接受：目标从IBuffer输出槽5进入缓冲槽3，再移到槽1和槽0。变化的是缓冲位置，PC、指令字及FTQ身份保持一致。
+
+![图6 目标在decodeBuf中的位置变化](assets/vadd/frontend-decode-buffer-5093ps.png)
+
+**图 6　目标在decodeBuf中的位置变化（Marker=5093 ps）。** 原图的红框标出目标先后出现在槽3、槽1、槽0的区间；这些框是用户提供的标注。Marker处只有槽0仍有效，槽3与槽1已失效，不能把三段区间解读为同一时刻的三个有效副本。
+
+#### 3.1.6 接到5112 ps的译码接收
+
+目标排到缓冲槽0后，由`backend.inner_ctrlBlock.decode.io_in_0`继续提供给译码级：
+
+| 读数点 | 缓冲与译码状态 | 含义 |
+|---|---|---|
+| 5093 ps | 缓冲槽0有效；译码输入目标匹配，valid=1、ready=0 | 已到队首，等待译码接收 |
+| 5111 ps | 目标PC/指令字不变，FTQ=`0/3`、offset=`0xA`；valid=ready=1，redirect=0 | 确认5112 ps接受沿 |
+| 5112 ps沿后 | `decodeBufValid_0=0`；译码入口PC变为`0x8000014c`、instr变为`0x020661a7` | 目标已被译码接受，入口转向后续指令 |
+
+![图7 前端目标与译码接收衔接](assets/vadd/frontend-decode-accept-5111ps.png)
+
+**图 7　前端目标与译码接收衔接（Marker=5111 ps）。** 目标的PC、机器码、FTQ和块内偏移与前端一致，valid=ready=1且无重定向；右侧波形覆盖5112 ps的后续变化。缓冲有效位及沿后完整数值由同一VCD逐ps采样补充。
+
+5112 ps清零的是`decodeBufValid_0`。缓冲中的旧PC/指令字可以继续保留，而译码入口的`io_in_0_valid`也可以继续为1，因为它已展示下一条有效指令；不能把“缓冲项失效”写成“所有valid和数据清零”。该段5085～5113 ps采样中，IBuffer的flush与译码redirect均为0。至此，从FTQ取指请求到译码接收的身份链闭合，后续进入原有的译码控制与后端分析。
+

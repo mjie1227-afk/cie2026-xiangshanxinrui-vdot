@@ -1,0 +1,6 @@
+{
+  "original_package": "/root/private_data/mj/xiangshan/evidence/vdot-load-package-Dxbuvr/package",
+  "interrupted_run": "/root/private_data/mj/xiangshan/evidence/vdot-load-m5fpvT",
+  "original_runner_sha256": "907d636cf61f53eccbb1b3f4b34f6500c2381dc9985e02e2ac04ab8460b5be6e",
+  "change": "Reuse verified application build; rerun full simulation with original checks"
+}

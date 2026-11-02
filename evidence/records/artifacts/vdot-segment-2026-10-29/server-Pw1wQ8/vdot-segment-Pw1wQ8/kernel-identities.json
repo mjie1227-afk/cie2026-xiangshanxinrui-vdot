@@ -1,0 +1,132 @@
+[
+  {
+    "name": "empty",
+    "code_sha256": "be765865340518ac28b4a3e2f4fe6b524ed8b91e4bf10c721944dd58bb327cb9",
+    "payload_begin": "0x800001ec",
+    "payload_end": "0x800001ec",
+    "group": 0,
+    "mode": "empty",
+    "expected_instret": 6,
+    "static_instructions": 0
+  },
+  {
+    "name": "native_g8_register",
+    "code_sha256": "2323ae9e3e498821c6bffebf2b668ba8c09616a4b534f475b9a8aa7d3718bd41",
+    "payload_begin": "0x80000330",
+    "payload_end": "0x80000418",
+    "group": 8,
+    "mode": "register",
+    "expected_instret": 859,
+    "static_instructions": 58
+  },
+  {
+    "name": "rvv_m1_g8_register",
+    "code_sha256": "80f0b367fba4c3e184e7603899f1b2836cbdb3e8932148db5af361dad57b7b21",
+    "payload_begin": "0x8000055c",
+    "payload_end": "0x80000690",
+    "group": 8,
+    "mode": "register",
+    "expected_instret": 1013,
+    "static_instructions": 77
+  },
+  {
+    "name": "rvv_mf2_g8_register",
+    "code_sha256": "9e9c460e719ec3b473fde53dea4dbd3718646f6de8aac514d355a0de0e464aac",
+    "payload_begin": "0x800007d4",
+    "payload_end": "0x80000908",
+    "group": 8,
+    "mode": "register",
+    "expected_instret": 1013,
+    "static_instructions": 77
+  },
+  {
+    "name": "native_g8_materialized",
+    "code_sha256": "ce0dbb41cff7a65c9a44a23cd615d887bab66d63e53be21b0740259e6f560d78",
+    "payload_begin": "0x80000a4c",
+    "payload_end": "0x80000bbc",
+    "group": 8,
+    "mode": "materialized",
+    "expected_instret": 1388,
+    "static_instructions": 92
+  },
+  {
+    "name": "rvv_m1_g8_materialized",
+    "code_sha256": "c745d6ebfeb2b6977a5abbc5c223fdae27dabbbbb014c4ecae9b562c98176c5c",
+    "payload_begin": "0x80000d00",
+    "payload_end": "0x80000ebc",
+    "group": 8,
+    "mode": "materialized",
+    "expected_instret": 1542,
+    "static_instructions": 111
+  },
+  {
+    "name": "rvv_mf2_g8_materialized",
+    "code_sha256": "dc9e2e3d508a4b2b389b486ac6add33ed7fa6199489fc12f1943cb6406c07f44",
+    "payload_begin": "0x80001000",
+    "payload_end": "0x800011bc",
+    "group": 8,
+    "mode": "materialized",
+    "expected_instret": 1542,
+    "static_instructions": 111
+  },
+  {
+    "name": "native_g16_register",
+    "code_sha256": "f50815534c8cc5e72ec07ec9ee4b3d5e88d2182e7a390c54bfa1f21380d25b84",
+    "payload_begin": "0x80001300",
+    "payload_end": "0x800014b4",
+    "group": 16,
+    "mode": "register",
+    "expected_instret": 843,
+    "static_instructions": 109
+  },
+  {
+    "name": "rvv_m1_g16_register",
+    "code_sha256": "c0760112c6ec234cad4447ad847758d92799c7179e51d9ec8ca0d232e4042560",
+    "payload_begin": "0x800015f8",
+    "payload_end": "0x8000181c",
+    "group": 16,
+    "mode": "register",
+    "expected_instret": 997,
+    "static_instructions": 137
+  },
+  {
+    "name": "rvv_mf2_g16_register",
+    "code_sha256": "cd2a16028e67d623c94426dd9eee51d31e5bb20aaa1e3daada922818c5e7620a",
+    "payload_begin": "0x80001960",
+    "payload_end": "0x80001b84",
+    "group": 16,
+    "mode": "register",
+    "expected_instret": 997,
+    "static_instructions": 137
+  },
+  {
+    "name": "native_g16_materialized",
+    "code_sha256": "46f1aab6e4fa0c5632abcb6762baf232abc2234d60ee2c9071c4d8c2e3c70220",
+    "payload_begin": "0x80001cc8",
+    "payload_end": "0x80001f88",
+    "group": 16,
+    "mode": "materialized",
+    "expected_instret": 1372,
+    "static_instructions": 176
+  },
+  {
+    "name": "rvv_m1_g16_materialized",
+    "code_sha256": "40d4abc94725a28f59dd0d0d5b5a0da2fec181dd31c5d0131545f1eebd0beadb",
+    "payload_begin": "0x800020cc",
+    "payload_end": "0x800023fc",
+    "group": 16,
+    "mode": "materialized",
+    "expected_instret": 1526,
+    "static_instructions": 204
+  },
+  {
+    "name": "rvv_mf2_g16_materialized",
+    "code_sha256": "a0907e1b6b73890a7f851e0527002836e3a2ac584decdc473fd1731787507fce",
+    "payload_begin": "0x80002540",
+    "payload_end": "0x80002870",
+    "group": 16,
+    "mode": "materialized",
+    "expected_instret": 1526,
+    "static_instructions": 204
+  }
+]

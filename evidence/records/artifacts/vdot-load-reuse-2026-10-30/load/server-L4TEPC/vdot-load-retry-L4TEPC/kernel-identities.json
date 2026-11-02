@@ -1,0 +1,72 @@
+[
+  {
+    "name": "empty",
+    "code_sha256": "be765865340518ac28b4a3e2f4fe6b524ed8b91e4bf10c721944dd58bb327cb9",
+    "payload_begin": "0x800001ec",
+    "payload_end": "0x800001ec",
+    "group": 0,
+    "mode": "empty",
+    "expected_instret": 6,
+    "static_instructions": 0
+  },
+  {
+    "name": "native_tu",
+    "code_sha256": "f50815534c8cc5e72ec07ec9ee4b3d5e88d2182e7a390c54bfa1f21380d25b84",
+    "payload_begin": "0x80000330",
+    "payload_end": "0x800004e4",
+    "group": 16,
+    "mode": "tu",
+    "expected_instret": 843,
+    "static_instructions": 109
+  },
+  {
+    "name": "rvv_mf2_tu",
+    "code_sha256": "cd2a16028e67d623c94426dd9eee51d31e5bb20aaa1e3daada922818c5e7620a",
+    "payload_begin": "0x80000628",
+    "payload_end": "0x8000084c",
+    "group": 16,
+    "mode": "tu",
+    "expected_instret": 997,
+    "static_instructions": 137
+  },
+  {
+    "name": "native_ta",
+    "code_sha256": "c75099f36b6411297638bdb6a2b23bdea516cbfcd6fd6d0f7a0e249ab756f663",
+    "payload_begin": "0x80000990",
+    "payload_end": "0x80000b44",
+    "group": 16,
+    "mode": "ta",
+    "expected_instret": 843,
+    "static_instructions": 109
+  },
+  {
+    "name": "rvv_mf2_ta",
+    "code_sha256": "91b57241b6464fd0870e62b1c49ff6b9bc2f06f11023d5f1d1bac50f74ad87eb",
+    "payload_begin": "0x80000c88",
+    "payload_end": "0x80000eac",
+    "group": 16,
+    "mode": "ta",
+    "expected_instret": 997,
+    "static_instructions": 137
+  },
+  {
+    "name": "native_ta_rr",
+    "code_sha256": "aca84da9dc754f976ce6a090b8f095effcd23f90f68a0538814a0b0d2b4ff21b",
+    "payload_begin": "0x80000ff0",
+    "payload_end": "0x800011a4",
+    "group": 16,
+    "mode": "ta_rr",
+    "expected_instret": 843,
+    "static_instructions": 109
+  },
+  {
+    "name": "rvv_mf2_ta_rr",
+    "code_sha256": "529c6db002e79d4edc962e4165be392b514d5dddb1656eaf5f1c5c8ea80c1d83",
+    "payload_begin": "0x800012e8",
+    "payload_end": "0x8000150c",
+    "group": 16,
+    "mode": "ta_rr",
+    "expected_instret": 997,
+    "static_instructions": 137
+  }
+]

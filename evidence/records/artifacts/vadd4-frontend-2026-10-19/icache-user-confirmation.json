@@ -1,0 +1,18 @@
+{
+  "source_image": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\codex-clipboard-7c492a42-fbbe-4428-b77f-7c5128e0fef9.png",
+  "archived_image": "artifacts\\vadd4-frontend-2026-10-19\\user-icache-5083ps.png",
+  "sha256": "20eff7cd2bd660e7f1bd6b65a93c3153d2cd26e52f59d55f0a6dfe13aa0f9368",
+  "marker_ps": 5083,
+  "visible_values": {
+    "resp_valid": 1,
+    "vaddr_0": "0x80000134",
+    "doubleline": 1,
+    "exception_0": 0,
+    "exception_1": 0,
+    "f2_ftq_flag": 0,
+    "f2_ftq_value": 3,
+    "f2_fire": 1
+  },
+  "user_confirmed_data_95_64": "0x021101d7",
+  "screenshot_limit": "512-bit data display is truncated; the slice is user-confirmed and independently supported by archived VCD observations."
+}

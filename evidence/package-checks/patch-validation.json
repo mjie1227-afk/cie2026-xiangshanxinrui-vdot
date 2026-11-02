@@ -1,0 +1,759 @@
+{
+  "scope": "Clean committed trees exported to fresh temp directories; no build or simulation.",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/XiangShan",
+        "cat-file",
+        "-t",
+        "16ae9ddcda54fc9a2fddffad73174cf793ac7814"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "commit\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/XiangShan",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "https://github.com/OpenXiangShan/XiangShan\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/XiangShan",
+        "ls-tree",
+        "--name-only",
+        "16ae9ddcda54fc9a2fddffad73174cf793ac7814"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": ".github\n.gitignore\n.gitmodules\n.mill-version\n.scalafmt.conf\nLICENSE\nMakefile\nMakefile.test\nREADME.md\nbuild.sbt\nbuild.sc\ncoupledL2\ndebug\ndifftest\nfudian\nhuancun\nimages\nmacros\nopenLLC\nproject\nreadme.zh-cn.md\nready-to-run\nrocket-chip\nscalastyle-config.xml\nscalastyle-test-config.xml\nscripts\nsrc\ntools\nutility\nyunsuan\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/XiangShan/coupledL2",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/coupledL2\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/coupledL2",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "https://github.com/OpenXiangShan/coupledL2\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/XiangShan/difftest",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "https://github.com/OpenXiangShan/difftest.git\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/XiangShan/fudian",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/fudian\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/fudian",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "https://github.com/OpenXiangShan/fudian.git\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/XiangShan/huancun",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/huancun\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/huancun",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "https://github.com/OpenXiangshan/huancun.git\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/XiangShan/openLLC",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/openLLC\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/openLLC",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "https://github.com/OpenXiangShan/OpenLLC.git\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/XiangShan/openLLC/openNCB",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/openLLC/openNCB\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/openLLC/openNCB",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "https://github.com/OpenXiangShan/OpenNCB\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/XiangShan/ready-to-run",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/ready-to-run\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/ready-to-run",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "https://github.com/OpenXiangShan/ready-to-run\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/XiangShan/rocket-chip",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/rocket-chip\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/rocket-chip",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "https://github.com/OpenXiangShan/rocket-chip.git\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/XiangShan/rocket-chip/cde",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/rocket-chip/cde\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/rocket-chip/cde",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "https://github.com/chipsalliance/cde.git\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/XiangShan/rocket-chip/hardfloat",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/rocket-chip/hardfloat\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/rocket-chip/hardfloat",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "https://github.com/ucb-bar/berkeley-hardfloat.git\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/XiangShan/src/main/resources/aia",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/src/main/resources/aia\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/src/main/resources/aia",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "https://github.com/OpenXiangShan/OpenAIA.git\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/XiangShan/utility",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/utility\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/utility",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "https://github.com/OpenXiangShan/utility\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/XiangShan/yunsuan",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/yunsuan\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/yunsuan",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "https://github.com/OpenXiangShan/YunSuan.git\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "apply",
+        "--check",
+        "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/artifacts/vdot-mtval-fix-2026-10-24/delivery-v2/XiangShan-full.patch"
+      ],
+      "cwd": "/tmp/vdot-submission-xiangshan-0l2jo3bs",
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "apply",
+        "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/artifacts/vdot-mtval-fix-2026-10-24/delivery-v2/XiangShan-full.patch"
+      ],
+      "cwd": "/tmp/vdot-submission-xiangshan-0l2jo3bs",
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/NEMU",
+        "cat-file",
+        "-t",
+        "a48a11f208ff81ad765591d83271d1b339fb3861"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "commit\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/NEMU",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/NEMU\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/NEMU",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "https://github.com/OpenXiangShan/NEMU\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/NEMU",
+        "ls-tree",
+        "--name-only",
+        "a48a11f208ff81ad765591d83271d1b339fb3861"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": ".github\n.gitignore\n.gitmodules\nKconfig\nLICENSE\nMakefile\nREADME.md\nconfigs\ndocs\ninclude\nlib-include\nmodify_pointdir_structure.py\nonesimpoint.py\nready-to-run.yml\nresource\nscripts\nsrc\ntools\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/NEMU/resource/softfloat/repo",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "https://github.com/ucb-bar/berkeley-softfloat-3.git\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/NEMU/resource/nanopb",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "https://github.com/nanopb/nanopb.git\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/NEMU/resource/LibCheckpoint",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "https://github.com/OpenXiangShan/LibCheckpoint.git\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/NEMU/resource/gcpt_restore",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "https://github.com/OpenXiangShan/LibCheckpointAlpha.git\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/NEMU/resource/LibCheckpoint/resource/nanopb",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "/home/lenovo1227/xs-vdot-dev/NEMU/resource/nanopb\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/home/lenovo1227/xs-vdot-dev/NEMU/resource/nanopb",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "https://github.com/nanopb/nanopb.git\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "apply",
+        "--check",
+        "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/artifacts/vdot-integration-2026-10-24/delivery/payload/NEMU.patch"
+      ],
+      "cwd": "/tmp/vdot-submission-nemu-u2kxpul5",
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "apply",
+        "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/artifacts/vdot-integration-2026-10-24/delivery/payload/NEMU.patch"
+      ],
+      "cwd": "/tmp/vdot-submission-nemu-u2kxpul5",
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/nexus-am",
+        "cat-file",
+        "-t",
+        "086a238062fdfb3281b745a537b361983d0154b5"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "commit\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/nexus-am",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": "https://github.com/OpenXiangShan/nexus-am\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/nexus-am",
+        "ls-tree",
+        "--name-only",
+        "086a238062fdfb3281b745a537b361983d0154b5"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+      "exit": 0,
+      "stdout": ".github\n.gitignore\nMakefile\nMakefile.app\nMakefile.check\nMakefile.compile\nMakefile.lib\nREADME.md\nam\napps\ndocs\nlibs\nshare\ntests\ntools\n",
+      "stderr": ""
+    }
+  ],
+  "repositories": {
+    "XiangShan": {
+      "url": "https://github.com/OpenXiangShan/XiangShan",
+      "commit": "16ae9ddcda54fc9a2fddffad73174cf793ac7814",
+      "local_source": "/home/lenovo1227/xs-vdot-dev/XiangShan",
+      "base_exists": true,
+      "dependencies": {
+        "coupledL2": {
+          "url": "https://github.com/OpenXiangShan/coupledL2",
+          "commit": "82079f4081bbc1f0221c790fbf8a29b1f23f48b8"
+        },
+        "difftest": {
+          "url": "https://github.com/OpenXiangShan/difftest.git",
+          "commit": "62e4540c03c03aa947bdb67f4b6bf66f1a29c5d0"
+        },
+        "fudian": {
+          "url": "https://github.com/OpenXiangShan/fudian.git",
+          "commit": "e1bd4695ca7beb36a5ce7357e9527ad9e95b9ec1"
+        },
+        "huancun": {
+          "url": "https://github.com/OpenXiangshan/huancun.git",
+          "commit": "90aaf5935206ff322e461c3d021436c20dd0ac85"
+        },
+        "openLLC": {
+          "url": "https://github.com/OpenXiangShan/OpenLLC.git",
+          "commit": "614ceb4c5d39d32e6ae786693a35da429ea32c12"
+        },
+        "openLLC/openNCB": {
+          "url": "https://github.com/OpenXiangShan/OpenNCB",
+          "commit": "546a621ed82302db1bd1edc900b17ba55682c15c"
+        },
+        "ready-to-run": {
+          "url": "https://github.com/OpenXiangShan/ready-to-run",
+          "commit": "ed8c30e1ec8a9c9aa6b116ce54281235d00273fa"
+        },
+        "rocket-chip": {
+          "url": "https://github.com/OpenXiangShan/rocket-chip.git",
+          "commit": "bea0af5d855a871699b907c1988961141bbf28e7"
+        },
+        "rocket-chip/cde": {
+          "url": "https://github.com/chipsalliance/cde.git",
+          "commit": "52768c97a27b254c0cc0ac9401feb55b29e18c28"
+        },
+        "rocket-chip/hardfloat": {
+          "url": "https://github.com/ucb-bar/berkeley-hardfloat.git",
+          "commit": "d93aa570806013dea479a92ba9bb33d1f2d4f69f"
+        },
+        "src/main/resources/aia": {
+          "url": "https://github.com/OpenXiangShan/OpenAIA.git",
+          "commit": "9464aee3c77b021a037f28aa1b3fe53c71b516f6"
+        },
+        "utility": {
+          "url": "https://github.com/OpenXiangShan/utility",
+          "commit": "a8ca0c6564865ee69b564d431ecbc52074ba8060"
+        },
+        "yunsuan": {
+          "url": "https://github.com/OpenXiangShan/YunSuan.git",
+          "commit": "cadd3c2f43096e253d61296b33ac697be8354e29"
+        }
+      },
+      "patch_check": {
+        "temporary_tree": "/tmp/vdot-submission-xiangshan-0l2jo3bs",
+        "checked_files": 15,
+        "matches_saved_snapshot": true
+      }
+    },
+    "NEMU": {
+      "url": "https://github.com/OpenXiangShan/NEMU",
+      "commit": "a48a11f208ff81ad765591d83271d1b339fb3861",
+      "local_source": "/home/lenovo1227/xs-vdot-dev/NEMU",
+      "base_exists": true,
+      "dependencies": {
+        "resource/softfloat/repo": {
+          "url": "https://github.com/ucb-bar/berkeley-softfloat-3.git",
+          "commit": "32eb3295a3c814c1551f94ebc29eed1dec3cb3b1"
+        },
+        "resource/nanopb": {
+          "url": "https://github.com/nanopb/nanopb.git",
+          "commit": "671672b4d7994a9b07a307ae654885c7202ae886"
+        },
+        "resource/LibCheckpoint": {
+          "url": "https://github.com/OpenXiangShan/LibCheckpoint.git",
+          "commit": "1d8905cc2803c242ef257569128c2e68bf4272aa"
+        },
+        "resource/gcpt_restore": {
+          "url": "https://github.com/OpenXiangShan/LibCheckpointAlpha.git",
+          "commit": "5169da768d18f4682a489eaabe7c071df6d6ef88"
+        },
+        "resource/LibCheckpoint/resource/nanopb": {
+          "url": "https://github.com/nanopb/nanopb.git",
+          "commit": "671672b4d7994a9b07a307ae654885c7202ae886"
+        }
+      },
+      "patch_check": {
+        "temporary_tree": "/tmp/vdot-submission-nemu-u2kxpul5",
+        "checked_files": 4,
+        "matches_saved_snapshot": true
+      }
+    },
+    "nexus-am": {
+      "url": "https://github.com/OpenXiangShan/nexus-am",
+      "commit": "086a238062fdfb3281b745a537b361983d0154b5",
+      "local_source": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/nexus-am",
+      "base_exists": true
+    }
+  }
+}

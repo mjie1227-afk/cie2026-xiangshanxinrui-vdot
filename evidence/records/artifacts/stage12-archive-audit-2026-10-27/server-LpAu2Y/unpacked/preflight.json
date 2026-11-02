@@ -1,0 +1,55 @@
+{
+  "required_runs": [
+    "vdot-wave-window-Cpa0HX",
+    "vdot-window-events-UbYWTP",
+    "vdot-window-supplement-fgpWCe",
+    "vdot-csr-commit-window-aReAEz",
+    "vdot-mixed-wave-FNmKGI",
+    "vdot-mixed-resources-9k3waS",
+    "vdot-mixed-route-audit-ApJqcC",
+    "vdot-port-candidate-eDAWKv",
+    "vdot-port-wave-EfQru1",
+    "vdot-port-events-FfVozt"
+  ],
+  "missing": [],
+  "excluded": [
+    {
+      "path": "evidence/vdot-wave-window-Cpa0HX/__pycache__/capture.cpython-311.pyc",
+      "bytes": 27710,
+      "reason": "outside declared log/metadata scope"
+    },
+    {
+      "path": "evidence/vdot-window-events-UbYWTP/__pycache__/trace.cpython-311.pyc",
+      "bytes": 45157,
+      "reason": "outside declared log/metadata scope"
+    },
+    {
+      "path": "evidence/vdot-mixed-resources-9k3waS/__pycache__/analyze.cpython-311.pyc",
+      "bytes": 38159,
+      "reason": "outside declared log/metadata scope"
+    },
+    {
+      "path": "evidence/vdot-mixed-route-audit-ApJqcC/resource-coverage.json",
+      "bytes": 5463,
+      "reason": "identical bytes already archived locally",
+      "sha256": "dde18a240660e62b55763f55eda1f547e125a3f78eebb5093af1eb65f5249e16"
+    },
+    {
+      "path": "evidence/vdot-mixed-route-audit-ApJqcC/target-routes.json",
+      "bytes": 3610,
+      "reason": "identical bytes already archived locally",
+      "sha256": "1498d9ca8a5a2c74131a43363bd7a11c8248c329d8bdf077068fee074072027a"
+    },
+    {
+      "path": "evidence/vdot-port-wave-EfQru1/port-window.vcd",
+      "bytes": 481830060,
+      "reason": "outside declared log/metadata scope"
+    },
+    {
+      "path": "evidence/vdot-port-events-FfVozt/sampling-domains.json",
+      "bytes": 747,
+      "reason": "identical bytes already archived locally",
+      "sha256": "8b253c86b02f7fc9fcb9ca769d923b9d28e977f35ce6007256e442ce74d81b41"
+    }
+  ]
+}

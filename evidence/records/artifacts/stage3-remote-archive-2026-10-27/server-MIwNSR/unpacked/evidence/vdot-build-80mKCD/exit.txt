@@ -1,0 +1,2 @@
+VDOT_BUILD_EXIT=0
+LOG_DIR=/root/private_data/mj/xiangshan/evidence/vdot-build-80mKCD

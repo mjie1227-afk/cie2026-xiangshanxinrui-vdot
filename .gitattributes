@@ -1,0 +1,16 @@
+* -text
+*.md text eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+# Preserve archived source and evidence bytes, including original line endings.
+apps/** -text
+src/** -text
+patches/** -text
+configs/** -text
+evidence/records/** -text
+*.pdf binary
+*.png binary
+*.jpg binary
+*.bin binary

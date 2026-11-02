@@ -1,0 +1,3 @@
+TIMING_SCRIPT_EXIT=2
+TEE_EXIT=0
+LOG_DIR=/root/private_data/mj/xiangshan/evidence/vdot-timing-pilot-IgNim5

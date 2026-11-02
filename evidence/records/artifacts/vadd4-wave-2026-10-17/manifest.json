@@ -1,0 +1,69 @@
+{
+  "baseline_manifest": "../vadd4-2026-10-17/manifest.json",
+  "inputs_rehashed_this_run": {
+    "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/emu": {
+      "size": 169801376,
+      "sha256": "9ee6ce3e8372c6345fc7219563c5ac63c9b3517adb87dc347816d14f228fd7e2"
+    },
+    "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/ready-to-run/riscv64-nemu-interpreter-so": {
+      "size": 626696,
+      "sha256": "7af2120acefa83b7299c91b99132f4087dd8ab0f7219461b9aea48ce38891e03"
+    },
+    "/home/lenovo1227/xiangshan-learning/nexus-am/apps/vadd4/build/vadd4-riscv64-xs.bin": {
+      "size": 6144,
+      "sha256": "0fa5845070b3f954cf375cf571692326971cda6a994d1f20ee65a626d4357283"
+    }
+  },
+  "wave": {
+    "vcd": "/home/lenovo1227/xiangshan-learning/waves/vadd4-kj2e3y6k/vadd4.vcd",
+    "size": 1395708089,
+    "sha256": "01dc7a20fcfd416acfb1c9874759ac460d8e7b6144d608e865da4a2d168059b8",
+    "timescale": "$timescale 1ps $end"
+  },
+  "versions": {
+    "XiangShan": {
+      "path": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "commit": "16ae9ddcda54fc9a2fddffad73174cf793ac7814",
+      "post_run_status": {
+        "argv": [
+          "git",
+          "status",
+          "--short",
+          "--ignore-submodules=all"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      }
+    },
+    "nexus-am": {
+      "path": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/nexus-am",
+      "commit": "086a238062fdfb3281b745a537b361983d0154b5",
+      "post_run_status": {
+        "argv": [
+          "git",
+          "status",
+          "--short",
+          "--ignore-submodules=all"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      }
+    },
+    "difftest": {
+      "path": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest",
+      "commit": "62e4540c03c03aa947bdb67f4b6bf66f1a29c5d0"
+    },
+    "ready-to-run": {
+      "path": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/ready-to-run",
+      "commit": "ed8c30e1ec8a9c9aa6b116ce54281235d00273fa"
+    }
+  },
+  "tool_versions": {
+    "riscv64-linux-gnu-gcc": "riscv64-linux-gnu-gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "riscv64-linux-gnu-objdump": "GNU objdump (GNU Binutils for Ubuntu) 2.42",
+    "make": "GNU Make 4.3"
+  },
+  "parser_python": "3.12.3"
+}

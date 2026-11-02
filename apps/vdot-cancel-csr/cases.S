@@ -1,0 +1,1175 @@
+.section .text
+.option push
+.option norvc
+.balign 4
+.globl cancel_0
+.type cancel_0,@function
+cancel_0:
+    addi sp,sp,-48
+    sd ra,0(sp)
+    sd s0,8(sp)
+    sd s1,16(sp)
+    sd s2,24(sp)
+    mv s0,a2
+    csrr s1,mtvec
+    csrr s2,mscratch
+    la t0,pipeline_trap
+    csrw mtvec,t0
+    csrw mscratch,s0
+    .word 0x74446073
+    li t0,0x40000000000
+    csrc mstatus,t0
+    li a6,0
+.Ltrain_0:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a3
+    csrw fflags,a4
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    addi t0,a0,64
+    vle8.v v4,(t0)
+    addi t0,a0,80
+    vle8.v v5,(t0)
+    addi t0,a0,96
+    vle8.v v6,(t0)
+    addi t0,a0,112
+    vle8.v v7,(t0)
+    vsetivli zero,8,e8,m1,tu,mu
+    li t0,0x600
+    csrc mstatus,t0
+    li t0,0x400
+    csrs mstatus,t0
+    li t3,97
+    li t4,9223372036854775783
+    li t6,54
+    li t0,8
+    beq a6,t0,.Ldiv_0
+    addi t4,t4,1
+.Ldiv_0:
+    remu t5,t4,t3
+.globl cancel_branch_0
+cancel_branch_0:
+    beq t5,t6,.Lskip_0
+.globl cancel_wrongpath_0
+cancel_wrongpath_0:
+    .word 0x0220818b
+.Lskip_0:
+    addi a6,a6,1
+    li t0,9
+    blt a6,t0,.Ltrain_0
+    sd a6,144(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    csrwi vstart,0
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    addi t0,a1,64
+    vse8.v v4,(t0)
+    addi t0,a1,80
+    vse8.v v5,(t0)
+    addi t0,a1,96
+    vse8.v v6,(t0)
+    addi t0,a1,112
+    vse8.v v7,(t0)
+    vsetivli zero,8,e8,m1,tu,mu
+    .word 0x0220838b
+    csrr t0,mstatus
+    sd t0,136(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,128
+    vse8.v v7,(t0)
+    csrw mtvec,s1
+    csrw mscratch,s2
+    ld ra,0(sp)
+    ld s0,8(sp)
+    ld s1,16(sp)
+    ld s2,24(sp)
+    addi sp,sp,48
+    ret
+
+.balign 4
+.globl cancel_1
+.type cancel_1,@function
+cancel_1:
+    addi sp,sp,-48
+    sd ra,0(sp)
+    sd s0,8(sp)
+    sd s1,16(sp)
+    sd s2,24(sp)
+    mv s0,a2
+    csrr s1,mtvec
+    csrr s2,mscratch
+    la t0,pipeline_trap
+    csrw mtvec,t0
+    csrw mscratch,s0
+    .word 0x74446073
+    li t0,0x40000000000
+    csrc mstatus,t0
+    li a6,0
+.Ltrain_1:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a3
+    csrw fflags,a4
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    addi t0,a0,64
+    vle8.v v4,(t0)
+    addi t0,a0,80
+    vle8.v v5,(t0)
+    addi t0,a0,96
+    vle8.v v6,(t0)
+    addi t0,a0,112
+    vle8.v v7,(t0)
+    vsetivli zero,8,e8,m1,tu,mu
+    li t0,8
+    bne a6,t0,.Lconfigured_1
+    vsetivli zero,0,e8,m1,tu,mu
+.Lconfigured_1:
+    li t0,0x600
+    csrc mstatus,t0
+    li t0,0x400
+    csrs mstatus,t0
+    li t3,97
+    li t4,9223372036854775783
+    li t6,54
+    li t0,8
+    beq a6,t0,.Ldiv_1
+    addi t4,t4,1
+.Ldiv_1:
+    remu t5,t4,t3
+.globl cancel_branch_1
+cancel_branch_1:
+    beq t5,t6,.Lskip_1
+.globl cancel_wrongpath_1
+cancel_wrongpath_1:
+    .word 0x0220818b
+.Lskip_1:
+    addi a6,a6,1
+    li t0,9
+    blt a6,t0,.Ltrain_1
+    sd a6,144(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    csrwi vstart,0
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    addi t0,a1,64
+    vse8.v v4,(t0)
+    addi t0,a1,80
+    vse8.v v5,(t0)
+    addi t0,a1,96
+    vse8.v v6,(t0)
+    addi t0,a1,112
+    vse8.v v7,(t0)
+    vsetivli zero,8,e8,m1,tu,mu
+    .word 0x0220838b
+    csrr t0,mstatus
+    sd t0,136(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,128
+    vse8.v v7,(t0)
+    csrw mtvec,s1
+    csrw mscratch,s2
+    ld ra,0(sp)
+    ld s0,8(sp)
+    ld s1,16(sp)
+    ld s2,24(sp)
+    addi sp,sp,48
+    ret
+
+.balign 4
+.globl cancel_2
+.type cancel_2,@function
+cancel_2:
+    addi sp,sp,-48
+    sd ra,0(sp)
+    sd s0,8(sp)
+    sd s1,16(sp)
+    sd s2,24(sp)
+    mv s0,a2
+    csrr s1,mtvec
+    csrr s2,mscratch
+    la t0,pipeline_trap
+    csrw mtvec,t0
+    csrw mscratch,s0
+    .word 0x74446073
+    li t0,0x40000000000
+    csrc mstatus,t0
+    li a6,0
+.Ltrain_2:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a3
+    csrw fflags,a4
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    addi t0,a0,64
+    vle8.v v4,(t0)
+    addi t0,a0,80
+    vle8.v v5,(t0)
+    addi t0,a0,96
+    vle8.v v6,(t0)
+    addi t0,a0,112
+    vle8.v v7,(t0)
+    vsetivli zero,8,e8,m1,tu,mu
+    li t0,8
+    bne a6,t0,.Lconfigured_2
+    vsetivli zero,1,e8,m1,tu,mu
+.Lconfigured_2:
+    li t0,0x600
+    csrc mstatus,t0
+    li t0,0x400
+    csrs mstatus,t0
+    li t3,97
+    li t4,9223372036854775783
+    li t6,54
+    li t0,8
+    beq a6,t0,.Ldiv_2
+    addi t4,t4,1
+.Ldiv_2:
+    remu t5,t4,t3
+.globl cancel_branch_2
+cancel_branch_2:
+    beq t5,t6,.Lskip_2
+.globl cancel_wrongpath_2
+cancel_wrongpath_2:
+    .word 0x0220818b
+.Lskip_2:
+    addi a6,a6,1
+    li t0,9
+    blt a6,t0,.Ltrain_2
+    sd a6,144(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    csrwi vstart,0
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    addi t0,a1,64
+    vse8.v v4,(t0)
+    addi t0,a1,80
+    vse8.v v5,(t0)
+    addi t0,a1,96
+    vse8.v v6,(t0)
+    addi t0,a1,112
+    vse8.v v7,(t0)
+    vsetivli zero,8,e8,m1,tu,mu
+    .word 0x0220838b
+    csrr t0,mstatus
+    sd t0,136(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,128
+    vse8.v v7,(t0)
+    csrw mtvec,s1
+    csrw mscratch,s2
+    ld ra,0(sp)
+    ld s0,8(sp)
+    ld s1,16(sp)
+    ld s2,24(sp)
+    addi sp,sp,48
+    ret
+
+.balign 4
+.globl cancel_3
+.type cancel_3,@function
+cancel_3:
+    addi sp,sp,-48
+    sd ra,0(sp)
+    sd s0,8(sp)
+    sd s1,16(sp)
+    sd s2,24(sp)
+    mv s0,a2
+    csrr s1,mtvec
+    csrr s2,mscratch
+    la t0,pipeline_trap
+    csrw mtvec,t0
+    csrw mscratch,s0
+    .word 0x74446073
+    li t0,0x40000000000
+    csrc mstatus,t0
+    li a6,0
+.Ltrain_3:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a3
+    csrw fflags,a4
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    addi t0,a0,64
+    vle8.v v4,(t0)
+    addi t0,a0,80
+    vle8.v v5,(t0)
+    addi t0,a0,96
+    vle8.v v6,(t0)
+    addi t0,a0,112
+    vle8.v v7,(t0)
+    vsetivli zero,8,e8,m1,tu,mu
+    li t0,8
+    bne a6,t0,.Lconfigured_3
+    csrwi vstart,1
+.Lconfigured_3:
+    li t0,0x600
+    csrc mstatus,t0
+    li t0,0x400
+    csrs mstatus,t0
+    li t3,97
+    li t4,9223372036854775783
+    li t6,54
+    li t0,8
+    beq a6,t0,.Ldiv_3
+    addi t4,t4,1
+.Ldiv_3:
+    remu t5,t4,t3
+.globl cancel_branch_3
+cancel_branch_3:
+    beq t5,t6,.Lskip_3
+.globl cancel_wrongpath_3
+cancel_wrongpath_3:
+    .word 0x0220818b
+.Lskip_3:
+    addi a6,a6,1
+    li t0,9
+    blt a6,t0,.Ltrain_3
+    sd a6,144(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    csrwi vstart,0
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    addi t0,a1,64
+    vse8.v v4,(t0)
+    addi t0,a1,80
+    vse8.v v5,(t0)
+    addi t0,a1,96
+    vse8.v v6,(t0)
+    addi t0,a1,112
+    vse8.v v7,(t0)
+    vsetivli zero,8,e8,m1,tu,mu
+    .word 0x0220838b
+    csrr t0,mstatus
+    sd t0,136(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,128
+    vse8.v v7,(t0)
+    csrw mtvec,s1
+    csrw mscratch,s2
+    ld ra,0(sp)
+    ld s0,8(sp)
+    ld s1,16(sp)
+    ld s2,24(sp)
+    addi sp,sp,48
+    ret
+
+.balign 4
+.globl cancel_4
+.type cancel_4,@function
+cancel_4:
+    addi sp,sp,-48
+    sd ra,0(sp)
+    sd s0,8(sp)
+    sd s1,16(sp)
+    sd s2,24(sp)
+    mv s0,a2
+    csrr s1,mtvec
+    csrr s2,mscratch
+    la t0,pipeline_trap
+    csrw mtvec,t0
+    csrw mscratch,s0
+    .word 0x74446073
+    li t0,0x40000000000
+    csrc mstatus,t0
+    li a6,0
+.Ltrain_4:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a3
+    csrw fflags,a4
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    addi t0,a0,64
+    vle8.v v4,(t0)
+    addi t0,a0,80
+    vle8.v v5,(t0)
+    addi t0,a0,96
+    vle8.v v6,(t0)
+    addi t0,a0,112
+    vle8.v v7,(t0)
+    vsetivli zero,8,e8,m1,tu,mu
+    li t0,0x600
+    csrc mstatus,t0
+    li t0,0x400
+    csrs mstatus,t0
+    li t3,97
+    li t4,9223372036854775783
+    li t6,54
+    li t0,8
+    beq a6,t0,.Ldiv_4
+    addi t4,t4,1
+.Ldiv_4:
+    remu t5,t4,t3
+.globl cancel_branch_4
+cancel_branch_4:
+    beq t5,t6,.Lskip_4
+.globl cancel_wrongpath_4
+cancel_wrongpath_4:
+    vadd.vv v4,v1,v2
+    vmul.vv v5,v1,v2
+    .word 0x0220818b
+.Lskip_4:
+    addi a6,a6,1
+    li t0,9
+    blt a6,t0,.Ltrain_4
+    sd a6,144(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    csrwi vstart,0
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    addi t0,a1,64
+    vse8.v v4,(t0)
+    addi t0,a1,80
+    vse8.v v5,(t0)
+    addi t0,a1,96
+    vse8.v v6,(t0)
+    addi t0,a1,112
+    vse8.v v7,(t0)
+    vsetivli zero,8,e8,m1,tu,mu
+    .word 0x0220838b
+    csrr t0,mstatus
+    sd t0,136(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,128
+    vse8.v v7,(t0)
+    csrw mtvec,s1
+    csrw mscratch,s2
+    ld ra,0(sp)
+    ld s0,8(sp)
+    ld s1,16(sp)
+    ld s2,24(sp)
+    addi sp,sp,48
+    ret
+
+.balign 4
+.globl cancel_5
+.type cancel_5,@function
+cancel_5:
+    addi sp,sp,-48
+    sd ra,0(sp)
+    sd s0,8(sp)
+    sd s1,16(sp)
+    sd s2,24(sp)
+    mv s0,a2
+    csrr s1,mtvec
+    csrr s2,mscratch
+    la t0,pipeline_trap
+    csrw mtvec,t0
+    csrw mscratch,s0
+    .word 0x74446073
+    li t0,0x40000000000
+    csrc mstatus,t0
+    li a6,0
+.Ltrain_5:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a3
+    csrw fflags,a4
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    addi t0,a0,64
+    vle8.v v4,(t0)
+    addi t0,a0,80
+    vle8.v v5,(t0)
+    addi t0,a0,96
+    vle8.v v6,(t0)
+    addi t0,a0,112
+    vle8.v v7,(t0)
+    vsetivli zero,8,e8,m1,tu,mu
+    li t0,0x600
+    csrc mstatus,t0
+    li t0,0x400
+    csrs mstatus,t0
+    li t3,97
+    li t4,9223372036854775783
+    li t6,54
+    li t0,8
+    beq a6,t0,.Ldiv_5
+    addi t4,t4,1
+.Ldiv_5:
+    remu t5,t4,t3
+.globl cancel_branch_5
+cancel_branch_5:
+    beq t5,t6,.Lskip_5
+.globl cancel_wrongpath_5
+cancel_wrongpath_5:
+    csrwi vxrm,0
+    csrwi vxsat,0
+    csrwi fflags,0
+    .word 0x0220818b
+.Lskip_5:
+    addi a6,a6,1
+    li t0,9
+    blt a6,t0,.Ltrain_5
+    sd a6,144(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    csrwi vstart,0
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    addi t0,a1,64
+    vse8.v v4,(t0)
+    addi t0,a1,80
+    vse8.v v5,(t0)
+    addi t0,a1,96
+    vse8.v v6,(t0)
+    addi t0,a1,112
+    vse8.v v7,(t0)
+    vsetivli zero,8,e8,m1,tu,mu
+    .word 0x0220838b
+    csrr t0,mstatus
+    sd t0,136(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,128
+    vse8.v v7,(t0)
+    csrw mtvec,s1
+    csrw mscratch,s2
+    ld ra,0(sp)
+    ld s0,8(sp)
+    ld s1,16(sp)
+    ld s2,24(sp)
+    addi sp,sp,48
+    ret
+
+.balign 4
+.globl cancel_6
+.type cancel_6,@function
+cancel_6:
+    addi sp,sp,-48
+    sd ra,0(sp)
+    sd s0,8(sp)
+    sd s1,16(sp)
+    sd s2,24(sp)
+    mv s0,a2
+    csrr s1,mtvec
+    csrr s2,mscratch
+    la t0,pipeline_trap
+    csrw mtvec,t0
+    csrw mscratch,s0
+    .word 0x74446073
+    li t0,0x40000000000
+    csrc mstatus,t0
+    li a6,0
+.Ltrain_6:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a3
+    csrw fflags,a4
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    addi t0,a0,64
+    vle8.v v4,(t0)
+    addi t0,a0,80
+    vle8.v v5,(t0)
+    addi t0,a0,96
+    vle8.v v6,(t0)
+    addi t0,a0,112
+    vle8.v v7,(t0)
+    vsetivli zero,8,e8,m1,tu,mu
+    li t0,0x600
+    csrc mstatus,t0
+    li t0,0x400
+    csrs mstatus,t0
+    .word 0x0220818b
+    li t3,97
+    li t4,9223372036854775783
+    li t6,54
+    li t0,8
+    beq a6,t0,.Ldiv_6
+    addi t4,t4,1
+.Ldiv_6:
+    remu t5,t4,t3
+.globl cancel_branch_6
+cancel_branch_6:
+    beq t5,t6,.Lskip_6
+.globl cancel_wrongpath_6
+cancel_wrongpath_6:
+    .word 0x0220818b
+    .word 0x0252018b
+.Lskip_6:
+    addi a6,a6,1
+    li t0,9
+    blt a6,t0,.Ltrain_6
+    sd a6,144(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    csrwi vstart,0
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    addi t0,a1,64
+    vse8.v v4,(t0)
+    addi t0,a1,80
+    vse8.v v5,(t0)
+    addi t0,a1,96
+    vse8.v v6,(t0)
+    addi t0,a1,112
+    vse8.v v7,(t0)
+    vsetivli zero,8,e8,m1,tu,mu
+    .word 0x0220838b
+    csrr t0,mstatus
+    sd t0,136(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,128
+    vse8.v v7,(t0)
+    csrw mtvec,s1
+    csrw mscratch,s2
+    ld ra,0(sp)
+    ld s0,8(sp)
+    ld s1,16(sp)
+    ld s2,24(sp)
+    addi sp,sp,48
+    ret
+
+.balign 4
+.globl cancel_7
+.type cancel_7,@function
+cancel_7:
+    addi sp,sp,-48
+    sd ra,0(sp)
+    sd s0,8(sp)
+    sd s1,16(sp)
+    sd s2,24(sp)
+    mv s0,a2
+    csrr s1,mtvec
+    csrr s2,mscratch
+    la t0,pipeline_trap
+    csrw mtvec,t0
+    csrw mscratch,s0
+    .word 0x74446073
+    li t0,0x40000000000
+    csrc mstatus,t0
+    li a6,0
+.Ltrain_7:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a3
+    csrw fflags,a4
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    addi t0,a0,64
+    vle8.v v4,(t0)
+    addi t0,a0,80
+    vle8.v v5,(t0)
+    addi t0,a0,96
+    vle8.v v6,(t0)
+    addi t0,a0,112
+    vle8.v v7,(t0)
+    vsetivli zero,8,e8,m1,tu,mu
+    li t0,8
+    bne a6,t0,.Lconfigured_7
+    vsetivli zero,0,e8,m1,tu,mu
+.Lconfigured_7:
+    li t0,0x600
+    csrc mstatus,t0
+    li t0,0x400
+    csrs mstatus,t0
+    .word 0x0220818b
+    li t3,97
+    li t4,9223372036854775783
+    li t6,54
+    li t0,8
+    beq a6,t0,.Ldiv_7
+    addi t4,t4,1
+.Ldiv_7:
+    remu t5,t4,t3
+.globl cancel_branch_7
+cancel_branch_7:
+    beq t5,t6,.Lskip_7
+.globl cancel_wrongpath_7
+cancel_wrongpath_7:
+    .word 0x0220818b
+.Lskip_7:
+    addi a6,a6,1
+    li t0,9
+    blt a6,t0,.Ltrain_7
+    sd a6,144(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    csrwi vstart,0
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    addi t0,a1,64
+    vse8.v v4,(t0)
+    addi t0,a1,80
+    vse8.v v5,(t0)
+    addi t0,a1,96
+    vse8.v v6,(t0)
+    addi t0,a1,112
+    vse8.v v7,(t0)
+    vsetivli zero,8,e8,m1,tu,mu
+    .word 0x0220838b
+    csrr t0,mstatus
+    sd t0,136(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,128
+    vse8.v v7,(t0)
+    csrw mtvec,s1
+    csrw mscratch,s2
+    ld ra,0(sp)
+    ld s0,8(sp)
+    ld s1,16(sp)
+    ld s2,24(sp)
+    addi sp,sp,48
+    ret
+
+.balign 4
+.globl cancel_8
+.type cancel_8,@function
+cancel_8:
+    addi sp,sp,-48
+    sd ra,0(sp)
+    sd s0,8(sp)
+    sd s1,16(sp)
+    sd s2,24(sp)
+    mv s0,a2
+    csrr s1,mtvec
+    csrr s2,mscratch
+    la t0,pipeline_trap
+    csrw mtvec,t0
+    csrw mscratch,s0
+    .word 0x74446073
+    li t0,0x40000000000
+    csrc mstatus,t0
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a3
+    csrw fflags,a4
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    addi t0,a0,64
+    vle8.v v4,(t0)
+    addi t0,a0,80
+    vle8.v v5,(t0)
+    addi t0,a0,96
+    vle8.v v6,(t0)
+    addi t0,a0,112
+    vle8.v v7,(t0)
+    vsetivli zero,8,e8,m1,tu,mu
+    li t0,0x600
+    csrc mstatus,t0
+    li t0,0x400
+    csrs mstatus,t0
+    vsetivli zero,1,e8,m1,tu,mu
+    li t0,0x600
+    csrc mstatus,t0
+    li t0,0x400
+    csrs mstatus,t0
+    la t0,cancel_fault_8
+    sd t0,112(a2)
+    la t0,.Lresume_8
+    sd t0,120(a2)
+    li t0,2
+    sd t0,152(a2)
+.globl cancel_fault_8
+cancel_fault_8:
+    .word 0x0020818b
+    csrwi vxrm,0
+    csrwi vxsat,0
+    csrwi fflags,0
+    vadd.vv v3,v4,v5
+    .word 0x0252018b
+.Lresume_8:
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    csrwi vstart,0
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    addi t0,a1,64
+    vse8.v v4,(t0)
+    addi t0,a1,80
+    vse8.v v5,(t0)
+    addi t0,a1,96
+    vse8.v v6,(t0)
+    addi t0,a1,112
+    vse8.v v7,(t0)
+    vsetivli zero,8,e8,m1,tu,mu
+    .word 0x0220838b
+    csrr t0,mstatus
+    sd t0,136(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,128
+    vse8.v v7,(t0)
+    csrw mtvec,s1
+    csrw mscratch,s2
+    ld ra,0(sp)
+    ld s0,8(sp)
+    ld s1,16(sp)
+    ld s2,24(sp)
+    addi sp,sp,48
+    ret
+
+.balign 4
+.globl cancel_9
+.type cancel_9,@function
+cancel_9:
+    addi sp,sp,-48
+    sd ra,0(sp)
+    sd s0,8(sp)
+    sd s1,16(sp)
+    sd s2,24(sp)
+    mv s0,a2
+    csrr s1,mtvec
+    csrr s2,mscratch
+    la t0,pipeline_trap
+    csrw mtvec,t0
+    csrw mscratch,s0
+    .word 0x74446073
+    li t0,0x40000000000
+    csrc mstatus,t0
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a3
+    csrw fflags,a4
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    addi t0,a0,64
+    vle8.v v4,(t0)
+    addi t0,a0,80
+    vle8.v v5,(t0)
+    addi t0,a0,96
+    vle8.v v6,(t0)
+    addi t0,a0,112
+    vle8.v v7,(t0)
+    vsetivli zero,8,e8,m1,tu,mu
+    li t0,0x600
+    csrc mstatus,t0
+    li t0,0x400
+    csrs mstatus,t0
+    .word 0x0220818b
+    la t0,cancel_fault_9
+    sd t0,112(a2)
+    la t0,.Lresume_9
+    sd t0,120(a2)
+    li t0,11
+    sd t0,152(a2)
+.globl cancel_fault_9
+cancel_fault_9:
+    .word 0x00000073
+    csrwi vxrm,0
+    csrwi vxsat,0
+    csrwi fflags,0
+    vadd.vv v3,v4,v5
+    .word 0x0252018b
+.Lresume_9:
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    csrwi vstart,0
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    addi t0,a1,64
+    vse8.v v4,(t0)
+    addi t0,a1,80
+    vse8.v v5,(t0)
+    addi t0,a1,96
+    vse8.v v6,(t0)
+    addi t0,a1,112
+    vse8.v v7,(t0)
+    vsetivli zero,8,e8,m1,tu,mu
+    .word 0x0220838b
+    csrr t0,mstatus
+    sd t0,136(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,128
+    vse8.v v7,(t0)
+    csrw mtvec,s1
+    csrw mscratch,s2
+    ld ra,0(sp)
+    ld s0,8(sp)
+    ld s1,16(sp)
+    ld s2,24(sp)
+    addi sp,sp,48
+    ret
+
+
+.balign 4
+pipeline_trap:
+    csrrw t0,mscratch,t0
+    sd t1,128(t0)
+    ld t1,80(t0)
+    addi t1,t1,1
+    sd t1,80(t0)
+    addi t1,t1,-1
+    bnez t1,.Lbadtrap
+    csrr t1,mcause
+    sd t1,88(t0)
+    csrr t1,mepc
+    sd t1,96(t0)
+    csrr t1,mtval
+    sd t1,104(t0)
+    ld t1,152(t0)
+    csrr t0,mcause
+    bne t0,t1,.Lbadtrap
+    mv t0,s0
+    ld t1,112(t0)
+    csrr t0,mepc
+    bne t0,t1,.Lbadtrap
+    mv t0,s0
+    ld t1,120(t0)
+    csrw mepc,t1
+    ld t1,128(t0)
+    csrrw t0,mscratch,t0
+    mret
+.Lbadtrap:
+    li a0,1
+    .word 0x0000006b
+    j .Lbadtrap
+.option pop

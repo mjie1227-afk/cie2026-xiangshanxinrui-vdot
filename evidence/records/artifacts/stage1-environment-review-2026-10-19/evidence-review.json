@@ -1,0 +1,992 @@
+{
+  "captured_at": "2026-10-19T12:46:50.261620+08:00",
+  "scope": "read-only review of existing runs and source; no new build or simulation",
+  "collector": {
+    "argv": [
+      "python3",
+      "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/artifacts/stage1-environment-review-2026-10-19/collect_evidence.py"
+    ],
+    "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+    "python_version": "3.12.3"
+  },
+  "original_run_files_before": {
+    "build-command.txt": "2529a1f77f693a44f6feaedcf48ac1ba77cbe028c1feb6368e8e6211581bf73a",
+    "build-end.txt": "eedce0b8ce1d565e67aa9c77f0d4cbfd6eb68fa69fcf93fd27b0e6cd83b7fb64",
+    "build-result.txt": "e2011d96c2d5e6dc239db80a50ae098f25e59d5e8394c44c35bd7a108e5078c7",
+    "build-start.txt": "eedce0b8ce1d565e67aa9c77f0d4cbfd6eb68fa69fcf93fd27b0e6cd83b7fb64",
+    "build.log": "6ad6678e10c2f4eba5b29cf4903a2862fe51647dead261af37244f59422d15a8",
+    "environment.txt": "a27abb7acf8f3a240ab302279dcb4a39beafcaccc6e8ff76473970489eabd5ac",
+    "git-nexus-am.txt": "ba0fa41e10e243e22381c742ac136139756aea2c84d214c2292eb8eef97018b4",
+    "git-XiangShan.txt": "faf277e3cc48ab6bf75d4809fe45cdc167b65f4725261938f8750e1937707c84",
+    "git-XiangShan_difftest.txt": "9e852da1bb4a8223612fa7dceb793a9369de0b76e18cb82d84d1b9e493d97668",
+    "git-XiangShan_ready-to-run.txt": "46d27cb020e9f014081343a9f887b62e91bc47bc44944f180f9a2be0db3512cc",
+    "hello-meijie-result.png": "44d0e0086f88e923d2a46e8fc5ed1941050917184405b5a80bfca6ce50012c13",
+    "hello-meijie-riscv64-xs.bin": "195dca0c3a748fea70efa84e1d63cd3926098189f61fc6babe80214425b1f479",
+    "hello-meijie-riscv64-xs.elf": "36239fedc250746563dad77637fb944fa6444352e91da5b9112ecbd6214b98d0",
+    "hello-meijie-riscv64-xs.txt": "9d973862b211a41b35b335443419357ac4e51fc95f62c8dc3e25818a4806c1d7",
+    "hello.c": "9e065a55eeccd8b5ce2af41e6a128c3a4f7604b097ee089972e45282a0ccab6c",
+    "ip-address.txt": "31884846a4ad24ea2c26fa6ae65d97c07f8d7443581ed882affb3c7c0d481a40",
+    "ip-result.txt": "8b7eb1cfc977141cc23c603039036bfd5c051c480c92789b652c7793920ce75f",
+    "Makefile": "83756211935fd347931abff704be1d1d0b4300b214c799187b83c593df206fb5",
+    "reused-emu-origin.txt": "d7adab3c2b7a23101562f2284f605c035470c2ab108e97821ca0eba4ff6ef38c",
+    "run-command.txt": "d0e38ee69c1baea1a8adf66c4ae0d0202c2c7b1d03589d05365a90b8f9e4d161",
+    "run-end.txt": "d51e93ef6b3e9915fb1304fbcc8d00ad66bf2c03f35c228334ac7f9133f8a07a",
+    "run-result.txt": "ddae251850197beb35563f1ccbc60871fea451132dde8de2e5435d0cd7deb943",
+    "run-start.txt": "caa0e69270d42879752a2f8cc1906c49be32f72923b9d97ab45322a9722a2c64",
+    "run.log": "f7ae063db2536f2cf59a8bc64571b585a717acd5c77094c4c293996ea94b8ac6",
+    "sha256.txt": "1c9f3a63927a6a8ba6886a95e32c2d4eaa34066e950914c5af7e455608ea05cb"
+  },
+  "hash_checks": [
+    {
+      "path": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/artifacts/runs/S1-01/hello-meijie-20261019-120654-8FtdkQ/hello.c",
+      "expected": "9e065a55eeccd8b5ce2af41e6a128c3a4f7604b097ee089972e45282a0ccab6c",
+      "actual": "9e065a55eeccd8b5ce2af41e6a128c3a4f7604b097ee089972e45282a0ccab6c",
+      "match": true
+    },
+    {
+      "path": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/artifacts/runs/S1-01/hello-meijie-20261019-120654-8FtdkQ/Makefile",
+      "expected": "83756211935fd347931abff704be1d1d0b4300b214c799187b83c593df206fb5",
+      "actual": "83756211935fd347931abff704be1d1d0b4300b214c799187b83c593df206fb5",
+      "match": true
+    },
+    {
+      "path": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/artifacts/runs/S1-01/hello-meijie-20261019-120654-8FtdkQ/hello-meijie-riscv64-xs.elf",
+      "expected": "36239fedc250746563dad77637fb944fa6444352e91da5b9112ecbd6214b98d0",
+      "actual": "36239fedc250746563dad77637fb944fa6444352e91da5b9112ecbd6214b98d0",
+      "match": true
+    },
+    {
+      "path": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/artifacts/runs/S1-01/hello-meijie-20261019-120654-8FtdkQ/hello-meijie-riscv64-xs.bin",
+      "expected": "195dca0c3a748fea70efa84e1d63cd3926098189f61fc6babe80214425b1f479",
+      "actual": "195dca0c3a748fea70efa84e1d63cd3926098189f61fc6babe80214425b1f479",
+      "match": true
+    },
+    {
+      "path": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/artifacts/runs/S1-01/hello-meijie-20261019-120654-8FtdkQ/hello-meijie-riscv64-xs.txt",
+      "expected": "9d973862b211a41b35b335443419357ac4e51fc95f62c8dc3e25818a4806c1d7",
+      "actual": "9d973862b211a41b35b335443419357ac4e51fc95f62c8dc3e25818a4806c1d7",
+      "match": true
+    },
+    {
+      "path": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/emu",
+      "expected": "9ee6ce3e8372c6345fc7219563c5ac63c9b3517adb87dc347816d14f228fd7e2",
+      "actual": "9ee6ce3e8372c6345fc7219563c5ac63c9b3517adb87dc347816d14f228fd7e2",
+      "match": true
+    },
+    {
+      "path": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/ready-to-run/riscv64-nemu-interpreter-so",
+      "expected": "7af2120acefa83b7299c91b99132f4087dd8ab0f7219461b9aea48ce38891e03",
+      "actual": "7af2120acefa83b7299c91b99132f4087dd8ab0f7219461b9aea48ce38891e03",
+      "match": true
+    }
+  ],
+  "commands": {
+    "XiangShan:head": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+        "show",
+        "-s",
+        "--format=%H%n%ci%n%s",
+        "HEAD"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "16ae9ddcda54fc9a2fddffad73174cf793ac7814\n2025-04-03 22:44:20 +0800\nfeat(Top): make address spaces of seperate TL port configurable (#4496)\n",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "XiangShan:branch": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+        "branch",
+        "--show-current"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "XiangShan:status": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+        "status",
+        "--short",
+        "--untracked-files=normal"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "XiangShan:diff": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+        "diff",
+        "--stat"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "XiangShan:staged": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+        "diff",
+        "--cached",
+        "--stat"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "nexus-am:head": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/nexus-am",
+        "show",
+        "-s",
+        "--format=%H%n%ci%n%s",
+        "HEAD"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "086a238062fdfb3281b745a537b361983d0154b5\n2025-03-31 10:40:49 +0800\nMerge pull request #53 from OpenXiangShan/fix_Makefile\n",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "nexus-am:branch": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/nexus-am",
+        "branch",
+        "--show-current"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "nexus-am:status": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/nexus-am",
+        "status",
+        "--short",
+        "--untracked-files=normal"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "nexus-am:diff": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/nexus-am",
+        "diff",
+        "--stat"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "nexus-am:staged": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/nexus-am",
+        "diff",
+        "--cached",
+        "--stat"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "NEMU:head": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/NEMU",
+        "show",
+        "-s",
+        "--format=%H%n%ci%n%s",
+        "HEAD"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "a48a11f208ff81ad765591d83271d1b339fb3861\n2026-09-06 11:51:04 +0800\nperf(ame): add auto-vectorized floating-point MMACC paths (#1197)\n",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "NEMU:branch": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/NEMU",
+        "branch",
+        "--show-current"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "NEMU:status": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/NEMU",
+        "status",
+        "--short",
+        "--untracked-files=normal"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "NEMU:diff": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/NEMU",
+        "diff",
+        "--stat"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "NEMU:staged": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/NEMU",
+        "diff",
+        "--cached",
+        "--stat"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "XiangShan/difftest:head": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest",
+        "show",
+        "-s",
+        "--format=%H%n%ci%n%s",
+        "HEAD"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "62e4540c03c03aa947bdb67f4b6bf66f1a29c5d0\n2025-03-04 18:53:59 +0800\nfeat(load_check): add vec load check (#594)\n",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "XiangShan/difftest:branch": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest",
+        "branch",
+        "--show-current"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "XiangShan/difftest:status": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest",
+        "status",
+        "--short",
+        "--untracked-files=normal"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "XiangShan/difftest:diff": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest",
+        "diff",
+        "--stat"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "XiangShan/difftest:staged": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest",
+        "diff",
+        "--cached",
+        "--stat"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "XiangShan/ready-to-run:head": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/ready-to-run",
+        "show",
+        "-s",
+        "--format=%H%n%ci%n%s",
+        "HEAD"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "ed8c30e1ec8a9c9aa6b116ce54281235d00273fa\n2025-03-29 02:21:14 +0800\nBump nemu ref in ready-to-run (#103)\n",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "XiangShan/ready-to-run:branch": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/ready-to-run",
+        "branch",
+        "--show-current"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "XiangShan/ready-to-run:status": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/ready-to-run",
+        "status",
+        "--short",
+        "--untracked-files=normal"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "XiangShan/ready-to-run:diff": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/ready-to-run",
+        "diff",
+        "--stat"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "XiangShan/ready-to-run:staged": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/ready-to-run",
+        "diff",
+        "--cached",
+        "--stat"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "XiangShan/coupledL2:head": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/coupledL2",
+        "show",
+        "-s",
+        "--format=%H%n%ci%n%s",
+        "HEAD"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "82079f4081bbc1f0221c790fbf8a29b1f23f48b8\n2025-03-28 14:03:29 +0800\nfix(CoupledL2): make RespErr obey protocol (#384)\n",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "XiangShan/coupledL2:branch": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/coupledL2",
+        "branch",
+        "--show-current"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "XiangShan/coupledL2:status": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/coupledL2",
+        "status",
+        "--short",
+        "--untracked-files=normal"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "XiangShan/coupledL2:diff": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/coupledL2",
+        "diff",
+        "--stat"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "XiangShan/coupledL2:staged": {
+      "argv": [
+        "git",
+        "-C",
+        "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/coupledL2",
+        "diff",
+        "--cached",
+        "--stat"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "cached_v2_head": {
+      "argv": [
+        "git",
+        "rev-parse",
+        "origin/kunminghu-v2"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "c098f996bf4d301b88693b20315486d31e93bc9d\n",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "cached_v2_ancestor": {
+      "argv": [
+        "git",
+        "merge-base",
+        "--is-ancestor",
+        "HEAD",
+        "origin/kunminghu-v2"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "cached_v2_merge_base": {
+      "argv": [
+        "git",
+        "merge-base",
+        "HEAD",
+        "origin/kunminghu-v2"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "16ae9ddcda54fc9a2fddffad73174cf793ac7814\n",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "cached_v2_ahead_count": {
+      "argv": [
+        "git",
+        "rev-list",
+        "--count",
+        "HEAD..origin/kunminghu-v2"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "679\n",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "describe": {
+      "argv": [
+        "git",
+        "describe",
+        "--tags",
+        "--always",
+        "HEAD"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "v3.2.2-alpha-587-g16ae9ddcd\n",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "current:kernel": {
+      "argv": [
+        "uname",
+        "-a"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "Linux LAPTOP-25CPL8L6 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux\n",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "current:os_release": {
+      "argv": [
+        "cat",
+        "/etc/os-release"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "PRETTY_NAME=\"Ubuntu 24.04.4 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.4 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "current:memory": {
+      "argv": [
+        "free",
+        "-b"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "               total        used        free      shared  buff/cache   available\nMem:     10426920960  1423757312  8198004736     4354048   989298688  9003163648\nSwap:     8589934592           0  8589934592\n",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "current:cpus": {
+      "argv": [
+        "nproc"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "20\n",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "current:disk": {
+      "argv": [
+        "df",
+        "-h",
+        "/",
+        "/mnt/d"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/sdd       1007G   21G  936G   3% /\nD:\\             954G  686G  269G  72% /mnt/d\n",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "current:java": {
+      "argv": [
+        "java",
+        "-version"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"21.0.12.1\" 2026-08-18\nOpenJDK Runtime Environment (build 21.0.12.1+1-1-24.04.4-Ubuntu)\nOpenJDK 64-Bit Server VM (build 21.0.12.1+1-1-24.04.4-Ubuntu, mixed mode, sharing)\n",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "current:verilator": {
+      "argv": [
+        "verilator",
+        "--version"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "Verilator 5.052 2026-09-05 rev v5.052\n",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "current:gcc": {
+      "argv": [
+        "riscv64-linux-gnu-gcc",
+        "--version"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "riscv64-linux-gnu-gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "current:binutils": {
+      "argv": [
+        "riscv64-linux-gnu-ld",
+        "--version"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "GNU ld (GNU Binutils for Ubuntu) 2.42\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) a later version.\nThis program has absolutely no warranty.\n",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "current:make": {
+      "argv": [
+        "make",
+        "--version"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "GNU Make 4.3\nBuilt for x86_64-pc-linux-gnu\nCopyright (C) 1988-2020 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "current:mill_pin": {
+      "argv": [
+        "cat",
+        ".mill-version"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "0.12.3\n",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "cached_v2_readme": {
+      "argv": [
+        "git",
+        "show",
+        "origin/kunminghu-v2:README.md"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "# XiangShan\n\nXiangShan (香山) is an open-source high-performance RISC-V processor project.\n\n中文说明[在此](readme.zh-cn.md)。\n\n## Documentation\n\nXiangShan's documentation is available at [docs.xiangshan.cc](https://docs.xiangshan.cc).\n\nXiangShan Design Document for Kunminghu V2R2 has been published separately. You can find it at [docs.xiangshan.cc/projects/design](https://docs.xiangshan.cc/projects/design/).\n\nXiangShan User Guide has been published separately. You can find it at [docs.xiangshan.cc/projects/user-guide](https://docs.xiangshan.cc/projects/user-guide/) or [XiangShan-User-Guide/releases](https://github.com/OpenXiangShan/XiangShan-User-Guide/releases).\n\nWe are using [Weblate](https://hosted.weblate.org/projects/openxiangshan/) to translate documentation into English and other languages. Your contributions are welcome—come and help us improve it!\n\nAll XiangShan documents are licensed under the CC-BY-4.0.\n\n## Publications\n\n### MICRO 2022: Towards Developing High Performance RISC-V Processors Using Agile Methodology\n\nOur paper introduces XiangShan and the practice of agile development methodology on high performance RISC-V processors.\nIt covers some representative tools we have developed and used to accelerate the chip development process, including design, functional verification, debugging, performance validation, etc.\nThis paper is awarded all three available badges for artifact evaluation (Available, Functional, and Reproduced).\n\n![Artifacts Available](https://github.com/OpenXiangShan/XiangShan-doc/raw/main/publications/images/artifacts_available_dl.jpg)\n![Artifacts Evaluated — Functional](https://github.com/OpenXiangShan/XiangShan-doc/raw/main/publications/images/artifacts_evaluated_functional_dl.jpg)\n![Results Reproduced](https://github.com/OpenXiangShan/XiangShan-doc/raw/main/publications/images/results_reproduced_dl.jpg)\n\n[Paper PDF](https://github.com/OpenXiangShan/XiangShan-doc/blob/main/publications/micro2022-xiangshan.pdf) | [IEEE Xplore](https://ieeexplore.ieee.org/abstract/document/9923860) | [BibTeX](https://github.com/OpenXiangShan/XiangShan-doc/blob/main/publications/micro2022-xiangshan.bib) | [Presentation Slides](https://github.com/OpenXiangShan/XiangShan-doc/blob/main/publications/micro2022-xiangshan-slides.pdf) | [Presentation Video](https://www.bilibili.com/video/BV1FB4y1j7Jy)\n\n## Follow us\n\nWechat/微信：香山开源处理器\n\n<div align=left><img width=\"340\" height=\"117\" src=\"images/wechat.png\"/></div>\n\nZhihu/知乎：[香山开源处理器](https://www.zhihu.com/people/openxiangshan)\n\nWeibo/微博：[香山开源处理器](https://weibo.com/u/7706264932)\n\nYou can contact us through [our mailing list](mailto:xiangshan-all@ict.ac.cn). All mails from this list will be archived [here](https://www.mail-archive.com/xiangshan-all@ict.ac.cn/).\n\n## Architecture\n\nThe first stable micro-architecture of XiangShan is called Yanqihu (雁栖湖) and is [on the yanqihu branch](https://github.com/OpenXiangShan/XiangShan/tree/yanqihu), which has been developed since June 2020.\n\nThe second stable micro-architecture of XiangShan is called Nanhu (南湖) and is [on the nanhu branch](https://github.com/OpenXiangShan/XiangShan/tree/nanhu).\n\nThe current version of XiangShan, also known as Kunminghu (昆明湖), is still under development on the master branch.\n\nThe micro-architecture overview of Kunminghu (昆明湖) is shown below.\n\n![xs-arch-kunminghu](images/xs-arch-kunminghu.svg)\n\n\n\n## Sub-directories Overview\n\nSome of the key directories are shown below.\n\n```\n.\n├── src\n│   └── main/scala         # design files\n│       ├── device         # virtual device for simulation\n│       ├── system         # SoC wrapper\n│       ├── top            # top module\n│       ├── utils          # utilization code\n│       └── xiangshan      # main design code\n│           └── transforms # some useful firrtl transforms\n├── scripts                # scripts for agile development\n├── fudian                 # floating unit submodule of XiangShan\n├── huancun                # L2/L3 cache submodule of XiangShan\n├── difftest               # difftest co-simulation framework\n└── ready-to-run           # pre-built simulation images\n```\n\n## IDE Support\n\n### bsp\n```\nmake bsp\n```\n\n### IDEA\n```\nmake idea\n```\n\n\n## Generate Verilog\n\n* Run `make verilog` to generate verilog code. This generates multiple `.sv` files in the `build/rtl/` folder (e.g., `build/rtl/XSTop.sv`).\n* Refer to `Makefile` for more information.\n\n\n\n## Run Programs by Simulation\n\n### Prepare environment\n\n* Set environment variable `NEMU_HOME` to the **absolute path** of the [NEMU project](https://github.com/OpenXiangShan/NEMU).\n* Set environment variable `NOOP_HOME` to the **absolute path** of the XiangShan project.\n* Set environment variable `AM_HOME` to the **absolute path** of the [AM project](https://github.com/OpenXiangShan/nexus-am).\n* Install `mill`. Refer to [the Manual section in this guide](https://mill-build.org/mill/cli/installation-ide.html#_bootstrap_scripts).\n* Clone this project and run `make init` to initialize submodules.\n\n### Run with simulator\n\n* Install [Verilator](https://verilator.org/guide/latest/), the open-source Verilog simulator.\n* Run `make emu` to build the C++ simulator `./build/emu` with Verilator.\n* Refer to `./build/emu --help` for run-time arguments of the simulator.\n* Refer to `Makefile` and `verilator.mk` for more information.\n\nExample:\n\n```bash\nmake emu CONFIG=MinimalConfig EMU_THREADS=2 -j10\n./build/emu -b 0 -e 0 -i ./ready-to-run/coremark-2-iteration.bin --diff ./ready-to-run/riscv64-nemu-interpreter-so\n```\n\n### Run with xspdb \n* Install [picker](https://github.com/XS-MLVP/picker), a verification tool that supports high-level languages.\n* Run `make pdb` to build XiangShan Python binaries.\n* Run `make pdb-run` to run XiangShan binaries.\n\nExample output and interaction:\n\n```bash \n$ make pdb-run\n[Info] Set PMEM_BASE to 0x80000000 (Current: 0x80000000)\n[Info] Set FIRST_INST_ADDRESS to 0x80000000 (Current: 0x80000000)\nUsing simulated 32768B flash\n[Info] reset dut complete\n> XiangShan/scripts/pdb-run.py(13)run()\n-> while True:\n(XiangShan) xload ready-to-run/microbench.bin   # Load binary (Tab-compatible)\n(XiangShan) xwatch_commit_pc 0x80000004         # set watch point,  \n(XiangShan) xistep 3                            # Step to next three instruction commit, it will stop at watch point \n[Info] Find break point (Inst commit), break (step 2107 cycles) at cycle: 2207 (0x89f)\n[Info] Find break point (Inst commit, Target commit), break (step 2108 cycles) at cycle: 2208 (0x8a0)\n(XiangShan) xpc                                 # print pc info\nPC[0]: 0x80000000    Instr: 0x00000093\nPC[1]: 0x80000004    Instr: 0x00000113\nPC[2]: 0x0    Instr: 0x0\n...\nPC[7]: 0x0    Instr: 0x0\n(XiangShan) xistep 1000000                      # Execute to binary end\n[Info] Find break point (Inst commit), break (step 2037 cycles) at cycle: 2207 (0x89f)\n[Info] Find break point (Inst commit), break (step 2180 cycles) at cycle: 2207 (0x89f)\n...\nHIT GOOD LOOP at pc = 0xf0001cb0\n```\n\n## Troubleshooting Guide\n\n[Troubleshooting Guide](https://github.com/OpenXiangShan/XiangShan/wiki/Troubleshooting-Guide)\n\n## Acknowledgement\n\nThe implementation of XiangShan is inspired by several key papers. We list these papers in XiangShan document, see: [Acknowledgements](https://docs.xiangshan.cc/zh-cn/latest/acknowledgments/). We very much encourage and expect that more academic innovations can be realised based on XiangShan in the future.\n\n## LICENSE\n\nCopyright © 2020-2025 Institute of Computing Technology, Chinese Academy of Sciences.\n\nCopyright © 2021-2025 Beijing Institute of Open Source Chip\n\nCopyright © 2020-2022 by Peng Cheng Laboratory.\n\nXiangShan is licensed under [Mulan PSL v2](LICENSE).\n",
+      "stderr": "",
+      "env": {
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    }
+  },
+  "snapshots": [
+    {
+      "source": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/src/main/scala/top/Configs.scala",
+      "snapshot": "artifacts/stage1-environment-review-2026-10-19/sources/Configs.scala",
+      "bytes": 18417,
+      "sha256": "febd1212adf7b3c7069f378c0f54373e40ade36ee902e0d1cf63503c300d6fd2",
+      "identical": true
+    },
+    {
+      "source": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/src/main/scala/xiangshan/Parameters.scala",
+      "snapshot": "artifacts/stage1-environment-review-2026-10-19/sources/Parameters.scala",
+      "bytes": 36270,
+      "sha256": "7f3d3e32487b06b7e75de0a9d4cdca544b770ae4b34be4e11ceacff4db82dbcc",
+      "identical": true
+    },
+    {
+      "source": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/src/main/scala/system/SoC.scala",
+      "snapshot": "artifacts/stage1-environment-review-2026-10-19/sources/SoC.scala",
+      "bytes": 19148,
+      "sha256": "505deac5cb72251a863b2484ccbb1b5ef76f19af5f488e79d72d396c454b5ffc",
+      "identical": true
+    },
+    {
+      "source": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/src/main/scala/xiangshan/L2Top.scala",
+      "snapshot": "artifacts/stage1-environment-review-2026-10-19/sources/L2Top.scala",
+      "bytes": 15954,
+      "sha256": "152989be7f66a6c29892e91fa2c40e8191fcc611d26be35933d125dfeced6167",
+      "identical": true
+    },
+    {
+      "source": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/coupledL2/src/main/scala/coupledL2/L2Param.scala",
+      "snapshot": "artifacts/stage1-environment-review-2026-10-19/sources/L2Param.scala",
+      "bytes": 5003,
+      "sha256": "f545590f860c7bdc126499b05766904bf31880ae52464069fa9a3243054f5938",
+      "identical": true
+    },
+    {
+      "source": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/.mill-version",
+      "snapshot": "artifacts/stage1-environment-review-2026-10-19/sources/mill-version.txt",
+      "bytes": 7,
+      "sha256": "01a507eda916863d2c56c6d24b13985c877640445bb13e272692d67ccf33f057",
+      "identical": true
+    },
+    {
+      "source": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/README.md",
+      "snapshot": "artifacts/stage1-environment-review-2026-10-19/sources/README-at-running-commit.md",
+      "bytes": 6030,
+      "sha256": "09de079de36a7a8485dd7279ce7806d7c414077101df043fcb06f6c3e31f3ca9",
+      "identical": true
+    },
+    {
+      "source": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build-restore.log",
+      "snapshot": "artifacts/stage1-environment-review-2026-10-19/history/build-restore.log",
+      "bytes": 282191,
+      "sha256": "f5f299767abada849dc8e8ef218154ee55e2b9140fa89a4da85a37ce778de7b0",
+      "identical": true
+    },
+    {
+      "source": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build-resume.log",
+      "snapshot": "artifacts/stage1-environment-review-2026-10-19/history/build-resume.log",
+      "bytes": 1074,
+      "sha256": "2b8a133254f964dcd3d8c9929e27350c3944e5787784f0946ca97647ce03786a",
+      "identical": true
+    },
+    {
+      "source": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/time.log",
+      "snapshot": "artifacts/stage1-environment-review-2026-10-19/history/build-time.log",
+      "bytes": 7917,
+      "sha256": "5e250b6cc6d8febba7a144d8aa3c11250f86dd5e6f8e0012647081c05df2a930",
+      "identical": true
+    },
+    {
+      "source": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/dts",
+      "snapshot": "artifacts/stage1-environment-review-2026-10-19/history/generated.dts",
+      "bytes": 3321,
+      "sha256": "53bc37b687c8f628444f82dad18a8798d1321e675a09578d0a3403a2b3a917e4",
+      "identical": true
+    },
+    {
+      "source": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/json",
+      "snapshot": "artifacts/stage1-environment-review-2026-10-19/history/generated.json",
+      "bytes": 3670,
+      "sha256": "df26f8ec2c23093e53596c7a9fc809be0ec9d654be68e64a4aaaacc7c77c03ca",
+      "identical": true
+    },
+    {
+      "source": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/hello-restored-check-result.txt",
+      "snapshot": "artifacts/stage1-environment-review-2026-10-19/history/default-hello-result.txt",
+      "bytes": 543,
+      "sha256": "d7adab3c2b7a23101562f2284f605c035470c2ab108e97821ca0eba4ff6ef38c",
+      "identical": true
+    },
+    {
+      "source": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/hello-restored-check.log",
+      "snapshot": "artifacts/stage1-environment-review-2026-10-19/history/default-hello.log",
+      "bytes": 3084055,
+      "sha256": "64ab4f7c632052e43a57a9ba1912c97aa56f76f765e993d031333b1a7b197257",
+      "identical": true
+    }
+  ],
+  "checks": {
+    "build_exit_zero": true,
+    "run_exit_zero": true,
+    "exact_greeting": true,
+    "ip_matches": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "no_failure_marker": true,
+    "seed_1": true,
+    "binary_contains_greeting": true,
+    "live_source_matches": true,
+    "live_binary_matches": true
+  },
+  "hello_output_lines": [
+    {
+      "line": 2,
+      "text": "Using seed = 1"
+    },
+    {
+      "line": 7,
+      "text": "The first instruction of core 0 has commited. Difftest enabled. "
+    },
+    {
+      "line": 8,
+      "text": "hello xiangshan, I am Meijie, IP address: 172.26.232.122"
+    },
+    {
+      "line": 19058,
+      "text": "[PERF ][time=                8223] SimTop.l_soc.l3cacheOpt.slices_0.mshrAlloc: mshr_lateCore 0: \u001b[32mHIT GOOD TRAP at pc = 0x8000014c"
+    },
+    {
+      "line": 19060,
+      "text": "\u001b[0m\u001b[34mSeed=1 Guest cycle spent: 8224 (this will be different from cycleCnt if emu loads a snapshot)"
+    }
+  ],
+  "nemu_source_build": {
+    "config_exists": false,
+    "build_exists": false
+  },
+  "suggested_native_core_copy_exists": false,
+  "original_run_files_after": {
+    "build-command.txt": "2529a1f77f693a44f6feaedcf48ac1ba77cbe028c1feb6368e8e6211581bf73a",
+    "build-end.txt": "eedce0b8ce1d565e67aa9c77f0d4cbfd6eb68fa69fcf93fd27b0e6cd83b7fb64",
+    "build-result.txt": "e2011d96c2d5e6dc239db80a50ae098f25e59d5e8394c44c35bd7a108e5078c7",
+    "build-start.txt": "eedce0b8ce1d565e67aa9c77f0d4cbfd6eb68fa69fcf93fd27b0e6cd83b7fb64",
+    "build.log": "6ad6678e10c2f4eba5b29cf4903a2862fe51647dead261af37244f59422d15a8",
+    "environment.txt": "a27abb7acf8f3a240ab302279dcb4a39beafcaccc6e8ff76473970489eabd5ac",
+    "git-nexus-am.txt": "ba0fa41e10e243e22381c742ac136139756aea2c84d214c2292eb8eef97018b4",
+    "git-XiangShan.txt": "faf277e3cc48ab6bf75d4809fe45cdc167b65f4725261938f8750e1937707c84",
+    "git-XiangShan_difftest.txt": "9e852da1bb4a8223612fa7dceb793a9369de0b76e18cb82d84d1b9e493d97668",
+    "git-XiangShan_ready-to-run.txt": "46d27cb020e9f014081343a9f887b62e91bc47bc44944f180f9a2be0db3512cc",
+    "hello-meijie-result.png": "44d0e0086f88e923d2a46e8fc5ed1941050917184405b5a80bfca6ce50012c13",
+    "hello-meijie-riscv64-xs.bin": "195dca0c3a748fea70efa84e1d63cd3926098189f61fc6babe80214425b1f479",
+    "hello-meijie-riscv64-xs.elf": "36239fedc250746563dad77637fb944fa6444352e91da5b9112ecbd6214b98d0",
+    "hello-meijie-riscv64-xs.txt": "9d973862b211a41b35b335443419357ac4e51fc95f62c8dc3e25818a4806c1d7",
+    "hello.c": "9e065a55eeccd8b5ce2af41e6a128c3a4f7604b097ee089972e45282a0ccab6c",
+    "ip-address.txt": "31884846a4ad24ea2c26fa6ae65d97c07f8d7443581ed882affb3c7c0d481a40",
+    "ip-result.txt": "8b7eb1cfc977141cc23c603039036bfd5c051c480c92789b652c7793920ce75f",
+    "Makefile": "83756211935fd347931abff704be1d1d0b4300b214c799187b83c593df206fb5",
+    "reused-emu-origin.txt": "d7adab3c2b7a23101562f2284f605c035470c2ab108e97821ca0eba4ff6ef38c",
+    "run-command.txt": "d0e38ee69c1baea1a8adf66c4ae0d0202c2c7b1d03589d05365a90b8f9e4d161",
+    "run-end.txt": "d51e93ef6b3e9915fb1304fbcc8d00ad66bf2c03f35c228334ac7f9133f8a07a",
+    "run-result.txt": "ddae251850197beb35563f1ccbc60871fea451132dde8de2e5435d0cd7deb943",
+    "run-start.txt": "caa0e69270d42879752a2f8cc1906c49be32f72923b9d97ab45322a9722a2c64",
+    "run.log": "f7ae063db2536f2cf59a8bc64571b585a717acd5c77094c4c293996ea94b8ac6",
+    "sha256.txt": "1c9f3a63927a6a8ba6886a95e32c2d4eaa34066e950914c5af7e455608ea05cb"
+  },
+  "original_run_unchanged": true,
+  "hello_verified": true
+}

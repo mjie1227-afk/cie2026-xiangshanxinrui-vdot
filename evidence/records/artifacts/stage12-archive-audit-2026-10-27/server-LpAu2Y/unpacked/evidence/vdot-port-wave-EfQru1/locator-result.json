@@ -1,0 +1,62 @@
+{
+  "status": "candidate-architecture-and-window-ready",
+  "scope": "candidate architecture and text locator only",
+  "contention_accepted": false,
+  "cwd": "/root/private_data/mj/xiangshan",
+  "argv": [
+    "/root/private_data/mj/xiangshan/evidence/vdot-port-candidate-package-ICvzS7/package/run.py",
+    "/root/private_data/mj/xiangshan/evidence/vdot-port-candidate-package-ICvzS7/package",
+    "/root/private_data/mj/xiangshan/evidence/vdot-port-candidate-eDAWKv"
+  ],
+  "python": "3.11.9 (main, Apr  5 2026, 19:32:29) [GCC 11.4.0]",
+  "seed": 1,
+  "stages": [
+    {
+      "name": "build",
+      "exit": 0,
+      "wall_seconds": 4.175
+    },
+    {
+      "name": "architecture",
+      "exit": 0,
+      "wall_seconds": 173.937
+    },
+    {
+      "name": "prefix",
+      "exit": 0,
+      "wall_seconds": 61.313
+    }
+  ],
+  "window": {
+    "begin": 5978,
+    "end": 8258,
+    "basis": "coarse GTimer brackets including gate producer; validate against captured clock"
+  },
+  "first_cluster": [
+    {
+      "line": 135613,
+      "pc": "0x80000170",
+      "word": "0x82112057",
+      "name": "contend_0_gate",
+      "previous_perf_time": 7002,
+      "next_perf_time": 8002
+    },
+    {
+      "line": 135614,
+      "pc": "0x80000174",
+      "word": "0x20818b",
+      "name": "contend_0_dot",
+      "previous_perf_time": 7002,
+      "next_perf_time": 8002
+    },
+    {
+      "line": 135615,
+      "pc": "0x80000178",
+      "word": "0x52082257",
+      "name": "contend_0_iota",
+      "previous_perf_time": 7002,
+      "next_perf_time": 8002
+    }
+  ],
+  "application": "/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-port-contend-v1/build/vdot-port-contend-v1-riscv64-xs.bin"
+}

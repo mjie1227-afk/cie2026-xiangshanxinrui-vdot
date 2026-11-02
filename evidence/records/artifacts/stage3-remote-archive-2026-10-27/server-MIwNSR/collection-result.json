@@ -1,0 +1,19 @@
+{
+  "status": "archive-verified-for-declared-scope",
+  "exit": 0,
+  "source_runs": 10,
+  "files": 264,
+  "source_bytes": 55489484,
+  "excluded_files": 1,
+  "archive": "/root/private_data/mj/xiangshan/evidence/stage3-log-archive-MIwNSR/stage3-logs.tar.gz",
+  "archive_bytes": 2233424,
+  "sha256": "48882ae468149dadc6aadb2303cb9d25f035f5feea49e13cd945c8e3baf54cc8",
+  "wall_seconds": 13.921,
+  "argv": [
+    "/root/private_data/mj/xiangshan/evidence/stage3-log-archive-MIwNSR/collect.py",
+    "/root/private_data/mj/xiangshan",
+    "/root/private_data/mj/xiangshan/evidence/stage3-log-archive-MIwNSR"
+  ],
+  "new_simulation": false,
+  "new_build": false
+}

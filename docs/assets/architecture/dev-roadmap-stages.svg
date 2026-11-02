@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="810" viewBox="0 0 1180 810" role="img" aria-label="vdot项目三阶段任务与证据">
+<rect width="100%" height="100%" fill="#f5f7fa"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="40" y="52" font-size="28" font-weight="700" fill="#173047">vdot项目三阶段任务与证据</text>
+<text x="40" y="88" font-size="17" fill="#526375">固定版本、单核MinimalConfig；阶段结果与最终交付分别记录。</text>
+<rect x="40" y="120" width="1100" height="166" rx="10" fill="white" stroke="#c7d3df"/>
+<rect x="40" y="120" width="1100" height="44" rx="10" fill="#276887"/>
+<text x="60" y="149" font-size="21" font-weight="700" fill="white">阶段一：环境与基础指令</text>
+<text x="60" y="198" font-size="18" fill="#20374b">部署与构建记录 → 定制Hello与IP输出 → VADD动态执行链</text>
+<text x="60" y="229" font-size="18" fill="#20374b">产物：环境报告、运行日志、退出码、VADD的16张证据图</text>
+<text x="60" y="260" font-size="18" fill="#20374b">范围：当时的预编译NEMU参考库；历史未记录字段继续披露</text>
+<rect x="40" y="310" width="1100" height="166" rx="10" fill="white" stroke="#c7d3df"/>
+<rect x="40" y="310" width="1100" height="44" rx="10" fill="#5360a1"/>
+<text x="60" y="339" font-size="21" font-weight="700" fill="white">阶段二：指令设计与RTL实现</text>
+<text x="60" y="388" font-size="18" fill="#20374b">八路signed INT8乘法 → S1寄存 → 三级加法树 → S2寄存与完整结果选择</text>
+<text x="60" y="419" font-size="18" fill="#20374b">产物：源码与补丁；smoke 7、异常64、重叠60、流水套件120例</text>
+<text x="60" y="450" font-size="18" fill="#20374b">波形：正常、取消、CSR请求、混发及发射前共享端口竞争代表实例</text>
+<rect x="40" y="500" width="1100" height="166" rx="10" fill="white" stroke="#c7d3df"/>
+<rect x="40" y="500" width="1100" height="44" rx="10" fill="#237562"/>
+<text x="60" y="529" font-size="21" font-weight="700" fill="white">阶段三：参考模型、等价与性能</text>
+<text x="60" y="578" font-size="18" fill="#20374b">NEMU扩展；本地API 268例通过、10例不适用；两RVV基线144例/432调用</text>
+<text x="60" y="609" font-size="18" fill="#20374b">依赖链增量比6.71；八路N128整窗比2.40；小数组N128比1.0009、基本持平</text>
+<text x="60" y="640" font-size="18" fill="#20374b">产物：原始样本、统计、日志与报告；具体瓶颈和综合STA结果尚未取得</text>
+<rect x="40" y="690" width="1100" height="96" rx="10" fill="white" stroke="#c7d3df"/>
+<rect x="40" y="690" width="1100" height="44" rx="10" fill="#596776"/>
+<text x="60" y="719" font-size="21" font-weight="700" fill="white">交付检查</text>
+<text x="60" y="768" font-size="18" fill="#20374b">正文候选稿已整理；三段视频、最终导出版式、作品包与提交回执仍待完成。</text>
+</g></svg>

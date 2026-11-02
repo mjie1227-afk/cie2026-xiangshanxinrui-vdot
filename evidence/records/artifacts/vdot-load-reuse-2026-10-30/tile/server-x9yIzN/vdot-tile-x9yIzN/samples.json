@@ -1,0 +1,632 @@
+[
+  {
+    "warm": 1,
+    "round": 0,
+    "position": 0,
+    "variant": 0,
+    "cycles": 100,
+    "instret": 6,
+    "consumer": 1928
+  },
+  {
+    "warm": 1,
+    "round": 0,
+    "position": 1,
+    "variant": 1,
+    "cycles": 1303,
+    "instret": 950,
+    "consumer": 1952
+  },
+  {
+    "warm": 1,
+    "round": 0,
+    "position": 2,
+    "variant": 2,
+    "cycles": 1318,
+    "instret": 1115,
+    "consumer": 1952
+  },
+  {
+    "warm": 1,
+    "round": 0,
+    "position": 3,
+    "variant": 3,
+    "cycles": 789,
+    "instret": 694,
+    "consumer": 1952
+  },
+  {
+    "warm": 1,
+    "round": 0,
+    "position": 4,
+    "variant": 4,
+    "cycles": 1120,
+    "instret": 859,
+    "consumer": 1952
+  },
+  {
+    "warm": 1,
+    "round": 1,
+    "position": 0,
+    "variant": 1,
+    "cycles": 1122,
+    "instret": 950,
+    "consumer": 1952
+  },
+  {
+    "warm": 1,
+    "round": 1,
+    "position": 1,
+    "variant": 2,
+    "cycles": 1326,
+    "instret": 1115,
+    "consumer": 1952
+  },
+  {
+    "warm": 1,
+    "round": 1,
+    "position": 2,
+    "variant": 3,
+    "cycles": 787,
+    "instret": 694,
+    "consumer": 1952
+  },
+  {
+    "warm": 1,
+    "round": 1,
+    "position": 3,
+    "variant": 4,
+    "cycles": 1091,
+    "instret": 859,
+    "consumer": 1952
+  },
+  {
+    "warm": 1,
+    "round": 1,
+    "position": 4,
+    "variant": 0,
+    "cycles": 100,
+    "instret": 6,
+    "consumer": 1928
+  },
+  {
+    "warm": 1,
+    "round": 2,
+    "position": 0,
+    "variant": 2,
+    "cycles": 1262,
+    "instret": 1115,
+    "consumer": 1952
+  },
+  {
+    "warm": 1,
+    "round": 2,
+    "position": 1,
+    "variant": 3,
+    "cycles": 790,
+    "instret": 694,
+    "consumer": 1952
+  },
+  {
+    "warm": 1,
+    "round": 2,
+    "position": 2,
+    "variant": 4,
+    "cycles": 1044,
+    "instret": 859,
+    "consumer": 1952
+  },
+  {
+    "warm": 1,
+    "round": 2,
+    "position": 3,
+    "variant": 0,
+    "cycles": 100,
+    "instret": 6,
+    "consumer": 1928
+  },
+  {
+    "warm": 1,
+    "round": 2,
+    "position": 4,
+    "variant": 1,
+    "cycles": 1075,
+    "instret": 950,
+    "consumer": 1952
+  },
+  {
+    "warm": 1,
+    "round": 3,
+    "position": 0,
+    "variant": 3,
+    "cycles": 788,
+    "instret": 694,
+    "consumer": 1952
+  },
+  {
+    "warm": 1,
+    "round": 3,
+    "position": 1,
+    "variant": 4,
+    "cycles": 1043,
+    "instret": 859,
+    "consumer": 1952
+  },
+  {
+    "warm": 1,
+    "round": 3,
+    "position": 2,
+    "variant": 0,
+    "cycles": 100,
+    "instret": 6,
+    "consumer": 1928
+  },
+  {
+    "warm": 1,
+    "round": 3,
+    "position": 3,
+    "variant": 1,
+    "cycles": 1092,
+    "instret": 950,
+    "consumer": 1952
+  },
+  {
+    "warm": 1,
+    "round": 3,
+    "position": 4,
+    "variant": 2,
+    "cycles": 1262,
+    "instret": 1115,
+    "consumer": 1952
+  },
+  {
+    "warm": 1,
+    "round": 4,
+    "position": 0,
+    "variant": 4,
+    "cycles": 1044,
+    "instret": 859,
+    "consumer": 1952
+  },
+  {
+    "warm": 1,
+    "round": 4,
+    "position": 1,
+    "variant": 0,
+    "cycles": 100,
+    "instret": 6,
+    "consumer": 1928
+  },
+  {
+    "warm": 1,
+    "round": 4,
+    "position": 2,
+    "variant": 1,
+    "cycles": 1076,
+    "instret": 950,
+    "consumer": 1952
+  },
+  {
+    "warm": 1,
+    "round": 4,
+    "position": 3,
+    "variant": 2,
+    "cycles": 1262,
+    "instret": 1115,
+    "consumer": 1952
+  },
+  {
+    "warm": 1,
+    "round": 4,
+    "position": 4,
+    "variant": 3,
+    "cycles": 790,
+    "instret": 694,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 5,
+    "position": 0,
+    "variant": 0,
+    "cycles": 100,
+    "instret": 6,
+    "consumer": 1928
+  },
+  {
+    "warm": 0,
+    "round": 5,
+    "position": 1,
+    "variant": 1,
+    "cycles": 1076,
+    "instret": 950,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 5,
+    "position": 2,
+    "variant": 2,
+    "cycles": 1262,
+    "instret": 1115,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 5,
+    "position": 3,
+    "variant": 3,
+    "cycles": 790,
+    "instret": 694,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 5,
+    "position": 4,
+    "variant": 4,
+    "cycles": 1043,
+    "instret": 859,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 6,
+    "position": 0,
+    "variant": 1,
+    "cycles": 1076,
+    "instret": 950,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 6,
+    "position": 1,
+    "variant": 2,
+    "cycles": 1262,
+    "instret": 1115,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 6,
+    "position": 2,
+    "variant": 3,
+    "cycles": 788,
+    "instret": 694,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 6,
+    "position": 3,
+    "variant": 4,
+    "cycles": 1044,
+    "instret": 859,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 6,
+    "position": 4,
+    "variant": 0,
+    "cycles": 100,
+    "instret": 6,
+    "consumer": 1928
+  },
+  {
+    "warm": 0,
+    "round": 7,
+    "position": 0,
+    "variant": 2,
+    "cycles": 1269,
+    "instret": 1115,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 7,
+    "position": 1,
+    "variant": 3,
+    "cycles": 789,
+    "instret": 694,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 7,
+    "position": 2,
+    "variant": 4,
+    "cycles": 1044,
+    "instret": 859,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 7,
+    "position": 3,
+    "variant": 0,
+    "cycles": 100,
+    "instret": 6,
+    "consumer": 1928
+  },
+  {
+    "warm": 0,
+    "round": 7,
+    "position": 4,
+    "variant": 1,
+    "cycles": 1079,
+    "instret": 950,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 8,
+    "position": 0,
+    "variant": 3,
+    "cycles": 792,
+    "instret": 694,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 8,
+    "position": 1,
+    "variant": 4,
+    "cycles": 1041,
+    "instret": 859,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 8,
+    "position": 2,
+    "variant": 0,
+    "cycles": 100,
+    "instret": 6,
+    "consumer": 1928
+  },
+  {
+    "warm": 0,
+    "round": 8,
+    "position": 3,
+    "variant": 1,
+    "cycles": 1077,
+    "instret": 950,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 8,
+    "position": 4,
+    "variant": 2,
+    "cycles": 1266,
+    "instret": 1115,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 9,
+    "position": 0,
+    "variant": 4,
+    "cycles": 1044,
+    "instret": 859,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 9,
+    "position": 1,
+    "variant": 0,
+    "cycles": 101,
+    "instret": 6,
+    "consumer": 1928
+  },
+  {
+    "warm": 0,
+    "round": 9,
+    "position": 2,
+    "variant": 1,
+    "cycles": 1076,
+    "instret": 950,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 9,
+    "position": 3,
+    "variant": 2,
+    "cycles": 1269,
+    "instret": 1115,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 9,
+    "position": 4,
+    "variant": 3,
+    "cycles": 787,
+    "instret": 694,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 10,
+    "position": 0,
+    "variant": 0,
+    "cycles": 100,
+    "instret": 6,
+    "consumer": 1928
+  },
+  {
+    "warm": 0,
+    "round": 10,
+    "position": 1,
+    "variant": 1,
+    "cycles": 1080,
+    "instret": 950,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 10,
+    "position": 2,
+    "variant": 2,
+    "cycles": 1268,
+    "instret": 1115,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 10,
+    "position": 3,
+    "variant": 3,
+    "cycles": 790,
+    "instret": 694,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 10,
+    "position": 4,
+    "variant": 4,
+    "cycles": 1042,
+    "instret": 859,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 11,
+    "position": 0,
+    "variant": 1,
+    "cycles": 1077,
+    "instret": 950,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 11,
+    "position": 1,
+    "variant": 2,
+    "cycles": 1270,
+    "instret": 1115,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 11,
+    "position": 2,
+    "variant": 3,
+    "cycles": 790,
+    "instret": 694,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 11,
+    "position": 3,
+    "variant": 4,
+    "cycles": 1041,
+    "instret": 859,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 11,
+    "position": 4,
+    "variant": 0,
+    "cycles": 100,
+    "instret": 6,
+    "consumer": 1928
+  },
+  {
+    "warm": 0,
+    "round": 12,
+    "position": 0,
+    "variant": 2,
+    "cycles": 1262,
+    "instret": 1115,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 12,
+    "position": 1,
+    "variant": 3,
+    "cycles": 787,
+    "instret": 694,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 12,
+    "position": 2,
+    "variant": 4,
+    "cycles": 1043,
+    "instret": 859,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 12,
+    "position": 3,
+    "variant": 0,
+    "cycles": 100,
+    "instret": 6,
+    "consumer": 1928
+  },
+  {
+    "warm": 0,
+    "round": 12,
+    "position": 4,
+    "variant": 1,
+    "cycles": 1080,
+    "instret": 950,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 13,
+    "position": 0,
+    "variant": 3,
+    "cycles": 790,
+    "instret": 694,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 13,
+    "position": 1,
+    "variant": 4,
+    "cycles": 1044,
+    "instret": 859,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 13,
+    "position": 2,
+    "variant": 0,
+    "cycles": 100,
+    "instret": 6,
+    "consumer": 1928
+  },
+  {
+    "warm": 0,
+    "round": 13,
+    "position": 3,
+    "variant": 1,
+    "cycles": 1087,
+    "instret": 950,
+    "consumer": 1952
+  },
+  {
+    "warm": 0,
+    "round": 13,
+    "position": 4,
+    "variant": 2,
+    "cycles": 1269,
+    "instret": 1115,
+    "consumer": 1952
+  }
+]

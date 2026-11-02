@@ -1,0 +1,77 @@
+[
+  {
+    "source": "artifacts\\vdot-mtval-fix-2026-10-24\\delivery-v2\\vdot-mtval-fix.tar.gz",
+    "bytes": 15637,
+    "reason": "large/generated/archive or prior editing copy"
+  },
+  {
+    "source": "artifacts\\runs\\S1-01\\hello-meijie-20261019-120654-8FtdkQ\\hello-meijie-riscv64-xs.bin",
+    "bytes": 5696,
+    "reason": "large/generated/archive or prior editing copy"
+  },
+  {
+    "source": "artifacts\\runs\\S1-01\\hello-meijie-20261019-120654-8FtdkQ\\hello-meijie-riscv64-xs.elf",
+    "bytes": 46632,
+    "reason": "large/generated/archive or prior editing copy"
+  },
+  {
+    "source": "artifacts\\stage3-remote-archive-2026-10-27\\server-MIwNSR\\stage3-logs.tar.gz",
+    "bytes": 2233424,
+    "reason": "large/generated/archive or prior editing copy"
+  },
+  {
+    "source": "artifacts\\stage12-archive-audit-2026-10-27\\server-LpAu2Y\\stage2-missing-evidence.tar.gz",
+    "bytes": 90483004,
+    "reason": "large/generated/archive or prior editing copy"
+  },
+  {
+    "source": "artifacts\\stage12-archive-audit-2026-10-27\\server-LpAu2Y\\unpacked\\evidence\\vdot-mixed-wave-FNmKGI\\mixed-window.vcd",
+    "bytes": 477548918,
+    "reason": "large/generated/archive or prior editing copy"
+  },
+  {
+    "source": "artifacts\\stage12-archive-audit-2026-10-27\\server-LpAu2Y\\unpacked\\evidence\\vdot-port-candidate-eDAWKv\\prefix.log",
+    "bytes": 46812806,
+    "reason": "large/generated/archive or prior editing copy"
+  },
+  {
+    "source": "artifacts\\stage12-archive-audit-2026-10-27\\server-LpAu2Y\\unpacked\\evidence\\vdot-wave-window-Cpa0HX\\cancel-window.vcd",
+    "bytes": 457224402,
+    "reason": "large/generated/archive or prior editing copy"
+  },
+  {
+    "source": "artifacts\\stage12-archive-audit-2026-10-27\\server-LpAu2Y\\unpacked\\evidence\\vdot-mixed-wave-FNmKGI\\mixed-window.vcd",
+    "bytes": 477548918,
+    "reason": "large/generated/archive or prior editing copy"
+  },
+  {
+    "source": "artifacts\\stage12-archive-audit-2026-10-27\\server-LpAu2Y\\unpacked\\evidence\\vdot-port-candidate-eDAWKv\\prefix.log",
+    "bytes": 46812806,
+    "reason": "large/generated/archive or prior editing copy"
+  },
+  {
+    "source": "artifacts\\stage12-archive-audit-2026-10-27\\server-LpAu2Y\\unpacked\\evidence\\vdot-wave-window-Cpa0HX\\cancel-window.vcd",
+    "bytes": 457224402,
+    "reason": "large/generated/archive or prior editing copy"
+  },
+  {
+    "source": "artifacts\\vdot-load-reuse-2026-10-30\\load\\server-L4TEPC\\vdot-load-retry-L4TEPC\\vdot-load-v1-riscv64-xs.bin",
+    "bytes": 16696,
+    "reason": "large/generated/archive or prior editing copy"
+  },
+  {
+    "source": "artifacts\\vdot-load-reuse-2026-10-30\\load\\server-L4TEPC\\vdot-load-retry-L4TEPC\\vdot-load-v1-riscv64-xs.elf",
+    "bytes": 67504,
+    "reason": "large/generated/archive or prior editing copy"
+  },
+  {
+    "source": "artifacts\\vdot-load-reuse-2026-10-30\\tile\\server-x9yIzN\\vdot-tile-x9yIzN\\vdot-tile-v1-riscv64-xs.bin",
+    "bytes": 11768,
+    "reason": "large/generated/archive or prior editing copy"
+  },
+  {
+    "source": "artifacts\\vdot-load-reuse-2026-10-30\\tile\\server-x9yIzN\\vdot-tile-x9yIzN\\vdot-tile-v1-riscv64-xs.elf",
+    "bytes": 59896,
+    "reason": "large/generated/archive or prior editing copy"
+  }
+]

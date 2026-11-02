@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "changed_documents": [
+    "artifacts/stage3-remote-archive-2026-10-27/README.md",
+    "reports/stage3/README.md",
+    "reports/stage3/delivery.md",
+    "docs/HANDOFF.md",
+    "PROGRESS.md",
+    "docs/development-history.md",
+    "docs/verification.md"
+  ],
+  "links_checked": 14,
+  "actual_download_files_present": [],
+  "local_archive_verified": false
+}

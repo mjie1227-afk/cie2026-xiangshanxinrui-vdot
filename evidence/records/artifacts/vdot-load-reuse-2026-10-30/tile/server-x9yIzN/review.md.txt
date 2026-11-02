@@ -1,0 +1,77 @@
+# tile 完整日志核验
+
+状态：通过。原始 LOG_DIR 只读保留；本地未启动仿真或构建。
+
+新应用构建和完整运行均有日志。
+
+原始文件 31 个；25 预热、45 正式样本。整核实际耗时 2768.500 秒。
+
+## 全部逐轮周期
+
+| 变体 | 预热 1～5 | 正式 1～9 | 中位数 | 最小～最大 | 退休条数 |
+|---|---|---|---:|---|---:|
+| empty | 100, 100, 100, 100, 100 | 100, 100, 100, 100, 101, 100, 100, 100, 100 | 100 | 100～101 | 6 |
+| native_independent | 1303, 1122, 1075, 1092, 1076 | 1076, 1076, 1079, 1077, 1076, 1080, 1077, 1080, 1087 | 1077 | 1076～1087 | 950 |
+| rvv_mf2_independent | 1318, 1326, 1262, 1262, 1262 | 1262, 1262, 1269, 1266, 1269, 1268, 1270, 1262, 1269 | 1268 | 1262～1270 | 1115 |
+| native_reuse | 789, 787, 790, 788, 790 | 790, 788, 789, 792, 787, 790, 790, 787, 790 | 790 | 787～792 | 694 |
+| rvv_mf2_reuse | 1120, 1091, 1044, 1043, 1044 | 1043, 1044, 1044, 1041, 1044, 1042, 1041, 1043, 1044 | 1043 | 1041～1044 | 859 |
+
+逐轮编号仅用于阅读；原始 round 为 0～13，前 5 轮预热。采用全部正式样本的中位数，不减去空对照，不筛选最快轮次。
+
+## 结果口径
+
+同一实现的优化前后比较与同一组织的 RVV-mf2 / VDot 比较分别计算。两组任务不同，不跨组计算加速比。全程计数含所有变体、预热、初始化、自检与打印，不分摊为单个内核的停顿比例。
+
+## 检查记录
+
+- matrix matches local delivered matrix：通过
+- package digest：通过
+- matrix matches archive：通过
+- runner matches local source：通过
+- source archive/hash/local main.c：通过
+- source archive/hash/local cases.S：通过
+- source archive/hash/local Makefile：通过
+- accepted prior run matches local archive：通过
+- core reference config flash before/after match baseline：通过
+- downloaded BIN matches runtime identity：通过
+- completed result totals：通过
+- all recorded stages exit zero：通过
+- wrapper exit zero：通过
+- build and tee exit zero：通过
+- runtime argv：通过
+- recomputed runtime matches：通过
+- PASS DiffTest reference GOOD TRAP without failure or limit：通过
+- all raw samples equal JSON and CSV：通过
+- warmup/formal totals：通过
+- statistics and comparisons recalculated：通过
+- console stats and identities：通过
+- user-paste stats and identities：通过
+- BIN kernels and timing boundaries match delivered machine code：通过
+- disassembly matches BIN empty：通过
+- disassembly matches BIN native_independent：通过
+- disassembly matches BIN rvv_mf2_independent：通过
+- disassembly matches BIN native_reuse：通过
+- disassembly matches BIN rvv_mf2_reuse：通过
+- ELF architecture：通过
+- ELF allocated section matches BIN 0x80000000：通过
+- ELF allocated section matches BIN 0x80000a60：通过
+- ELF allocated section matches BIN 0x80000d5e：通过
+- ELF allocated section matches BIN 0x80000d60：通过
+- ELF allocated section matches BIN 0x80000d7a：通过
+- ELF allocated section matches BIN 0x80000d92：通过
+- ELF allocated section matches BIN 0x80000d9e：通过
+- ELF allocated section matches BIN 0x80000dca：通过
+- ELF allocated section matches BIN 0x80000dcc：通过
+- ELF allocated section matches BIN 0x80000e90：通过
+- ELF allocated section matches BIN 0x800011c0：通过
+- ELF allocated section matches BIN 0x800014a8：通过
+- ELF allocated section matches BIN 0x80001802：通过
+- ELF allocated section matches BIN 0x8000180a：通过
+- ELF allocated section matches BIN 0x80001f18：通过
+- ELF allocated section matches BIN 0x80001f50：通过
+- ELF allocated section matches BIN 0x80002768：通过
+- ELF allocated section matches BIN 0x80002840：通过
+- ELF symbols match kernel nm records：通过
+- nine complete full-run counters match log：通过
+- wrapper and emulator elapsed time agree：通过
+- raw files unchanged by review：通过

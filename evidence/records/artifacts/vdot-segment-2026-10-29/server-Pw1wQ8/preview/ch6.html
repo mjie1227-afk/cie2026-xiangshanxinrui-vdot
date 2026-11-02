@@ -1,0 +1,208 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>香山整核集成与关键控制路径</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#eef2f5;color:#243747;font-family:"Microsoft YaHei",sans-serif;line-height:1.8}main{max-width:1180px;margin:24px auto;padding:32px 44px 60px;background:white}h1{font-size:29px;line-height:1.4;margin:18px 0 24px}h2{font-size:23px;border-bottom:1px solid #cddbe5;padding-top:12px;margin-top:32px}h3{font-size:19px;margin-top:26px}h4{font-size:17px}p,li{font-size:16px}li{margin:5px 0}a{color:#146787;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}table{border-collapse:collapse;width:100%;table-layout:auto;margin:16px 0 25px}th,td{border:1px solid #cedbe4;padding:8px 10px;text-align:left;font-size:14px;vertical-align:top;overflow-wrap:anywhere}th{background:#edf4f7}td[style*="text-align:right"],th[style*="text-align:right"]{white-space:nowrap}pre{background:#f2f6f8;border-left:3px solid #2d728f;padding:15px;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.65;font-size:13px}code{font-family:Consolas,"Microsoft YaHei",monospace;overflow-wrap:anywhere}img{max-width:100%;height:auto;display:block;margin:18px auto 8px}figure{margin:22px 0}figcaption{font-size:14px;color:#455f70;line-height:1.65}blockquote{border-left:3px solid #7699aa;padding-left:15px;margin:18px 0;color:#45616f}nav{font-size:14px;border-bottom:1px solid #dce5eb;padding-bottom:14px}nav a{margin-right:20px}hr{border:0;border-top:1px solid #dce5eb;margin:28px 0}.cover{padding-bottom:25px}.chapter{margin-top:50px}.source-ref{color:#536a77;font-size:0.9em;overflow-wrap:anywhere}.toc{padding:20px;background:#f3f7fa}.toc li{margin:8px 0}@page{size:A4;margin:18mm 15mm 17mm}@media print{body{background:white;line-height:1.65}main{margin:0;padding:0;max-width:none}nav{display:none}.cover{break-after:page}.chapter{break-before:page;margin-top:0}h1{font-size:22pt}h2{font-size:16pt;margin-top:20px}h3{font-size:13pt}h4{font-size:11pt}p,li{font-size:10pt}td,th{font-size:8.5pt;padding:5px 6px}table{margin:10px 0 16px;break-inside:avoid;break-before:avoid}thead{display:table-header-group}tr{break-inside:avoid}pre{font-size:7.8pt;line-height:1.5;padding:9px;break-inside:auto}figure{break-inside:avoid;margin:12px 0}figure img{max-height:195mm;object-fit:contain}figcaption{font-size:8.5pt}h1,h2,h3,h4,.table-caption{break-after:avoid}.wave-evidence{break-inside:avoid}p{orphans:3;widows:3}.source-ref{font-size:8pt}a{color:#146787}blockquote{margin:10px 0}td[style*="text-align:right"]{white-space:normal}}@media print{pre{break-inside:avoid}.materials table{break-inside:auto;break-before:auto}.materials>p{break-after:avoid}.materials th:first-child,.materials td:first-child{width:13mm}.materials td{font-size:8pt}hr{margin:10px 0}}.materials td:last-child code{word-break:break-all}.materials th:nth-child(2){min-width:35mm}.materials table:last-of-type th:nth-child(2){width:40mm}@media print{.materials h1{font-size:20pt}.materials table{break-inside:auto}.materials table:first-of-type th:first-child{width:34mm}.materials table:nth-of-type(2) th:first-child{width:38mm}.materials td:last-child{line-height:1.6}.materials p{break-after:auto}}@media print{.chapter p:has(+ pre){break-after:avoid}.chapter img[alt*="Hello终端"]{max-height:140mm;width:auto}}</style><main><nav><a href="index.html">总目录</a><a href="ch5.html">数据通路</a><a href="ch8.html">协同仿真</a><a href="ch10.html">延迟与性能</a></nav><h1 id="香山整核集成与关键控制路径">香山整核集成与关键控制路径</h1>
+<p><strong>本文要点</strong></p>
+<ul>
+<li><code>vdot.vv</code> 保持向量指令分类，以单 uop 接入 VFEX0，复用既有源读取、唤醒和退休路径。</li>
+<li>oldVd 作为显式源依赖，使合法 VL=0 的新物理目的获得完整旧值。</li>
+<li>取消由流水有效位、完整 ROB 身份和后端恢复共同处理；完成、物理写入与退休是不同事件。</li>
+<li><code>mtval</code> 修复通过 ROB 保存并重建故障指令字段，恢复新增指令与所选参考模型的一致性。</li>
+<li>代表性波形验证了发射前共享端口竞争和退休侧 VS-dirty 请求，具体读数见第 7 章。</li>
+</ul>
+<h2 id="1-对象">1 对象</h2>
+<p>本章说明 VDot 功能单元接入香山后端所需的译码、依赖、异常和恢复路径。配置为单核 MinimalConfig、VLEN=128，数据通路与运算合同见<a href="ch5.html">第 5 章</a>。</p>
+<p class="table-caption">表 6-1　修改对象与接入关系。</p>
+<table>
+<thead>
+<tr>
+<th>部位</th>
+<th>修改</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>指令模式、向量分类与译码</td>
+<td>识别 custom-0 的 VDot 编码</td>
+<td>保留向量权限和类型检查</td>
+</tr>
+<tr>
+<td><code>DecodeUnit</code></td>
+<td>单 uop、单目的更新，声明 oldVd 依赖</td>
+<td>合法 VL=0 仍能保留完整目的</td>
+</tr>
+<tr>
+<td><code>FuType</code> / <code>FuConfig</code> / <code>Parameters</code></td>
+<td>注册源类型、唤醒属性和两拍配置，挂入 VFEX0</td>
+<td>接入已有调度和执行路径</td>
+</tr>
+<tr>
+<td><code>VDot</code></td>
+<td>算术、局部非法状态检查、结果选择与输出门控</td>
+<td>形成携带原 ROB/pdest 身份的完成结果</td>
+</tr>
+<tr>
+<td>ROB / <code>VdotTrapInst</code> / CSR</td>
+<td>保存功能性指令字段，经精确异常通路重建</td>
+<td>为 <code>mtval</code> 提供故障指令编码</td>
+</tr>
+</tbody>
+</table>
+<p>最终完整补丁已包含首版接入与 <code>mtval</code> 修复，复现时使用完整补丁及其依赖清单。</p>
+<p><strong>证据</strong>：<a href="file:///D:/Mayyyyyy/WorkSpaces/%E6%97%A5%E5%B8%B8%E5%B7%A5%E4%BD%9C%E5%8C%BA1/2026%E6%AF%94%E8%B5%9B%E8%A7%84%E5%88%92/RISCV_vdot/artifacts/vdot-mtval-fix-2026-10-24/delivery-v2">最终补丁与 manifest</a> · <a href="dae3c3d4bdd.html">运行身份索引</a></p>
+<h2 id="2-方法">2 方法</h2>
+<h3 id="21-单-uop-与旧目的依赖">2.1 单 uop 与旧目的依赖</h3>
+<p><strong>一条 <code>vdot.vv</code> 由一个 uop 承担八项点积。</strong> 以下为保存的 <code>DecodeUnit.scala</code> 摘录：</p>
+<pre><code class="language-scala">  when(inst.isVdot) {
+    io.deq.isComplex := true.B
+    io.deq.uopInfo.numOfUop := 1.U
+    io.deq.uopInfo.numOfWB := 1.U
+    io.deq.uopInfo.lmul := 1.U
+  }
+</code></pre>
+<p><code>isComplex</code> 保留向量复杂译码属性；<code>numOfUop</code> 和 <code>numOfWB</code> 限定该指令的内部拆分。<code>uopInfo.lmul</code> 是微操作信息字段，合法 LMUL=1 在 <code>vtype.vlmul</code> 中的编码为 0，两者属于不同表示。</p>
+<p>译码在 <code>isDependOldVd</code> 条件中加入 <code>inst.isVdot</code>。例如，逻辑 v3 原先映射 P10，本次重命名分配 P51；合法 VL=0 时，执行端把 P10 的值传给 P51，退休后保持架构 v3 的原内容。单纯关闭写使能会留下未获得旧值的新物理目的，因此保持路径仍需要源就绪、执行和退休。</p>
+<p><strong>证据</strong>：<a href="file:///D:/Mayyyyyy/WorkSpaces/%E6%97%A5%E5%B8%B8%E5%B7%A5%E4%BD%9C%E5%8C%BA1/2026%E6%AF%94%E8%B5%9B%E8%A7%84%E5%88%92/RISCV_vdot/artifacts/vdot-mtval-fix-2026-10-24/patch-fixture-v2/src/main/scala/xiangshan/backend/decode/DecodeUnit.scala">DecodeUnit.scala</a></p>
+<h3 id="22-投机取消与后端恢复">2.2 投机取消与后端恢复</h3>
+<p>VDot 用完整 ROB 指针的 <code>needFlush</code> 判断较老 redirect 是否覆盖本指令。指针包含 flag、value；判定还使用 redirect 的有效位和 level。末级输出门控为：</p>
+<pre><code class="language-scala">io.out.valid := fixValidVec.last &amp;&amp; !outCtrl.robIdx.needFlush(io.flush)
+</code></pre>
+<p>结果输出前到达的取消由流水有效位与门控处理。若较老分支在结果已经物理写入后才纠正路径，ROB 与重命名恢复使该结果不进入已提交架构状态。</p>
+<p class="table-caption">表 6-2　同一动态指令的三个检查点。</p>
+<table>
+<thead>
+<tr>
+<th>检查点</th>
+<th>判定依据</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>完成</td>
+<td>FU 输出 valid 与 ready 同时有效，ROB/pdest 对应</td>
+<td>执行结果被下游接受</td>
+</tr>
+<tr>
+<td>物理写入</td>
+<td>寄存器堆端口 wen、addr、data</td>
+<td>物理目的获得结果</td>
+</tr>
+<tr>
+<td>退休</td>
+<td><code>isCommit</code>、对应 lane 的 <code>commitValid</code> 与身份匹配</td>
+<td>按序形成架构可见状态</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-执行期异常与-mtval-信息通路">2.3 执行期异常与 <code>mtval</code> 信息通路</h3>
+<p><strong>修复在 ROB 分配时保留指令编码，并在对应指令发生精确异常时送往 CSR。</strong> 短 VL 的非法状态由执行单元发现，原有译码期异常信息通路没有为这条指令保存可用的完整指令字。新增 <code>VdotTrapInstTable</code> 用 ROB 槽位关联编码与动态身份：</p>
+<pre><code class="language-scala">  val isVdot = RegInit(VecInit(Seq.fill(RobSize)(false.B)))
+  val generation = Reg(Vec(RobSize, Bool()))
+  val fields = Reg(Vec(RobSize, UInt(16.W)))
+  for (a &lt;- io.alloc) {
+    when(a.valid) {
+      val idx = a.bits.robIdx.value
+      isVdot(idx) := VdotInstructions.VDOT_VV === a.bits.instr
+      generation(idx) := a.bits.robIdx.flag
+      fields(idx) := Cat(a.bits.instr(25), a.bits.instr(24,20),
+                        a.bits.instr(19,15), a.bits.instr(11,7))
+    }
+  }
+  val f = fields(io.head.value)
+  val word = Cat(0.U(6.W), f(15), f(14,10), f(9,5), 0.U(3.W), f(4,0), &quot;h0b&quot;.U(7.W))
+  val matched = isVdot(io.head.value) &amp;&amp; generation(io.head.value) === io.head.flag
+  // Same one-cycle capture as Rob.io.exception; no writeback-order arbitration.
+  io.out.valid := RegNext(io.trap &amp;&amp; io.illegal &amp;&amp; !io.interrupt &amp;&amp; matched, false.B)
+  io.out.bits := RegEnable(word, io.trap)
+</code></pre>
+<p><code>fields</code> 取 <code>vm</code>、<code>vs2</code>、<code>vs1</code>、<code>vd</code> 共 16 个可变位，重建时补回固定的 funct6、funct3 和 opcode <code>0x0b</code>。<code>isVdot</code> 区分指令类型，<code>generation</code> 与 ROB flag 一起区分循环复用的槽位，因此每槽共保存 18 位；MinimalConfig 的 48 个槽位对应 864 个存储字段位。</p>
+<p><code>io.head</code> 指向发生精确异常的队首指令。<code>trap &amp;&amp; illegal &amp;&amp; !interrupt &amp;&amp; matched</code> 选择属于该动态 VDot 的非法指令异常，并与 ROB 的异常信息同步寄存。CSR 侧通过以下选择逻辑接收重建指令；其他异常继续使用原有 <code>trapInstMod</code> 通路：</p>
+<pre><code class="language-scala">  csrMod.io.trapInst := xiangshan.backend.rob.VdotTrapInstSelect(
+    csrIn.exception.valid, csrIn.exception.bits.isInterrupt,
+    csrIn.exception.bits.exceptionVec(EX_II), csrIn.exception.bits.vdotTrapInst,
+    trapInstMod.io.currentTrapInst)
+</code></pre>
+<p>这条信息路径依次为“ROB 分配保存编码 → 队首精确异常匹配 → 重建指令字 → CSR 选择 → mtval”，与执行结果的先后写回顺序无关。</p>
+<p>非法指令陷阱是否向 <code>mtval</code> 提供故障指令位，是 RISC-V 特权规范允许的实现选择。修复目标是新增指令与本实验参考模型在该字段上的一致性。差分失败、故障定位与修复后回归完整列于第三阶段的 NEMU 与 DiffTest 报告。</p>
+<p><strong>证据</strong>：<a href="file:///D:/Mayyyyyy/WorkSpaces/%E6%97%A5%E5%B8%B8%E5%B7%A5%E4%BD%9C%E5%8C%BA1/2026%E6%AF%94%E8%B5%9B%E8%A7%84%E5%88%92/RISCV_vdot/artifacts/vdot-mtval-fix-2026-10-24/patch-fixture-v2/src/main/scala/xiangshan/backend/rob/VdotTrapInst.scala">VdotTrapInst.scala</a> · <a href="file:///D:/Mayyyyyy/WorkSpaces/%E6%97%A5%E5%B8%B8%E5%B7%A5%E4%BD%9C%E5%8C%BA1/2026%E6%AF%94%E8%B5%9B%E8%A7%84%E5%88%92/RISCV_vdot/artifacts/vdot-mtval-fix-2026-10-24/patch-fixture-v2/src/main/scala/xiangshan/backend/fu/wrapper/CSR.scala">CSR.scala</a> · <a href="ch8.html">NEMU 与 DiffTest 报告</a> · <a href="https://docs.riscv.org/reference/isa/v20260120/priv/machine.html">RISC-V 特权规范</a></p>
+<h3 id="24-共享端口与退休侧-csr-请求">2.4 共享端口与退休侧 CSR 请求</h3>
+<p>VDot 所在 VFEX0 与 VIOTA 所在 VFEX1 共用 VfWB 端口 0 的发射前仲裁资源。发射前申请用于安排执行后的资源占用；实际结果写回仍是后续单独的事件。两层观测在第 7 章分列。</p>
+<p>VS-dirty 请求按 <code>isCommit AND OR(commitValid[i] AND dirtyVs[i])</code> 聚合各退休槽贡献，再经寄存送往 CSR。只有被选为有效退休的指令参与聚合，槽中残留的 <code>dirtyVs=1</code> 数据位本身不产生请求。</p>
+<h3 id="25-构建与运行关系">2.5 构建与运行关系</h3>
+<p class="table-caption">表 6-3　控制路径修改对应的构建产物。</p>
+<table>
+<thead>
+<tr>
+<th>修改对象</th>
+<th>生成产物</th>
+<th>验证关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>译码、参数、VDot、ROB 与 CSR</td>
+<td>Scala/Chisel 展开后生成 RTL，再构建 emu</td>
+<td>验证功能路径及内部动态时序</td>
+</tr>
+<tr>
+<td>NEMU 指令语义</td>
+<td>源码构建的参考共享库</td>
+<td>为 emu 的 DiffTest 提供架构参考</td>
+</tr>
+<tr>
+<td>指令测试与对照程序</td>
+<td>RISC-V 应用镜像</td>
+<td>提供输入、期望值和检查点</td>
+</tr>
+</tbody>
+</table>
+<p>只修改测试应用时复用已锁定的 emu 与参考库；RTL 或参考语义发生变化时，构建对应产物并记录新身份。完整构建命令、版本和退出记录放在证据索引中。</p>
+<h2 id="3-结果">3 结果</h2>
+<p><strong>集成后的指令已通过指定整核功能回归，内部控制由动态身份波形进一步核对。</strong> 整核套件定义见第 8 章；第 7 章分别给出下表各实例的信号和事件时间。</p>
+<p class="table-caption">表 6-4　集成控制的代表性结果。</p>
+<table>
+<thead>
+<tr>
+<th>控制对象</th>
+<th>观察结果</th>
+<th>对应证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>合法 VL=0</td>
+<td>完整旧目的经新物理目的保留</td>
+<td>第 7 章 2.3.3 边界测试</td>
+</tr>
+<tr>
+<td>完成后取消</td>
+<td>VDot 完成后受到较老分支覆盖，原身份复用前未退休</td>
+<td>第 7 章图 7-5～7-7</td>
+</tr>
+<tr>
+<td>退休侧 CSR 请求</td>
+<td>2,280 个非复位上升沿的聚合贡献与请求一致</td>
+<td>第 7 章图 7-8、7-9</td>
+</tr>
+<tr>
+<td>发射前共享端口</td>
+<td>VDot 获准，VIOTA 受阻后再次获准，两者随后退休</td>
+<td>第 7 章图 7-12～7-14</td>
+</tr>
+<tr>
+<td><code>mtval</code> 一致性</td>
+<td>精确异常路径送出重建的故障指令字，修复回归通过</td>
+<td>第 8 章定位案例</td>
+</tr>
+</tbody>
+</table>
+<p><strong>证据</strong>：<a href="ch7.html">功能与波形报告</a> · <a href="file:///D:/Mayyyyyy/WorkSpaces/%E6%97%A5%E5%B8%B8%E5%B7%A5%E4%BD%9C%E5%8C%BA1/2026%E6%AF%94%E8%B5%9B%E8%A7%84%E5%88%92/RISCV_vdot/artifacts/vdot-mtval-fix-2026-10-24/server-xYGYlZ/review.json">修复回归</a></p>
+<h2 id="4-总结与实验边界">4 总结与实验边界</h2>
+<p>VDot 通过向量译码、显式 oldVd 依赖、固定延迟配置和精确异常通路接入整核。正常执行、完成后取消、退休侧 CSR 请求和选定端口竞争均有对应动态实例。</p>
+<ul>
+<li>当前结果对应固定 MinimalConfig 和所列场景；不同取消时刻或其他 FU 组合需分别验证。</li>
+<li>CSR 波形覆盖退休贡献到 CSR 接收请求；最终 VS 状态与所有优先级交互属于另一层状态检查。</li>
+<li>已确认的竞争位于发射前仲裁层；该窗口的实际结果写回层未出现共同请求。</li>
+</ul>
+<hr />
+<p>文档编号：S2-INTEGRATION</p>
+</main></html>

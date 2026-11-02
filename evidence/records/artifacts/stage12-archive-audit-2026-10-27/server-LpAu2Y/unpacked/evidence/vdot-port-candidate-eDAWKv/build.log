@@ -1,0 +1,19 @@
+make: Entering directory '/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-port-contend-v1'
+# Building vdot-port-contend-v1 [riscv64-xs] with AM_HOME {/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am}
++ CC main.c
++ AS cases.S
+make[1]: Entering directory '/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am'
+make[1]: Entering directory '/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/libs/klib'
+# Building lib-klib [riscv64-xs]
+make[1]: Leaving directory '/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/libs/klib'
+make[2]: Entering directory '/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/am'
+# Building lib-am [riscv64-xs]
++ AS src/nemu/common/mainargs.S
++ AR -> build/am-riscv64-xs.a
+make[2]: Leaving directory '/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/am'
+make[1]: Leaving directory '/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am'
+# Creating binary image [riscv64-xs]
++ LD -> build/vdot-port-contend-v1-riscv64-xs.elf
+riscv64-linux-gnu-ld: warning: /root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-port-contend-v1/build/vdot-port-contend-v1-riscv64-xs.elf has a LOAD segment with RWX permissions
++ OBJCOPY -> build/vdot-port-contend-v1-riscv64-xs.bin
+make: Leaving directory '/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-port-contend-v1'

@@ -1,0 +1,14 @@
+RUNNING=build wall_limit=300
+BUILD_EXIT=0
+CANDIDATE_SYMBOL={"pc": "0x80000170", "word": "0x82112057", "name": "contend_0_gate"}
+CANDIDATE_SYMBOL={"pc": "0x80000174", "word": "0x20818b", "name": "contend_0_dot"}
+CANDIDATE_SYMBOL={"pc": "0x80000178", "word": "0x52082257", "name": "contend_0_iota"}
+RUNNING=architecture wall_limit=600
+ARCHITECTURE_EXIT=0
+VDOT_PORT_CANDIDATE_ARCH_PASS cases=8
+RUNNING=prefix wall_limit=300
+PREFIX_EXIT=0
+CANDIDATE_WINDOW={"begin": 5978, "end": 8258, "basis": "coarse GTimer brackets including gate producer; validate against captured clock"}
+CANDIDATE_CLUSTER=[{"line": 135613, "pc": "0x80000170", "word": "0x82112057", "name": "contend_0_gate", "previous_perf_time": 7002, "next_perf_time": 8002}, {"line": 135614, "pc": "0x80000174", "word": "0x20818b", "name": "contend_0_dot", "previous_perf_time": 7002, "next_perf_time": 8002}, {"line": 135615, "pc": "0x80000178", "word": "0x52082257", "name": "contend_0_iota", "previous_perf_time": 7002, "next_perf_time": 8002}]
+VDOT_PORT_CANDIDATE_READY
+LOG_DIR=/root/private_data/mj/xiangshan/evidence/vdot-port-candidate-eDAWKv

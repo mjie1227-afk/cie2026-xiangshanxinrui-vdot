@@ -1,0 +1,232 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>第二阶段复现环境、产物哈希与材料路径索引</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#eef2f5;color:#243747;font-family:"Microsoft YaHei",sans-serif;line-height:1.8}main{max-width:1180px;margin:24px auto;padding:32px 44px 60px;background:white}h1{font-size:29px;line-height:1.4;margin:18px 0 24px}h2{font-size:23px;border-bottom:1px solid #cddbe5;padding-top:12px;margin-top:32px}h3{font-size:19px;margin-top:26px}h4{font-size:17px}p,li{font-size:16px}li{margin:5px 0}a{color:#146787;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}table{border-collapse:collapse;width:100%;table-layout:auto;margin:16px 0 25px}th,td{border:1px solid #cedbe4;padding:8px 10px;text-align:left;font-size:14px;vertical-align:top;overflow-wrap:anywhere}th{background:#edf4f7}td[style*="text-align:right"],th[style*="text-align:right"]{white-space:nowrap}pre{background:#f2f6f8;border-left:3px solid #2d728f;padding:15px;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.65;font-size:13px}code{font-family:Consolas,"Microsoft YaHei",monospace;overflow-wrap:anywhere}img{max-width:100%;height:auto;display:block;margin:18px auto 8px}figure{margin:22px 0}figcaption{font-size:14px;color:#455f70;line-height:1.65}blockquote{border-left:3px solid #7699aa;padding-left:15px;margin:18px 0;color:#45616f}nav{font-size:14px;border-bottom:1px solid #dce5eb;padding-bottom:14px}nav a{margin-right:20px}hr{border:0;border-top:1px solid #dce5eb;margin:28px 0}.cover{padding-bottom:25px}.chapter{margin-top:50px}.source-ref{color:#536a77;font-size:0.9em;overflow-wrap:anywhere}.toc{padding:20px;background:#f3f7fa}.toc li{margin:8px 0}@page{size:A4;margin:18mm 15mm 17mm}@media print{body{background:white;line-height:1.65}main{margin:0;padding:0;max-width:none}nav{display:none}.cover{break-after:page}.chapter{break-before:page;margin-top:0}h1{font-size:22pt}h2{font-size:16pt;margin-top:20px}h3{font-size:13pt}h4{font-size:11pt}p,li{font-size:10pt}td,th{font-size:8.5pt;padding:5px 6px}table{margin:10px 0 16px;break-inside:avoid;break-before:avoid}thead{display:table-header-group}tr{break-inside:avoid}pre{font-size:7.8pt;line-height:1.5;padding:9px;break-inside:auto}figure{break-inside:avoid;margin:12px 0}figure img{max-height:195mm;object-fit:contain}figcaption{font-size:8.5pt}h1,h2,h3,h4,.table-caption{break-after:avoid}.wave-evidence{break-inside:avoid}p{orphans:3;widows:3}.source-ref{font-size:8pt}a{color:#146787}blockquote{margin:10px 0}td[style*="text-align:right"]{white-space:normal}}@media print{pre{break-inside:avoid}.materials table{break-inside:auto;break-before:auto}.materials>p{break-after:avoid}.materials th:first-child,.materials td:first-child{width:13mm}.materials td{font-size:8pt}hr{margin:10px 0}}.materials td:last-child code{word-break:break-all}.materials th:nth-child(2){min-width:35mm}.materials table:last-of-type th:nth-child(2){width:40mm}@media print{.materials h1{font-size:20pt}.materials table{break-inside:auto}.materials table:first-of-type th:first-child{width:34mm}.materials table:nth-of-type(2) th:first-child{width:38mm}.materials td:last-child{line-height:1.6}.materials p{break-after:auto}}@media print{.chapter p:has(+ pre){break-after:avoid}.chapter img[alt*="Hello终端"]{max-height:140mm;width:auto}}</style><main><nav><a href="index.html">总目录</a><a href="ch5.html">数据通路</a><a href="ch8.html">协同仿真</a><a href="ch10.html">延迟与性能</a></nav><h1 id="第二阶段复现环境产物哈希与材料路径索引">第二阶段复现环境、产物哈希与材料路径索引</h1>
+<p>正文包含构建方法、核心实现与实验结果。本附录用于核对版本、识别运行产物和定位完整工程材料。</p>
+<h2 id="1-复现环境与源码版本">1 复现环境与源码版本</h2>
+<p class="table-caption">表 S2-A1　环境、配置与源码版本。</p>
+<table>
+<thead>
+<tr>
+<th>对象</th>
+<th>配置或版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>平台与工具</td>
+<td>SCNet Linux 服务器；JDK 21、Mill 0.12.3、Verilator 5.052；构建参数与工具输出随源码包保存</td>
+</tr>
+<tr>
+<td>整核配置</td>
+<td>单核 MinimalConfig、VLEN=128、ROB=48、EMU_TRACE=1</td>
+</tr>
+<tr>
+<td>XiangShan 基版本</td>
+<td><code>16ae9ddcda54fc9a2fddffad73174cf793ac7814</code>，叠加完整 VDot 与 mtval 修复补丁</td>
+</tr>
+<tr>
+<td>NEMU 基版本</td>
+<td><code>a48a11f208ff81ad765591d83271d1b339fb3861</code>，叠加 vdot.vv 参考语义</td>
+</tr>
+<tr>
+<td>应用与运行</td>
+<td>测试应用独立编译；修复回归及流水回归使用固定 emu、源码参考库和 Flash</td>
+</tr>
+<tr>
+<td>波形时间</td>
+<td>VCD 单位 1 ps，时钟周期 2 ps；窗口和动态指令身份见第 7 章</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-关键产物哈希">2 关键产物哈希</h2>
+<p>以下为实验记录中保存的 SHA256，配合第 3 节的完整清单使用。</p>
+<p class="table-caption">表 S2-A2　关键产物 SHA256。</p>
+<table>
+<thead>
+<tr>
+<th>产物</th>
+<th>SHA256</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>修复版 emu</td>
+<td><code>f9653532fd2a4b9f0d0cc08c131f7c258d4b62c46e672c6886d6643aad926850</code></td>
+</tr>
+<tr>
+<td>服务器 NEMU 参考库</td>
+<td><code>11b9f6807c36ed860e0c64cc4e58d27216b19335ecde1ce5797ba2d1cd057b74</code></td>
+</tr>
+<tr>
+<td>服务器 NEMU 配置</td>
+<td><code>64282bca051b5dbc5fca742f4fbca2ade937a70f3c4d2ec93c1f4836aca5d9be</code></td>
+</tr>
+<tr>
+<td>共享 Flash</td>
+<td><code>fea548655a8b6eecacace83e2f4380a18b8aa83bce964c8aae4cffbe2f5a9724</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-工程材料路径索引">3 工程材料路径索引</h2>
+<p>所有路径相对于配套项目根目录。材料名称说明其用途；目录中的随机后缀只用于区分服务器保存的实验批次。</p>
+<p class="table-caption">表 S2-A3　工程材料与保存路径。</p>
+<table>
+<thead>
+<tr>
+<th>材料号</th>
+<th>内容</th>
+<th>项目相对路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="material-1"></a>1</td>
+<td>配置核对</td>
+<td><code>docs/reviews/platform-check-2026-10-19.md</code></td>
+</tr>
+<tr>
+<td><a id="material-2"></a>2</td>
+<td>编码审计</td>
+<td><code>docs/reviews/vdot-encoding-audit-2026-10-19.md</code></td>
+</tr>
+<tr>
+<td><a id="material-3"></a>3</td>
+<td>版本化合同</td>
+<td><code>docs/vdot-spec-v0.1.md</code></td>
+</tr>
+<tr>
+<td><a id="material-4"></a>4</td>
+<td>机器可读规格</td>
+<td><code>specs/vdot-v0.1.json</code></td>
+</tr>
+<tr>
+<td><a id="material-5"></a>5</td>
+<td>NEMU与DiffTest</td>
+<td><code>docs_final/04_阶段三_协同仿真与性能剖析/NEMU扩展与DiffTest协同验证.md</code></td>
+</tr>
+<tr>
+<td><a id="material-6"></a>6</td>
+<td>修复版源码与依赖清单</td>
+<td><code>artifacts/vdot-mtval-fix-2026-10-24/delivery-v2/manifest.json</code></td>
+</tr>
+<tr>
+<td><a id="material-7"></a>7</td>
+<td>FuConfig.scala</td>
+<td><code>artifacts/vdot-mtval-fix-2026-10-24/patch-fixture-v2/src/main/scala/xiangshan/backend/fu/FuConfig.scala</code></td>
+</tr>
+<tr>
+<td><a id="material-8"></a>8</td>
+<td>VDot 源码</td>
+<td><code>artifacts/vdot-mtval-fix-2026-10-24/patch-fixture-v2/src/main/scala/xiangshan/backend/fu/wrapper/VDot.scala</code></td>
+</tr>
+<tr>
+<td><a id="material-9"></a>9</td>
+<td>独立算术记录</td>
+<td><code>reports/stage2/vdot8-standalone-validation.md</code></td>
+</tr>
+<tr>
+<td><a id="material-10"></a>10</td>
+<td>动态事件核验</td>
+<td><code>artifacts/vdot-window-supplement-2026-10-25/server-fgpWCe/review.json</code></td>
+</tr>
+<tr>
+<td><a id="material-11"></a>11</td>
+<td>最终补丁与 manifest</td>
+<td><code>artifacts/vdot-mtval-fix-2026-10-24/delivery-v2</code></td>
+</tr>
+<tr>
+<td><a id="material-12"></a>12</td>
+<td>DecodeUnit.scala</td>
+<td><code>artifacts/vdot-mtval-fix-2026-10-24/patch-fixture-v2/src/main/scala/xiangshan/backend/decode/DecodeUnit.scala</code></td>
+</tr>
+<tr>
+<td><a id="material-13"></a>13</td>
+<td>VdotTrapInst.scala</td>
+<td><code>artifacts/vdot-mtval-fix-2026-10-24/patch-fixture-v2/src/main/scala/xiangshan/backend/rob/VdotTrapInst.scala</code></td>
+</tr>
+<tr>
+<td><a id="material-14"></a>14</td>
+<td>CSR.scala</td>
+<td><code>artifacts/vdot-mtval-fix-2026-10-24/patch-fixture-v2/src/main/scala/xiangshan/backend/fu/wrapper/CSR.scala</code></td>
+</tr>
+<tr>
+<td><a id="material-15"></a>15</td>
+<td>修复回归</td>
+<td><code>artifacts/vdot-mtval-fix-2026-10-24/server-xYGYlZ/review.json</code></td>
+</tr>
+<tr>
+<td><a id="material-16"></a>16</td>
+<td>独立集成记录</td>
+<td><code>reports/stage2/vdot-integration-validation-2026-10-24.md</code></td>
+</tr>
+<tr>
+<td><a id="material-17"></a>17</td>
+<td>应用 main.c</td>
+<td><code>artifacts/vdot-integration-2026-10-24/delivery/payload/vdot-smoke/main.c</code></td>
+</tr>
+<tr>
+<td><a id="material-18"></a>18</td>
+<td>完整归档核验</td>
+<td><code>artifacts/stage12-archive-audit-2026-10-27/server-LpAu2Y/local-verification.json</code></td>
+</tr>
+<tr>
+<td><a id="material-19"></a>19</td>
+<td>原事件</td>
+<td><code>artifacts/vdot-window-events-2026-10-25/server-UbYWTP/review.json</code></td>
+</tr>
+<tr>
+<td><a id="material-20"></a>20</td>
+<td>CSR 请求核验</td>
+<td><code>artifacts/vdot-csr-commit-window-2026-10-25/server-aReAEz/review.json</code></td>
+</tr>
+<tr>
+<td><a id="material-21"></a>21</td>
+<td>混发资源核验</td>
+<td><code>artifacts/vdot-mixed-resources-2026-10-25/server-9k3waS/review.json</code></td>
+</tr>
+<tr>
+<td><a id="material-22"></a>22</td>
+<td>路由复核</td>
+<td><code>artifacts/vdot-mixed-route-audit-2026-10-25/server-ApJqcC/review.json</code></td>
+</tr>
+<tr>
+<td><a id="material-23"></a>23</td>
+<td>端口事件核验</td>
+<td><code>artifacts/vdot-port-events-2026-10-25/server-FfVozt/review.json</code></td>
+</tr>
+<tr>
+<td><a id="material-24"></a>24</td>
+<td>退休补图核验</td>
+<td><code>artifacts/vdot-gtk-review-2026-10-26/step3-retirement-instruction/review.json</code></td>
+</tr>
+<tr>
+<td><a id="material-25"></a>25</td>
+<td>完整功能与事件原记录</td>
+<td><code>reports/stage2/functional-tests.md</code></td>
+</tr>
+<tr>
+<td><a id="material-26"></a>26</td>
+<td>修复版源码快照</td>
+<td><code>artifacts/vdot-mtval-fix-2026-10-24/patch-fixture-v2</code></td>
+</tr>
+<tr>
+<td><a id="material-27"></a>27</td>
+<td>修复回归产物身份</td>
+<td><code>artifacts/vdot-mtval-fix-2026-10-24/server-xYGYlZ/accepted-identities.sha256</code></td>
+</tr>
+<tr>
+<td><a id="material-28"></a>28</td>
+<td>完整波形与事件归档</td>
+<td><code>artifacts/stage12-archive-audit-2026-10-27/server-LpAu2Y</code></td>
+</tr>
+<tr>
+<td><a id="material-29"></a>29</td>
+<td>构建、应用和整核运行日志归档</td>
+<td><code>artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR</code></td>
+</tr>
+<tr>
+<td><a id="material-30"></a>30</td>
+<td>构建与运行说明</td>
+<td><code>reports/stage3/delivery.md</code></td>
+</tr>
+</tbody>
+</table>
+</main></html>

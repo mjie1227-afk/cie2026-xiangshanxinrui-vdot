@@ -1,0 +1,21 @@
+{
+  "applications": [
+    "vadd4",
+    "vdot-smoke",
+    "vdot-exceptions",
+    "vdot-overlap",
+    "vdot-deps",
+    "vdot-mixed",
+    "vdot-cancel-csr",
+    "vdot-port-contend-v1",
+    "vdot-chain-v1",
+    "vdot-e2e-v1",
+    "vdot-load-v1",
+    "vdot-rvv-equiv-v1",
+    "vdot-segment-v1",
+    "vdot-throughput-v1",
+    "vdot-tile-v1",
+    "vdot-timing-pilot-v1",
+    "hello-meijie"
+  ]
+}

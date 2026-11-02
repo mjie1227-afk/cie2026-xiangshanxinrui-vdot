@@ -1,0 +1,2 @@
+REPO=/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/ready-to-run
+ed8c30e1ec8a9c9aa6b116ce54281235d00273fa

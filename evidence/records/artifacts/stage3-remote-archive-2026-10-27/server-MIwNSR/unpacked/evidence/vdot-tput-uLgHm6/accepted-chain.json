@@ -1,0 +1,30 @@
+{
+  "status": "vdot-chain-raw-results-review-required",
+  "scope": "unrolled dependent v1 recurrence; raw interval includes boundaries and consumer; all per-operation RVV config/clear/restore retained",
+  "performance_measured": true,
+  "cwd": "/root/private_data/mj/xiangshan",
+  "argv": [
+    "/root/private_data/mj/xiangshan/evidence/vdot-chain-package-Xp9Mc4/package/run.py",
+    "/root/private_data/mj/xiangshan/evidence/vdot-chain-package-Xp9Mc4/package",
+    "/root/private_data/mj/xiangshan/evidence/vdot-chain-KiI3xX"
+  ],
+  "python": "3.11.9 (main, Apr  5 2026, 19:32:29) [GCC 11.4.0]",
+  "seed": 1,
+  "stages": [
+    {
+      "name": "build",
+      "exit": 0,
+      "wall_seconds": 2.424
+    },
+    {
+      "name": "architecture",
+      "exit": 0,
+      "wall_seconds": 1486.244
+    }
+  ],
+  "calls": 40,
+  "samples": 30,
+  "warmups": 10,
+  "final_speedup_accepted": false,
+  "application": "/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-chain-v1/build/vdot-chain-v1-riscv64-xs.bin"
+}

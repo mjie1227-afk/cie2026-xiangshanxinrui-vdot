@@ -1,0 +1,2001 @@
+{
+  "date": "2026-10-19",
+  "timezone": "Asia/Shanghai",
+  "scope": "Document and archived-evidence check; no RTL simulation",
+  "invocation": {
+    "argv": [
+      "C:\\Users\\Lenovo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "D:\\Mayyyyyy\\WorkSpaces\\日常工作区1\\2026比赛规划\\RISCV_vdot\\artifacts\\vadd4-frontend-2026-10-19\\report-extension\\validate_extension.py"
+    ],
+    "cwd": "D:\\Mayyyyyy\\WorkSpaces\\日常工作区1\\2026比赛规划\\RISCV_vdot",
+    "python": "3.12.14",
+    "exit_code": 0
+  },
+  "report_sha256": "df553810021cef2890b117547edfa1e63098c155bdfb13edb0b3890cb2c76049",
+  "checks": [
+    {
+      "name": "Original backend text preserved except numbering",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Original build/run appendix unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Sixteen image labels in reading order",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Sixteen captions in reading order",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "All figures retained in report body",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Original image unchanged: assets/vadd/01-program-pass.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Original image unchanged: assets/vadd/02-decode-5111ps.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Original image unchanged: assets/vadd/03-rename-5115ps.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Original image unchanged: assets/vadd/04-dispatch-5117ps.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Original image unchanged: assets/vadd/05-execution-input-5267ps.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Original image unchanged: assets/vadd/06-execution-output-5269ps.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Original image unchanged: assets/vadd/07-physical-write-marker5274ps.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Original image unchanged: assets/vadd/08-rob-before-5273ps.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Original image unchanged: assets/vadd/09-map-before-5277ps.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Original image unchanged: assets/vadd/10-map-after-5278ps.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Frontend image exact copy: assets/vadd/frontend-ftq-marker5080ps.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Frontend image exact copy: assets/vadd/frontend-icache-5083ps.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Frontend image exact copy: assets/vadd/frontend-ifu-5085ps.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Frontend image exact copy: assets/vadd/frontend-ibuffer-5087ps.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Frontend image exact copy: assets/vadd/frontend-decode-buffer-5093ps.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Frontend image exact copy: assets/vadd/frontend-decode-accept-5111ps.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "User original screenshot unchanged: 5087",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "User original screenshot unchanged: 5093",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "User original screenshot unchanged: 5111",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "FTQ5079 io_toIfu_req_valid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "FTQ5079 io_toIfu_req_ready",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "FTQ5079 io_toIfu_req_bits_ftqIdx_flag",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "FTQ5079 io_toIfu_req_bits_ftqIdx_value",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "FTQ5079 io_toIfu_req_bits_startAddr",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "FTQ5079 io_toIfu_req_bits_nextStartAddr",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ICache5083 io_fetch_resp_valid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ICache5083 io_fetch_resp_bits_vaddr_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ICache5083 io_fetch_resp_bits_doubleline",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ICache5083 io_fetch_resp_bits_exception_0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ICache5083 io_fetch_resp_bits_exception_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ICache target bits95:64",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ICache low128 grouping",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "IFU cut pointers select target",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "FTQ block offset is target halfword10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "IFU valid/enqueue masks include slot10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Bridge VCD identity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Backend input ready while decode waits",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Two initial entries accepted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Buffer target identity 5088 lane3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Buffer target identity 5089 lane3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Buffer target identity 5090 lane1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Buffer target identity 5091 lane1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Buffer target identity 5092 lane0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Buffer target identity 5093 lane0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Buffer target identity 5111 lane0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "No flush or decode redirect in bridge window",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Decode acceptance pre-edge",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Correct valid clears at5112",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Next instruction displayed at5112",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source hash: src/main/scala/xiangshan/frontend/Frontend.scala",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source hash: src/main/scala/xiangshan/frontend/FrontendBundle.scala",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source hash: src/main/scala/xiangshan/frontend/IFU.scala",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source hash: src/main/scala/xiangshan/frontend/IBuffer.scala",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source hash: src/main/scala/xiangshan/frontend/icache/ICacheMainPipe.scala",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source hash: src/main/scala/xiangshan/backend/CtrlBlock.scala",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source HEAD matches report run",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Source status and related diff empty",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Code fences paired: docs/HANDOFF.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Code fences paired: docs/learning_path.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Code fences paired: docs/requirements_matrix.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Code fences paired: docs/stage1-remaining-checklist.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Code fences paired: docs/verification.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Code fences paired: exercises/vadd4/README.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Code fences paired: exercises/vadd4/WAVE.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Code fences paired: PROGRESS.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Code fences paired: README.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Code fences paired: reports/stage1/vadd-lifecycle.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Evidence rows remain in a single table",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "No contradictory pending frontend status in current intro",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "check_count": 74,
+  "images": [
+    {
+      "figure": 1,
+      "path": "assets/vadd/01-program-pass.png",
+      "dimensions": [
+        804,
+        279
+      ],
+      "sha256": "80d5d0d5a4c7c596b40339c6fc2d9ba0ab72c7ed5ceb5efde5b747556b376774"
+    },
+    {
+      "figure": 2,
+      "path": "assets/vadd/frontend-ftq-marker5080ps.png",
+      "dimensions": [
+        1758,
+        771
+      ],
+      "sha256": "3248f396bb36b20bd96807b158437d357c9c8d50d3180d17f62df0be597b4b6b"
+    },
+    {
+      "figure": 3,
+      "path": "assets/vadd/frontend-icache-5083ps.png",
+      "dimensions": [
+        1758,
+        771
+      ],
+      "sha256": "20eff7cd2bd660e7f1bd6b65a93c3153d2cd26e52f59d55f0a6dfe13aa0f9368"
+    },
+    {
+      "figure": 4,
+      "path": "assets/vadd/frontend-ifu-5085ps.png",
+      "dimensions": [
+        1760,
+        771
+      ],
+      "sha256": "d29359323cf0b206aabddaf1acefd42b621dd69bce96403508f405b9b7290c99"
+    },
+    {
+      "figure": 5,
+      "path": "assets/vadd/frontend-ibuffer-5087ps.png",
+      "dimensions": [
+        1758,
+        771
+      ],
+      "sha256": "c9a97913bd329224955b59d21003a49df36ef28af8c4fbf40e268442c585ae4b"
+    },
+    {
+      "figure": 6,
+      "path": "assets/vadd/frontend-decode-buffer-5093ps.png",
+      "dimensions": [
+        1758,
+        771
+      ],
+      "sha256": "dffd58dcfb8a1482e3a300e91074e5e920629a94e17e81ee5eb8987bf61827e3"
+    },
+    {
+      "figure": 7,
+      "path": "assets/vadd/frontend-decode-accept-5111ps.png",
+      "dimensions": [
+        1758,
+        771
+      ],
+      "sha256": "25f5f7877adf87fcf8505667f520523ddfdd6eba6b13b3dc8cbc67eb22df4090"
+    },
+    {
+      "figure": 8,
+      "path": "assets/vadd/02-decode-5111ps.png",
+      "dimensions": [
+        1227,
+        622
+      ],
+      "sha256": "484d57a77e0dec9c85e23f007d6bc67b2ccd93b49880a56a4a951c415e441331"
+    },
+    {
+      "figure": 9,
+      "path": "assets/vadd/03-rename-5115ps.png",
+      "dimensions": [
+        1227,
+        622
+      ],
+      "sha256": "c6dd9488c31e3d9c02aac96594d6e76c8201b1ebc42016db2c55098878501918"
+    },
+    {
+      "figure": 10,
+      "path": "assets/vadd/04-dispatch-5117ps.png",
+      "dimensions": [
+        1227,
+        622
+      ],
+      "sha256": "8dfb00c25d80a3708762f981044a21a765bf8cfb690e606ebee48b22a1db2b73"
+    },
+    {
+      "figure": 11,
+      "path": "assets/vadd/05-execution-input-5267ps.png",
+      "dimensions": [
+        1227,
+        622
+      ],
+      "sha256": "a98c1f4856c7265dabc0ad0537ef1e724caa1261170931ce37fbad8755797d0c"
+    },
+    {
+      "figure": 12,
+      "path": "assets/vadd/06-execution-output-5269ps.png",
+      "dimensions": [
+        1227,
+        622
+      ],
+      "sha256": "b5b444914cbe1abaff4ab43a129fc6a0a2cee4e667937b27f44597dc84e33dac"
+    },
+    {
+      "figure": 13,
+      "path": "assets/vadd/07-physical-write-marker5274ps.png",
+      "dimensions": [
+        1174,
+        479
+      ],
+      "sha256": "7644d3bf3a7edc11e637931fed933b9c8b63e53d5fef11eccf4ad3ac58e06dd9"
+    },
+    {
+      "figure": 14,
+      "path": "assets/vadd/08-rob-before-5273ps.png",
+      "dimensions": [
+        1174,
+        514
+      ],
+      "sha256": "0dafd4b7b6e1ba5365b678f6b3de70e0e200338dca0c2c3631cb8fc61bc4e2f3"
+    },
+    {
+      "figure": 15,
+      "path": "assets/vadd/09-map-before-5277ps.png",
+      "dimensions": [
+        1174,
+        514
+      ],
+      "sha256": "3fc906392f081048c1bd2f10a5a0bcca671de149dc768e4866a8253030340cad"
+    },
+    {
+      "figure": 16,
+      "path": "assets/vadd/10-map-after-5278ps.png",
+      "dimensions": [
+        1174,
+        514
+      ],
+      "sha256": "19981a67d9057c3c9c3eb2e381caad03b85e41fc609e6772bc8b8aa8696a4eef"
+    }
+  ],
+  "inventory": [
+    {
+      "file": "AGENTS.md",
+      "status": "reviewed, unchanged",
+      "reason": "Outside frontend extension; existing dated scope retained"
+    },
+    {
+      "file": "docs/agent_execution.md",
+      "status": "reviewed, unchanged",
+      "reason": "Outside frontend extension; existing dated scope retained"
+    },
+    {
+      "file": "docs/competition_plan.md",
+      "status": "reviewed, unchanged",
+      "reason": "Outside frontend extension; existing dated scope retained"
+    },
+    {
+      "file": "docs/gtkwave-add-resume.md",
+      "status": "reviewed, unchanged",
+      "reason": "Outside frontend extension; existing dated scope retained"
+    },
+    {
+      "file": "docs/HANDOFF.md",
+      "status": "updated",
+      "reason": "Frontend report/state/navigation"
+    },
+    {
+      "file": "docs/hello-meijie-checklist.md",
+      "status": "reviewed, unchanged",
+      "reason": "Outside frontend extension; existing dated scope retained"
+    },
+    {
+      "file": "docs/instruction_spec.md",
+      "status": "reviewed, unchanged",
+      "reason": "Outside frontend extension; existing dated scope retained"
+    },
+    {
+      "file": "docs/learning_path.md",
+      "status": "updated",
+      "reason": "Frontend report/state/navigation"
+    },
+    {
+      "file": "docs/requirements_matrix.md",
+      "status": "updated",
+      "reason": "Frontend report/state/navigation"
+    },
+    {
+      "file": "docs/reviews/platform-check-2026-10-19.md",
+      "status": "reviewed, unchanged",
+      "reason": "Outside frontend extension; existing dated scope retained"
+    },
+    {
+      "file": "docs/reviews/vadd-notes-review-2026-10-18.md",
+      "status": "reviewed, unchanged",
+      "reason": "Outside frontend extension; existing dated scope retained"
+    },
+    {
+      "file": "docs/source_audit.md",
+      "status": "reviewed, unchanged",
+      "reason": "Outside frontend extension; existing dated scope retained"
+    },
+    {
+      "file": "docs/stage1-remaining-checklist.md",
+      "status": "updated",
+      "reason": "Frontend report/state/navigation"
+    },
+    {
+      "file": "docs/verification.md",
+      "status": "updated",
+      "reason": "Frontend report/state/navigation"
+    },
+    {
+      "file": "docs/终端常用命令.md",
+      "status": "reviewed, unchanged",
+      "reason": "Outside frontend extension; existing dated scope retained"
+    },
+    {
+      "file": "docs/阶段1.md",
+      "status": "reviewed, unchanged",
+      "reason": "Outside frontend extension; existing dated scope retained"
+    },
+    {
+      "file": "exercises/vadd4/README.md",
+      "status": "updated",
+      "reason": "Frontend report/state/navigation"
+    },
+    {
+      "file": "exercises/vadd4/WAVE.md",
+      "status": "updated",
+      "reason": "Frontend report/state/navigation"
+    },
+    {
+      "file": "PROGRESS.md",
+      "status": "updated",
+      "reason": "Frontend report/state/navigation"
+    },
+    {
+      "file": "README.md",
+      "status": "updated",
+      "reason": "Frontend report/state/navigation"
+    },
+    {
+      "file": "reports/stage1/environment.md",
+      "status": "reviewed, unchanged",
+      "reason": "Outside frontend extension; existing dated scope retained"
+    },
+    {
+      "file": "reports/stage1/vadd-lifecycle.md",
+      "status": "updated",
+      "reason": "Frontend report/state/navigation"
+    }
+  ],
+  "local_links": [
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../reports/stage1/vadd-lifecycle.md",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../artifacts/vadd4-frontend-2026-10-19/",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../AGENTS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../PROGRESS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../reports/stage1/vadd-lifecycle.md",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "verification.md",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "requirements_matrix.md",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "instruction_spec.md",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "competition_plan.md",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../artifacts/vadd4-2026-10-17/run-result.json",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../artifacts/vadd4-2026-10-17/run.log",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../artifacts/vadd4-wave-2026-10-17/run-result.json",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../reports/stage1/vadd-lifecycle.md",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../artifacts/vadd4-report-2026-10-18/evidence-check.json",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../artifacts/vadd4-report-2026-10-18/screenshots.json",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../reports/stage1/assets/vadd/10-map-after-5278ps.png",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../reports/stage1/environment.md",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../artifacts/stage1-environment-review-2026-10-19/evidence-review.json",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "reviews/platform-check-2026-10-19.md",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../artifacts/stage1-environment-review-2026-10-19/upstream-and-host.json",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "verification.md",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../artifacts/dot4/summary.json",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../exercises/vadd4/",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "reviews/vadd-notes-review-2026-10-18.md",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../artifacts/vadd4-2026-10-17/manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../exercises/vadd4/main.c",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../exercises/vadd4/vadd4.S",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../exercises/vadd4/Makefile",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../exercises/dot4/rtl/Dot4.sv",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../exercises/dot4/chisel/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../reports/stage1/vadd-lifecycle.md",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../exercises/vadd4/WAVE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../artifacts/add-wave-2026-10-16/writeback-observations.json",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "verification.md",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "requirements_matrix.md",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "instruction_spec.md",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../artifacts/planning-2026-10-15/sources/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../artifacts/vadd4-2026-10-17/build-run.json",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../artifacts/vadd4-2026-10-17/build.log",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../artifacts/vadd4-wave-2026-10-17/run-result.json",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../artifacts/vadd4-execution-2026-10-18/observations.json",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../artifacts/vadd4-writeback-2026-10-18/observations.json",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "verification.md",
+      "exists": true
+    },
+    {
+      "document": "docs/HANDOFF.md",
+      "target": "../artifacts/vadd4-report-2026-10-18/validation-run.json",
+      "exists": true
+    },
+    {
+      "document": "docs/learning_path.md",
+      "target": "../reports/stage1/vadd-lifecycle.md",
+      "exists": true
+    },
+    {
+      "document": "docs/learning_path.md",
+      "target": "competition_plan.md",
+      "exists": true
+    },
+    {
+      "document": "docs/learning_path.md",
+      "target": "../PROGRESS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/learning_path.md",
+      "target": "../external/XiangShanLab/xiangshan-course/docs/1-xiangshan-development-environment/Chapter_1_Overview_of_the_Xiangshan_Development_Environment.md",
+      "exists": true
+    },
+    {
+      "document": "docs/learning_path.md",
+      "target": "../external/XiangShanLab/xiangshan-course/docs/5-xiangshan-scenarios-analysis/instructions-lifecycle/scalar-add/simple-execution-process-of-an-add-instruction.md",
+      "exists": true
+    },
+    {
+      "document": "docs/learning_path.md",
+      "target": "../external/XiangShanLab/xiangshan-course/docs/3-riscv-specification/unprivileged-spec/9-vector-operation/rvv.md",
+      "exists": true
+    },
+    {
+      "document": "docs/learning_path.md",
+      "target": "../external/XiangShanLab/xiangshan-course/docs/5-xiangshan-scenarios-analysis/instructions-lifecycle/vector-add/vector-alu.md",
+      "exists": true
+    },
+    {
+      "document": "docs/learning_path.md",
+      "target": "../external/XiangShanLab/xiangshan-course/docs/2-xiangshan-programming/1-chisel/Chapter_3_Basic_Chisel_Syntax.md",
+      "exists": true
+    },
+    {
+      "document": "docs/learning_path.md",
+      "target": "../external/XiangShanLab/xiangshan-course/docs/2-xiangshan-programming/1-chisel/Chapter_5_Chisel_Programming_in_Practice.md",
+      "exists": true
+    },
+    {
+      "document": "docs/learning_path.md",
+      "target": "../external/XiangShanLab/xiangshan-course/docs/3-riscv-specification/instruction-latency-throughput/instruction-latency-throughput-template.md",
+      "exists": true
+    },
+    {
+      "document": "docs/learning_path.md",
+      "target": "阶段1.md",
+      "exists": true
+    },
+    {
+      "document": "docs/learning_path.md",
+      "target": "../exercises/dot4/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/requirements_matrix.md",
+      "target": "../artifacts/planning-2026-10-15/sources/official-subject-36-readable.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/requirements_matrix.md",
+      "target": "../artifacts/planning-2026-10-15/sources/official-scoring-readable.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/requirements_matrix.md",
+      "target": "../artifacts/planning-2026-10-15/sources/official-semantics.png",
+      "exists": true
+    },
+    {
+      "document": "docs/requirements_matrix.md",
+      "target": "../artifacts/planning-2026-10-15/sources/official-submission-guide.pdf",
+      "exists": true
+    },
+    {
+      "document": "docs/requirements_matrix.md",
+      "target": "../artifacts/planning-2026-10-15/sources/retrieval-manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/requirements_matrix.md",
+      "target": "../artifacts/planning-2026-10-15/sources/official-date-fields.json",
+      "exists": true
+    },
+    {
+      "document": "docs/requirements_matrix.md",
+      "target": "../reports/stage1/environment.md",
+      "exists": true
+    },
+    {
+      "document": "docs/requirements_matrix.md",
+      "target": "../reports/stage1/environment.md",
+      "exists": true
+    },
+    {
+      "document": "docs/requirements_matrix.md",
+      "target": "../reports/stage1/vadd-lifecycle.md",
+      "exists": true
+    },
+    {
+      "document": "docs/requirements_matrix.md",
+      "target": "../reports/stage1/environment.md",
+      "exists": true
+    },
+    {
+      "document": "docs/requirements_matrix.md",
+      "target": "instruction_spec.md",
+      "exists": true
+    },
+    {
+      "document": "docs/stage1-remaining-checklist.md",
+      "target": "requirements_matrix.md",
+      "exists": true
+    },
+    {
+      "document": "docs/stage1-remaining-checklist.md",
+      "target": "verification.md",
+      "exists": true
+    },
+    {
+      "document": "docs/stage1-remaining-checklist.md",
+      "target": "../artifacts/vadd4-2026-10-17/build-run.json",
+      "exists": true
+    },
+    {
+      "document": "docs/stage1-remaining-checklist.md",
+      "target": "../artifacts/vadd4-2026-10-17/build.log",
+      "exists": true
+    },
+    {
+      "document": "docs/stage1-remaining-checklist.md",
+      "target": "../artifacts/vadd4-2026-10-17/run-result.json",
+      "exists": true
+    },
+    {
+      "document": "docs/stage1-remaining-checklist.md",
+      "target": "../artifacts/vadd4-2026-10-17/run.log",
+      "exists": true
+    },
+    {
+      "document": "docs/stage1-remaining-checklist.md",
+      "target": "../artifacts/vadd4-2026-10-17/manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/stage1-remaining-checklist.md",
+      "target": "../reports/stage1/vadd-lifecycle.md",
+      "exists": true
+    },
+    {
+      "document": "docs/stage1-remaining-checklist.md",
+      "target": "../artifacts/stage1-environment-review-2026-10-19/evidence-review.json",
+      "exists": true
+    },
+    {
+      "document": "docs/stage1-remaining-checklist.md",
+      "target": "../reports/stage1/environment.md",
+      "exists": true
+    },
+    {
+      "document": "docs/stage1-remaining-checklist.md",
+      "target": "reviews/platform-check-2026-10-19.md",
+      "exists": true
+    },
+    {
+      "document": "docs/stage1-remaining-checklist.md",
+      "target": "../reports/stage1/environment.md",
+      "exists": true
+    },
+    {
+      "document": "docs/stage1-remaining-checklist.md",
+      "target": "../reports/stage1/vadd-lifecycle.md",
+      "exists": true
+    },
+    {
+      "document": "docs/stage1-remaining-checklist.md",
+      "target": "../exercises/vadd4/WAVE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-frontend-2026-10-19/user-ifu-5085ps.png",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-frontend-2026-10-19/ifu-user-confirmation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-frontend-2026-10-19/ftq-request-observations.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-frontend-2026-10-19/user-ftq-marker5080ps.png",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-frontend-2026-10-19/ftq-user-confirmation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-frontend-2026-10-19/icache-response-observations.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-frontend-2026-10-19/icache-data-layout.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-frontend-2026-10-19/user-icache-5083ps.png",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-frontend-2026-10-19/icache-user-confirmation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-frontend-2026-10-19/inspect_decode_bridge.py",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-frontend-2026-10-19/decode-bridge-observations.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-frontend-2026-10-19/decode-bridge-run.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-frontend-2026-10-19/decode-bridge-user-confirmation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../reports/stage1/vadd-lifecycle.md",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-frontend-2026-10-19/report-images.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-frontend-2026-10-19/report-source-evidence.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-frontend-2026-10-19/report-extension/extension-result.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-frontend-2026-10-19/report-extension/check-result.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../reports/stage1/environment.md",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../reports/stage1/vadd-lifecycle.md",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "reviews/platform-check-2026-10-19.md",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/report-revision-2026-10-19/document-check.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/deployment-history-2026-10-19/extract_records.py",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/deployment-history-2026-10-19/filtered-records.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/deployment-history-2026-10-19/history-excerpts.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/deployment-history-2026-10-19/corroboration.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../reports/stage1/environment.md",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/deployment-history-2026-10-19/document-check.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/runs/S1-01/hello-meijie-20261019-120654-8FtdkQ/",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/stage1-environment-review-2026-10-19/collect_evidence.py",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/stage1-environment-review-2026-10-19/evidence-review.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/stage1-environment-review-2026-10-19/upstream-and-host.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../reports/stage1/environment.md",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "reviews/platform-check-2026-10-19.md",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/stage1-environment-review-2026-10-19/document-check.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "stage1-remaining-checklist.md",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/stage1-remaining-checklist-2026-10-19/document-check.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "hello-meijie-checklist.md",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/hello-checklist-2026-10-19/document-check.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../reports/stage1/vadd-lifecycle.md",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "reviews/vadd-notes-review-2026-10-18.md",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-report-2026-10-18/input-audit.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-report-2026-10-18/assemble_evidence.py",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-report-2026-10-18/evidence-check.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-report-2026-10-18/screenshots.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-report-2026-10-18/document-audit.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../sources.lock.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "source_audit.md",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../sources.lock.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "gtkwave-add-resume.md",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "reviews/platform-check-2026-10-19.md",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "source_audit.md",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-execution-2026-10-18/user-execution-5267ps.png",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../scripts/inspect_vadd_writeback.py",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-writeback-2026-10-18/observations.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-writeback-2026-10-18/inspection-run.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-writeback-2026-10-18/source-evidence.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-writeback-2026-10-18/sample-consistency.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-writeback-2026-10-18/investigation-note.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../exercises/vadd4/WAVE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-rename-2026-10-18/user-rename-5115ps.png",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../scripts/inspect_vadd_execution.py",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-execution-2026-10-18/inspection-run.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-execution-2026-10-18/observations.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-execution-2026-10-18/source-evidence.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../exercises/vadd4/WAVE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-rename-2026-10-18/observations.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-rename-2026-10-18/inspection-run.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-rename-2026-10-18/after-edge.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-rename-2026-10-18/after-edge-run.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-rename-2026-10-18/source-evidence.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../scripts/inspect_vcd_scope.py",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-decode-2026-10-18/inspection-run.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-decode-2026-10-18/observations.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-decode-2026-10-18/source-evidence.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../exercises/vadd4/WAVE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-2026-10-17/user-pass.png",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-wave-2026-10-17/run-result.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-wave-2026-10-17/run.log",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../scripts/inspect_decode_pc.py",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-wave-2026-10-17/inspection-run.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-wave-2026-10-17/decode-observations.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../exercises/vadd4/WAVE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../exercises/vadd4/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-2026-10-17/am-copy.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-2026-10-17/manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-2026-10-17/build-run.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-2026-10-17/build.log",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-2026-10-17/build-attempt1.log",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-2026-10-17/build-attempt1-run.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-2026-10-17/run-result.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-2026-10-17/run.log",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/vadd4-2026-10-17/vadd4-riscv64-xs.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../scripts/inspect_add_writeback.py",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/add-wave-2026-10-16/writeback-observations.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/add-wave-2026-10-16/writeback-run.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/planning-2026-10-15/planning-validation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/add-wave-2026-10-16/inspection-run.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/add-wave-2026-10-16/observations.json",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../scripts/inspect_add_wave.py",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/add-wave-2026-10-16/user-dispatch-4779ps.png",
+      "exists": true
+    },
+    {
+      "document": "docs/verification.md",
+      "target": "../artifacts/add-wave-2026-10-16/user-alu-4801ps.png",
+      "exists": true
+    },
+    {
+      "document": "exercises/vadd4/README.md",
+      "target": "../../reports/stage1/vadd-lifecycle.md",
+      "exists": true
+    },
+    {
+      "document": "exercises/vadd4/README.md",
+      "target": "../../artifacts/vadd4-2026-10-17/run.log",
+      "exists": true
+    },
+    {
+      "document": "exercises/vadd4/README.md",
+      "target": "../../artifacts/vadd4-2026-10-17/run-result.json",
+      "exists": true
+    },
+    {
+      "document": "exercises/vadd4/README.md",
+      "target": "WAVE.md",
+      "exists": true
+    },
+    {
+      "document": "exercises/vadd4/WAVE.md",
+      "target": "../../reports/stage1/vadd-lifecycle.md",
+      "exists": true
+    },
+    {
+      "document": "exercises/vadd4/WAVE.md",
+      "target": "../../reports/stage1/vadd-lifecycle.md",
+      "exists": true
+    },
+    {
+      "document": "exercises/vadd4/WAVE.md",
+      "target": "../../artifacts/vadd4-frontend-2026-10-19/",
+      "exists": true
+    },
+    {
+      "document": "exercises/vadd4/WAVE.md",
+      "target": "../../reports/stage1/vadd-lifecycle.md",
+      "exists": true
+    },
+    {
+      "document": "PROGRESS.md",
+      "target": "reports/stage1/vadd-lifecycle.md",
+      "exists": true
+    },
+    {
+      "document": "PROGRESS.md",
+      "target": "docs/competition_plan.md",
+      "exists": true
+    },
+    {
+      "document": "PROGRESS.md",
+      "target": "docs/agent_execution.md",
+      "exists": true
+    },
+    {
+      "document": "PROGRESS.md",
+      "target": "docs/HANDOFF.md",
+      "exists": true
+    },
+    {
+      "document": "PROGRESS.md",
+      "target": "docs/learning_path.md",
+      "exists": true
+    },
+    {
+      "document": "PROGRESS.md",
+      "target": "docs/verification.md",
+      "exists": true
+    },
+    {
+      "document": "PROGRESS.md",
+      "target": "docs/competition_plan.md",
+      "exists": true
+    },
+    {
+      "document": "PROGRESS.md",
+      "target": "reports/stage1/environment.md",
+      "exists": true
+    },
+    {
+      "document": "PROGRESS.md",
+      "target": "reports/stage1/vadd-lifecycle.md",
+      "exists": true
+    },
+    {
+      "document": "PROGRESS.md",
+      "target": "docs/stage1-remaining-checklist.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "PROGRESS.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/competition_plan.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/requirements_matrix.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/agent_execution.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/HANDOFF.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/learning_path.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/hello-meijie-checklist.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/stage1-remaining-checklist.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "reports/stage1/environment.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "reports/stage1/vadd-lifecycle.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "sources.lock.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/instruction_spec.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/verification.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/source_audit.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "reports/stage1/vadd-lifecycle.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/reviews/vadd-notes-review-2026-10-18.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/gtkwave-add-resume.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/阶段1.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "exercises/dot4/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "AGENTS.md",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "environment.md",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "assets/vadd/01-program-pass.png",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "assets/vadd/frontend-ftq-marker5080ps.png",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "assets/vadd/frontend-icache-5083ps.png",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "assets/vadd/frontend-ifu-5085ps.png",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "assets/vadd/frontend-ibuffer-5087ps.png",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "assets/vadd/frontend-decode-buffer-5093ps.png",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "assets/vadd/frontend-decode-accept-5111ps.png",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "assets/vadd/02-decode-5111ps.png",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "assets/vadd/03-rename-5115ps.png",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "assets/vadd/04-dispatch-5117ps.png",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "assets/vadd/05-execution-input-5267ps.png",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "assets/vadd/06-execution-output-5269ps.png",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "assets/vadd/07-physical-write-marker5274ps.png",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "assets/vadd/08-rob-before-5273ps.png",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "assets/vadd/09-map-before-5277ps.png",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "assets/vadd/10-map-after-5278ps.png",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "environment.md",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../exercises/vadd4/WAVE.md",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../exercises/vadd4/main.c",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../exercises/vadd4/vadd4.S",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../exercises/vadd4/Makefile",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-2026-10-17/build-run.json",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-2026-10-17/run-result.json",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-2026-10-17/run.log",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-2026-10-17/vadd4-riscv64-xs.txt",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-2026-10-17/manifest.json",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-wave-2026-10-17/run-result.json",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-wave-2026-10-17/run.log",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-wave-2026-10-17/manifest.json",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-decode-2026-10-18/observations.json",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-rename-2026-10-18/observations.json",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-execution-2026-10-18/observations.json",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-execution-2026-10-18/inspection-run.json",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-writeback-2026-10-18/observations.json",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-writeback-2026-10-18/source-evidence.json",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-report-2026-10-18/screenshots.json",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-report-2026-10-18/evidence-check.json",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-frontend-2026-10-19/ftq-request-observations.json",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-frontend-2026-10-19/icache-response-observations.json",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-frontend-2026-10-19/icache-data-layout.json",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-frontend-2026-10-19/decode-bridge-observations.json",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-frontend-2026-10-19/inspect_decode_bridge.py",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-frontend-2026-10-19/decode-bridge-run.json",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-frontend-2026-10-19/report-source-evidence.json",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-frontend-2026-10-19/report-images.json",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-frontend-2026-10-19/decode-bridge-user-confirmation.json",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../artifacts/vadd4-frontend-2026-10-19/report-extension/check-result.json",
+      "exists": true
+    },
+    {
+      "document": "reports/stage1/vadd-lifecycle.md",
+      "target": "../../external/XiangShanLab/xiangshan-course/docs/5-xiangshan-scenarios-analysis/instructions-lifecycle/scalar-add/simple-execution-process-of-an-add-instruction.md",
+      "exists": true
+    }
+  ],
+  "local_link_count": 270,
+  "errors": [],
+  "passed": true
+}

@@ -1,0 +1,24 @@
+{
+  "status": "mixed-route-coverage-review-required",
+  "simulator_invoked": false,
+  "contention_accepted": false,
+  "cwd": "/root/private_data/mj/xiangshan",
+  "argv": [
+    "/root/private_data/mj/xiangshan/evidence/vdot-mixed-route-audit-ApJqcC/audit.py",
+    "/root/private_data/mj/xiangshan/evidence/vdot-mixed-route-audit-ApJqcC"
+  ],
+  "python": "3.11.9 (main, Apr  5 2026, 19:32:29) [GCC 11.4.0]",
+  "prior": "/root/private_data/mj/xiangshan/evidence/vdot-mixed-resources-9k3waS",
+  "root_edges": 2280,
+  "resources": 12,
+  "fully_observed_resources": 6,
+  "target_request_samples": 3,
+  "confirmed_target_request_samples": 3,
+  "physical_writeback_identity_attribution": "not added; use raw per-resource request coverage only",
+  "limitations": [
+    "Earlier busy-table gating is outside these arbiter inputs",
+    "EXU overlap is not same-resource contention; source-constant output ready is labelled",
+    "Prior live identity retains redirected tags until reuse; review redirects before accepting competition"
+  ],
+  "elapsed_seconds": 49.007
+}

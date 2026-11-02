@@ -1,0 +1,59 @@
+{
+  "input_sha256": "ee7222bb959d5946ebfbc226294d553a40839619d990e74026ea1e9392b6f6f6",
+  "input_source": "User pasted server output; no direct remote session",
+  "source_hashes_matched": 6,
+  "collection_exit": 0,
+  "host": "x86_64 64",
+  "regcpy_bytes": 1400,
+  "layout": {
+    "gpr": [
+      0,
+      256
+    ],
+    "fpr": [
+      256,
+      256
+    ],
+    "csr": [
+      512,
+      144
+    ],
+    "pc": [
+      656,
+      8
+    ],
+    "hcsr": [
+      664,
+      136
+    ],
+    "vr": [
+      800,
+      512
+    ],
+    "vcsr": [
+      1312,
+      56
+    ],
+    "fcsr": [
+      1368,
+      8
+    ],
+    "triggercsr": [
+      1376,
+      24
+    ]
+  },
+  "offset_basis": "Offsets inferred from matching source order and generated uint64_t fields, relative to regs_int/gpr; not a live RefProxy offsetof probe",
+  "vlen": 128,
+  "lightqs": false,
+  "rv_ame": false,
+  "decision": "No observed state-layout blocker for bounded hello-meijie smoke test",
+  "signature_caveat": "RefProxy calls void(void*,bool,bool); NEMU without LIGHTQS defines void(void*,bool). x86_64 SysV register convention supports a target-specific inference that the extra third argument does not alter the first two; this is not portable C/C++ function-type equivalence.",
+  "abi_source": "https://gitlab.com/x86-psABIs/x86-64-ABI/-/blob/master/x86-64-ABI/low-level-sys-info.tex",
+  "not_tested": [
+    "Hello/VADD runtime",
+    "Portable ABI compatibility",
+    "Custom vdot"
+  ],
+  "next": "Run hash-locked hello-meijie with explicit source NEMU --diff and preserve exit/output"
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "path": "TOP.clock",
+    "width": 1,
+    "id": "j4O"
+  },
+  {
+    "path": "TOP.SimTop.timer",
+    "width": 64,
+    "id": "h'"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.io_fromVfIQ_0_1_ready",
+    "width": 1,
+    "id": "#\\K"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.io_fromVfIQ_0_1_valid",
+    "width": 1,
+    "id": "H2J"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.io_fromVfIQ_0_1_bits_common_robIdx_flag",
+    "width": 1,
+    "id": "azA"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.io_fromVfIQ_0_1_bits_common_robIdx_value",
+    "width": 6,
+    "id": "bzA"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.io_fromVfIQ_0_1_bits_common_pdest",
+    "width": 8,
+    "id": "wU\""
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.io_fromVfIQ_0_1_bits_common_vecWen",
+    "width": 1,
+    "id": "zU\""
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.io_fromVfIQ_0_0_ready",
+    "width": 1,
+    "id": "$\\K"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.io_fromVfIQ_0_0_valid",
+    "width": 1,
+    "id": "K2J"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.io_fromVfIQ_0_0_bits_common_robIdx_flag",
+    "width": 1,
+    "id": "M2J"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.io_fromVfIQ_0_0_bits_common_robIdx_value",
+    "width": 6,
+    "id": "N2J"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.io_fromVfIQ_0_0_bits_common_pdest",
+    "width": 8,
+    "id": ".V\""
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.io_fromVfIQ_0_0_bits_common_vecWen",
+    "width": 1,
+    "id": "/V\""
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.vfWbBusyArbiter.arbiters_0.clock",
+    "width": 1,
+    "id": "j4O"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.vfWbBusyArbiter.arbiters_0.reset",
+    "width": 1,
+    "id": "*5O"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.vfWbBusyArbiter.arbiters_0.io_in_0_ready",
+    "width": 1,
+    "id": "X]K"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.vfWbBusyArbiter.arbiters_0.io_in_0_valid",
+    "width": 1,
+    "id": "e3J"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.vfWbBusyArbiter.arbiters_0.io_in_1_ready",
+    "width": 1,
+    "id": "W]K"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.vfWbBusyArbiter.arbiters_0.io_in_1_valid",
+    "width": 1,
+    "id": "f3J"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.vfWbBusyArbiter.arbiters_0.io_out_valid",
+    "width": 1,
+    "id": "Z]K"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_in_ready",
+    "width": 1,
+    "id": "(BO"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_in_valid",
+    "width": 1,
+    "id": "wJI"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_in_bits_robIdx_flag",
+    "width": 1,
+    "id": "/'J"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_in_bits_robIdx_value",
+    "width": 6,
+    "id": "0'J"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_in_bits_pdest",
+    "width": 8,
+    "id": "z_"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_out_ready",
+    "width": 1,
+    "id": "(BO"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_out_valid",
+    "width": 1,
+    "id": "W$O"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_out_bits_pdest",
+    "width": 8,
+    "id": "r_N"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_out_bits_robIdx_flag",
+    "width": 1,
+    "id": "X$O"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_out_bits_robIdx_value",
+    "width": 6,
+    "id": "s_N"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_1.io_in_ready",
+    "width": 1,
+    "id": "(BO"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_1.io_in_valid",
+    "width": 1,
+    "id": "'u;"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_1.io_in_bits_robIdx_flag",
+    "width": 1,
+    "id": ".VA"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_1.io_in_bits_robIdx_value",
+    "width": 6,
+    "id": "/VA"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_1.io_in_bits_pdest",
+    "width": 8,
+    "id": ",`"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_1.io_out_ready",
+    "width": 1,
+    "id": "(BO"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_1.io_out_valid",
+    "width": 1,
+    "id": ">RL"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_1.io_out_bits_pdest",
+    "width": 8,
+    "id": "GRL"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_1.io_out_bits_robIdx_flag",
+    "width": 1,
+    "id": "HRL"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_1.io_out_bits_robIdx_value",
+    "width": 6,
+    "id": "IRL"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_wbDataPath.clock",
+    "width": 1,
+    "id": "j4O"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_wbDataPath.reset",
+    "width": 1,
+    "id": "*5O"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_wbDataPath.vfWbArbiter.arbiters_0.io_in_0_ready",
+    "width": 1,
+    "id": "(BO"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_wbDataPath.vfWbArbiter.arbiters_0.io_in_0_valid",
+    "width": 1,
+    "id": "^$O"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_wbDataPath.vfWbArbiter.arbiters_0.io_in_1_ready",
+    "width": 1,
+    "id": "U;O"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_wbDataPath.vfWbArbiter.arbiters_0.io_in_1_valid",
+    "width": 1,
+    "id": "PSL"
+  },
+  {
+    "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_wbDataPath.vfWbArbiter.arbiters_0.io_out_valid",
+    "width": 1,
+    "id": "b,O"
+  }
+]

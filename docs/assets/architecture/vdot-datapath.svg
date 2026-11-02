@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="690" viewBox="0 0 1180 690" role="img" aria-label="VDot功能单元数据通路">
+<rect width="100%" height="100%" fill="#f5f7fa"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="40" y="52" font-size="28" font-weight="700" fill="#173047">VDot功能单元数据通路</text>
+<text x="40" y="88" font-size="17" fill="#526375">FU内部两拍流水；物理时序与面积需要综合/STA另行评估。</text>
+<rect x="40" y="120" width="1100" height="145" rx="10" fill="white" stroke="#c7d3df"/>
+<rect x="40" y="120" width="1100" height="44" rx="10" fill="#276887"/>
+<text x="60" y="149" font-size="21" font-weight="700" fill="white">输入与第1拍</text>
+<text x="60" y="198" font-size="18" fill="#20374b">vs1 / vs2低8个字节 → 8个signed INT8×INT8乘积（16位）</text>
+<text x="60" y="229" font-size="18" fill="#20374b">有效掩码选择乘积或0 → S1Reg；oldVd、VL及ROB/目的等控制随基类流水传递</text>
+<rect x="40" y="290" width="1100" height="175" rx="10" fill="white" stroke="#c7d3df"/>
+<rect x="40" y="290" width="1100" height="44" rx="10" fill="#5360a1"/>
+<text x="60" y="319" font-size="21" font-weight="700" fill="white">第2拍：三级加法树与结果寄存</text>
+<text x="60" y="368" font-size="18" fill="#20374b">8×16位乘积 → 4×17位部分和 → 2×18位部分和 → 1×19位总和</text>
+<text x="60" y="399" font-size="18" fill="#20374b">19位和符号扩展至32位；拼接高96位零 → S2Reg（128位）</text>
+<text x="60" y="430" font-size="18" fill="#20374b">总和范围：−130048～131072</text>
+<rect x="40" y="490" width="1100" height="175" rx="10" fill="white" stroke="#c7d3df"/>
+<rect x="40" y="490" width="1100" height="44" rx="10" fill="#237562"/>
+<text x="60" y="519" font-size="21" font-weight="700" fill="white">结果与控制输出</text>
+<text x="60" y="568" font-size="18" fill="#20374b">合法非零VL：选择计算结果；VL0或非法状态：数据选择oldVd</text>
+<text x="60" y="599" font-size="18" fill="#20374b">非法状态另报illegalInstr；输出valid受流水有效位与ROB取消条件约束</text>
+<text x="60" y="630" font-size="18" fill="#20374b">EXU/写回路径完成物理写入；ROB按序退休，已提交状态由提交路径控制</text>
+</g></svg>

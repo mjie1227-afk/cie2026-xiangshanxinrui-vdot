@@ -1,0 +1,52 @@
+[
+  {
+    "file": "reports/stage1/vadd-lifecycle.md",
+    "before_sha256": "1fb1df1398971cee3715f397a2ead7139851cbfa942da48754c1ef0162b70808",
+    "after_sha256": "df553810021cef2890b117547edfa1e63098c155bdfb13edb0b3890cb2c76049"
+  },
+  {
+    "file": "PROGRESS.md",
+    "before_sha256": "c25da9436aa3172709e817b9e65fb603a222422c7ef72d7f11ed139b68f90ec7",
+    "after_sha256": "9fa330dfd67ce26cbae44586dca9f58f73b8a4194fa2136c617246137b109997"
+  },
+  {
+    "file": "docs/HANDOFF.md",
+    "before_sha256": "803d1da8cee009ba43a2097f870ca79fa666cfdba470e6f1af881a72a363297f",
+    "after_sha256": "e3e32e3c44f65ea5bb048ab4c213cb949f5fe07092bc585a62fe7693a16c904b"
+  },
+  {
+    "file": "docs/verification.md",
+    "before_sha256": "99e9f71f6ffe5e1d6fd9559b4524d4247ee6647264c19191c1d50508f3010bc6",
+    "after_sha256": "97411a3fd58fe03b923bd961967c1f10e606f52b96f22e6cbae384017aee4463"
+  },
+  {
+    "file": "README.md",
+    "before_sha256": "0ad469b64cada92c28a2195fa59fd06b87c9d45e6448a26038b190fb493a7b27",
+    "after_sha256": "9fc54708b5c381b4eb5fcd25a1349c89fdb322bb93145c01a67b58230287bd6e"
+  },
+  {
+    "file": "docs/requirements_matrix.md",
+    "before_sha256": "fcefe1f8ec19af6457d61d6490df863a7beee6546a170b41afb15db750bba673",
+    "after_sha256": "41b937084230e81964ef4e7ba509069ece474b19dbf2fb6e7c9e3ffb08b271d7"
+  },
+  {
+    "file": "docs/stage1-remaining-checklist.md",
+    "before_sha256": "a8bf4683e718f34469dc7e72aad001336813bc91c85de52e130a61e1d5db7679",
+    "after_sha256": "0a529a812983c0316d42c317693f3d894b0dbad76105f11219147105e30dbc30"
+  },
+  {
+    "file": "docs/learning_path.md",
+    "before_sha256": "358f0da236f829b9572d884f8db6ebb3108a31a8c1b31a6cac9926f56c9a252c",
+    "after_sha256": "fec431835a102f5cc6247fac96e04e219c88e6aafd45da579387431013721b50"
+  },
+  {
+    "file": "exercises/vadd4/README.md",
+    "before_sha256": "02efcd1b24c85e0f4b2f9a21f7a7892fc2d19cc0d09b8a904a9e6d9351ea95bb",
+    "after_sha256": "297cac95d2594b5ac69305edf993f65ead0b075ac80739036d7fd592b1b333cc"
+  },
+  {
+    "file": "exercises/vadd4/WAVE.md",
+    "before_sha256": "4d02e867774d584012fce9f896a4090cd3fb613b26e32ed4ae8f49a6187daa33",
+    "after_sha256": "0e08508b58559f260ca59451291d27955dcf3ec965355337309bbb65b810b9ec"
+  }
+]

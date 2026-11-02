@@ -1,0 +1,220 @@
+# 第二阶段：vdot.vv 功能验证报告
+
+版本：0.12；更新日期：2026-10-26。对应提交项：C2.3.1正数、C2.3.2含负数、C2.3.3边界值；补充C2.1/C2.2所需的控制与集成验证。文档状态：阶段评审稿。
+
+## 摘要
+
+指定正数、含负数和边界用例已在香山整核仿真中通过，检查包括完整128位结果、应用自检、源码NEMU DiffTest和正常陷阱结束。异常64例、寄存器重叠60例以及依赖/混发/分支与CSR共120例提供额外架构覆盖。
+
+已有短窗口波形显示8次正常VDot完成并提交，另一个同PC候选在完成后受到目标分支redirect覆盖，在其已记录生命周期内没有提交。补证已闭合该候选的发射、完成、写回、redirect与不退休链路；随后2280个采样沿的退休到CSR VS-dirty请求检查也通过。验收范围为所测动态实例及请求通路，不代表所有取消时刻、最终VS状态或完整第二阶段门槛均已完成。
+
+## 1 验证对象与环境
+
+验证对象为[设计说明](design.md)中的CIE-vdot-vv-v0.1实现。服务器工程根目录为`/root/private_data/mj/xiangshan`；单核MinimalConfig、VLEN128、EMU_TRACE=1。当前采用mtval修复后的emu、原VDot源码NEMU库及共享16字节Flash，身份见附录A。
+
+历史本地验证采用独立sbt/Chisel工程或香山Mill工程，各自配置分开记录。服务器完整日志保存在运行目录；本报告由已归档用户回传、运行脚本及核验记录整理，不表示本轮重新运行了全部测试。
+
+## 2 方法与判定标准
+
+| 层次 | 方法 | 可支持的结论 |
+|---|---|---|
+| 独立算术 | 精确整数参考、定向及固定种子RTL测试 | 算术、符号扩展和结果布局 |
+| 独立控制/局部RTL | 合法性、握手、反压、flush及ROB条件检查 | 所测接口与条件下的模块行为 |
+| 源码NEMU | 真实参考库API测试 | 参考语义和状态更新 |
+| 整核应用 | 机器码执行、结果/CSR自检、DiffTest | 给定程序的架构结果一致性 |
+| 有界波形 | 同一动态身份、沿前握手、redirect与提交关联 | 实际发生的流水事件及覆盖范围 |
+
+整核通过要求：使用指定镜像和参考库、DiffTest确实启用、用例检查通过、`HIT GOOD TRAP`、emu及脚本退出0。应用通过与检查器故意错误测试分开统计。不同层次的用例数不累加成“总覆盖率”，重复运行同一套件不算新增覆盖。
+
+## 3 赛题要求的三类整核测试
+
+首批`vdot-smoke`共7例，在`vdot-build-80mKCD`通过；mtval修复后的新emu在`vdot-mtval-build-xYGYlZ`完成同套回归，均有DiffTest、GOOD TRAP和退出0。
+
+| 用例 | 分类与设置 | 预期结果/检查 | 结果 |
+|---|---|---|---|
+| case0 | 正数，VL8、vm1 | 点积36，完整128位布局 | 通过 |
+| case1 | 正边界，8对−128×−128 | 131072，即低32位0x00020000，高96位0 | 通过 |
+| case2 | 含负数及负边界，8对−128×127 | −130048，即低32位0xfffe0400，高96位0 | 通过 |
+| case3 | 交替掩码，VL8、vm0 | 点积16，按掩码位选择乘积 | 通过 |
+| case4 | 掩码全零，VL8、vm0 | 完整128位为0 | 通过 |
+| case5 | 合法VL0 | 完整旧vd保持；不把日志中的参考sum当作实际重算结果 | 通过 |
+| case6 | VL16 | 仍只使用低8对，结果36；高半源不参与 | 通过 |
+
+各例还检查相关VS为Dirty。上述记录覆盖C2.3.1～C2.3.3要求的指定测试，不声称穷尽输入空间。[原始smoke摘要及身份](../../artifacts/scnet-vdot-smoke-2026-10-24/review.json)、[修复后回归](../../artifacts/vdot-mtval-fix-2026-10-24/server-xYGYlZ/review.json)。
+
+## 4 扩展控制与集成验证
+
+| 测试组 | 规模与重点 | 已验证结果 | 仍需区分的边界 |
+|---|---|---|---|
+| 独立算术 | 1302组定向、掩码、高半源扰动及随机输入 | 参考值与RTL一致 | 不涉及整核调度 |
+| 独立控制补点 | 278语义场景、164拍协议；含24孤立非法与9组满槽取消 | 所测控制条件通过 | 不代替整核ROB/CSR |
+| NEMU API | 268例通过；10例固定配置下不适用 | 完整向量状态与相关CSR核对 | 不等于整核应用执行 |
+| 整核异常 | 64例：62预期陷阱、2合法保护例 | cause/mepc/mtval及状态检查通过 | 仅覆盖所列矩阵 |
+| 整核重叠 | 60例、15种关系 | 源/目的/掩码重叠结果通过 | 不凭此推断所有旁路时序 |
+| 依赖链 | 12程序×4输入，48例 | RAW/WAW/WAR、旧目的和跨域消费结果通过 | 每条唤醒/旁路握手未逐条取证 |
+| 混合FU | 8程序×4输入，32例 | VADD/VMUL/VDot及整数/浮点混发结果通过 | 尚未确认特定端口同拍竞争 |
+| 分支/精确异常与CSR | 32分支场景、8精确异常场景 | 架构状态、年轻操作不提交及恢复检查通过 | 内部投机经历需波形补证 |
+
+独立算术见[专项报告](vdot8-standalone-validation.md)，独立控制和局部RTL/NEMU见[首版验证记录](vdot-integration-validation-2026-10-24.md)。整核异常/重叠见[xYGYlZ](../../artifacts/vdot-mtval-fix-2026-10-24/server-xYGYlZ/review.json)，120例见[JuGUz6](../../artifacts/vdot-pipeline-2026-10-24/server-JuGUz6/review.json)。
+
+## 5 异常不一致的定位与修复
+
+旧emu在`short-1-vm0`用例失败：故障VDot位于PC=0x8000021c、机器码0x0020818b，DUT的mtval为0，参考值为故障指令码。差分显示的前条比较PC=0x80000218不能误作故障指令地址。
+
+问题来自执行期异常到CSR的指令身份信息通路。修复通过ROB功能性槽位记录保留编码字段和generation，在精确异常选择时送至CSR；保留正常异常仲裁、参考语义和DiffTest比较。修复后的64例异常及60例重叠、smoke、Hello/VADD均通过。失败和修复证据分别保存在[OMcrpf](../../artifacts/vdot-matrix-2026-10-24/server-OMcrpf/review.json)及[xYGYlZ](../../artifacts/vdot-mtval-fix-2026-10-24/server-xYGYlZ/review.json)。
+
+## 6 分支投机路径的窗口取证
+
+### 6.1 输入与方法
+
+使用同一emu、源码NEMU、Flash、`vdot-cancel-csr`镜像和seed1。文本定位选取第9次目标分支附近，保存6978～9258范围的双边沿VCD，运行到10000周期停止。波形为457224402字节，时间单位1ps，时间戳14060～18621。该运行用于取证，不是性能测量。
+
+解析器按上升沿前稳定值检查握手，以PC/机器码、完整ROB flag/value和pdest关联事件；所有rename握手参与ROB身份复用检查。分析退出0，原波形未改动。本次已归档的是用户回传摘要，完整事件JSON仍在服务器。[UbYWTP核验](../../artifacts/vdot-window-events-2026-10-25/server-UbYWTP/review.json)；[fgpWCe补证与单例验收](../../artifacts/vdot-window-supplement-2026-10-25/server-fgpWCe/review.json)。补证通过锁定源码的EXU/Dispatcher组合连线恢复入口身份，输入valid/ready仍来自实际FU，并要求父EXU接受条件一致。
+
+整个采样窗口中，时钟高/低相位的`VCD时间−2×timer`分别为98/99，`VCD时间−2×cycleCnt`分别为102/103。这建立本次记录的计数器关系；以下直接使用VCD时间戳，避免将不同计数器混用。
+
+### 6.2 正常执行对照
+
+8个VDot实例都观察到rename、FU输出握手、控制侧写回和ROB提交。例如target1：PC=0x80000208、机器码0x0220818b、ROB=1/36、pdest=62，在14208重命名、14220输入握手、14224完成、14272提交。结果先完成、随后按程序顺序提交，说明两者不是同一时刻。
+
+### 6.3 目标分支与候选VDot
+
+| VCD时间 | 动态身份 | 观察事件 |
+|---:|---|---|
+| 16890 | target18，分支PC0x80000204，ROB1/26 | rename握手 |
+| 16892 | target19，VDot PC0x80000208，ROB1/27，pdest61 | rename握手 |
+| 16904 | target19 | FU输入valid/ready握手，父EXU valid/ready均为1 |
+| 16908 | target19 | FU输出握手、控制侧写回；物理写端口addr61、data0xffffe900与同拍结果一致 |
+| 16952 | redirect来源target18，ROB1/26，level0 | 年龄范围覆盖较年轻target19 |
+| 16958 | target18 | ROB提交 |
+| 16970 | target19原ROB身份 | 记录到后续复用；此前未见该实例提交 |
+
+这组事件闭合本例“实际进入FU并完成，随后受较老分支纠正而不退休”的投机取消证据。结果为0x00000000_00000000_00000000_ffffe900（低32位有符号值−5888）。写回入口ready仍未采得，不能声称已观察到该入口fire；但实际FU输出握手、控制侧写回，以及同拍物理写端口wen/addr/data相互佐证，足以支持本例完成后取消结论，不以补猜ready作为前提。原提取器的pdest_only_candidate标签保留，人工复核结论另行记录。
+
+还观察到更早的一组target16/17被ROB1/24的redirect覆盖并随后复用。target17与target19均出现pdest61，但完整ROB不同，不能合并为同一动态指令。补证显示target17在16872有输入握手，同一时间出现另一redirect，随后没有输出和提交。尚未逐拍关联其本地flush到达时序，因此该实例另行保留，不能写成“发射前取消”。
+
+### 6.4 九次身份拒绝的解释
+
+拒绝全部来自分支target0、2、4、6、8、10、12、14、18，端口均为`io_toCtrlBlock_writeback_5`。每次完整ROB与该分支匹配，分析器期望的pdest为rename记录中的0，实测字段为null。null表示没有取得该字段，不是硬件输出了不同的目的寄存器编号。
+
+原关联器为所有目标统一要求ROB和pdest，适用于有向量目的的VDot，却使这一分支完成观察被保守拒绝。分支没有向量目的写入，不能把占位pdest0解释为必须在所有分支通路出现的有效目的。9次拒绝中没有VDot目标，也没有“两个非空pdest数值不同”的情况。保留原始计数与诊断，不把null改成0以消除拒绝。
+
+### 6.5 已关闭范围与剩余覆盖
+
+已关闭ROB1/27、pdest61这一动态实例的执行完成后取消验收，以及9次拒绝的分析器解释。目标PC重复出现时仍需完整ROB及生命周期约束，不能仅用pdest或PC合并。
+
+退休驱动CSR请求现已通过第6.6节检查，下一主项转向多FU实际端口竞争。WB输入ready未采得的观测限制仍保留，但不阻塞已由其他独立事件闭合的取消案例。最终mstatus/vsstatus逐拍状态及全部CSR副作用仍未作完整覆盖。
+
+### 6.6 退休到CSR的VS-dirty请求
+
+复用同一Cpa0HX波形，核对2280个非复位ROB上升沿；没有跳过复位沿，首个缺少沿前样本的边界不计入。依据锁定源码，沿前退休贡献为：
+
+```text
+expected = isCommit AND OR(commitValid[i] AND info[i].dirtyVs)
+```
+
+`GatedValidRegNext(Bool)`为RegNext，因此比较沿后ROB dirty_vs与沿前expected，再比较沿后CSR接收请求。aReAEz检查零差异、脚本/tee退出0；8个正常VDot的提交身份均匹配且贡献为1，target19没有提交贡献。[回传核验](../../artifacts/vdot-csr-commit-window-2026-10-25/server-aReAEz/review.json)。
+
+| VCD时间 | 退休情况 | 沿后ROB / CSR请求 | 说明 |
+|---:|---|---|---|
+| 14272 | 分支dirtyVs0与VDot dirtyVs1同拍退休 | 1 / 1 | 聚合请求由同拍VDot贡献，不能只看分支字段 |
+| 15598 | 仅分支ROB0/31退休，dirtyVs0 | 0 / 0 | 分支本身不产生VS-dirty请求 |
+| 15600 | VDot ROB0/32退休，dirtyVs1 | 1 / 1 | 两拍相邻观察可区分分支和VDot贡献 |
+| 16904、16908 | target19发射/完成时无有效退休贡献 | 0 / 0 | 完成本身不触发此提交请求 |
+| 16952 | 目标redirect时无有效退休贡献 | 0 / 0 | 已取消候选不成为请求来源 |
+| 16958 | 分支ROB1/26退休，dirtyVs0 | 0 / 0 | 同PC候选未随分支提交 |
+
+本项验证的是“退休条件→ROB寄存请求→CSR接收端”。此前40例套件另有架构CSR自检；两者共同增加控制证据，但不等同于逐拍观察mstatus/vsstatus最终VS状态、所有软件CSR写入优先级或全部异常副作用。接下来优先补混发实际竞争，而不是反复重验这一请求通路。
+
+
+### 6.7 混发动态链路与资源竞争覆盖
+
+沿用FNmKGI混发窗口（4978～7258周期，1ps单位，477548918字节），9k3waS只读分析2280个根时钟上升沿，脚本与tee均退出0；没有新增整核仿真。[回传核验](../../artifacts/vdot-mixed-resources-2026-10-25/server-9k3waS/review.json)。目标身份按PC/机器码、完整ROB、pdest及分配时间关联。表中时间为VCD时间戳，握手使用触发沿之前的稳定值。
+
+| 动态实例 | PC / 机器码 | ROB / pdest | rename | IQ offer | EXU输入握手 | EXU输出 / 控制写回 | ROB提交 |
+|---|---|---|---|---|---|---|---|
+| target1 VADD | 0x800001b8 / 0x02110257 | 1/35 / 62 | 13204 | 13210 | 13216 | 13218 | 13222 |
+| target2 VMUL | 0x800001bc / 0x961122d7 | 1/36 / 63 | 13206 | 13212 | 13218 | 13222 | 13226 |
+| target3 掩码VDot | 0x800001c0 / 0x0020818b | 1/37 / 64 | 13208 | 13214 | 13220 | 13224 | 13228 |
+
+这组证据补齐三条选定混发指令的动态处理链及正确退休。VMUL的13218～13222与VDot的13220～13224执行区间存在重叠，但输入和输出握手分别错开，不能据此认定同资源竞争。IQ offer仅表示候选有效，回传摘要未列ready；写回入口ready也仍为缺失或低，不能将其补成1。EXU握手、控制写回和ROB提交分别记录，不混为一个事件。
+
+另有target0在13152分配到与target1相同的ROB1/35、pdest62，13204记录该ROB复用，未取得其发射或提交。两次分配是不同动态实例，不合并，也不由当前摘要推断target0的取消原因。
+
+发射前写回端口申请和实际结果写回共发现12个单输出仲裁实例，提取到的共同请求次数为0，映射矛盾及身份拒绝均为0。因此本轮不接受“VADD、VMUL、VDot实际同资源竞争已覆盖”。不同资源各自活动不构成争用；物理写回输入的身份字段不完整会限制归属，但共同请求计数只依赖valid，不能用身份缺失解释该计数为0。
+
+资源归属和采样覆盖经ApJqcC进一步核对，脚本与tee退出0。下表采用真实VCD端口而非指令名称推定资源：
+
+| 指令实例 | DataPath IQ出口 | EXU | 发射前端口仲裁器 / 输入 | 请求时刻 / ready |
+|---|---|---|---|---|
+| target1 VADD | io_fromVfIQ_1_0 | exus_2 | arbiters_1 / 0 | 13210 / 1 |
+| target2 VMUL | io_fromVfIQ_0_0 | exus | arbiters_0 / 0 | 13212 / 1 |
+| target3 VDot | io_fromVfIQ_0_0 | exus | arbiters_0 / 0 | 13214 / 1 |
+
+三条指令的IQ valid、vecWen和ready均已确认。VMUL和VDot共享同一个IQ出口及EXU、并从同一仲裁输入先后申请；VADD在另一个资源组。因此它们有共享关系，但所选动态实例没有同时从不同输入争抢该端口。不能把这一组结果推广为VADD在所有运行中均只走EXU2。
+
+六个发射前仲裁实例各有2280个非复位、有效位已知的采样沿。仲裁器0/1分别记录13/7次单请求，其他实例分别16/0/4/3次，均无多请求；此范围内零共同请求可信。六个物理写回实例则均记录2280次“局部时钟未知或非上升沿”，没有有效覆盖。源码RealWBArbiter为组合逻辑，叶clock可被优化；这属于分析器采样资格限制，不能解释成硬件无活动或写回竞争为零。后续该层应使用已核对的所属后端时钟/复位采样。更早的busy-table限制仍未观察。[审计回传核验](../../artifacts/vdot-mixed-route-audit-2026-10-25/server-ApJqcC/review.json)。
+
+### 6.8 共享端口竞争定向验证
+
+源码中VDot所属VFEX0与Vipu所属VFEX1共享VfWB端口0，分别为优先级0/1；VIOTA_M译码到Vipu。新应用vdot-port-contend-v1采用向量除法写v0，让掩码VDot与viota.m依赖同一生产者，以增加跨EXU同时就绪的机会。测试覆盖依赖链深度1/2、两种指令顺序和两组输入，共8例，检查五个完整128位向量寄存器及vl/vtype/vstart/vcsr。该结构还共享部分读端口，因此整体IQ反压不能直接归因于写回资源。
+
+本地新应用编译及现有源码NEMU的8例、完整main自检通过；修改NEMU内存中的一个期望字节后，检查器返回1并输出FAIL，确认错误可被检出。此为本地参考模型预检，不是服务器DiffTest或竞争通过。[本地结果](../../artifacts/vdot-port-contend-2026-10-25/local-222126/result.json)。
+
+eDAWKv新应用构建、8例完整架构DiffTest、文本定位及脚本/tee均退出0。首组除法/VDot/VIOTA PC为0x80000170/174/178，机器码82112057/0020818b/52082257，PERF7002～8002；采集窗口5978～8258（2281周期）。只接受架构与定位，不证明实际竞争。 [服务器核验](../../artifacts/vdot-port-contend-2026-10-25/server-eDAWKv/review.json)。完整运行日志与新镜像身份在服务器保存，本地归档用户摘要。
+
+EfQru1短波形已采集：emu/脚本/tee均0，481830060字节，1ps、12060～16621，三目标机器码一致，48根GTKWave概览信号已生成。应用哈希10a092fc…，原emu/源码NEMU/Flash身份保持不变；仅接受采集，实际竞争待事件核对。 [采集核验](../../artifacts/vdot-port-wave-capture-2026-10-25/server-EfQru1/review.json)。采集参数为5978～8258周期双边沿、9000周期停止、seed1；采集周期与VCD时间分别记录。
+
+FfVozt对既有波形的事件关联完成，脚本/tee退出0。12个仲裁实例各有2280个有效位完整的非复位采样沿；其中发射前端口0发生一次共同请求。完整动态身份、输入valid/ready及后续提交共同支持本例验收，映射矛盾与身份拒绝均为0。[核验与范围](../../artifacts/vdot-port-events-2026-10-25/server-FfVozt/review.json)。
+
+| VCD时间（ps） | VDot：PC0x80000174，ROB0/46，pdest56 | VIOTA：PC0x80000178，ROB0/47，pdest57 |
+|---|---|---|
+| 15504 / 15506 | rename分配15504 | rename分配15506 |
+| 15658 | 端口0输入0：valid=1、ready=1，获准 | 同一端口输入1：valid=1、ready=0，受阻 |
+| 15662 | 本例不再申请 | 输入1再次申请，valid=1、ready=1，获准 |
+| 15664 / 15668 | EXU输入15664，输出及控制写回15668 | EXU输入15668 |
+| 15672 / 15676 | ROB提交15672 | EXU输出及控制写回15672，ROB提交15676 |
+
+两条指令在分配到退休之间未见覆盖其身份的redirect。可以接受“一对VDot/VIOTA在发射前共享写回端口申请中发生实际竞争，受阻者后来获准，双方均完成并提交”。这是端口申请仲裁，不是物理结果写回同拍碰撞。实际写回层各实例在本窗口均无共同请求；其中端口0有两次单请求。此次采用WbDataPath实测clock/reset完成了物理层valid覆盖，clock与TOP.clock同网；资源10/11的输入ready仍未观测到，不能称所有握手字段全部覆盖。
+
+没有将chosen缺失补成数值；胜者由实际输入valid/ready确定，输出ready=1来自锁定源码常量。IQ整体ready还受其他资源影响，因此不声称写回端口是所有停顿的唯一原因。15658受阻至15662获准间隔为4ps、两个根时钟周期；当前不宣称valid始终连续保持，也不写成只停顿一拍。本例不外推全部FU组合、公平性或吞吐性能。
+
+用户GUI观察已推进到身份与执行输出：仲裁图15657ps直接显示VDot的ROB0/0x2e、pdest0x38和VIOTA的ROB0/0x2f、pdest0x39，后者在第二次请求仍保持同一身份；EXU图分别在15667/15671ps显示对应输出valid/ready=1/1，确认15668/15672沿的结果输出握手。[S2-F09a身份仲裁图](assets/preissue-contention-identity.png)、[S2-F09b执行输出图](assets/contention-execution-complete.png)。这些身份把共同请求、受阻后再次申请与各自输出连接起来。
+
+最新补图在Marker15671明确显示VDot提交有效、ROB0/0x2e、pdest0x38及机器码0x0020818b；后续有效时段可见VIOTA的ROB0/0x2f、pdest0x39与机器码0x52082257。[退休指令补图](assets/contention-retirement-instructions.png)。该图的VIOTA完整PC仍被时间线截短，完整值与触发沿引用既有FfVozt记录，不冒充新增15675 Marker直接读数。结合前述身份、双EXU输出图和脚本，本例代表性取证归档收束，继续标准RVV等价工作，不因同一字段的截图裁剪反复重跑或阻塞后续。
+
+## 7 验证结论与阶段出口
+
+指定正数、含负数和边界整核测试通过；额外矩阵已验证所列架构状态。mtval修复已在对应异常范围验收。投机路径已闭合一个实际发射并完成、随后被较老分支取消且不退休的动态实例。9次身份拒绝均为分支端口字段缺失，不是VDot数据不一致。
+
+退休到CSR的VS-dirty请求检查已通过；新增一对VDot/VIOTA的发射前端口竞争及后续提交证据闭环。本例代表性GTKWave材料已归档，主线转入标准RVV等价验证。第二阶段其他图像、V2录屏及最终交付包仍需整理，不据本例宣布完整G2提交完成。最终VS状态逐拍观察和其他CSR副作用仍按未覆盖范围保留；阶段材料需补充图像和讲解录屏。后续第三阶段应执行标准RVV等价测试及同条件周期比较；本报告没有加速比、频率、面积或功耗结论。
+
+## 附录A 运行身份与证据索引
+
+| 产物 | 当前路径（相对服务器根） | SHA256 |
+|---|---|---|
+| emu | vdot-mtval-fix-20261024/XiangShan/build/emu | f9653532fd2a4b9f0d0cc08c131f7c258d4b62c46e672c6886d6643aad926850 |
+| 源码NEMU库 | vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so | 11b9f6807c36ed860e0c64cc4e58d27216b19335ecde1ce5797ba2d1cd057b74 |
+| NEMU配置 | vdot-dev-20261024/NEMU/.config | 64282bca051b5dbc5fca742f4fbca2ade937a70f3c4d2ec93c1f4836aca5d9be |
+| 共享Flash | evidence/vdot-build-80mKCD/boot-flash.bin | fea548655a8b6eecacace83e2f4380a18b8aa83bce964c8aae4cffbe2f5a9724 |
+| cancel镜像 | vdot-dev-20261024/nexus-am/apps/vdot-cancel-csr/build/vdot-cancel-csr-riscv64-xs.bin | 3e0f4efa7cf32376768f72d52c78beb526bf4f3f12f16dab9f43a433c2e322bc |
+
+旧96ffa51e…emu用于首批smoke和mtval失败追溯，与当前f9653532…版本分别保留。不同版本结果按原运行记录引用，不混用产物身份。
+
+| 证据目录（相对服务器根） | 用途 |
+|---|---|
+| evidence/vdot-build-80mKCD | 首次源码NEMU/emu构建及7例smoke |
+| evidence/vdot-mtval-build-xYGYlZ | 修复后异常、重叠及回归 |
+| evidence/vdot-pipeline-JuGUz6 | 48/32/40架构套件 |
+| evidence/vdot-wave-window-Cpa0HX | 原始窗口VCD、采集参数及身份 |
+| evidence/vdot-window-events-UbYWTP | 初始事件关联 |
+| evidence/vdot-window-supplement-fgpWCe | 补齐输入身份、focus详情、9次拒绝诊断及截图信号清单 |
+| evidence/vdot-mixed-route-audit-ApJqcC | 发射前资源归属及2280沿完整覆盖；实际写回采样缺口 |
+| evidence/vdot-mixed-resources-9k3waS | 三条混发动态链；12实例共同请求为0，竞争尚未验收 |
+| evidence/vdot-csr-commit-window-aReAEz | 2280沿的提交请求检查、逐拍贡献与接收端对照 |
+
+原始命令、工具版本、退出码和失败记录集中于[验证记录](../../docs/verification.md)及各运行目录。分析命令见[窗口事件提取入口](../../artifacts/vdot-window-events-2026-10-25/README.md)，历史命令用于复现，不要求为报告重复运行已通过测试。
+
+## 附录B 图像与交付材料
+
+截图应展示原始运行摘要或真实波形，并与运行目录、版本和动态身份对应。当前第二阶段截图尚未归档，不用合成图片冒充实测画面。[截图与材料清单](../../docs/stage2-evidence-checklist.md)规定图号、内容、时间范围和保存位置；取得图像后再嵌入对应章节。

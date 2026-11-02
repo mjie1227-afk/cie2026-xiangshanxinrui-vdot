@@ -1,0 +1,73 @@
+diff --git a/src/isa/riscv64/include/isa-all-instr.h b/src/isa/riscv64/include/isa-all-instr.h
+index 2f18ca17..b434df12 100644
+--- a/src/isa/riscv64/include/isa-all-instr.h
++++ b/src/isa/riscv64/include/isa-all-instr.h
+@@ -155,7 +155,7 @@
+ 
+ #ifdef CONFIG_RVV
+ #define VECTOR_INSTR_TERNARY(f) \
+-  f(vadd) f(vsub) f(vrsub) f(vminu) f(vmin) \
++  f(vdot) f(vadd) f(vsub) f(vrsub) f(vminu) f(vmin) \
+   f(vmaxu) f(vmax) f(vand) f(vor) f(vxor) \
+   f(vrgather) f(vrgatherei16) \
+   f(vadc) f(vmadc) f(vsbc) f(vmsbc) \
+diff --git a/src/isa/riscv64/instr/decode.c b/src/isa/riscv64/instr/decode.c
+index 11290c89..a0c1d62d 100644
+--- a/src/isa/riscv64/instr/decode.c
++++ b/src/isa/riscv64/instr/decode.c
+@@ -97,6 +97,7 @@ def_THelper(main) {
+   def_INSTR_TAB  ("??????? ????? ????? ??? ????? 10100 ??",         op_fp);
+ #endif // CONFIG_FPU_NONE
+ #ifdef CONFIG_RVV
++  def_INSTR_IDTAB("000000 ? ????? ????? 000 ????? 00010 11", OP_V  , vdot);
+   def_INSTR_IDTAB("??????? ????? ????? ??? ????? 10101 ??", OP_V  , OP_V);
+ #endif // CONFIG_RVV
+ #ifdef CONFIG_RV_AME
+diff --git a/src/isa/riscv64/instr/rvv/vcompute.h b/src/isa/riscv64/instr/rvv/vcompute.h
+index 2bcb6aae..6eff9c63 100644
+--- a/src/isa/riscv64/instr/rvv/vcompute.h
++++ b/src/isa/riscv64/instr/rvv/vcompute.h
+@@ -18,6 +18,7 @@
+ 
+ #include "vcompute_impl.h"
+ #include "vcommon.h"
++#include "vdot.h"
+ 
+ def_EHelper(vadd) {
+   ARITH(ADD, SIGNED)
+diff --git a/src/isa/riscv64/instr/rvv/vdot.h b/src/isa/riscv64/instr/rvv/vdot.h
+new file mode 100644
+index 00000000..5e20f201
+--- /dev/null
++++ b/src/isa/riscv64/instr/rvv/vdot.h
+@@ -0,0 +1,30 @@
++// CIE vdot.vv v0.1: fixed eight signed INT8 products, whole-register result.
++// Included after vcompute_impl.h/vcommon.h. No generic RVV tail/mask merging.
++def_EHelper(vdot) {
++  require_vector(true); // host/guest VS and vill, before the vl=0 path
++  if ((vtype->val >> 8) != 0 || vtype->vsew != 0 || vtype->vlmul != 0 ||
++      vstart->val != 0 || (vl->val != 0 && (vl->val < 8 || vl->val > 16))) {
++    longjmp_exception(EX_II);
++  }
++  const uint32_t word = s->isa.instr.val;
++  const unsigned vd = (word >> 7) & 31;
++  const unsigned vs1 = (word >> 15) & 31;
++  const unsigned vs2 = (word >> 20) & 31;
++  const unsigned vm = (word >> 25) & 1;
++  if (vl->val != 0) {
++    // Snapshot before any write, including vd=v0 and all source overlaps.
++    const uint64_t a = cpu.vr[vs1]._64[0];
++    const uint64_t b = cpu.vr[vs2]._64[0];
++    const uint64_t mask = cpu.vr[0]._64[0];
++    int32_t sum = 0;
++    for (unsigned i = 0; i < 8; ++i) {
++      const int ai = ((int)((a >> (8*i)) & 255) ^ 128) - 128;
++      const int bi = ((int)((b >> (8*i)) & 255) ^ 128) - 128;
++      if (vm || ((mask >> i) & 1)) sum += ai * bi;
++    }
++    cpu.vr[vd]._64[0] = (uint32_t)sum;
++    cpu.vr[vd]._64[1] = 0;
++  }
++  vstart->val = 0;
++  vp_set_dirty(); // includes legal vl=0 and guest VS when virtualized
++}

@@ -1,0 +1,161 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>赛题要求与提交材料对照</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#eef2f5;color:#243747;font-family:"Microsoft YaHei",sans-serif;line-height:1.8}main{max-width:1180px;margin:24px auto;padding:32px 44px 60px;background:white}h1{font-size:29px;line-height:1.4;margin:18px 0 24px}h2{font-size:23px;border-bottom:1px solid #cddbe5;padding-top:12px;margin-top:32px}h3{font-size:19px;margin-top:26px}h4{font-size:17px}p,li{font-size:16px}li{margin:5px 0}a{color:#146787;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}table{border-collapse:collapse;width:100%;table-layout:auto;margin:16px 0 25px}th,td{border:1px solid #cedbe4;padding:8px 10px;text-align:left;font-size:14px;vertical-align:top;overflow-wrap:anywhere}th{background:#edf4f7}td[style*="text-align:right"],th[style*="text-align:right"]{white-space:nowrap}pre{background:#f2f6f8;border-left:3px solid #2d728f;padding:15px;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.65;font-size:13px}code{font-family:Consolas,"Microsoft YaHei",monospace;overflow-wrap:anywhere}img{max-width:100%;height:auto;display:block;margin:18px auto 8px}figure{margin:22px 0}figcaption{font-size:14px;color:#455f70;line-height:1.65}blockquote{border-left:3px solid #7699aa;padding-left:15px;margin:18px 0;color:#45616f}nav{font-size:14px;border-bottom:1px solid #dce5eb;padding-bottom:14px}nav a{margin-right:20px}hr{border:0;border-top:1px solid #dce5eb;margin:28px 0}.cover{padding-bottom:25px}.chapter{margin-top:50px}.source-ref{color:#536a77;font-size:0.9em;overflow-wrap:anywhere}.toc{padding:20px;background:#f3f7fa}.toc li{margin:8px 0}@page{size:A4;margin:18mm 15mm 17mm}@media print{body{background:white;line-height:1.65}main{margin:0;padding:0;max-width:none}nav{display:none}.cover{break-after:page}.chapter{break-before:page;margin-top:0}h1{font-size:22pt}h2{font-size:16pt;margin-top:20px}h3{font-size:13pt}h4{font-size:11pt}p,li{font-size:10pt}td,th{font-size:8.5pt;padding:5px 6px}table{margin:10px 0 16px;break-inside:avoid;break-before:avoid}thead{display:table-header-group}tr{break-inside:avoid}pre{font-size:7.8pt;line-height:1.5;padding:9px;break-inside:auto}figure{break-inside:avoid;margin:12px 0}figure img{max-height:195mm;object-fit:contain}figcaption{font-size:8.5pt}h1,h2,h3,h4,.table-caption{break-after:avoid}.wave-evidence{break-inside:avoid}p{orphans:3;widows:3}.source-ref{font-size:8pt}a{color:#146787}blockquote{margin:10px 0}td[style*="text-align:right"]{white-space:normal}}@media print{pre{break-inside:avoid}.materials table{break-inside:auto;break-before:auto}.materials>p{break-after:avoid}.materials th:first-child,.materials td:first-child{width:13mm}.materials td{font-size:8pt}hr{margin:10px 0}}.materials td:last-child code{word-break:break-all}.materials th:nth-child(2){min-width:35mm}.materials table:last-of-type th:nth-child(2){width:40mm}@media print{.materials h1{font-size:20pt}.materials table{break-inside:auto}.materials table:first-of-type th:first-child{width:34mm}.materials table:nth-of-type(2) th:first-child{width:38mm}.materials td:last-child{line-height:1.6}.materials p{break-after:auto}}@media print{.chapter p:has(+ pre){break-after:avoid}.chapter img[alt*="Hello终端"]{max-height:140mm;width:auto}}</style><main><nav><a href="index.html">总目录</a><a href="ch5.html">数据通路</a><a href="ch8.html">协同仿真</a><a href="ch10.html">延迟与性能</a></nav><h1 id="赛题要求与提交材料对照">赛题要求与提交材料对照</h1>
+<p><strong>本文要点</strong></p>
+<ul>
+<li>三个文档位置分别对应环境与执行过程、设计与基础测试、协同仿真与性能分析。</li>
+<li>本文档库用第 1～10 章覆盖技术要求；三个阶段合订版分别收纳对应正文、插图和复现索引。</li>
+<li>第三阶段同时包含 NEMU 扩展、RTL/NEMU 差分、RVV 基线和延迟加速分析。</li>
+<li>源码、三段录屏与平台提交另有交付项，文档审阅与上传验收分别记录。</li>
+</ul>
+<h2 id="1-对象">1 对象</h2>
+<p>项目针对香山昆明湖 V2 的向量实现新增固定八项 INT8 点积指令 <code>vdot.vv</code>。技术路线为环境验证、指令设计与基础测试、NEMU 协同仿真及 Baseline 延迟对比。本文按官网的提交项目组织材料；图号和章节编号属于本报告的导航约定。</p>
+<p><strong>依据</strong>：<a href="https://rv.cie.org.cn/direction?id=8">比赛官网赛题</a> · <a href="https://github.com/OpenXiangShan/XiangShanLab/blob/master/xiangshan-question-bank/8-xiangshan-development/development-question.md">官方技术任务说明</a> · <a href="file:///D:/Mayyyyyy/WorkSpaces/%E6%97%A5%E5%B8%B8%E5%B7%A5%E4%BD%9C%E5%8C%BA1/2026%E6%AF%94%E8%B5%9B%E8%A7%84%E5%88%92/RISCV_vdot/artifacts/docs-final-rollout-2026-10-29/official-comparison.json">公开内容复核记录</a></p>
+<h2 id="2-方法">2 方法</h2>
+<h3 id="21-阶段与提交位置">2.1 阶段与提交位置</h3>
+<figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTgwIiBoZWlnaHQ9IjgxMCIgdmlld0JveD0iMCAwIDExODAgODEwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9InZkb3Tpobnnm67kuInpmLbmrrXku7vliqHkuI7or4Hmja4iPg0KPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2Y1ZjdmYSIvPg0KPGcgZm9udC1mYW1pbHk9Ik1pY3Jvc29mdCBZYUhlaSwgTm90byBTYW5zIENKSyBTQywgc2Fucy1zZXJpZiI+DQo8dGV4dCB4PSI0MCIgeT0iNTIiIGZvbnQtc2l6ZT0iMjgiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMxNzMwNDciPnZkb3Tpobnnm67kuInpmLbmrrXku7vliqHkuI7or4Hmja48L3RleHQ+DQo8dGV4dCB4PSI0MCIgeT0iODgiIGZvbnQtc2l6ZT0iMTciIGZpbGw9IiM1MjYzNzUiPuWbuuWumueJiOacrOOAgeWNleaguE1pbmltYWxDb25maWfvvJvpmLbmrrXnu5PmnpzkuI7mnIDnu4jkuqTku5jliIbliKvorrDlvZXjgII8L3RleHQ+DQo8cmVjdCB4PSI0MCIgeT0iMTIwIiB3aWR0aD0iMTEwMCIgaGVpZ2h0PSIxNjYiIHJ4PSIxMCIgZmlsbD0id2hpdGUiIHN0cm9rZT0iI2M3ZDNkZiIvPg0KPHJlY3QgeD0iNDAiIHk9IjEyMCIgd2lkdGg9IjExMDAiIGhlaWdodD0iNDQiIHJ4PSIxMCIgZmlsbD0iIzI3Njg4NyIvPg0KPHRleHQgeD0iNjAiIHk9IjE0OSIgZm9udC1zaXplPSIyMSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0id2hpdGUiPumYtuauteS4gO+8mueOr+Wig+S4juWfuuehgOaMh+S7pDwvdGV4dD4NCjx0ZXh0IHg9IjYwIiB5PSIxOTgiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMyMDM3NGIiPumDqOe9suS4juaehOW7uuiusOW9lSDihpIg5a6a5Yi2SGVsbG/kuI5JUOi+k+WHuiDihpIgVkFEROWKqOaAgeaJp+ihjOmTvjwvdGV4dD4NCjx0ZXh0IHg9IjYwIiB5PSIyMjkiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMyMDM3NGIiPuS6p+eJqe+8mueOr+Wig+aKpeWRiuOAgei/kOihjOaXpeW/l+OAgemAgOWHuueggeOAgVZBRETnmoQxNuW8oOivgeaNruWbvjwvdGV4dD4NCjx0ZXh0IHg9IjYwIiB5PSIyNjAiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMyMDM3NGIiPuiMg+WbtO+8muW9k+aXtueahOmihOe8luivkU5FTVXlj4LogIPlupPvvJvljoblj7LmnKrorrDlvZXlrZfmrrXnu6fnu63miqvpnLI8L3RleHQ+DQo8cmVjdCB4PSI0MCIgeT0iMzEwIiB3aWR0aD0iMTEwMCIgaGVpZ2h0PSIxNjYiIHJ4PSIxMCIgZmlsbD0id2hpdGUiIHN0cm9rZT0iI2M3ZDNkZiIvPg0KPHJlY3QgeD0iNDAiIHk9IjMxMCIgd2lkdGg9IjExMDAiIGhlaWdodD0iNDQiIHJ4PSIxMCIgZmlsbD0iIzUzNjBhMSIvPg0KPHRleHQgeD0iNjAiIHk9IjMzOSIgZm9udC1zaXplPSIyMSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0id2hpdGUiPumYtuauteS6jO+8muaMh+S7pOiuvuiuoeS4jlJUTOWunueOsDwvdGV4dD4NCjx0ZXh0IHg9IjYwIiB5PSIzODgiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMyMDM3NGIiPuWFq+i3r3NpZ25lZCBJTlQ45LmY5rOVIOKGkiBTMeWvhOWtmCDihpIg5LiJ57qn5Yqg5rOV5qCRIOKGkiBTMuWvhOWtmOS4juWujOaVtOe7k+aenOmAieaLqTwvdGV4dD4NCjx0ZXh0IHg9IjYwIiB5PSI0MTkiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMyMDM3NGIiPuS6p+eJqe+8mua6kOeggeS4juihpeS4ge+8m3Ntb2tlIDfjgIHlvILluLg2NOOAgemHjeWPoDYw44CB5rWB5rC05aWX5Lu2MTIw5L6LPC90ZXh0Pg0KPHRleHQgeD0iNjAiIHk9IjQ1MCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzIwMzc0YiI+5rOi5b2i77ya5q2j5bi444CB5Y+W5raI44CBQ1NS6K+35rGC44CB5re35Y+R5Y+K5Y+R5bCE5YmN5YWx5Lqr56uv5Y+j56ue5LqJ5Luj6KGo5a6e5L6LPC90ZXh0Pg0KPHJlY3QgeD0iNDAiIHk9IjUwMCIgd2lkdGg9IjExMDAiIGhlaWdodD0iMTY2IiByeD0iMTAiIGZpbGw9IndoaXRlIiBzdHJva2U9IiNjN2QzZGYiLz4NCjxyZWN0IHg9IjQwIiB5PSI1MDAiIHdpZHRoPSIxMTAwIiBoZWlnaHQ9IjQ0IiByeD0iMTAiIGZpbGw9IiMyMzc1NjIiLz4NCjx0ZXh0IHg9IjYwIiB5PSI1MjkiIGZvbnQtc2l6ZT0iMjEiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IndoaXRlIj7pmLbmrrXkuInvvJrlj4LogIPmqKHlnovjgIHnrYnku7fkuI7mgKfog708L3RleHQ+DQo8dGV4dCB4PSI2MCIgeT0iNTc4IiBmb250LXNpemU9IjE4IiBmaWxsPSIjMjAzNzRiIj5ORU1V5omp5bGV77yb5pys5ZywQVBJIDI2OOS+i+mAmui/h+OAgTEw5L6L5LiN6YCC55So77yb5LikUlZW5Z+657q/MTQ05L6LLzQzMuiwg+eUqDwvdGV4dD4NCjx0ZXh0IHg9IjYwIiB5PSI2MDkiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMyMDM3NGIiPuS+nei1lumTvuWinumHj+avlDYuNzHvvJvlhavot69OMTI45pW056qX5q+UMi40MO+8m+Wwj+aVsOe7hE4xMjjmr5QxLjAwMDnjgIHln7rmnKzmjIHlubM8L3RleHQ+DQo8dGV4dCB4PSI2MCIgeT0iNjQwIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMjAzNzRiIj7kuqfnianvvJrljp/lp4vmoLfmnKzjgIHnu5/orqHjgIHml6Xlv5fkuI7miqXlkYrvvJvlhbfkvZPnk7bpoojlkoznu7zlkIhTVEHnu5PmnpzlsJrmnKrlj5blvpc8L3RleHQ+DQo8cmVjdCB4PSI0MCIgeT0iNjkwIiB3aWR0aD0iMTEwMCIgaGVpZ2h0PSI5NiIgcng9IjEwIiBmaWxsPSJ3aGl0ZSIgc3Ryb2tlPSIjYzdkM2RmIi8+DQo8cmVjdCB4PSI0MCIgeT0iNjkwIiB3aWR0aD0iMTEwMCIgaGVpZ2h0PSI0NCIgcng9IjEwIiBmaWxsPSIjNTk2Nzc2Ii8+DQo8dGV4dCB4PSI2MCIgeT0iNzE5IiBmb250LXNpemU9IjIxIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSI+5Lqk5LuY5qOA5p+lPC90ZXh0Pg0KPHRleHQgeD0iNjAiIHk9Ijc2OCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzIwMzc0YiI+5q2j5paH5YCZ6YCJ56i/5bey5pW055CG77yb5LiJ5q616KeG6aKR44CB5pyA57uI5a+85Ye654mI5byP44CB5L2c5ZOB5YyF5LiO5o+Q5Lqk5Zue5omn5LuN5b6F5a6M5oiQ44CCPC90ZXh0Pg0KPC9nPjwvc3ZnPg0K" alt="环境验证、向量指令实现、参考模型协同验证及性能分析之间的三阶段依赖关系" /><figcaption>图 1-1　三阶段任务关系：环境与 VADD 为后续指令开发提供基础，RTL 和参考模型用于协同验证与性能测量（原图 REQ-01）。</figcaption></figure>
+<p class="table-caption">表 1-1　系统文档位置与合订版内容。</p>
+<table>
+<thead>
+<tr>
+<th>提交位置</th>
+<th>合订版</th>
+<th>正文覆盖</th>
+<th>一并收纳的材料</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>第一阶段：环境与执行过程</td>
+<td>第 3、4 章；官方 1.1、1.2、1.3</td>
+<td>环境/构建记录、Hello 结果、VADD 全生命周期波形、构建运行命令、源码信号导航</td>
+</tr>
+<tr>
+<td>②</td>
+<td>第二阶段：设计与基础测试</td>
+<td>第 2、5、6、7 章；官方 2.1、2.2、2.3.1～2.3.3</td>
+<td>语义、RTL 摘录、数据通路、整核控制、基础测试与波形、核心配置与异常通路代码</td>
+</tr>
+<tr>
+<td>③</td>
+<td>第三阶段：协同仿真与性能分析</td>
+<td>第 8、9、10 章；官方 3.1.1、3.1.2、3.2、3.3</td>
+<td>NEMU 实现、DiffTest 矩阵、mtval 修复案例、RVV 基线、延迟/吞吐结果及复现索引</td>
+</tr>
+</tbody>
+</table>
+<p>每份合订版嵌入所属阶段的图像与附录。完整源码和原始日志属于配套工程材料，文中的文件路径用于追溯；正文中的结论和核心证据可在合订版内直接阅读。</p>
+<h3 id="22-技术要求与章节对应">2.2 技术要求与章节对应</h3>
+<p class="table-caption">表 1-2　官方技术项目与阅读位置。</p>
+<table>
+<thead>
+<tr>
+<th>官方项目</th>
+<th>对应文档</th>
+<th>定位提示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.1 环境部署验证</td>
+<td><a href="ch3.html">第 3 章 环境部署与运行验证</a></td>
+<td>定制 Hello 输出、IP 和运行状态</td>
+</tr>
+<tr>
+<td>1.2 操作日志</td>
+<td>第 3 章与第一阶段复现索引</td>
+<td>平台、版本、构建和操作日志</td>
+</tr>
+<tr>
+<td>1.3 VADD 执行过程</td>
+<td><a href="ch4.html">第 4 章 VADD 生命周期</a></td>
+<td>同一动态指令的前端、重命名、执行、物理写入和退休</td>
+</tr>
+<tr>
+<td>2.1 设计说明</td>
+<td><a href="ch2.html">第 2 章 语义合同</a>、<a href="ch5.html">第 5 章 数据通路</a>、<a href="ch6.html">第 6 章 整核控制</a></td>
+<td>指令合同、位宽、流水划分和接口</td>
+</tr>
+<tr>
+<td>2.2 RTL 实现</td>
+<td>第 5、6 章；<a href="dae3c3d4bdd.html">源码索引</a></td>
+<td>实际 Chisel 摘录和完整补丁入口</td>
+</tr>
+<tr>
+<td>2.3.1 正数点积</td>
+<td><a href="ch7.html">第 7 章 功能与时序验证</a></td>
+<td>标有官方编号的正数测试小节</td>
+</tr>
+<tr>
+<td>2.3.2 负数点积</td>
+<td>第 7 章</td>
+<td>标有官方编号的负数测试小节</td>
+</tr>
+<tr>
+<td>2.3.3 边界值点积</td>
+<td>第 7 章</td>
+<td>极值、掩码、VL=0 与完整结果布局</td>
+</tr>
+<tr>
+<td>3.1.1 NEMU 指令扩展</td>
+<td><a href="ch8.html">第 8 章 NEMU 与 DiffTest</a></td>
+<td>译码入口、语义实现与参考库接口</td>
+</tr>
+<tr>
+<td>3.1.2 协同仿真</td>
+<td>第 8 章</td>
+<td>套件矩阵及 mtval 差分发现、修复和回归</td>
+</tr>
+<tr>
+<td>3.2 组合基线</td>
+<td><a href="ch9.html">第 9 章 RVV 等价基线</a></td>
+<td>RVV-m1 / RVV-mf2 源码与等价矩阵</td>
+</tr>
+<tr>
+<td>3.3 延迟加速分析</td>
+<td><a href="ch10.html">第 10 章 分层性能</a></td>
+<td>Latency 加速比 7.86 / 6.71；批处理和小数组扩展测量</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-结果">3 结果</h2>
+<p>三个阶段的指定技术工作已有源码、日志、统计与代表性波形支撑。第 8 章统一定义整核功能套件和数量，第 9 章记录两条 RVV 路径的等价验证，第 10 章分别报告依赖链、寄存器批处理和预热小数组的结果。</p>
+<p class="table-caption">表 1-3　公开评分维度与材料关系。</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th style="text-align:right">分值</th>
+<th>可查阅的工作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>完整性</td>
+<td style="text-align:right">60（阶段一 15、阶段二 20、阶段三 25）</td>
+<td>表 1-2 的技术项目；源码与视频交付另见交付索引</td>
+</tr>
+<tr>
+<td>可行性</td>
+<td style="text-align:right">20</td>
+<td>第 5、6 章接口复用；第 7、8 章功能与差分结果</td>
+</tr>
+<tr>
+<td>探索性</td>
+<td style="text-align:right">10</td>
+<td>第 8 章异常信息通路定位；第 10 章延迟、吞吐和算存开销对照</td>
+</tr>
+<tr>
+<td>创新性</td>
+<td style="text-align:right">10</td>
+<td>第 5 章专用两拍乘加归约；第 6、8 章执行期异常信息补全</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-总结与实验边界">4 总结与实验边界</h2>
+<p>章节与合订版按三阶段技术要求对应，评分表用于检索证据，不构成自评得分。项目使用固定八项 INT8 微内核，性能结论对应文中配置和接口；模型级应用收益需要相应应用实验支持。</p>
+<blockquote>
+<p>[TODO / 待后续补齐] 三段验收视频、最终作品包与恢复检查、平台格式/大小限制和上传回执、答辩材料。本文按通用工程报告排版，尚无额外官方统一模板的确认记录。</p>
+</blockquote>
+<hr />
+<p>文档编号：REQ-MAP</p>
+</main></html>

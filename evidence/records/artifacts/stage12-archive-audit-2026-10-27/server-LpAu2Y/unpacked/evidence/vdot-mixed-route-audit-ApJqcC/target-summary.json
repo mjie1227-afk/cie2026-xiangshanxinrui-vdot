@@ -1,0 +1,119 @@
+[
+  {
+    "id": 0,
+    "pc": "0x800001b8",
+    "word": "0x2110257",
+    "rob": [
+      1,
+      35
+    ],
+    "pdest": 62,
+    "events": {
+      "rename_handshake": [
+        13152
+      ],
+      "rob_tag_reused": [
+        13204
+      ]
+    }
+  },
+  {
+    "id": 1,
+    "pc": "0x800001b8",
+    "word": "0x2110257",
+    "rob": [
+      1,
+      35
+    ],
+    "pdest": 62,
+    "events": {
+      "exu_in_fire": [
+        13216
+      ],
+      "exu_out_fire": [
+        13218
+      ],
+      "iq_offer": [
+        13210
+      ],
+      "rename_handshake": [
+        13204
+      ],
+      "rob_commit": [
+        13222
+      ],
+      "wb_input_valid_ready_unknown_or_low": [
+        13218
+      ],
+      "writeback_to_ctrl": [
+        13218
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "pc": "0x800001bc",
+    "word": "0x961122d7",
+    "rob": [
+      1,
+      36
+    ],
+    "pdest": 63,
+    "events": {
+      "exu_in_fire": [
+        13218
+      ],
+      "exu_out_fire": [
+        13222
+      ],
+      "iq_offer": [
+        13212
+      ],
+      "rename_handshake": [
+        13206
+      ],
+      "rob_commit": [
+        13226
+      ],
+      "wb_input_valid_ready_unknown_or_low": [
+        13222
+      ],
+      "writeback_to_ctrl": [
+        13222
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "pc": "0x800001c0",
+    "word": "0x20818b",
+    "rob": [
+      1,
+      37
+    ],
+    "pdest": 64,
+    "events": {
+      "exu_in_fire": [
+        13220
+      ],
+      "exu_out_fire": [
+        13224
+      ],
+      "iq_offer": [
+        13214
+      ],
+      "rename_handshake": [
+        13208
+      ],
+      "rob_commit": [
+        13228
+      ],
+      "wb_input_valid_ready_unknown_or_low": [
+        13224
+      ],
+      "writeback_to_ctrl": [
+        13224
+      ]
+    }
+  }
+]

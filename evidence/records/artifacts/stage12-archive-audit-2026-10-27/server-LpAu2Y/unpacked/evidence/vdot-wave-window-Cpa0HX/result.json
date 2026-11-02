@@ -1,0 +1,394 @@
+{
+  "scope": "bounded waveform capture and header inventory only",
+  "status": "captured-inventory-ready",
+  "start": "2026-10-24T23:48:23.695036+08:00",
+  "cwd": "/root/private_data/mj/xiangshan",
+  "locator": "/root/private_data/mj/xiangshan/evidence/vdot-window-locate-v2-l7RZQD/result.json",
+  "window": {
+    "begin": 6978,
+    "end": 9258,
+    "inclusive_cycles": 2281,
+    "stop_cycle": 10000
+  },
+  "wall_limit_seconds": 600,
+  "wave_file_cap_bytes": 4294967296,
+  "text_log_cap_bytes": 134217728,
+  "microarchitectural_cancellation_proven": false,
+  "locator_sha256": "cf8f68423f843246399ee6a27625197f24f9b5607a3340f632ab85504aa07e6f",
+  "identity_before": {
+    "/root/private_data/mj/xiangshan/vdot-mtval-fix-20261024/XiangShan/build/emu": "f9653532fd2a4b9f0d0cc08c131f7c258d4b62c46e672c6886d6643aad926850",
+    "/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so": "11b9f6807c36ed860e0c64cc4e58d27216b19335ecde1ce5797ba2d1cd057b74",
+    "/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/.config": "64282bca051b5dbc5fca742f4fbca2ade937a70f3c4d2ec93c1f4836aca5d9be",
+    "/root/private_data/mj/xiangshan/evidence/vdot-build-80mKCD/boot-flash.bin": "fea548655a8b6eecacace83e2f4380a18b8aa83bce964c8aae4cffbe2f5a9724",
+    "/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-cancel-csr/build/vdot-cancel-csr-riscv64-xs.bin": "3e0f4efa7cf32376768f72d52c78beb526bf4f3f12f16dab9f43a433c2e322bc"
+  },
+  "free_bytes_before": 216017309696,
+  "argv": [
+    "/root/private_data/mj/xiangshan/vdot-mtval-fix-20261024/XiangShan/build/emu",
+    "-i",
+    "/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-cancel-csr/build/vdot-cancel-csr-riscv64-xs.bin",
+    "--diff=/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so",
+    "-F",
+    "/root/private_data/mj/xiangshan/evidence/vdot-build-80mKCD/boot-flash.bin",
+    "--seed=1",
+    "--no-snapshot",
+    "--dump-wave-full",
+    "--wave-path=/root/private_data/mj/xiangshan/evidence/vdot-wave-window-Cpa0HX/cancel-window.vcd",
+    "--dump-commit-trace",
+    "--log-begin=6978",
+    "--log-end=9258",
+    "--max-cycles=10000",
+    "--stat-cycles=1000"
+  ],
+  "environment": {
+    "NOOP_HOME": "/root/private_data/mj/xiangshan/evidence/vdot-wave-window-Cpa0HX",
+    "NEMU_HOME": "/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU"
+  },
+  "emu_exit": 0,
+  "stop_reason": null,
+  "elapsed_seconds": 48.048,
+  "runtime": {
+    "reference": true,
+    "difftest": true,
+    "cycle_limit": true,
+    "usage": false,
+    "bad": [],
+    "target_commits": [
+      {
+        "line": 19167,
+        "pc": "0x80000204",
+        "instruction": "0x1ff0463"
+      },
+      {
+        "line": 19168,
+        "pc": "0x80000208",
+        "instruction": "0x220818b"
+      },
+      {
+        "line": 19202,
+        "pc": "0x80000204",
+        "instruction": "0x1ff0463"
+      },
+      {
+        "line": 19203,
+        "pc": "0x80000208",
+        "instruction": "0x220818b"
+      },
+      {
+        "line": 19237,
+        "pc": "0x80000204",
+        "instruction": "0x1ff0463"
+      },
+      {
+        "line": 19238,
+        "pc": "0x80000208",
+        "instruction": "0x220818b"
+      },
+      {
+        "line": 19272,
+        "pc": "0x80000204",
+        "instruction": "0x1ff0463"
+      },
+      {
+        "line": 19273,
+        "pc": "0x80000208",
+        "instruction": "0x220818b"
+      },
+      {
+        "line": 19307,
+        "pc": "0x80000204",
+        "instruction": "0x1ff0463"
+      },
+      {
+        "line": 19308,
+        "pc": "0x80000208",
+        "instruction": "0x220818b"
+      },
+      {
+        "line": 19342,
+        "pc": "0x80000204",
+        "instruction": "0x1ff0463"
+      },
+      {
+        "line": 19343,
+        "pc": "0x80000208",
+        "instruction": "0x220818b"
+      },
+      {
+        "line": 38567,
+        "pc": "0x80000204",
+        "instruction": "0x1ff0463"
+      },
+      {
+        "line": 38568,
+        "pc": "0x80000208",
+        "instruction": "0x220818b"
+      },
+      {
+        "line": 38602,
+        "pc": "0x80000204",
+        "instruction": "0x1ff0463"
+      },
+      {
+        "line": 38603,
+        "pc": "0x80000208",
+        "instruction": "0x220818b"
+      },
+      {
+        "line": 38636,
+        "pc": "0x80000204",
+        "instruction": "0x1ff0463"
+      }
+    ],
+    "runtime_ok": true
+  },
+  "identity_after": {
+    "/root/private_data/mj/xiangshan/vdot-mtval-fix-20261024/XiangShan/build/emu": "f9653532fd2a4b9f0d0cc08c131f7c258d4b62c46e672c6886d6643aad926850",
+    "/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so": "11b9f6807c36ed860e0c64cc4e58d27216b19335ecde1ce5797ba2d1cd057b74",
+    "/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/.config": "64282bca051b5dbc5fca742f4fbca2ade937a70f3c4d2ec93c1f4836aca5d9be",
+    "/root/private_data/mj/xiangshan/evidence/vdot-build-80mKCD/boot-flash.bin": "fea548655a8b6eecacace83e2f4380a18b8aa83bce964c8aae4cffbe2f5a9724",
+    "/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-cancel-csr/build/vdot-cancel-csr-riscv64-xs.bin": "3e0f4efa7cf32376768f72d52c78beb526bf4f3f12f16dab9f43a433c2e322bc"
+  },
+  "vcd": {
+    "wave_bytes": 457224402,
+    "header_bytes": 44460958,
+    "header_sha256": "146957d140cdca8bb777900b7a742278e9abea7862b4a68a9b8f45b043dfdd82",
+    "declared_variables": 706081,
+    "candidate_declarations": 60229,
+    "groups": {
+      "clock_counter": 3465,
+      "redirect_flush": 9573,
+      "commit_identity": 8523,
+      "decode_rename": 2457,
+      "issue_writeback": 25881,
+      "csr_state": 555,
+      "vdot_record": 198,
+      "vdot_fu": 14339
+    },
+    "samples": {
+      "clock_counter": [
+        {
+          "path": "TOP.clock",
+          "width": 1,
+          "id": "j4O"
+        },
+        {
+          "path": "TOP.SimTop.clock",
+          "width": 1,
+          "id": "j4O"
+        },
+        {
+          "path": "TOP.SimTop.timer",
+          "width": 64,
+          "id": "h'"
+        },
+        {
+          "path": "TOP.SimTop.jtag.clock",
+          "width": 1,
+          "id": "j4O"
+        },
+        {
+          "path": "TOP.SimTop.l_simMMIO.clock",
+          "width": 1,
+          "id": "j4O"
+        }
+      ],
+      "redirect_flush": [
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.io_fromTop_l2FlushDone",
+          "width": 1,
+          "id": "FLA"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.io_fenceio_sbuffer_flushSb",
+          "width": 1,
+          "id": "eqI"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.io_frontend_toFtq_redirect_valid",
+          "width": 1,
+          "id": "FTL"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.io_frontend_toFtq_redirect_bits_ftqIdx_flag",
+          "width": 1,
+          "id": "ZkD"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.io_frontend_toFtq_redirect_bits_ftqIdx_value",
+          "width": 3,
+          "id": "[kD"
+        }
+      ],
+      "commit_identity": [
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.io_frontend_toFtq_rob_commits_0_valid",
+          "width": 1,
+          "id": "Nt;"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.io_frontend_toFtq_rob_commits_0_bits_commitType",
+          "width": 3,
+          "id": "]J"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.io_frontend_toFtq_rob_commits_0_bits_ftqIdx_flag",
+          "width": 1,
+          "id": "KLA"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.io_frontend_toFtq_rob_commits_0_bits_ftqIdx_value",
+          "width": 3,
+          "id": "LLA"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.io_frontend_toFtq_rob_commits_0_bits_ftqOffset",
+          "width": 4,
+          "id": "MLA"
+        }
+      ],
+      "decode_rename": [
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.io_mem_wakeup_0_bits_preDecodeInfo_valid",
+          "width": 1,
+          "id": "kO5"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.io_mem_wakeup_1_bits_preDecodeInfo_valid",
+          "width": 1,
+          "id": "*j6"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.io_mem_wakeup_2_bits_preDecodeInfo_valid",
+          "width": 1,
+          "id": "=27"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.io_mem_writebackLda_0_bits_uop_preDecodeInfo_valid",
+          "width": 1,
+          "id": "eO6"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.io_mem_writebackLda_1_bits_uop_preDecodeInfo_valid",
+          "width": 1,
+          "id": "z`6"
+        }
+      ],
+      "issue_writeback": [
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.io_mem_writebackLda_0_ready",
+          "width": 1,
+          "id": "(BO"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.io_mem_writebackLda_0_valid",
+          "width": 1,
+          "id": "%9K"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.io_mem_writebackLda_0_bits_uop_preDecodeInfo_valid",
+          "width": 1,
+          "id": "eO6"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.io_mem_writebackLda_0_bits_uop_pdest",
+          "width": 8,
+          "id": "(9K"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.io_mem_writebackLda_0_bits_uop_robIdx_flag",
+          "width": 1,
+          "id": ")9K"
+        }
+      ],
+      "csr_state": [
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.io_toCSR_trapInstInfo_valid",
+          "width": 1,
+          "id": "t#O"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.io_toCSR_trapInstInfo_bits_instr",
+          "width": 32,
+          "id": "O#O"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.io_toCSR_trapInstInfo_bits_ftqPtr_flag",
+          "width": 1,
+          "id": "P#O"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.io_toCSR_trapInstInfo_bits_ftqPtr_value",
+          "width": 3,
+          "id": "Q#O"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.io_toCSR_trapInstInfo_bits_ftqOffset",
+          "width": 4,
+          "id": "R#O"
+        }
+      ],
+      "vdot_record": [
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.io_robio_exception_bits_vdotTrapInst_valid",
+          "width": 1,
+          "id": "1u;"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.io_robio_exception_bits_vdotTrapInst_bits",
+          "width": 32,
+          "id": "Wm"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rob.io_exception_bits_vdotTrapInst_valid",
+          "width": 1,
+          "id": "1u;"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rob.io_exception_bits_vdotTrapInst_bits",
+          "width": 32,
+          "id": "Wm"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rob.vdotTrapInst.clock",
+          "width": 1,
+          "id": "j4O"
+        }
+      ],
+      "vdot_fu": [
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVimacVppuVdotVfaluVfcvtVipuVsetrvfwvf.clock",
+          "width": 1,
+          "id": "j4O"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVimacVppuVdotVfaluVfcvtVipuVsetrvfwvf.reset",
+          "width": 1,
+          "id": "*5O"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVimacVppuVdotVfaluVfcvtVipuVsetrvfwvf.io_flush_valid",
+          "width": 1,
+          "id": "MTL"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVimacVppuVdotVfaluVfcvtVipuVsetrvfwvf.io_flush_bits_robIdx_flag",
+          "width": 1,
+          "id": "9'J"
+        },
+        {
+          "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVimacVppuVdotVfaluVfcvtVipuVsetrvfwvf.io_flush_bits_robIdx_value",
+          "width": 6,
+          "id": ":'J"
+        }
+      ]
+    },
+    "timescale_declaration": "$timescale 1ps $end",
+    "first_vcd_timestamp": 14060,
+    "last_vcd_timestamp": 18621,
+    "full_wave_sha256": "not computed; only header and bounded timestamp samples inspected",
+    "clock_mapping": "not yet calibrated; do not equate these timestamps to GTimer/cycleCnt",
+    "waveform_event_analysis_performed": false
+  },
+  "end": "2026-10-24T23:49:18.599254+08:00"
+}

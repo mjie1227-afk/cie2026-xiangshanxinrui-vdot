@@ -1,0 +1,21 @@
+{
+  "source_image": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\codex-clipboard-415f4ea5-f122-4990-8297-4993ec510e13.png",
+  "archived_image": "artifacts\\vadd4-frontend-2026-10-19\\user-ftq-marker5080ps.png",
+  "sha256": "3248f396bb36b20bd96807b158437d357c9c8d50d3180d17f62df0be597b4b6b",
+  "marker_ps": 5080,
+  "visible_at_marker": {
+    "clock": 1,
+    "ftq_flag": 0,
+    "ftq_value": 4,
+    "startAddr": "0x80000154",
+    "nextStartAddr": "0x80000174"
+  },
+  "user_reported_pre_edge_5079": {
+    "valid": 1,
+    "ready": 1,
+    "ftq_flag": 0,
+    "ftq_value": 3,
+    "startAddr": "0x80000134"
+  },
+  "evidence_boundary": "Screenshot marker shows the next request after the 5080 edge; earlier wave interval and user statement support the preceding request. No new RTL simulation."
+}

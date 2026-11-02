@@ -1,0 +1,38 @@
+{
+  "status": "review_required",
+  "items": [
+    {
+      "comparison": "same_implementation",
+      "kind": "native",
+      "before": "independent",
+      "after": "reuse",
+      "before_cycles": 1077,
+      "after_cycles": 790,
+      "ratio": 1.3632911392405063
+    },
+    {
+      "comparison": "same_implementation",
+      "kind": "rvv_mf2",
+      "before": "independent",
+      "after": "reuse",
+      "before_cycles": 1268,
+      "after_cycles": 1043,
+      "ratio": 1.2157238734419942
+    },
+    {
+      "comparison": "same_schedule_rvv_over_native",
+      "mode": "independent",
+      "native_cycles": 1077,
+      "baseline_cycles": 1268,
+      "ratio": 1.1773444753946147
+    },
+    {
+      "comparison": "same_schedule_rvv_over_native",
+      "mode": "reuse",
+      "native_cycles": 790,
+      "baseline_cycles": 1043,
+      "ratio": 1.320253164556962
+    }
+  ],
+  "scope": "same task within experiment; raw windows; no resource attribution"
+}

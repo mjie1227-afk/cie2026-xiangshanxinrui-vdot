@@ -1,0 +1,261 @@
+[
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+    "counter": "clock_cycle",
+    "time": 460257,
+    "value": 460258,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+    "counter": "commitInstr",
+    "time": 460257,
+    "value": 210343,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+    "counter": "waitCsrCycle",
+    "time": 460257,
+    "value": 4442,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+    "counter": "waitFenCycle",
+    "time": 460257,
+    "value": 860,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+    "counter": "waitLduCycle",
+    "time": 460257,
+    "value": 171942,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+    "counter": "waitLoadCycle",
+    "time": 460257,
+    "value": 182322,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+    "counter": "waitStoreCycle",
+    "time": 460257,
+    "value": 161379,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+    "counter": "waitStuCycle",
+    "time": 460257,
+    "value": 158420,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+    "counter": "dcache_req_fire",
+    "time": 460257,
+    "value": 3903,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+    "counter": "dcache_req_valid",
+    "time": 460257,
+    "value": 3910,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+    "counter": "do_uarch_drain",
+    "time": 460257,
+    "value": 0,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+    "counter": "sbuffer_flush",
+    "time": 460257,
+    "value": 0,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+    "counter": "sbuffer_merge",
+    "time": 460257,
+    "value": 9605,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+    "counter": "sbuffer_newline",
+    "time": 460257,
+    "value": 7167,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+    "counter": "sbuffer_req_fire",
+    "time": 460257,
+    "value": 16772,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+    "counter": "sbuffer_req_fire_vecinvalid",
+    "time": 460257,
+    "value": 2016,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+    "counter": "sbuffer_req_valid",
+    "time": 460257,
+    "value": 31229,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.vlSplit_0.splitBuffer",
+    "counter": "out_fire_unitstride",
+    "time": 460257,
+    "value": 1862,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.vlSplit_0.splitBuffer",
+    "counter": "unitstride_vlenAlign",
+    "time": 460257,
+    "value": 1862,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.vlSplit_0.splitPipeline",
+    "counter": "mbuffer_block",
+    "time": 460257,
+    "value": 0,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.vlSplit_0.splitPipeline",
+    "counter": "pipe_block",
+    "time": 460257,
+    "value": 0,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.vlSplit_0.splitPipeline",
+    "counter": "split_out",
+    "time": 460257,
+    "value": 1862,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.vlSplit_1.splitBuffer",
+    "counter": "out_fire_unitstride",
+    "time": 460257,
+    "value": 2170,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.vlSplit_1.splitBuffer",
+    "counter": "unitstride_vlenAlign",
+    "time": 460257,
+    "value": 2170,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.vlSplit_1.splitPipeline",
+    "counter": "mbuffer_block",
+    "time": 460257,
+    "value": 0,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.vlSplit_1.splitPipeline",
+    "counter": "pipe_block",
+    "time": 460257,
+    "value": 0,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.vlSplit_1.splitPipeline",
+    "counter": "split_out",
+    "time": 460257,
+    "value": 2170,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.vsSplit_0.splitBuffer",
+    "counter": "out_fire_unitstride",
+    "time": 460257,
+    "value": 1103,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.vsSplit_0.splitBuffer",
+    "counter": "unitstride_vlenAlign",
+    "time": 460257,
+    "value": 1103,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.vsSplit_0.splitPipeline",
+    "counter": "mbuffer_block",
+    "time": 460257,
+    "value": 0,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.vsSplit_0.splitPipeline",
+    "counter": "pipe_block",
+    "time": 460257,
+    "value": 0,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.vsSplit_0.splitPipeline",
+    "counter": "split_out",
+    "time": 460257,
+    "value": 1103,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.vsSplit_1.splitBuffer",
+    "counter": "out_fire_unitstride",
+    "time": 460257,
+    "value": 913,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.vsSplit_1.splitBuffer",
+    "counter": "unitstride_vlenAlign",
+    "time": 460257,
+    "value": 913,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.vsSplit_1.splitPipeline",
+    "counter": "mbuffer_block",
+    "time": 460257,
+    "value": 0,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.vsSplit_1.splitPipeline",
+    "counter": "pipe_block",
+    "time": 460257,
+    "value": 0,
+    "records_seen": 1
+  },
+  {
+    "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.vsSplit_1.splitPipeline",
+    "counter": "split_out",
+    "time": 460257,
+    "value": 913,
+    "records_seen": 1
+  }
+]

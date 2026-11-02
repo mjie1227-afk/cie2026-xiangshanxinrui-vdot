@@ -1,0 +1,10 @@
+{
+  "report": "reports\\stage1\\vadd-lifecycle.md",
+  "before_sha256": "4f2e6a847c91ea4ddd5e462d0aaba36dd992688318c8bd39bac844050dec72ed",
+  "after_sha256": "1fb1df1398971cee3715f397a2ead7139851cbfa942da48754c1ef0162b70808",
+  "original_backend_preserved_except_numbering": true,
+  "build_run_appendix_unchanged": true,
+  "original_images_unchanged": true,
+  "new_frontend_images": 6,
+  "total_images": 16
+}

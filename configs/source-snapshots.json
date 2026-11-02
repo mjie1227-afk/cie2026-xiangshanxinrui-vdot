@@ -1,0 +1,25 @@
+{
+  "XiangShan": {
+    "src/main/scala/xiangshan/Parameters.scala": "34420eab5fe4019896974230652ad953ccac63bee46089400f72ae3d17cced2e",
+    "src/main/scala/xiangshan/backend/Bundles.scala": "d49541dc2fa2afbed851ec4788746c15a85137906c2564cde9795d79d443628a",
+    "src/main/scala/xiangshan/backend/decode/DecodeUnit.scala": "7aa93af92ca2eb44abb7bca7bfdbe58a8d864269d1681feaab4829fdbb5e5323",
+    "src/main/scala/xiangshan/backend/decode/Instructions.scala": "697ca637790bb568294608421e05e23579212457c2be06143c8d5aa95a9e1e12",
+    "src/main/scala/xiangshan/backend/decode/VecDecoder.scala": "717a4e8791fdb0a07d44e80f6cb4c2bf3c2a4ce1c0b15287d1b8fe9d6b18512e",
+    "src/main/scala/xiangshan/backend/decode/VecExceptionGen.scala": "1f051a1637d3920d8c246e784d6c5ea85b41f0b7751784f36da57c609dbac5ca",
+    "src/main/scala/xiangshan/backend/decode/isa/bitfield/RiscvInst.scala": "eed8e1c2bcd5bd0806bc7382bb498da8d3d6ad3971a4b573e4c50f37f3353665",
+    "src/main/scala/xiangshan/backend/fu/FuConfig.scala": "c99e9f83bda8f38244cd82babbaf465c3674d749ba56b816eb90cd8c0c5fe67f",
+    "src/main/scala/xiangshan/backend/fu/FuType.scala": "ed7232d5054670833b1a698798316ec14faf1323dd1ffa5bb8f72ea25023f3a5",
+    "src/main/scala/xiangshan/backend/fu/wrapper/CSR.scala": "2f6a27f9f4aef987369b010c92799f5aecac3bf0a659b06186969f630ef83711",
+    "src/main/scala/xiangshan/backend/rob/Rob.scala": "9caf717a9be85ddaa9e73b3f2eb88a0e2933896302ba97acb31eb66cc5edf6d5",
+    "src/main/scala/xiangshan/backend/fu/wrapper/VDot.scala": "359b92c824981b09043497776ca8e5d2d608e490486cd5806701c902fe025fb8",
+    "src/main/scala/xiangshan/backend/rob/VdotTrapInst.scala": "07387c5c686f30fb576fabe2ddbf90f6286a044f9cb45cae1d4c4a0af576a5c4",
+    "src/test/scala/xiangshan/backend/fu/VDotLocalTest.scala": "27b755c80a3a5686d25a48bdb217ad0265827329884ae888766234200cd235dc",
+    "src/test/scala/xiangshan/backend/rob/VdotTrapInstTest.scala": "b819db4aa701c72e7ce2391c61741c54a92ba464175c9ea4dd8de95b407490e1"
+  },
+  "NEMU": {
+    "src/isa/riscv64/include/isa-all-instr.h": "7d1975f146b0ce24aaf4cdd455a4a4faae2826a46641eaeb5b1d88c2257068d4",
+    "src/isa/riscv64/instr/decode.c": "3b2b9c6a064ad5eae7b2d74685a03eabec9086c88920f3a4a1a8320efe4744d8",
+    "src/isa/riscv64/instr/rvv/vcompute.h": "29fedc489eb4a57fa519065d6f78930d61b56ba754c30ab1ab19925b715933d2",
+    "src/isa/riscv64/instr/rvv/vdot.h": "3439eff85bf16b9d9f35d7969b84bd7125e52f2d8a192ef52d5968ee8cf66aaa"
+  }
+}

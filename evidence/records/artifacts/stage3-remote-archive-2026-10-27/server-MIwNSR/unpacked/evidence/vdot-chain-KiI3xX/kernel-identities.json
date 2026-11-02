@@ -1,0 +1,178 @@
+[
+  {
+    "name": "empty",
+    "kind": "empty",
+    "iterations": 0,
+    "payload_begin": "0x80000188",
+    "payload_end": "0x80000188",
+    "payload_words": 0,
+    "unit_words": [],
+    "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "vd_vs1": "v1"
+  },
+  {
+    "name": "native_n1",
+    "kind": "native",
+    "iterations": 1,
+    "payload_begin": "0x80000284",
+    "payload_end": "0x80000288",
+    "payload_words": 1,
+    "unit_words": [
+      "0x220808b"
+    ],
+    "payload_sha256": "9b494226ec4190631620804e37fe209ad7b1be508baa52f0c796f16034c2da37",
+    "vd_vs1": "v1"
+  },
+  {
+    "name": "rvv_m1_n1",
+    "kind": "rvv_m1",
+    "iterations": 1,
+    "payload_begin": "0x80000384",
+    "payload_end": "0x800003a8",
+    "payload_words": 9,
+    "unit_words": [
+      "0x2068063",
+      "0xc0047057",
+      "0xee112457",
+      "0xc1027057",
+      "0x5e0030d7",
+      "0x5e003857",
+      "0xc0947057",
+      "0xc68800d7",
+      "0x80e6f057"
+    ],
+    "payload_sha256": "b3249112af6ea80d22396c71ff89135b8ab5b9eacc2f28f4a8e7b2bbabd33122",
+    "vd_vs1": "v1"
+  },
+  {
+    "name": "rvv_mf2_n1",
+    "kind": "rvv_mf2",
+    "iterations": 1,
+    "payload_begin": "0x800004a4",
+    "payload_end": "0x800004c8",
+    "payload_words": 9,
+    "unit_words": [
+      "0x2068063",
+      "0xc0747057",
+      "0xee112457",
+      "0xc1027057",
+      "0x5e0030d7",
+      "0x5e003857",
+      "0xc0847057",
+      "0xc68800d7",
+      "0x80e6f057"
+    ],
+    "payload_sha256": "65cae453cdc43429e6bfe7c3caf32f9eda6af8bafe807b594854a4132ad60fef",
+    "vd_vs1": "v1"
+  },
+  {
+    "name": "native_n8",
+    "kind": "native",
+    "iterations": 8,
+    "payload_begin": "0x800005c4",
+    "payload_end": "0x800005e4",
+    "payload_words": 8,
+    "unit_words": [
+      "0x220808b"
+    ],
+    "payload_sha256": "46ad9e73223abb208cca6a98475c62a89df8078f007ecfac540a404762228a71",
+    "vd_vs1": "v1"
+  },
+  {
+    "name": "rvv_m1_n8",
+    "kind": "rvv_m1",
+    "iterations": 8,
+    "payload_begin": "0x800006e0",
+    "payload_end": "0x80000800",
+    "payload_words": 72,
+    "unit_words": [
+      "0x2068063",
+      "0xc0047057",
+      "0xee112457",
+      "0xc1027057",
+      "0x5e0030d7",
+      "0x5e003857",
+      "0xc0947057",
+      "0xc68800d7",
+      "0x80e6f057"
+    ],
+    "payload_sha256": "d23a55330ffba222fa355d3c3313a9ef57e39df9d39a981ddf6cfc2a17a92ff8",
+    "vd_vs1": "v1"
+  },
+  {
+    "name": "rvv_mf2_n8",
+    "kind": "rvv_mf2",
+    "iterations": 8,
+    "payload_begin": "0x800008fc",
+    "payload_end": "0x80000a1c",
+    "payload_words": 72,
+    "unit_words": [
+      "0x2068063",
+      "0xc0747057",
+      "0xee112457",
+      "0xc1027057",
+      "0x5e0030d7",
+      "0x5e003857",
+      "0xc0847057",
+      "0xc68800d7",
+      "0x80e6f057"
+    ],
+    "payload_sha256": "79e7147459600b0ede1b070ba5017db56e772b6edf678e3b7ce5537d72da0217",
+    "vd_vs1": "v1"
+  },
+  {
+    "name": "native_n32",
+    "kind": "native",
+    "iterations": 32,
+    "payload_begin": "0x80000b18",
+    "payload_end": "0x80000b98",
+    "payload_words": 32,
+    "unit_words": [
+      "0x220808b"
+    ],
+    "payload_sha256": "6304bc342617864130166c501134a44effe5e0070c1c6f976d8af841ee504c8c",
+    "vd_vs1": "v1"
+  },
+  {
+    "name": "rvv_m1_n32",
+    "kind": "rvv_m1",
+    "iterations": 32,
+    "payload_begin": "0x80000c94",
+    "payload_end": "0x80001114",
+    "payload_words": 288,
+    "unit_words": [
+      "0x2068063",
+      "0xc0047057",
+      "0xee112457",
+      "0xc1027057",
+      "0x5e0030d7",
+      "0x5e003857",
+      "0xc0947057",
+      "0xc68800d7",
+      "0x80e6f057"
+    ],
+    "payload_sha256": "d61a83a85d9b5529f10e71ee3e6144442a49bd2f2b877ee37ff30f336cfc35e4",
+    "vd_vs1": "v1"
+  },
+  {
+    "name": "rvv_mf2_n32",
+    "kind": "rvv_mf2",
+    "iterations": 32,
+    "payload_begin": "0x80001210",
+    "payload_end": "0x80001690",
+    "payload_words": 288,
+    "unit_words": [
+      "0x2068063",
+      "0xc0747057",
+      "0xee112457",
+      "0xc1027057",
+      "0x5e0030d7",
+      "0x5e003857",
+      "0xc0847057",
+      "0xc68800d7",
+      "0x80e6f057"
+    ],
+    "payload_sha256": "7883f7db2f59e6dbc3961aeaa52b6b7f2269071b3aaa91f80add209c1dd6b964",
+    "vd_vs1": "v1"
+  }
+]

@@ -1,0 +1,76 @@
+--- before/artifacts/stage3-remote-archive-2026-10-27/README.md
++++ artifacts/stage3-remote-archive-2026-10-27/README.md
+@@ -1,6 +1,6 @@
+ # 第三阶段完整日志与样本归档命令
+ 
+-2026-10-27。用户要求先归档既有远端日志与样本，截图和录屏后续统一处理。当前状态：命令及本地工具检查完成；服务器尚未执行，尚未取得实际归档路径、大小或SHA256。
++2026-10-27。用户要求先归档既有远端日志与样本，截图和录屏后续统一处理。当前状态：MIwNSR回传显示远端归档成功，10目录/264文件，包2233424字节；本地接收目录已建，等待下载与校验。具体路径、下载清单及SHA见[接收说明](server-MIwNSR/README.md)。
+ 
+ ## 1 执行对象与产物
+ 
+--- before/reports/stage3/README.md
++++ reports/stage3/README.md
+@@ -37,7 +37,7 @@
+ 
+ ## 4 当前待办
+ 
+-1. 先执行[完整日志归档命令](../../artifacts/stage3-remote-archive-2026-10-27/README.md)，收集五个第三阶段主运行目录及五个差分/构建/失败追溯目录。命令仅归档，已通过本地夹具和Bash检查；服务器尚未执行，不能记为完整远端日志已取得。
++1. 先执行[完整日志归档命令](../../artifacts/stage3-remote-archive-2026-10-27/README.md)，收集五个第三阶段主运行目录及五个差分/构建/失败追溯目录。MIwNSR回传显示远端已归档10目录/264文件，collector/tee/script均0；[本地接收目录与下载清单](../../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/README.md)已准备，下载及校验尚未完成，不要重复执行归档命令。
+ 2. 下载并核对归档包、文件清单和SHA256，再补齐本地原始证据。归档只收集现存文件，不重跑仿真。
+ 3. 用户后续统一截S3-F01/F02/F03a/F04a/F05a并录制V3。既有[取图表和录屏稿](../../recording/stage3/README.md)继续使用；待视频回放、图像归档和最终包核验完成后判断G3。
+ 
+--- before/reports/stage3/delivery.md
++++ reports/stage3/delivery.md
+@@ -57,7 +57,7 @@
+ 
+ ## 5 仍需完成的交付动作
+ 
+-当前先按[完整日志归档命令](../../artifacts/stage3-remote-archive-2026-10-27/README.md)执行：10个固定运行目录中的完整日志、样本及元数据进入新建的stage3-log-archive目录，生成tar.gz、文件清单与SHA256。工具本地检查通过，远端尚未执行；下载并验证后才能记为本地完整归档。截图和录屏按用户安排后续统一处理。
++当前先按[完整日志归档命令](../../artifacts/stage3-remote-archive-2026-10-27/README.md)执行：10个固定运行目录中的完整日志、样本及元数据进入新建的stage3-log-archive目录，生成tar.gz、文件清单与SHA256。MIwNSR远端归档回传成功，包2233424字节；按[接收说明](../../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/README.md)下载并验证后，才能记为本地完整归档。截图和录屏按用户安排后续统一处理。
+ 
+ 
+ 1. 从已有日志保存S3-F01、F02、F03a、F04a、F05a终端图，长统计可分上下两张；按[录屏稿](../../recording/stage3/README.md)命名和登记。
+--- before/docs/HANDOFF.md
++++ docs/HANDOFF.md
+@@ -4,7 +4,7 @@
+ 
+ ## 立即下一步
+ 
+-当前先执行[完整远端日志归档命令](../artifacts/stage3-remote-archive-2026-10-27/README.md)：10个固定运行目录，保留完整日志/样本/参数/身份/退出记录，新建evidence/stage3-log-archive-XXXXXX并生成tar.gz、清单与SHA256。命令已通过本地夹具和Bash检查；服务器尚未执行，实际路径/大小/哈希待用户回传。先下载并校验归档包，再推进最终材料。
++当前先执行[完整远端日志归档命令](../artifacts/stage3-remote-archive-2026-10-27/README.md)：10个固定运行目录，保留完整日志/样本/参数/身份/退出记录，新建evidence/stage3-log-archive-XXXXXX并生成tar.gz、清单与SHA256。MIwNSR回传显示成功：10目录/264文件、包2233424字节、collector/tee/script均0；[接收目录](../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/README.md)已建，等待下载5个文件并校验。不要重复执行归档命令；尚不能记为本地完整归档。
+ 
+ 用户确认S3-F01～F05a终端截图和V3后续统一处理。[V3稿](../recording/stage3/README.md)及已有图继续复用。归档命令不构建、不仿真、不读取大型波形；旧失败记录照原样保存。G3仍未整阶段通过，未提交或外发。
+ 
+--- before/PROGRESS.md
++++ PROGRESS.md
+@@ -62,7 +62,7 @@
+ 
+ ## 3. 下一次的前三步
+ 
+-1. 执行[远端日志归档命令](artifacts/stage3-remote-archive-2026-10-27/README.md)，只收集10个已知运行目录；命令已在本地夹具检查，真实服务器尚未执行。
++1. MIwNSR远端归档回传成功，10目录/264文件；先按[接收说明](artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/README.md)下载5个文件，不重复归档或仿真。
+ 2. 下载归档包、SHA256与结果清单，在本地验证后补齐完整原始证据；不重跑成功仿真。
+ 3. 用户后续统一截图并录制V3，再完成最终候选包核验。已有[V3稿和取图表](recording/stage3/README.md)继续使用，G3暂不计完整通过。
+ 
+--- before/docs/development-history.md
++++ docs/development-history.md
+@@ -292,7 +292,7 @@
+ 
+ 用户决定先收集日志与样本，截图和录屏后续统一处理。新增[collector](../scripts/collect_stage3_remote.py)与[可粘贴命令](../artifacts/stage3-remote-archive-2026-10-27/server-paste-command.txt)，只读取10个已知运行目录，创建全新归档目录，保留完整日志、逐轮样本、参数、环境、身份和退出记录，另保存排除项、文件大小与SHA256。预检重试和普通运行的目录布局分别处理；旧超时/mtval失败均作为原始证据保留。
+ 
+-脚本逐项核对必需文件，读前/后及打包后检查来源稳定性，并对压缩包每个成员重算哈希。只归档保存的身份记录，不把这一过程说成远端当前二进制重哈希。Python合成夹具与WSL/Bash整段命令检查通过；没有构建或仿真，也没有连接服务器。完整命令、范围、停止条件和原始工具日志见[归档说明](../artifacts/stage3-remote-archive-2026-10-27/README.md)。服务器执行结果、归档下载及本地完整性核验仍待完成。
++脚本逐项核对必需文件，读前/后及打包后检查来源稳定性，并对压缩包每个成员重算哈希。只归档保存的身份记录，不把这一过程说成远端当前二进制重哈希。Python合成夹具与WSL/Bash整段命令检查通过；没有构建或仿真，也没有连接服务器。完整命令、范围、停止条件和原始工具日志见[归档说明](../artifacts/stage3-remote-archive-2026-10-27/README.md)。随后用户回传MIwNSR：10目录/264文件、来源55489484字节、包2233424字节，collector/tee/script均0，包SHA已记录。新增[本地接收目录](../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/README.md)和5文件下载说明；归档下载及本地完整性核验仍待完成。
+ 
+ ## 21 回顾、截图与后续记录方法
+ 
+--- before/docs/verification.md
++++ docs/verification.md
+@@ -1,4 +1,8 @@
+ # 实现与验证记录
++
++## 2026-10-27 MIwNSR远端日志包回传（本地尚未下载）
++
++[用户回传选段](../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/user-returned-summary.txt)显示10目录/264文件、源55489484字节、包2233424字节、排除1项；STAGE3_ARCHIVE_READY、collector/tee/script均0。包SHA256=48882ae468149dadc6aadb2303cb9d25f035f5feea49e13cd945c8e3baf54cc8。具体被排除文件及归档耗时待读取实际文件，不猜测；[接收状态](../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/review.json)明确local_archive_verified=false。已创建本地接收目录，下载包/校验文件/结果JSON/原始归档日志/退出记录后再做本地验证。没有新增仿真或构建。
+ 
+ ## 2026-10-27 第三阶段日志归档工具检查（未在服务器执行）
+ 

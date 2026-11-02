@@ -1,0 +1,665 @@
+.section .text
+.option push
+.option norvc
+.option norelax
+.balign 4
+.globl opt_empty
+.type opt_empty,@function
+opt_empty:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a5
+    csrw fflags,a6
+    vsetivli zero,16,e8,m1,tu,mu
+    vmv.v.i v0,-7
+    vmv.v.i v1,-7
+    vmv.v.i v2,-7
+    vmv.v.i v3,-7
+    vmv.v.i v4,-7
+    vmv.v.i v5,-7
+    vmv.v.i v6,-7
+    vmv.v.i v7,-7
+    vmv.v.i v8,-7
+    vmv.v.i v9,-7
+    vmv.v.i v10,-7
+    vmv.v.i v11,-7
+    vmv.v.i v12,-7
+    vmv.v.i v13,-7
+    vmv.v.i v14,-7
+    vmv.v.i v15,-7
+    vmv.v.i v16,-7
+    vmv.v.i v17,-7
+    vmv.v.i v18,-7
+    vmv.v.i v19,-7
+    vmv.v.i v20,-7
+    vmv.v.i v21,-7
+    vmv.v.i v22,-7
+    vmv.v.i v23,-7
+    vmv.v.i v24,-7
+    vmv.v.i v25,-7
+    vmv.v.i v26,-7
+    vmv.v.i v27,-7
+    vmv.v.i v28,-7
+    vmv.v.i v29,-7
+    vmv.v.i v30,-7
+    vmv.v.i v31,-7
+    vsetvl zero,a3,a4
+    csrr t6,mscratch
+    li t0,0
+    fence rw,rw
+    csrrw zero,mscratch,t0
+.globl opt_empty_counter_begin
+opt_empty_counter_begin:
+    csrr t1,mcycle
+    csrrw zero,mscratch,t0
+    csrr t2,minstret
+    csrrw zero,mscratch,t0
+.globl opt_empty_payload_begin
+opt_empty_payload_begin:
+
+
+.globl opt_empty_payload_end
+opt_empty_payload_end:
+    fence rw,rw
+    lw t3,0(a1)
+    andi t3,t3,2047
+    csrrw zero,mscratch,t3
+    csrr t4,minstret
+    csrrw zero,mscratch,t0
+    csrr t5,mcycle
+.globl opt_empty_counter_end
+opt_empty_counter_end:
+    csrrw zero,mscratch,t0
+    sd t1,48(a2)
+    sd t2,56(a2)
+    sd t4,64(a2)
+    sd t5,72(a2)
+    sd t3,80(a2)
+    sd t0,88(a2)
+    sd t6,96(a2)
+    csrw mscratch,t6
+    csrr t0,mcountinhibit
+    sd t0,104(a2)
+    csrr t0,mscratch
+    sd t0,112(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    ret
+.globl opt_empty_code_end
+opt_empty_code_end:
+.balign 4
+.globl opt_native_independent
+.type opt_native_independent,@function
+opt_native_independent:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a5
+    csrw fflags,a6
+    vsetivli zero,16,e8,m1,tu,mu
+    vmv.v.i v0,-7
+    vmv.v.i v1,-7
+    vmv.v.i v2,-7
+    vmv.v.i v3,-7
+    vmv.v.i v4,-7
+    vmv.v.i v5,-7
+    vmv.v.i v6,-7
+    vmv.v.i v7,-7
+    vmv.v.i v8,-7
+    vmv.v.i v9,-7
+    vmv.v.i v10,-7
+    vmv.v.i v11,-7
+    vmv.v.i v12,-7
+    vmv.v.i v13,-7
+    vmv.v.i v14,-7
+    vmv.v.i v15,-7
+    vmv.v.i v16,-7
+    vmv.v.i v17,-7
+    vmv.v.i v18,-7
+    vmv.v.i v19,-7
+    vmv.v.i v20,-7
+    vmv.v.i v21,-7
+    vmv.v.i v22,-7
+    vmv.v.i v23,-7
+    vmv.v.i v24,-7
+    vmv.v.i v25,-7
+    vmv.v.i v26,-7
+    vmv.v.i v27,-7
+    vmv.v.i v28,-7
+    vmv.v.i v29,-7
+    vmv.v.i v30,-7
+    vmv.v.i v31,-7
+    vsetvl zero,a3,a4
+    csrr t6,mscratch
+    li t0,0
+    fence rw,rw
+    csrrw zero,mscratch,t0
+.globl opt_native_independent_counter_begin
+opt_native_independent_counter_begin:
+    csrr t1,mcycle
+    csrrw zero,mscratch,t0
+    csrr t2,minstret
+    csrrw zero,mscratch,t0
+.globl opt_native_independent_payload_begin
+opt_native_independent_payload_begin:
+    addi a5,a0,0
+    addi t4,zero,32
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v16,0
+    vmv.v.i v17,0
+    vmv.v.i v18,0
+    vmv.v.i v19,0
+opt_native_independent_loop:
+    vsetivli zero,8,e8,m1,ta,mu
+    addi a6,a5,0
+    vle8.v v1,(a6)
+    addi a6,a5,512
+    vle8.v v2,(a6)
+    .word 0x02208c0b
+    addi a6,a5,0
+    vle8.v v1,(a6)
+    addi a6,a5,768
+    vle8.v v2,(a6)
+    .word 0x02208c8b
+    addi a6,a5,256
+    vle8.v v1,(a6)
+    addi a6,a5,512
+    vle8.v v2,(a6)
+    .word 0x02208d0b
+    addi a6,a5,256
+    vle8.v v1,(a6)
+    addi a6,a5,768
+    vle8.v v2,(a6)
+    .word 0x02208d8b
+    vsetivli zero,4,e32,m1,tu,mu
+    vadd.vv v16,v16,v24
+    vadd.vv v17,v17,v25
+    vadd.vv v18,v18,v26
+    vadd.vv v19,v19,v27
+    addi a5,a5,8
+    addi t4,t4,-1
+    bnez t4,opt_native_independent_loop
+    addi t3,a1,0
+    vse32.v v16,(t3)
+    addi t3,a1,16
+    vse32.v v17,(t3)
+    addi t3,a1,32
+    vse32.v v18,(t3)
+    addi t3,a1,48
+    vse32.v v19,(t3)
+    vsetvl zero,a3,a4
+.globl opt_native_independent_payload_end
+opt_native_independent_payload_end:
+    fence rw,rw
+    lw t3,48(a1)
+    andi t3,t3,2047
+    csrrw zero,mscratch,t3
+    csrr t4,minstret
+    csrrw zero,mscratch,t0
+    csrr t5,mcycle
+.globl opt_native_independent_counter_end
+opt_native_independent_counter_end:
+    csrrw zero,mscratch,t0
+    sd t1,48(a2)
+    sd t2,56(a2)
+    sd t4,64(a2)
+    sd t5,72(a2)
+    sd t3,80(a2)
+    sd t0,88(a2)
+    sd t6,96(a2)
+    csrw mscratch,t6
+    csrr t0,mcountinhibit
+    sd t0,104(a2)
+    csrr t0,mscratch
+    sd t0,112(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    ret
+.globl opt_native_independent_code_end
+opt_native_independent_code_end:
+.balign 4
+.globl opt_rvv_mf2_independent
+.type opt_rvv_mf2_independent,@function
+opt_rvv_mf2_independent:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a5
+    csrw fflags,a6
+    vsetivli zero,16,e8,m1,tu,mu
+    vmv.v.i v0,-7
+    vmv.v.i v1,-7
+    vmv.v.i v2,-7
+    vmv.v.i v3,-7
+    vmv.v.i v4,-7
+    vmv.v.i v5,-7
+    vmv.v.i v6,-7
+    vmv.v.i v7,-7
+    vmv.v.i v8,-7
+    vmv.v.i v9,-7
+    vmv.v.i v10,-7
+    vmv.v.i v11,-7
+    vmv.v.i v12,-7
+    vmv.v.i v13,-7
+    vmv.v.i v14,-7
+    vmv.v.i v15,-7
+    vmv.v.i v16,-7
+    vmv.v.i v17,-7
+    vmv.v.i v18,-7
+    vmv.v.i v19,-7
+    vmv.v.i v20,-7
+    vmv.v.i v21,-7
+    vmv.v.i v22,-7
+    vmv.v.i v23,-7
+    vmv.v.i v24,-7
+    vmv.v.i v25,-7
+    vmv.v.i v26,-7
+    vmv.v.i v27,-7
+    vmv.v.i v28,-7
+    vmv.v.i v29,-7
+    vmv.v.i v30,-7
+    vmv.v.i v31,-7
+    vsetvl zero,a3,a4
+    csrr t6,mscratch
+    li t0,0
+    fence rw,rw
+    csrrw zero,mscratch,t0
+.globl opt_rvv_mf2_independent_counter_begin
+opt_rvv_mf2_independent_counter_begin:
+    csrr t1,mcycle
+    csrrw zero,mscratch,t0
+    csrr t2,minstret
+    csrrw zero,mscratch,t0
+.globl opt_rvv_mf2_independent_payload_begin
+opt_rvv_mf2_independent_payload_begin:
+    addi a5,a0,0
+    addi t4,zero,32
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v16,0
+    vmv.v.i v17,0
+    vmv.v.i v18,0
+    vmv.v.i v19,0
+    vmv.v.i v4,0
+    vmv.v.i v24,0
+    vmv.v.i v25,0
+    vmv.v.i v26,0
+    vmv.v.i v27,0
+opt_rvv_mf2_independent_loop:
+    vsetivli zero,8,e8,mf2,ta,mu
+    addi a6,a5,0
+    vle8.v v1,(a6)
+    addi a6,a5,512
+    vle8.v v2,(a6)
+    vwmul.vv v8,v1,v2
+    addi a6,a5,0
+    vle8.v v1,(a6)
+    addi a6,a5,768
+    vle8.v v2,(a6)
+    vwmul.vv v10,v1,v2
+    addi a6,a5,256
+    vle8.v v1,(a6)
+    addi a6,a5,512
+    vle8.v v2,(a6)
+    vwmul.vv v12,v1,v2
+    addi a6,a5,256
+    vle8.v v1,(a6)
+    addi a6,a5,768
+    vle8.v v2,(a6)
+    vwmul.vv v14,v1,v2
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v24,v8,v4
+    vwredsum.vs v25,v10,v4
+    vwredsum.vs v26,v12,v4
+    vwredsum.vs v27,v14,v4
+    vsetivli zero,4,e32,m1,tu,mu
+    vadd.vv v16,v16,v24
+    vadd.vv v17,v17,v25
+    vadd.vv v18,v18,v26
+    vadd.vv v19,v19,v27
+    addi a5,a5,8
+    addi t4,t4,-1
+    bnez t4,opt_rvv_mf2_independent_loop
+    addi t3,a1,0
+    vse32.v v16,(t3)
+    addi t3,a1,16
+    vse32.v v17,(t3)
+    addi t3,a1,32
+    vse32.v v18,(t3)
+    addi t3,a1,48
+    vse32.v v19,(t3)
+    vsetvl zero,a3,a4
+.globl opt_rvv_mf2_independent_payload_end
+opt_rvv_mf2_independent_payload_end:
+    fence rw,rw
+    lw t3,48(a1)
+    andi t3,t3,2047
+    csrrw zero,mscratch,t3
+    csrr t4,minstret
+    csrrw zero,mscratch,t0
+    csrr t5,mcycle
+.globl opt_rvv_mf2_independent_counter_end
+opt_rvv_mf2_independent_counter_end:
+    csrrw zero,mscratch,t0
+    sd t1,48(a2)
+    sd t2,56(a2)
+    sd t4,64(a2)
+    sd t5,72(a2)
+    sd t3,80(a2)
+    sd t0,88(a2)
+    sd t6,96(a2)
+    csrw mscratch,t6
+    csrr t0,mcountinhibit
+    sd t0,104(a2)
+    csrr t0,mscratch
+    sd t0,112(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    ret
+.globl opt_rvv_mf2_independent_code_end
+opt_rvv_mf2_independent_code_end:
+.balign 4
+.globl opt_native_reuse
+.type opt_native_reuse,@function
+opt_native_reuse:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a5
+    csrw fflags,a6
+    vsetivli zero,16,e8,m1,tu,mu
+    vmv.v.i v0,-7
+    vmv.v.i v1,-7
+    vmv.v.i v2,-7
+    vmv.v.i v3,-7
+    vmv.v.i v4,-7
+    vmv.v.i v5,-7
+    vmv.v.i v6,-7
+    vmv.v.i v7,-7
+    vmv.v.i v8,-7
+    vmv.v.i v9,-7
+    vmv.v.i v10,-7
+    vmv.v.i v11,-7
+    vmv.v.i v12,-7
+    vmv.v.i v13,-7
+    vmv.v.i v14,-7
+    vmv.v.i v15,-7
+    vmv.v.i v16,-7
+    vmv.v.i v17,-7
+    vmv.v.i v18,-7
+    vmv.v.i v19,-7
+    vmv.v.i v20,-7
+    vmv.v.i v21,-7
+    vmv.v.i v22,-7
+    vmv.v.i v23,-7
+    vmv.v.i v24,-7
+    vmv.v.i v25,-7
+    vmv.v.i v26,-7
+    vmv.v.i v27,-7
+    vmv.v.i v28,-7
+    vmv.v.i v29,-7
+    vmv.v.i v30,-7
+    vmv.v.i v31,-7
+    vsetvl zero,a3,a4
+    csrr t6,mscratch
+    li t0,0
+    fence rw,rw
+    csrrw zero,mscratch,t0
+.globl opt_native_reuse_counter_begin
+opt_native_reuse_counter_begin:
+    csrr t1,mcycle
+    csrrw zero,mscratch,t0
+    csrr t2,minstret
+    csrrw zero,mscratch,t0
+.globl opt_native_reuse_payload_begin
+opt_native_reuse_payload_begin:
+    addi a5,a0,0
+    addi t4,zero,32
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v16,0
+    vmv.v.i v17,0
+    vmv.v.i v18,0
+    vmv.v.i v19,0
+opt_native_reuse_loop:
+    vsetivli zero,8,e8,m1,ta,mu
+    addi a6,a5,0
+    vle8.v v1,(a6)
+    addi a6,a5,256
+    vle8.v v2,(a6)
+    addi a6,a5,512
+    vle8.v v6,(a6)
+    addi a6,a5,768
+    vle8.v v7,(a6)
+    .word 0x02608c0b
+    .word 0x02708c8b
+    .word 0x02610d0b
+    .word 0x02710d8b
+    vsetivli zero,4,e32,m1,tu,mu
+    vadd.vv v16,v16,v24
+    vadd.vv v17,v17,v25
+    vadd.vv v18,v18,v26
+    vadd.vv v19,v19,v27
+    addi a5,a5,8
+    addi t4,t4,-1
+    bnez t4,opt_native_reuse_loop
+    addi t3,a1,0
+    vse32.v v16,(t3)
+    addi t3,a1,16
+    vse32.v v17,(t3)
+    addi t3,a1,32
+    vse32.v v18,(t3)
+    addi t3,a1,48
+    vse32.v v19,(t3)
+    vsetvl zero,a3,a4
+.globl opt_native_reuse_payload_end
+opt_native_reuse_payload_end:
+    fence rw,rw
+    lw t3,48(a1)
+    andi t3,t3,2047
+    csrrw zero,mscratch,t3
+    csrr t4,minstret
+    csrrw zero,mscratch,t0
+    csrr t5,mcycle
+.globl opt_native_reuse_counter_end
+opt_native_reuse_counter_end:
+    csrrw zero,mscratch,t0
+    sd t1,48(a2)
+    sd t2,56(a2)
+    sd t4,64(a2)
+    sd t5,72(a2)
+    sd t3,80(a2)
+    sd t0,88(a2)
+    sd t6,96(a2)
+    csrw mscratch,t6
+    csrr t0,mcountinhibit
+    sd t0,104(a2)
+    csrr t0,mscratch
+    sd t0,112(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    ret
+.globl opt_native_reuse_code_end
+opt_native_reuse_code_end:
+.balign 4
+.globl opt_rvv_mf2_reuse
+.type opt_rvv_mf2_reuse,@function
+opt_rvv_mf2_reuse:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a5
+    csrw fflags,a6
+    vsetivli zero,16,e8,m1,tu,mu
+    vmv.v.i v0,-7
+    vmv.v.i v1,-7
+    vmv.v.i v2,-7
+    vmv.v.i v3,-7
+    vmv.v.i v4,-7
+    vmv.v.i v5,-7
+    vmv.v.i v6,-7
+    vmv.v.i v7,-7
+    vmv.v.i v8,-7
+    vmv.v.i v9,-7
+    vmv.v.i v10,-7
+    vmv.v.i v11,-7
+    vmv.v.i v12,-7
+    vmv.v.i v13,-7
+    vmv.v.i v14,-7
+    vmv.v.i v15,-7
+    vmv.v.i v16,-7
+    vmv.v.i v17,-7
+    vmv.v.i v18,-7
+    vmv.v.i v19,-7
+    vmv.v.i v20,-7
+    vmv.v.i v21,-7
+    vmv.v.i v22,-7
+    vmv.v.i v23,-7
+    vmv.v.i v24,-7
+    vmv.v.i v25,-7
+    vmv.v.i v26,-7
+    vmv.v.i v27,-7
+    vmv.v.i v28,-7
+    vmv.v.i v29,-7
+    vmv.v.i v30,-7
+    vmv.v.i v31,-7
+    vsetvl zero,a3,a4
+    csrr t6,mscratch
+    li t0,0
+    fence rw,rw
+    csrrw zero,mscratch,t0
+.globl opt_rvv_mf2_reuse_counter_begin
+opt_rvv_mf2_reuse_counter_begin:
+    csrr t1,mcycle
+    csrrw zero,mscratch,t0
+    csrr t2,minstret
+    csrrw zero,mscratch,t0
+.globl opt_rvv_mf2_reuse_payload_begin
+opt_rvv_mf2_reuse_payload_begin:
+    addi a5,a0,0
+    addi t4,zero,32
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v16,0
+    vmv.v.i v17,0
+    vmv.v.i v18,0
+    vmv.v.i v19,0
+    vmv.v.i v4,0
+    vmv.v.i v24,0
+    vmv.v.i v25,0
+    vmv.v.i v26,0
+    vmv.v.i v27,0
+opt_rvv_mf2_reuse_loop:
+    vsetivli zero,8,e8,mf2,ta,mu
+    addi a6,a5,0
+    vle8.v v1,(a6)
+    addi a6,a5,256
+    vle8.v v2,(a6)
+    addi a6,a5,512
+    vle8.v v6,(a6)
+    addi a6,a5,768
+    vle8.v v7,(a6)
+    vwmul.vv v8,v1,v6
+    vwmul.vv v10,v1,v7
+    vwmul.vv v12,v2,v6
+    vwmul.vv v14,v2,v7
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v24,v8,v4
+    vwredsum.vs v25,v10,v4
+    vwredsum.vs v26,v12,v4
+    vwredsum.vs v27,v14,v4
+    vsetivli zero,4,e32,m1,tu,mu
+    vadd.vv v16,v16,v24
+    vadd.vv v17,v17,v25
+    vadd.vv v18,v18,v26
+    vadd.vv v19,v19,v27
+    addi a5,a5,8
+    addi t4,t4,-1
+    bnez t4,opt_rvv_mf2_reuse_loop
+    addi t3,a1,0
+    vse32.v v16,(t3)
+    addi t3,a1,16
+    vse32.v v17,(t3)
+    addi t3,a1,32
+    vse32.v v18,(t3)
+    addi t3,a1,48
+    vse32.v v19,(t3)
+    vsetvl zero,a3,a4
+.globl opt_rvv_mf2_reuse_payload_end
+opt_rvv_mf2_reuse_payload_end:
+    fence rw,rw
+    lw t3,48(a1)
+    andi t3,t3,2047
+    csrrw zero,mscratch,t3
+    csrr t4,minstret
+    csrrw zero,mscratch,t0
+    csrr t5,mcycle
+.globl opt_rvv_mf2_reuse_counter_end
+opt_rvv_mf2_reuse_counter_end:
+    csrrw zero,mscratch,t0
+    sd t1,48(a2)
+    sd t2,56(a2)
+    sd t4,64(a2)
+    sd t5,72(a2)
+    sd t3,80(a2)
+    sd t0,88(a2)
+    sd t6,96(a2)
+    csrw mscratch,t6
+    csrr t0,mcountinhibit
+    sd t0,104(a2)
+    csrr t0,mscratch
+    sd t0,112(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    ret
+.globl opt_rvv_mf2_reuse_code_end
+opt_rvv_mf2_reuse_code_end:
+.option pop

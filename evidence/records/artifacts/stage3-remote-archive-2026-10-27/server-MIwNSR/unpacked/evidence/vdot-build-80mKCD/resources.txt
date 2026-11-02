@@ -1,0 +1,21 @@
+2026-10-24T15:47:07+08:00
+x86_64
+11:devices:/kubepods.slice/kubepods-podda007683_1aea_4f6e_b570_51fb1e3bfd9c.slice/cri-containerd-00ae4201819b6122b44c22dfccbdbb20fb3993e202a521f5397935586d6b63f9.scope
+10:cpuset:/kubepods.slice/kubepods-podda007683_1aea_4f6e_b570_51fb1e3bfd9c.slice/cri-containerd-00ae4201819b6122b44c22dfccbdbb20fb3993e202a521f5397935586d6b63f9.scope
+9:blkio:/kubepods.slice/kubepods-podda007683_1aea_4f6e_b570_51fb1e3bfd9c.slice/cri-containerd-00ae4201819b6122b44c22dfccbdbb20fb3993e202a521f5397935586d6b63f9.scope
+8:cpuacct,cpu:/kubepods.slice/kubepods-podda007683_1aea_4f6e_b570_51fb1e3bfd9c.slice/cri-containerd-00ae4201819b6122b44c22dfccbdbb20fb3993e202a521f5397935586d6b63f9.scope
+7:pids:/kubepods.slice/kubepods-podda007683_1aea_4f6e_b570_51fb1e3bfd9c.slice/cri-containerd-00ae4201819b6122b44c22dfccbdbb20fb3993e202a521f5397935586d6b63f9.scope
+6:perf_event:/kubepods.slice/kubepods-podda007683_1aea_4f6e_b570_51fb1e3bfd9c.slice/cri-containerd-00ae4201819b6122b44c22dfccbdbb20fb3993e202a521f5397935586d6b63f9.scope
+5:memory:/kubepods.slice/kubepods-podda007683_1aea_4f6e_b570_51fb1e3bfd9c.slice/cri-containerd-00ae4201819b6122b44c22dfccbdbb20fb3993e202a521f5397935586d6b63f9.scope
+4:freezer:/kubepods.slice/kubepods-podda007683_1aea_4f6e_b570_51fb1e3bfd9c.slice/cri-containerd-00ae4201819b6122b44c22dfccbdbb20fb3993e202a521f5397935586d6b63f9.scope
+3:hugetlb:/kubepods.slice/kubepods-podda007683_1aea_4f6e_b570_51fb1e3bfd9c.slice/cri-containerd-00ae4201819b6122b44c22dfccbdbb20fb3993e202a521f5397935586d6b63f9.scope
+2:net_prio,net_cls:/kubepods.slice/kubepods-podda007683_1aea_4f6e_b570_51fb1e3bfd9c.slice/cri-containerd-00ae4201819b6122b44c22dfccbdbb20fb3993e202a521f5397935586d6b63f9.scope
+1:name=systemd:/kubepods.slice/kubepods-podda007683_1aea_4f6e_b570_51fb1e3bfd9c.slice/cri-containerd-00ae4201819b6122b44c22dfccbdbb20fb3993e202a521f5397935586d6b63f9.scope
+/sys/fs/cgroup/memory/memory.limit_in_bytes=123480309760
+/sys/fs/cgroup/memory/memory.usage_in_bytes=4761858048
+/sys/fs/cgroup/cpu/cpu.cfs_quota_us=600000
+/sys/fs/cgroup/cpu/cpu.cfs_period_us=100000
+/sys/fs/cgroup/cpu,cpuacct/cpu.cfs_quota_us=600000
+/sys/fs/cgroup/cpu,cpuacct/cpu.cfs_period_us=100000
+Filesystem       Size  Used Avail Use% Mounted on
+ks_p300s_public  495G  286G  210G  58% /root/private_data

@@ -1,0 +1,112 @@
+[
+  {
+    "variant": "empty",
+    "kind": "empty",
+    "iterations": 0,
+    "samples": 3,
+    "output_bytes_per_point": 16,
+    "raw_cycle_min": 100,
+    "raw_cycle_median": 100,
+    "raw_cycle_max": 100,
+    "instret": 6
+  },
+  {
+    "variant": "native_n8",
+    "kind": "native",
+    "iterations": 8,
+    "samples": 3,
+    "output_bytes_per_point": 16,
+    "raw_cycle_min": 287,
+    "raw_cycle_median": 287,
+    "raw_cycle_max": 287,
+    "instret": 65
+  },
+  {
+    "variant": "rvv_batch_m1_n8",
+    "kind": "rvv_batch_m1",
+    "iterations": 8,
+    "samples": 3,
+    "output_bytes_per_point": 16,
+    "raw_cycle_min": 320,
+    "raw_cycle_median": 320,
+    "raw_cycle_max": 320,
+    "instret": 84
+  },
+  {
+    "variant": "rvv_batch_mf2_n8",
+    "kind": "rvv_batch_mf2",
+    "iterations": 8,
+    "samples": 3,
+    "output_bytes_per_point": 16,
+    "raw_cycle_min": 312,
+    "raw_cycle_median": 312,
+    "raw_cycle_max": 312,
+    "instret": 84
+  },
+  {
+    "variant": "native_n32",
+    "kind": "native",
+    "iterations": 32,
+    "samples": 3,
+    "output_bytes_per_point": 16,
+    "raw_cycle_min": 674,
+    "raw_cycle_median": 674,
+    "raw_cycle_max": 676,
+    "instret": 239
+  },
+  {
+    "variant": "rvv_batch_m1_n32",
+    "kind": "rvv_batch_m1",
+    "iterations": 32,
+    "samples": 3,
+    "output_bytes_per_point": 16,
+    "raw_cycle_min": 705,
+    "raw_cycle_median": 705,
+    "raw_cycle_max": 705,
+    "instret": 285
+  },
+  {
+    "variant": "rvv_batch_mf2_n32",
+    "kind": "rvv_batch_mf2",
+    "iterations": 32,
+    "samples": 3,
+    "output_bytes_per_point": 16,
+    "raw_cycle_min": 696,
+    "raw_cycle_median": 698,
+    "raw_cycle_max": 698,
+    "instret": 285
+  },
+  {
+    "variant": "native_n128",
+    "kind": "native",
+    "iterations": 128,
+    "samples": 3,
+    "output_bytes_per_point": 16,
+    "raw_cycle_min": 2239,
+    "raw_cycle_median": 2239,
+    "raw_cycle_max": 2240,
+    "instret": 935
+  },
+  {
+    "variant": "rvv_batch_m1_n128",
+    "kind": "rvv_batch_m1",
+    "iterations": 128,
+    "samples": 3,
+    "output_bytes_per_point": 16,
+    "raw_cycle_min": 2249,
+    "raw_cycle_median": 2249,
+    "raw_cycle_max": 2249,
+    "instret": 1089
+  },
+  {
+    "variant": "rvv_batch_mf2_n128",
+    "kind": "rvv_batch_mf2",
+    "iterations": 128,
+    "samples": 3,
+    "output_bytes_per_point": 16,
+    "raw_cycle_min": 2241,
+    "raw_cycle_median": 2241,
+    "raw_cycle_max": 2241,
+    "instret": 1089
+  }
+]

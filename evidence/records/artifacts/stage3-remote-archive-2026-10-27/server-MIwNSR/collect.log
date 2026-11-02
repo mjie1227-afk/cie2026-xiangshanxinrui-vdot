@@ -1,0 +1,16 @@
+SELECTED_FILES=264 SOURCE_BYTES=55489484 EXCLUDED_FILES=1
+PACKING=vdot-build-80mKCD
+PACKING=vdot-chain-KiI3xX
+PACKING=vdot-e2e-bijzGZ
+PACKING=vdot-matrix-OMcrpf
+PACKING=vdot-mtval-build-xYGYlZ
+PACKING=vdot-pipeline-JuGUz6
+PACKING=vdot-rvv-equiv-8nvimb
+PACKING=vdot-timing-pilot-IgNim5
+PACKING=vdot-timing-retry-5vHUp8
+PACKING=vdot-tput-uLgHm6
+VERIFYING_ARCHIVE_MEMBERS
+ARCHIVE=/root/private_data/mj/xiangshan/evidence/stage3-log-archive-MIwNSR/stage3-logs.tar.gz
+ARCHIVE_BYTES=2233424
+ARCHIVE_SHA256=48882ae468149dadc6aadb2303cb9d25f035f5feea49e13cd945c8e3baf54cc8
+STAGE3_ARCHIVE_READY

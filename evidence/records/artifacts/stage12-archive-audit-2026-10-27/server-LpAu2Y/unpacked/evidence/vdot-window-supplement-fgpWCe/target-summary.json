@@ -1,0 +1,553 @@
+[
+  {
+    "id": 0,
+    "pc": "0x80000204",
+    "rob": [
+      1,
+      35
+    ],
+    "pdest": 0,
+    "rename": 14206,
+    "events": {
+      "rename_handshake": [
+        14206
+      ],
+      "rob_commit": [
+        14272
+      ]
+    },
+    "redirect_age_matches": []
+  },
+  {
+    "id": 1,
+    "pc": "0x80000208",
+    "rob": [
+      1,
+      36
+    ],
+    "pdest": 62,
+    "rename": 14208,
+    "events": {
+      "fu_input_handshake": [
+        14220
+      ],
+      "fu_output_handshake": [
+        14224
+      ],
+      "preg_write_port": [
+        14224
+      ],
+      "rename_handshake": [
+        14208
+      ],
+      "rob_commit": [
+        14272
+      ],
+      "wb_input_valid_ready_unknown_or_low": [
+        14224
+      ],
+      "writeback_to_ctrl": [
+        14224
+      ]
+    },
+    "redirect_age_matches": []
+  },
+  {
+    "id": 2,
+    "pc": "0x80000204",
+    "rob": [
+      0,
+      22
+    ],
+    "pdest": 0,
+    "rename": 14536,
+    "events": {
+      "rename_handshake": [
+        14536
+      ],
+      "rob_commit": [
+        14602
+      ]
+    },
+    "redirect_age_matches": []
+  },
+  {
+    "id": 3,
+    "pc": "0x80000208",
+    "rob": [
+      0,
+      23
+    ],
+    "pdest": 78,
+    "rename": 14538,
+    "events": {
+      "fu_input_handshake": [
+        14550
+      ],
+      "fu_output_handshake": [
+        14554
+      ],
+      "preg_write_port": [
+        14554
+      ],
+      "rename_handshake": [
+        14538
+      ],
+      "rob_commit": [
+        14602
+      ],
+      "wb_input_valid_ready_unknown_or_low": [
+        14554
+      ],
+      "writeback_to_ctrl": [
+        14554
+      ]
+    },
+    "redirect_age_matches": []
+  },
+  {
+    "id": 4,
+    "pc": "0x80000204",
+    "rob": [
+      1,
+      9
+    ],
+    "pdest": 0,
+    "rename": 14870,
+    "events": {
+      "rename_handshake": [
+        14870
+      ],
+      "rob_commit": [
+        14936
+      ]
+    },
+    "redirect_age_matches": []
+  },
+  {
+    "id": 5,
+    "pc": "0x80000208",
+    "rob": [
+      1,
+      10
+    ],
+    "pdest": 94,
+    "rename": 14872,
+    "events": {
+      "fu_input_handshake": [
+        14884
+      ],
+      "fu_output_handshake": [
+        14888
+      ],
+      "preg_write_port": [
+        14888
+      ],
+      "rename_handshake": [
+        14872
+      ],
+      "rob_commit": [
+        14936
+      ],
+      "wb_input_valid_ready_unknown_or_low": [
+        14888
+      ],
+      "writeback_to_ctrl": [
+        14888
+      ]
+    },
+    "redirect_age_matches": []
+  },
+  {
+    "id": 6,
+    "pc": "0x80000204",
+    "rob": [
+      1,
+      44
+    ],
+    "pdest": 0,
+    "rename": 15200,
+    "events": {
+      "rename_handshake": [
+        15200
+      ],
+      "rob_commit": [
+        15266
+      ]
+    },
+    "redirect_age_matches": []
+  },
+  {
+    "id": 7,
+    "pc": "0x80000208",
+    "rob": [
+      1,
+      45
+    ],
+    "pdest": 110,
+    "rename": 15202,
+    "events": {
+      "fu_input_handshake": [
+        15214
+      ],
+      "fu_output_handshake": [
+        15218
+      ],
+      "preg_write_port": [
+        15218
+      ],
+      "rename_handshake": [
+        15202
+      ],
+      "rob_commit": [
+        15266
+      ],
+      "wb_input_valid_ready_unknown_or_low": [
+        15218
+      ],
+      "writeback_to_ctrl": [
+        15218
+      ]
+    },
+    "redirect_age_matches": []
+  },
+  {
+    "id": 8,
+    "pc": "0x80000204",
+    "rob": [
+      0,
+      31
+    ],
+    "pdest": 0,
+    "rename": 15532,
+    "events": {
+      "rename_handshake": [
+        15532
+      ],
+      "rob_commit": [
+        15598
+      ]
+    },
+    "redirect_age_matches": []
+  },
+  {
+    "id": 9,
+    "pc": "0x80000208",
+    "rob": [
+      0,
+      32
+    ],
+    "pdest": 126,
+    "rename": 15534,
+    "events": {
+      "fu_input_handshake": [
+        15546
+      ],
+      "fu_output_handshake": [
+        15550
+      ],
+      "preg_write_port": [
+        15550
+      ],
+      "rename_handshake": [
+        15534
+      ],
+      "rob_commit": [
+        15600
+      ],
+      "wb_input_valid_ready_unknown_or_low": [
+        15550
+      ],
+      "writeback_to_ctrl": [
+        15550
+      ]
+    },
+    "redirect_age_matches": []
+  },
+  {
+    "id": 10,
+    "pc": "0x80000204",
+    "rob": [
+      1,
+      18
+    ],
+    "pdest": 0,
+    "rename": 15864,
+    "events": {
+      "rename_handshake": [
+        15864
+      ],
+      "rob_commit": [
+        15930
+      ]
+    },
+    "redirect_age_matches": []
+  },
+  {
+    "id": 11,
+    "pc": "0x80000208",
+    "rob": [
+      1,
+      19
+    ],
+    "pdest": 142,
+    "rename": 15866,
+    "events": {
+      "fu_input_handshake": [
+        15878
+      ],
+      "fu_output_handshake": [
+        15882
+      ],
+      "preg_write_port": [
+        15882
+      ],
+      "rename_handshake": [
+        15866
+      ],
+      "rob_commit": [
+        15930
+      ],
+      "wb_input_valid_ready_unknown_or_low": [
+        15882
+      ],
+      "writeback_to_ctrl": [
+        15882
+      ]
+    },
+    "redirect_age_matches": []
+  },
+  {
+    "id": 12,
+    "pc": "0x80000204",
+    "rob": [
+      0,
+      5
+    ],
+    "pdest": 0,
+    "rename": 16194,
+    "events": {
+      "rename_handshake": [
+        16194
+      ],
+      "rob_commit": [
+        16260
+      ]
+    },
+    "redirect_age_matches": []
+  },
+  {
+    "id": 13,
+    "pc": "0x80000208",
+    "rob": [
+      0,
+      6
+    ],
+    "pdest": 158,
+    "rename": 16196,
+    "events": {
+      "fu_input_handshake": [
+        16208
+      ],
+      "fu_output_handshake": [
+        16212
+      ],
+      "preg_write_port": [
+        16212
+      ],
+      "rename_handshake": [
+        16196
+      ],
+      "rob_commit": [
+        16260
+      ],
+      "wb_input_valid_ready_unknown_or_low": [
+        16212
+      ],
+      "writeback_to_ctrl": [
+        16212
+      ]
+    },
+    "redirect_age_matches": []
+  },
+  {
+    "id": 14,
+    "pc": "0x80000204",
+    "rob": [
+      0,
+      40
+    ],
+    "pdest": 0,
+    "rename": 16528,
+    "events": {
+      "rename_handshake": [
+        16528
+      ],
+      "rob_commit": [
+        16594
+      ]
+    },
+    "redirect_age_matches": []
+  },
+  {
+    "id": 15,
+    "pc": "0x80000208",
+    "rob": [
+      0,
+      41
+    ],
+    "pdest": 7,
+    "rename": 16530,
+    "events": {
+      "fu_input_handshake": [
+        16542
+      ],
+      "fu_output_handshake": [
+        16546
+      ],
+      "preg_write_port": [
+        16546
+      ],
+      "rename_handshake": [
+        16530
+      ],
+      "rob_commit": [
+        16594
+      ],
+      "wb_input_valid_ready_unknown_or_low": [
+        16546
+      ],
+      "writeback_to_ctrl": [
+        16546
+      ]
+    },
+    "redirect_age_matches": []
+  },
+  {
+    "id": 16,
+    "pc": "0x80000204",
+    "rob": [
+      1,
+      27
+    ],
+    "pdest": 0,
+    "rename": 16858,
+    "events": {
+      "rename_handshake": [
+        16858
+      ],
+      "rob_tag_reused": [
+        16892
+      ]
+    },
+    "redirect_age_matches": [
+      {
+        "time": 16872,
+        "port": "io_redirect",
+        "rob": [
+          1,
+          24
+        ],
+        "level": 0,
+        "source": null
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "pc": "0x80000208",
+    "rob": [
+      1,
+      28
+    ],
+    "pdest": 61,
+    "rename": 16860,
+    "events": {
+      "fu_input_handshake": [
+        16872
+      ],
+      "rename_handshake": [
+        16860
+      ],
+      "rob_tag_reused": [
+        16892
+      ]
+    },
+    "redirect_age_matches": [
+      {
+        "time": 16872,
+        "port": "io_redirect",
+        "rob": [
+          1,
+          24
+        ],
+        "level": 0,
+        "source": null
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "pc": "0x80000204",
+    "rob": [
+      1,
+      26
+    ],
+    "pdest": 0,
+    "rename": 16890,
+    "events": {
+      "rename_handshake": [
+        16890
+      ],
+      "rob_commit": [
+        16958
+      ]
+    },
+    "redirect_age_matches": []
+  },
+  {
+    "id": 19,
+    "pc": "0x80000208",
+    "rob": [
+      1,
+      27
+    ],
+    "pdest": 61,
+    "rename": 16892,
+    "events": {
+      "fu_input_handshake": [
+        16904
+      ],
+      "fu_output_handshake": [
+        16908
+      ],
+      "preg_write_port": [
+        16908
+      ],
+      "rename_handshake": [
+        16892
+      ],
+      "rob_tag_reused": [
+        16970
+      ],
+      "wb_input_valid_ready_unknown_or_low": [
+        16908
+      ],
+      "writeback_to_ctrl": [
+        16908
+      ]
+    },
+    "redirect_age_matches": [
+      {
+        "time": 16952,
+        "port": "io_redirect",
+        "rob": [
+          1,
+          26
+        ],
+        "level": 0,
+        "source": 18
+      }
+    ]
+  }
+]

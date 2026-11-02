@@ -1,0 +1,20 @@
+{
+  "status": "mixed-lifecycles-accepted-contention-open",
+  "evidence_basis": "user-returned console; full remote VCD/events not downloaded",
+  "remote_dir": "/root/private_data/mj/xiangshan/evidence/vdot-mixed-resources-9k3waS",
+  "script_exit": 0,
+  "tee_exit": 0,
+  "accepted": [
+    "selected VADD/VMUL/VDot rename, IQ offer, EXU input/output handshake, control writeback and ROB retirement association",
+    "VMUL and VDot execution intervals overlap"
+  ],
+  "contention_accepted": false,
+  "limitations": [
+    "12 discovered arbiters yielded zero co-request events; valid sampling completeness pending",
+    "IQ offer is not automatically IQ handshake; pasted summary omits ready",
+    "physical arbiter input identity fields incomplete; this limits attribution but does not explain zero raw co-requests",
+    "earlier busy-table gating not covered",
+    "target0 and target1 share ROB/pdest but are separate allocations; no cancellation cause assigned"
+  ],
+  "next": "existing-wave resource ownership and valid coverage audit, no simulator"
+}

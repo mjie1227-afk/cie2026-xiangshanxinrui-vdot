@@ -1,0 +1,14 @@
+{
+  "status": "timing-pilot-raw-results-review-required",
+  "cwd": "/root/private_data/mj/xiangshan",
+  "emu_or_timeout_exit": 0,
+  "wall_limit_seconds": 2400,
+  "guest_cycle_limit": 500000,
+  "seed": 1,
+  "rebuild": false,
+  "final_speedup_accepted": false,
+  "scope": "raw serialized timing interval; includes measurement overhead",
+  "calls": 42,
+  "warmups": 6,
+  "samples": 36
+}

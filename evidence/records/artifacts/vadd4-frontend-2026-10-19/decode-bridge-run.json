@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/artifacts/vadd4-frontend-2026-10-19/inspect_decode_bridge.py",
+    "/home/lenovo1227/xiangshan-learning/waves/vadd4-kj2e3y6k/vadd4.vcd"
+  ],
+  "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot",
+  "exit_code": 0,
+  "stderr": "",
+  "script_sha256": "515b4c8269e45f00988193e8c58e52131d6d24325a5ea20eadec9583c3670848",
+  "scope": "VCD read only; no RTL simulation"
+}

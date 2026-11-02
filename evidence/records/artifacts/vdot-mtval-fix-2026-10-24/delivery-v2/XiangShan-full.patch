@@ -1,0 +1,685 @@
+diff --git a/src/main/scala/xiangshan/Parameters.scala b/src/main/scala/xiangshan/Parameters.scala
+index 40b33dfce..f87a75812 100644
+--- a/src/main/scala/xiangshan/Parameters.scala
++++ b/src/main/scala/xiangshan/Parameters.scala
+@@ -445,7 +445,7 @@ case class XSCoreParameters
+     implicit val schdType: SchedulerType = VfScheduler()
+     SchdBlockParams(Seq(
+       IssueBlockParams(Seq(
+-        ExeUnitParams("VFEX0", Seq(VfmaCfg, VialuCfg, VimacCfg, VppuCfg), Seq(VfWB(port = 0, 0), V0WB(port = 0, 0)), Seq(Seq(VfRD(0, 0)), Seq(VfRD(1, 0)), Seq(VfRD(2, 0)), Seq(V0RD(0, 0)), Seq(VlRD(0, 0)))),
++        ExeUnitParams("VFEX0", Seq(VfmaCfg, VialuCfg, VimacCfg, VppuCfg, VdotCfg), Seq(VfWB(port = 0, 0), V0WB(port = 0, 0)), Seq(Seq(VfRD(0, 0)), Seq(VfRD(1, 0)), Seq(VfRD(2, 0)), Seq(V0RD(0, 0)), Seq(VlRD(0, 0)))),
+         ExeUnitParams("VFEX1", Seq(VfaluCfg, VfcvtCfg, VipuCfg, VSetRvfWvfCfg), Seq(VfWB(port = 0, 1), V0WB(port = 0, 1), VlWB(port = vfSchdVlWbPort, 0), IntWB(port = 1, 1), FpWB(port = 0, 1)), Seq(Seq(VfRD(0, 1)), Seq(VfRD(1, 1)), Seq(VfRD(2, 1)), Seq(V0RD(0, 1)), Seq(VlRD(0, 1)))),
+       ), numEntries = 16, numEnq = 2, numComp = 12),
+       IssueBlockParams(Seq(
+diff --git a/src/main/scala/xiangshan/backend/Bundles.scala b/src/main/scala/xiangshan/backend/Bundles.scala
+index eae7563c7..cb6e54af1 100644
+--- a/src/main/scala/xiangshan/backend/Bundles.scala
++++ b/src/main/scala/xiangshan/backend/Bundles.scala
+@@ -849,6 +849,8 @@ object Bundles {
+   }
+ 
+   class ExceptionInfo(implicit p: Parameters) extends XSBundle {
++    // Functional VDot instruction bits captured with the precise ROB exception.
++    val vdotTrapInst = ValidIO(UInt(32.W))
+     val pc = UInt(VAddrData().dataWidth.W)
+     val instr = UInt(32.W)
+     val commitType = CommitType()
+diff --git a/src/main/scala/xiangshan/backend/decode/DecodeUnit.scala b/src/main/scala/xiangshan/backend/decode/DecodeUnit.scala
+index 5b1419eaa..e9e8a0eb8 100644
+--- a/src/main/scala/xiangshan/backend/decode/DecodeUnit.scala
++++ b/src/main/scala/xiangshan/backend/decode/DecodeUnit.scala
+@@ -1055,7 +1055,7 @@ class DecodeUnit(implicit p: Parameters) extends XSModule with DecodeUnitConstan
+   decodedInst.vpu.isNarrow := isNarrow
+   decodedInst.vpu.isDstMask := isDstMask
+   decodedInst.vpu.isOpMask := isOpMask
+-  decodedInst.vpu.isDependOldVd := isVppu || isVecOPF || isVStore || (isDstMask && !isOpMask) || isNarrow || isVlx || isVma || isFof || vstartIsNotZero
++  decodedInst.vpu.isDependOldVd := inst.isVdot || isVppu || isVecOPF || isVStore || (isDstMask && !isOpMask) || isNarrow || isVlx || isVma || isFof || vstartIsNotZero
+   decodedInst.vpu.isWritePartVd := isWritePartVd || isVlm || isVle && emulIsFrac
+   decodedInst.vpu.vstart := io.enq.vstart
+   decodedInst.vpu.isVleff := isFof && inst.NF === 0.U
+@@ -1087,6 +1087,14 @@ class DecodeUnit(implicit p: Parameters) extends XSModule with DecodeUnitConstan
+   io.deq.uopInfo.numOfUop := uopInfoGen.io.out.uopInfo.numOfUop
+   io.deq.uopInfo.numOfWB := uopInfoGen.io.out.uopInfo.numOfWB
+   io.deq.uopInfo.lmul := uopInfoGen.io.out.uopInfo.lmul
++  // Keep vector complex-decode/Dirty semantics, but never split vdot into lanes.
++  // Invalid types must also produce exactly one precise exception completion.
++  when(inst.isVdot) {
++    io.deq.isComplex := true.B
++    io.deq.uopInfo.numOfUop := 1.U
++    io.deq.uopInfo.numOfWB := 1.U
++    io.deq.uopInfo.lmul := 1.U
++  }
+ 
+   val isCsr = inst.OPCODE5Bit === OPCODE5Bit.SYSTEM && inst.FUNCT3(1, 0) =/= 0.U
+   val isCsrr = isCsr && inst.FUNCT3 === BitPat("b?1?") && inst.RS1 === 0.U
+diff --git a/src/main/scala/xiangshan/backend/decode/Instructions.scala b/src/main/scala/xiangshan/backend/decode/Instructions.scala
+index 0b2f535ab..063724e6e 100644
+--- a/src/main/scala/xiangshan/backend/decode/Instructions.scala
++++ b/src/main/scala/xiangshan/backend/decode/Instructions.scala
+@@ -2,6 +2,12 @@ package xiangshan.backend.decode
+ 
+ import chisel3.util._
+ 
++object VdotInstructions {
++  // CIE vdot.vv v0.1: custom-0, funct6=0, funct3=0; vm and all registers vary.
++  def VDOT_VV = BitPat("b000000???????????000?????0001011")
++  def op = BitPat("b000000000")
++}
++
+ object Zvbb {
+   def VANDN_VV = BitPat("b000001???????????000?????1010111")
+   def VANDN_VX = BitPat("b000001???????????100?????1010111")
+diff --git a/src/main/scala/xiangshan/backend/decode/VecDecoder.scala b/src/main/scala/xiangshan/backend/decode/VecDecoder.scala
+index 376419107..644be02e7 100644
+--- a/src/main/scala/xiangshan/backend/decode/VecDecoder.scala
++++ b/src/main/scala/xiangshan/backend/decode/VecDecoder.scala
+@@ -186,6 +186,7 @@ case class VST(src2: BitPat, fuOp: BitPat, strided: Boolean = false, indexed: Bo
+ 
+ object VecDecoder extends DecodeConstants {
+   val opivv: Array[(BitPat, XSDecodeBase)] = Array(
++    VdotInstructions.VDOT_VV -> OPIVV(FuType.vdot, VdotInstructions.op, T, F, F),
+     VADD_VV         -> OPIVV(FuType.vialuF, VialuFixType.vadd_vv, T, F, F),
+     VSUB_VV         -> OPIVV(FuType.vialuF, VialuFixType.vsub_vv, T, F, F),
+ 
+diff --git a/src/main/scala/xiangshan/backend/decode/VecExceptionGen.scala b/src/main/scala/xiangshan/backend/decode/VecExceptionGen.scala
+index b885c6876..2165cbd90 100644
+--- a/src/main/scala/xiangshan/backend/decode/VecExceptionGen.scala
++++ b/src/main/scala/xiangshan/backend/decode/VecExceptionGen.scala
+@@ -291,7 +291,13 @@ class VecExceptionGen(implicit p: Parameters) extends XSModule{
+ 
+   private val regOverlapIllegal = v0Overlap || vs1vdOverlap || vs2vdOverlap
+ 
+-  io.illegalInst := instIllegal || villIllegal || eewIllegal || emulIllegal || regNumIllegal || regOverlapIllegal || vstartIllegal
++  // Custom whole-register reduction permits every single-register overlap,
++  // including masked vd=v0. Do not relax the rules for any other instruction.
++  val isVdot = VdotInstructions.VDOT_VV === inst.ALL
++  val vdotIllegal = io.vtype.illegal || io.vtype.vsew =/= 0.U ||
++    io.vtype.vlmul =/= 0.U || io.vstart =/= 0.U
++  io.illegalInst := Mux(isVdot, vdotIllegal,
++    instIllegal || villIllegal || eewIllegal || emulIllegal || regNumIllegal || regOverlapIllegal || vstartIllegal)
+   dontTouch(instIllegal)
+   dontTouch(villIllegal)
+   dontTouch(eewIllegal)
+diff --git a/src/main/scala/xiangshan/backend/decode/isa/bitfield/RiscvInst.scala b/src/main/scala/xiangshan/backend/decode/isa/bitfield/RiscvInst.scala
+index c553020a4..6aa479601 100644
+--- a/src/main/scala/xiangshan/backend/decode/isa/bitfield/RiscvInst.scala
++++ b/src/main/scala/xiangshan/backend/decode/isa/bitfield/RiscvInst.scala
+@@ -90,8 +90,10 @@ trait BitFieldsVec { this: Riscv32BitInst =>
+       (this.WIDTH === 0.U || this.WIDTH(2) === 1.B)
+   }
+ 
++  def isVdot = xiangshan.backend.decode.VdotInstructions.VDOT_VV === this.ALL
++
+   def isVecArith = {
+-    this.OPCODE5Bit === xiangshan.backend.decode.isa.bitfield.OPCODE5Bit.OP_V
++    this.OPCODE5Bit === xiangshan.backend.decode.isa.bitfield.OPCODE5Bit.OP_V || isVdot
+   }
+ 
+   def isOPIVV = {
+diff --git a/src/main/scala/xiangshan/backend/fu/FuConfig.scala b/src/main/scala/xiangshan/backend/fu/FuConfig.scala
+index 235ca4f4a..a04da0294 100644
+--- a/src/main/scala/xiangshan/backend/fu/FuConfig.scala
++++ b/src/main/scala/xiangshan/backend/fu/FuConfig.scala
+@@ -161,7 +161,7 @@ case class FuConfig (
+ 
+   def needVecCtrl: Boolean = {
+     import FuType._
+-    Seq(vipu, vialuF, vimac, vidiv, vfpu, vppu, vfalu, vfma, vfdiv, vfcvt, vldu, vstu).contains(fuType)
++    Seq(vipu, vialuF, vdot, vimac, vidiv, vfpu, vppu, vfalu, vfma, vfdiv, vfcvt, vldu, vstu).contains(fuType)
+   }
+ 
+   def needCriticalErrors: Boolean = Seq(FuType.csr).contains(fuType)
+@@ -178,7 +178,7 @@ case class FuConfig (
+ 
+   def isFence: Boolean = fuType == FuType.fence
+ 
+-  def isVecArith: Boolean = fuType == FuType.vialuF || fuType == FuType.vimac ||
++  def isVecArith: Boolean = fuType == FuType.vdot || fuType == FuType.vialuF || fuType == FuType.vimac ||
+                             fuType == FuType.vppu || fuType == FuType.vipu ||
+                             fuType == FuType.vfalu || fuType == FuType.vfma ||
+                             fuType == FuType.vfdiv || fuType == FuType.vfcvt ||
+@@ -525,6 +525,21 @@ object FuConfig {
+     latency = CertainLatency(0),
+   )
+ 
++  val VdotCfg = FuConfig (
++    name = "vdot",
++    fuType = FuType.vdot,
++    fuGen = (p: Parameters, cfg: FuConfig) => Module(new VDot(cfg)(p)),
++    srcData = Seq(Seq(VecData(), VecData(), VecData(), V0Data(), VlData())),
++    piped = true,
++    writeVecRf = true,
++    writeV0Rf = true,
++    latency = CertainLatency(2),
++    vconfigWakeUp = true,
++    maskWakeUp = true,
++    destDataBits = 128,
++    exceptionOut = Seq(illegalInstr),
++  )
++
+   val VialuCfg = FuConfig (
+     name = "vialuFix",
+     fuType = FuType.vialuF,
+@@ -838,13 +853,13 @@ object FuConfig {
+ 
+   def allConfigs = Seq(
+     JmpCfg, BrhCfg, I2fCfg, I2vCfg, F2vCfg, CsrCfg, AluCfg, MulCfg, DivCfg, FenceCfg, BkuCfg, VSetRvfWvfCfg, VSetRiWvfCfg, VSetRiWiCfg,
+-    LduCfg, StaCfg, StdCfg, MouCfg, MoudCfg, VialuCfg, VipuCfg, VlduCfg, VstuCfg, VseglduSeg, VsegstuCfg,
++    LduCfg, StaCfg, StdCfg, MouCfg, MoudCfg, VdotCfg, VialuCfg, VipuCfg, VlduCfg, VstuCfg, VseglduSeg, VsegstuCfg,
+     FaluCfg, FmacCfg, FcvtCfg, FdivCfg,
+     VfaluCfg, VfmaCfg, VfcvtCfg, HyldaCfg, HystaCfg
+   )
+ 
+   def VecArithFuConfigs = Seq(
+-    VialuCfg, VimacCfg, VppuCfg, VipuCfg, VfaluCfg, VfmaCfg, VfcvtCfg
++    VdotCfg, VialuCfg, VimacCfg, VppuCfg, VipuCfg, VfaluCfg, VfmaCfg, VfcvtCfg
+   )
+ }
+ 
+diff --git a/src/main/scala/xiangshan/backend/fu/FuType.scala b/src/main/scala/xiangshan/backend/fu/FuType.scala
+index 5172900ba..c6714d03a 100644
+--- a/src/main/scala/xiangshan/backend/fu/FuType.scala
++++ b/src/main/scala/xiangshan/backend/fu/FuType.scala
+@@ -53,6 +53,7 @@ object FuType extends OHEnumeration {
+   // vec
+   val vipu = addType(name = "vipu")
+   val vialuF = addType(name = "vialuF")
++  val vdot = addType(name = "vdot")
+   val vppu = addType(name = "vppu")
+   val vimac = addType(name = "vimac")
+   val vidiv = addType(name = "vidiv")
+@@ -124,7 +125,7 @@ object FuType extends OHEnumeration {
+   }
+   val fpArithAll = Seq(falu, fcvt, fmac, fDivSqrt, f2v)
+   val scalaMemAll = Seq(ldu, stu, mou)
+-  val vecOPI = Seq(vipu, vialuF, vppu, vimac, vidiv)
++  val vecOPI = Seq(vipu, vialuF, vdot, vppu, vimac, vidiv)
+   val vecOPF = Seq(vfpu, vfalu, vfma, vfdiv, vfcvt)
+   val vecVSET = Seq(vsetiwi, vsetiwf, vsetfwf)
+   val vecArith = vecOPI ++ vecOPF
+@@ -251,6 +252,7 @@ object FuType extends OHEnumeration {
+     vsetfwf -> "vsetfwf",
+     vipu -> "vipu",
+     vialuF -> "vialuF",
++    vdot -> "vdot",
+     vfpu -> "vfpu",
+     vldu -> "vldu",
+     vstu -> "vstu",
+diff --git a/src/main/scala/xiangshan/backend/fu/wrapper/CSR.scala b/src/main/scala/xiangshan/backend/fu/wrapper/CSR.scala
+index f92782ace..bf1319e00 100644
+--- a/src/main/scala/xiangshan/backend/fu/wrapper/CSR.scala
++++ b/src/main/scala/xiangshan/backend/fu/wrapper/CSR.scala
+@@ -116,7 +116,10 @@ class CSR(cfg: FuConfig)(implicit p: Parameters) extends FuncUnit(cfg)
+       in.bits.dret := isDret
+       in.bits.redirectFlush := redirectFlush
+   }
+-  csrMod.io.trapInst := trapInstMod.io.currentTrapInst
++  csrMod.io.trapInst := xiangshan.backend.rob.VdotTrapInstSelect(
++    csrIn.exception.valid, csrIn.exception.bits.isInterrupt,
++    csrIn.exception.bits.exceptionVec(EX_II), csrIn.exception.bits.vdotTrapInst,
++    trapInstMod.io.currentTrapInst)
+   csrMod.io.fetchMalTval := trapTvalMod.io.tval
+   csrMod.io.fromMem.excpVA  := csrIn.memExceptionVAddr
+   csrMod.io.fromMem.excpGPA := csrIn.memExceptionGPAddr
+diff --git a/src/main/scala/xiangshan/backend/rob/Rob.scala b/src/main/scala/xiangshan/backend/rob/Rob.scala
+index e8c9e56cb..fe3fa28c3 100644
+--- a/src/main/scala/xiangshan/backend/rob/Rob.scala
++++ b/src/main/scala/xiangshan/backend/rob/Rob.scala
+@@ -257,6 +257,15 @@ class RobImp(override val wrapper: Rob)(implicit p: Parameters, params: BackendP
+     commitInfo(i).ftqOffset := Mux(CommitType.isFused(rawInfo(i).commitType), rawInfo(i).ftqOffset, lastOffset)
+   }
+ 
++  // Preserve VDot encoding until precise exception selection at the ROB head.
++  val vdotTrapInst = Module(new VdotTrapInstTable)
++  for (i <- 0 until RenameWidth) {
++    vdotTrapInst.io.alloc(i).valid := canEnqueue(i) && !io.redirect.valid
++    vdotTrapInst.io.alloc(i).bits.robIdx := allocatePtrVec(i)
++    vdotTrapInst.io.alloc(i).bits.instr := io.enq.req(i).bits.instr
++  }
++  vdotTrapInst.io.head := deqPtr
++
+   // data for debug
+   // Warn: debug_* prefix should not exist in generated verilog.
+   val debug_microOp = DebugMem(RobSize, new DynInst)
+@@ -621,6 +630,10 @@ class RobImp(override val wrapper: Rob)(implicit p: Parameters, params: BackendP
+   XSPerfAccumulate("replay_inst_num", io.flushOut.valid && isFlushPipe && deqHasReplayInst)
+ 
+   val exceptionHappen = (state === s_idle) && deqPtrEntryValid && (intrEnable || deqHasException && (!deqIsVlsException || deqVlsCanCommit)) && !lastCycleFlush
++  vdotTrapInst.io.trap := exceptionHappen
++  vdotTrapInst.io.illegal := exceptionDataRead.bits.exceptionVec(ExceptionNO.EX_II)
++  vdotTrapInst.io.interrupt := intrEnable
++  io.exception.bits.vdotTrapInst := vdotTrapInst.io.out
+   io.exception.valid := RegNext(exceptionHappen)
+   io.exception.bits.pc := RegEnable(debug_deqUop.pc, exceptionHappen)
+   io.exception.bits.gpaddr := io.readGPAMemData.gpaddr
+diff --git a/src/main/scala/xiangshan/backend/fu/wrapper/VDot.scala b/src/main/scala/xiangshan/backend/fu/wrapper/VDot.scala
+new file mode 100644
+index 000000000..8a28cc102
+--- /dev/null
++++ b/src/main/scala/xiangshan/backend/fu/wrapper/VDot.scala
+@@ -0,0 +1,34 @@
++package xiangshan.backend.fu.wrapper
++
++import chisel3._
++import chisel3.util._
++import org.chipsalliance.cde.config.Parameters
++import xiangshan.ExceptionNO.illegalInstr
++import xiangshan.backend.fu.FuConfig
++import xiangshan.backend.fu.vector.VecPipedFuncUnit
++
++/** v0.1 fixed-eight signed INT8 reduction. No generic destination MGU. */
++class VDot(cfg: FuConfig)(implicit p: Parameters) extends VecPipedFuncUnit(cfg) {
++  require(VLEN == 128 && cfg.destDataBits == 128)
++  require(latency == 2 && latdiff == 0)
++
++  val products = VecInit((0 until 8).map { i =>
++    val product = vs1(8*i+7, 8*i).asSInt * vs2(8*i+7, 8*i).asSInt
++    Mux(srcMask(i), product, 0.S(16.W))
++  })
++  val p1 = S1Reg(products)
++  val pairs = (0 until 4).map(i => p1(2*i) +& p1(2*i+1))
++  val halves = (0 until 2).map(i => pairs(2*i) +& pairs(2*i+1))
++  val sum = halves(0) +& halves(1) // 19 bits, including +131072
++  val result = S2Reg(Cat(0.U(96.W), sum.pad(32).asUInt))
++
++  // The compact type/VS legality is checked upstream; retain a local guard.
++  val illegal = outVecCtrl.vill || outVecCtrl.vsew =/= 0.U ||
++    outVecCtrl.vlmul =/= 0.U || outVstart =/= 0.U ||
++    (outVl =/= 0.U && (outVl < 8.U || outVl > 16.U))
++  io.out.bits.res.data := Mux(outVl === 0.U || illegal, outOldVd, result)
++  io.out.bits.ctrl.exceptionVec.get(illegalInstr) := illegal
++  // Keep vecWen/v0Wen for legal vl=0: the new physical destination needs oldVd.
++  // CSR updates and precise exceptions remain on the ordinary commit path.
++  io.out.valid := fixValidVec.last && !outCtrl.robIdx.needFlush(io.flush)
++}
+diff --git a/src/main/scala/xiangshan/backend/rob/VdotTrapInst.scala b/src/main/scala/xiangshan/backend/rob/VdotTrapInst.scala
+new file mode 100644
+index 000000000..1ec83d273
+--- /dev/null
++++ b/src/main/scala/xiangshan/backend/rob/VdotTrapInst.scala
+@@ -0,0 +1,57 @@
++package xiangshan.backend.rob
++
++import chisel3._
++import chisel3.util._
++import org.chipsalliance.cde.config.Parameters
++import xiangshan._
++import xiangshan.backend.decode.VdotInstructions
++
++/** Functional ROB-indexed storage, deliberately independent of DebugMem.
++  * Only the 16 variable encoding bits are stored. The ROB generation bit
++  * prevents a reused index from identifying a different dynamic instruction.
++  * Every allocation, including non-VDot, replaces the slot's classification.
++  * Squashed entries may remain in storage; only a live ROB-head exception can
++  * request a result, and allocation overwrites a slot before it is reused.
++  */
++class VdotTrapInstTable(implicit p: Parameters) extends XSModule {
++  val io = IO(new Bundle {
++    val alloc = Input(Vec(RenameWidth, Valid(new Bundle {
++      val robIdx = new RobPtr
++      val instr = UInt(32.W)
++    })))
++    val head = Input(new RobPtr)
++    val trap = Input(Bool())
++    val illegal = Input(Bool())
++    val interrupt = Input(Bool())
++    val out = Output(Valid(UInt(32.W)))
++  })
++  val isVdot = RegInit(VecInit(Seq.fill(RobSize)(false.B)))
++  val generation = Reg(Vec(RobSize, Bool()))
++  val fields = Reg(Vec(RobSize, UInt(16.W)))
++  for (a <- io.alloc) {
++    when(a.valid) {
++      val idx = a.bits.robIdx.value
++      isVdot(idx) := VdotInstructions.VDOT_VV === a.bits.instr
++      generation(idx) := a.bits.robIdx.flag
++      fields(idx) := Cat(a.bits.instr(25), a.bits.instr(24,20),
++                        a.bits.instr(19,15), a.bits.instr(11,7))
++    }
++  }
++  val f = fields(io.head.value)
++  val word = Cat(0.U(6.W), f(15), f(14,10), f(9,5), 0.U(3.W), f(4,0), "h0b".U(7.W))
++  val matched = isVdot(io.head.value) && generation(io.head.value) === io.head.flag
++  // Same one-cycle capture as Rob.io.exception; no writeback-order arbitration.
++  io.out.valid := RegNext(io.trap && io.illegal && !io.interrupt && matched, false.B)
++  io.out.bits := RegEnable(word, io.trap)
++}
++
++object VdotTrapInstSelect {
++  def apply(trap: Bool, interrupt: Bool, illegal: Bool,
++            vdot: ValidIO[UInt], legacy: ValidIO[UInt]): ValidIO[UInt] = {
++    val out = Wire(Valid(UInt(32.W)))
++    val useVdot = trap && !interrupt && illegal && vdot.valid
++    out.valid := Mux(useVdot, true.B, legacy.valid)
++    out.bits := Mux(useVdot, vdot.bits, legacy.bits)
++    out
++  }
++}
+diff --git a/src/test/scala/xiangshan/backend/fu/VDotLocalTest.scala b/src/test/scala/xiangshan/backend/fu/VDotLocalTest.scala
+new file mode 100644
+index 000000000..0c992b2af
+--- /dev/null
++++ b/src/test/scala/xiangshan/backend/fu/VDotLocalTest.scala
+@@ -0,0 +1,199 @@
++package xiangshan.backend.fu
++
++import chisel3._
++import chisel3.util._
++import chiseltest._
++import chiseltest.simulator.VerilatorCFlags
++import firrtl2.options.TargetDirAnnotation
++import org.chipsalliance.cde.config.Parameters
++import org.scalatest.flatspec.AnyFlatSpec
++import top.MinimalConfig
++import xiangshan._
++import xiangshan.backend.decode.{DecodeUnit, VecExceptionGen, VdotInstructions}
++import xiangshan.backend.fu.wrapper.VDot
++
++/** Supplies the ctrl/data/valid pipeline normally supplied by ExeUnit.
++  * This harness checks the real FU, not a whole scheduler/writeback/ROB. */
++class VDotLocalHarness(implicit p: Parameters) extends Module {
++  val cfg = FuConfig.VdotCfg
++  val io = IO(new Bundle {
++    val valid = Input(Bool())
++    val a = Input(Vec(2, UInt(64.W))); val b = Input(Vec(2, UInt(64.W)))
++    val old = Input(Vec(2, UInt(64.W))); val mask = Input(Vec(2, UInt(64.W)))
++    val vl = Input(UInt(8.W)); val vm = Input(Bool())
++    val sew = Input(UInt(3.W)); val lmul = Input(UInt(3.W))
++    val start = Input(UInt(8.W)); val vill = Input(Bool())
++    val tag = Input(UInt(16.W)); val flag = Input(Bool())
++    val kill = Input(Bool()); val killTag = Input(UInt(16.W))
++    val killFlag = Input(Bool()); val killSelf = Input(Bool())
++    val outValid = Output(Bool()); val result = Output(Vec(2, UInt(64.W)))
++    val illegal = Output(Bool()); val outTag = Output(UInt(16.W))
++    val outFlag = Output(Bool()); val wen = Output(Bool())
++  })
++  val dut = Module(new VDot(cfg))
++  dut.io.in.bits := 0.U.asTypeOf(dut.io.in.bits)
++  dut.io.in.valid := io.valid
++  dut.io.out.ready := true.B
++  dut.io.flush.bits := 0.U.asTypeOf(dut.io.flush.bits)
++  dut.io.flush.valid := io.kill
++  dut.io.flush.bits.robIdx.value := io.killTag
++  dut.io.flush.bits.robIdx.flag := io.killFlag
++  dut.io.flush.bits.level := io.killSelf.asUInt
++  val ctrl = dut.io.in.bits.ctrl
++  ctrl.robIdx.value := io.tag; ctrl.robIdx.flag := io.flag
++  ctrl.vecWen.get := true.B; ctrl.v0Wen.get := false.B
++  ctrl.pdest := io.tag
++  ctrl.vpu.get.vm := io.vm; ctrl.vpu.get.vill := io.vill
++  ctrl.vpu.get.vsew := io.sew; ctrl.vpu.get.vlmul := io.lmul
++  ctrl.vpu.get.vstart := io.start
++  dut.io.in.bits.data.src(0) := io.a.asUInt
++  dut.io.in.bits.data.src(1) := io.b.asUInt
++  dut.io.in.bits.data.src(2) := io.old.asUInt
++  dut.io.in.bits.data.src(3) := io.mask.asUInt
++  dut.io.in.bits.data.src(4) := io.vl
++  val ctrls = ctrl +: Seq.fill(2)(Reg(chiselTypeOf(ctrl)))
++  val datas = dut.io.in.bits.data +: Seq.fill(2)(Reg(chiselTypeOf(dut.io.in.bits.data)))
++  val valids = io.valid +: Seq.fill(2)(RegInit(false.B))
++  for (i <- 1 to 2) {
++    ctrls(i) := ctrls(i-1); datas(i) := datas(i-1)
++    valids(i) := valids(i-1) && !ctrls(i-1).robIdx.needFlush(dut.io.flush)
++  }
++  for (i <- 0 to 2) {
++    dut.io.in.bits.ctrlPipe.get(i) := ctrls(i)
++    dut.io.in.bits.dataPipe.get(i) := datas(i)
++    dut.io.in.bits.validPipe.get(i) := valids(i)
++  }
++  io.outValid := dut.io.out.valid
++  io.result := dut.io.out.bits.res.data.asTypeOf(io.result)
++  io.illegal := dut.io.out.bits.ctrl.exceptionVec.get(ExceptionNO.illegalInstr)
++  io.outTag := dut.io.out.bits.ctrl.robIdx.value
++  io.outFlag := dut.io.out.bits.ctrl.robIdx.flag
++  io.wen := dut.io.out.bits.ctrl.vecWen.get
++}
++
++class VDotDecodeHarness(implicit p: Parameters) extends Module {
++  val io = IO(new Bundle {
++    val word = Input(UInt(32.W)); val sew = Input(UInt(3.W))
++    val lmul = Input(UInt(3.W)); val vill = Input(Bool())
++    val start = Input(UInt(8.W)); val vsOff = Input(Bool())
++    val isVdot = Output(Bool()); val complex = Output(Bool())
++    val illegal = Output(Bool()); val oldDep = Output(Bool())
++    val uops = Output(UInt(8.W)); val writes = Output(UInt(8.W))
++  })
++  val d = Module(new DecodeUnit)
++  d.io.enq := 0.U.asTypeOf(d.io.enq)
++  d.io.csrCtrl := 0.U.asTypeOf(d.io.csrCtrl)
++  d.io.fromCSR := 0.U.asTypeOf(d.io.fromCSR)
++  d.io.enq.ctrlFlow.instr := io.word
++  d.io.enq.vtype.vsew := io.sew; d.io.enq.vtype.vlmul := io.lmul
++  d.io.enq.vtype.illegal := io.vill; d.io.enq.vstart := io.start
++  d.io.fromCSR.illegalInst.vsIsOff := io.vsOff
++  io.isVdot := FuType.FuTypeOrR(d.io.deq.decodedInst.fuType, Seq(FuType.vdot))
++  io.complex := d.io.deq.isComplex
++val v = Module(new VecExceptionGen)
++  v.io.inst := io.word
++  v.io.decodedInst := d.io.deq.decodedInst
++  v.io.vtype := d.io.enq.vtype
++  v.io.vstart := io.start
++  io.illegal := d.io.deq.decodedInst.exceptionVec(ExceptionNO.illegalInstr) || v.io.illegalInst
++  io.oldDep := d.io.deq.decodedInst.vpu.isDependOldVd
++  io.uops := d.io.deq.uopInfo.numOfUop
++  io.writes := d.io.deq.uopInfo.numOfWB
++}
++
++class VDotLocalTest extends AnyFlatSpec with ChiselScalatestTester {
++  val c = new MinimalConfig
++  implicit val p: Parameters = c.alterPartial { case XSCoreParamsKey => c(XSTileKey).head }
++  def pack(xs: Seq[Int]): BigInt = xs.zipWithIndex.map { case(x,i) => BigInt(x & 255) << (8*i) }.sum
++  behavior of "VDot v0.1 real XiangShan interfaces"
++  // chiseltest 6 emits the former WData typedef; Verilator 5.052 calls it EData.
++  def annotations(name: String) = Seq(VerilatorBackendAnnotation,
++    VerilatorCFlags(Seq("-DWData=EData")),
++    TargetDirAnnotation(sys.env("VDOT_TEST_DIR") + "/" + name))
++
++  it should "recognize exact encoding and retain vector single-uop legality" in {
++    val pattern = VdotInstructions.VDOT_VV
++    var count = 0
++    for (vm <- 0 to 1; vd <- 0 until 32; vs1 <- 0 until 32; vs2 <- 0 until 32) {
++      val word = BigInt(0x0b) | BigInt(vm)<<25 | BigInt(vs2)<<20 | BigInt(vs1)<<15 | BigInt(vd)<<7
++      assert((word & pattern.mask) == pattern.value); count += 1
++    }
++    assert(count == 65536)
++    test(new VDotDecodeHarness).withAnnotations(annotations("decode")) { d =>
++      d.io.sew.poke(0.U); d.io.lmul.poke(0.U); d.io.vill.poke(false.B)
++      d.io.start.poke(0.U); d.io.vsOff.poke(false.B)
++      for (word <- Seq(0x0220818bL, 0x0020800bL, 0x0000000bL, 0x03ff8f8bL)) {
++        d.io.word.poke(word.U)
++        d.io.isVdot.expect(true.B); d.io.complex.expect(true.B)
++        d.io.uops.expect(1.U); d.io.writes.expect(1.U)
++        d.io.oldDep.expect(true.B); d.io.illegal.expect(false.B)
++      }
++      for (enc <- 1 to 7) {
++        // Real VType stores only two vsew bits: unsupported raw 4..7 are
++        // represented by vill upstream. Raw 3-bit injection is a separate unit test.
++        d.io.sew.poke((enc & 3).U); d.io.vill.poke((enc >= 4).B)
++        d.io.illegal.expect(true.B); d.io.uops.expect(1.U)
++        d.io.sew.poke(0.U); d.io.vill.poke(false.B)
++        d.io.lmul.poke(enc.U); d.io.illegal.expect(true.B)
++        d.io.lmul.poke(0.U)
++      }
++      d.io.vill.poke(true.B); d.io.illegal.expect(true.B); d.io.vill.poke(false.B)
++      d.io.start.poke(1.U); d.io.illegal.expect(true.B); d.io.start.poke(0.U)
++      d.io.vsOff.poke(true.B); d.io.illegal.expect(true.B); d.io.vsOff.poke(false.B)
++      for (word <- Seq(0x0220918bL, 0x0620818bL, 0x022081afL, 0x021101d7L)) {
++        d.io.word.poke(word.U); d.io.isVdot.expect(false.B)
++      }
++      d.io.word.poke(0x021101d7L.U); d.io.illegal.expect(false.B)
++    }
++    println("PASS VDOT_REAL_DECODE patterns=65536")
++  }
++
++  it should "align arithmetic, vl-zero, errors and full-ROB cancellation in two cycles" in {
++    test(new VDotLocalHarness).withAnnotations(annotations("fu")) { d =>
++def poke128(port: Vec[UInt], value: BigInt): Unit =
++        port.zipWithIndex.foreach { case (part, i) => part.poke(((value >> (64*i)) & ((BigInt(1)<<64)-1)).U) }
++      def expect128(port: Vec[UInt], value: BigInt): Unit =
++        port.zipWithIndex.foreach { case (part, i) => part.expect(((value >> (64*i)) & ((BigInt(1)<<64)-1)).U) }
++      d.io.valid.poke(false.B); poke128(d.io.a, 0); poke128(d.io.b, 0)
++      poke128(d.io.old, 0); poke128(d.io.mask, 255); d.io.vl.poke(8.U)
++      d.io.vm.poke(true.B); d.io.sew.poke(0.U); d.io.lmul.poke(0.U)
++      d.io.start.poke(0.U); d.io.vill.poke(false.B); d.io.tag.poke(5.U)
++      d.io.flag.poke(false.B); d.io.kill.poke(false.B); d.io.killTag.poke(4.U)
++      d.io.killFlag.poke(false.B); d.io.killSelf.poke(false.B)
++      d.clock.step(3)
++      val old = BigInt("fedcba9876543210abcdef0012345678",16)
++      def issue(a: Seq[Int], b: Seq[Int], mask: Int, vm: Boolean, vl: Int,
++                expected: BigInt, bad: Boolean = false): Unit = {
++        poke128(d.io.a, pack(a)); poke128(d.io.b, pack(b)); poke128(d.io.old, old)
++        poke128(d.io.mask, mask); d.io.vm.poke(vm.B); d.io.vl.poke(vl.U)
++        d.io.valid.poke(true.B); d.clock.step(); d.io.outValid.expect(false.B)
++        d.io.valid.poke(false.B); d.clock.step(); d.io.outValid.expect(true.B)
++        expect128(d.io.result, expected); d.io.illegal.expect(bad.B)
++        d.io.outTag.expect(5.U); d.io.wen.expect(true.B)
++        d.clock.step(); d.io.outValid.expect(false.B)
++      }
++      issue(Seq.fill(8)(-128),Seq.fill(8)(-128),255,true,8,131072)
++      issue(Seq.fill(8)(-128),Seq.fill(8)(127),255,true,16,BigInt(-130048)&((BigInt(1)<<32)-1))
++      issue(1 to 16,Seq.fill(16)(1),0,true,8,36)
++      issue(1 to 16,Seq.fill(16)(1),0,false,8,0)
++      issue(1 to 16,Seq.fill(16)(1),0x55,false,8,16)
++      issue(1 to 16,Seq.fill(16)(1),255,true,0,old)
++      for (vl <- Seq(1,7,17,255)) issue(1 to 16,Seq.fill(16)(1),255,true,vl,old,true)
++      d.io.start.poke(1.U); issue(1 to 16,Seq.fill(16)(1),255,true,0,old,true); d.io.start.poke(0.U)
++      for ((killTag,killSelf,cancel) <- Seq((4,false,true),(5,false,false),(5,true,true),(6,true,false))) {
++        d.io.vl.poke(8.U); d.io.valid.poke(true.B); d.clock.step()
++        d.io.valid.poke(false.B); d.clock.step()
++        d.io.killTag.poke(killTag.U); d.io.killSelf.poke(killSelf.B); d.io.kill.poke(true.B)
++        d.io.outValid.expect((!cancel).B)
++        d.clock.step(); d.io.kill.poke(false.B); d.io.outValid.expect(false.B)
++      }
++      // Across ROB wrap: flag=1/value=0 is younger than flag=0/value=last.
++      d.io.tag.poke(0.U); d.io.flag.poke(true.B); d.io.valid.poke(true.B); d.clock.step()
++      d.io.valid.poke(false.B); d.io.killTag.poke((p(XSCoreParamsKey).RobSize-1).U)
++      d.io.killFlag.poke(false.B); d.io.killSelf.poke(false.B); d.io.kill.poke(true.B)
++      d.clock.step(); d.io.outValid.expect(false.B); d.io.kill.poke(false.B)
++      d.clock.step(3); d.io.outValid.expect(false.B)
++    }
++    println("PASS VDOT_REAL_FU latency=2 arithmetic/vl0/errors/redirect")
++  }
++}
+diff --git a/src/test/scala/xiangshan/backend/rob/VdotTrapInstTest.scala b/src/test/scala/xiangshan/backend/rob/VdotTrapInstTest.scala
+new file mode 100644
+index 000000000..8f9ba7eca
+--- /dev/null
++++ b/src/test/scala/xiangshan/backend/rob/VdotTrapInstTest.scala
+@@ -0,0 +1,117 @@
++package xiangshan.backend.rob
++
++import chisel3._
++import chisel3.util._
++import chiseltest._
++import chiseltest.simulator.VerilatorCFlags
++import firrtl2.options.TargetDirAnnotation
++import org.chipsalliance.cde.config.Parameters
++import org.scalatest.flatspec.AnyFlatSpec
++import top.MinimalConfig
++import xiangshan._
++import xiangshan.backend.fu.NewCSR.CSRBundles.PrivState
++import xiangshan.backend.fu.NewCSR.CSREvents.TrapEntryMEventModule
++
++class VdotTrapHarness(implicit p: Parameters) extends XSModule {
++  val table = Module(new VdotTrapInstTable)
++  val io = IO(new Bundle {
++    val alloc = Input(chiselTypeOf(table.io.alloc))
++    val head = Input(new RobPtr)
++    val trap = Input(Bool()); val illegal = Input(Bool()); val interrupt = Input(Bool())
++    val legacy = Input(Valid(UInt(32.W)))
++    val out = Output(Valid(UInt(32.W)))
++    val mtval = Output(UInt(64.W)); val mtvalValid = Output(Bool())
++  })
++  table.io.alloc := io.alloc; table.io.head := io.head
++  table.io.trap := io.trap; table.io.illegal := io.illegal; table.io.interrupt := io.interrupt
++  val trap = RegNext(io.trap, false.B)
++  val illegal = RegEnable(io.illegal, io.trap)
++  val interrupt = RegEnable(io.interrupt, io.trap)
++  io.out := VdotTrapInstSelect(trap, interrupt, illegal, table.io.out, io.legacy)
++  // Exercise the production mtval event, not a replica of its mux.
++  val event = Module(new TrapEntryMEventModule)
++  event.valid := trap
++  // Unused privilege-update fields include enums with no zero encoding.
++  // Constrain every input contributing to the mtval path exercised here.
++  event.in := DontCare
++  event.in.isFetchMalAddr := false.B
++  event.in.isCrossPageIPF := false.B
++  event.in.isHls := false.B
++  event.in.isFetchBkpt := false.B
++  event.in.hasDTExcp := false.B
++  event.in.trapPc := 0.U
++  event.in.fetchMalTval := 0.U
++  event.in.iMode := PrivState.ModeM
++  event.in.dMode := PrivState.ModeM
++  event.in.privState := PrivState.ModeM
++  event.in.causeNO.ExceptionCode := Mux(illegal, ExceptionNO.EX_II.U, ExceptionNO.EX_BP.U)
++  event.in.causeNO.Interrupt := interrupt
++  event.in.trapInst := io.out
++  io.mtval := event.out.mtval.bits.ALL.asUInt
++  io.mtvalValid := event.out.mtval.valid
++}
++
++class VdotTrapInstTest extends AnyFlatSpec with ChiselScalatestTester {
++  val c = new MinimalConfig
++  implicit val p: Parameters = c.alterPartial { case XSCoreParamsKey => c(XSTileKey).head }
++  behavior of "precise VDot instruction to mtval"
++  it should "preserve encoding and ROB lifetime while leaving legacy traps alone" in {
++    test(new VdotTrapHarness).withAnnotations(Seq(VerilatorBackendAnnotation,
++      VerilatorCFlags(Seq("-DWData=EData")), TargetDirAnnotation(sys.env("VDOT_TEST_DIR")+"/mtval"))) { d =>
++      for(a <- d.io.alloc) { a.valid.poke(false.B); a.bits.robIdx.flag.poke(false.B); a.bits.robIdx.value.poke(0.U); a.bits.instr.poke(0.U) }
++      d.io.head.flag.poke(false.B); d.io.head.value.poke(0.U)
++      d.io.trap.poke(false.B); d.io.illegal.poke(true.B); d.io.interrupt.poke(false.B)
++      d.io.legacy.valid.poke(false.B); d.io.legacy.bits.poke(0.U)
++      d.clock.step(); d.io.out.valid.expect(false.B)
++      var checks=0
++      def alloc(slot:Int, flag:Boolean, word:Long, lane:Int=0):Unit = {
++        d.io.alloc(lane).valid.poke(true.B); d.io.alloc(lane).bits.robIdx.value.poke(slot.U)
++        d.io.alloc(lane).bits.robIdx.flag.poke(flag.B); d.io.alloc(lane).bits.instr.poke(word.U)
++      }
++      def tickAlloc():Unit = { d.clock.step(); d.io.alloc.foreach(_.valid.poke(false.B)) }
++      def trap(slot:Int,flag:Boolean,word:Long,expected:Boolean=true):Unit = {
++        d.io.head.value.poke(slot.U); d.io.head.flag.poke(flag.B); d.io.trap.poke(true.B)
++        d.clock.step(); d.io.trap.poke(false.B)
++        d.io.out.valid.expect(expected.B); d.io.mtvalValid.expect(true.B)
++        if(expected) { d.io.out.bits.expect(word.U); d.io.mtval.expect(word.U) }
++        else d.io.mtval.expect(0.U)
++        d.clock.step(); d.io.out.valid.expect(d.io.legacy.valid.peek()); checks+=1
++      }
++      // Regression for the observed first illegal instruction, followed by a
++      // different younger VDot: selection must use the precise ROB head.
++      alloc(4,false,0x0020818bL); alloc(5,false,0x03ff8f8bL,1); tickAlloc()
++      trap(4,false,0x0020818bL); trap(5,false,0x03ff8f8bL)
++      // Generation mismatch, canceled instruction with no trap, and index reuse.
++      trap(4,true,0,expected=false)
++      d.io.head.value.poke(5.U); d.clock.step(3); d.io.out.valid.expect(false.B)
++      alloc(4,true,0x00000013L); tickAlloc(); trap(4,true,0,expected=false)
++      alloc(4,true,0x0220818bL); tickAlloc(); trap(4,true,0x0220818bL)
++      // Same-generation reuse after a redirect also overwrites classification.
++      alloc(4,true,0x021101d7L); tickAlloc(); trap(4,true,0,expected=false)
++      // No illegal exception and interrupts must never select a stored VDot.
++      alloc(6,false,0x0020818bL); tickAlloc()
++      d.io.illegal.poke(false.B); trap(6,false,0,expected=false); d.io.illegal.poke(true.B)
++      d.io.interrupt.poke(true.B); trap(6,false,0,expected=false); d.io.interrupt.poke(false.B)
++      // Legacy CSR/decode information is preserved, including compressed bits.
++      for(word <- Seq(0x7ff01073L,0x00000000L,0x00009002L)) {
++        d.io.legacy.valid.poke(true.B); d.io.legacy.bits.poke(word.U)
++        trap(4,true,word)
++      }
++      // A precise VDot trap outranks an unrelated younger legacy candidate.
++      d.io.legacy.valid.poke(true.B); d.io.legacy.bits.poke(0xffffffffL.U)
++      trap(6,false,0x0020818bL)
++      d.io.legacy.valid.poke(false.B)
++      // Check all 16-bit variable-field combinations in actual RTL storage and
++      // the actual CSR event. Unused opcode/funct fields are reconstructed.
++      for(fields <- 0 until 65536) {
++        val word=0xbL | ((fields&31).toLong<<7) | (((fields>>5)&31).toLong<<15) |
++          (((fields>>10)&31).toLong<<20) | (((fields>>15)&1).toLong<<25)
++        alloc(7,false,word); tickAlloc(); trap(7,false,word)
++      }
++      // Reset invalidates all old classifications, including an allocated slot.
++      d.reset.poke(true.B); d.clock.step(); d.reset.poke(false.B)
++      trap(7,false,0,expected=false)
++      println(s"PASS VDOT_MTVAL_PATH checks=$checks variable_encodings=65536 real_TrapEntryMEvent=true")
++    }
++  }
++}

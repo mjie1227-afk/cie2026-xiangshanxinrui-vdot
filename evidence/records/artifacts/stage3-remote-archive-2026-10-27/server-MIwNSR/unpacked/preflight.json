@@ -1,0 +1,22 @@
+{
+  "required_runs": [
+    "vdot-rvv-equiv-8nvimb",
+    "vdot-timing-retry-5vHUp8",
+    "vdot-chain-KiI3xX",
+    "vdot-tput-uLgHm6",
+    "vdot-e2e-bijzGZ",
+    "vdot-timing-pilot-IgNim5",
+    "vdot-build-80mKCD",
+    "vdot-matrix-OMcrpf",
+    "vdot-mtval-build-xYGYlZ",
+    "vdot-pipeline-JuGUz6"
+  ],
+  "missing": [],
+  "excluded": [
+    {
+      "path": "evidence/vdot-build-80mKCD/boot-flash.bin",
+      "bytes": 16,
+      "reason": "outside declared log/metadata scope"
+    }
+  ]
+}

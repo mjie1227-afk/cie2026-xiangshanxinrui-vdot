@@ -1,0 +1,361 @@
+{
+  "variants": [
+    {
+      "name": "empty",
+      "kind": "empty",
+      "iterations": 0,
+      "payload_instructions": 0,
+      "expected_instret": 4,
+      "consumer": 1
+    },
+    {
+      "name": "native_n1",
+      "kind": "native",
+      "iterations": 1,
+      "payload_instructions": 1,
+      "expected_instret": 5,
+      "consumer": 36
+    },
+    {
+      "name": "rvv_m1_n1",
+      "kind": "rvv_m1",
+      "iterations": 1,
+      "payload_instructions": 9,
+      "expected_instret": 13,
+      "consumer": 36
+    },
+    {
+      "name": "rvv_mf2_n1",
+      "kind": "rvv_mf2",
+      "iterations": 1,
+      "payload_instructions": 9,
+      "expected_instret": 13,
+      "consumer": 36
+    },
+    {
+      "name": "native_n8",
+      "kind": "native",
+      "iterations": 8,
+      "payload_instructions": 8,
+      "expected_instret": 12,
+      "consumer": 36
+    },
+    {
+      "name": "rvv_m1_n8",
+      "kind": "rvv_m1",
+      "iterations": 8,
+      "payload_instructions": 72,
+      "expected_instret": 76,
+      "consumer": 36
+    },
+    {
+      "name": "rvv_mf2_n8",
+      "kind": "rvv_mf2",
+      "iterations": 8,
+      "payload_instructions": 72,
+      "expected_instret": 76,
+      "consumer": 36
+    },
+    {
+      "name": "native_n32",
+      "kind": "native",
+      "iterations": 32,
+      "payload_instructions": 32,
+      "expected_instret": 36,
+      "consumer": 36
+    },
+    {
+      "name": "rvv_m1_n32",
+      "kind": "rvv_m1",
+      "iterations": 32,
+      "payload_instructions": 288,
+      "expected_instret": 292,
+      "consumer": 36
+    },
+    {
+      "name": "rvv_mf2_n32",
+      "kind": "rvv_mf2",
+      "iterations": 32,
+      "payload_instructions": 288,
+      "expected_instret": 292,
+      "consumer": 36
+    }
+  ],
+  "input": [
+    [
+      255,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174
+    ],
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      144,
+      151,
+      158,
+      165,
+      172,
+      179,
+      186,
+      193
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      96,
+      107,
+      118,
+      129,
+      140,
+      151,
+      162,
+      173
+    ],
+    [
+      36,
+      178,
+      191,
+      204,
+      217,
+      230,
+      243,
+      0,
+      13,
+      26,
+      39,
+      52,
+      65,
+      78,
+      91,
+      104
+    ]
+  ],
+  "expected": [
+    [
+      [
+        12008185004168421631,
+        12586906386873034919
+      ],
+      [
+        578437695752307201,
+        13959667549082654608
+      ],
+      [
+        72340172838076673,
+        12511729344511896416
+      ],
+      [
+        68652242458096164,
+        7519690044779993613
+      ]
+    ],
+    [
+      [
+        12008185004168421631,
+        12586906386873034919
+      ],
+      [
+        36,
+        0
+      ],
+      [
+        72340172838076673,
+        12511729344511896416
+      ],
+      [
+        68652242458096164,
+        7519690044779993613
+      ]
+    ],
+    [
+      [
+        12008185004168421631,
+        12586906386873034919
+      ],
+      [
+        36,
+        0
+      ],
+      [
+        72340172838076673,
+        12511729344511896416
+      ],
+      [
+        68652242458096164,
+        7519690044779993613
+      ]
+    ],
+    [
+      [
+        12008185004168421631,
+        12586906386873034919
+      ],
+      [
+        36,
+        0
+      ],
+      [
+        72340172838076673,
+        12511729344511896416
+      ],
+      [
+        68652242458096164,
+        7519690044779993613
+      ]
+    ],
+    [
+      [
+        12008185004168421631,
+        12586906386873034919
+      ],
+      [
+        36,
+        0
+      ],
+      [
+        72340172838076673,
+        12511729344511896416
+      ],
+      [
+        68652242458096164,
+        7519690044779993613
+      ]
+    ],
+    [
+      [
+        12008185004168421631,
+        12586906386873034919
+      ],
+      [
+        36,
+        0
+      ],
+      [
+        72340172838076673,
+        12511729344511896416
+      ],
+      [
+        68652242458096164,
+        7519690044779993613
+      ]
+    ],
+    [
+      [
+        12008185004168421631,
+        12586906386873034919
+      ],
+      [
+        36,
+        0
+      ],
+      [
+        72340172838076673,
+        12511729344511896416
+      ],
+      [
+        68652242458096164,
+        7519690044779993613
+      ]
+    ],
+    [
+      [
+        12008185004168421631,
+        12586906386873034919
+      ],
+      [
+        36,
+        0
+      ],
+      [
+        72340172838076673,
+        12511729344511896416
+      ],
+      [
+        68652242458096164,
+        7519690044779993613
+      ]
+    ],
+    [
+      [
+        12008185004168421631,
+        12586906386873034919
+      ],
+      [
+        36,
+        0
+      ],
+      [
+        72340172838076673,
+        12511729344511896416
+      ],
+      [
+        68652242458096164,
+        7519690044779993613
+      ]
+    ],
+    [
+      [
+        12008185004168421631,
+        12586906386873034919
+      ],
+      [
+        36,
+        0
+      ],
+      [
+        72340172838076673,
+        12511729344511896416
+      ],
+      [
+        68652242458096164,
+        7519690044779993613
+      ]
+    ]
+  ],
+  "calls": 40,
+  "warmups": 10,
+  "samples": 30,
+  "rounds": 3,
+  "source_sha256": {
+    "src/main/scala/xiangshan/backend/decode/DecodeUnit.scala": "7aa93af92ca2eb44abb7bca7bfdbe58a8d864269d1681feaab4829fdbb5e5323",
+    "src/main/scala/xiangshan/backend/rename/Rename.scala": "ca4ac7d4daf69436046c90967980f7894c8b0b88dc062fafdb5c70b6f66829c0",
+    "src/main/scala/xiangshan/backend/fu/NewCSR/CSROoORead.scala": "740f545c3db834cfbb1f9083a11a7047b6614f83ea4826db0183f14733695ccf",
+    "src/main/scala/xiangshan/backend/dispatch/NewDispatch.scala": "aaae74122031c4c091f566b9e73a83c5e6e249a58d7f305a3551d0d0ae73ac36",
+    "src/main/scala/xiangshan/backend/fu/NewCSR/MachineLevel.scala": "9fc5746cbad50eefbf784bf888d6d1e927da98b11ac959ab55831d9e72cf4b91"
+  },
+  "dependency": "vd=vs1=v1; each operation reads the previous result",
+  "scope": "VL8 e8/m1 vm1 positive dot36 fixed-point recurrence; serialized register-resident dependency chain",
+  "native_word": "0x0220808b",
+  "lengths": [
+    1,
+    8,
+    32
+  ],
+  "boundaries": "same counter/CSRRW boundaries as pilot; consumer reads v1; each RVV operation retains its config/zero/restore instructions",
+  "interpretation": "cycles versus chain length, not independent-operation throughput or FU-only latency; no automatic empty subtraction"
+}

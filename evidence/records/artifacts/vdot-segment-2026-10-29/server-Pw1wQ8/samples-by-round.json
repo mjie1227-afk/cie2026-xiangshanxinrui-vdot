@@ -1,0 +1,145 @@
+[
+  {
+    "name": "empty",
+    "warm": 100,
+    "cycles": [
+      100,
+      100,
+      100
+    ],
+    "instret": 6,
+    "consumer": 1928
+  },
+  {
+    "name": "native_g8_register",
+    "warm": 3131,
+    "cycles": [
+      2383,
+      2282,
+      2282
+    ],
+    "instret": 859,
+    "consumer": 96
+  },
+  {
+    "name": "rvv_m1_g8_register",
+    "warm": 2497,
+    "cycles": [
+      2427,
+      2273,
+      2275
+    ],
+    "instret": 1013,
+    "consumer": 96
+  },
+  {
+    "name": "rvv_mf2_g8_register",
+    "warm": 2454,
+    "cycles": [
+      2454,
+      2320,
+      2321
+    ],
+    "instret": 1013,
+    "consumer": 96
+  },
+  {
+    "name": "native_g8_materialized",
+    "warm": 3077,
+    "cycles": [
+      3169,
+      3030,
+      3031
+    ],
+    "instret": 1388,
+    "consumer": 96
+  },
+  {
+    "name": "rvv_m1_g8_materialized",
+    "warm": 3441,
+    "cycles": [
+      3440,
+      3394,
+      3394
+    ],
+    "instret": 1542,
+    "consumer": 96
+  },
+  {
+    "name": "rvv_mf2_g8_materialized",
+    "warm": 3311,
+    "cycles": [
+      3312,
+      3312,
+      3313
+    ],
+    "instret": 1542,
+    "consumer": 96
+  },
+  {
+    "name": "native_g16_register",
+    "warm": 2353,
+    "cycles": [
+      2296,
+      2240,
+      2240
+    ],
+    "instret": 843,
+    "consumer": 1984
+  },
+  {
+    "name": "rvv_m1_g16_register",
+    "warm": 2437,
+    "cycles": [
+      2438,
+      2359,
+      2360
+    ],
+    "instret": 997,
+    "consumer": 1984
+  },
+  {
+    "name": "rvv_mf2_g16_register",
+    "warm": 2403,
+    "cycles": [
+      2405,
+      2333,
+      2333
+    ],
+    "instret": 997,
+    "consumer": 1984
+  },
+  {
+    "name": "native_g16_materialized",
+    "warm": 3087,
+    "cycles": [
+      3079,
+      3026,
+      3026
+    ],
+    "instret": 1372,
+    "consumer": 1984
+  },
+  {
+    "name": "rvv_m1_g16_materialized",
+    "warm": 3451,
+    "cycles": [
+      3444,
+      3443,
+      3443
+    ],
+    "instret": 1526,
+    "consumer": 1984
+  },
+  {
+    "name": "rvv_mf2_g16_materialized",
+    "warm": 3324,
+    "cycles": [
+      3312,
+      3263,
+      3262
+    ],
+    "instret": 1526,
+    "consumer": 1984
+  }
+]

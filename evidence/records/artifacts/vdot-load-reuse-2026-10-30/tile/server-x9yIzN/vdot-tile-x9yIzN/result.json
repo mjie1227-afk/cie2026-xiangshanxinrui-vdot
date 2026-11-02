@@ -1,0 +1,31 @@
+{
+  "status": "vdot-opt-raw-results-review-required",
+  "scope": "equal-output software-only experiments; loads, compute, loop, output, fence/readback counted",
+  "performance_measured": true,
+  "cwd": "/root/private_data/mj/xiangshan",
+  "argv": [
+    "/root/private_data/mj/xiangshan/evidence/vdot-tile-package-FtFr1t/package/run.py",
+    "/root/private_data/mj/xiangshan/evidence/vdot-tile-package-FtFr1t/package",
+    "/root/private_data/mj/xiangshan/evidence/vdot-tile-x9yIzN"
+  ],
+  "python": "3.11.9 (main, Apr  5 2026, 19:32:29) [GCC 11.4.0]",
+  "seed": 1,
+  "stages": [
+    {
+      "name": "build",
+      "exit": 0,
+      "wall_seconds": 2.826
+    },
+    {
+      "name": "architecture",
+      "exit": 0,
+      "wall_seconds": 2768.5
+    }
+  ],
+  "experiment": "tile",
+  "calls": 70,
+  "samples": 45,
+  "warmups": 25,
+  "final_speedup_accepted": false,
+  "application": "/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-tile-v1/build/vdot-tile-v1-riscv64-xs.bin"
+}

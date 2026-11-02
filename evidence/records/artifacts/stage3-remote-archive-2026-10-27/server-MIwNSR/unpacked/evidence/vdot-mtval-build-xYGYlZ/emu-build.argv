@@ -1,0 +1,1 @@
+timeout -k 60s 14400s make -C /root/private_data/mj/xiangshan/vdot-mtval-fix-20261024/XiangShan emu CONFIG=MinimalConfig NUM_CORES=1 EMU_TRACE=1 JVM_XMX=6G NO_DIFF=0 RELEASE=0 PLDM=0 EMU_THREADS=0 REMOTE=localhost CC=/usr/lib/llvm-19/bin/clang CXX=/usr/lib/llvm-19/bin/clang++ -j4 

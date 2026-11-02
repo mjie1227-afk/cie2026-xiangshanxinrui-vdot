@@ -1,0 +1,48 @@
+{
+  "status": "port-events-review-required",
+  "simulator_invoked": false,
+  "contention_accepted": false,
+  "cwd": "/root/private_data/mj/xiangshan",
+  "argv": [
+    "/root/private_data/mj/xiangshan/evidence/vdot-port-events-FfVozt/analyze.py",
+    "/root/private_data/mj/xiangshan/evidence/vdot-port-events-FfVozt"
+  ],
+  "python": "3.11.9 (main, Apr  5 2026, 19:32:29) [GCC 11.4.0]",
+  "root_edges": 2280,
+  "target_count": 3,
+  "resource_count": 12,
+  "fully_sampled_resources": 12,
+  "qualified_co_request_events": 1,
+  "mapped_dot_iota_pairs": 1,
+  "mechanical_complete_pairs": 1,
+  "mapping_conflicts": {
+    "qualified_audit": 0,
+    "inherited_mapping_check": 0
+  },
+  "identity_rejections": {},
+  "clock_offsets": {
+    "timer_1": [
+      98
+    ],
+    "cycleCnt_1": [
+      102
+    ],
+    "timer_0": [
+      99
+    ],
+    "cycleCnt_0": [
+      103
+    ]
+  },
+  "gtk_window": {
+    "begin_ps": 15626,
+    "end_ps": 15758,
+    "basis": "first mapped pair request"
+  },
+  "limitations": [
+    "Physical WB input identities may be absent; raw multi-request is not automatically the target pair",
+    "Earlier busy-table/read-port gating is not fully covered; IQ ready alone does not isolate blocking resource",
+    "No GUI opened; review actual pre-edge handshake and allocation epochs before accepting competition"
+  ],
+  "elapsed_seconds": 51.096
+}

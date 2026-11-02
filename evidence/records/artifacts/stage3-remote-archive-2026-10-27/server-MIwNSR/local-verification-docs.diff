@@ -1,0 +1,297 @@
+--- before/PROGRESS.md
++++ PROGRESS.md
+@@ -2,7 +2,7 @@
+ 
+ 更新：2026-10-27。mtval修复已通过服务器整核验收：异常64例、重叠60例、VDot smoke7例、hello-meijie/VADD全部通过；[核验](artifacts/vdot-mtval-fix-2026-10-24/server-xYGYlZ/review.json)。新emu f9653532…、原源码NEMU11b9f680…已归档，旧产物未变。
+ 
+-**当前主线：bijzGZ逐轮补证已核验，第三阶段报告、V3稿和交付索引已整理；先归档完整远端日志与样本，截图/V3由用户后续统一处理。** 单例取消、CSR请求和共享端口竞争证据保留；最终材料继续推进。
++**当前主线：bijzGZ逐轮补证已核验，第三阶段报告、V3稿和交付索引已整理；第三阶段完整原件已本地核验，先补第二阶段事件原件与两份VCD，截图/V3后置。** 单例取消、CSR请求和共享端口竞争证据保留；最终材料继续推进。
+ 
+ 竞争的GUI身份、输出及提交机器码图已归档；本例不再重复取证。实际结果同拍写回碰撞未触发、最终VS逐拍状态未完整覆盖；这些限制保留。视频、其他提交图像及最终包仍未完成，不能宣布G2整阶段交付通过。
+ 
+@@ -62,9 +62,9 @@
+ 
+ ## 3. 下一次的前三步
+ 
+-1. MIwNSR远端归档回传成功，10目录/264文件；先按[接收说明](artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/README.md)下载5个文件，不重复归档或仿真。
+-2. 下载归档包、SHA256与结果清单，在本地验证后补齐完整原始证据；不重跑成功仿真。
+-3. 用户后续统一截图并录制V3，再完成最终候选包核验。已有[V3稿和取图表](recording/stage3/README.md)继续使用，G3暂不计完整通过。
++1. MIwNSR已本地核验：264来源文件、162调用、36组统计一致，不重复打包或仿真。
++2. 按[归档清单](reports/archive-status.md)执行[仅补缺失项命令](artifacts/stage12-archive-audit-2026-10-27/server-paste-command.txt)，补第二阶段10个代表性目录的原始事件/日志和两份VCD；服务器尚未执行。
++3. 补包下载校验后推进最终材料。截图和录屏由用户后续统一处理，G3暂不计完整通过。
+ 
+ 用户写作要求：A标准评审结构，保留原10图并加入6张已确认前端图，平台说明并入1.2环境报告；正文面向评委和人类读者，内部核验及交接信息另存。
+ 
+--- before/docs/development-history.md
++++ docs/development-history.md
+@@ -294,6 +294,12 @@
+ 
+ 脚本逐项核对必需文件，读前/后及打包后检查来源稳定性，并对压缩包每个成员重算哈希。只归档保存的身份记录，不把这一过程说成远端当前二进制重哈希。Python合成夹具与WSL/Bash整段命令检查通过；没有构建或仿真，也没有连接服务器。完整命令、范围、停止条件和原始工具日志见[归档说明](../artifacts/stage3-remote-archive-2026-10-27/README.md)。随后用户回传MIwNSR：10目录/264文件、来源55489484字节、包2233424字节，collector/tee/script均0，包SHA已记录。新增[本地接收目录](../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/README.md)和5文件下载说明；归档下载及本地完整性核验仍待完成。
+ 
++### 20.5 完整包本地核验与阶段1/2缺口检查（10月27日）
++
++新增[归档核验器](../scripts/verify_stage3_archive.py)，检查5个下载文件、包成员与manifest/SHA256SUMS，然后对照原architecture.log、samples.json和CSV。264来源文件及4个清单/脚本一致，162调用（36预热/126正式）的顺序/instret/consumer正确，36组统计复算一致。原mtval失败退出1与修复回归0保留；安全解包到server-MIwNSR/unpacked，不覆盖原件。首次检查因heredoc多一个末尾换行停止，改为比较实际交付命令后逐字一致，原压缩包未修改，两次日志均保留。
++
++补齐等价680.930秒、依赖链1486.244秒、八路1537.081秒；预检start/end差1479秒、分辨率1秒，分别记录。随后核对四份主报告109处本地引用均存在；第一阶段VADD VCD在本机WSL，大小匹配，未读内容。第二阶段仍缺完整事件原件，新增[缺口核对与命令生成器](../scripts/prepare_stage12_archive_gaps.py)，仅补10个代表性目录及两份VCD，同路径相同内容小文件自动跳过，已有端口竞争VCD不重取。夹具/Bash语法通过，补包尚未在服务器执行。范围见[归档状态](../reports/archive-status.md)。本轮无构建、仿真或波形事件重分析，截图/录屏后置。
++
+ ## 21 回顾、截图与后续记录方法
+ 
+ 回顾一项开发时，先找本节的修改对象：若修改RTL，就关注局测、整核展开、新emu及回归；若修改NEMU，就关注新库、ABI与差分；若只改应用，就关注交叉编译出的镜像；若只改分析器，就关注它读取的原始证据和关联判据。这样可以理解为什么有的步骤需要数小时构建，有的只需重新编译应用或读取文件。
+--- before/docs/HANDOFF.md
++++ docs/HANDOFF.md
+@@ -4,15 +4,11 @@
+ 
+ ## 立即下一步
+ 
+-当前先执行[完整远端日志归档命令](../artifacts/stage3-remote-archive-2026-10-27/README.md)：10个固定运行目录，保留完整日志/样本/参数/身份/退出记录，新建evidence/stage3-log-archive-XXXXXX并生成tar.gz、清单与SHA256。MIwNSR回传显示成功：10目录/264文件、包2233424字节、collector/tee/script均0；[接收目录](../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/README.md)已建，等待下载5个文件并校验。不要重复执行归档命令；尚不能记为本地完整归档。
++MIwNSR的5个文件已本地核验：包2233424字节/SHA48882ae4…，268成员/264来源文件/10运行目录一致；四组162调用（36预热/126正式）原日志/JSON/CSV逐条一致，36组统计未变。[结果](../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/local-verification.json)与同目录unpacked/evidence/保存完整原件。不重复下载、打包或仿真。首次校验因开发文件与实际heredoc末尾换行不同停止，已核对实际交付命令逐字一致，原包未改。
+ 
+-用户确认S3-F01～F05a终端截图和V3后续统一处理。[V3稿](../recording/stage3/README.md)及已有图继续复用。归档命令不构建、不仿真、不读取大型波形；旧失败记录照原样保存。G3仍未整阶段通过，未提交或外发。
++[归档清单](../reports/archive-status.md)：第一阶段主报告70处本地引用均存在，原VADD VCD仍在本机WSL、大小匹配，未扫描内容；旧顶层构建退出码当时未记录，不补造。第二阶段主要架构/修复日志已落地，尚缺10个代表性取证目录的完整事件/日志及Cpa0HX、FNmKGI两份VCD（原始合计934773320字节）。[仅补缺失项命令](../artifacts/stage12-archive-audit-2026-10-27/server-paste-command.txt)已通过夹具及Bash语法检查，服务器未执行。已有EfQru1 VCD保留，不重复打包。
+ 
+-[第三阶段索引](../reports/stage3/README.md)串起新NEMU/DiffTest独立报告、等价/性能报告及取证附录。源码/补丁30项既有身份匹配，5个应用包源码/矩阵一致；选定60项文件清单不等于完整源码包或新环境构建验收。无需重复读取全部历史或运行旧成功验收。
+-
+-[bijzGZ补证](../artifacts/stage3-closeout-2026-10-27/e2e-read/review.json)：正式30样本顺序/退休数/consumer及10组统计一致；10个预热周期已回传，预热其他字段未打印。应用构建3.525秒、整核运行1651.336秒。37条PERF/22个所选名称均有记录，覆盖整个应用而非某个计时内核；未确定小数组瓶颈。保存身份匹配，本次没有重算远端当前二进制哈希。原始粘贴文本已保留，未执行其中乱码命令回显。
+-
+-小数组N8/32/128中位周期VDot287/674/2239，m1=320/705/2249，mf2=312/698/2241；部分点1～2周期波动。N128区间比1.0009、基本持平，与依赖链增量比6.71、寄存器内八路N128区间比2.40分列。三张曲线统计未变，继续复用。
++截图和录屏由用户后续统一处理，[V3稿](../recording/stage3/README.md)与已有图继续复用。G3仍缺视频与最终包，不计整阶段通过。三类性能继续分别报告6.71/2.40/1.0009，小数组基本持平，不默认追加实验。
+ 
+ ## 当前证据与范围
+ 
+--- before/docs/verification.md
++++ docs/verification.md
+@@ -1,4 +1,12 @@
+ # 实现与验证记录
++
++## 2026-10-27 MIwNSR本地核验及阶段1/2归档缺口
++
++PowerShell，cwd为本工作区，Python3.14.3：`python scripts/verify_stage3_archive.py`最终退出0。[首次停止日志](../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/local-verification-first.log)保留开发文件与实际heredoc末尾换行差异；改为比对当时交付命令后逐字一致，原包未修改。[最终日志](../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/local-verification.log)和[结构化结果](../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/local-verification.json)确认包大小2233424、SHA48882ae4…与sidecar/collection-result一致，264来源文件/55489484字节、268成员及安全路径、成员哈希一致，已在新unpacked逐文件落地复验。
++
++计时162调用=36预热+126正式，原日志/JSON/CSV逐条一致，36组统计重算一致；等价144/432/2标记与参考库/DiffTest/GOOD TRAP齐全。唯一排除16字节Flash。原错误退出与成功回归保留，没有新DUT运行。
++
++`python scripts/prepare_stage12_archive_gaps.py`退出0；四份主报告109处链接存在，第一阶段VADD VCD经WSL stat确认1395708089字节，本轮未重哈希。第二阶段10个代表性目录的完整原件及两份VCD待补。[夹具检查](../artifacts/stage12-archive-audit-2026-10-27/local-check.json)验证JSONL/指定VCD收集、相同内容跳过、其他VCD排除及源不变；WSL `bash -n`退出0，补包命令尚未在服务器执行。具体缺口与范围见[归档状态](../reports/archive-status.md)。
+ 
+ ## 2026-10-27 MIwNSR远端日志包回传（本地尚未下载）
+ 
+--- before/reports/stage2/functional-tests.md
++++ reports/stage2/functional-tests.md
+@@ -1,6 +1,6 @@
+ # 第二阶段：vdot.vv 功能验证报告
+ 
+-版本：0.12；更新日期：2026-10-26。对应提交项：C2.3.1正数、C2.3.2含负数、C2.3.3边界值；补充C2.1/C2.2所需的控制与集成验证。文档状态：阶段评审稿。
++版本：0.13；更新日期：2026-10-27。对应提交项：C2.3.1正数、C2.3.2含负数、C2.3.3边界值；补充C2.1/C2.2所需的控制与集成验证。文档状态：阶段评审稿；本次仅补原始日志归档入口，测试结论未变。
+ 
+ ## 摘要
+ 
+@@ -12,7 +12,7 @@
+ 
+ 验证对象为[设计说明](design.md)中的CIE-vdot-vv-v0.1实现。服务器工程根目录为`/root/private_data/mj/xiangshan`；单核MinimalConfig、VLEN128、EMU_TRACE=1。当前采用mtval修复后的emu、原VDot源码NEMU库及共享16字节Flash，身份见附录A。
+ 
+-历史本地验证采用独立sbt/Chisel工程或香山Mill工程，各自配置分开记录。服务器完整日志保存在运行目录；本报告由已归档用户回传、运行脚本及核验记录整理，不表示本轮重新运行了全部测试。
++历史本地验证采用独立sbt/Chisel工程或香山Mill工程，各自配置分开记录。主要构建、mtval失败/修复与120例架构套件完整日志现已随MIwNSR在本地核验；部分波形事件原文件仍待补，见[归档状态](../archive-status.md)。本报告依据已有运行记录，不表示本轮重新运行了测试。
+ 
+ ## 2 方法与判定标准
+ 
+--- before/reports/stage2/README.md
++++ reports/stage2/README.md
+@@ -1,6 +1,6 @@
+ # 第二阶段文档入口
+ 
+-更新日期：2026-10-26。目标为完成vdot.vv设计、RTL扩展和正数/含负数/边界整核验证；NEMU提前接入用于差分，等价RVV与性能仍属于后续工作。
++更新日期：2026-10-27。本阶段说明vdot.vv设计、RTL扩展和正数/含负数/边界整核验证；NEMU提前接入用于差分。已取得的等价RVV与性能结果另见第三阶段报告，当前继续补齐原始证据归档。
+ 
+ | 文档 | 作用 | 对应提交内容 |
+ |---|---|---|
+@@ -10,6 +10,6 @@
+ 
+ 两份主报告按已有提交内容组织为技术评审稿；当前没有已核实的统一字体/页边距模板。最终上传格式和容量在提交前核对，不把Markdown草稿等同于已经提交的文件。
+ 
+-当前三类整核测试及额外架构套件已有通过记录；单例完成后取消、退休到CSR请求、VDot/VIOTA发射前共享端口竞争及双方提交均已有证据。用户已在WSL完成代表性GTKWave观察，S2-F09身份、输出与退休机器码图已归档。主线转入[标准RVV等价](../stage3/rvv-equivalence.md)，其他图像/录屏及最终包继续保留为未完成项。物理结果同拍碰撞未触发，最终VS逐拍状态仍未验证。阶段状态见[进度看板](../../PROGRESS.md)，范围与证据见功能报告。
++当前三类整核测试及额外架构套件已有通过记录；单例完成后取消、退休到CSR请求、VDot/VIOTA发射前共享端口竞争及双方提交均已有证据。用户已在WSL完成代表性GTKWave观察，S2-F09身份、输出与退休机器码图已归档。第三阶段等价及指定性能已有证据，完整日志已核验；当前按[归档状态](../archive-status.md)补第二阶段事件原件和两份VCD。其他图像/录屏及最终包仍未完成。物理结果同拍碰撞未触发，最终VS逐拍状态仍未验证。阶段状态见[进度看板](../../PROGRESS.md)，范围与证据见功能报告。
+ 
+ 历史专项文档保留作追溯：[独立算术](vdot8-standalone-validation.md)、[接口调查](vdot-xiangshan-integration-survey.md)、[首版验证记录](vdot-integration-validation-2026-10-24.md)。其历史“下一步”不作为当前执行清单。
+--- before/reports/stage3/delivery.md
++++ reports/stage3/delivery.md
+@@ -57,12 +57,11 @@
+ 
+ ## 5 仍需完成的交付动作
+ 
+-当前先按[完整日志归档命令](../../artifacts/stage3-remote-archive-2026-10-27/README.md)执行：10个固定运行目录中的完整日志、样本及元数据进入新建的stage3-log-archive目录，生成tar.gz、文件清单与SHA256。MIwNSR远端归档回传成功，包2233424字节；按[接收说明](../../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/README.md)下载并验证后，才能记为本地完整归档。截图和录屏按用户安排后续统一处理。
+-
++MIwNSR完整日志和样本已在本地核验并解包：[结果](../../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/local-verification.json)确认264来源文件及162计时调用一致。第三阶段原件不再待下载；先按[归档清单](../archive-status.md)补第二阶段事件原件与两份VCD，截图和录屏后置。
+ 
+ 1. 从已有日志保存S3-F01、F02、F03a、F04a、F05a终端图，长统计可分上下两张；按[录屏稿](../../recording/stage3/README.md)命名和登记。
+ 2. 用户完成V3录制，回看文字/声音/波形身份与曲线读数，保存成片后记录时长、文件名、SHA256和播放检查。不能以稿件或日志展示文本替代视频。
+-3. 最终包按“报告、源码与补丁、配置、原始证据、图像、视频”分类封装。完整服务器日志尚未归档本地：至少保存五个阶段运行目录中的architecture.log、参数、result/samples/raw-statistics、身份及真实退出记录，文件清单以各run实际存在内容为准；计时重试目录结构与其他四组不同。
++3. 最终包按“报告、源码与补丁、配置、原始证据、图像、视频”分类封装。五个第三阶段主运行及支撑目录已在MIwNSR本地归档，最终包复用这些原件并保持链接可达。计时重试目录结构与其他四组不同，按实际清单收集。
+ 4. 对最终包逐项核对需求矩阵与链接、文件身份和可读性，再评定G3。本轮清单只覆盖选定的60个已有文件，不代表完整工程、最终包或新环境重建验收。
+ 
+ 提交平台、公开仓库、上传视频和对外发送需另按用户明确指令执行；目前未执行这些动作。第二阶段视频与其他阶段缺口保留在原进度表，不由第三阶段报告代替。
+--- before/reports/stage3/difftest.md
++++ reports/stage3/difftest.md
+@@ -65,4 +65,4 @@
+ 
+ 当前服务器emu SHA256为`f9653532fd2a4b9f0d0cc08c131f7c258d4b62c46e672c6886d6643aad926850`；NEMU库为`11b9f6807c36ed860e0c64cc4e58d27216b19335ecde1ce5797ba2d1cd057b74`。配置、Flash及应用身份见[身份索引](delivery.md)。本机API测试使用另一个构建的参考库，身份与服务器分别记录。
+ 
+-本地保存用户回传、核验JSON、源码/补丁和已有波形图片；部分完整运行日志、样本文件和大型波形仍在服务器。本次只读补证确认的是保存身份的一致性，未重新计算当前远端二进制哈希。第三阶段终端截图由用户后续统一采集，V3脚本已另列；最终视频和交付核验完成前不将G3记为整阶段通过。
++本地保存用户回传、核验JSON、源码/补丁和已有波形图片。MIwNSR中的五个第三阶段主运行、原计时超时和四个差分/构建支撑目录已完整核验；四组162计时调用的原日志/JSON/CSV一致。第二阶段事件原件与两份VCD待补，见[归档状态](../archive-status.md)。本次只读补证确认的是保存身份的一致性，未重新计算当前远端二进制哈希。第三阶段终端截图由用户后续统一采集，V3脚本已另列；最终视频和交付核验完成前不将G3记为整阶段通过。
+--- before/reports/stage3/performance-evidence.md
++++ reports/stage3/performance-evidence.md
+@@ -4,9 +4,9 @@
+ 
+ ## 1 数据来源及读取边界
+ 
+-[原始粘贴文本](../../artifacts/stage3-closeout-2026-10-27/e2e-read/user-read-output.txt)原样保存；[核验结果](../../artifacts/stage3-closeout-2026-10-27/e2e-read/review.json)与[复算脚本](../../scripts/review_stage3_evidence.py)对应。命令回显存在乱码，但锚定的结果行完整；没有执行粘贴代码。远端原samples.json/result.json/architecture.log未下载。
++[原始粘贴文本](../../artifacts/stage3-closeout-2026-10-27/e2e-read/user-read-output.txt)原样保存；[核验结果](../../artifacts/stage3-closeout-2026-10-27/e2e-read/review.json)与[复算脚本](../../scripts/review_stage3_evidence.py)对应。命令回显存在乱码，但锚定的结果行完整；没有执行粘贴代码。后续MIwNSR完整包已下载，原samples.json/result.json/architecture.log已在本地核验，见[完整核验](../../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/local-verification.json)。
+ 
+-本地逐项核对10个变体、30个正式样本，轮换位置满足position=(variant_index-round+1) mod 10；退休增量和consumer符合保存矩阵，10组min/median/max全部与原统计一致。服务器脚本还报告已检查原40次调用；本地回传只有10个预热周期值，预热instret/consumer及显式位置未显示，未补造这些字段。
++本地逐项核对10个变体、30个正式样本，轮换位置满足position=(variant_index-round+1) mod 10；退休增量和consumer符合保存矩阵，10组min/median/max全部与原统计一致。首次回传只显示10个预热周期，没有补造其他字段；现已取得原samples.json，40次调用全部字段与原日志、CSV逐条一致。完整四组逐轮周期及预热计数见[完整样本表](../../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/complete-samples.md)。
+ 
+ ## 2 逐轮样本
+ 
+--- before/reports/stage3/performance.md
++++ reports/stage3/performance.md
+@@ -60,7 +60,7 @@
+ 
+ 空片段已有74周期，说明读数、串行化边界和消费者成本较大。本报告将native的81周期记录为含公共开销的原始区间成本。第5节通过链长扫描分析周期增长，给出相应完整操作成本；FU内部延迟按其自身起止事件另行说明。
+ 
+-首轮IgNim5因900秒墙钟上限终止，26条完整前缀已核对；复验只把墙钟上限改为2400秒，模拟周期仍500000，未修改应用或硬件。旧失败与[前缀记录](../../artifacts/vdot-timing-pilot-2026-10-26/retry-budget/prefix-review.json)保留。成功运行的宿主实际耗时未在回传中给出，不由上限推断耗时。
++首轮IgNim5因900秒墙钟上限终止，26条完整前缀已核对；复验只把墙钟上限改为2400秒，模拟周期仍500000，未修改应用或硬件。旧失败与[前缀记录](../../artifacts/vdot-timing-pilot-2026-10-26/retry-budget/prefix-review.json)保留。完整归档中的start/end为20:44:05～21:08:44，差值1479秒（时间戳分辨率1秒）；与其他批次result中的单调时钟阶段耗时分列。
+ 
+ ## 5 完整操作依赖链：方法与实测结果
+ 
+@@ -122,7 +122,7 @@
+ 
+ ![八路批处理周期与两段增量](assets/timing/S3-F04-throughput-batch.png)
+ 
+-图3　由uLgHm6回传统计生成；[SVG](assets/timing/S3-F04-throughput-batch.svg)、[原始统计](../../artifacts/vdot-throughput-2026-10-26/server-uLgHm6/raw-statistics.json)及[增量分析](../../artifacts/vdot-throughput-2026-10-26/server-uLgHm6/derived-metrics.json)配套保存。未构造未回传的逐条样本。
++图3　由uLgHm6回传统计生成；[SVG](assets/timing/S3-F04-throughput-batch.svg)、[原始统计](../../artifacts/vdot-throughput-2026-10-26/server-uLgHm6/raw-statistics.json)及[增量分析](../../artifacts/vdot-throughput-2026-10-26/server-uLgHm6/derived-metrics.json)配套保存。原逐条样本现已完整归档，见[完整样本复算表](../../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/complete-samples.md)。
+ 
+ ## 7 含数据搬运的小数组测量与结果
+ 
+@@ -140,7 +140,7 @@
+ | RVV batch m1 | 320（320～320） | 705（705～705） | 2249（2249～2249） |
+ | RVV batch mf2 | 312（312～312） | 698（696～698） | 2241（2241～2241） |
+ 
+-表4　每点3个正式样本，范围为实测最小～最大值。空对照为100周期、6条退休增量；其余退休增量全部符合预期。2026-10-27只读回传已补齐30个正式样本的轮次、位置、周期、退休增量和consumer；本地重算10组统计全部一致。[逐轮表与取证附录](performance-evidence.md)保留10个预热周期值，未补造回传没有显示的预热instret/consumer字段。
++表4　每点3个正式样本，范围为实测最小～最大值。空对照为100周期、6条退休增量；其余退休增量全部符合预期。2026-10-27只读回传已补齐30个正式样本的轮次、位置、周期、退休增量和consumer；本地重算10组统计全部一致。后续完整归档已补齐10次预热和30次正式调用全部字段，原日志/JSON/CSV逐条一致，见[取证附录](performance-evidence.md)。
+ 
+ 采用较快RVV mf2和原始区间中位数，N8/32/128的baseline/VDot分别为1.0871、1.0356、1.0009。N128仅相差2周期；VDot相对mf2周期减少约0.089%，在本组工作量下基本持平。仅3个样本不作统计显著性或其他场景性能推断。native退休935条、RVV1089条，说明少退休154条指令并未在这一内核中产生相同比例的周期下降。
+ 
+@@ -158,6 +158,10 @@
+ 
+ 这些计数覆盖整个应用，包含预热、初始化、输出哨兵填充、检查及打印。ROB等待计数可能重叠，不累加成总停顿或计算每个变体占比；Sbuffer事件不等于目标内核独占的访存开销。四条向量拆分通路的pipe_block/mbuffer_block均为0，只能说明对应计数在此运行中为0，不能据此推断全访存路径无阻塞、全L1命中或DRAM带宽瓶颈。当前证据未定位小数组具体瓶颈。
+ 
++### 7.2 完整原件的本地复核
++
++MIwNSR包已本地核验。四组共162调用（36预热/126正式）的原日志、JSON、CSV逐条一致，36组统计与本文一致。依赖链和八路批处理的整核宿主耗时为1486.244、1537.081秒，小数组为1651.336秒；预检使用start/end差值1479秒，分辨率1秒。原件、验证范围及实际耗时见[归档状态](../archive-status.md)。本次没有新增仿真。
++
+ ## 8 分层结论与验证范围
+ 
+ | 测量接口 | 已取得的结果 | 含义 |
+--- before/reports/stage3/README.md
++++ reports/stage3/README.md
+@@ -31,14 +31,12 @@
+ 
+ [原始回传](../../artifacts/stage3-closeout-2026-10-27/e2e-read/user-read-output.txt)和[核验](../../artifacts/stage3-closeout-2026-10-27/e2e-read/review.json)：30正式样本的顺序、instret、consumer全部符合矩阵，10组统计一致；构建3.525秒、整核运行1651.336秒。37条PERF记录覆盖22个所选名称，缺失清单为空，但范围为整个应用，未确定小数组瓶颈。
+ 
+-只读回传核对的是保存身份，未重算远端当前二进制哈希。开头命令回显有乱码，完整结果行已校验；不执行粘贴代码、不重跑成功仿真。原始samples.json/result.json/architecture.log仍在服务器。预热回传仅提供周期，本地不补造其他原始字段。
++只读回传核对的是保存身份，未重算远端当前二进制哈希。开头命令回显有乱码，完整结果行已校验；不执行粘贴代码、不重跑成功仿真。后续MIwNSR包已在本地核验并解包，四组162调用（36预热/126正式）原日志/JSON/CSV一致，36组统计复算一致；预热全部字段已补齐，见[归档状态](../archive-status.md)。
+ 
+ 选定的30项源码/补丁身份与既有manifest匹配，五个应用包的15个源文件及5个矩阵与工作区保存内容逐字一致；[60项文件清单](../../artifacts/stage3-closeout-2026-10-27/source-inventory.json)仅覆盖本轮交付对象，不是全库或最终包验收。[开发过程总录](../../docs/development-history.md)第20.3节记录本次修改、方法和构建运行关系。
+ 
+ ## 4 当前待办
+ 
+-1. 先执行[完整日志归档命令](../../artifacts/stage3-remote-archive-2026-10-27/README.md)，收集五个第三阶段主运行目录及五个差分/构建/失败追溯目录。MIwNSR回传显示远端已归档10目录/264文件，collector/tee/script均0；[本地接收目录与下载清单](../../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/README.md)已准备，下载及校验尚未完成，不要重复执行归档命令。
+-2. 下载并核对归档包、文件清单和SHA256，再补齐本地原始证据。归档只收集现存文件，不重跑仿真。
+-3. 用户后续统一截S3-F01/F02/F03a/F04a/F05a并录制V3。既有[取图表和录屏稿](../../recording/stage3/README.md)继续使用；待视频回放、图像归档和最终包核验完成后判断G3。
+-
+-不默认启动额外性能实验。6.71、2.40、1.0009属于不同接口，不能合并为通用加速倍数，也不能跨组相减求纯访存开销。v0.1中的A01～A09、配置适用性和未覆盖范围继续保留。提交与外发未执行。
++1. MIwNSR完整日志与样本已本地核验，不重复下载、打包或仿真。[第一、二阶段归档核对](../archive-status.md)发现第二阶段10个代表性目录仍缺完整原件及两份VCD；[仅补缺失项命令](../../artifacts/stage12-archive-audit-2026-10-27/server-paste-command.txt)已准备，服务器尚未执行。
++2. 补包执行后下载并核验。已有第一阶段VADD和第二阶段端口竞争VCD继续保留，不重复迁移。
++3. 截图与录屏由用户后续统一处理；图像、V3和最终包核验完成后再判断G3。三类性能分列，不默认开启额外实验。
+--- before/reports/stage3/rvv-equivalence.md
++++ reports/stage3/rvv-equivalence.md
+@@ -36,7 +36,7 @@
+ 
+ 本地结果见[local-170237](../../artifacts/vdot-rvv-equivalence-2026-10-26/local-170237/result.json)。本地参考库SHA与服务器库不同，分开记录，不将本地通过当作服务器验收。此前按字节检查的成功本地产物保留，改用字检查后在另一个新应用目录构建，未覆盖旧产物。
+ 
+-服务器[8nvimb核验](../../artifacts/vdot-rvv-equivalence-2026-10-26/server-8nvimb/review.json)与[身份清单](../../artifacts/vdot-rvv-equivalence-2026-10-26/server-8nvimb/identities.json)已归档：新应用SHA256为bf29b9367a4b9045b139224bb5b2b6502bdeae005969abdc6129ba0fd6c76010，原emu/参考库/Flash保持固定。六个kernel反汇编范围匹配，native静态1条、两RVV序列各9条。静态长度不是执行周期或加速比；完整日志仍在服务器，本地保存用户回传摘录。
++服务器[8nvimb核验](../../artifacts/vdot-rvv-equivalence-2026-10-26/server-8nvimb/review.json)与[身份清单](../../artifacts/vdot-rvv-equivalence-2026-10-26/server-8nvimb/identities.json)已归档：新应用SHA256为bf29b9367a4b9045b139224bb5b2b6502bdeae005969abdc6129ba0fd6c76010，原emu/参考库/Flash保持固定。六个kernel反汇编范围匹配，native静态1条、两RVV序列各9条。静态长度不是执行周期或加速比；完整日志已随MIwNSR本地核验，最终144/432/2标记、参考库/DiffTest/GOOD TRAP及保存身份一致。构建3.726秒、整核680.930秒，见[本地核验](../../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/local-verification.json)。
+ 
+ ## 5 复现入口与材料
+ 
+--- before/artifacts/stage3-remote-archive-2026-10-27/README.md
++++ artifacts/stage3-remote-archive-2026-10-27/README.md
+@@ -1,6 +1,6 @@
+ # 第三阶段完整日志与样本归档命令
+ 
+-2026-10-27。用户要求先归档既有远端日志与样本，截图和录屏后续统一处理。当前状态：MIwNSR回传显示远端归档成功，10目录/264文件，包2233424字节；本地接收目录已建，等待下载与校验。具体路径、下载清单及SHA见[接收说明](server-MIwNSR/README.md)。
++2026-10-27。用户要求先归档既有远端日志与样本，截图和录屏后续统一处理。当前状态：MIwNSR的5个文件已下载，本地包/清单/完整样本核验通过。264来源文件、268总成员、162调用和36组统计一致；已安全展开，见[本地核验](server-MIwNSR/local-verification.json)。下面命令作为历史过程保留，无需重复执行。
+ 
+ ## 1 执行对象与产物
+ 
+--- before/artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/README.md
++++ artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/README.md
+@@ -1,19 +1,11 @@
+-# MIwNSR归档包接收目录
++# MIwNSR完整日志与样本：本地核验通过
+ 
+-2026-10-27。服务器回传显示归档成功，10个运行目录、264个文件、原始55489484字节；压缩包2233424字节。collector/tee/script均0。完整输出选段见[user-returned-summary.txt](user-returned-summary.txt)，[核验状态](review.json)仅接受远端回传，本地包尚未收到或校验。
++2026-10-27。5个下载文件已接收，压缩包2233424字节，SHA256=48882ae468149dadc6aadb2303cb9d25f035f5feea49e13cd945c8e3baf54cc8，与远端回传、.sha256及collection-result一致。
+ 
+-从服务器`/root/private_data/mj/xiangshan/evidence/stage3-log-archive-MIwNSR/`下载以下5个文件到本目录，保留文件名：
++[核验结果](local-verification.json)退出0：264来源文件/55489484字节、10运行目录，加4项清单/脚本共268成员，全部成员与manifest/SHA256SUMS匹配。原包保留，[unpacked](unpacked/)保存逐成员验证后的副本，路径仍为evidence/原run/文件。唯一排除项为16字节boot-flash.bin，不是缺失日志。
+ 
+-| 文件 | 作用 |
+-|---|---|
+-| stage3-logs.tar.gz | 实际日志与样本压缩包 |
+-| stage3-logs.tar.gz.sha256 | 压缩包的SHA256校验值，用于检查下载字节是否一致；不是压缩包，也不是密码 |
+-| collection-result.json | 本次归档结果，含来源文件数、大小、包路径、哈希、耗时和退出码 |
+-| collect.log | 归档工具原始输出，保留执行过程 |
+-| exit-status.txt | collector与tee的退出码及输出目录 |
++四组完整计时样本共162调用（36预热/126正式），原日志、JSON和CSV逐条一致；顺序/instret/consumer正确，36组统计重算一致。[逐轮复算表](complete-samples.md)。8nvimb完整日志含144例/432调用/两基线通过标记，不当作逐调用计时样本。
+ 
+-manifest.json、SHA256SUMS、preflight.json和collect.py已经包含在包内，无需单独下载。包内排除1项，具体名称待读取preflight确认，不补猜。
++[最终检查日志](local-verification.log)与[首次停止日志](local-verification-first.log)保留。首次比较开发文件而非实际heredoc，因多一个末尾换行停止；更正为比对当时交付命令后逐字一致，未修改压缩包。归档工具本身的耗时为13.921秒，不是硬件仿真耗时。
+ 
+-收到后应核对包大小为2233424字节、SHA256为`48882ae468149dadc6aadb2303cb9d25f035f5feea49e13cd945c8e3baf54cc8`；再检查包内成员与manifest/SHA256SUMS一致，并对照完整samples、统计和result。全部通过后才记“本地原始日志已归档”。此时无需重新运行服务器归档、仿真或构建。
+-
+-第一、二阶段也要保留本地原始证据。现有材料先复用，本包已含首版构建、mtval失败/修复和120例等第二阶段证据；后续按阶段索引补缺失项，大型VCD单独保留。轻量分享包与自己保存的完整证据档案目的不同，不因分享包可省略波形而删除原波形。
++本包无需再次下载、生成或仿真。第一、二阶段的后续缺口及仅补缺失项命令见[归档状态](../../../reports/archive-status.md)。截图、录屏继续后置。
+--- before/artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/review.json
++++ artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/review.json
+@@ -1,5 +1,5 @@
+ {
+-  "status": "remote-archive-success-reported; awaiting local download and verification",
++  "status": "local-archive-and-complete-samples-verified",
+   "date": "2026-10-27",
+   "basis": "user chat result lines; original remote files not received",
+   "remote_directory": "/root/private_data/mj/xiangshan/evidence/stage3-log-archive-MIwNSR",
+@@ -9,7 +9,9 @@
+   "source_files": 264,
+   "source_bytes": 55489484,
+   "excluded_files": 1,
+-  "excluded_file_names": "not yet received; inspect embedded preflight.json after download",
++  "excluded_file_names": [
++    "evidence/vdot-build-80mKCD/boot-flash.bin"
++  ],
+   "collector_exit": 0,
+   "tee_exit": 0,
+   "script_exit": 0,
+@@ -21,8 +23,13 @@
+     "collect.log",
+     "exit-status.txt"
+   ],
+-  "local_archive_verified": false,
++  "local_archive_verified": true,
+   "new_builds": 0,
+   "new_simulations": 0,
+-  "command_echo": "mangled in pasted message; result lines complete; not executed locally"
++  "command_echo": "mangled in pasted message; result lines complete; not executed locally",
++  "local_verification": "local-verification.json",
++  "timing_calls": 162,
++  "timing_warmups": 36,
++  "timing_formal_samples": 126,
++  "statistics_groups": 36
+ }

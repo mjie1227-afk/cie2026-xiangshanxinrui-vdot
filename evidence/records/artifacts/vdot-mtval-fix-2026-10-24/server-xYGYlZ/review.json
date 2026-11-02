@@ -1,0 +1,130 @@
+{
+  "status": "accepted for this full-core directed suite",
+  "source": "user returned terminal summary; full server logs not downloaded",
+  "attachment_sha256": "72a3e67f85eb67c150bc4217870cdd90172416ca17e29ef0f6f799d57960a967",
+  "log_dir": "/root/private_data/mj/xiangshan/evidence/vdot-mtval-build-xYGYlZ",
+  "package_dir": "/root/private_data/mj/xiangshan/evidence/vdot-mtval-package-NyMrl9",
+  "package_expected_sha256": "03f207a6ee975ba7e971f73d216963f003b42829e742e296d5925dcfefa46cb0",
+  "package_hash_check_reported_ok": true,
+  "phases": {
+    "apply": {
+      "exit": 0,
+      "end": "2026-10-24T17:43:00+08:00",
+      "start": "2026-10-24T17:42:15+08:00",
+      "wall_seconds": 45.0
+    },
+    "emu-build": {
+      "exit": 0,
+      "end": "2026-10-24T18:27:06+08:00",
+      "start": "2026-10-24T17:43:00+08:00",
+      "wall_seconds": 2646.0
+    },
+    "emu-help": {
+      "exit": 0,
+      "end": "2026-10-24T18:27:06+08:00",
+      "start": "2026-10-24T18:27:06+08:00",
+      "wall_seconds": 0.0
+    },
+    "vdot-exceptions": {
+      "exit": 0,
+      "end": "2026-10-24T18:46:48+08:00",
+      "start": "2026-10-24T18:27:09+08:00",
+      "wall_seconds": 1179.0
+    },
+    "vdot-overlap": {
+      "exit": 0,
+      "end": "2026-10-24T18:49:21+08:00",
+      "start": "2026-10-24T18:46:49+08:00",
+      "wall_seconds": 152.0
+    },
+    "vdot-smoke": {
+      "exit": 0,
+      "end": "2026-10-24T18:52:38+08:00",
+      "start": "2026-10-24T18:49:23+08:00",
+      "wall_seconds": 195.0
+    },
+    "hello-meijie": {
+      "exit": 0,
+      "end": "2026-10-24T18:53:12+08:00",
+      "start": "2026-10-24T18:52:40+08:00",
+      "wall_seconds": 32.0
+    },
+    "vadd4": {
+      "exit": 0,
+      "end": "2026-10-24T18:54:37+08:00",
+      "start": "2026-10-24T18:53:13+08:00",
+      "wall_seconds": 84.0
+    }
+  },
+  "apps": {
+    "vdot-exceptions": {
+      "exit": 0,
+      "accepted": true,
+      "explicit_reference": "/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so",
+      "difftest_enabled": true,
+      "good_trap_pc": "0x80000680",
+      "cases": 64,
+      "expected_traps": 62,
+      "legal_guards": 2
+    },
+    "vdot-overlap": {
+      "exit": 0,
+      "accepted": true,
+      "explicit_reference": "/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so",
+      "difftest_enabled": true,
+      "good_trap_pc": "0x80000c26",
+      "cases": 60,
+      "partitions": 15
+    },
+    "vdot-smoke": {
+      "exit": 0,
+      "accepted": true,
+      "explicit_reference": "/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so",
+      "difftest_enabled": true,
+      "good_trap_pc": "0x8000040c",
+      "cases": 7
+    },
+    "hello-meijie": {
+      "exit": 0,
+      "accepted": true,
+      "explicit_reference": "/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so",
+      "difftest_enabled": true,
+      "good_trap_pc": "0x8000014c",
+      "text_evidence": "ACCEPTED from verified runner checking required Hello text; full text not displayed in excerpt"
+    },
+    "vadd4": {
+      "exit": 0,
+      "accepted": true,
+      "explicit_reference": "/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so",
+      "difftest_enabled": true,
+      "good_trap_pc": "0x80000234",
+      "values": [
+        11,
+        22,
+        33,
+        44
+      ]
+    }
+  },
+  "artifact_sha256": {
+    "/root/private_data/mj/xiangshan/vdot-mtval-fix-20261024/XiangShan/build/emu": "f9653532fd2a4b9f0d0cc08c131f7c258d4b62c46e672c6886d6643aad926850",
+    "/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so": "11b9f6807c36ed860e0c64cc4e58d27216b19335ecde1ce5797ba2d1cd057b74"
+  },
+  "identities_before": "eight pinned artifacts OK; original overlap identity checked silently by validated runner",
+  "identities_after_exit": 0,
+  "overall_exit": 0,
+  "final_marker": "VDOT_MTVAL_ACCEPTANCE_PASS",
+  "seed": 1,
+  "seed_evidence": "validated runner; per-app runtime seed lines not returned",
+  "build_config": "MinimalConfig NUM_CORES=1 EMU_TRACE=1 JVM_XMX=6G make -j4; from validated runner",
+  "failure_closed": "prior short-1-vm0 mtval discrepancy closed by unchanged exception image and reference on repaired emu; full 64-case suite accepted",
+  "limitations": [
+    "not full dependency-chain/multi-FU contention/selective-cancellation/CSR-commit stress matrix",
+    "not all 32 register index combinations",
+    "no guest-VS or unreachable vector-state coverage",
+    "no equivalent RVV benchmark or performance claim",
+    "no waveform/internal-cycle proof",
+    "full remote build/run logs not downloaded"
+  ],
+  "next": "retain this emu/reference/flash baseline; prepare dependency/competition/cancellation-commit matrix before performance"
+}

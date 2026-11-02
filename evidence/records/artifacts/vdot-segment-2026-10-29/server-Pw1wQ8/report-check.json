@@ -1,0 +1,33 @@
+{
+  "status": "pass",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "cwd": "D:\\Mayyyyyy\\WorkSpaces\\日常工作区1\\2026比赛规划\\RISCV_vdot",
+  "broken_links": [],
+  "raw_files_unchanged": true,
+  "new_simulation": false,
+  "pdf_pages": 27,
+  "pdf_sha256": "656feaae901bf45c1ec21d1a46985ab55152a40206f8168b1cf7180a826e8a50",
+  "reviewed_pdf_pages": [
+    23,
+    24,
+    25
+  ],
+  "document_scope": [
+    "reports/stage3/segmented-dot.md",
+    "docs_final/04_阶段三_协同仿真与性能剖析/分层性能测量与分析.md",
+    "docs_final/README.md",
+    "docs_final/附录/第三阶段复现环境、产物哈希与材料路径索引.md",
+    "artifacts/docs-final-reader-revision-2026-10-29/material-index.json",
+    "docs_final/附录/第三阶段复现环境、产物哈希与材料路径索引.md",
+    "reports/stage3/README.md",
+    "benchmarks/rvv-baseline/vdot-segment-v1/README.md",
+    "artifacts/vdot-segment-2026-10-29/README.md",
+    "docs/HANDOFF.md",
+    "PROGRESS.md",
+    "docs/development-history.md",
+    "docs/verification.md",
+    "reports/stage3/performance.md",
+    "reports/stage3/delivery.md",
+    "artifacts/vdot-segment-2026-10-29/server-Pw1wQ8/review.md"
+  ]
+}

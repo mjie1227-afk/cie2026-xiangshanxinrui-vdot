@@ -1,0 +1,1 @@
+timeout -k 5s 30s /root/private_data/mj/xiangshan/vdot-dev-20261024/XiangShan/build/emu --help 

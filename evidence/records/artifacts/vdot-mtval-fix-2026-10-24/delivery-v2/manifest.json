@@ -1,0 +1,54 @@
+{
+  "base_head": "16ae9ddcda54fc9a2fddffad73174cf793ac7814",
+  "required_dependency_heads": {
+    "coupledL2": "82079f4081bbc1f0221c790fbf8a29b1f23f48b8",
+    "difftest": "62e4540c03c03aa947bdb67f4b6bf66f1a29c5d0",
+    "fudian": "e1bd4695ca7beb36a5ce7357e9527ad9e95b9ec1",
+    "huancun": "90aaf5935206ff322e461c3d021436c20dd0ac85",
+    "openLLC": "614ceb4c5d39d32e6ae786693a35da429ea32c12",
+    "openLLC/openNCB": "546a621ed82302db1bd1edc900b17ba55682c15c",
+    "ready-to-run": "ed8c30e1ec8a9c9aa6b116ce54281235d00273fa",
+    "rocket-chip": "bea0af5d855a871699b907c1988961141bbf28e7",
+    "rocket-chip/cde": "52768c97a27b254c0cc0ac9401feb55b29e18c28",
+    "rocket-chip/hardfloat": "d93aa570806013dea479a92ba9bb33d1f2d4f69f",
+    "src/main/resources/aia": "9464aee3c77b021a037f28aa1b3fe53c71b516f6",
+    "utility": "a8ca0c6564865ee69b564d431ecbc52074ba8060",
+    "yunsuan": "cadd3c2f43096e253d61296b33ac697be8354e29"
+  },
+  "previous_sources": {
+    "src/main/scala/xiangshan/Parameters.scala": "34420eab5fe4019896974230652ad953ccac63bee46089400f72ae3d17cced2e",
+    "src/main/scala/xiangshan/backend/decode/DecodeUnit.scala": "7aa93af92ca2eb44abb7bca7bfdbe58a8d864269d1681feaab4829fdbb5e5323",
+    "src/main/scala/xiangshan/backend/decode/Instructions.scala": "697ca637790bb568294608421e05e23579212457c2be06143c8d5aa95a9e1e12",
+    "src/main/scala/xiangshan/backend/decode/VecDecoder.scala": "717a4e8791fdb0a07d44e80f6cb4c2bf3c2a4ce1c0b15287d1b8fe9d6b18512e",
+    "src/main/scala/xiangshan/backend/decode/VecExceptionGen.scala": "1f051a1637d3920d8c246e784d6c5ea85b41f0b7751784f36da57c609dbac5ca",
+    "src/main/scala/xiangshan/backend/decode/isa/bitfield/RiscvInst.scala": "eed8e1c2bcd5bd0806bc7382bb498da8d3d6ad3971a4b573e4c50f37f3353665",
+    "src/main/scala/xiangshan/backend/fu/FuConfig.scala": "c99e9f83bda8f38244cd82babbaf465c3674d749ba56b816eb90cd8c0c5fe67f",
+    "src/main/scala/xiangshan/backend/fu/FuType.scala": "ed7232d5054670833b1a698798316ec14faf1323dd1ffa5bb8f72ea25023f3a5",
+    "src/main/scala/xiangshan/backend/fu/wrapper/VDot.scala": "359b92c824981b09043497776ca8e5d2d608e490486cd5806701c902fe025fb8",
+    "src/test/scala/xiangshan/backend/fu/VDotLocalTest.scala": "27b755c80a3a5686d25a48bdb217ad0265827329884ae888766234200cd235dc"
+  },
+  "repaired_sources": {
+    "src/main/scala/xiangshan/Parameters.scala": "34420eab5fe4019896974230652ad953ccac63bee46089400f72ae3d17cced2e",
+    "src/main/scala/xiangshan/backend/Bundles.scala": "d49541dc2fa2afbed851ec4788746c15a85137906c2564cde9795d79d443628a",
+    "src/main/scala/xiangshan/backend/decode/DecodeUnit.scala": "7aa93af92ca2eb44abb7bca7bfdbe58a8d864269d1681feaab4829fdbb5e5323",
+    "src/main/scala/xiangshan/backend/decode/Instructions.scala": "697ca637790bb568294608421e05e23579212457c2be06143c8d5aa95a9e1e12",
+    "src/main/scala/xiangshan/backend/decode/VecDecoder.scala": "717a4e8791fdb0a07d44e80f6cb4c2bf3c2a4ce1c0b15287d1b8fe9d6b18512e",
+    "src/main/scala/xiangshan/backend/decode/VecExceptionGen.scala": "1f051a1637d3920d8c246e784d6c5ea85b41f0b7751784f36da57c609dbac5ca",
+    "src/main/scala/xiangshan/backend/decode/isa/bitfield/RiscvInst.scala": "eed8e1c2bcd5bd0806bc7382bb498da8d3d6ad3971a4b573e4c50f37f3353665",
+    "src/main/scala/xiangshan/backend/fu/FuConfig.scala": "c99e9f83bda8f38244cd82babbaf465c3674d749ba56b816eb90cd8c0c5fe67f",
+    "src/main/scala/xiangshan/backend/fu/FuType.scala": "ed7232d5054670833b1a698798316ec14faf1323dd1ffa5bb8f72ea25023f3a5",
+    "src/main/scala/xiangshan/backend/fu/wrapper/CSR.scala": "2f6a27f9f4aef987369b010c92799f5aecac3bf0a659b06186969f630ef83711",
+    "src/main/scala/xiangshan/backend/rob/Rob.scala": "9caf717a9be85ddaa9e73b3f2eb88a0e2933896302ba97acb31eb66cc5edf6d5",
+    "src/main/scala/xiangshan/backend/fu/wrapper/VDot.scala": "359b92c824981b09043497776ca8e5d2d608e490486cd5806701c902fe025fb8",
+    "src/main/scala/xiangshan/backend/rob/VdotTrapInst.scala": "07387c5c686f30fb576fabe2ddbf90f6286a044f9cb45cae1d4c4a0af576a5c4",
+    "src/test/scala/xiangshan/backend/fu/VDotLocalTest.scala": "27b755c80a3a5686d25a48bdb217ad0265827329884ae888766234200cd235dc",
+    "src/test/scala/xiangshan/backend/rob/VdotTrapInstTest.scala": "b819db4aa701c72e7ce2391c61741c54a92ba464175c9ea4dd8de95b407490e1"
+  },
+  "files": {
+    "XiangShan-full.patch": "c30ac809e28d0f0e9da17e506b211d66cf023404096da74e160838c1a1ee3089",
+    "apply_scnet_vdot_mtval.py": "8089415622c14ffd65b2b70011e573c6f897b56587b7b24a706a3f3812889730",
+    "build_scnet_vdot_mtval.sh": "dd07f170f689538d9b4f1d18816f6a67474e438153d0e467f466a1bde4d7285f",
+    "pinned.sha256": "c0ef8a90d1360227e2425ed7dee8eeb1c48f24c47aff8d59e8ca7ba90bb22392"
+  },
+  "scope": "new XiangShan checkout only; original emu/reference/apps unchanged"
+}

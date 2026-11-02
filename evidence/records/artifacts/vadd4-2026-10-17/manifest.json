@@ -1,0 +1,94 @@
+{
+  "scope": "Four-element e32 m1 unmasked vadd.vv on existing MinimalConfig emulator; not official competition configuration validation",
+  "repositories": {
+    "XiangShan": {
+      "path": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "commit": "16ae9ddcda54fc9a2fddffad73174cf793ac7814",
+      "post_run_status": {
+        "argv": [
+          "git",
+          "status",
+          "--short",
+          "--ignore-submodules=all"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      }
+    },
+    "nexus-am": {
+      "path": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/nexus-am",
+      "commit": "086a238062fdfb3281b745a537b361983d0154b5",
+      "post_run_status": {
+        "argv": [
+          "git",
+          "status",
+          "--short",
+          "--ignore-submodules=all"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      }
+    },
+    "difftest": {
+      "path": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest",
+      "commit": "62e4540c03c03aa947bdb67f4b6bf66f1a29c5d0"
+    },
+    "ready-to-run": {
+      "path": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/ready-to-run",
+      "commit": "ed8c30e1ec8a9c9aa6b116ce54281235d00273fa"
+    }
+  },
+  "tool_versions": {
+    "riscv64-linux-gnu-gcc": "riscv64-linux-gnu-gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "riscv64-linux-gnu-objdump": "GNU objdump (GNU Binutils for Ubuntu) 2.42",
+    "make": "GNU Make 4.3"
+  },
+  "files": {
+    "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/emu": {
+      "size": 169801376,
+      "sha256": "9ee6ce3e8372c6345fc7219563c5ac63c9b3517adb87dc347816d14f228fd7e2"
+    },
+    "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/ready-to-run/riscv64-nemu-interpreter-so": {
+      "size": 626696,
+      "sha256": "7af2120acefa83b7299c91b99132f4087dd8ab0f7219461b9aea48ce38891e03"
+    },
+    "/home/lenovo1227/xiangshan-learning/nexus-am/apps/vadd4/Makefile": {
+      "size": 180,
+      "sha256": "a0eb235001fe52c94b0b1482cdf021c3d8110978c0502e9864b8775afe659f84"
+    },
+    "/home/lenovo1227/xiangshan-learning/nexus-am/apps/vadd4/main.c": {
+      "size": 1156,
+      "sha256": "178cd20100fb163c71937179e881077cb5c0d5285b6d717da0427e3596bbde44"
+    },
+    "/home/lenovo1227/xiangshan-learning/nexus-am/apps/vadd4/vadd4.S": {
+      "size": 851,
+      "sha256": "a121ec63a419bcacc1285d518f4f8805dcfef568c28fd6908f26a984f971c125"
+    },
+    "/home/lenovo1227/xiangshan-learning/nexus-am/apps/vadd4/build/vadd4-riscv64-xs.elf": {
+      "size": 48448,
+      "sha256": "6e44c24c0d5eba5aecd23d84e53c3f28434587f24900dd88e66e4be46a0d9d6c"
+    },
+    "/home/lenovo1227/xiangshan-learning/nexus-am/apps/vadd4/build/vadd4-riscv64-xs.bin": {
+      "size": 6144,
+      "sha256": "0fa5845070b3f954cf375cf571692326971cda6a994d1f20ee65a626d4357283"
+    },
+    "/home/lenovo1227/xiangshan-learning/nexus-am/apps/vadd4/build/vadd4-riscv64-xs.txt": {
+      "size": 89027,
+      "sha256": "b0737d1ade6bd855b274e3ccc52257dcb7779dce2b3567e5887623e3bbde03fc"
+    }
+  },
+  "initial_full_status": "Before edits, git status --short for original XiangShan and nexus-am both returned exit 0 and empty output.",
+  "checks": {
+    "build_exit_code": 0,
+    "emu_exit_code": 0,
+    "diff_enabled": true,
+    "vl4": true,
+    "all_four": true,
+    "pass": true,
+    "good_trap": true,
+    "target_pc": "0x80000148",
+    "target_word": "0x021101d7"
+  }
+}

@@ -1,0 +1,27 @@
+  PID COMMAND
+    1 sh
+   10 sshd
+   47 jupyter-lab
+  165 code-2d0b7506a3
+  179 sh
+  183 MainThread
+  231 sh
+  236 MainThread
+  284 MainThread
+  296 copilot-runtime
+  377 MainThread
+  516 bash
+13437 bash
+21149 sshd
+21151 sh
+21169 code-2d0b7506a3
+21196 MainThread
+21208 MainThread
+21305 codex
+22539 MainThread
+22822 sleep
+22827 bash
+22832 python3
+22835 cpuUsage.sh
+22840 sleep
+22841 ps

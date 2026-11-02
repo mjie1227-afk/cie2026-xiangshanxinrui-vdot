@@ -1,0 +1,14 @@
+[
+  "reports/stage3/segmented-dot.md",
+  "docs_final/04_阶段三_协同仿真与性能剖析/分层性能测量与分析.md",
+  "docs_final/README.md",
+  "docs_final/附录/第三阶段复现环境、产物哈希与材料路径索引.md",
+  "artifacts/docs-final-reader-revision-2026-10-29/material-index.json",
+  "docs_final/附录/第三阶段复现环境、产物哈希与材料路径索引.md",
+  "reports/stage3/README.md",
+  "benchmarks/rvv-baseline/vdot-segment-v1/README.md",
+  "artifacts/vdot-segment-2026-10-29/README.md",
+  "docs/HANDOFF.md",
+  "PROGRESS.md",
+  "docs/development-history.md"
+]

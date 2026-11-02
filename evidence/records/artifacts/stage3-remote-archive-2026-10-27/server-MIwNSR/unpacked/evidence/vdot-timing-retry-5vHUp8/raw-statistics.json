@@ -1,0 +1,50 @@
+[
+  {
+    "variant": "empty",
+    "samples": 6,
+    "raw_cycle_min": 74,
+    "raw_cycle_median": 74.0,
+    "raw_cycle_max": 74,
+    "instret": 4
+  },
+  {
+    "variant": "addi16",
+    "samples": 6,
+    "raw_cycle_min": 86,
+    "raw_cycle_median": 86.0,
+    "raw_cycle_max": 86,
+    "instret": 20
+  },
+  {
+    "variant": "addi64",
+    "samples": 6,
+    "raw_cycle_min": 134,
+    "raw_cycle_median": 134.0,
+    "raw_cycle_max": 134,
+    "instret": 68
+  },
+  {
+    "variant": "native",
+    "samples": 6,
+    "raw_cycle_min": 81,
+    "raw_cycle_median": 81.0,
+    "raw_cycle_max": 81,
+    "instret": 5
+  },
+  {
+    "variant": "rvv_m1",
+    "samples": 6,
+    "raw_cycle_min": 130,
+    "raw_cycle_median": 130.0,
+    "raw_cycle_max": 130,
+    "instret": 13
+  },
+  {
+    "variant": "rvv_mf2",
+    "samples": 6,
+    "raw_cycle_min": 122,
+    "raw_cycle_median": 122.0,
+    "raw_cycle_max": 122,
+    "instret": 13
+  }
+]

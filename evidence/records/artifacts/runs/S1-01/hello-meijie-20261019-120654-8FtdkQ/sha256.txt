@@ -1,0 +1,7 @@
+9e065a55eeccd8b5ce2af41e6a128c3a4f7604b097ee089972e45282a0ccab6c  /mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/artifacts/runs/S1-01/hello-meijie-20261019-120654-8FtdkQ/hello.c
+83756211935fd347931abff704be1d1d0b4300b214c799187b83c593df206fb5  /mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/artifacts/runs/S1-01/hello-meijie-20261019-120654-8FtdkQ/Makefile
+36239fedc250746563dad77637fb944fa6444352e91da5b9112ecbd6214b98d0  /mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/artifacts/runs/S1-01/hello-meijie-20261019-120654-8FtdkQ/hello-meijie-riscv64-xs.elf
+195dca0c3a748fea70efa84e1d63cd3926098189f61fc6babe80214425b1f479  /mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/artifacts/runs/S1-01/hello-meijie-20261019-120654-8FtdkQ/hello-meijie-riscv64-xs.bin
+9d973862b211a41b35b335443419357ac4e51fc95f62c8dc3e25818a4806c1d7  /mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/artifacts/runs/S1-01/hello-meijie-20261019-120654-8FtdkQ/hello-meijie-riscv64-xs.txt
+9ee6ce3e8372c6345fc7219563c5ac63c9b3517adb87dc347816d14f228fd7e2  /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/emu
+7af2120acefa83b7299c91b99132f4087dd8ab0f7219461b9aea48ce38891e03  /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/ready-to-run/riscv64-nemu-interpreter-so

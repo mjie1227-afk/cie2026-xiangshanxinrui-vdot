@@ -1,0 +1,68 @@
+RUNNING=build wall_limit=300
+BUILD_EXIT=0
+KERNEL={"name": "empty", "code_sha256": "be765865340518ac28b4a3e2f4fe6b524ed8b91e4bf10c721944dd58bb327cb9", "payload_begin": "0x800001ec", "payload_end": "0x800001ec", "group": 0, "mode": "empty", "expected_instret": 6, "static_instructions": 0}
+KERNEL={"name": "native_independent", "code_sha256": "5a4dd2bd5492214461230a0df4d2f60c12739b6b5c0df910d5879adc6a889dce", "payload_begin": "0x80000330", "payload_end": "0x800003e4", "group": 32, "mode": "independent", "expected_instret": 950, "static_instructions": 45}
+KERNEL={"name": "rvv_mf2_independent", "code_sha256": "907bda00436e97e7f15180faa5cb0cb6f9620f927935b902e3f00f9a0d9acb3f", "payload_begin": "0x80000528", "payload_end": "0x80000604", "group": 32, "mode": "independent", "expected_instret": 1115, "static_instructions": 55}
+KERNEL={"name": "native_reuse", "code_sha256": "b1193de555d558a006fb685bb4a69fc2f98b074f6f06a5e25c024e8c2bb1ebef", "payload_begin": "0x80000748", "payload_end": "0x800007dc", "group": 32, "mode": "reuse", "expected_instret": 694, "static_instructions": 37}
+KERNEL={"name": "rvv_mf2_reuse", "code_sha256": "3aa52e7688eea9d5570dddfd3550cd2db0c4a91a3cc057d5a46c7a5a75ec0292", "payload_begin": "0x80000920", "payload_end": "0x800009dc", "group": 32, "mode": "reuse", "expected_instret": 859, "static_instructions": 47}
+RUNNING=architecture wall_limit=10800
+PROGRESS stage=architecture elapsed_s=60 log_bytes=1064
+PROGRESS stage=architecture elapsed_s=120 log_bytes=1197
+PROGRESS stage=architecture elapsed_s=180 log_bytes=1322
+PROGRESS stage=architecture elapsed_s=240 log_bytes=1459
+PROGRESS stage=architecture elapsed_s=300 log_bytes=1579
+PROGRESS stage=architecture elapsed_s=360 log_bytes=1720
+PROGRESS stage=architecture elapsed_s=420 log_bytes=1849
+PROGRESS stage=architecture elapsed_s=480 log_bytes=1991
+PROGRESS stage=architecture elapsed_s=540 log_bytes=2122
+PROGRESS stage=architecture elapsed_s=600 log_bytes=2254
+PROGRESS stage=architecture elapsed_s=660 log_bytes=2387
+PROGRESS stage=architecture elapsed_s=720 log_bytes=2522
+PROGRESS stage=architecture elapsed_s=780 log_bytes=2662
+PROGRESS stage=architecture elapsed_s=840 log_bytes=2794
+PROGRESS stage=architecture elapsed_s=900 log_bytes=2933
+PROGRESS stage=architecture elapsed_s=960 log_bytes=3056
+PROGRESS stage=architecture elapsed_s=1020 log_bytes=3191
+PROGRESS stage=architecture elapsed_s=1080 log_bytes=3325
+PROGRESS stage=architecture elapsed_s=1140 log_bytes=3451
+PROGRESS stage=architecture elapsed_s=1200 log_bytes=3590
+PROGRESS stage=architecture elapsed_s=1260 log_bytes=3715
+PROGRESS stage=architecture elapsed_s=1320 log_bytes=3856
+PROGRESS stage=architecture elapsed_s=1380 log_bytes=3986
+PROGRESS stage=architecture elapsed_s=1440 log_bytes=4129
+PROGRESS stage=architecture elapsed_s=1500 log_bytes=4262
+PROGRESS stage=architecture elapsed_s=1560 log_bytes=4389
+PROGRESS stage=architecture elapsed_s=1620 log_bytes=4527
+PROGRESS stage=architecture elapsed_s=1680 log_bytes=4658
+PROGRESS stage=architecture elapsed_s=1740 log_bytes=4795
+PROGRESS stage=architecture elapsed_s=1800 log_bytes=4923
+PROGRESS stage=architecture elapsed_s=1860 log_bytes=5065
+PROGRESS stage=architecture elapsed_s=1920 log_bytes=5187
+PROGRESS stage=architecture elapsed_s=1980 log_bytes=5327
+PROGRESS stage=architecture elapsed_s=2040 log_bytes=5456
+PROGRESS stage=architecture elapsed_s=2100 log_bytes=5588
+PROGRESS stage=architecture elapsed_s=2160 log_bytes=5719
+PROGRESS stage=architecture elapsed_s=2220 log_bytes=5850
+PROGRESS stage=architecture elapsed_s=2280 log_bytes=5980
+PROGRESS stage=architecture elapsed_s=2340 log_bytes=6107
+PROGRESS stage=architecture elapsed_s=2400 log_bytes=6250
+PROGRESS stage=architecture elapsed_s=2460 log_bytes=6383
+PROGRESS stage=architecture elapsed_s=2520 log_bytes=6520
+PROGRESS stage=architecture elapsed_s=2580 log_bytes=6645
+PROGRESS stage=architecture elapsed_s=2640 log_bytes=6793
+PROGRESS stage=architecture elapsed_s=2700 log_bytes=6914
+PROGRESS stage=architecture elapsed_s=2760 log_bytes=7048
+ARCHITECTURE_EXIT=0
+The reference model is /root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so
+The first instruction of core 0 has commited. Difftest enabled.
+PASS VDOT_OPT_TILE calls=70 samples=45 warmups=25 variants=5 outputs128=1 guards=1 inputs=1 state=1
+[PERF ][time=              780545] SimTop.l_soc.core_with_l2.l2top.inner.l2cache.slices_1.mshrCtl: mshr_latency_maxCore 0: [32mHIT GOOD TRAP at pc = 0x80000d68
+OPT_IDENTITIES={"/root/private_data/mj/xiangshan/vdot-mtval-fix-20261024/XiangShan/build/emu": "f9653532fd2a4b9f0d0cc08c131f7c258d4b62c46e672c6886d6643aad926850", "/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so": "11b9f6807c36ed860e0c64cc4e58d27216b19335ecde1ce5797ba2d1cd057b74", "/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/.config": "64282bca051b5dbc5fca742f4fbca2ade937a70f3c4d2ec93c1f4836aca5d9be", "/root/private_data/mj/xiangshan/evidence/vdot-build-80mKCD/boot-flash.bin": "fea548655a8b6eecacace83e2f4380a18b8aa83bce964c8aae4cffbe2f5a9724", "/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-tile-v1/build/vdot-tile-v1-riscv64-xs.bin": "a95345da01961102dc61f8a2345da8d1beb25a15dce1080edcb72390c18255c5"}
+OPT_RAW={"variant": "empty", "kind": "empty", "mode": "empty", "group": 0, "dot_operations": 0, "outputs": 0, "dynamic_vector_loads": 0, "final_output_bytes": 0, "samples": 9, "raw_cycle_min": 100, "raw_cycle_median": 100, "raw_cycle_max": 101, "instret": 6, "formal_cycles": [100, 100, 100, 100, 101, 100, 100, 100, 100]}
+OPT_RAW={"variant": "native_independent", "kind": "native", "mode": "independent", "group": 32, "dot_operations": 128, "outputs": 4, "dynamic_vector_loads": 256, "final_output_bytes": 64, "samples": 9, "raw_cycle_min": 1076, "raw_cycle_median": 1077, "raw_cycle_max": 1087, "instret": 950, "formal_cycles": [1076, 1076, 1079, 1077, 1076, 1080, 1077, 1080, 1087]}
+OPT_RAW={"variant": "rvv_mf2_independent", "kind": "rvv_mf2", "mode": "independent", "group": 32, "dot_operations": 128, "outputs": 4, "dynamic_vector_loads": 256, "final_output_bytes": 64, "samples": 9, "raw_cycle_min": 1262, "raw_cycle_median": 1268, "raw_cycle_max": 1270, "instret": 1115, "formal_cycles": [1262, 1262, 1269, 1266, 1269, 1268, 1270, 1262, 1269]}
+OPT_RAW={"variant": "native_reuse", "kind": "native", "mode": "reuse", "group": 32, "dot_operations": 128, "outputs": 4, "dynamic_vector_loads": 128, "final_output_bytes": 64, "samples": 9, "raw_cycle_min": 787, "raw_cycle_median": 790, "raw_cycle_max": 792, "instret": 694, "formal_cycles": [790, 788, 789, 792, 787, 790, 790, 787, 790]}
+OPT_RAW={"variant": "rvv_mf2_reuse", "kind": "rvv_mf2", "mode": "reuse", "group": 32, "dot_operations": 128, "outputs": 4, "dynamic_vector_loads": 128, "final_output_bytes": 64, "samples": 9, "raw_cycle_min": 1041, "raw_cycle_median": 1043, "raw_cycle_max": 1044, "instret": 859, "formal_cycles": [1043, 1044, 1044, 1041, 1044, 1042, 1041, 1043, 1044]}
+VDOT_OPT_READY experiment=tile samples=45 warmups=25
+SCOPE=prewarmed_load_or_tile equal_output_control no_cold_DRAM_claim
+LOG_DIR=/root/private_data/mj/xiangshan/evidence/vdot-tile-x9yIzN

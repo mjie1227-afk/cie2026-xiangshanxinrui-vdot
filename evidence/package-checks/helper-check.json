@@ -1,0 +1,90 @@
+{
+  "scope": "Synthetic logs and mock-process handling only; no processor build or simulation.",
+  "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/submission_ready/cie2026-xiangshanxinrui-vdot",
+  "argv": [
+    "/usr/bin/python3",
+    "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/submission_ready/cie2026-xiangshanxinrui-vdot/tools/check_helpers.py"
+  ],
+  "python": "3.12.3",
+  "temporary_records": "/tmp/vdot-helper-check-hhi9oi6p",
+  "checks": [
+    {
+      "name": "complete-success",
+      "passed": true
+    },
+    {
+      "name": "nonzero-process-exit",
+      "passed": true
+    },
+    {
+      "name": "missing-DiffTest",
+      "passed": true
+    },
+    {
+      "name": "missing-GOOD-TRAP",
+      "passed": true
+    },
+    {
+      "name": "missing-app-PASS",
+      "passed": true
+    },
+    {
+      "name": "wrong-reference",
+      "passed": true
+    },
+    {
+      "name": "failure-marker",
+      "passed": true
+    },
+    {
+      "name": "timeout",
+      "passed": true
+    },
+    {
+      "name": "missing-input-refused",
+      "passed": true,
+      "exit": 2
+    },
+    {
+      "name": "existing-restore-directory-refused",
+      "passed": true,
+      "exit": 2
+    },
+    {
+      "name": "build-shell-syntax",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "name": "mock-process-success",
+      "passed": true,
+      "runner_exit": 0,
+      "recorded_exit": 0,
+      "child_stopped": true
+    },
+    {
+      "name": "mock-process-failure",
+      "passed": true,
+      "runner_exit": 1,
+      "recorded_exit": 9,
+      "child_stopped": true
+    },
+    {
+      "name": "mock-process-timeout",
+      "passed": true,
+      "runner_exit": 1,
+      "recorded_exit": 124,
+      "child_stopped": true
+    },
+    {
+      "name": "mock-process-interrupt",
+      "passed": true,
+      "runner_exit": 1,
+      "recorded_exit": 130,
+      "child_stopped": true
+    }
+  ],
+  "passed": 15,
+  "failed": 0,
+  "command_exit_code": 0
+}

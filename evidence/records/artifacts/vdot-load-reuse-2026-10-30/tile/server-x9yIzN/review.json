@@ -1,0 +1,450 @@
+{
+  "status": "accepted",
+  "experiment": "tile",
+  "review_date": "2026-10-30",
+  "raw_directory": "vdot-tile-x9yIzN",
+  "original_files": 31,
+  "checks": [
+    {
+      "name": "matrix matches local delivered matrix",
+      "passed": true
+    },
+    {
+      "name": "package digest",
+      "passed": true
+    },
+    {
+      "name": "matrix matches archive",
+      "passed": true
+    },
+    {
+      "name": "runner matches local source",
+      "passed": true
+    },
+    {
+      "name": "source archive/hash/local main.c",
+      "passed": true
+    },
+    {
+      "name": "source archive/hash/local cases.S",
+      "passed": true
+    },
+    {
+      "name": "source archive/hash/local Makefile",
+      "passed": true
+    },
+    {
+      "name": "accepted prior run matches local archive",
+      "passed": true
+    },
+    {
+      "name": "core reference config flash before/after match baseline",
+      "passed": true
+    },
+    {
+      "name": "downloaded BIN matches runtime identity",
+      "passed": true
+    },
+    {
+      "name": "completed result totals",
+      "passed": true
+    },
+    {
+      "name": "all recorded stages exit zero",
+      "passed": true
+    },
+    {
+      "name": "wrapper exit zero",
+      "passed": true
+    },
+    {
+      "name": "build and tee exit zero",
+      "passed": true
+    },
+    {
+      "name": "runtime argv",
+      "passed": true
+    },
+    {
+      "name": "recomputed runtime matches",
+      "passed": true
+    },
+    {
+      "name": "PASS DiffTest reference GOOD TRAP without failure or limit",
+      "passed": true
+    },
+    {
+      "name": "all raw samples equal JSON and CSV",
+      "passed": true
+    },
+    {
+      "name": "warmup/formal totals",
+      "passed": true
+    },
+    {
+      "name": "statistics and comparisons recalculated",
+      "passed": true
+    },
+    {
+      "name": "console stats and identities",
+      "passed": true
+    },
+    {
+      "name": "user-paste stats and identities",
+      "passed": true
+    },
+    {
+      "name": "BIN kernels and timing boundaries match delivered machine code",
+      "passed": true
+    },
+    {
+      "name": "disassembly matches BIN empty",
+      "passed": true
+    },
+    {
+      "name": "disassembly matches BIN native_independent",
+      "passed": true
+    },
+    {
+      "name": "disassembly matches BIN rvv_mf2_independent",
+      "passed": true
+    },
+    {
+      "name": "disassembly matches BIN native_reuse",
+      "passed": true
+    },
+    {
+      "name": "disassembly matches BIN rvv_mf2_reuse",
+      "passed": true
+    },
+    {
+      "name": "ELF architecture",
+      "passed": true
+    },
+    {
+      "name": "ELF allocated section matches BIN 0x80000000",
+      "passed": true
+    },
+    {
+      "name": "ELF allocated section matches BIN 0x80000a60",
+      "passed": true
+    },
+    {
+      "name": "ELF allocated section matches BIN 0x80000d5e",
+      "passed": true
+    },
+    {
+      "name": "ELF allocated section matches BIN 0x80000d60",
+      "passed": true
+    },
+    {
+      "name": "ELF allocated section matches BIN 0x80000d7a",
+      "passed": true
+    },
+    {
+      "name": "ELF allocated section matches BIN 0x80000d92",
+      "passed": true
+    },
+    {
+      "name": "ELF allocated section matches BIN 0x80000d9e",
+      "passed": true
+    },
+    {
+      "name": "ELF allocated section matches BIN 0x80000dca",
+      "passed": true
+    },
+    {
+      "name": "ELF allocated section matches BIN 0x80000dcc",
+      "passed": true
+    },
+    {
+      "name": "ELF allocated section matches BIN 0x80000e90",
+      "passed": true
+    },
+    {
+      "name": "ELF allocated section matches BIN 0x800011c0",
+      "passed": true
+    },
+    {
+      "name": "ELF allocated section matches BIN 0x800014a8",
+      "passed": true
+    },
+    {
+      "name": "ELF allocated section matches BIN 0x80001802",
+      "passed": true
+    },
+    {
+      "name": "ELF allocated section matches BIN 0x8000180a",
+      "passed": true
+    },
+    {
+      "name": "ELF allocated section matches BIN 0x80001f18",
+      "passed": true
+    },
+    {
+      "name": "ELF allocated section matches BIN 0x80001f50",
+      "passed": true
+    },
+    {
+      "name": "ELF allocated section matches BIN 0x80002768",
+      "passed": true
+    },
+    {
+      "name": "ELF allocated section matches BIN 0x80002840",
+      "passed": true
+    },
+    {
+      "name": "ELF symbols match kernel nm records",
+      "passed": true
+    },
+    {
+      "name": "nine complete full-run counters match log",
+      "passed": true
+    },
+    {
+      "name": "wrapper and emulator elapsed time agree",
+      "passed": true
+    },
+    {
+      "name": "raw files unchanged by review",
+      "passed": true
+    }
+  ],
+  "calls": 70,
+  "warmups": 25,
+  "formal_samples": 45,
+  "statistics": [
+    {
+      "variant": "empty",
+      "kind": "empty",
+      "mode": "empty",
+      "group": 0,
+      "dot_operations": 0,
+      "outputs": 0,
+      "dynamic_vector_loads": 0,
+      "final_output_bytes": 0,
+      "samples": 9,
+      "raw_cycle_min": 100,
+      "raw_cycle_median": 100,
+      "raw_cycle_max": 101,
+      "instret": 6,
+      "formal_cycles": [
+        100,
+        100,
+        100,
+        100,
+        101,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    {
+      "variant": "native_independent",
+      "kind": "native",
+      "mode": "independent",
+      "group": 32,
+      "dot_operations": 128,
+      "outputs": 4,
+      "dynamic_vector_loads": 256,
+      "final_output_bytes": 64,
+      "samples": 9,
+      "raw_cycle_min": 1076,
+      "raw_cycle_median": 1077,
+      "raw_cycle_max": 1087,
+      "instret": 950,
+      "formal_cycles": [
+        1076,
+        1076,
+        1079,
+        1077,
+        1076,
+        1080,
+        1077,
+        1080,
+        1087
+      ]
+    },
+    {
+      "variant": "rvv_mf2_independent",
+      "kind": "rvv_mf2",
+      "mode": "independent",
+      "group": 32,
+      "dot_operations": 128,
+      "outputs": 4,
+      "dynamic_vector_loads": 256,
+      "final_output_bytes": 64,
+      "samples": 9,
+      "raw_cycle_min": 1262,
+      "raw_cycle_median": 1268,
+      "raw_cycle_max": 1270,
+      "instret": 1115,
+      "formal_cycles": [
+        1262,
+        1262,
+        1269,
+        1266,
+        1269,
+        1268,
+        1270,
+        1262,
+        1269
+      ]
+    },
+    {
+      "variant": "native_reuse",
+      "kind": "native",
+      "mode": "reuse",
+      "group": 32,
+      "dot_operations": 128,
+      "outputs": 4,
+      "dynamic_vector_loads": 128,
+      "final_output_bytes": 64,
+      "samples": 9,
+      "raw_cycle_min": 787,
+      "raw_cycle_median": 790,
+      "raw_cycle_max": 792,
+      "instret": 694,
+      "formal_cycles": [
+        790,
+        788,
+        789,
+        792,
+        787,
+        790,
+        790,
+        787,
+        790
+      ]
+    },
+    {
+      "variant": "rvv_mf2_reuse",
+      "kind": "rvv_mf2",
+      "mode": "reuse",
+      "group": 32,
+      "dot_operations": 128,
+      "outputs": 4,
+      "dynamic_vector_loads": 128,
+      "final_output_bytes": 64,
+      "samples": 9,
+      "raw_cycle_min": 1041,
+      "raw_cycle_median": 1043,
+      "raw_cycle_max": 1044,
+      "instret": 859,
+      "formal_cycles": [
+        1043,
+        1044,
+        1044,
+        1041,
+        1044,
+        1042,
+        1041,
+        1043,
+        1044
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "comparison": "same_implementation",
+      "kind": "native",
+      "before": "independent",
+      "after": "reuse",
+      "before_cycles": 1077,
+      "after_cycles": 790,
+      "ratio": 1.3632911392405063,
+      "time_reduction_percent": 26.64809656453111
+    },
+    {
+      "comparison": "same_implementation",
+      "kind": "rvv_mf2",
+      "before": "independent",
+      "after": "reuse",
+      "before_cycles": 1268,
+      "after_cycles": 1043,
+      "ratio": 1.2157238734419942,
+      "time_reduction_percent": 17.744479495268138
+    },
+    {
+      "comparison": "same_schedule_rvv_over_native",
+      "mode": "independent",
+      "native_cycles": 1077,
+      "baseline_cycles": 1268,
+      "ratio": 1.1773444753946147,
+      "time_reduction_percent": 15.063091482649838
+    },
+    {
+      "comparison": "same_schedule_rvv_over_native",
+      "mode": "reuse",
+      "native_cycles": 790,
+      "baseline_cycles": 1043,
+      "ratio": 1.320253164556962,
+      "time_reduction_percent": 24.256951102588687
+    }
+  ],
+  "architecture_wall_seconds": 2768.5,
+  "emulator_host_seconds": 2768.446,
+  "good_trap_pc": "0x80000d68",
+  "application_sha256": "a95345da01961102dc61f8a2345da8d1beb25a15dce1080edcb72390c18255c5",
+  "elf_sha256": "e8e6f03258cd3e31c208e066e40ffaad7b84cfbef061ca66ad385646b372d88f",
+  "full_run_counters": [
+    {
+      "time": 780545,
+      "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+      "counter": "clock_cycle",
+      "value": 780546
+    },
+    {
+      "time": 780545,
+      "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+      "counter": "commitInstr",
+      "value": 331391
+    },
+    {
+      "time": 780545,
+      "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+      "counter": "waitFenCycle",
+      "value": 2091
+    },
+    {
+      "time": 780545,
+      "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+      "counter": "waitLoadCycle",
+      "value": 303200
+    },
+    {
+      "time": 780545,
+      "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+      "counter": "waitStoreCycle",
+      "value": 273231
+    },
+    {
+      "time": 780545,
+      "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+      "counter": "sbuffer_req_valid",
+      "value": 30397
+    },
+    {
+      "time": 780545,
+      "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+      "counter": "sbuffer_req_fire",
+      "value": 18048
+    },
+    {
+      "time": 780545,
+      "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+      "counter": "dcache_req_valid",
+      "value": 4717
+    },
+    {
+      "time": 780545,
+      "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+      "counter": "dcache_req_fire",
+      "value": 4714
+    }
+  ],
+  "note": "新应用构建和完整运行均有日志。",
+  "new_simulation": false,
+  "scope": "same-task prewarmed raw windows; fixed seed; no per-resource causal attribution"
+}

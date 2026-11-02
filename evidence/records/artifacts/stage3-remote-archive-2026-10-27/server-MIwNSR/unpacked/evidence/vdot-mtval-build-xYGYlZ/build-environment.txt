@@ -1,0 +1,6 @@
+CONFIG=MinimalConfig
+NUM_CORES=1
+EMU_TRACE=1
+JVM_XMX=6G
+NOOP_HOME=/root/private_data/mj/xiangshan/vdot-mtval-fix-20261024/XiangShan
+NEMU_HOME=/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU

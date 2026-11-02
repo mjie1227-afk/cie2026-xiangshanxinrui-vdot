@@ -1,0 +1,59 @@
+{
+  "scope": "whole_application_not_per_kernel",
+  "records": [
+    {
+      "time": 813425,
+      "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+      "counter": "clock_cycle",
+      "value": 813426
+    },
+    {
+      "time": 813425,
+      "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+      "counter": "commitInstr",
+      "value": 530124
+    },
+    {
+      "time": 813425,
+      "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+      "counter": "waitFenCycle",
+      "value": 974
+    },
+    {
+      "time": 813425,
+      "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+      "counter": "waitLoadCycle",
+      "value": 286862
+    },
+    {
+      "time": 813425,
+      "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+      "counter": "waitStoreCycle",
+      "value": 236342
+    },
+    {
+      "time": 813425,
+      "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+      "counter": "sbuffer_req_valid",
+      "value": 61928
+    },
+    {
+      "time": 813425,
+      "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+      "counter": "sbuffer_req_fire",
+      "value": 36372
+    },
+    {
+      "time": 813425,
+      "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+      "counter": "dcache_req_valid",
+      "value": 9260
+    },
+    {
+      "time": 813425,
+      "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+      "counter": "dcache_req_fire",
+      "value": 9251
+    }
+  ]
+}

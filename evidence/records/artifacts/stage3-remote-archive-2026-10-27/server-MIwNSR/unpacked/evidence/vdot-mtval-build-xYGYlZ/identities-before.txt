@@ -1,0 +1,8 @@
+/root/private_data/mj/xiangshan/vdot-dev-20261024/XiangShan/build/emu: OK
+/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so: OK
+/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/.config: OK
+/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-smoke/build/vdot-smoke-riscv64-xs.bin: OK
+/root/private_data/mj/xiangshan/evidence/vdot-build-80mKCD/boot-flash.bin: OK
+/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-exceptions/build/vdot-exceptions-riscv64-xs.bin: OK
+/root/private_data/mj/xiangshan/sources/nexus-am-learning/apps/hello-meijie/build/hello-meijie-riscv64-xs.bin: OK
+/root/private_data/mj/xiangshan/sources/nexus-am-learning/apps/vadd4/build/vadd4-riscv64-xs.bin: OK

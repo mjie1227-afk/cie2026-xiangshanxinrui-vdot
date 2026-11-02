@@ -1,0 +1,3 @@
+IDENTITIES_AFTER_EXIT=0
+VDOT_MATRIX_EXIT=1
+LOG_DIR=/root/private_data/mj/xiangshan/evidence/vdot-matrix-OMcrpf

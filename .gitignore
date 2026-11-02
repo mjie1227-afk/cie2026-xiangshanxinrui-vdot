@@ -1,0 +1,27 @@
+# Local source checkouts, builds and runs
+/work/
+/runs/
+/build/
+/target/
+apps/**/build/
+__pycache__/
+*.pyc
+*.vcd
+*.fst
+*.o
+*.so
+*.elf
+# Submission metadata and credentials are kept outside the public repository
+.env
+.env.*
+private/
+*private-key*
+my_submission.txt
+submission.asc
+# Media and packaged copies are delivered separately
+*.mp4
+*.mkv
+*.zip
+*.7z
+*.tar.gz
+!configs/boot-flash.bin

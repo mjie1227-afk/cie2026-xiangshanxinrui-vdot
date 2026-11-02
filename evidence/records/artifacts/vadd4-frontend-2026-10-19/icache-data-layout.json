@@ -1,0 +1,44 @@
+{
+  "scope": "TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ifu",
+  "time_ps": 5083,
+  "signals_hex": {
+    "f2_valid": "0x1",
+    "f2_ftq_req_startAddr": "0x80000134",
+    "f2_ftq_req_ftqIdx_flag": "0x0",
+    "f2_ftq_req_ftqIdx_value": "0x3",
+    "f2_fire": "0x1",
+    "f2_cut_ptr_10": "0x24",
+    "f2_cut_ptr_11": "0x25"
+  },
+  "missing": [
+    "f2_cut_data_10",
+    "f2_cut_data_11"
+  ],
+  "cache_bus_width_bits": 512,
+  "low_128_bits": "0x020661a7021101d70205e10702056087",
+  "target_slice": "[95:64]",
+  "target_instruction": "0x021101d7",
+  "reason": "IFU.scala duplicates the 64-byte bank-arranged response before cutting; f2_cut_ptr_10=36 and _11=37 select the duplicated response halfwords 4/5, i.e. original bits 95:64.",
+  "not_present_in_vcd": [
+    "f2_cut_data_10",
+    "f2_cut_data_11"
+  ],
+  "source_base": "D:/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/src/main/scala/xiangshan/frontend",
+  "source_locations": [
+    "IFU.scala:458-507",
+    "icache/ICacheMainPipe.scala:53,537-555"
+  ],
+  "inspection": {
+    "argv": [
+      "wsl",
+      "-d",
+      "Ubuntu",
+      "--",
+      "python3",
+      "-"
+    ],
+    "inline_source_archive": "ifu-cut-probe-inline.py",
+    "exit_code": 0
+  },
+  "user_status": "FTQ and IFU output confirmed; ICache response not yet personally confirmed."
+}

@@ -1,0 +1,217 @@
+{
+  "variants": [
+    "empty",
+    "addi16",
+    "addi64",
+    "native",
+    "rvv_m1",
+    "rvv_mf2"
+  ],
+  "expected_instret": [
+    4,
+    20,
+    68,
+    5,
+    13,
+    13
+  ],
+  "input": [
+    [
+      255,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174
+    ],
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      144,
+      151,
+      158,
+      165,
+      172,
+      179,
+      186,
+      193
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      96,
+      107,
+      118,
+      129,
+      140,
+      151,
+      162,
+      173
+    ],
+    [
+      36,
+      178,
+      191,
+      204,
+      217,
+      230,
+      243,
+      0,
+      13,
+      26,
+      39,
+      52,
+      65,
+      78,
+      91,
+      104
+    ]
+  ],
+  "expected": [
+    [
+      [
+        12008185004168421631,
+        12586906386873034919
+      ],
+      [
+        578437695752307201,
+        13959667549082654608
+      ],
+      [
+        72340172838076673,
+        12511729344511896416
+      ],
+      [
+        68652242458096164,
+        7519690044779993613
+      ]
+    ],
+    [
+      [
+        12008185004168421631,
+        12586906386873034919
+      ],
+      [
+        578437695752307201,
+        13959667549082654608
+      ],
+      [
+        72340172838076673,
+        12511729344511896416
+      ],
+      [
+        68652242458096164,
+        7519690044779993613
+      ]
+    ],
+    [
+      [
+        12008185004168421631,
+        12586906386873034919
+      ],
+      [
+        578437695752307201,
+        13959667549082654608
+      ],
+      [
+        72340172838076673,
+        12511729344511896416
+      ],
+      [
+        68652242458096164,
+        7519690044779993613
+      ]
+    ],
+    [
+      [
+        12008185004168421631,
+        12586906386873034919
+      ],
+      [
+        578437695752307201,
+        13959667549082654608
+      ],
+      [
+        72340172838076673,
+        12511729344511896416
+      ],
+      [
+        36,
+        0
+      ]
+    ],
+    [
+      [
+        12008185004168421631,
+        12586906386873034919
+      ],
+      [
+        578437695752307201,
+        13959667549082654608
+      ],
+      [
+        72340172838076673,
+        12511729344511896416
+      ],
+      [
+        36,
+        0
+      ]
+    ],
+    [
+      [
+        12008185004168421631,
+        12586906386873034919
+      ],
+      [
+        578437695752307201,
+        13959667549082654608
+      ],
+      [
+        72340172838076673,
+        12511729344511896416
+      ],
+      [
+        36,
+        0
+      ]
+    ]
+  ],
+  "calls": 42,
+  "samples": 36,
+  "warmups": 6,
+  "rounds": 6,
+  "source_sha256": {
+    "src/main/scala/xiangshan/backend/decode/DecodeUnit.scala": "7aa93af92ca2eb44abb7bca7bfdbe58a8d864269d1681feaab4829fdbb5e5323",
+    "src/main/scala/xiangshan/backend/rename/Rename.scala": "ca4ac7d4daf69436046c90967980f7894c8b0b88dc062fafdb5c70b6f66829c0",
+    "src/main/scala/xiangshan/backend/fu/NewCSR/CSROoORead.scala": "740f545c3db834cfbb1f9083a11a7047b6614f83ea4826db0183f14733695ccf",
+    "src/main/scala/xiangshan/backend/dispatch/NewDispatch.scala": "aaae74122031c4c091f566b9e73a83c5e6e249a58d7f305a3551d0d0ae73ac36",
+    "src/main/scala/xiangshan/backend/fu/NewCSR/MachineLevel.scala": "9fc5746cbad50eefbf784bf888d6d1e927da98b11ac959ab55831d9e72cf4b91"
+  },
+  "scope": "VL8 e8/m1 vm1 positive dot36; serialized counter pilot only, no final speedup",
+  "ordering": "ordinary CSRR counters may reorder in this version; CSRRW mscratch barriers before/after each inner counter boundary; mscratch restored",
+  "instret_model": "payload + vmv.x.s + starting minstret read + two internal barriers = payload+4",
+  "cycle_model": "raw cycle delta includes inner counter reads, four CSRRW boundaries and consumer; no automatic overhead subtraction"
+}

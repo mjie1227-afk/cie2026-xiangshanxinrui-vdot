@@ -1,0 +1,112 @@
+[
+  {
+    "variant": "empty",
+    "kind": "empty",
+    "iterations": 0,
+    "samples": 3,
+    "streams": 8,
+    "raw_cycle_min": 88,
+    "raw_cycle_median": 88,
+    "raw_cycle_max": 88,
+    "instret": 18
+  },
+  {
+    "variant": "native_n8",
+    "kind": "native",
+    "iterations": 8,
+    "samples": 3,
+    "streams": 8,
+    "raw_cycle_min": 96,
+    "raw_cycle_median": 96,
+    "raw_cycle_max": 96,
+    "instret": 26
+  },
+  {
+    "variant": "rvv_batch_m1_n8",
+    "kind": "rvv_batch_m1",
+    "iterations": 8,
+    "samples": 3,
+    "streams": 8,
+    "raw_cycle_min": 186,
+    "raw_cycle_median": 186,
+    "raw_cycle_max": 186,
+    "instret": 47
+  },
+  {
+    "variant": "rvv_batch_mf2_n8",
+    "kind": "rvv_batch_mf2",
+    "iterations": 8,
+    "samples": 3,
+    "streams": 8,
+    "raw_cycle_min": 159,
+    "raw_cycle_median": 159,
+    "raw_cycle_max": 159,
+    "instret": 47
+  },
+  {
+    "variant": "native_n32",
+    "kind": "native",
+    "iterations": 32,
+    "samples": 3,
+    "streams": 8,
+    "raw_cycle_min": 120,
+    "raw_cycle_median": 120,
+    "raw_cycle_max": 120,
+    "instret": 50
+  },
+  {
+    "variant": "rvv_batch_m1_n32",
+    "kind": "rvv_batch_m1",
+    "iterations": 32,
+    "samples": 3,
+    "streams": 8,
+    "raw_cycle_min": 330,
+    "raw_cycle_median": 330,
+    "raw_cycle_max": 330,
+    "instret": 101
+  },
+  {
+    "variant": "rvv_batch_mf2_n32",
+    "kind": "rvv_batch_mf2",
+    "iterations": 32,
+    "samples": 3,
+    "streams": 8,
+    "raw_cycle_min": 232,
+    "raw_cycle_median": 232,
+    "raw_cycle_max": 232,
+    "instret": 101
+  },
+  {
+    "variant": "native_n128",
+    "kind": "native",
+    "iterations": 128,
+    "samples": 3,
+    "streams": 8,
+    "raw_cycle_min": 216,
+    "raw_cycle_median": 216,
+    "raw_cycle_max": 216,
+    "instret": 146
+  },
+  {
+    "variant": "rvv_batch_m1_n128",
+    "kind": "rvv_batch_m1",
+    "iterations": 128,
+    "samples": 3,
+    "streams": 8,
+    "raw_cycle_min": 906,
+    "raw_cycle_median": 906,
+    "raw_cycle_max": 906,
+    "instret": 317
+  },
+  {
+    "variant": "rvv_batch_mf2_n128",
+    "kind": "rvv_batch_mf2",
+    "iterations": 128,
+    "samples": 3,
+    "streams": 8,
+    "raw_cycle_min": 519,
+    "raw_cycle_median": 519,
+    "raw_cycle_max": 519,
+    "instret": 317
+  }
+]

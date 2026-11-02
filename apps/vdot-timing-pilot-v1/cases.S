@@ -1,0 +1,555 @@
+.section .text
+.option push
+.option norvc
+.balign 4
+.globl pilot_empty
+.type pilot_empty,@function
+pilot_empty:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a5
+    csrw fflags,a6
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    vsetvl zero,a3,a4
+    csrr t6,mscratch
+    li t0,0
+    csrrw zero,mscratch,t0
+.globl pilot_empty_counter_begin
+pilot_empty_counter_begin:
+    csrr t1,mcycle
+    csrrw zero,mscratch,t0
+    csrr t2,minstret
+    csrrw zero,mscratch,t0
+.globl pilot_empty_payload_begin
+pilot_empty_payload_begin:
+.globl pilot_empty_payload_end
+pilot_empty_payload_end:
+    vmv.x.s t3,v3
+    csrrw zero,mscratch,t3
+    csrr t4,minstret
+    csrrw zero,mscratch,t0
+    csrr t5,mcycle
+.globl pilot_empty_counter_end
+pilot_empty_counter_end:
+    csrrw zero,mscratch,t0
+    sd t1,48(a2)
+    sd t2,56(a2)
+    sd t4,64(a2)
+    sd t5,72(a2)
+    sd t3,80(a2)
+    sd t0,88(a2)
+    sd t6,96(a2)
+    csrw mscratch,t6
+    csrr t0,mcountinhibit
+    sd t0,104(a2)
+    csrr t0,mscratch
+    sd t0,112(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    ret
+
+.balign 4
+.globl pilot_addi16
+.type pilot_addi16,@function
+pilot_addi16:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a5
+    csrw fflags,a6
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    vsetvl zero,a3,a4
+    csrr t6,mscratch
+    li t0,0
+    csrrw zero,mscratch,t0
+.globl pilot_addi16_counter_begin
+pilot_addi16_counter_begin:
+    csrr t1,mcycle
+    csrrw zero,mscratch,t0
+    csrr t2,minstret
+    csrrw zero,mscratch,t0
+.globl pilot_addi16_payload_begin
+pilot_addi16_payload_begin:
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+.globl pilot_addi16_payload_end
+pilot_addi16_payload_end:
+    vmv.x.s t3,v3
+    csrrw zero,mscratch,t3
+    csrr t4,minstret
+    csrrw zero,mscratch,t0
+    csrr t5,mcycle
+.globl pilot_addi16_counter_end
+pilot_addi16_counter_end:
+    csrrw zero,mscratch,t0
+    sd t1,48(a2)
+    sd t2,56(a2)
+    sd t4,64(a2)
+    sd t5,72(a2)
+    sd t3,80(a2)
+    sd t0,88(a2)
+    sd t6,96(a2)
+    csrw mscratch,t6
+    csrr t0,mcountinhibit
+    sd t0,104(a2)
+    csrr t0,mscratch
+    sd t0,112(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    ret
+
+.balign 4
+.globl pilot_addi64
+.type pilot_addi64,@function
+pilot_addi64:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a5
+    csrw fflags,a6
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    vsetvl zero,a3,a4
+    csrr t6,mscratch
+    li t0,0
+    csrrw zero,mscratch,t0
+.globl pilot_addi64_counter_begin
+pilot_addi64_counter_begin:
+    csrr t1,mcycle
+    csrrw zero,mscratch,t0
+    csrr t2,minstret
+    csrrw zero,mscratch,t0
+.globl pilot_addi64_payload_begin
+pilot_addi64_payload_begin:
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+    addi t0,t0,1
+.globl pilot_addi64_payload_end
+pilot_addi64_payload_end:
+    vmv.x.s t3,v3
+    csrrw zero,mscratch,t3
+    csrr t4,minstret
+    csrrw zero,mscratch,t0
+    csrr t5,mcycle
+.globl pilot_addi64_counter_end
+pilot_addi64_counter_end:
+    csrrw zero,mscratch,t0
+    sd t1,48(a2)
+    sd t2,56(a2)
+    sd t4,64(a2)
+    sd t5,72(a2)
+    sd t3,80(a2)
+    sd t0,88(a2)
+    sd t6,96(a2)
+    csrw mscratch,t6
+    csrr t0,mcountinhibit
+    sd t0,104(a2)
+    csrr t0,mscratch
+    sd t0,112(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    ret
+
+.balign 4
+.globl pilot_native
+.type pilot_native,@function
+pilot_native:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a5
+    csrw fflags,a6
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    vsetvl zero,a3,a4
+    csrr t6,mscratch
+    li t0,0
+    csrrw zero,mscratch,t0
+.globl pilot_native_counter_begin
+pilot_native_counter_begin:
+    csrr t1,mcycle
+    csrrw zero,mscratch,t0
+    csrr t2,minstret
+    csrrw zero,mscratch,t0
+.globl pilot_native_payload_begin
+pilot_native_payload_begin:
+    .word 0x0220818b
+.globl pilot_native_payload_end
+pilot_native_payload_end:
+    vmv.x.s t3,v3
+    csrrw zero,mscratch,t3
+    csrr t4,minstret
+    csrrw zero,mscratch,t0
+    csrr t5,mcycle
+.globl pilot_native_counter_end
+pilot_native_counter_end:
+    csrrw zero,mscratch,t0
+    sd t1,48(a2)
+    sd t2,56(a2)
+    sd t4,64(a2)
+    sd t5,72(a2)
+    sd t3,80(a2)
+    sd t0,88(a2)
+    sd t6,96(a2)
+    csrw mscratch,t6
+    csrr t0,mcountinhibit
+    sd t0,104(a2)
+    csrr t0,mscratch
+    sd t0,112(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    ret
+
+.balign 4
+.globl pilot_rvv_m1
+.type pilot_rvv_m1,@function
+pilot_rvv_m1:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a5
+    csrw fflags,a6
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    vsetvl zero,a3,a4
+    csrr t6,mscratch
+    li t0,0
+    csrrw zero,mscratch,t0
+.globl pilot_rvv_m1_counter_begin
+pilot_rvv_m1_counter_begin:
+    csrr t1,mcycle
+    csrrw zero,mscratch,t0
+    csrr t2,minstret
+    csrrw zero,mscratch,t0
+.globl pilot_rvv_m1_payload_begin
+pilot_rvv_m1_payload_begin:
+    beqz a3,pilot_rvv_m1_restore
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v3,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v3,v8,v16
+pilot_rvv_m1_restore:
+    vsetvl zero,a3,a4
+.globl pilot_rvv_m1_payload_end
+pilot_rvv_m1_payload_end:
+    vmv.x.s t3,v3
+    csrrw zero,mscratch,t3
+    csrr t4,minstret
+    csrrw zero,mscratch,t0
+    csrr t5,mcycle
+.globl pilot_rvv_m1_counter_end
+pilot_rvv_m1_counter_end:
+    csrrw zero,mscratch,t0
+    sd t1,48(a2)
+    sd t2,56(a2)
+    sd t4,64(a2)
+    sd t5,72(a2)
+    sd t3,80(a2)
+    sd t0,88(a2)
+    sd t6,96(a2)
+    csrw mscratch,t6
+    csrr t0,mcountinhibit
+    sd t0,104(a2)
+    csrr t0,mscratch
+    sd t0,112(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    ret
+
+.balign 4
+.globl pilot_rvv_mf2
+.type pilot_rvv_mf2,@function
+pilot_rvv_mf2:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a5
+    csrw fflags,a6
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    vsetvl zero,a3,a4
+    csrr t6,mscratch
+    li t0,0
+    csrrw zero,mscratch,t0
+.globl pilot_rvv_mf2_counter_begin
+pilot_rvv_mf2_counter_begin:
+    csrr t1,mcycle
+    csrrw zero,mscratch,t0
+    csrr t2,minstret
+    csrrw zero,mscratch,t0
+.globl pilot_rvv_mf2_payload_begin
+pilot_rvv_mf2_payload_begin:
+    beqz a3,pilot_rvv_mf2_restore
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v3,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v3,v8,v16
+pilot_rvv_mf2_restore:
+    vsetvl zero,a3,a4
+.globl pilot_rvv_mf2_payload_end
+pilot_rvv_mf2_payload_end:
+    vmv.x.s t3,v3
+    csrrw zero,mscratch,t3
+    csrr t4,minstret
+    csrrw zero,mscratch,t0
+    csrr t5,mcycle
+.globl pilot_rvv_mf2_counter_end
+pilot_rvv_mf2_counter_end:
+    csrrw zero,mscratch,t0
+    sd t1,48(a2)
+    sd t2,56(a2)
+    sd t4,64(a2)
+    sd t5,72(a2)
+    sd t3,80(a2)
+    sd t0,88(a2)
+    sd t6,96(a2)
+    csrw mscratch,t6
+    csrr t0,mcountinhibit
+    sd t0,104(a2)
+    csrr t0,mscratch
+    sd t0,112(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    ret
+
+.option pop

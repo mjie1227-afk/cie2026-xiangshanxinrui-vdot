@@ -1,0 +1,428 @@
+{
+  "status": "supplement-extracted-review-required",
+  "base_exit": 0,
+  "recovered": [
+    {
+      "logical": "fu_io_in_bits_ctrl_robIdx_flag",
+      "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_in_bits_robIdx_flag",
+      "basis": "EXU input -> combinational Dispatcher selected output -> FU input",
+      "source_sha256": "3456bd48a6618f86584de80a769b01f5142b612712e4b8b19d186ad86182d448"
+    },
+    {
+      "logical": "fu_io_in_bits_ctrl_robIdx_value",
+      "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_in_bits_robIdx_value",
+      "basis": "EXU input -> combinational Dispatcher selected output -> FU input",
+      "source_sha256": "3456bd48a6618f86584de80a769b01f5142b612712e4b8b19d186ad86182d448"
+    },
+    {
+      "logical": "fu_io_in_bits_ctrl_pdest",
+      "path": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_in_bits_pdest",
+      "basis": "EXU input -> combinational Dispatcher selected output -> FU input",
+      "source_sha256": "3456bd48a6618f86584de80a769b01f5142b612712e4b8b19d186ad86182d448"
+    }
+  ],
+  "fu_coverage": {
+    "in": [],
+    "out": []
+  },
+  "rejections": [
+    {
+      "edge_time": 14268,
+      "target_id": 0,
+      "rob": [
+        1,
+        35
+      ],
+      "expected_pdest": 0,
+      "observed_pdest": null,
+      "sources": [
+        {
+          "port": "io_toCtrlBlock_writeback_5",
+          "pdest": null,
+          "ready": null
+        }
+      ]
+    },
+    {
+      "edge_time": 14598,
+      "target_id": 2,
+      "rob": [
+        0,
+        22
+      ],
+      "expected_pdest": 0,
+      "observed_pdest": null,
+      "sources": [
+        {
+          "port": "io_toCtrlBlock_writeback_5",
+          "pdest": null,
+          "ready": null
+        }
+      ]
+    },
+    {
+      "edge_time": 14932,
+      "target_id": 4,
+      "rob": [
+        1,
+        9
+      ],
+      "expected_pdest": 0,
+      "observed_pdest": null,
+      "sources": [
+        {
+          "port": "io_toCtrlBlock_writeback_5",
+          "pdest": null,
+          "ready": null
+        }
+      ]
+    },
+    {
+      "edge_time": 15262,
+      "target_id": 6,
+      "rob": [
+        1,
+        44
+      ],
+      "expected_pdest": 0,
+      "observed_pdest": null,
+      "sources": [
+        {
+          "port": "io_toCtrlBlock_writeback_5",
+          "pdest": null,
+          "ready": null
+        }
+      ]
+    },
+    {
+      "edge_time": 15594,
+      "target_id": 8,
+      "rob": [
+        0,
+        31
+      ],
+      "expected_pdest": 0,
+      "observed_pdest": null,
+      "sources": [
+        {
+          "port": "io_toCtrlBlock_writeback_5",
+          "pdest": null,
+          "ready": null
+        }
+      ]
+    },
+    {
+      "edge_time": 15926,
+      "target_id": 10,
+      "rob": [
+        1,
+        18
+      ],
+      "expected_pdest": 0,
+      "observed_pdest": null,
+      "sources": [
+        {
+          "port": "io_toCtrlBlock_writeback_5",
+          "pdest": null,
+          "ready": null
+        }
+      ]
+    },
+    {
+      "edge_time": 16256,
+      "target_id": 12,
+      "rob": [
+        0,
+        5
+      ],
+      "expected_pdest": 0,
+      "observed_pdest": null,
+      "sources": [
+        {
+          "port": "io_toCtrlBlock_writeback_5",
+          "pdest": null,
+          "ready": null
+        }
+      ]
+    },
+    {
+      "edge_time": 16590,
+      "target_id": 14,
+      "rob": [
+        0,
+        40
+      ],
+      "expected_pdest": 0,
+      "observed_pdest": null,
+      "sources": [
+        {
+          "port": "io_toCtrlBlock_writeback_5",
+          "pdest": null,
+          "ready": null
+        }
+      ]
+    },
+    {
+      "edge_time": 16948,
+      "target_id": 18,
+      "rob": [
+        1,
+        26
+      ],
+      "expected_pdest": 0,
+      "observed_pdest": null,
+      "sources": [
+        {
+          "port": "io_toCtrlBlock_writeback_5",
+          "pdest": null,
+          "ready": null
+        }
+      ]
+    }
+  ],
+  "focus": [
+    {
+      "identity": {
+        "id": 1,
+        "pc": 2147484168,
+        "instruction": 35684747,
+        "rob": [
+          1,
+          36
+        ],
+        "pdest": 62,
+        "rename_edge": 14208
+      },
+      "events": [
+        {
+          "kind": "rename_handshake",
+          "edge_time": 14208,
+          "lane": 0,
+          "timer_before": 7054,
+          "target_id": 1
+        },
+        {
+          "kind": "fu_input_handshake",
+          "edge_time": 14220,
+          "data": null,
+          "timer_before": 7060,
+          "target_id": 1,
+          "identity_source": "EXU/Dispatcher combinational route",
+          "parent_valid": 1,
+          "parent_ready": 1
+        },
+        {
+          "kind": "fu_output_handshake",
+          "edge_time": 14224,
+          "data": 4294961408,
+          "timer_before": 7062,
+          "target_id": 1
+        },
+        {
+          "kind": "wb_input_valid_ready_unknown_or_low",
+          "edge_time": 14224,
+          "port": "io_fromVfExu_0_0",
+          "ready": null,
+          "data": 4294961408,
+          "vecWen": 1,
+          "v0Wen": 0,
+          "target_id": 1
+        },
+        {
+          "kind": "preg_write_port",
+          "edge_time": 14224,
+          "port": "io_toVfPreg_0",
+          "addr": 62,
+          "data": 4294961408,
+          "association": "pdest_only_candidate",
+          "target_id": 1
+        },
+        {
+          "kind": "writeback_to_ctrl",
+          "edge_time": 14224,
+          "port": "io_toCtrlBlock_writeback_13",
+          "target_id": 1
+        },
+        {
+          "kind": "rob_commit",
+          "edge_time": 14272,
+          "lane": 1,
+          "target_id": 1
+        }
+      ],
+      "redirects": []
+    },
+    {
+      "identity": {
+        "id": 17,
+        "pc": 2147484168,
+        "instruction": 35684747,
+        "rob": [
+          1,
+          28
+        ],
+        "pdest": 61,
+        "rename_edge": 16860
+      },
+      "events": [
+        {
+          "kind": "rename_handshake",
+          "edge_time": 16860,
+          "lane": 0,
+          "timer_before": 8380,
+          "target_id": 17
+        },
+        {
+          "kind": "fu_input_handshake",
+          "edge_time": 16872,
+          "data": null,
+          "timer_before": 8386,
+          "target_id": 17,
+          "identity_source": "EXU/Dispatcher combinational route",
+          "parent_valid": 1,
+          "parent_ready": 1
+        },
+        {
+          "kind": "rob_tag_reused",
+          "edge_time": 16892,
+          "target_id": 17
+        }
+      ],
+      "redirects": [
+        {
+          "kind": "redirect",
+          "edge_time": 16872,
+          "port": "io_redirect",
+          "rob": [
+            1,
+            24
+          ],
+          "level": 0,
+          "source_target_id": null,
+          "covered_target_ids": [
+            16,
+            17
+          ],
+          "note": "age coverage only; not proof of execution or cancellation"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "id": 18,
+        "pc": 2147484164,
+        "instruction": 33490019,
+        "rob": [
+          1,
+          26
+        ],
+        "pdest": 0,
+        "rename_edge": 16890
+      },
+      "events": [
+        {
+          "kind": "rename_handshake",
+          "edge_time": 16890,
+          "lane": 1,
+          "timer_before": 8395,
+          "target_id": 18
+        },
+        {
+          "kind": "rob_commit",
+          "edge_time": 16958,
+          "lane": 0,
+          "target_id": 18
+        }
+      ],
+      "redirects": []
+    },
+    {
+      "identity": {
+        "id": 19,
+        "pc": 2147484168,
+        "instruction": 35684747,
+        "rob": [
+          1,
+          27
+        ],
+        "pdest": 61,
+        "rename_edge": 16892
+      },
+      "events": [
+        {
+          "kind": "rename_handshake",
+          "edge_time": 16892,
+          "lane": 0,
+          "timer_before": 8396,
+          "target_id": 19
+        },
+        {
+          "kind": "fu_input_handshake",
+          "edge_time": 16904,
+          "data": null,
+          "timer_before": 8402,
+          "target_id": 19,
+          "identity_source": "EXU/Dispatcher combinational route",
+          "parent_valid": 1,
+          "parent_ready": 1
+        },
+        {
+          "kind": "fu_output_handshake",
+          "edge_time": 16908,
+          "data": 4294961408,
+          "timer_before": 8404,
+          "target_id": 19
+        },
+        {
+          "kind": "wb_input_valid_ready_unknown_or_low",
+          "edge_time": 16908,
+          "port": "io_fromVfExu_0_0",
+          "ready": null,
+          "data": 4294961408,
+          "vecWen": 1,
+          "v0Wen": 0,
+          "target_id": 19
+        },
+        {
+          "kind": "preg_write_port",
+          "edge_time": 16908,
+          "port": "io_toVfPreg_0",
+          "addr": 61,
+          "data": 4294961408,
+          "association": "pdest_only_candidate",
+          "target_id": 19
+        },
+        {
+          "kind": "writeback_to_ctrl",
+          "edge_time": 16908,
+          "port": "io_toCtrlBlock_writeback_13",
+          "target_id": 19
+        },
+        {
+          "kind": "rob_tag_reused",
+          "edge_time": 16970,
+          "target_id": 19
+        }
+      ],
+      "redirects": [
+        {
+          "kind": "redirect",
+          "edge_time": 16952,
+          "port": "io_redirect",
+          "rob": [
+            1,
+            26
+          ],
+          "level": 0,
+          "source_target_id": 18,
+          "covered_target_ids": [
+            19
+          ],
+          "note": "age coverage only; not proof of execution or cancellation"
+        }
+      ]
+    }
+  ],
+  "cancellation_pass": false,
+  "note": "Review completed candidate separately from target17; absence of output is not proof of pre-issue cancellation"
+}

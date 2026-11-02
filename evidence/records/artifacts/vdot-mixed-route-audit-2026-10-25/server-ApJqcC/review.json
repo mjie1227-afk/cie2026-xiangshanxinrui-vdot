@@ -1,0 +1,14 @@
+{
+  "status": "preissue-route-and-coverage-accepted-physical-coverage-open",
+  "basis": "user-returned console, full remote logs/VCD not downloaded",
+  "script_exit": 0,
+  "tee_exit": 0,
+  "accepted": [
+    "target1 VADD IQ1_0 / EXU2 / pre-issue resource1 slot0",
+    "target2 VMUL and target3 VDot IQ0_0 / EXU0 / pre-issue resource0 slot0",
+    "six pre-issue arbiters have 2280 fully known nonreset samples each, zero multiple requests"
+  ],
+  "physical_writeback": "six resources skipped every edge by local clock qualification; no absence conclusion",
+  "contention_accepted": false,
+  "next": "VDot vs VIOTA on VFEX0/VFEX1 sharing VfWB0; divide-produced v0 dependency gate"
+}

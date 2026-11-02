@@ -1,0 +1,86 @@
+{
+  "status": "derived_ratios_review_required",
+  "items": [
+    {
+      "comparison": "implementation_register_schedule",
+      "group": 8,
+      "baseline": "rvv_m1",
+      "native_cycles": 2282,
+      "baseline_cycles": 2275,
+      "ratio": 0.9969325153374233
+    },
+    {
+      "comparison": "implementation_register_schedule",
+      "group": 8,
+      "baseline": "rvv_mf2",
+      "native_cycles": 2282,
+      "baseline_cycles": 2321,
+      "ratio": 1.0170902716914987
+    },
+    {
+      "comparison": "materialized_over_register_same_output",
+      "group": 8,
+      "kind": "native",
+      "register_cycles": 2282,
+      "materialized_cycles": 3031,
+      "ratio": 1.3282208588957056
+    },
+    {
+      "comparison": "materialized_over_register_same_output",
+      "group": 8,
+      "kind": "rvv_m1",
+      "register_cycles": 2275,
+      "materialized_cycles": 3394,
+      "ratio": 1.491868131868132
+    },
+    {
+      "comparison": "materialized_over_register_same_output",
+      "group": 8,
+      "kind": "rvv_mf2",
+      "register_cycles": 2321,
+      "materialized_cycles": 3312,
+      "ratio": 1.4269711331322705
+    },
+    {
+      "comparison": "implementation_register_schedule",
+      "group": 16,
+      "baseline": "rvv_m1",
+      "native_cycles": 2240,
+      "baseline_cycles": 2360,
+      "ratio": 1.0535714285714286
+    },
+    {
+      "comparison": "implementation_register_schedule",
+      "group": 16,
+      "baseline": "rvv_mf2",
+      "native_cycles": 2240,
+      "baseline_cycles": 2333,
+      "ratio": 1.0415178571428572
+    },
+    {
+      "comparison": "materialized_over_register_same_output",
+      "group": 16,
+      "kind": "native",
+      "register_cycles": 2240,
+      "materialized_cycles": 3026,
+      "ratio": 1.3508928571428571
+    },
+    {
+      "comparison": "materialized_over_register_same_output",
+      "group": 16,
+      "kind": "rvv_m1",
+      "register_cycles": 2360,
+      "materialized_cycles": 3443,
+      "ratio": 1.4588983050847457
+    },
+    {
+      "comparison": "materialized_over_register_same_output",
+      "group": 16,
+      "kind": "rvv_mf2",
+      "register_cycles": 2333,
+      "materialized_cycles": 3263,
+      "ratio": 1.3986283754822117
+    }
+  ],
+  "scope": "same group and final output only; no standalone Sbuffer stall attribution"
+}

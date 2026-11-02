@@ -1,0 +1,19 @@
+{
+  "status": "archive-verified-for-declared-scope",
+  "exit": 0,
+  "source_runs": 10,
+  "files": 128,
+  "source_bytes": 1050781192,
+  "excluded_files": 7,
+  "archive": "/root/private_data/mj/xiangshan/evidence/stage2-missing-archive-LpAu2Y/stage2-missing-evidence.tar.gz",
+  "archive_bytes": 90483004,
+  "sha256": "0a834faa0e83f1c27dbfa7f836f5e62bca0342332d5a0b375a3dcbb56ab2e07b",
+  "wall_seconds": 45.158,
+  "argv": [
+    "/root/private_data/mj/xiangshan/evidence/stage2-missing-archive-LpAu2Y/collect.py",
+    "/root/private_data/mj/xiangshan",
+    "/root/private_data/mj/xiangshan/evidence/stage2-missing-archive-LpAu2Y"
+  ],
+  "new_simulation": false,
+  "new_build": false
+}

@@ -1,0 +1,87 @@
+RUNNING=build wall_limit=300
+BUILD_EXIT=0
+KERNEL={"name": "empty", "code_sha256": "be765865340518ac28b4a3e2f4fe6b524ed8b91e4bf10c721944dd58bb327cb9", "payload_begin": "0x800001ec", "payload_end": "0x800001ec", "group": 0, "mode": "empty", "expected_instret": 6, "static_instructions": 0}
+KERNEL={"name": "native_g8_register", "code_sha256": "2323ae9e3e498821c6bffebf2b668ba8c09616a4b534f475b9a8aa7d3718bd41", "payload_begin": "0x80000330", "payload_end": "0x80000418", "group": 8, "mode": "register", "expected_instret": 859, "static_instructions": 58}
+KERNEL={"name": "rvv_m1_g8_register", "code_sha256": "80f0b367fba4c3e184e7603899f1b2836cbdb3e8932148db5af361dad57b7b21", "payload_begin": "0x8000055c", "payload_end": "0x80000690", "group": 8, "mode": "register", "expected_instret": 1013, "static_instructions": 77}
+KERNEL={"name": "rvv_mf2_g8_register", "code_sha256": "9e9c460e719ec3b473fde53dea4dbd3718646f6de8aac514d355a0de0e464aac", "payload_begin": "0x800007d4", "payload_end": "0x80000908", "group": 8, "mode": "register", "expected_instret": 1013, "static_instructions": 77}
+KERNEL={"name": "native_g8_materialized", "code_sha256": "ce0dbb41cff7a65c9a44a23cd615d887bab66d63e53be21b0740259e6f560d78", "payload_begin": "0x80000a4c", "payload_end": "0x80000bbc", "group": 8, "mode": "materialized", "expected_instret": 1388, "static_instructions": 92}
+KERNEL={"name": "rvv_m1_g8_materialized", "code_sha256": "c745d6ebfeb2b6977a5abbc5c223fdae27dabbbbb014c4ecae9b562c98176c5c", "payload_begin": "0x80000d00", "payload_end": "0x80000ebc", "group": 8, "mode": "materialized", "expected_instret": 1542, "static_instructions": 111}
+KERNEL={"name": "rvv_mf2_g8_materialized", "code_sha256": "dc9e2e3d508a4b2b389b486ac6add33ed7fa6199489fc12f1943cb6406c07f44", "payload_begin": "0x80001000", "payload_end": "0x800011bc", "group": 8, "mode": "materialized", "expected_instret": 1542, "static_instructions": 111}
+KERNEL={"name": "native_g16_register", "code_sha256": "f50815534c8cc5e72ec07ec9ee4b3d5e88d2182e7a390c54bfa1f21380d25b84", "payload_begin": "0x80001300", "payload_end": "0x800014b4", "group": 16, "mode": "register", "expected_instret": 843, "static_instructions": 109}
+KERNEL={"name": "rvv_m1_g16_register", "code_sha256": "c0760112c6ec234cad4447ad847758d92799c7179e51d9ec8ca0d232e4042560", "payload_begin": "0x800015f8", "payload_end": "0x8000181c", "group": 16, "mode": "register", "expected_instret": 997, "static_instructions": 137}
+KERNEL={"name": "rvv_mf2_g16_register", "code_sha256": "cd2a16028e67d623c94426dd9eee51d31e5bb20aaa1e3daada922818c5e7620a", "payload_begin": "0x80001960", "payload_end": "0x80001b84", "group": 16, "mode": "register", "expected_instret": 997, "static_instructions": 137}
+KERNEL={"name": "native_g16_materialized", "code_sha256": "46f1aab6e4fa0c5632abcb6762baf232abc2234d60ee2c9071c4d8c2e3c70220", "payload_begin": "0x80001cc8", "payload_end": "0x80001f88", "group": 16, "mode": "materialized", "expected_instret": 1372, "static_instructions": 176}
+KERNEL={"name": "rvv_m1_g16_materialized", "code_sha256": "40d4abc94725a28f59dd0d0d5b5a0da2fec181dd31c5d0131545f1eebd0beadb", "payload_begin": "0x800020cc", "payload_end": "0x800023fc", "group": 16, "mode": "materialized", "expected_instret": 1526, "static_instructions": 204}
+KERNEL={"name": "rvv_mf2_g16_materialized", "code_sha256": "a0907e1b6b73890a7f851e0527002836e3a2ac584decdc473fd1731787507fce", "payload_begin": "0x80002540", "payload_end": "0x80002870", "group": 16, "mode": "materialized", "expected_instret": 1526, "static_instructions": 204}
+RUNNING=architecture wall_limit=7200
+PROGRESS stage=architecture elapsed_s=60 log_bytes=1065
+PROGRESS stage=architecture elapsed_s=120 log_bytes=1149
+PROGRESS stage=architecture elapsed_s=180 log_bytes=1234
+PROGRESS stage=architecture elapsed_s=240 log_bytes=1319
+PROGRESS stage=architecture elapsed_s=300 log_bytes=1404
+PROGRESS stage=architecture elapsed_s=360 log_bytes=1489
+PROGRESS stage=architecture elapsed_s=420 log_bytes=1574
+PROGRESS stage=architecture elapsed_s=480 log_bytes=1662
+PROGRESS stage=architecture elapsed_s=540 log_bytes=1761
+PROGRESS stage=architecture elapsed_s=600 log_bytes=1851
+PROGRESS stage=architecture elapsed_s=660 log_bytes=1943
+PROGRESS stage=architecture elapsed_s=720 log_bytes=2032
+PROGRESS stage=architecture elapsed_s=780 log_bytes=2153
+PROGRESS stage=architecture elapsed_s=840 log_bytes=2255
+PROGRESS stage=architecture elapsed_s=900 log_bytes=2351
+PROGRESS stage=architecture elapsed_s=960 log_bytes=2436
+PROGRESS stage=architecture elapsed_s=1020 log_bytes=2521
+PROGRESS stage=architecture elapsed_s=1080 log_bytes=2606
+PROGRESS stage=architecture elapsed_s=1140 log_bytes=2691
+PROGRESS stage=architecture elapsed_s=1200 log_bytes=2777
+PROGRESS stage=architecture elapsed_s=1260 log_bytes=2874
+PROGRESS stage=architecture elapsed_s=1320 log_bytes=2968
+PROGRESS stage=architecture elapsed_s=1380 log_bytes=3056
+PROGRESS stage=architecture elapsed_s=1440 log_bytes=3151
+PROGRESS stage=architecture elapsed_s=1500 log_bytes=3259
+PROGRESS stage=architecture elapsed_s=1560 log_bytes=3363
+PROGRESS stage=architecture elapsed_s=1620 log_bytes=3467
+PROGRESS stage=architecture elapsed_s=1680 log_bytes=3555
+PROGRESS stage=architecture elapsed_s=1740 log_bytes=3640
+PROGRESS stage=architecture elapsed_s=1800 log_bytes=3725
+PROGRESS stage=architecture elapsed_s=1860 log_bytes=3811
+PROGRESS stage=architecture elapsed_s=1920 log_bytes=3905
+PROGRESS stage=architecture elapsed_s=1980 log_bytes=4001
+PROGRESS stage=architecture elapsed_s=2040 log_bytes=4092
+PROGRESS stage=architecture elapsed_s=2100 log_bytes=4185
+PROGRESS stage=architecture elapsed_s=2160 log_bytes=4306
+PROGRESS stage=architecture elapsed_s=2220 log_bytes=4411
+PROGRESS stage=architecture elapsed_s=2280 log_bytes=4503
+PROGRESS stage=architecture elapsed_s=2340 log_bytes=4588
+PROGRESS stage=architecture elapsed_s=2400 log_bytes=4673
+PROGRESS stage=architecture elapsed_s=2460 log_bytes=4758
+PROGRESS stage=architecture elapsed_s=2520 log_bytes=4844
+PROGRESS stage=architecture elapsed_s=2580 log_bytes=4945
+PROGRESS stage=architecture elapsed_s=2640 log_bytes=5040
+PROGRESS stage=architecture elapsed_s=2700 log_bytes=5128
+PROGRESS stage=architecture elapsed_s=2760 log_bytes=5219
+PROGRESS stage=architecture elapsed_s=2820 log_bytes=5345
+PROGRESS stage=architecture elapsed_s=2880 log_bytes=5450
+PROGRESS stage=architecture elapsed_s=2940 log_bytes=5524
+ARCHITECTURE_EXIT=0
+The reference model is /root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so
+The first instruction of core 0 has commited. Difftest enabled.
+PASS VDOT_SEG calls=52 samples=39 warmups=13 variants=13 outputs128=1 scratch=1 guards=1 inputs=1 state=1
+[PERF ][time=              813425] SimTop.l_soc.core_with_l2.l2top.inner.l2cache.slices_1.mshrCtl: mshr_latency_maxCore 0: [32mHIT GOOD TRAP at pc = 0x80002cd8
+SEG_IDENTITIES={"/root/private_data/mj/xiangshan/vdot-mtval-fix-20261024/XiangShan/build/emu": "f9653532fd2a4b9f0d0cc08c131f7c258d4b62c46e672c6886d6643aad926850", "/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so": "11b9f6807c36ed860e0c64cc4e58d27216b19335ecde1ce5797ba2d1cd057b74", "/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/.config": "64282bca051b5dbc5fca742f4fbca2ade937a70f3c4d2ec93c1f4836aca5d9be", "/root/private_data/mj/xiangshan/evidence/vdot-build-80mKCD/boot-flash.bin": "fea548655a8b6eecacace83e2f4380a18b8aa83bce964c8aae4cffbe2f5a9724", "/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-segment-v1/build/vdot-segment-v1-riscv64-xs.bin": "bd034d3d3bebae84c68d26d5b2d52c6420f26ea89c41178621a217321c0aac8b"}
+SEG_RAW={"variant": "empty", "kind": "empty", "mode": "empty", "group": 0, "dot_operations": 0, "outputs": 0, "final_output_bytes": 0, "scratch_store_bytes": 0, "scratch_load_bytes": 0, "samples": 3, "raw_cycle_min": 100, "raw_cycle_median": 100, "raw_cycle_max": 100, "instret": 6}
+SEG_RAW={"variant": "native_g8_register", "kind": "native", "mode": "register", "group": 8, "dot_operations": 128, "outputs": 16, "final_output_bytes": 256, "scratch_store_bytes": 0, "scratch_load_bytes": 0, "samples": 3, "raw_cycle_min": 2282, "raw_cycle_median": 2282, "raw_cycle_max": 2383, "instret": 859}
+SEG_RAW={"variant": "rvv_m1_g8_register", "kind": "rvv_m1", "mode": "register", "group": 8, "dot_operations": 128, "outputs": 16, "final_output_bytes": 256, "scratch_store_bytes": 0, "scratch_load_bytes": 0, "samples": 3, "raw_cycle_min": 2273, "raw_cycle_median": 2275, "raw_cycle_max": 2427, "instret": 1013}
+SEG_RAW={"variant": "rvv_mf2_g8_register", "kind": "rvv_mf2", "mode": "register", "group": 8, "dot_operations": 128, "outputs": 16, "final_output_bytes": 256, "scratch_store_bytes": 0, "scratch_load_bytes": 0, "samples": 3, "raw_cycle_min": 2320, "raw_cycle_median": 2321, "raw_cycle_max": 2454, "instret": 1013}
+SEG_RAW={"variant": "native_g8_materialized", "kind": "native", "mode": "materialized", "group": 8, "dot_operations": 128, "outputs": 16, "final_output_bytes": 256, "scratch_store_bytes": 2048, "scratch_load_bytes": 2048, "samples": 3, "raw_cycle_min": 3030, "raw_cycle_median": 3031, "raw_cycle_max": 3169, "instret": 1388}
+SEG_RAW={"variant": "rvv_m1_g8_materialized", "kind": "rvv_m1", "mode": "materialized", "group": 8, "dot_operations": 128, "outputs": 16, "final_output_bytes": 256, "scratch_store_bytes": 2048, "scratch_load_bytes": 2048, "samples": 3, "raw_cycle_min": 3394, "raw_cycle_median": 3394, "raw_cycle_max": 3440, "instret": 1542}
+SEG_RAW={"variant": "rvv_mf2_g8_materialized", "kind": "rvv_mf2", "mode": "materialized", "group": 8, "dot_operations": 128, "outputs": 16, "final_output_bytes": 256, "scratch_store_bytes": 2048, "scratch_load_bytes": 2048, "samples": 3, "raw_cycle_min": 3312, "raw_cycle_median": 3312, "raw_cycle_max": 3313, "instret": 1542}
+SEG_RAW={"variant": "native_g16_register", "kind": "native", "mode": "register", "group": 16, "dot_operations": 128, "outputs": 8, "final_output_bytes": 128, "scratch_store_bytes": 0, "scratch_load_bytes": 0, "samples": 3, "raw_cycle_min": 2240, "raw_cycle_median": 2240, "raw_cycle_max": 2296, "instret": 843}
+SEG_RAW={"variant": "rvv_m1_g16_register", "kind": "rvv_m1", "mode": "register", "group": 16, "dot_operations": 128, "outputs": 8, "final_output_bytes": 128, "scratch_store_bytes": 0, "scratch_load_bytes": 0, "samples": 3, "raw_cycle_min": 2359, "raw_cycle_median": 2360, "raw_cycle_max": 2438, "instret": 997}
+SEG_RAW={"variant": "rvv_mf2_g16_register", "kind": "rvv_mf2", "mode": "register", "group": 16, "dot_operations": 128, "outputs": 8, "final_output_bytes": 128, "scratch_store_bytes": 0, "scratch_load_bytes": 0, "samples": 3, "raw_cycle_min": 2333, "raw_cycle_median": 2333, "raw_cycle_max": 2405, "instret": 997}
+SEG_RAW={"variant": "native_g16_materialized", "kind": "native", "mode": "materialized", "group": 16, "dot_operations": 128, "outputs": 8, "final_output_bytes": 128, "scratch_store_bytes": 2048, "scratch_load_bytes": 2048, "samples": 3, "raw_cycle_min": 3026, "raw_cycle_median": 3026, "raw_cycle_max": 3079, "instret": 1372}
+SEG_RAW={"variant": "rvv_m1_g16_materialized", "kind": "rvv_m1", "mode": "materialized", "group": 16, "dot_operations": 128, "outputs": 8, "final_output_bytes": 128, "scratch_store_bytes": 2048, "scratch_load_bytes": 2048, "samples": 3, "raw_cycle_min": 3443, "raw_cycle_median": 3443, "raw_cycle_max": 3444, "instret": 1526}
+SEG_RAW={"variant": "rvv_mf2_g16_materialized", "kind": "rvv_mf2", "mode": "materialized", "group": 16, "dot_operations": 128, "outputs": 8, "final_output_bytes": 128, "scratch_store_bytes": 2048, "scratch_load_bytes": 2048, "samples": 3, "raw_cycle_min": 3262, "raw_cycle_median": 3263, "raw_cycle_max": 3312, "instret": 1526}
+VDOT_SEG_READY samples=39 warmups=13
+SCOPE=prewarmed_segmented_dot equal_output_control no_cold_DRAM_claim
+LOG_DIR=/root/private_data/mj/xiangshan/evidence/vdot-segment-Pw1wQ8

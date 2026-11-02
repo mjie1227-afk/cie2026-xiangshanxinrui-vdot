@@ -1,0 +1,62 @@
+{
+  "status": "verified-and-materialized",
+  "exit": 0,
+  "cwd": "D:\\Mayyyyyy\\WorkSpaces\\日常工作区1\\2026比赛规划\\RISCV_vdot",
+  "argv": [
+    "scripts/verify_stage2_missing_archive.py"
+  ],
+  "python": "3.14.3",
+  "archive_sha256": "0a834faa0e83f1c27dbfa7f836f5e62bca0342332d5a0b375a3dcbb56ab2e07b",
+  "members": 132,
+  "source_files": 128,
+  "source_bytes": 1050781192,
+  "excluded": [
+    {
+      "path": "evidence/vdot-wave-window-Cpa0HX/__pycache__/capture.cpython-311.pyc",
+      "bytes": 27710,
+      "reason": "outside declared log/metadata scope"
+    },
+    {
+      "path": "evidence/vdot-window-events-UbYWTP/__pycache__/trace.cpython-311.pyc",
+      "bytes": 45157,
+      "reason": "outside declared log/metadata scope"
+    },
+    {
+      "path": "evidence/vdot-mixed-resources-9k3waS/__pycache__/analyze.cpython-311.pyc",
+      "bytes": 38159,
+      "reason": "outside declared log/metadata scope"
+    },
+    {
+      "path": "evidence/vdot-mixed-route-audit-ApJqcC/resource-coverage.json",
+      "bytes": 5463,
+      "reason": "identical bytes already archived locally",
+      "sha256": "dde18a240660e62b55763f55eda1f547e125a3f78eebb5093af1eb65f5249e16",
+      "verified_local": "artifacts\\vdot-mixed-route-audit-2026-10-25\\server-ApJqcC\\resource-coverage.json"
+    },
+    {
+      "path": "evidence/vdot-mixed-route-audit-ApJqcC/target-routes.json",
+      "bytes": 3610,
+      "reason": "identical bytes already archived locally",
+      "sha256": "1498d9ca8a5a2c74131a43363bd7a11c8248c329d8bdf077068fee074072027a",
+      "verified_local": "artifacts\\vdot-mixed-route-audit-2026-10-25\\server-ApJqcC\\target-routes.json"
+    },
+    {
+      "path": "evidence/vdot-port-wave-EfQru1/port-window.vcd",
+      "bytes": 481830060,
+      "reason": "outside declared log/metadata scope"
+    },
+    {
+      "path": "evidence/vdot-port-events-FfVozt/sampling-domains.json",
+      "bytes": 747,
+      "reason": "identical bytes already archived locally",
+      "sha256": "8b253c86b02f7fc9fcb9ca769d923b9d28e977f35ce6007256e442ce74d81b41",
+      "verified_local": "artifacts\\vdot-port-events-2026-10-25\\server-FfVozt\\sampling-domains.json"
+    }
+  ],
+  "new_simulation": false,
+  "new_build": false,
+  "archived_code_executed": false,
+  "vcd_events_scanned": false,
+  "wall_seconds": 3.75,
+  "scope": "download bytes, all member hashes, required files, exclusions and delivered collector; semantic event review is separate"
+}

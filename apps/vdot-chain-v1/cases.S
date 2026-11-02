@@ -1,0 +1,1615 @@
+.section .text
+.option push
+.option norvc
+.balign 4
+.globl chain_empty
+.type chain_empty,@function
+chain_empty:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a5
+    csrw fflags,a6
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    vsetvl zero,a3,a4
+    csrr t6,mscratch
+    li t0,0
+    csrrw zero,mscratch,t0
+.globl chain_empty_counter_begin
+chain_empty_counter_begin:
+    csrr t1,mcycle
+    csrrw zero,mscratch,t0
+    csrr t2,minstret
+    csrrw zero,mscratch,t0
+.globl chain_empty_payload_begin
+chain_empty_payload_begin:
+.globl chain_empty_payload_end
+chain_empty_payload_end:
+    vmv.x.s t3,v1
+    csrrw zero,mscratch,t3
+    csrr t4,minstret
+    csrrw zero,mscratch,t0
+    csrr t5,mcycle
+.globl chain_empty_counter_end
+chain_empty_counter_end:
+    csrrw zero,mscratch,t0
+    sd t1,48(a2)
+    sd t2,56(a2)
+    sd t4,64(a2)
+    sd t5,72(a2)
+    sd t3,80(a2)
+    sd t0,88(a2)
+    sd t6,96(a2)
+    csrw mscratch,t6
+    csrr t0,mcountinhibit
+    sd t0,104(a2)
+    csrr t0,mscratch
+    sd t0,112(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    ret
+
+.balign 4
+.globl chain_native_n1
+.type chain_native_n1,@function
+chain_native_n1:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a5
+    csrw fflags,a6
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    vsetvl zero,a3,a4
+    csrr t6,mscratch
+    li t0,0
+    csrrw zero,mscratch,t0
+.globl chain_native_n1_counter_begin
+chain_native_n1_counter_begin:
+    csrr t1,mcycle
+    csrrw zero,mscratch,t0
+    csrr t2,minstret
+    csrrw zero,mscratch,t0
+.globl chain_native_n1_payload_begin
+chain_native_n1_payload_begin:
+    .word 0x0220808b
+.globl chain_native_n1_payload_end
+chain_native_n1_payload_end:
+    vmv.x.s t3,v1
+    csrrw zero,mscratch,t3
+    csrr t4,minstret
+    csrrw zero,mscratch,t0
+    csrr t5,mcycle
+.globl chain_native_n1_counter_end
+chain_native_n1_counter_end:
+    csrrw zero,mscratch,t0
+    sd t1,48(a2)
+    sd t2,56(a2)
+    sd t4,64(a2)
+    sd t5,72(a2)
+    sd t3,80(a2)
+    sd t0,88(a2)
+    sd t6,96(a2)
+    csrw mscratch,t6
+    csrr t0,mcountinhibit
+    sd t0,104(a2)
+    csrr t0,mscratch
+    sd t0,112(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    ret
+
+.balign 4
+.globl chain_rvv_m1_n1
+.type chain_rvv_m1_n1,@function
+chain_rvv_m1_n1:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a5
+    csrw fflags,a6
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    vsetvl zero,a3,a4
+    csrr t6,mscratch
+    li t0,0
+    csrrw zero,mscratch,t0
+.globl chain_rvv_m1_n1_counter_begin
+chain_rvv_m1_n1_counter_begin:
+    csrr t1,mcycle
+    csrrw zero,mscratch,t0
+    csrr t2,minstret
+    csrrw zero,mscratch,t0
+.globl chain_rvv_m1_n1_payload_begin
+chain_rvv_m1_n1_payload_begin:
+    beqz a3,chain_rvv_m1_n1_restore_0
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n1_restore_0:
+    vsetvl zero,a3,a4
+.globl chain_rvv_m1_n1_payload_end
+chain_rvv_m1_n1_payload_end:
+    vmv.x.s t3,v1
+    csrrw zero,mscratch,t3
+    csrr t4,minstret
+    csrrw zero,mscratch,t0
+    csrr t5,mcycle
+.globl chain_rvv_m1_n1_counter_end
+chain_rvv_m1_n1_counter_end:
+    csrrw zero,mscratch,t0
+    sd t1,48(a2)
+    sd t2,56(a2)
+    sd t4,64(a2)
+    sd t5,72(a2)
+    sd t3,80(a2)
+    sd t0,88(a2)
+    sd t6,96(a2)
+    csrw mscratch,t6
+    csrr t0,mcountinhibit
+    sd t0,104(a2)
+    csrr t0,mscratch
+    sd t0,112(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    ret
+
+.balign 4
+.globl chain_rvv_mf2_n1
+.type chain_rvv_mf2_n1,@function
+chain_rvv_mf2_n1:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a5
+    csrw fflags,a6
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    vsetvl zero,a3,a4
+    csrr t6,mscratch
+    li t0,0
+    csrrw zero,mscratch,t0
+.globl chain_rvv_mf2_n1_counter_begin
+chain_rvv_mf2_n1_counter_begin:
+    csrr t1,mcycle
+    csrrw zero,mscratch,t0
+    csrr t2,minstret
+    csrrw zero,mscratch,t0
+.globl chain_rvv_mf2_n1_payload_begin
+chain_rvv_mf2_n1_payload_begin:
+    beqz a3,chain_rvv_mf2_n1_restore_0
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n1_restore_0:
+    vsetvl zero,a3,a4
+.globl chain_rvv_mf2_n1_payload_end
+chain_rvv_mf2_n1_payload_end:
+    vmv.x.s t3,v1
+    csrrw zero,mscratch,t3
+    csrr t4,minstret
+    csrrw zero,mscratch,t0
+    csrr t5,mcycle
+.globl chain_rvv_mf2_n1_counter_end
+chain_rvv_mf2_n1_counter_end:
+    csrrw zero,mscratch,t0
+    sd t1,48(a2)
+    sd t2,56(a2)
+    sd t4,64(a2)
+    sd t5,72(a2)
+    sd t3,80(a2)
+    sd t0,88(a2)
+    sd t6,96(a2)
+    csrw mscratch,t6
+    csrr t0,mcountinhibit
+    sd t0,104(a2)
+    csrr t0,mscratch
+    sd t0,112(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    ret
+
+.balign 4
+.globl chain_native_n8
+.type chain_native_n8,@function
+chain_native_n8:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a5
+    csrw fflags,a6
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    vsetvl zero,a3,a4
+    csrr t6,mscratch
+    li t0,0
+    csrrw zero,mscratch,t0
+.globl chain_native_n8_counter_begin
+chain_native_n8_counter_begin:
+    csrr t1,mcycle
+    csrrw zero,mscratch,t0
+    csrr t2,minstret
+    csrrw zero,mscratch,t0
+.globl chain_native_n8_payload_begin
+chain_native_n8_payload_begin:
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+.globl chain_native_n8_payload_end
+chain_native_n8_payload_end:
+    vmv.x.s t3,v1
+    csrrw zero,mscratch,t3
+    csrr t4,minstret
+    csrrw zero,mscratch,t0
+    csrr t5,mcycle
+.globl chain_native_n8_counter_end
+chain_native_n8_counter_end:
+    csrrw zero,mscratch,t0
+    sd t1,48(a2)
+    sd t2,56(a2)
+    sd t4,64(a2)
+    sd t5,72(a2)
+    sd t3,80(a2)
+    sd t0,88(a2)
+    sd t6,96(a2)
+    csrw mscratch,t6
+    csrr t0,mcountinhibit
+    sd t0,104(a2)
+    csrr t0,mscratch
+    sd t0,112(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    ret
+
+.balign 4
+.globl chain_rvv_m1_n8
+.type chain_rvv_m1_n8,@function
+chain_rvv_m1_n8:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a5
+    csrw fflags,a6
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    vsetvl zero,a3,a4
+    csrr t6,mscratch
+    li t0,0
+    csrrw zero,mscratch,t0
+.globl chain_rvv_m1_n8_counter_begin
+chain_rvv_m1_n8_counter_begin:
+    csrr t1,mcycle
+    csrrw zero,mscratch,t0
+    csrr t2,minstret
+    csrrw zero,mscratch,t0
+.globl chain_rvv_m1_n8_payload_begin
+chain_rvv_m1_n8_payload_begin:
+    beqz a3,chain_rvv_m1_n8_restore_0
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n8_restore_0:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n8_restore_1
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n8_restore_1:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n8_restore_2
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n8_restore_2:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n8_restore_3
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n8_restore_3:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n8_restore_4
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n8_restore_4:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n8_restore_5
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n8_restore_5:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n8_restore_6
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n8_restore_6:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n8_restore_7
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n8_restore_7:
+    vsetvl zero,a3,a4
+.globl chain_rvv_m1_n8_payload_end
+chain_rvv_m1_n8_payload_end:
+    vmv.x.s t3,v1
+    csrrw zero,mscratch,t3
+    csrr t4,minstret
+    csrrw zero,mscratch,t0
+    csrr t5,mcycle
+.globl chain_rvv_m1_n8_counter_end
+chain_rvv_m1_n8_counter_end:
+    csrrw zero,mscratch,t0
+    sd t1,48(a2)
+    sd t2,56(a2)
+    sd t4,64(a2)
+    sd t5,72(a2)
+    sd t3,80(a2)
+    sd t0,88(a2)
+    sd t6,96(a2)
+    csrw mscratch,t6
+    csrr t0,mcountinhibit
+    sd t0,104(a2)
+    csrr t0,mscratch
+    sd t0,112(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    ret
+
+.balign 4
+.globl chain_rvv_mf2_n8
+.type chain_rvv_mf2_n8,@function
+chain_rvv_mf2_n8:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a5
+    csrw fflags,a6
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    vsetvl zero,a3,a4
+    csrr t6,mscratch
+    li t0,0
+    csrrw zero,mscratch,t0
+.globl chain_rvv_mf2_n8_counter_begin
+chain_rvv_mf2_n8_counter_begin:
+    csrr t1,mcycle
+    csrrw zero,mscratch,t0
+    csrr t2,minstret
+    csrrw zero,mscratch,t0
+.globl chain_rvv_mf2_n8_payload_begin
+chain_rvv_mf2_n8_payload_begin:
+    beqz a3,chain_rvv_mf2_n8_restore_0
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n8_restore_0:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n8_restore_1
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n8_restore_1:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n8_restore_2
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n8_restore_2:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n8_restore_3
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n8_restore_3:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n8_restore_4
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n8_restore_4:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n8_restore_5
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n8_restore_5:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n8_restore_6
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n8_restore_6:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n8_restore_7
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n8_restore_7:
+    vsetvl zero,a3,a4
+.globl chain_rvv_mf2_n8_payload_end
+chain_rvv_mf2_n8_payload_end:
+    vmv.x.s t3,v1
+    csrrw zero,mscratch,t3
+    csrr t4,minstret
+    csrrw zero,mscratch,t0
+    csrr t5,mcycle
+.globl chain_rvv_mf2_n8_counter_end
+chain_rvv_mf2_n8_counter_end:
+    csrrw zero,mscratch,t0
+    sd t1,48(a2)
+    sd t2,56(a2)
+    sd t4,64(a2)
+    sd t5,72(a2)
+    sd t3,80(a2)
+    sd t0,88(a2)
+    sd t6,96(a2)
+    csrw mscratch,t6
+    csrr t0,mcountinhibit
+    sd t0,104(a2)
+    csrr t0,mscratch
+    sd t0,112(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    ret
+
+.balign 4
+.globl chain_native_n32
+.type chain_native_n32,@function
+chain_native_n32:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a5
+    csrw fflags,a6
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    vsetvl zero,a3,a4
+    csrr t6,mscratch
+    li t0,0
+    csrrw zero,mscratch,t0
+.globl chain_native_n32_counter_begin
+chain_native_n32_counter_begin:
+    csrr t1,mcycle
+    csrrw zero,mscratch,t0
+    csrr t2,minstret
+    csrrw zero,mscratch,t0
+.globl chain_native_n32_payload_begin
+chain_native_n32_payload_begin:
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+    .word 0x0220808b
+.globl chain_native_n32_payload_end
+chain_native_n32_payload_end:
+    vmv.x.s t3,v1
+    csrrw zero,mscratch,t3
+    csrr t4,minstret
+    csrrw zero,mscratch,t0
+    csrr t5,mcycle
+.globl chain_native_n32_counter_end
+chain_native_n32_counter_end:
+    csrrw zero,mscratch,t0
+    sd t1,48(a2)
+    sd t2,56(a2)
+    sd t4,64(a2)
+    sd t5,72(a2)
+    sd t3,80(a2)
+    sd t0,88(a2)
+    sd t6,96(a2)
+    csrw mscratch,t6
+    csrr t0,mcountinhibit
+    sd t0,104(a2)
+    csrr t0,mscratch
+    sd t0,112(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    ret
+
+.balign 4
+.globl chain_rvv_m1_n32
+.type chain_rvv_m1_n32,@function
+chain_rvv_m1_n32:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a5
+    csrw fflags,a6
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    vsetvl zero,a3,a4
+    csrr t6,mscratch
+    li t0,0
+    csrrw zero,mscratch,t0
+.globl chain_rvv_m1_n32_counter_begin
+chain_rvv_m1_n32_counter_begin:
+    csrr t1,mcycle
+    csrrw zero,mscratch,t0
+    csrr t2,minstret
+    csrrw zero,mscratch,t0
+.globl chain_rvv_m1_n32_payload_begin
+chain_rvv_m1_n32_payload_begin:
+    beqz a3,chain_rvv_m1_n32_restore_0
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_0:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_1
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_1:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_2
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_2:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_3
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_3:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_4
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_4:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_5
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_5:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_6
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_6:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_7
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_7:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_8
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_8:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_9
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_9:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_10
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_10:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_11
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_11:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_12
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_12:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_13
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_13:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_14
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_14:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_15
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_15:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_16
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_16:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_17
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_17:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_18
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_18:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_19
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_19:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_20
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_20:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_21
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_21:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_22
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_22:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_23
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_23:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_24
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_24:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_25
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_25:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_26
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_26:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_27
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_27:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_28
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_28:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_29
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_29:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_30
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_30:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_m1_n32_restore_31
+    vsetivli zero,8,e8,m1,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m2,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_m1_n32_restore_31:
+    vsetvl zero,a3,a4
+.globl chain_rvv_m1_n32_payload_end
+chain_rvv_m1_n32_payload_end:
+    vmv.x.s t3,v1
+    csrrw zero,mscratch,t3
+    csrr t4,minstret
+    csrrw zero,mscratch,t0
+    csrr t5,mcycle
+.globl chain_rvv_m1_n32_counter_end
+chain_rvv_m1_n32_counter_end:
+    csrrw zero,mscratch,t0
+    sd t1,48(a2)
+    sd t2,56(a2)
+    sd t4,64(a2)
+    sd t5,72(a2)
+    sd t3,80(a2)
+    sd t0,88(a2)
+    sd t6,96(a2)
+    csrw mscratch,t6
+    csrr t0,mcountinhibit
+    sd t0,104(a2)
+    csrr t0,mscratch
+    sd t0,112(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    ret
+
+.balign 4
+.globl chain_rvv_mf2_n32
+.type chain_rvv_mf2_n32,@function
+chain_rvv_mf2_n32:
+    li t0,0x2200
+    csrs mstatus,t0
+    csrwi vstart,0
+    csrw vcsr,a5
+    csrw fflags,a6
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a0,0
+    vle8.v v0,(t0)
+    addi t0,a0,16
+    vle8.v v1,(t0)
+    addi t0,a0,32
+    vle8.v v2,(t0)
+    addi t0,a0,48
+    vle8.v v3,(t0)
+    vsetvl zero,a3,a4
+    csrr t6,mscratch
+    li t0,0
+    csrrw zero,mscratch,t0
+.globl chain_rvv_mf2_n32_counter_begin
+chain_rvv_mf2_n32_counter_begin:
+    csrr t1,mcycle
+    csrrw zero,mscratch,t0
+    csrr t2,minstret
+    csrrw zero,mscratch,t0
+.globl chain_rvv_mf2_n32_payload_begin
+chain_rvv_mf2_n32_payload_begin:
+    beqz a3,chain_rvv_mf2_n32_restore_0
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_0:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_1
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_1:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_2
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_2:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_3
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_3:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_4
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_4:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_5
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_5:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_6
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_6:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_7
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_7:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_8
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_8:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_9
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_9:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_10
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_10:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_11
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_11:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_12
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_12:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_13
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_13:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_14
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_14:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_15
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_15:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_16
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_16:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_17
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_17:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_18
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_18:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_19
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_19:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_20
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_20:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_21
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_21:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_22
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_22:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_23
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_23:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_24
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_24:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_25
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_25:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_26
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_26:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_27
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_27:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_28
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_28:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_29
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_29:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_30
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_30:
+    vsetvl zero,a3,a4
+    beqz a3,chain_rvv_mf2_n32_restore_31
+    vsetivli zero,8,e8,mf2,tu,mu
+    vwmul.vv v8,v1,v2
+    vsetivli zero,4,e32,m1,tu,mu
+    vmv.v.i v1,0
+    vmv.v.i v16,0
+    vsetivli zero,8,e16,m1,tu,mu
+    vwredsum.vs v1,v8,v16
+chain_rvv_mf2_n32_restore_31:
+    vsetvl zero,a3,a4
+.globl chain_rvv_mf2_n32_payload_end
+chain_rvv_mf2_n32_payload_end:
+    vmv.x.s t3,v1
+    csrrw zero,mscratch,t3
+    csrr t4,minstret
+    csrrw zero,mscratch,t0
+    csrr t5,mcycle
+.globl chain_rvv_mf2_n32_counter_end
+chain_rvv_mf2_n32_counter_end:
+    csrrw zero,mscratch,t0
+    sd t1,48(a2)
+    sd t2,56(a2)
+    sd t4,64(a2)
+    sd t5,72(a2)
+    sd t3,80(a2)
+    sd t0,88(a2)
+    sd t6,96(a2)
+    csrw mscratch,t6
+    csrr t0,mcountinhibit
+    sd t0,104(a2)
+    csrr t0,mscratch
+    sd t0,112(a2)
+    csrr t0,mstatus
+    sd t0,0(a2)
+    csrr t0,vl
+    sd t0,8(a2)
+    csrr t0,vtype
+    sd t0,16(a2)
+    csrr t0,vstart
+    sd t0,24(a2)
+    csrr t0,vcsr
+    sd t0,32(a2)
+    csrr t0,fflags
+    sd t0,40(a2)
+    vsetivli zero,16,e8,m1,tu,mu
+    addi t0,a1,0
+    vse8.v v0,(t0)
+    addi t0,a1,16
+    vse8.v v1,(t0)
+    addi t0,a1,32
+    vse8.v v2,(t0)
+    addi t0,a1,48
+    vse8.v v3,(t0)
+    ret
+
+.option pop

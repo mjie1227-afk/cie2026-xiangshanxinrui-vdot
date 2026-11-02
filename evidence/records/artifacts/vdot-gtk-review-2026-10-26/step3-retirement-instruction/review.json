@@ -1,0 +1,15 @@
+{
+  "status": "representative-GUI-material-archived-proceed-to-equivalence",
+  "date": "2026-10-26",
+  "marker_ps": 15671,
+  "vdot": {
+    "isCommit": 1,
+    "commitValid_0": 1,
+    "rob_hex": "0/2E",
+    "pdest_hex": "38",
+    "instruction": "0020818B"
+  },
+  "viota": "timeline shows 2F,39,52082257 in later valid interval; full PC still truncated in this image",
+  "evidence_boundary": "full VIOTA retirement PC and exact marker confirmed by existing FfVozt trace, not a new 15675 GUI read",
+  "next": "archive representative pictures and advance C3.2; no repeated screenshot or simulation required"
+}

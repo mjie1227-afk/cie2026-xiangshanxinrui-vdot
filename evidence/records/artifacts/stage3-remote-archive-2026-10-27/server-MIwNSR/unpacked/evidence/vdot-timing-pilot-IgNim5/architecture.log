@@ -1,0 +1,39 @@
+emu compiled at Oct 24 2026, 18:04:31
+Using seed = 1
+[WARNING] /root/private_data/mj/xiangshan/evidence/vdot-timing-pilot-IgNim5/build/constantin.txt does not exist, so all constants default to initialized values.
+Using simulated 32768B flash
+use /root/private_data/mj/xiangshan/evidence/vdot-build-80mKCD/boot-flash.bin as flash bin
+Using simulated 8386560MB RAM
+The image is /root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-timing-pilot-v1/build/vdot-timing-pilot-v1-riscv64-xs.bin
+The reference model is /root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so
+The first instruction of core 0 has commited. Difftest enabled. 
+[1;34m[src/monitor/image_loader.c:205,load_img] Loading flash image: /root/private_data/mj/xiangshan/evidence/vdot-build-80mKCD/boot-flash.bin
+[0m
+[1;34m[src/monitor/image_loader.c:250,load_img] Read 16 bytes from file /root/private_data/mj/xiangshan/evidence/vdot-build-80mKCD/boot-flash.bin to 0x0xf0000000[0m
+PERF_SAMPLE warm=1 round=0 position=0 variant=0 cycles=74 instret=4 consumer=36
+PERF_SAMPLE warm=1 round=0 position=1 variant=1 cycles=86 instret=20 consumer=36
+PERF_SAMPLE warm=1 round=0 position=2 variant=2 cycles=142 instret=68 consumer=36
+PERF_SAMPLE warm=1 round=0 position=3 variant=3 cycles=81 instret=5 consumer=36
+PERF_SAMPLE warm=1 round=0 position=4 variant=4 cycles=130 instret=13 consumer=36
+PERF_SAMPLE warm=1 round=0 position=5 variant=5 cycles=122 instret=13 consumer=36
+PERF_SAMPLE warm=0 round=1 position=0 variant=0 cycles=74 instret=4 consumer=36
+PERF_SAMPLE warm=0 round=1 position=1 variant=1 cycles=86 instret=20 consumer=36
+PERF_SAMPLE warm=0 round=1 position=2 variant=2 cycles=134 instret=68 consumer=36
+PERF_SAMPLE warm=0 round=1 position=3 variant=3 cycles=81 instret=5 consumer=36
+PERF_SAMPLE warm=0 round=1 position=4 variant=4 cycles=130 instret=13 consumer=36
+PERF_SAMPLE warm=0 round=1 position=5 variant=5 cycles=122 instret=13 consumer=36
+PERF_SAMPLE warm=0 round=2 position=0 variant=1 cycles=86 instret=20 consumer=36
+PERF_SAMPLE warm=0 round=2 position=1 variant=2 cycles=134 instret=68 consumer=36
+PERF_SAMPLE warm=0 round=2 position=2 variant=3 cycles=81 instret=5 consumer=36
+PERF_SAMPLE warm=0 round=2 position=3 variant=4 cycles=130 instret=13 consumer=36
+PERF_SAMPLE warm=0 round=2 position=4 variant=5 cycles=122 instret=13 consumer=36
+PERF_SAMPLE warm=0 round=2 position=5 variant=0 cycles=74 instret=4 consumer=36
+PERF_SAMPLE warm=0 round=3 position=0 variant=2 cycles=134 instret=68 consumer=36
+PERF_SAMPLE warm=0 round=3 position=1 variant=3 cycles=81 instret=5 consumer=36
+PERF_SAMPLE warm=0 round=3 position=2 variant=4 cycles=130 instret=13 consumer=36
+PERF_SAMPLE warm=0 round=3 position=3 variant=5 cycles=122 instret=13 consumer=36
+PERF_SAMPLE warm=0 round=3 position=4 variant=0 cycles=74 instret=4 consumer=36
+PERF_SAMPLE warm=0 round=3 position=5 variant=1 cycles=86 instret=20 consumer=36
+PERF_SAMPLE warm=0 round=4 position=0 variant=3 cycles=81 instret=5 consumer=36
+PERF_SAMPLE warm=0 round=4 position=1 variant=4 cycles=130 instret=13 consumer=36
+PERF_SAMPLE warm=0 ro

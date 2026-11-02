@@ -1,0 +1,85 @@
+{
+  "review_date": "2026-10-26",
+  "status": "timing-pilot-accepted-in-defined-scope",
+  "evidence_source": "user-pasted terminal summary plus previously pinned runner; full remote log and sample files not downloaded",
+  "remote_run": "/root/private_data/mj/xiangshan/evidence/vdot-timing-retry-5vHUp8",
+  "rebuild": false,
+  "emu_or_timeout_exit": 0,
+  "script_exit": 0,
+  "tee_exit": "not separately reported",
+  "explicit_source_reference": true,
+  "difftest_enabled": true,
+  "good_trap_pc": "0x80000af0",
+  "calls": 42,
+  "warmups": 6,
+  "measured_samples": 36,
+  "variants": 6,
+  "samples_each": 6,
+  "application_full128_and_selected_state_checks": true,
+  "sample_order_count_validation": "passed pinned checker",
+  "runtime_identity_before_after": "all five checks OK in user output",
+  "seed": 1,
+  "wall_limit_seconds": 2400,
+  "guest_cycle_limit": 500000,
+  "host_elapsed_seconds": null,
+  "scope": "VL8/e8/m1/vm1 positive dot36, serialized single-operation interval including common timing overhead",
+  "accepted_claim": "counter calibration and these raw single-operation intervals",
+  "not_claimed": [
+    "FU-only latency",
+    "independent throughput",
+    "end-to-end acceleration",
+    "final C3.3 speedup"
+  ],
+  "raw_statistics": [
+    {
+      "variant": "empty",
+      "samples": 6,
+      "raw_cycle_min": 74,
+      "raw_cycle_median": 74.0,
+      "raw_cycle_max": 74,
+      "instret": 4
+    },
+    {
+      "variant": "addi16",
+      "samples": 6,
+      "raw_cycle_min": 86,
+      "raw_cycle_median": 86.0,
+      "raw_cycle_max": 86,
+      "instret": 20
+    },
+    {
+      "variant": "addi64",
+      "samples": 6,
+      "raw_cycle_min": 134,
+      "raw_cycle_median": 134.0,
+      "raw_cycle_max": 134,
+      "instret": 68
+    },
+    {
+      "variant": "native",
+      "samples": 6,
+      "raw_cycle_min": 81,
+      "raw_cycle_median": 81.0,
+      "raw_cycle_max": 81,
+      "instret": 5
+    },
+    {
+      "variant": "rvv_m1",
+      "samples": 6,
+      "raw_cycle_min": 130,
+      "raw_cycle_median": 130.0,
+      "raw_cycle_max": 130,
+      "instret": 13
+    },
+    {
+      "variant": "rvv_mf2",
+      "samples": 6,
+      "raw_cycle_min": 122,
+      "raw_cycle_median": 122.0,
+      "raw_cycle_max": 122,
+      "instret": 13
+    }
+  ],
+  "warmup_cycle_values": "not returned for this run",
+  "next": "new unrolled true-RAW chain application, N=1/8/32, original core and reference"
+}

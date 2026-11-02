@@ -1,0 +1,66 @@
+{
+  "original_images": {
+    "assets/vadd/01-program-pass.png": "80d5d0d5a4c7c596b40339c6fc2d9ba0ab72c7ed5ceb5efde5b747556b376774",
+    "assets/vadd/02-decode-5111ps.png": "484d57a77e0dec9c85e23f007d6bc67b2ccd93b49880a56a4a951c415e441331",
+    "assets/vadd/03-rename-5115ps.png": "c6dd9488c31e3d9c02aac96594d6e76c8201b1ebc42016db2c55098878501918",
+    "assets/vadd/04-dispatch-5117ps.png": "8dfb00c25d80a3708762f981044a21a765bf8cfb690e606ebee48b22a1db2b73",
+    "assets/vadd/05-execution-input-5267ps.png": "a98c1f4856c7265dabc0ad0537ef1e724caa1261170931ce37fbad8755797d0c",
+    "assets/vadd/06-execution-output-5269ps.png": "b5b444914cbe1abaff4ab43a129fc6a0a2cee4e667937b27f44597dc84e33dac",
+    "assets/vadd/07-physical-write-marker5274ps.png": "7644d3bf3a7edc11e637931fed933b9c8b63e53d5fef11eccf4ad3ac58e06dd9",
+    "assets/vadd/08-rob-before-5273ps.png": "0dafd4b7b6e1ba5365b678f6b3de70e0e200338dca0c2c3631cb8fc61bc4e2f3",
+    "assets/vadd/09-map-before-5277ps.png": "3fc906392f081048c1bd2f10a5a0bcca671de149dc768e4866a8253030340cad",
+    "assets/vadd/10-map-after-5278ps.png": "19981a67d9057c3c9c3eb2e381caad03b85e41fc609e6772bc8b8aa8696a4eef"
+  },
+  "frontend_images": [
+    {
+      "source": "artifacts\\vadd4-frontend-2026-10-19\\user-ftq-marker5080ps.png",
+      "report_image": "assets/vadd/frontend-ftq-marker5080ps.png",
+      "marker_ps": 5080,
+      "sha256": "3248f396bb36b20bd96807b158437d357c9c8d50d3180d17f62df0be597b4b6b",
+      "caption_scope": "FTQ request edge; Marker shows next entry 0/4",
+      "unchanged": true
+    },
+    {
+      "source": "artifacts\\vadd4-frontend-2026-10-19\\user-icache-5083ps.png",
+      "report_image": "assets/vadd/frontend-icache-5083ps.png",
+      "marker_ps": 5083,
+      "sha256": "20eff7cd2bd660e7f1bd6b65a93c3153d2cd26e52f59d55f0a6dfe13aa0f9368",
+      "caption_scope": "ICache response and IFU F2; full data slice from archived sampling",
+      "unchanged": true
+    },
+    {
+      "source": "artifacts\\vadd4-frontend-2026-10-19\\user-ifu-5085ps.png",
+      "report_image": "assets/vadd/frontend-ifu-5085ps.png",
+      "marker_ps": 5085,
+      "sha256": "d29359323cf0b206aabddaf1acefd42b621dd69bce96403508f405b9b7290c99",
+      "caption_scope": "IFU output before 5086 ps IBuffer acceptance",
+      "unchanged": true
+    },
+    {
+      "source": "artifacts\\vadd4-frontend-2026-10-19\\user-ibuffer-5087ps.png",
+      "report_image": "assets/vadd/frontend-ibuffer-5087ps.png",
+      "marker_ps": 5087,
+      "sha256": "c9a97913bd329224955b59d21003a49df36ef28af8c4fbf40e268442c585ae4b",
+      "caption_scope": "IBuffer to backend input, distinct from DecodeStage acceptance",
+      "unchanged": true
+    },
+    {
+      "source": "artifacts\\vadd4-frontend-2026-10-19\\user-decode-buffer-5093ps.png",
+      "report_image": "assets/vadd/frontend-decode-buffer-5093ps.png",
+      "marker_ps": 5093,
+      "sha256": "dffd58dcfb8a1482e3a300e91074e5e920629a94e17e81ee5eb8987bf61827e3",
+      "caption_scope": "Successive buffer slots; user annotations preserved",
+      "unchanged": true
+    },
+    {
+      "source": "artifacts\\vadd4-frontend-2026-10-19\\user-decode-accept-5111ps.png",
+      "report_image": "assets/vadd/frontend-decode-accept-5111ps.png",
+      "marker_ps": 5111,
+      "sha256": "25f5f7877adf87fcf8505667f520523ddfdd6eba6b13b3dc8cbc67eb22df4090",
+      "caption_scope": "Pre-edge decode identity and valid/ready",
+      "unchanged": true
+    }
+  ],
+  "count": 16,
+  "scope": "Six unmodified frontend screenshots added; original ten images retained"
+}

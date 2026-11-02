@@ -1,0 +1,3 @@
+SUPPLEMENT_SCRIPT_EXIT=0
+TEE_EXIT=0
+LOG_DIR=/root/private_data/mj/xiangshan/evidence/vdot-window-supplement-fgpWCe

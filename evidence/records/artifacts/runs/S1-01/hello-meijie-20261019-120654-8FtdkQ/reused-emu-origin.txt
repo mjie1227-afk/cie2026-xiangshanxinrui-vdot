@@ -1,0 +1,6 @@
+command=wsl -d Ubuntu -- /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/emu -i /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/nexus-am/apps/hello/build/hello-riscv64-xs.bin --diff /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/ready-to-run/riscv64-nemu-interpreter-so --no-snapshot -C 100000
+exit_code=0
+xiangshan_commit=16ae9ddcda54fc9a2fddffad73174cf793ac7814
+config=MinimalConfig EMU_TRACE=1
+scope=restored_ALU_Hello_with_ready_to_run_NEMU_reference
+emu_sha256=9EE6CE3E8372C6345FC7219563C5AC63C9B3517ADB87DC347816D14F228FD7E2

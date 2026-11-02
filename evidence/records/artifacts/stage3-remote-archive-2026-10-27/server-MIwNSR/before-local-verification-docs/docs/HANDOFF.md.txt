@@ -1,0 +1,52 @@
+# 当前交接
+
+更新：2026-10-27。第三阶段指定功能、等价和三类性能测量已有证据；bijzGZ只读回传已核验。三份报告、逐轮附录、V3稿和交付索引已整理。当前推进图像/视频与最终材料，不默认开启额外性能实验。
+
+## 立即下一步
+
+当前先执行[完整远端日志归档命令](../artifacts/stage3-remote-archive-2026-10-27/README.md)：10个固定运行目录，保留完整日志/样本/参数/身份/退出记录，新建evidence/stage3-log-archive-XXXXXX并生成tar.gz、清单与SHA256。MIwNSR回传显示成功：10目录/264文件、包2233424字节、collector/tee/script均0；[接收目录](../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/README.md)已建，等待下载5个文件并校验。不要重复执行归档命令；尚不能记为本地完整归档。
+
+用户确认S3-F01～F05a终端截图和V3后续统一处理。[V3稿](../recording/stage3/README.md)及已有图继续复用。归档命令不构建、不仿真、不读取大型波形；旧失败记录照原样保存。G3仍未整阶段通过，未提交或外发。
+
+[第三阶段索引](../reports/stage3/README.md)串起新NEMU/DiffTest独立报告、等价/性能报告及取证附录。源码/补丁30项既有身份匹配，5个应用包源码/矩阵一致；选定60项文件清单不等于完整源码包或新环境构建验收。无需重复读取全部历史或运行旧成功验收。
+
+[bijzGZ补证](../artifacts/stage3-closeout-2026-10-27/e2e-read/review.json)：正式30样本顺序/退休数/consumer及10组统计一致；10个预热周期已回传，预热其他字段未打印。应用构建3.525秒、整核运行1651.336秒。37条PERF/22个所选名称均有记录，覆盖整个应用而非某个计时内核；未确定小数组瓶颈。保存身份匹配，本次没有重算远端当前二进制哈希。原始粘贴文本已保留，未执行其中乱码命令回显。
+
+小数组N8/32/128中位周期VDot287/674/2239，m1=320/705/2249，mf2=312/698/2241；部分点1～2周期波动。N128区间比1.0009、基本持平，与依赖链增量比6.71、寄存器内八路N128区间比2.40分列。三张曲线统计未变，继续复用。
+
+## 当前证据与范围
+
+- [mtval修复与整核回归](../artifacts/vdot-mtval-fix-2026-10-24/server-xYGYlZ/review.json)：异常64（62陷阱+2合法）、重叠60、smoke7及Hello/VADD通过。旧96ffa51e…emu留作失败追溯，新测试使用f9653532…。
+- [架构流水套件](../artifacts/vdot-pipeline-2026-10-24/server-JuGUz6/review.json)：依赖48、混发32、分支/异常CSR40通过。
+- [单例投机取消](../artifacts/vdot-window-supplement-2026-10-25/server-fgpWCe/review.json)：VDot ROB1/27 pdest61执行/完成后被较老分支覆盖，复用前未退休；9次身份拒绝均为分支通路缺pdest，不是VDot冲突。不外推其他取消时刻。
+- [CSR请求](../artifacts/vdot-csr-commit-window-2026-10-25/server-aReAEz/review.json)：2280沿零差异，验证退休→ROB dirty_vs→CSR接收请求；不等于最终VS寄存器全部副作用逐拍验证。
+- [共享端口竞争](../artifacts/vdot-port-events-2026-10-25/server-FfVozt/review.json)：VDot ROB0/46 pdest56与VIOTA ROB0/47 pdest57在15658共同请求发射前端口0，一获准一受阻；VIOTA15662获准，两者15672/15676提交。12实例valid采样完整；实际结果写回没有共同请求，部分端口ready未知。只接受本例，不称全FU组合/公平性通过。
+- [GUI补图](../artifacts/vdot-gtk-review-2026-10-26/step3-retirement-instruction/review.json)：用户已看仲裁身份、双EXU输出及退休机器码。最新Marker15671直接显示VDot，VIOTA机器码/ROB/pdest在后续时段可见，完整PC仍引用脚本；已按边界归档，不继续索要重复截图。
+- [8nvimb整核等价验收](../artifacts/vdot-rvv-equivalence-2026-10-26/server-8nvimb/review.json)：144例/432调用/两基线、显式参考库、DiffTest、GOOD TRAP PC80000858及构建/运行/脚本/tee0，应用bf29b936…，原基线身份未变。静态native1条/RVV9条不是加速比。
+- [RVV等价报告](../reports/stage3/rvv-equivalence.md)：合法M态e8/m1、vstart0，VL0/8/16、vm0/1、四策略、六数据集。临时v8/v9/v16与t0可破坏，不声称任意寄存器别名、非法状态或虚拟化的透明替换；原VDot异常/重叠验收另存。该批证明等价；性能测量另见[性能报告](../reports/stage3/performance.md)。
+
+## 必要路径与固定产物
+
+| 用途 | 路径 |
+|---|---|
+| 规划工作区（非Git） | D:\Mayyyyyy\WorkSpaces\日常工作区1\2026比赛规划\RISCV_vdot |
+| 本机Linux正式开发副本 | /home/lenovo1227/xs-vdot-dev/{XiangShan,NEMU,nexus-am}；保留既有dirty内容 |
+| 服务器根 | /root/private_data/mj/xiangshan；助手无远端会话，用户手动粘贴命令 |
+| 当前emu（相对服务器根） | vdot-mtval-fix-20261024/XiangShan/build/emu |
+| 源码参考库 | vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so |
+| 共享Flash | evidence/vdot-build-80mKCD/boot-flash.bin，必须显式-F |
+| 最近竞争VCD | evidence/vdot-port-wave-EfQru1/port-window.vcd；本地waveforms/vdot-port-EfQru1/port-window.vcd，481830060字节 |
+
+固定SHA256：emu `f9653532fd2a4b9f0d0cc08c131f7c258d4b62c46e672c6886d6643aad926850`；源码NEMU `11b9f6807c36ed860e0c64cc4e58d27216b19335ecde1ce5797ba2d1cd057b74`；Flash `fea548655a8b6eecacace83e2f4380a18b8aa83bce964c8aae4cffbe2f5a9724`。其他身份留在[成功清单](../artifacts/vdot-mtval-fix-2026-10-24/server-xYGYlZ/accepted-identities.sha256)。
+
+## 不可丢失的决定
+
+- 语义按[vdot v0.1](vdot-spec-v0.1.md)：前8项signed INT8点积，低32位结果/高96位0，VL0保留旧目的；合法VL8～16均只算前8项；A01～A09仍为工程约定。独立dot4只是练习。
+- 当前MinimalConfig/单核/EMU_TRACE=1；XiangShan基HEAD16ae9dd、NEMU a48a11f，叠加正式VDot与mtval修改。源码/补丁见第二阶段报告，不仅凭HEAD复现。
+- emu短参数-D曾打印帮助并退出0，使用--stat-cycles=1000并检查启动/参考库/提交；PERF中的fail计数不能当运行FAIL。
+- 波形沿前/沿后分清，PC/word加完整ROB/pdest及分配时间才关联动态实例；实际写回组合仲裁按已核对的同一后端域采样。旧脚本失败与原波形保留，不自动重跑。
+- [第二阶段报告](../reports/stage2/README.md)、[截图清单](stage2-evidence-checklist.md)随开发同步；先说明全局位置，再解释细节。用户用本机WSL GTKWave，已完成本例动手核对，不重复基础步骤。
+- 2026-10-26用户要求讲清开发操作：先说修改哪些文件、编译什么、运行谁和原因，再给命令并解释关键部分；简明自然，不用脚本包装替代过程说明。
+- [开发过程总录](development-history.md)覆盖环境、接入、修复、波形、等价、三类计时与材料收尾；后续更新对应章节。RVV逐文件/命令解释见[专项说明](rvv-development-walkthrough.md)。总录用于回顾，不作为每次恢复必读全文。
+
+详细历史按需查[验证记录](verification.md)。本次精简前交接完整保存在[修改前副本](../artifacts/vdot-rvv-equivalence-2026-10-26/docs-before/docs/HANDOFF.md)，不要恢复时全量重读。当前没有助手启动的后台任务；下一次重型运行前再按需查进程。

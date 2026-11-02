@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="830" viewBox="0 0 1180 830" role="img" aria-label="vdot语义、实现与验证关系">
+<rect width="100%" height="100%" fill="#f5f7fa"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="40" y="52" font-size="28" font-weight="700" fill="#173047">vdot语义、实现与验证关系</text>
+<text x="40" y="88" font-size="17" fill="#526375">各层检查对象不同；测试通过范围以用例、配置及运行身份为准。</text>
+<rect x="40" y="120" width="1100" height="145" rx="10" fill="white" stroke="#c7d3df"/>
+<rect x="40" y="120" width="1100" height="44" rx="10" fill="#35546e"/>
+<text x="60" y="149" font-size="21" font-weight="700" fill="white">共同指令规格</text>
+<text x="60" y="198" font-size="18" fill="#20374b">固定前8对signed INT8；低32位结果、高96位零；合法VL0保留旧目的</text>
+<text x="60" y="229" font-size="18" fill="#20374b">掩码、异常优先级、寄存器重叠及 CSR 行为按本项目指令规格处理</text>
+<rect x="40" y="290" width="535" height="175" rx="10" fill="white" stroke="#c7d3df"/>
+<rect x="40" y="290" width="535" height="44" rx="10" fill="#5360a1"/>
+<text x="60" y="319" font-size="21" font-weight="700" fill="white">RTL实现</text>
+<text x="60" y="368" font-size="18" fill="#20374b">VDot两拍FU；五组输入需求；挂接VFEX0</text>
+<text x="60" y="399" font-size="18" fill="#20374b">译码、oldVd依赖、ROB取消与mtval信息通路</text>
+<text x="60" y="430" font-size="18" fill="#20374b">Chisel展开 → Verilator/C++ → emu</text>
+<rect x="605" y="290" width="535" height="175" rx="10" fill="white" stroke="#c7d3df"/>
+<rect x="605" y="290" width="535" height="44" rx="10" fill="#276887"/>
+<text x="625" y="319" font-size="21" font-weight="700" fill="white">NEMU参考实现</text>
+<text x="625" y="368" font-size="18" fill="#20374b">精确译码、合法性检查、源/掩码快照</text>
+<text x="625" y="399" font-size="18" fill="#20374b">完整目的布局与相关向量VS状态更新</text>
+<text x="625" y="430" font-size="18" fill="#20374b">NEMU源码与配置 → 编译 → 参考共享库</text>
+<rect x="40" y="490" width="1100" height="145" rx="10" fill="white" stroke="#c7d3df"/>
+<rect x="40" y="490" width="1100" height="44" rx="10" fill="#237562"/>
+<text x="60" y="519" font-size="21" font-weight="700" fill="white">应用自检与整核DiffTest</text>
+<text x="60" y="568" font-size="18" fill="#20374b">RISC-V工具链生成镜像；emu加载镜像、固定参考库和Flash</text>
+<text x="60" y="599" font-size="18" fill="#20374b">应用比较独立期望；DiffTest在架构同步点比较导出状态；VCD追踪选定动态实例</text>
+<rect x="40" y="660" width="1100" height="145" rx="10" fill="white" stroke="#c7d3df"/>
+<rect x="40" y="660" width="1100" height="44" rx="10" fill="#596776"/>
+<text x="60" y="689" font-size="21" font-weight="700" fill="white">标准等价与分层性能</text>
+<text x="60" y="738" font-size="18" fill="#20374b">RVV内核：固定VL8乘法、清完整目的/零种子、一次归约、恢复入口配置</text>
+<text x="60" y="769" font-size="18" fill="#20374b">144例/432调用证明指定等价范围；性能另测依赖链、八路批处理和预热小数组</text>
+</g></svg>

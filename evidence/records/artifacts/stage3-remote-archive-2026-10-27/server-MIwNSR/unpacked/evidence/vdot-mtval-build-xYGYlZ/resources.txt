@@ -1,0 +1,6 @@
+2026-10-24T17:42:15+08:00
+Filesystem       Size  Used Avail Use% Mounted on
+ks_p300s_public  495G  290G  206G  59% /root/private_data
+/sys/fs/cgroup/memory/memory.limit_in_bytes=123480309760
+/sys/fs/cgroup/cpu/cpu.cfs_quota_us=600000
+/sys/fs/cgroup/cpu/cpu.cfs_period_us=100000

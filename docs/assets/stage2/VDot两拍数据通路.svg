@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="900" viewBox="0 0 1180 900" role="img" aria-label="VDot的两拍算术数据通路、对齐控制与输出选择">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#46657c"/></marker></defs>
+<rect width="1180" height="900" fill="#f5f8fa"/><g font-family="Microsoft YaHei, sans-serif">
+<text x="40" y="48" font-size="28" font-weight="700" fill="#203b50">VDot 微架构与数据通路</text>
+<text x="40" y="84" font-size="17" fill="#51677b">实线表示数据流；右侧概括基类携带和对齐的控制。框图不表示物理时序收敛。</text>
+<rect x="40" y="120" width="360" height="82" rx="8" fill="#fff" stroke="#bccdda"/>
+<text x="58" y="148" font-size="20" font-weight="700" fill="#233f53">数据源 vs1 / vs2</text>
+<text x="58" y="177" font-size="17" fill="#233f53">各取低 8 个有符号字节</text>
+<rect x="430" y="120" width="370" height="82" rx="8" fill="#fff" stroke="#bccdda"/>
+<text x="448" y="148" font-size="20" font-weight="700" fill="#233f53">有效掩码 srcMask</text>
+<text x="448" y="177" font-size="17" fill="#233f53">选择乘积或 16 位有符号零</text>
+<rect x="840" y="120" width="300" height="82" rx="8" fill="#fff" stroke="#bccdda"/>
+<text x="858" y="148" font-size="20" font-weight="700" fill="#233f53">旧目的与控制输入</text>
+<text x="858" y="177" font-size="17" fill="#233f53">oldVd / VL / ROB / 目的等</text>
+<path d="M220,202 L220,240" fill="none" stroke="#46657c" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M615,202 L615,240" fill="none" stroke="#46657c" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="40" y="240" width="760" height="88" rx="8" fill="#eaf4fa" stroke="#bccdda"/>
+<text x="58" y="268" font-size="20" font-weight="700" fill="#233f53">第 1 拍：8 路并行乘法</text>
+<text x="58" y="297" font-size="17" fill="#233f53">signed INT8 × INT8 → 8 个 16 位乘积；按 srcMask 选择</text>
+<path d="M420,328 L420,360" fill="none" stroke="#46657c" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="40" y="360" width="760" height="68" rx="8" fill="#d7eaf3" stroke="#bccdda"/>
+<text x="58" y="388" font-size="20" font-weight="700" fill="#233f53">S1Reg：保存 8 个乘积</text>
+<path d="M420,428 L420,460" fill="none" stroke="#46657c" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="40" y="460" width="760" height="120" rx="8" fill="#f0edf8" stroke="#bccdda"/>
+<text x="58" y="488" font-size="20" font-weight="700" fill="#233f53">第 2 拍：三级加法树</text>
+<text x="58" y="517" font-size="17" fill="#233f53">4 个 17 位部分和 → 2 个 18 位部分和 → 1 个 19 位总和</text>
+<text x="58" y="544" font-size="17" fill="#233f53">pairs（+&amp;）              halves（+&amp;）              sum（+&amp;）</text>
+<path d="M420,580 L420,615" fill="none" stroke="#46657c" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="40" y="615" width="760" height="100" rx="8" fill="#e4dff2" stroke="#bccdda"/>
+<text x="58" y="643" font-size="20" font-weight="700" fill="#233f53">S2Reg：保存格式化结果</text>
+<text x="58" y="672" font-size="17" fill="#233f53">19 位和符号扩展到 32 位，再拼接高 96 位零</text>
+<path d="M990,202 L990,240" fill="none" stroke="#46657c" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+<rect x="840" y="240" width="300" height="285" rx="8" fill="#f2f5f7" stroke="#bccdda"/>
+<text x="858" y="268" font-size="20" font-weight="700" fill="#233f53">控制随流水对齐</text>
+<text x="858" y="297" font-size="17" fill="#233f53">基类传递 oldVd / VL / ROB</text>
+<text x="858" y="324" font-size="17" fill="#233f53">并保留各级有效状态</text>
+<text x="858" y="351" font-size="17" fill="#233f53"></text>
+<text x="858" y="378" font-size="17" fill="#233f53">VDot 局部检查 illegal</text>
+<text x="858" y="405" font-size="17" fill="#233f53">needFlush 判断输出取消</text>
+<text x="858" y="432" font-size="17" fill="#233f53">exceptionVec 上报异常</text>
+<path d="M990,525 L990,615" fill="none" stroke="#46657c" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+<path d="M800,665 L840,665" fill="none" stroke="#46657c" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="840" y="615" width="300" height="100" rx="8" fill="#fff" stroke="#bccdda"/>
+<text x="858" y="643" font-size="20" font-weight="700" fill="#233f53">结果选择 Mux</text>
+<text x="858" y="672" font-size="17" fill="#233f53">合法非零 VL：计算结果</text>
+<text x="858" y="699" font-size="17" fill="#233f53">VL=0 或非法：outOldVd</text>
+<path d="M990,715 L990,760" fill="none" stroke="#46657c" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="840" y="760" width="300" height="100" rx="8" fill="#e9f3ef" stroke="#bccdda"/>
+<text x="858" y="788" font-size="20" font-weight="700" fill="#233f53">EXU 输出接口</text>
+<text x="858" y="817" font-size="17" fill="#233f53">结果 / 异常 / ROB 与目的</text>
+<text x="858" y="844" font-size="17" fill="#233f53">valid 受流水及取消门控</text>
+<rect x="40" y="760" width="760" height="100" rx="8" fill="#fff" stroke="#bccdda"/>
+<text x="58" y="788" font-size="20" font-weight="700" fill="#233f53">与软件可见结果的关系</text>
+<text x="58" y="817" font-size="17" fill="#233f53">合法 VL=0：保留完整旧目的；非零合法计算：低 32 位结果、高 96 位零</text>
+<text x="58" y="844" font-size="17" fill="#233f53">非法与投机取消的架构结果由既有异常、恢复和退休路径控制</text>
+</g></svg>

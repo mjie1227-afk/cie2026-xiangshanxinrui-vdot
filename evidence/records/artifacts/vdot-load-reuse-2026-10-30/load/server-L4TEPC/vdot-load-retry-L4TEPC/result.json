@@ -1,0 +1,32 @@
+{
+  "status": "vdot-opt-raw-results-review-required",
+  "scope": "equal-output software-only experiments; loads, compute, loop, output, fence/readback counted",
+  "performance_measured": true,
+  "cwd": "/root/private_data/mj/xiangshan",
+  "argv": [
+    "/root/private_data/mj/xiangshan/evidence/vdot-load-retry-L4TEPC/resume-run.py",
+    "/root/private_data/mj/xiangshan/evidence/vdot-load-package-Dxbuvr/package",
+    "/root/private_data/mj/xiangshan/evidence/vdot-load-retry-L4TEPC"
+  ],
+  "python": "3.11.9 (main, Apr  5 2026, 19:32:29) [GCC 11.4.0]",
+  "seed": 1,
+  "stages": [
+    {
+      "name": "build_reuse",
+      "exit": 0,
+      "origin": "/root/private_data/mj/xiangshan/evidence/vdot-load-m5fpvT",
+      "compiler_record": "copied from prior build"
+    },
+    {
+      "name": "architecture",
+      "exit": 0,
+      "wall_seconds": 4002.807
+    }
+  ],
+  "experiment": "load",
+  "calls": 98,
+  "samples": 63,
+  "warmups": 35,
+  "final_speedup_accepted": false,
+  "application": "/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-load-v1/build/vdot-load-v1-riscv64-xs.bin"
+}

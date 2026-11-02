@@ -1,0 +1,30 @@
+{
+  "status": "vdot-e2e-raw-results-review-required",
+  "scope": "prewarmed repeated small arrays; loads, RVV configuration/clear/restore, full128 stores, ending fence and readback counted",
+  "performance_measured": true,
+  "cwd": "/root/private_data/mj/xiangshan",
+  "argv": [
+    "/root/private_data/mj/xiangshan/evidence/vdot-e2e-package-K9eE3Y/package/run.py",
+    "/root/private_data/mj/xiangshan/evidence/vdot-e2e-package-K9eE3Y/package",
+    "/root/private_data/mj/xiangshan/evidence/vdot-e2e-bijzGZ"
+  ],
+  "python": "3.11.9 (main, Apr  5 2026, 19:32:29) [GCC 11.4.0]",
+  "seed": 1,
+  "stages": [
+    {
+      "name": "build",
+      "exit": 0,
+      "wall_seconds": 3.525
+    },
+    {
+      "name": "architecture",
+      "exit": 0,
+      "wall_seconds": 1651.336
+    }
+  ],
+  "calls": 40,
+  "samples": 30,
+  "warmups": 10,
+  "final_speedup_accepted": false,
+  "application": "/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-e2e-v1/build/vdot-e2e-v1-riscv64-xs.bin"
+}

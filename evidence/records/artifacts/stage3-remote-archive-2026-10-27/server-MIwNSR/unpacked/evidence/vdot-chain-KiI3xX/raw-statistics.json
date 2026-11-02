@@ -1,0 +1,102 @@
+[
+  {
+    "variant": "empty",
+    "kind": "empty",
+    "iterations": 0,
+    "samples": 3,
+    "raw_cycle_min": 74,
+    "raw_cycle_median": 74,
+    "raw_cycle_max": 74,
+    "instret": 4
+  },
+  {
+    "variant": "native_n1",
+    "kind": "native",
+    "iterations": 1,
+    "samples": 3,
+    "raw_cycle_min": 81,
+    "raw_cycle_median": 81,
+    "raw_cycle_max": 81,
+    "instret": 5
+  },
+  {
+    "variant": "rvv_m1_n1",
+    "kind": "rvv_m1",
+    "iterations": 1,
+    "samples": 3,
+    "raw_cycle_min": 130,
+    "raw_cycle_median": 130,
+    "raw_cycle_max": 130,
+    "instret": 13
+  },
+  {
+    "variant": "rvv_mf2_n1",
+    "kind": "rvv_mf2",
+    "iterations": 1,
+    "samples": 3,
+    "raw_cycle_min": 122,
+    "raw_cycle_median": 122,
+    "raw_cycle_max": 122,
+    "instret": 13
+  },
+  {
+    "variant": "native_n8",
+    "kind": "native",
+    "iterations": 8,
+    "samples": 3,
+    "raw_cycle_min": 130,
+    "raw_cycle_median": 130,
+    "raw_cycle_max": 130,
+    "instret": 12
+  },
+  {
+    "variant": "rvv_m1_n8",
+    "kind": "rvv_m1",
+    "iterations": 8,
+    "samples": 3,
+    "raw_cycle_min": 515,
+    "raw_cycle_median": 515,
+    "raw_cycle_max": 515,
+    "instret": 76
+  },
+  {
+    "variant": "rvv_mf2_n8",
+    "kind": "rvv_mf2",
+    "iterations": 8,
+    "samples": 3,
+    "raw_cycle_min": 451,
+    "raw_cycle_median": 451,
+    "raw_cycle_max": 451,
+    "instret": 76
+  },
+  {
+    "variant": "native_n32",
+    "kind": "native",
+    "iterations": 32,
+    "samples": 3,
+    "raw_cycle_min": 298,
+    "raw_cycle_median": 298,
+    "raw_cycle_max": 298,
+    "instret": 36
+  },
+  {
+    "variant": "rvv_m1_n32",
+    "kind": "rvv_m1",
+    "iterations": 32,
+    "samples": 3,
+    "raw_cycle_min": 1835,
+    "raw_cycle_median": 1835,
+    "raw_cycle_max": 1835,
+    "instret": 292
+  },
+  {
+    "variant": "rvv_mf2_n32",
+    "kind": "rvv_mf2",
+    "iterations": 32,
+    "samples": 3,
+    "raw_cycle_min": 1579,
+    "raw_cycle_median": 1579,
+    "raw_cycle_max": 1579,
+    "instret": 292
+  }
+]

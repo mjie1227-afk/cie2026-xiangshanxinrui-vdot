@@ -1,0 +1,22 @@
+Selected complete result lines transcribed from user message; mangled command echo omitted. Not the original collect.log.
+
+ARCHIVE_DIR=/root/private_data/mj/xiangshan/evidence/stage2-missing-archive-LpAu2Y
+SELECTED_FILES=128 SOURCE_BYTES=1050781192 EXCLUDED_FILES=7
+PACKING=vdot-csr-commit-window-aReAEz
+PACKING=vdot-mixed-resources-9k3waS
+PACKING=vdot-mixed-route-audit-ApJqcC
+PACKING=vdot-mixed-wave-FNmKGI
+PACKING=vdot-port-candidate-eDAWKv
+PACKING=vdot-port-events-FfVozt
+PACKING=vdot-port-wave-EfQru1
+PACKING=vdot-wave-window-Cpa0HX
+PACKING=vdot-window-events-UbYWTP
+PACKING=vdot-window-supplement-fgpWCe
+VERIFYING_ARCHIVE_MEMBERS
+ARCHIVE=/root/private_data/mj/xiangshan/evidence/stage2-missing-archive-LpAu2Y/stage2-missing-evidence.tar.gz
+ARCHIVE_BYTES=90483004
+ARCHIVE_SHA256=0a834faa0e83f1c27dbfa7f836f5e62bca0342332d5a0b375a3dcbb56ab2e07b
+STAGE2_MISSING_ARCHIVE_READY
+COLLECTOR_EXIT=0
+TEE_EXIT=0
+STAGE2_MISSING_ARCHIVE_SCRIPT_EXIT=0

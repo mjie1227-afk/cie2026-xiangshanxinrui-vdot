@@ -1,0 +1,91 @@
+{
+  "documents": [
+    {
+      "document": "docs_final\\README.md",
+      "broken_images": [],
+      "overflow": false
+    },
+    {
+      "document": "docs_final\\01_赛题与总体方案\\赛题要求与提交材料对照.md",
+      "broken_images": [],
+      "overflow": false
+    },
+    {
+      "document": "docs_final\\01_赛题与总体方案\\vdot.vv语义合同与总体方案.md",
+      "broken_images": [],
+      "overflow": false
+    },
+    {
+      "document": "docs_final\\02_阶段一_环境与基础分析\\环境部署与运行验证.md",
+      "broken_images": [],
+      "overflow": false
+    },
+    {
+      "document": "docs_final\\02_阶段一_环境与基础分析\\VADD指令全生命周期波形分析.md",
+      "broken_images": [],
+      "overflow": false
+    },
+    {
+      "document": "docs_final\\03_阶段二_指令设计与RTL实现\\vdot微架构与数据通路设计.md",
+      "broken_images": [],
+      "overflow": false
+    },
+    {
+      "document": "docs_final\\03_阶段二_指令设计与RTL实现\\香山整核集成与关键控制路径.md",
+      "broken_images": [],
+      "overflow": false
+    },
+    {
+      "document": "docs_final\\03_阶段二_指令设计与RTL实现\\功能测试与微架构时序验证.md",
+      "broken_images": [],
+      "overflow": false
+    },
+    {
+      "document": "docs_final\\04_阶段三_协同仿真与性能剖析\\NEMU扩展与DiffTest协同验证.md",
+      "broken_images": [],
+      "overflow": false
+    },
+    {
+      "document": "docs_final\\04_阶段三_协同仿真与性能剖析\\标准RVV等价基线设计与验证.md",
+      "broken_images": [],
+      "overflow": false
+    },
+    {
+      "document": "docs_final\\04_阶段三_协同仿真与性能剖析\\分层性能测量与分析.md",
+      "broken_images": [],
+      "overflow": false
+    },
+    {
+      "document": "docs_final\\附录\\第一阶段复现环境、产物哈希与材料路径索引.md",
+      "broken_images": [],
+      "overflow": false
+    },
+    {
+      "document": "docs_final\\附录\\第三阶段复现环境、产物哈希与材料路径索引.md",
+      "broken_images": [],
+      "overflow": false
+    },
+    {
+      "document": "docs_final\\附录\\第二阶段复现环境、产物哈希与材料路径索引.md",
+      "broken_images": [],
+      "overflow": false
+    }
+  ],
+  "volumes": [
+    {
+      "name": "阶段三_协同仿真与性能分析",
+      "path": "docs_final\\合订版\\阶段三_协同仿真与性能分析.html",
+      "members": [
+        "docs_final\\04_阶段三_协同仿真与性能剖析\\NEMU扩展与DiffTest协同验证.md",
+        "docs_final\\04_阶段三_协同仿真与性能剖析\\标准RVV等价基线设计与验证.md",
+        "docs_final\\04_阶段三_协同仿真与性能剖析\\分层性能测量与分析.md",
+        "docs_final\\附录\\第三阶段复现环境、产物哈希与材料路径索引.md"
+      ],
+      "broken_images": [],
+      "broken_anchors": [],
+      "external_local_links": [],
+      "bytes": 7783550,
+      "pdf": "docs_final\\合订版\\阶段三_协同仿真与性能分析.pdf"
+    }
+  ]
+}

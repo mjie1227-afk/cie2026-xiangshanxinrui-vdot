@@ -1,0 +1,8 @@
+{
+  "cwd": "D:\\Mayyyyyy\\WorkSpaces\\日常工作区1\\2026比赛规划\\RISCV_vdot",
+  "shell": "PowerShell",
+  "command": "& 'C:\\Users\\Lenovo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe' 'artifacts/vadd4-frontend-2026-10-19/report-extension/validate_extension.py'",
+  "exit_code": 0,
+  "stdout": "{\"passed\": true, \"checks\": 74, \"images\": 16, \"local_links\": 270, \"errors\": []}\r\n",
+  "scope": "Document/evidence validation only; no new RTL simulation"
+}

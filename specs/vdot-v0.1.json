@@ -1,0 +1,196 @@
+{
+  "spec_id": "CIE-vdot-vv-v0.1",
+  "status": "implementation-reference-draft-with-explicit-assumptions",
+  "date_asia_shanghai": "2026-10-19",
+  "implemented": false,
+  "organizer_confirmed": false,
+  "target": {
+    "xlen": 64,
+    "vlen": 128,
+    "sew": 8,
+    "lmul": 1,
+    "config": "MinimalConfig",
+    "num_cores": 1,
+    "xiangshan_commit": "16ae9ddcda54fc9a2fddffad73174cf793ac7814",
+    "nemu_commit": "a48a11f208ff81ad765591d83271d1b339fb3861",
+    "configuration_scope": "existing Hello/VADD functional baseline; custom instruction not built or run"
+  },
+  "encoding": {
+    "instruction_bits": 32,
+    "opcode": "0x0b",
+    "funct6": 0,
+    "funct3": 0,
+    "match": "0x0000000b",
+    "mask": "0xfc00707f",
+    "fields": {
+      "funct6": [
+        31,
+        26
+      ],
+      "vm": [
+        25,
+        25
+      ],
+      "vs2": [
+        24,
+        20
+      ],
+      "vs1": [
+        19,
+        15
+      ],
+      "funct3": [
+        14,
+        12
+      ],
+      "vd": [
+        11,
+        7
+      ],
+      "opcode": [
+        6,
+        0
+      ]
+    },
+    "vm": {
+      "unmasked": 1,
+      "masked": 0
+    },
+    "examples": {
+      "vm1_v3_v2_v1": "0x0220818b",
+      "vm0_v3_v2_v1": "0x0020818b",
+      "vm1_v5_v2_v1": "0x0220828b"
+    },
+    "neighbor_rule": "other funct3/funct6 values are not this vdot; use normal ISA dispatch, illegal only if unallocated"
+  },
+  "semantics": {
+    "source_register_indices": [
+      0,
+      31
+    ],
+    "source_element_indices": [
+      0,
+      7
+    ],
+    "source_element_bits": 8,
+    "signed_inputs": true,
+    "initial_sum": 0,
+    "accumulate_old_vd": false,
+    "exact_sum_range": [
+      -130048,
+      131072
+    ],
+    "minimum_signed_accumulator_bits": 19,
+    "result_bits": 32,
+    "result_position": [
+      31,
+      0
+    ],
+    "zero_bits": [
+      127,
+      32
+    ],
+    "lane_mapping": "source element i = signed_int8((old_v[vs] >> (8*i)) & 0xff)",
+    "mask_rule": "when vm=0, old_v0 bit i selects source product i; vm=1 ignores mask, but v0 may still be an explicit data source",
+    "valid_vl_values": [
+      0,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "vl_zero": "preserve entire vd; successful vector context completion still marks VS Dirty",
+    "vl_8_to_16": "reduce exactly first eight source pairs; ignore source indices 8..15",
+    "all_masked_off_nonzero_vl": "write zero to all 128 destination bits",
+    "vta_vma": "both flag values accepted; custom whole-result policy overrides generic destination merging on nonzero-vl success",
+    "source_destination_overlap": "all single-register overlaps allowed, including masked vd=v0; snapshot sources and mask before destination update",
+    "csr_success": {
+      "vl": "unchanged",
+      "vtype": "unchanged",
+      "vstart": 0,
+      "vxrm": "unchanged",
+      "vxsat": "unchanged",
+      "fp_state": "unchanged",
+      "vector_context_status": "mark mstatus.VS Dirty on every legal completion including vl=0; when virtualized mark vsstatus.VS Dirty too; SD follows architectural derivation"
+    }
+  },
+  "ordered_operation": [
+    "If encoding does not match, do not execute this specification; continue normal ISA decode.",
+    "Require target vector extension enabled and vector context available; when virtualized require both host and guest vector contexts.",
+    "Reject vill=1 or illegal/reserved vtype, SEW!=8 or LMUL!=1.",
+    "Reject vstart!=0 before the vl=0 path.",
+    "Reject vl not equal to zero and not in [8,16].",
+    "If vl=0 preserve all vector registers, complete with vstart=0 and the specified VS Dirty rule.",
+    "Snapshot old vs1, vs2 and, only when vm=0, old v0 mask.",
+    "Sum the selected signed source products at indices 0..7 in exact precision from zero.",
+    "Write sum modulo 2^32 into vd bits31:0 and zero bits127:32; complete with vstart=0 and VS Dirty."
+  ],
+  "exceptions": {
+    "cause": 2,
+    "description": "illegal instruction for a recognized vdot with invalid execution state",
+    "vd_on_exception": "unchanged",
+    "vector_csrs_on_exception": "no vdot-induced change to vl/vtype/vstart/vxrm/vxsat",
+    "trap_state": "normal trap entry updates exception CSRs; no successful vdot result commit",
+    "interrupts_flush": "no visible partial sum; squashed instruction produces no committed vector result"
+  },
+  "engineering_assumptions": [
+    {
+      "id": "A01",
+      "choice": "low32 signed result and upper96 zero",
+      "reason": "preserve exact eight-product sum with convenient software representation"
+    },
+    {
+      "id": "A02",
+      "choice": "SEW8/LMUL1; vl0 no-op, vl8..16 fixed8, vl1..7 illegal",
+      "reason": "retain fixed eight-pair computation and define undersized cases without silent truncation"
+    },
+    {
+      "id": "A03",
+      "choice": "support vm0 and vm1, masks select input products",
+      "reason": "retain familiar source-mask behavior and avoid excluding masked use without stating it"
+    },
+    {
+      "id": "A04",
+      "choice": "nonzero vstart illegal; no intra-instruction partial reduction restart",
+      "reason": "align with standard reduction approach and avoid unrepresented partial sum"
+    },
+    {
+      "id": "A05",
+      "choice": "whole128 result policy overrides tail/mask merging when computation executes",
+      "reason": "explicit deterministic cleared output"
+    },
+    {
+      "id": "A06",
+      "choice": "all single-register operand overlap allowed, snapshot old state",
+      "reason": "well-defined two-source reduction semantics"
+    },
+    {
+      "id": "A07",
+      "choice": "custom0, funct6=0, funct3=0, vm bit25",
+      "reason": "custom extension space plus current static decoder audit"
+    },
+    {
+      "id": "A08",
+      "choice": "VS Dirty on every legal completion including vl0",
+      "reason": "deterministic project policy consistent with current NEMU integer-reduction path; RTL must match"
+    },
+    {
+      "id": "A09",
+      "choice": "use locked V2-lineage commit with MinimalConfig as initial development configuration",
+      "reason": "preserve proven functional baseline; larger configurations require separate evidence"
+    }
+  ],
+  "evidence": {
+    "encoding_audit": "artifacts/vdot-spec-v0.1-2026-10-19/encoding-audit.json",
+    "source_level_result": "717 resolved XiangShan keys across 12 active source tables, 28 NEMU main selectors; no intersections; definition-only CUSTOM0 overlap not in active table",
+    "candidate_words_checked": 65536,
+    "rtl_elaboration_checked": false,
+    "rtl_or_nemu_execution_checked": false
+  },
+  "test_plan_status": "expected cases defined, not executed against RTL or NEMU"
+}

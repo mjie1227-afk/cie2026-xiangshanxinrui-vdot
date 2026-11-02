@@ -1,0 +1,1294 @@
+# 实现与验证记录
+
+## 2026-10-27 MIwNSR远端日志包回传（本地尚未下载）
+
+[用户回传选段](../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/user-returned-summary.txt)显示10目录/264文件、源55489484字节、包2233424字节、排除1项；STAGE3_ARCHIVE_READY、collector/tee/script均0。包SHA256=48882ae468149dadc6aadb2303cb9d25f035f5feea49e13cd945c8e3baf54cc8。具体被排除文件及归档耗时待读取实际文件，不猜测；[接收状态](../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/review.json)明确local_archive_verified=false。已创建本地接收目录，下载包/校验文件/结果JSON/原始归档日志/退出记录后再做本地验证。没有新增仿真或构建。
+
+## 2026-10-27 第三阶段日志归档工具检查（未在服务器执行）
+
+新增[collect_stage3_remote.py](../scripts/collect_stage3_remote.py)与[粘贴命令](../artifacts/stage3-remote-archive-2026-10-27/server-paste-command.txt)。本地PowerShell、cwd为本工作区、Python3.14.3：`python scripts/prepare_stage3_archive_command.py`退出0；[local-check.json](../artifacts/stage3-remote-archive-2026-10-27/local-check.json)记录源不变、原字节/非零历史退出保留、排除项、缺样本停止及归档成员哈希检查。夹具为合成数据，不作为硬件证据。
+
+WSL/Bash对同一命令执行`bash -n`退出0；另仅替换work为本地夹具路径执行整段wrapper，collector/tee/script均0，原始日志见[wrapper-fixture.log](../artifacts/stage3-remote-archive-2026-10-27/wrapper-fixture.log)。真实服务器命令尚未执行；不推断实际文件数、大小、哈希、阶段耗时或下载完成。
+
+## 2026-10-27 bijzGZ只读回传核验与第三阶段材料检查
+
+[原文](../artifacts/stage3-closeout-2026-10-27/e2e-read/user-read-output.txt)SHA256=12448f6de5c0d42b2e90fa32b3a089155a88108846523fc1f7c4b1c173edbc49；远端cwd=/root/private_data/mj/xiangshan，run=evidence/vdot-e2e-bijzGZ。原只读脚本报告E2E_EVIDENCE_READ_OK与E2E_READ_SCRIPT_EXIT=0；保存的build/architecture退出0。EMu完整argv已归档，seed1/--max-cycles=1500000/--no-snapshot/显式--diff/-F与原记录一致。保存身份符合预置值，本次未重新计算远端当前二进制哈希。
+
+本地PowerShell，cwd为本工作区，Python3.14.3：`python scripts/review_stage3_evidence.py <用户附件> --output artifacts/stage3-closeout-2026-10-27/e2e-read`退出0，原argv及附件路径见[review.json](../artifacts/stage3-closeout-2026-10-27/e2e-read/review.json)。核对30正式样本轮换/计数/consumer、10组统计一致，预热只保存10个周期值；阶段耗时build=3.525秒、architecture=1651.336秒。37条计数记录/22名称/缺失清单空，日志字节数3099493；全程计数不代表分变体窗口。命令回显乱码保留，未执行粘贴内容。
+
+`python scripts/prepare_stage3_materials.py`退出0：30项归档源码/补丁与历史manifest匹配，五个应用包中的15个源码文件、5个矩阵与现有保存内容逐字一致，输出[60项身份清单](../artifacts/stage3-closeout-2026-10-27/source-inventory.json)与5份有来源行号的日志展示文本。仅材料与解析检查，没有新增DUT测试、核心构建或远端运行。用户确认终端截图后续统一采集，V3仍未录制。
+
+最终执行`python scripts/check_stage3_closeout.py`，退出0；[结构化结果](../artifacts/stage3-closeout-2026-10-27/final-check.json)与[原始输出](../artifacts/stage3-closeout-2026-10-27/final-check.log)保留。检查本次新增/变更链接、60项文件身份、5份摘录来源行及4个Python文件语法；4个截断/字段错误/重复标记的解析负例均被拒绝。这些是证据与文档工具检查，不是新增硬件测试。
+
+以下bijzGZ条目为补证前的历史验收记录；其中当时未回传的逐轮顺序与实际耗时已由本节补齐。
+
+## 2026-10-27 bijzGZ小数组验收、性能分析与只读证据收集准备
+
+[回传](../artifacts/vdot-e2e-2026-10-27/server-bijzGZ/user-server-output.txt)、[核验](../artifacts/vdot-e2e-2026-10-27/server-bijzGZ/review.json)：cwd=/root/private_data/mj/xiangshan，包K9eE3Y、运行bijzGZ；build/architecture/script/tee均0，40调用/30正式/10预热、完整128位输出/保护区/输入未变/指定状态、源码参考/DiffTest及GOOD TRAP PC800050d8齐全。新应用SHA8786fb22c9ca4fe32ae07d13078a8c619bedd2f5832897a6d494d02a268ec762；原四项运行身份与此前记录一致，10个片段的字数、内容摘要、哈希及输入输出字节数与本地相符。最后回传进度1620秒，精确宿主耗时未回传。
+
+N8/32/128中位周期VDot287/674/2239、m1为320/705/2249、mf2为312/698/2241；native N32范围674～676/N128为2239～2240，mf2 N32为696～698，其余点相同。各点3正式样本，退休增量符合矩阵；empty为100周期/6条。相对较快mf2的中位区间比1.0871/1.0356/1.0009，N128基本持平。原始统计与[分析](../artifacts/vdot-e2e-2026-10-27/server-bijzGZ/derived-metrics.json)已保存；逐轮顺序未回传，不从统计反推。[曲线PNG](../reports/stage3/assets/timing/S3-F05-e2e-array.png)/SVG以中位数与min–max生成，已目视检查。
+
+新增[只读脚本](../scripts/inspect_vdot_e2e_saved.py)及[服务器命令](../artifacts/vdot-e2e-2026-10-27/server-bijzGZ/server-read-evidence.txt)，仅读已保存JSON（每个<=256KiB）和architecture.log（<=128MiB），无远端文件写入、构建或emu启动。核对保存的身份/矩阵、40样本顺序/计数、重算统计，输出实际阶段耗时和最多64个选定PERF计数。性能计数的名称依据现有Rob.scala、Sbuffer.scala与VSplit.scala，覆盖全应用而非分变体区间；缺失不记0，末次记录及出现次数均保留。
+
+[脚本检查](../artifacts/vdot-e2e-2026-10-27/server-bijzGZ/read-command-check.json)通过本地既有NEMU样本解析、缺失/乱序/错误计数拒绝、PERF零值/缺失/多次记录夹具及Bash/Python语法；这些仅为工具检查，不是新增硬件测量。下一步等用户回传，再补齐证据并决定局部对照；本轮未重跑或重建已验收应用、核心及参考库。
+
+## 2026-10-27 uLgHm6批量吞吐验收与小数组应用准备
+
+[用户回传](../artifacts/vdot-throughput-2026-10-26/server-uLgHm6/user-server-output.txt)、[核验](../artifacts/vdot-throughput-2026-10-26/server-uLgHm6/review.json)：cwd=/root/private_data/mj/xiangshan，包KF8KeG、运行uLgHm6；40调用/30正式/10预热、全32向量寄存器与指定状态、显式源码参考/DiffTest、GOOD TRAP PC80003068，build/architecture/script/tee均0。应用SHAe9610f34acc9eb2118d1850f802eab90f30adc40074641f88d3f91e86d8abeab；原四项运行身份固定，10片段与本地机器码及哈希一致。每点3样本min=median=max；完整逐条样本仍在服务器，末次回传进度1500秒，精确宿主耗时未回传。
+
+N8/32/128周期VDot96/120/216、RVV m1为186/330/906、mf2为159/232/519。[分析](../artifacts/vdot-throughput-2026-10-26/server-uLgHm6/derived-metrics.json)确认VDot两段增量1，m1均6，mf2为3.0417/2.9896；mf2两端平均3、N32偏离端点连线1周期。N128 mf2/VDot全区间比2.40，限定八路目的/固定源/RVV配置复用。Matplotlib生成并人工核对[PNG](../reports/stage3/assets/timing/S3-F04-throughput-batch.png)/SVG，没有重跑旧测试。
+
+新增[小数组应用](../benchmarks/rvv-baseline/vdot-e2e-v1/README.md)：加载两组8字节、计算及完整128位存储，N8/32/128，三实现+空对照；40调用/10预热/30正式。末尾FENCE源码依据为Fence.scala→MemBlock.scala→Sbuffer.scala，相关文件快照/哈希加入matrix。计时包含加载/配置/存储及排空/readback；完整输出、输入未变、保护区和指定CSR在区间外核对。
+
+[首次本地记录](../artifacts/vdot-e2e-2026-10-27/local-002234/result.json)保存进程、AM/NEMU根/HEAD/状态和相关diff、构建argv/AM_HOME、镜像及参考SHA，构建0、10函数/main通过。首次注入expected[0][0]因GCC立即数折叠未命中实际读取，达到100000步上限；失败记录保留。[修正后检查](../artifacts/vdot-e2e-2026-10-27/local-002318/result.json)逐字确认源码相同、复用原镜像，不重新构建；改写expected[1][0]观察失败返回1。新镜像本地SHA19c949a644eb9f8ec21f258567336d5e90ed132f96453459c1d06da0cbd9efe2，现有本地NEMU参考SHA5ba6caf77513904c6ea541c4c145720a6bebe63f983eefa5b73e53441069c872。
+
+[交付检查](../artifacts/vdot-e2e-2026-10-27/delivery-check.json)通过实际10片段及边界、错误地址/配置/fence拒绝、40样本顺序/计数与失败分类、Bash/Python语法和包一致性。服务器[命令](../artifacts/vdot-e2e-2026-10-27/server-paste-command.txt)先核对uLgHm6成功记录与原产物，使用GCC12只编译新应用，随后原emu显式--diff/-F/seed1/no-snapshot/max-cycles=1500000，墙钟3600秒、日志128MiB，每60秒进度。服务器未执行，当前没有该内核硬件周期。
+
+## 2026-10-26 KiI3xX依赖链验收、增量分析与八路批处理准备
+
+[完整用户回传](../artifacts/vdot-chain-2026-10-26/server-KiI3xX/user-server-output.txt)、[核验](../artifacts/vdot-chain-2026-10-26/server-KiI3xX/review.json)：cwd=/root/private_data/mj/xiangshan，包Xp9Mc4、运行KiI3xX；build/architecture/script/tee均0，40调用/30正式/10预热/full128/state、源码参考、DiffTest、GOOD TRAP PC8000195a齐全。应用SHA13088ad74214b3c7626d675e09a30a130089ec5feeff9ee8434a373c16ea1217；原四项身份一致，10个片段的指令和哈希与本地核验相同。最后回传进度1440秒，精确宿主耗时未回传，不补猜。
+
+每点3正式样本min=median=max。VDot C1/8/32=81/130/298，m1=130/515/1835，mf2=122/451/1579；[增量重算](../artifacts/vdot-chain-2026-10-26/server-KiI3xX/derived-metrics.json)确认两段均为7/55/47周期。较快mf2对VDot增量比6.71，N32含开销区间比5.30，限定为固定输入、逐次配置恢复的完整操作依赖链。使用Matplotlib生成[PNG](../reports/stage3/assets/timing/S3-F03-dependent-chain.png)/[SVG](../reports/stage3/assets/timing/S3-F03-dependent-chain.svg)，从用户回传统计绘图，未构造逐条样本。图形依赖位于独立临时工具目录，未改动核心或应用构建环境。
+
+新增[vdot-throughput-v1](../benchmarks/rvv-baseline/vdot-throughput-v1/README.md)：固定v1/v2、轮转v24～v31，N=8/32/128；两种RVV每8次共享乘法/归约配置，批首清零种子/目的及批末恢复计入。15条消费者读取全部输出，公共退休增量18；10预热+30正式，共40调用，完整32向量寄存器和指定状态检查。
+
+[本地run](../artifacts/vdot-throughput-2026-10-26/local-224541/result.json)在检查进程、AM/NEMU状态与相关diff后仅编译新应用；build0，10函数/main通过，故意错误期望返回1。[额外输入](../artifacts/vdot-throughput-2026-10-26/alternate-inputs.json)复用已编译镜像，负数/混合符号20次全32寄存器检查通过。[交付检查](../artifacts/vdot-throughput-2026-10-26/delivery-check.json)核对全部机器码、固定源、8目的、配置和消费者；错误回授源/漏初始化及样本错误拒绝，Bash/Python与内嵌包一致。新[服务器命令](../artifacts/vdot-throughput-2026-10-26/server-paste-command.txt)固定原核心/参考/Flash，seed1、100万周期/3600秒、日志128MiB、无波形，每60秒进度，服务器尚未运行。
+
+## 2026-10-26 5vHUp8计时预检通过与批量依赖链准备
+
+[回传摘录](../artifacts/vdot-timing-pilot-2026-10-26/server-5vHUp8/user-result-excerpt.txt)、[核验及统计](../artifacts/vdot-timing-pilot-2026-10-26/server-5vHUp8/review.json)：cwd=/root/private_data/mj/xiangshan，运行evidence/vdot-timing-retry-5vHUp8。五个运行文件前后身份均OK，原分析文件身份OK；显式源码NEMU、DiffTest、42调用/36正式/6预热/full128/state PASS、GOOD TRAP PC80000af0、emu及脚本0齐全。正式每变体6样本，min=median=max分别74/86/134/81/130/122，instret4/20/68/5/13/13。接受本范围计时预检；逐条样本和实际宿主耗时未下载，不补造。原IgNim5超时证据保留。
+
+新增[vdot-chain-v1](../benchmarks/rvv-baseline/vdot-chain-v1/README.md)：N=1/8/32，native与两RVV，vd=vs1=v1真实RAW依赖，加empty共10变体；每变体1预热+3正式，共40调用。单次RVV的9条完整序列保留，消费者在链末读取v1；原C/ASM/emu/NEMU应用保持独立。计时输入正数36固定点，另有本地变化负数递推检查。
+
+[本地run](../artifacts/vdot-chain-2026-10-26/local-212047/result.json)记录进程、NEMU/AM根与状态、相关diff、构建argv和AM_HOME；仅编译Linux原生新应用，build0，现有NEMU真实库API检查10变体通过，main返回0，故意改错期望返回1；本地mcycle不作为硬件周期。[负数递推](../artifacts/vdot-chain-2026-10-26/negative-recurrence.json)复用该镜像，10变体完整结果及计数通过，N=1/8/32为−1/−22/−94，无重新构建。
+
+[交付检查](../artifacts/vdot-chain-2026-10-26/delivery-check.json)核对实际镜像每个重复操作的机器码、依赖寄存器、配置恢复和计时边界；错误目的字段、缺样本/重复/计数错误、帮助与真实失败均被拒绝；Bash/Python语法及内嵌包一致。服务器[命令](../artifacts/vdot-chain-2026-10-26/server-paste-command.txt)只构建新应用，固定核心/源码参考/Flash及源码次序依据，seed1，运行100万周期/3600秒，文本128MiB，无波形，每60秒进度；新目录保存源码、编译、身份、argv、完整日志和原始统计。服务器未运行，不填写依赖链性能。
+
+## 2026-10-26 IgNim5完整前缀核对与2400秒仅运行复验准备
+
+[用户日志文本](../artifacts/vdot-timing-pilot-2026-10-26/retry-budget/user-full-log-excerpt.txt)、[逐条解析](../artifacts/vdot-timing-pilot-2026-10-26/retry-budget/prefix-review.json)确认26条完整样本，6预热、20正式；轮次/位置连续，variant轮换、instret和consumer36全部匹配。第27条为打印片段。应用源码在打印后完成结果/状态检查，再进入下次调用，因此下次打印已开始也支持前26次检查完成。仍无最终应用PASS、GOOD TRAP或运行退出0。addi64预热142周期，3个正式样本均134；其他正式读数及样本数见原始前缀JSON，不作为最终加速比。
+
+按900.012秒完成26次调用粗估完整42次约1454秒，作为宿主预算依据，下一次设2400秒。新增[仅运行命令](../artifacts/vdot-timing-pilot-2026-10-26/retry-budget/server-paste-command.txt)，cwd=/root/private_data/mj/xiangshan，新建evidence/vdot-timing-retry-*；前后固定五项运行身份，显式源码--diff、共享-F、seed1、no-snapshot和500000周期，文本128MiB上限，无波形。仅加载原AFD1zJ包中已固定SHA的检查函数，不调用原构建入口。GNU timeout退出码独立保存为EMU_OR_TIMEOUT_EXIT，所有检查后保存samples.csv/json、raw-statistics.json及result.json；服务器复验未执行。
+
+[本地交付检查](../artifacts/vdot-timing-pilot-2026-10-26/retry-budget/delivery-check.json)通过Bash及两块Python语法、包内分析器身份、真实26样本解析与不完整数据拒绝；[新分析块夹具](../artifacts/vdot-timing-pilot-2026-10-26/retry-budget/analysis-check.json)分别验证42条接受、26条拒绝、timeout124拒绝，夹具不是DUT运行。开发过程总录第20节同步说明此次只修改宿主运行调度，无生产源码、镜像或参考库变更。
+
+## 2026-10-26 IgNim5日志检查回传及全程开发回顾
+
+[原始回传](../artifacts/vdot-timing-pilot-2026-10-26/server-IgNim5-inspect/user-inspection-output.txt)、[核验](../artifacts/vdot-timing-pilot-2026-10-26/server-IgNim5-inspect/review.json)：只读命令完成标记存在，独立shell退出码未打印。保存的result.json显示build=0/2.572秒、architecture=-15/900.012秒；参考路径为固定源码NEMU，Difftest enabled已出现，保存的基线前后身份比较为True。应用SHA8545abf1afb71ec405a8c81bada3fe5054a332964436eb7976a824edaf91bda6来自运行前保存的runtime-identities.json，本轮没有重新读取远端二进制计算哈希。
+
+architecture.log为3154字节。27条PERF_SAMPLE标记包含末行`PERF_SAMPLE warm=0 ro`，因此不能计为27个完整样本。最后完整可见记录为round4/position1/variant4、cycles130、instret13、consumer36；位置与26次调用进度相符，完整前缀仍需逐条解析。回传的可见样本符合预期退休计数，未见明确FAIL、GOOD TRAP或最终PASS。已确认多轮运行进展，当前优先解释为原墙钟预算不足，未证明详细耗时来源或排除后段停滞。
+
+下一步[读取完整小日志](../artifacts/vdot-timing-pilot-2026-10-26/server-IgNim5-inspect/server-read-full-log.txt)核对样本前缀，再复用现有镜像安排更充分运行预算。本轮未重跑仿真、未构建或修改生产源码。按用户要求新增[开发过程总录](development-history.md)，整理环境、Hello/VADD、dot4、规格、独立模型/RTL/控制、服务器与ABI、正式接入、mtval修复、流水取证、竞争、RVV与计时19个环节；引用历史证据，不把整理当作新测试。
+
+## 2026-10-26 IgNim5计时应用构建成功，运行墙钟超时
+
+[回传摘录](../artifacts/vdot-timing-pilot-2026-10-26/server-IgNim5/user-runtime-excerpt.txt)、[核验](../artifacts/vdot-timing-pilot-2026-10-26/server-IgNim5/review.json)：cwd=/root/private_data/mj/xiangshan，包AFD1zJ，运行evidence/vdot-timing-pilot-IgNim5。包与六项文件校验通过；build=0，六种负载机器码及内外边界均由runner检查后打印。architecture在900秒墙钟上限触发TimeoutExpired，runner对其进程组发SIGTERM，返回-15；script=2、tee=0。实际argv为固定emu、计时v1镜像、显式源码NEMU、共享Flash、seed1、no-snapshot、max-cycles=500000，详见摘录。
+
+本次只编译新测试应用，未重建核心或参考库。运行日志由runner写入远端architecture.log，运行摘要在成功返回后才打印，因此当前回传不能判断DiffTest实际启动、样本数量或卡点。新镜像SHA与运行后基线身份结果待读保存的runtime-identities.json及identity-after.json；不补猜。暂无已验收的硬件周期结果。
+
+已准备[只读检查命令](../artifacts/vdot-timing-pilot-2026-10-26/server-IgNim5/server-inspect-command.txt)，提取保存记录、启动标志、样本数量与首尾、错误候选及日志尾部。它不编译、不启动emu、不写远端文件。收到输出后再决定针对性修改或预算，不自动重跑。补充[开发过程说明](rvv-development-walkthrough.md)，并按用户要求将文件改动、构建产物、程序角色和关键命令解释写入协作约定。既有8nvimb等价通过记录保留。
+
+## 2026-10-26 8nvimb整核等价通过与计时预检准备
+
+[用户运行摘录](../artifacts/vdot-rvv-equivalence-2026-10-26/server-8nvimb/user-runtime-excerpt.txt)、[核验](../artifacts/vdot-rvv-equivalence-2026-10-26/server-8nvimb/review.json)：cwd=/root/private_data/mj/xiangshan，包tiSvHU；build/architecture/script/tee均0。144例/432调用/两基线、显式源码NEMU、DiffTest、GOOD TRAP PC80000858齐全；应用bf29b936…，原emu/NEMU/Flash身份一致。完整argv、日志、内核反汇编在远端8nvimb；本地只保存用户回传摘录，不补猜耗时。静态1/9条不是周期性能。
+
+新计时预检源码/矩阵见benchmarks/rvv-baseline/vdot-timing-pilot-v1及[性能说明](../reports/stage3/performance.md)。源码核对发现Rename会放宽mcycle/minstret只读CSR次序，故采用CSRRW mscratch串行化；四内部边界、两外部排空/隔离边界，恢复mscratch。空负载、16/64依赖加法、native/两RVV共六变体，6预热+36正式样本。完整向量、指定状态、消费者和instret差值均检查。
+
+[本地最终预检](../artifacts/vdot-timing-pilot-2026-10-26/local-184730/result.json)：新应用构建0、六变体/完整main通过、错误期望值返回1；旧184615版本和产物保留，新外侧边界版在独立应用目录构建。NEMU周期来源执行计数，本地数据不能用于硬件加速比。构建argv/AM_HOME、身份、反汇编/日志均记录；原核心未重建。
+
+[交付检查](../artifacts/vdot-timing-pilot-2026-10-26/delivery-check.json)校验六内核CSR寄存器/边界及缺失边界负向样例、样本顺序/重复/计数错误、日志标志和Bash语法。服务器命令固定原基线并核对8nvimb及次序源码，构建300秒、运行900秒/500000周期、seed1、日志128MiB，无VCD；服务器未执行。当前只有计时方案，无硬件计时结果或最终加速比。
+
+## 2026-10-26 竞争材料收束与C3.2双RVV基线预检
+
+新增[退休机器码补图核验](../artifacts/vdot-gtk-review-2026-10-26/step3-retirement-instruction/review.json)：Marker15671可读VDot0020818b，后续VIOTA时段可读52082257及ROB/pdest；完整VIOTA PC仍引用FfVozt，不称新增15675 Marker直接读数。代表性材料按证据层级归档，不重跑竞争取证。
+
+新实现[基线](../benchmarks/rvv-baseline/README.md)：e8,m1→e16,m2和e8,mf2→e16,m1两种加宽乘法/归约序列，零种子、完整目的清零、VL0保留和vl/vtype恢复。144组输入配置×native/两基线=432调用，完整v0～v3及kernel_end指定状态比较。临时寄存器、非法状态/别名/虚拟化不在此函数级等价范围，未改变原规格。
+
+[最终本地预检](../artifacts/vdot-rvv-equivalence-2026-10-26/local-170237/result.json)构建0、432调用通过、完整main返回0、错误期望字节返回1；本地参考库5ba6caf7…与服务器11b9f680…分列。构建argv、AM_HOME、镜像/参考身份、符号/反汇编和日志在该目录，源码快照由新包保存。本机字节版旧成功产物保留，字比较版在另一个新应用目录构建，完整检查位数不减；先前记录local-165929保留。仅构建应用，未重建RTL/NEMU。
+
+[服务器命令](../artifacts/vdot-rvv-equivalence-2026-10-26/server-paste-command.txt)固定原emu/参考/Flash，seed1，构建300秒、运行1800秒/3000000周期、日志128MiB；新目录，不重复旧套件。内核反汇编、日志判据、包内SHA及Bash语法已检查，见[交付核验](../artifacts/vdot-rvv-equivalence-2026-10-26/delivery-check.json)。服务器未执行，C3.2未计完成，无性能数据。
+
+进度/交接中旧“竞争待取证、RVV未实现”状态已合并更新；第二阶段视频/完整材料及剩余覆盖仍保留。精简前文档均备份于本包docs-before，不修改全局记忆。
+
+## 2026-10-26 GTKWave身份、双EXU输出及部分退休图核对
+
+[三图分项核验](../artifacts/vdot-gtk-review-2026-10-26/step2-identity-output/review.json)：身份图Marker15657显示VDot ROB0/2e pdest38、VIOTA ROB0/2f pdest39及对应valid/ready，后者再次请求保持同一身份。EXU合图分别在15667/15671显示valid/ready1/1与对应身份，确认15668/15672输出握手。ROB图Marker15671显示isCommit/commitValid_0均1、ROB0/2e、pdest38、PC80000174，VDot退休可读；debug_instr未添加，VIOTA完整PC在波形文本中截短。
+
+本轮只归档用户原图并更新报告，不重扫VCD或重跑脚本/仿真。下一步仅补ROB指令字段及15671/15675 Marker两张提交视图；GUI图的缺口不推翻既有FfVozt工程验收。图像未编辑，修改前文档备份在本步docs-before，校验限新增链接。
+
+## 2026-10-26 GTKWave七信号图核对与身份/退休检查准备
+
+用户在WSL GTKWave提交15650～15666ps截图、Marker15661。[截图核验](../artifacts/vdot-gtk-review-2026-10-26/step1-seven-signals/review.json)、[原图](../reports/stage2/assets/preissue-contention-overview.png)。可见15658沿前输入0 valid/ready1/1、输入1为1/0；15662沿前输入0为0/1、输入1为1/1，out_valid1、reset0。输入1 valid在两次请求间拉低，直接支持“受阻后再次请求”，不推断空拍成因。
+
+本轮仅读取本地port-window.vcd头，确认41个所需身份/EXU/控制写回/ROB字段均存在，未扫描事件体、未运行emu。[精确字段与读取范围](../artifacts/vdot-gtk-review-2026-10-26/step1-seven-signals/confirmed-signals.json)。后续GUI检查按三组进行：IQ完整ROB/pdest → EXU有效输出 → ROB isCommit且commitValid。当前目标VDot ROB0/46 pdest56，VIOTA ROB0/47 pdest57；完成15668/15672，提交15672/15676。用户尚未回传这些身份和完成/退休图，不把脚本结果冒充用户已亲自观察。
+
+更新功能报告0.10和截图清单，保留修改前副本；检查仅涉及新记录/链接，旧测试未重跑。
+
+## 2026-10-25 FfVozt单例发射前竞争验收与GTKWave检查
+
+脚本/tee均0，读取现有EfQru1波形，无新仿真。cwd=/root/private_data/mj/xiangshan，argv为python3 evidence/vdot-port-events-FfVozt/analyze.py及输出目录（实际为绝对路径）。[用户回传及人工核验](../artifacts/vdot-port-events-2026-10-25/server-FfVozt/review.json)。12实例各2280沿valid完整、映射冲突/身份拒绝0；WbDataPath实测clock与TOP.clock同网，reset已取得。
+
+15658ps发射前arbiters_0输入0为VDot ROB0/46 pdest56、输入1为VIOTA ROB0/47 pdest57，两者valid1；ready分别1/0。15662同VIOTA输入valid/ready为1/1。VDot EXU输入/输出/提交15664/15668/15672；VIOTA15668/15672/15676，无覆盖redirect。接受单例发射前共享写回端口竞争与双方最终完成提交。实际写回层无共同请求，资源10/11 ready未知保留，不外推所有握手、FU组合或公平性。
+
+脚本原result中的contention_accepted=false表示待人工审阅，本次review.json另行记录有界接受结论，不改原结果。chosen未采得，输出ready来自源码常量；本次胜者依据实测输入valid/ready。没有推断受阻者连续保持valid或只停一拍。
+
+用户截图确认WSL GTKWave已打开波形，目前只有clock；本地文件大小与EfQru1一致，概览清单48根。未重新扫描大VCD或重复跑事件脚本。下一步七信号窗口15650～15666ps，用户回传GUI图后补身份及退休图，见WAVE指引；图像证明尚待完成。本轮只校验新增记录与修改文档链接，旧测试未重跑。
+
+## 2026-10-25 EfQru1短波形验收与竞争事件关联准备
+
+EfQru1短波形已采集：emu/脚本/tee均0，481830060字节，1ps、12060～16621，三目标机器码一致，48根GTKWave概览信号已生成。应用哈希10a092fc…，原emu/源码NEMU/Flash身份保持不变；仅接受采集，实际竞争待事件核对。
+
+[用户回传与核验](../artifacts/vdot-port-wave-capture-2026-10-25/server-EfQru1/review.json)、[身份](../artifacts/vdot-port-wave-capture-2026-10-25/server-EfQru1/identities.json)。cwd=/root/private_data/mj/xiangshan，捕获argv/环境/前后身份及原记录哈希在EfQru1目录；seed1、5978～8258双边沿、9000停止。本地未下载完整VCD/运行日志，不以声明数量判断竞争。
+
+[下一步分析](../artifacts/vdot-port-events-2026-10-25/README.md)：只读原481830060字节VCD一次、写新目录，校验头/大小/捕获身份和相关源码。补组合实际写回采样域，按真实存在的WbDataPath、inner域或同域Og2ForVector信号绑定，不用外层Backend reset，也不以未知值补0。Backend.scala与原DataPath/WbArbiter/RFWBConflictChecker共同锁定源码。
+
+10项本地合成检查及Bash语法通过，含同资源双请求、错误pdest、未知clock/reset/valid、源有效矛盾和redirect覆盖。服务器未分析，没有竞争结论。输出PAIR_REVIEW只作机械证据候选，最终需结合有效握手及后续提交审阅；GTKWave关注窗口从事件生成。用户可同步下载原VCD及概览清单；S2-F09仍待实际事件，不重复采集旧波形。
+
+## 2026-10-25 eDAWKv候选架构验收与短波形准备
+
+eDAWKv新应用构建、8例完整架构DiffTest、文本定位及脚本/tee均退出0。首组除法/VDot/VIOTA PC为0x80000170/174/178，机器码82112057/0020818b/52082257，PERF7002～8002；采集窗口5978～8258（2281周期）。只接受架构与定位，不证明实际竞争。
+
+[回传核验](../artifacts/vdot-port-contend-2026-10-25/server-eDAWKv/review.json)。cwd=/root/private_data/mj/xiangshan，原包目录vdot-port-candidate-package-ICvzS7；构建/architecture/prefix、脚本与tee均0。seed1、显式源码参考库及共享Flash的检查由已知runner完成，日志与runtime-identities.json仍在服务器；镜像哈希未在本轮stdout中给出，不用本地构建哈希代替。
+
+[下一步采集](../artifacts/vdot-port-wave-capture-2026-10-25/README.md)：校验已验收runner、保存的架构结果/产物身份/PC机器码，前后校验实际文件；5978～8258双边沿、9000停止，墙钟600秒、VCD4GiB、文本128MiB、启动8GiB空闲空间。输出argv、环境、原记录哈希、CAPTURE_IDENTITIES和VCD头/有界时间样本。只生成GTKWave概览清单，尚未扫描事件或认定竞争。7项本地检查及Bash语法通过，服务器未执行。
+
+用户本轮明确希望继续亲自用GTKWave观察。本步已增加动手检查说明及F12截图要求：脚本筛选→GUI逐拍核验→保留图像，与开发同步，不推迟到最终整理。
+
+## 2026-10-25 ApJqcC资源归属核验与端口竞争候选准备
+
+ApJqcC确认VADD走IQ1_0/EXU2/仲裁器1，VMUL与VDot共享IQ0_0/EXU0/仲裁器0同一输入。6个发射前实例各2280沿valid完整、共同请求0可信；6个物理写回实例因局部clock资格检查全被跳过，该层无零竞争结论。
+
+用户回传ROUTE_SCRIPT_EXIT=0、TEE_EXIT=0；cwd=/root/private_data/mj/xiangshan，argv为python3 evidence/vdot-mixed-route-audit-ApJqcC/audit.py及该输出目录（实际使用绝对路径）。只读旧FNmKGI波形，无新emu调用；[原始回传与核验](../artifacts/vdot-mixed-route-audit-2026-10-25/server-ApJqcC/review.json)。
+
+下一步执行新应用vdot-port-contend-v1：VDot/VFEX0与VIOTA/VFEX1共享向量端口0，以除法产生的v0作为共同依赖。先新应用DiffTest，再短文本定位；复用旧emu/NEMU，尚未证明实际竞争。
+
+本地[新应用预检](../artifacts/vdot-port-contend-2026-10-25/local-222126/result.json)：构建退出0、8例向量/CSR通过、完整main返回0、内存期望值翻转返回1；本地NEMU库身份与服务器分列，不替代服务器DiffTest。仓库HEAD/status/相关diff、构建argv/AM_HOME、镜像哈希、反汇编及日志在同目录。未修改原emu/NEMU/已有应用。
+
+[服务器包](../artifacts/vdot-port-contend-2026-10-25/README.md)：新应用构建300秒、架构运行600秒/300000周期、文本前缀300秒/16000周期，日志各128MiB；固定成功emu/参考库/Flash，seed1、显式--diff、--stat-cycles=1000，保留被测退出码。只接受架构/定位，不宣称竞争；不自动采大波形。5项解析检查及Bash语法已通过，服务器未执行。新图F11记录覆盖边界，F09仍待真实竞争。
+
+## 2026-10-25 9k3waS混发链核验与资源覆盖审计准备
+
+9k3waS已关联三条混发指令的rename、IQ候选、EXU输入/输出握手、控制写回及ROB提交；VMUL/VDot执行区间重叠。12个仲裁实例共同请求0，不能接受实际竞争，不能推断全硬件无竞争。下一步只读现有波形补资源归属与valid采样覆盖，保留不同分配epoch和未知字段。
+
+- 证据：[用户原始回传](../artifacts/vdot-mixed-resources-2026-10-25/server-9k3waS/user-output.txt)、[核验](../artifacts/vdot-mixed-resources-2026-10-25/server-9k3waS/review.json)。cwd=/root/private_data/mj/xiangshan；argv为python3 evidence/vdot-mixed-resources-9k3waS/analyze.py evidence/vdot-mixed-resources-9k3waS（实际粘贴以绝对路径执行）；脚本/tee退出0。分析2280沿，未调用emu；继承FNmKGI固定镜像/参考库/seed1及VCD身份，不重新验收旧套件。
+- target1/2/3提交13222/13226/13228；target0仅分配13152、复用13204，不与target1合并。详细表见功能报告6.7。物理写回完整身份和IQ摘要ready不足继续保留。
+- [下一步命令](../artifacts/vdot-mixed-route-audit-2026-10-25/server-paste-command.txt)只读原波形，新增每资源clock/reset/valid覆盖及单请求路线；写新目录，240秒上限。依赖原分析脚本固定SHA，继承源码/VCD头校验，重解析生命周期须与9k3waS一致。失败停止，不重跑仿真。
+- [本地检查](../artifacts/vdot-mixed-route-audit-2026-10-25/local-validation.json)：8项合成测试及Bash语法退出0，只验证分析器逻辑，不构成远端竞争通过。服务器尚未执行。本轮报告更新至0.5，新增S2-F10截图要求，F09竞争图仍待证据。
+
+## 2026-10-25 FNmKGI混发波形通过与资源关联准备
+
+[FNmKGI采集核验](../artifacts/vdot-mixed-wave-capture-2026-10-25/server-FNmKGI/review.json)：emu/脚本/tee均0，波形477548918字节，1ps、首尾10060/14621；三条目标PC/机器码匹配，采集窗口4978～7258、8000停止。仅接受采集；issue_wb_busy480、writeback_arbitration11425等为声明计数，不是竞争次数。
+
+[当前资源分析命令](../artifacts/vdot-mixed-resources-2026-10-25/server-paste-command.txt)：只读现有mixed-window.vcd，沿前值关联三条目标的rename、IQ/EXU、写回和ROB提交，同时按实际单输出仲裁实例分别观察发射前端口申请与实际写回阶段。源身份、完整ROB/pdest与同网别名约束映射；缺字段/映射矛盾明确保留，不能以零事件宣称无竞争。240秒上限，本地11项检查及Bash语法通过，服务器尚未分析。 两个仲裁层级依据DataPath/WbArbiter/RFWBConflictChecker源码区分；IQ整体ready也可能被其他原因阻止，不能单独归因于写回端口。最终竞争结论须结合完整事件和redirect上下文审阅。
+
+## 2026-10-25 混发重解析通过与短窗口采集准备
+
+[nIu7DA重解析已通过](../artifacts/vdot-mixed-window-locator-2026-10-25/reparse-fix/server-nIu7DA/review.json)：660条PERF误报排除，真实错误0，4919条提交与原运行一致；pipeline_0首次121条记录、8条VDot。首组PC/word为0x800001b8/0x02110257（VADD）、0x800001bc/0x961122d7（VMUL）、0x800001c0/0x0020818b（掩码VDot），PERF6002～7002，建议4978～7258共2281周期。脚本/tee0，无新仿真；只接受定位，不证明竞争。
+
+[下一步混发波形采集](../artifacts/vdot-mixed-wave-capture-2026-10-25/server-paste-command.txt)：复用原emu/NEMU/Flash和已验收mixed镜像，seed1，双边沿4978～7258，8000周期停止；墙钟600秒、VCD4GiB、文本128MiB、启动需8GiB空闲空间。先后校验身份及目标PC/机器码，运行日志沿用修复的错误分类。只读VCD头及有界首尾时间样本，不分析完整动态事件；本地8项检查/Bash语法通过，服务器尚未采集。
+
+## 2026-10-25 混发定位PERF误报与原日志重解析准备
+
+[f3CuPs回传核验](../artifacts/vdot-mixed-window-locator-2026-10-25/server-f3CuPs/review.json)：emu0、HELP_ONLY0、指定参考库/DiffTest/周期上限齐全，4919提交、pipeline_0四次入口、首次121条记录；定位脚本退出2。660条诊断全部是数值PERF计数器，因不区分大小写的FAIL子串匹配误报。此为分析器故障，不是已证实硬件失败；尚无波形窗口或竞争结论。
+
+[当前只读重解析命令](../artifacts/vdot-mixed-window-locator-2026-10-25/reparse-fix/server-paste-command.txt)：校验原脚本/运行身份和日志大小，重读既有prefix.log，写新目录；不调用emu、不改原始文件。修复完整计数行与独立失败标志分类，真实BAD TRAP/断言/FAIL仍拦截，错误摘要限20条且保留总数。本地14项解析回归（含全部660条实样）及4项重解析检查通过，服务器尚未重解析。 原首版脚本及打包命令/验证记录已备份；原远端证据不覆盖，已有取消/CSR请求结论不受影响。
+
+## 2026-10-25 aReAEz CSR请求通过与混发定位准备
+
+[aReAEz CSR请求核验](../artifacts/vdot-csr-commit-window-2026-10-25/server-aReAEz/review.json)：2280个非复位采样沿，零差异；正常VDot ID1/3/5/7/9/11/13/15均有退休dirtyVs贡献，target19提交数0。脚本/tee退出0、VDOT_CSR_COMMIT_REQUEST_PASS。关闭本窗口退休→ROB寄存dirty_vs→CSR接收请求；不声称最终VS寄存器或所有CSR副作用已逐拍验证。
+
+15598分支单独退休时请求0，15600 VDot退休时两端请求1；16908候选完成、16952 redirect和16958分支退休时两端请求0。14272同拍分支dirtyVs0、VDot dirtyVs1，因此总请求1正确，不能把聚合请求归因给分支。完整观察文件仍在服务器，本地归档用户回传。
+
+[下一步混发窗口定位命令](../artifacts/vdot-mixed-window-locator-2026-10-25/server-paste-command.txt)：固定现有emu/NEMU/Flash与vdot-mixed镜像，运行16000周期文本前缀（300秒、128MiB日志、无波形/重建），定位pipeline_0首组向量算术及VDot的粗周期范围。此前32例架构PASS不重跑全套；此次为新竞争取证选窗口，提交邻接不等于端口竞争。本地10项检查/Bash语法通过，服务器尚未执行。
+
+## 2026-10-25 fgpWCe单例取消闭环与CSR请求准备
+
+[fgpWCe补证核验](../artifacts/vdot-window-supplement-2026-10-25/server-fgpWCe/review.json)：脚本/tee退出0，FU入口/出口身份字段齐全。target19 PC0x80000208、ROB1/27、pdest61：16892 rename、16904输入握手、16908完成/控制写回/物理写端口、16952被target18分支ROB1/26的redirect覆盖，16970复用前未提交。单例执行完成后取消证据闭环；8次正常VDot作为提交对照。
+
+9次拒绝全部是分支ID0/2/4/6/8/10/12/14/18的ctrl writeback5缺少pdest（null），对比rename占位0；不是VDot身份冲突，不能把null补0。WB输入ready仍未采得，保留未知；本例由FU握手、控制写回及同拍写端口addr/data联合佐证，不依赖假设ready。target17为另一次ROB1/28，同拍输入握手与redirect，暂不宣称发射前取消。
+
+[下一步CSR提交请求命令](../artifacts/vdot-csr-commit-window-2026-10-25/server-paste-command.txt)：复用Cpa0HX波形，核对沿前退休贡献、沿后ROB dirty_vs和CSR接收请求；8个正常VDot应有贡献，已取消target19不能成为退休贡献。仅验请求通路，不宣称最终VS状态或全部CSR副作用；限240秒，无emu调用。本地8项检查/Bash语法通过，服务器尚未执行。
+
+已更新设计/功能主报告与S2-F04～F09截图清单；原始提取标签及历史证据保留，未重跑仿真。
+
+## 2026-10-25 UbYWTP动态事件核验及第二阶段文档补齐
+
+[UbYWTP事件核验](../artifacts/vdot-window-events-2026-10-25/server-UbYWTP/review.json)：脚本/tee退出0，20个目标rename、9个FU输出、17个提交；8个正常VDot有完成/控制写回/提交对照。target19为PC0x80000208/0x0220818b、ROB1/27、pdest61，16892 rename、16908完成及控制写回、16952被target18分支ROB1/26的redirect覆盖，16970身份复用前未见提交。接受这一窗口内观察；不再概括为“完全没有内部证据”。
+
+剩余：FU输入三个身份字段缺失，9次写回入口ready未知或低，9次pdest缺失/不匹配拒绝待解释；完整取消链、多FU实际竞争及CSR逐拍提交未关闭。target17与target19虽同pdest61但ROB不同，不能合并，也不能据target17无输出断定发射前取消。
+
+[下一步命令](../artifacts/vdot-window-supplement-2026-10-25/server-paste-command.txt)：沿原VCD补发射身份和拒绝诊断，使用已核对的EXU/Dispatcher直通连线及直接生成常量，不猜复杂表达式。新分析目录、240秒上限、无仿真重跑；本地7项检查及Bash语法通过，服务器尚未执行。
+
+[第二阶段文档入口](../reports/stage2/README.md)已建立：设计说明、功能验证报告和[截图清单](stage2-evidence-checklist.md)按现有提交内容组织。按用户要求，后续每一步按实际设计/验证变化更新对应正文，主动提醒取图；命令、哈希和完整日志留在附录/证据，避免逐轮重复追加。 本轮未重跑已有整核套件或构建。
+
+## 2026-10-25 动态事件关联命令准备
+
+已准备[动态事件命令](../artifacts/vdot-window-events-2026-10-25/server-paste-command.txt)及[说明](../artifacts/vdot-window-events-2026-10-25/README.md)：一次读取现有约436MiB窗口；以沿前握手、完整ROB/pdest关联rename、FU、写回、redirect、ROB提交，记录物理写端口wen/addr/data。通过生成RTL父实例/直接端口连线补扁平FU映射；缺失FU保留核心事件并明确缺口。限240秒，无emu调用，成功仅为事件提取待审阅。本地12项检查及Bash语法退出0，服务器尚未执行。
+
+新元数据回传Vebwql退出0，rename820/ROB651/redirect90/写回166项端口及cycleCnt声明恢复，VDot候选仍为空；真实事件尚未提取。[回传核验](../artifacts/vdot-wave-raw-schema-2026-10-25/server-Vebwql/review.json)。本轮只读相关源码，确认提交/回滚指针区别、环形ROB年龄比较及物理写端口wen；未运行或修改源码工程。
+
+
+## 2026-10-25 schema部分有效与原始端口映射修正
+
+[MHnAzP回传核验](../artifacts/vdot-wave-schema-2026-10-24/server-MHnAzP/review.json)：脚本0；16个端点中VCD时间−2×SimTop.timer在时钟高/低分别为98/99，但VDot作用域为空、rename仅6项，未获得完整动态身份或cycleCnt。原筛选依赖实例名和缓存清单，尚不能用于发射/写回关联。
+
+端点结果只适用于首末16个已采样时间点；不是全窗口校准，也不是采样沿前握手证据。rename仅6项不能建立PC/机器码、ROB flag/value和pdest完整映射。未读取真实发射、写回、redirect及ROB提交事件，本轮不增加硬件验收PASS。
+
+[当前命令](../artifacts/vdot-wave-raw-schema-2026-10-25/server-paste-command.txt)及[说明](../artifacts/vdot-wave-raw-schema-2026-10-25/README.md)：读取未过滤VCD头和有界生成RTL，保留匿名实例及嵌套端口，再核对完整ROB/pdest/握手。仅采元数据，不读时间序列、不调用emu。本地7项检查及Bash语法通过，服务器新命令尚未执行。
+
+## 2026-10-25 有界VCD回传归档与精确信号校准准备
+
+[用户回传核验](../artifacts/vdot-wave-capture-2026-10-24/server-Cpa0HX/review.json)：目录evidence/vdot-wave-window-Cpa0HX，capture.py哈希OK、CAPTURE_EMU_EXIT=0、CAPTURE_SCRIPT_EXIT=0、VDOT_BOUNDED_WAVE_CAPTURED。波形457224402字节，timescale=1ps，首时间14060、末时间18621。已核对脚本使用同一seed/镜像/源码NEMU/Flash，6978～9258周期双边沿采集，10000周期停止；其成功路径要求DiffTest/正确参考库/周期上限标志、无差异及前后固定身份匹配，但完整capture.log/result.json尚未复制。
+
+回传TARGET_COMMIT_ROWS共17项：8组PC0x80000204分支及0x80000208/0x0220818b的VDot，随后第9次分支；架构模式与定位相符。此时未读取内部执行/ROB动态事件，不能认定投机执行或取消。粗分组vdot_fu=14339的样本来自带Vdot字样的IssueQueue，不能当真实FU端口数；clock样本TOP.clock id=j4O，TOP.SimTop.timer id=h'。
+
+准备[精确schema/端点采样](../artifacts/vdot-wave-schema-2026-10-24/README.md)：读取缓存信号清单、复核波形大小和header_sha256，精确匹配末段VDot实例，列出rename/ROB/redirect端口；仅取首8个完整时间点（数据最多64MiB）及末8MiB中的最后8点，分别计算root clock相位下时间/计数器偏移。沿后稳定样本不充当沿前握手；本步不扫描全时间序列、不运行emu、原波形不变。
+
+[7项本地检查](../artifacts/vdot-wave-schema-2026-10-24/local-validation.json)及Bash语法通过，服务器本步尚未执行。[新粘贴入口](../artifacts/vdot-wave-schema-2026-10-24/server-paste-command.txt)。后续再依据实际schema提取目标信号变化，并以同一PC/机器码、完整ROB、物理目标及有效握手关联各阶段。
+
+## 2026-10-24 文本定位v2成功与有界波形准备
+
+用户[回传核验](../artifacts/vdot-window-locator-2026-10-24/v2/server-l7RZQD/review.json)：目录evidence/vdot-window-locate-v2-l7RZQD，locate.py哈希OK、emu退出0、HELP_ONLY=0、3644条提交记录、36次目标分支、LOCATOR_SCRIPT_EXIT=0。第9次分支为日志154735行PC0x80000204/机器码0x01ff0463，PERF上下界8002和9002；建议窗口6978～9258，共2281周期。由已核对定位器的READY路径支持训练8次后第9次跳过的提交序列检查及前后身份一致；完整prefix.log/result.json仍在远端，未复制。
+
+这只是定位，不是取消证明。下一步[采集脚本](../scripts/capture_vdot_bounded_wave.py)从原result.json校验窗口/身份后，使用原emu/NEMU/Flash/cancel镜像、seed1，--dump-wave-full、--log-begin=6978、--log-end=9258、--max-cycles=10000、--stat-cycles=1000、no-snapshot；仅保存该范围的双边沿波形，到周期上限正常停止。墙钟600秒，波形4GiB硬上限，文本日志128MiB监控停止，启动需8GiB空间；异常仅终止自己的子进程，保留部分数据。
+
+采集后只读VCD头（64MiB限额）及有界首尾时间样本，保存信号候选表，不扫描全时间序列/不计算整VCD哈希；header_sha256仅标识头。真实时间映射及动态PC/完整ROB/物理目的/握手关联留待下一步。[9项本地检查](../artifacts/vdot-wave-capture-2026-10-24/local-validation.json)和Bash语法通过，未启动emu或扫描旧波形。[粘贴入口](../artifacts/vdot-wave-capture-2026-10-24/server-paste-command.txt)、[说明](../artifacts/vdot-wave-capture-2026-10-24/README.md)。**服务器新波形尚未采集，取消/竞争/逐拍CSR提交缺口仍在。**
+
+## 2026-10-24 定位器参数修正与help-only检测
+
+用户只读回传已明确旧010L1P/0JUzgB的emu运行仅0.036/0.037秒、2691字节，无参考库加载/DiffTest/周期上限标志/提交记录，样本为帮助选项。核对emu.cpp确认getopt短参数字符串缺D，长参数stat-cycles映射D；默认分支print_help并exit(0)。因此根因是定位命令-D未被支持，仿真根本没有开始；此前trace开启时机/解析格式/周期不足的假设没有成为本次根因。
+
+已将[定位脚本](../scripts/locate_vdot_wave_window.py)改为--stat-cycles=1000，新增Usage帮助头、参数错误和启动状态优先检测；打印HELP_ONLY和ALL_COMMIT_RECORDS，再判断目标。预期诊断失败返回脚本2，包装层单独打印LOCATOR_SCRIPT_EXIT，和emu的0区分。范围仍16000周期/300秒/单文件128MiB，不生成波形、不重建emu/NEMU、不覆盖旧目录。
+
+[本地16项检查](../artifacts/vdot-window-locator-2026-10-24/v2/local-validation.json)通过；[GNU libc参数解析实测](../artifacts/vdot-window-locator-2026-10-24/v2/getopt-validation.json)使用实际源码注册字符串，-D返回?，--stat-cycles=1000返回D且optarg为1000。没有运行emu。新粘贴命令Bash语法退出0，内嵌脚本哈希校验在服务器执行前进行。[v2入口](../artifacts/vdot-window-locator-2026-10-24/v2/server-paste-command.txt)及[说明](../artifacts/vdot-window-locator-2026-10-24/v2/README.md)。服务器v2尚未执行，窗口/波形及微架构证据仍待取得，既有120例架构PASS保持有效。
+
+## 2026-10-24 两次文本定位未匹配目标（尚未定位原因）
+
+用户回传evidence/vdot-window-locate-010L1P和vdot-window-locate-0JUzgB：两次locate.py哈希检查OK、PREFIX_EMU_EXIT=0、TARGET_BRANCH_COMMITS=0，随后not-ready RuntimeError。已归档[摘要与核验](../artifacts/vdot-window-locator-2026-10-24/server-zero-targets/review.json)。外层数值退出码未打印；原始prefix.log/result.json尚未回传，不能把目标零匹配解释成目标实际未执行、微架构取消或DiffTest失败。既有120例整核架构验收结论不变。
+
+本轮复核解析器与真实DiffState/CommitTrace输出格式：定位器没有统计所有提交记录，无法从当前摘要区分追踪未开启/格式问题/PC未到。emu.cpp追踪开关依赖trap->cycleCnt == args.log_begin，-b1精确相等是否被观测是待验证假设，不先改构建或扩大周期。已准备[只读诊断命令](../artifacts/vdot-window-locator-2026-10-24/inspect-existing-logs.txt)，统计两份已有日志的宽松/严格匹配数、目标PC、首尾提交和停止进度；Bash语法检查0，不启动emu或写远端文件。下一步按真实日志诊断，必要时优先重解析，避免第三次重复定位。
+
+## 2026-10-24 新应用身份补齐与文本定位方案
+
+用户[回传摘要](../artifacts/vdot-pipeline-2026-10-24/server-JuGUz6/context-confirmed/user-output.txt)确认三个服务器镜像SHA：deps=0d0daaabbfaeb77556a559d88bf036182f604529588f4602dca73ebeb8dac593，mixed=166675d3c93d1dfc11178c8ce26a7301af88d6f91030e5cfae6bbfc0dcd094c6，cancel=3e0f4efa7cf32376768f72d52c78beb526bf4f3f12f16dab9f43a433c2e322bc。[符号](../artifacts/vdot-pipeline-2026-10-24/server-JuGUz6/context-confirmed/symbols.json)：deps/mixed pipeline_0=0x8000012c，mixed pipeline_1=0x80000364；cancel_0=0x8000012c、branch_0=0x80000204、wrongpath_0=0x80000208、fault_8=0x80000f80。VDOT_PIPELINE_CONTEXT_READ_OK已显示；数值退出码未打印。只读取得已有记录，不是新仿真或远端现场重算哈希。
+
+已核对difftest emu.cpp/emu.h/CommitTrace源码：支持--dump-commit-trace与周期范围，CommitTrace无周期号；PERF的GTimer与波形筛选cycleCnt/输出时间不应直接等同。准备[文本前缀定位](../artifacts/vdot-window-locator-2026-10-24/README.md)，固定原emu/参考库/Flash/cancel镜像，seed1、-b1/-e16000/-C16000/-D1000，限300秒/子进程单文件128MiB，不请求波形。目标为第9次分支，核对此前8次候选提交及随后跳过，并用PERF上下界加保守余量规划短窗口。周期上限正常退出仅接受定位，不是新的整程序验收，更不能证明投机取消。
+
+[本地解析器检查](../artifacts/vdot-window-locator-2026-10-24/local-validation.json)8组合成输入通过，Bash语法退出0；没有运行emu、扫描VCD或新增整核功能结论。服务器定位尚未执行，命令见[粘贴入口](../artifacts/vdot-window-locator-2026-10-24/server-paste-command.txt)。下一步依据真实回传选择波形窗口，不自动扩大或重复完整套件。
+
+## 2026-10-24 依赖/混发/取消CSR的120例整核架构验收通过
+
+[用户回传](../artifacts/vdot-pipeline-2026-10-24/server-JuGUz6/user-output.txt)已原样归档，[核验](../artifacts/vdot-pipeline-2026-10-24/server-JuGUz6/review.json)记录各阶段时间/退出码及证据边界。cwd=/root/private_data/mj/xiangshan，包目录evidence/vdot-pipeline-package-bL1TRV，日志evidence/vdot-pipeline-JuGUz6。压缩包及各文件校验OK；三个新应用构建全退出0，随后三次仿真全退出0。
+
+| 应用 | 定向架构场景 | GOOD TRAP PC |
+|---|---|---|
+| vdot-deps | 48例/12程序 | 0x80000f54 |
+| vdot-mixed | 32例/8程序 | 0x80001562 |
+| vdot-cancel-csr | 40例：32分支+8精确异常 | 0x80001568 |
+
+三项均直接显示原源码参考库路径、Difftest enabled、对应PASS计数及ACCEPTED。总IDENTITIES_AFTER_EXIT=0、VDOT_PIPELINE_EXIT=0、VDOT_PIPELINE_ARCH_PASS，21:46:01开始构建、22:00:33最后仿真完成。emu仍为f9653532fd2a4b9f0d0cc08c131f7c258d4b62c46e672c6886d6643aad926850，NEMU仍为11b9f6807c36ed860e0c64cc4e58d27216b19335ecde1ce5797ba2d1cd057b74，配置和共享Flash前后校验一致。seed1、显式--diff/-F、300万周期/1800秒上限由已核对入口给出，完整日志/argv在远端。三个新镜像哈希已保存各应用identity.sha256，值尚未回传；本地GCC13镜像哈希不能代填。
+
+本批接受既定依赖、混发、分支路径/精确异常后寄存器与CSR的架构结果。日志明确标记architectural-results；不能据此认定实际某拍端口竞争、特定VDot曾投机发射并取消、或CSR逐拍提交已证明。下一步只读取回新镜像身份及少量符号地址，再选择有界波形目标。完整动态事件仍需PC/机器码、完整ROB、物理目标及有效握手关联。本轮只解析回传和更新记录，无本地新构建/仿真，不重跑已通过应用。
+
+## 2026-10-24 依赖/混合FU/取消CSR应用准备与本地预检
+
+新增[三应用与覆盖边界](../artifacts/vdot-pipeline-2026-10-24/README.md)：vdot-deps为12程序×4固定输入=48例，包含RAW/WAW/WAR、v0/旧vd/标量消费；vdot-mixed为8程序×4输入=32例，穿插VADD/VMUL/VDot、整数MUL/DIV和浮点ADD/MUL，核对所有结果；vdot-cancel-csr为32个分支架构路径场景+8个精确异常/恢复场景=40例。所有组检查完整向量值及VS/vl/vtype/vstart/vcsr/fflags，取消组另核对较老结果、cause/mepc/mtval和恢复执行。
+
+WSL运行`python3 scripts/check_vdot_pipeline_tests.py`，cwd为本工作区的/mnt/d对应路径，退出0。[最终记录](../artifacts/vdot-pipeline-2026-10-24/local-211456/result.json)保存编译argv/AM_HOME、GCC13.3、源码/镜像/本地NEMU SHA、逐例CSR/PC访问次数。120个真实汇编调用通过；3个真实C main返回0，分别27045/21135/38297个宿主迭代（含_putc截获），仅截获串口输出，不跳过被测指令或异常。NEMU只执行架构路径：分支地址9次、候选路径8次，不能据此推断整核误预测。每个C main在仅翻转NEMU RAM中一项期望值后均打印FAIL并返回1，检查器负向通过；未改磁盘镜像/参考库。首个构建的未使用常量-Werror失败日志保留，移除生成器无用声明后通过。
+
+本批只修改新增应用与脚本；现有emu、源码NEMU及mtval修复源码不变。[交付检查](../artifacts/vdot-pipeline-2026-10-24/delivery-validation.json)确认内嵌包/哈希/被测源码一致、Bash语法退出0。包SHA256=ec78621c3a8c4d227c35b3829780aed093a191e95c0b0defab0bbe4410ea7d6a。[服务器入口](../artifacts/vdot-pipeline-2026-10-24/delivery/server-paste-command.txt)只用GCC12编译新应用，固定f9653532…emu、11b9f680…参考库、配置及共享Flash前后哈希；显式--diff/-F、seed1、300万周期/1800秒上限，记录新ELF符号表/反汇编和完整日志。
+
+**服务器本批尚未执行**。即使后续VDOT_PIPELINE_ARCH_PASS，也只证明定向架构结果；多FU端口实际同时申请、VDot是否已投机发射及被选择性取消、CSR具体提交拍均需有界波形再证明。后续微架构证据仍关联PC/机器码、完整ROB、物理目的和有效握手；不默认生成/扫描巨大VCD。
+
+## 2026-10-24 mtval修复服务器整核验收通过
+
+[用户回传](../artifacts/vdot-mtval-fix-2026-10-24/server-xYGYlZ/user-output.txt)逐字节归档，[核验](../artifacts/vdot-mtval-fix-2026-10-24/server-xYGYlZ/review.json)保存阶段/时间/范围及[身份](../artifacts/vdot-mtval-fix-2026-10-24/server-xYGYlZ/accepted-identities.sha256)。cwd=/root/private_data/mj/xiangshan，包目录evidence/vdot-mtval-package-NyMrl9，日志evidence/vdot-mtval-build-xYGYlZ。delivery-v2包校验OK，apply退出0；整核构建17:43:00至18:27:06，退出0，emu --help退出0。配置为已核对入口中的MinimalConfig/单核/EMU_TRACE=1/JVM_XMX=6G/make -j4，完整构建日志未下载。
+
+新emu位于vdot-mtval-fix-20261024/XiangShan/build/emu，SHA256=f9653532fd2a4b9f0d0cc08c131f7c258d4b62c46e672c6886d6643aad926850。参考库继续为vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so，SHA256=11b9f6807c36ed860e0c64cc4e58d27216b19335ecde1ce5797ba2d1cd057b74；原异常镜像、共享Flash及其他固定基线未变。
+
+| 应用 | 结果 | GOOD TRAP PC |
+|---|---|---|
+| vdot-exceptions | 64例，62次预期陷阱+2次合法，退出0 | 0x80000680 |
+| vdot-overlap | 60例，15种寄存器相等关系，退出0 | 0x80000c26 |
+| vdot-smoke | 7例，退出0 | 0x8000040c |
+| hello-meijie | ACCEPTED，退出0 | 0x8000014c |
+| vadd4 | 11/22/33/44，ACCEPTED，退出0 | 0x80000234 |
+
+五应用均直接显示原源码参考库路径、Difftest enabled、GOOD TRAP及ACCEPTED。Hello完整文本未在摘要显示，其文本检查通过由已核对脚本的ACCEPTED流程支持。seed1、显式-F、300万周期/1800秒上限来自已校验入口；完整逐应用argv和run日志保留在服务器。终态IDENTITIES_AFTER_EXIT=0、VDOT_MTVAL_EXIT=0、VDOT_MTVAL_ACCEPTANCE_PASS；8个阶段全部退出0，18:54:37最后应用完成。助手本轮只解析用户回传，未自行重跑或远端重算哈希。
+
+原case1 short-1-vm0的mtval差异已在不改参考库/镜像、不关闭比较的条件下通过整核验收，本批阻塞关闭。原失败日志保留。不把64例/15种关系提升为全部异常组合、全部寄存器编号、依赖/多FU竞争/选择性取消/CSR提交压力验证，也没有等价RVV或性能结论。下一批沿用当前成功emu和源码参考库推进剩余矩阵；构建与本批测试不重跑。
+
+## 2026-10-24 VDot mtval通路修复及本地验证
+
+用户授权修复执行期异常到mtval并提供新emu构建/验收命令。[修复说明](../artifacts/vdot-mtval-fix-2026-10-24/README.md)、[窄补丁](../artifacts/vdot-mtval-fix-2026-10-24/repair-only.patch)：新增功能性VdotTrapInstTable（每ROB槽16字段位+generation+分类），每次分配更新，真实ROB EX_II且非中断时按完整指针匹配，下一拍随ExceptionInfo送CSR。CSR只对本次VDot非法使用该指令位，其他沿用旧TrapInstMod；不读取DebugMem、不改NEMU或关闭比较。
+
+WSL原生XiangShan副本HEAD16ae9dd，已有未提交改动保留。新增[局部RTL记录](../artifacts/vdot-mtval-fix-2026-10-24/mill-172742/result.json)保存cwd/argv/环境/源码哈希/退出0；65536个可变字段编码+13项条件检查经过生产记录器/选择器及真实TrapEntryMEvent，核对mtval，PASS VDOT_MTVAL_PATH checks=65549。初次夹具因CSR枚举不能整体初始化为0而失败，mill-172650日志保留；改动仅测试初始化后通过。
+
+[整核CHIRRTL记录](../artifacts/vdot-mtval-fix-2026-10-24/mill-172910/result.json)退出0：MinimalConfig、单核、DiffTest，子JVM6G/父2G、Mill双线程；135条elaboration警告保留。未本地构建整核C++或跑本批整核DiffTest。局测模拟ROB的trap输入，不宣称完整乱序调度/取消竞争验证。
+
+[交付检查](../artifacts/vdot-mtval-fix-2026-10-24/validation.json)确认从固定HEAD文件应用完整补丁，15份源码匹配且被测源码未改变；Bash语法、Python编译、base64压缩包/哈希核对通过。服务器包SHA256=03f207a6ee975ba7e971f73d216963f003b42829e742e296d5925dcfefa46cb0，新副本vdot-mtval-fix-20261024/XiangShan，旧emu/NEMU/镜像保留。先异常64例，再新emu重叠60例、smoke7例、hello-meijie及VADD；构建4小时、每应用1800秒/300万周期上限，显式原源码参考库和共享Flash。[粘贴入口](../artifacts/vdot-mtval-fix-2026-10-24/delivery-v2/server-paste-command.txt)。**服务器未执行，旧mtval失败尚未关闭。**
+
+## 2026-10-24 异常失败点精确定位（只读回传）
+
+[上下文附件](../artifacts/vdot-matrix-2026-10-24/server-OMcrpf/context-confirmed/user-context.txt)补齐实际argv、异常镜像SHA256=e52ef47823bee34fded28c9d0aa96b924a17fff6fda52ca36aa7ccf4f2f19302、case0 legal-before PASS、参考mcause=2/mepc=0x8000021c/mtval=0x0020818b及服务器反汇编。0x8000021c处为target_vm0/0x0020818b；比较PC0x80000218处为前一条sd t0,40(s0)，不是故障指令。结合固定顺序矩阵，失败锁定case1 short-1-vm0。参考端已到mtvec=PC=0x800002b8；这份CSR转储不能当作直接读出的DUT全状态，DUT mtval=0由比较行明确给出。
+
+新旧emu/参考库/Flash身份与原记录一致；实际seed1、300万周期/1800秒及no-snapshot参数吻合。采集只读，返回shell提示符但未打印数值退出码，未补猜。无新构建、仿真或补丁；重叠60例通过、异常未通过的结论不变。[核验与诊断](../artifacts/vdot-matrix-2026-10-24/server-OMcrpf/diagnosis.md)已更新；证据足够进入修复设计，不再索要重复日志。内部执行异常信息通路尚需局部测试确认。
+
+## 2026-10-24 整核重叠60例通过，异常mtval差异阻塞
+
+用户回传[原文](../artifacts/vdot-matrix-2026-10-24/server-OMcrpf/user-output.txt)已归档，[核验](../artifacts/vdot-matrix-2026-10-24/server-OMcrpf/review.json)保存字段与范围。cwd=/root/private_data/mj/xiangshan，日志evidence/vdot-matrix-OMcrpf；原入口包SHA256=8098da3436656939669065a5ac225a464e791632d3c0aa0ae67add924420dfb6，参数仍为seed1/300万周期/1800秒，显式新参考库和共享Flash。两个新应用构建退出0。
+
+重叠运行17:08:30至17:11:01，退出0；明确源码参考库路径、DiffTest启用、GOOD TRAP PC=0x80000c26、PASS VDOT_OVERLAP cases=60 partitions=15齐全。这接受15种寄存器相等关系在vm0/1、vl0/8上的整核验证，不代表全部32寄存器编号组合或竞争取消。
+
+异常运行17:11:02至17:11:37，退出1。DiffTest报告mtval在比较PC=0x80000218不一致：参考0x0020818b，DUT=0；ABORT另报PC=0x8000016e。尾段VL1/vtype0/vstart0/vcsr7支持short-1-vm0场景推断，完整case打印、mcause/mepc与服务器ELF映射尚待只读回传。不能推断64例已完成，也不能将ABORT PC当作故障指令PC。前后五项身份检查通过，IDENTITIES_AFTER_EXIT=0，总VDOT_MATRIX_EXIT=1。
+
+本轮只读核对VDot/DecodeStage/TrapInstMod/TrapEntryMEvent及NEMU配置/异常处理源码，强烈指向“执行阶段新发现的VDot非法没有向trapInst记录通路交付机器码”。[诊断](../artifacts/vdot-matrix-2026-10-24/server-OMcrpf/diagnosis.md)列出源码与证据边界；没有波形证明，没有修改RTL/NEMU或重建。接下来只读提取日志和服务器反汇编，不重跑已通过重叠、不关闭mtval比较、不重放安装包。
+
+## 2026-10-24 新身份归档与异常/重叠应用预检
+
+用户回传vdot-build-80mKCD的两份哈希记录，重复的emu/参考库值一致。[固定身份](../artifacts/vdot-matrix-2026-10-24/server-identities.sha256)归档新emu、源码NEMU、NEMU配置、smoke镜像和共享Flash；这属于用户回传证据，本地没有直接访问服务器重算。
+
+新增[重叠应用](../exercises/vdot-overlap/README.md)60例：15种(v0,vd,vs1,vs2)相等关系×vm0/1×vl0/8；[异常应用](../exercises/vdot-exceptions/README.md)64例：62次预期cause2陷阱和首尾2次合法执行，核对精确mepc、v0..v3全128位、向量CSR和VS。用真实vsetvl读回区分可达状态与vill规范化，不宣称vl>16、高位vstart截断或guest VS覆盖。
+
+WSL Ubuntu运行`python3 scripts/check_vdot_matrix.py`，cwd为本工作区的/mnt/d对应目录，最终退出0；[逐例/构建记录](../artifacts/vdot-matrix-2026-10-24/local-170044/result.json)保存argv、AM_HOME、GCC13.3、本地原有NEMU库SHA、两个新镜像SHA和逐例观测。没有重建NEMU/emu。60+64个汇编函数调用通过；真实C main分别执行41492/111178个宿主单步迭代后返回0，含串口函数拦截计数。仅拦截`_putc`收集文本以适配本地无UART的参考库；不跳过目标指令、异常或C检查。此前宿主框架QUIT误判、镜像切换译码缓存、输出符号名问题已修正，失败记录保留，详情见[批次说明](../artifacts/vdot-matrix-2026-10-24/README.md)。
+
+[服务器入口](../artifacts/vdot-matrix-2026-10-24/delivery/server-paste-command.txt)只装两份新应用，以现有GCC12构建，显式复用本次新emu/源码NEMU/共享Flash并前后核验五项身份。seed1、每组300万周期/1800秒上限；运行argv、退出码和完整日志另存新evidence/vdot-matrix-*。Bash语法与包内源文件校验通过。**服务器本批尚未执行**，不得据本地预检填写整核DiffTest通过或GOOD TRAP。
+
+## 2026-10-24 SCNet正式vdot首批整核DiffTest通过
+
+用户[完整回传附件](../artifacts/scnet-vdot-smoke-2026-10-24/user-vdot-build-80mKCD.txt)逐字节归档，[核验摘要](../artifacts/scnet-vdot-smoke-2026-10-24/review.json)保存范围与缺口。修正版构建脚本SHA256=6f1165aa3a115dfcdb5f72d10779938e632b7bba8878c464bd1ba138cd723302，日志/root/private_data/mj/xiangshan/evidence/vdot-build-80mKCD，工作副本vdot-dev-20261024。nemu-config、nemu-build、smoke-image、emu-build、emu-help、hello-meijie、vadd4、vdot-smoke八阶段均EXIT=0，最终VDOT_STAGE2_SMOKE_PASS、VDOT_BUILD_EXIT=0。
+
+实际参考库明确为vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so，三个应用均有Difftest enabled及GOOD TRAP：Hello PC=0x8000014c、VADD PC=0x80000234、vdot PC=0x8000040c。Hello指定文本正确，VADD为VL4/SEW32/LMUL1/VLEN128且11/22/33/44。vdot七例逐项PASS：普通和36、正极值131072、负极值-130048、交替mask和16、全屏蔽零、合法vl0保留完整旧vd、vl16忽略高半源；每例full128=OK和VS=Dirty。代码还检查vcsr=7/vstart=0，程序及阶段退出0支持这些断言通过。vl0行打印sum=36是C端参考算术值，不表示vl0写入36。
+
+脚本在新emu下完成旧Hello/VADD回归，并在构建前后再次核对原四项基线哈希，全部OK；首次Flash错误和资源采集失败日志均保留。新库/emu构建和本次整核smoke已由用户回传验证，不再使用“只到CHIRRTL”描述当前能力。
+
+证据边界：回传为阶段摘要，不是完整远端make/run日志。新产物SHA值随后已由用户回传并归档，见本页新增记录；seed=1及max-cycles=500000由已核对脚本给出，实际argv仍在远端各阶段.argv中。已见阶段开始时间，最终精确结束时间未记录。仅接受首批七例自定义指令加Hello/VADD回归；完整非法/重叠/依赖/多FU竞争/取消提交矩阵、等价RVV与性能仍待完成。不重跑构建或smoke。
+
+## 2026-10-24 SCNet vdot包已应用，资源采集路径修正待续跑
+
+用户回传[摘要](../artifacts/scnet-vdot-resume-2026-10-24/user-output-excerpt.txt)，[核验](../artifacts/scnet-vdot-resume-2026-10-24/review.json)：package-C4ItRH的压缩包SHA检查OK，VDOT_APPLY_READY=/root/private_data/mj/xiangshan/vdot-dev-20261024；构建日志目录vdot-build-dJsMa9，四项旧基线哈希均OK。随后固定读取/sys/fs/cgroup/memory.max、cpu.max失败并返回提示符；未出现任何STAGE开始标记。按脚本顺序尚未开始NEMU/镜像/emu构建。数值脚本退出码未回传，不能补记1；当前cgroup版本也未由两个文件缺失单独确认。
+
+修正[构建脚本](../scripts/build_scnet_vdot.sh)：兼容常见v1/v2及cpu,cpuacct路径，只读可读文件，无可用项明确标记unavailable而非无限；保存stdout供EXIT摘要使用，避免重定向资源块的失败把退出码隐藏进resources.txt。[续跑命令](../artifacts/scnet-vdot-resume-2026-10-24/server-resume-command.txt)核对原脚本SHA256=5b74189b92cecd7637a378db629ff7a8491ccdd473b376398f2896d5f713bc5b，备份后改为6f1165aa3a115dfcdb5f72d10779938e632b7bba8878c464bd1ba138cd723302；重复修正幂等，其他改动则拒绝覆盖。沿用既有副本，不重放原包或删除目录。
+
+本地WSL/Python执行artifacts/scnet-vdot-resume-2026-10-24/validate_fix.py退出0；[检查结果](../artifacts/scnet-vdot-resume-2026-10-24/local-validation.json)包含shell语法、补丁内容/备份、幂等、拒绝未知修改，v2/v1/v1-combined/无文件四个资源采集夹具，以及重定向失败时退出码仍可见。仅测试资源/续跑脚本，未启动任何构建或仿真；服务器修正和续建待用户执行。
+
+## 2026-10-24 控制补点、正式vdot首版及本地分层验证
+
+用户授权先补两个独立控制缺口，再推进正式vdot。新[控制run](../artifacts/vdot-control-gap-2026-10-24/run-20261024-144636-9b42ee/run-result.json)保存WSL cwd/argv/工具/源码快照与退出码；入口`python3 scripts/run_vdot8_control_checks.py --stage all --output-root artifacts/vdot-control-gap-2026-10-24`，总退出0。278语义、164拍协议、接受50/传递34/取消16；错误期望控制按预期退出1。新增24例vsew/vlmul2～7在vl0/8孤立注入、9组满槽且取消当拍ready=0，逐拍握手/取消身份及无幽灵响应通过；[覆盖核验](../artifacts/vdot-control-gap-2026-10-24/coverage-review.json)。旧254/101与1302算术记录保留，旧算术未重跑。
+
+在Linux原生`/home/lenovo1227/xs-vdot-dev/{XiangShan,NEMU}`创建锁定版本独立副本，原源码/服务器成功产物不改动，不add/commit/push。实现精确custom-0向量分类、单uop/单WB、专用两拍VDot/FU注册及VFEX0接入，旧vd依赖、v0重叠专用合法性、真实ROB取消和illegalInstr；NEMU精确译码及八项带符号运算/合法vl0/CSR更新首版已实现。完整[实现/验证报告](../reports/stage2/vdot-integration-validation-2026-10-24.md)区分每层与缺口。
+
+正式Scala编译[退出0](../artifacts/vdot-integration-2026-10-24/compile-145123/result.json)；实际Chisel6.6 DecodeUnit+VecExceptionGen与VDot局部测试[两项通过](../artifacts/vdot-integration-2026-10-24/mill-150514/result.json)，含Scala侧65,536编码组合检查及硬件代表编码/邻近编码/旧VADD、算术/控制/ROB年龄与环绕测试。不是65,536次整核仿真。修正旧chiseltest/Verilator5.052测试端口兼容、相对输出目录、真实译码异常位置与压缩vsew测试前提；失败日志均保留。
+
+NEMU新库[构建退出0](../artifacts/vdot-integration-2026-10-24/nemu-build-150610/identity.json)，SHA256=5ba6caf77513904c6ea541c4c145720a6bebe63f983eefa5b73e53441069c872，.config与服务器原库一致。以真实DiffTest API直接注入模型场景，[268例通过](../artifacts/vdot-integration-2026-10-24/nemu-api-151012/result.json)、10例动态禁用RVV不适用；终端执行由90秒timeout包装，实际退出0。测试必须配置NMIE/MDT和PMP后才能正确验收非法异常，早期环境导致的失败保留；未禁用合法性检查，不当作RTL/NEMU联合仿真。
+
+MinimalConfig/单核/enable-difftest的整核[CHIRRTL elaboration退出0](../artifacts/vdot-integration-2026-10-24/mill-152236/result.json)，日志确认VDot在VFEX0、五源、两拍FU。输出`/home/lenovo1227/xs-vdot-dev/elaborate-vdot-20261024-3/SimTop.fir`为940795256字节；保留135条warning。先前缺NOOP_HOME、子JVM默认40GB导致OOM/WSL超时的失败日志保留；用`-Djvm-xmx=6G`并[确认forkArgs](../artifacts/vdot-integration-2026-10-24/mill-152220/result.json)后通过。此次未构建新emu，不能称Verilog/Verilator或自定义整核通过。
+
+七例smoke [镜像编译退出0](../artifacts/vdot-integration-2026-10-24/smoke-image/result.json)，bin SHA256=95028259675ede735748286f761f2a6c2e58aeb730413bfac64ec03be804c043，未运行。已生成[服务器直接粘贴命令](../artifacts/vdot-integration-2026-10-24/delivery/server-paste-command.txt)：新建vdot-dev-20261024副本，应用双仓库补丁、构建新库/新emu，并依次Hello/VADD/vdot-smoke。该远端流程尚未执行；[交付检查](../artifacts/vdot-integration-2026-10-24/delivery-validation.json)确认原本地两仓库干净、patch正反向检查、压缩内容/hash及shell/Python语法。没有系统安装、重启WSL、远端操作或性能结果。
+
+## 2026-10-24 SCNet VADD源码NEMU DiffTest通过（回传摘要）
+
+用户回传vadd4-diff-m9uPDc终端摘要；[消息摘录](../artifacts/scnet-vadd-2026-10-24/user-summary-excerpt.txt)、[核验记录](../artifacts/scnet-vadd-2026-10-24/review.json)。emu/源码NEMU/VADD镜像/成功Hello的Flash四项身份检查均OK；实际参考库路径为sources/xs-env/NEMU/build/riscv64-nemu-interpreter-so，显式Flash为本次目录boot-flash.bin。DiffTest启用，seed=1；VL=4、SEW32、LMUL1、VLEN128，四项11/22/33/44均匹配，应用PASS、HIT GOOD TRAP（PC=0x80000234）、VADD4_DIFFTEST_PASS、EMU_OR_TIMEOUT_EXIT=0、VADD_SCRIPT_EXIT=0齐全。END=2026-10-24T14:37:16+08:00，START未回传。
+
+运行入口为[run_scnet_vadd4.sh](../scripts/run_scnet_vadd4.sh)，由给定脚本可知max-cycles=100000、timeout=300秒、--no-snapshot；实际完整argv/cwd/配置哈希保存在服务器/root/private_data/mj/xiangshan/evidence/vadd4-diff-m9uPDc/{command.txt,config-flash.sha256,nemu.config,expected.sha256,identity-check.log,run.log,summary.txt,run-result.txt,script-result.txt}，未直接下载。摘要中的四项OK对应已锁定哈希，非助手直接重新读取远端文件。脚本将仿真输出直接重定向，不经过tee，因此无被测管道退出码歧义。
+
+至此，指定Hello与VADD两例服务器源码NEMU基线验收完成，显式共享Flash为运行条件。保留此前Flash失败现场及ABI声明差异记录；不由两例通过推断完整RVV覆盖、可移植ABI一致、正式vdot整核接入或性能。此次只归档用户运行证据并同步交接，没有重跑或新构建。
+
+## 2026-10-24 SCNet hello-meijie显式Flash复验通过（回传尾段）
+
+用户回传hello-meijie-flash-rSXn9K日志尾段并确认看到完整Hello/Meijie打印。[消息摘录](../artifacts/scnet-hello-2026-10-24/hello-pass-message-excerpt.txt)、[核验及证据分层](../artifacts/scnet-hello-2026-10-24/hello-pass-review.json)。直接可见HIT GOOD TRAP（PC=0x8000014c）、EMU_OR_TIMEOUT_EXIT=0、TEE_EXIT=0、HELLO_MEIJIE_DIFFTEST_PASS、HELLO_SCRIPT_EXIT=0，END=2026-10-24T14:14:53+08:00；START未回传。参考库路径/显式Flash/DiffTest启用/哈希检查由此前给出的脚本PASS推知，未冒充本轮直接读到完整日志。
+
+据此接受服务器源码NEMU的指定Hello基线。显式共享Flash后通过，支持前次默认Flash不一致诊断；原失败证据保留。instrCnt=1327、cycleCnt=8223、Guest cycles=8227、seed=1为该次诊断计数，不作为vdot性能数据。完整run.log、command.txt和校验文件仍在服务器evidence/hello-meijie-flash-rSXn9K，未下载。VADD/自定义vdot仍未验收。
+
+准备[VADD入口](../scripts/run_scnet_vadd4.sh)，复用并校验成功Hello的16字节Flash，显式指定同一源码NEMU库与已记录VADD镜像；seed=1、max-cycles=100000、timeout=300秒。完整stdout/stderr重定向到新run.log，直接保存进程退出码，终端仅显示摘要；逐项要求VL=4、VLEN128、11/22/33/44、应用PASS、DiffTest启用、GOOD TRAP及退出0。本地WSL bash -n检查退出0，服务器主体未执行。
+
+## 2026-10-24 SCNet hello-meijie首次DiffTest失败，定位Flash默认内容差异
+
+用户回传[hello-meijie-diff-ilsGgk](../artifacts/scnet-hello-2026-10-24/user-hello-ilsGgk.txt)，[核验摘要](../artifacts/scnet-hello-2026-10-24/review.json)。START=14:07:53+08:00，END=14:08:01+08:00，运行cwd与NOOP_HOME均为/root/private_data/mj/xiangshan/evidence/hello-meijie-diff-ilsGgk。emu/源码NEMU/hello-meijie三项哈希OK，实际argv含源码库--diff、seed=1、max-cycles=100000、--no-snapshot及timeout 300秒。DiffTest已启用，但EMU_OR_TIMEOUT_EXIT=1、TEE_EXIT=0、HELLO_SCRIPT_EXIT=1；无Meijie输出或GOOD TRAP。
+
+首个差异在Flash的PC=0x10000004：DUT机器码0x01f29293（slli t0,t0,31）写t0=0x80000000，REF为1；仅提交两条，尚未进入0x80000000应用。末尾ABORT打印的异常PC不用于覆盖明确的提交轨迹PC。静态状态布局匹配并未证明启动镜像一致，前一版命令未显式传-F。
+
+源码调查：DiffTest common/flash.cpp默认三条addiw/slli/jr；NEMU候选配置的默认Flash序列不同，第二条为addiw t0,zero,1。已匹配哈希的RefProxy回退路径调用旧difftest_load_flash，未传-F时传入空文件名；NEMU src/device/flash.c对空文件名采用自身预设。该差异与运行现象高度吻合，但远端实际FLASH配置及新读的两个Flash源码哈希仍待复验命令确认，不能先称已修复。
+
+新[显式Flash复验入口](../scripts/run_scnet_hello_meijie_flash.sh)保留旧脚本与失败目录，核对两个Flash源码身份后，在新目录生成与emu原默认内容逐字节一致的16字节boot-flash.bin，以-F同时供DUT/参考库加载；其SHA256=fea548655a8b6eecacace83e2f4380a18b8aa83bce964c8aae4cffbe2f5a9724。仍使用原emu/源码NEMU/hello-meijie三件套及同一种子/周期上限，不改源码或重新构建。仅本地WSL bash -n、内嵌Python语法与16字节编码核对退出0；[检查结果](../artifacts/scnet-hello-2026-10-24/flash-command-validation.json)。服务器复验未执行，VADD待Hello通过。
+
+## 2026-10-24 SCNet ABI状态布局核对，可进入Hello验收
+
+用户回传[ABI采集输出](../artifacts/scnet-abi-2026-10-24/user-abi-collection.txt)，ABI_COLLECTION_EXIT=0，宿主x86_64/64位。[本轮核验](../artifacts/scnet-abi-2026-10-24/abi-review.json)确认六个相关源码文件哈希与已读本地源码全部一致，.config与generated/autoconf.h的相关开关一致：RVV/RVH/软浮点及VCSR/FCSR/SDTRIG开启，LIGHTQS/RV_AME关闭。实际生成的diffstate.h SHA256=6a2ce3ab51893908f74452522ab03c553cf7fa7e8aa25f74ea84d79aa45f044d。
+
+按源码与生成类型核对，复制顺序为GPR256、FPR256、CSR144、PC8、HCSR136、向量寄存器512、VCSR56、FCSR8、trigger CSR24字节，总计1400，与源码库导出的DIFFTEST_REG_SIZE=1400一致。向量32×128位；privilegeMode/mode及virtMode/v为两端对应字段。报告偏移是依据这些uint64_t字段顺序推导，不冒充实测RefProxy对象offsetof。
+
+保留接口声明差异：RefProxy使用void(void*,bool,bool)，关闭LIGHTQS的NEMU实现为void(void*,bool)。依照当前[x86-64 SysV参数寄存器规则](https://gitlab.com/x86-psABIs/x86-64-ABI/-/blob/master/x86-64-ABI/low-level-sys-info.tex)，多出的第三参数不改变前两个实参位置；这是当前目标上的调用兼容推断，不是可移植C/C++函数类型一致证明。未发现阻止受限Hello运行验收的布局问题；尚未运行Hello/VADD，也无vdot通过结论。
+
+准备[hello-meijie入口](../scripts/run_scnet_hello_meijie.sh)：锁定emu/源码NEMU/指定镜像哈希，显式--diff，seed=1、max-cycles=100000、墙钟上限300秒，真实管道状态分别记录；新证据目录保存argv、配置/哈希、日志和退出码。NOOP_HOME仅在子进程指向新证据目录，配合绝对emu/参考库/镜像路径，将运行副产物隔离；不重建或开启主动波形。验收同时要求正确参考库路径、Difftest enabled、Meijie输出、HIT GOOD TRAP和退出0。IP文本是现有程序常量，不据它判断服务器当前地址。脚本只在本地执行WSL/Bash语法检查（bash -n，退出0）；远端运行待用户回传。
+
+## 2026-10-24 SCNet运行前身份核对
+
+用户回传服务器13:48:35+08:00的只读身份采集，cwd=/root/private_data/mj/xiangshan，IDENTITY_AUDIT_EXIT=0。[原附件](../artifacts/scnet-abi-2026-10-24/user-identity-audit.txt)逐字节归档，[核验摘要](../artifacts/scnet-abi-2026-10-24/review.json)记录镜像哈希/大小及边界。emu、源码NEMU库、.config与emu-build-XL1ErK哈希均一致；XiangShan/difftest/NEMU HEAD仍为16ae9dd/62e4540/a48a11f，status及两类diff stat无条目。两份应用ELF均为ELF64/RISC-V、入口0x80000000；不由镜像存在推断其编译退出码。
+
+用户明确后续Hello验收使用hello-meijie：bin SHA256=b030d57b9cfae6dda5cd4b36eff128cd54779ed418698ff8a729d404fa801069，5688字节；vadd4 bin SHA256=7ee5178738a4835bb0186c7720dd186b9dacb4298895bb6d880e5b1e7ddbcd90，6128字节。本轮仍未执行服务器Hello/VADD。身份采集通过不等于ABI或DiffTest通过。
+
+本地预查相关NEMU/RefProxy源码并保存[六文件哈希](../artifacts/scnet-abi-2026-10-24/local-source-sha256.json)，待与远端比较，不能先认定相同。新增只读[ABI采集脚本](../scripts/inspect_scnet_abi.py)，读取实际生成状态、配置及库导出常量，不调用init/exec/regcpy。仅本地WSL/Python ast.parse语法检查退出0、PYTHON_SYNTAX_OK；服务器主体未执行。脚本不会写文件或构建，动态加载库以读取DIFFTEST_REG_SIZE。当前待核实包括状态字段顺序/大小及LIGHTQS关闭时regcpy参数数目的差异；无ABI通过结论。
+
+## 2026-10-24 SCNet整核仿真器构建及--help通过
+
+用户[完整附件](../artifacts/scnet-emu-success-2026-10-24/user-emu-build-XL1ErK.txt)逐字节归档，含之前Mill resolve与本次构建；[核验清单](../artifacts/scnet-emu-success-2026-10-24/review.json)保存完整make argv、环境、版本/commit/哈希和退出码。START=2026-10-24T11:08:59+08:00，服务器根/root/private_data/mj/xiangshan，主机后缀67161，日志evidence/emu-build-XL1ErK；实际构建cwd为sources/xs-env/XiangShan。
+
+配置MinimalConfig、NUM_CORES=1、EMU_TRACE=1、JVM_XMX=6G、-j4，NO_DIFF=0/RELEASE=0/PLDM=0/EMU_THREADS=0/REMOTE=localhost，CC/CXX显式/usr/lib/llvm-19/bin/clang与clang++。工具Mill0.12.3、Java21.0.12.1、Clang19.1.7、Verilator5.052。代理agent为evidence/mill-proxy-G1cURV/proxy-agent.jar，Coursier地址repo.maven.apache.org，凭据从环境读取而未出现在命令参数。源码XiangShan16ae9dd/difftest62e4540/NEMU a48a11f匹配，构建前status与两类diff为空，构建后XiangShan status空。
+
+实际输出覆盖Scala/Chisel elaboration、SimTop RTL后处理、Verilator转换及C++构建。MAKE_EMU_EXIT=0、TEE_EXIT=0，timeout -k 5s 30s ./build/emu --help的COMMAND_EXIT=0，EMU_BUILD_PASS、EMU_BUILD_SCRIPT_EXIT=0、PROXY_BUILD_EXIT=0。emu SHA256=c54d2d6afab37cc92960bd5af0cce98c63412ced295647dfad7d153a8b55bd3e；源码NEMU库=026abb60f7d52081809d4d2ab08ed26078df41d8c0697e775e95ae5b194039f6，.config=64282bca051b5dbc5fca742f4fbca2ade937a70f3c4d2ec93c1f4836aca5d9be。版本查询/库加载等已有检查本次也通过。日志有135条hardware elaboration警告及Scala弃用警告；保存而不宣称已消除或等同无功能风险。
+
+验收边界：确认未加vdot的服务器整核仿真器构建和帮助入口通过；未运行Hello/VADD，无本次指令种子、镜像哈希或GOOD TRAP证据，未验证源码参考库与香山ABI/提交行为，更无vdot或性能结论。下一步核对现有产物、ABI，再显式--diff本次源码参考库运行Hello/VADD，不重建成功emu或重编NEMU。助手本轮只归档附件并更新文档，没有远端会话、代码修改、重跑测试或Git提交。
+
+## 2026-10-24 带代理的Mill构建定义解析通过，准备继续整核
+
+用户回传在XiangShan目录执行`timeout -k 5s 180s mill -i -j 2 resolve xiangshan.test.runMain`，JAVA_TOOL_OPTIONS仅含`-javaagent:/root/private_data/mj/xiangshan/evidence/mill-proxy-G1cURV/proxy-agent.jar`，COURSIER_REPOSITORIES为https://repo.maven.apache.org/maven2。输出编译7个构建定义Scala源文件、两个Locale构造函数弃用警告、done compiling及目标名；MILL_RESOLVE_EXIT=0、TEE_EXIT=0，界面显示52s（不作性能数据）。原日志位于该PROXY_DIR/mill-resolve.log，助手未下载；[用户消息核验摘要](../artifacts/scnet-proxy-build-ready-2026-10-24/received-review.json)。
+
+代理认证接入Mill的构建定义加载已实测通过；不证明全部项目依赖、SimTop/RTL生成或整核仿真。下一步保持已授权配置，在子shell设置同一agent和仓库地址，调用现有build_scnet_emu.sh；不加180秒整核超时，不清缓存或改源码，不重复运行已通过的小探测。密码仍由agent从服务器环境读入内存，启动参数只含jar路径。此次只更新状态和可粘贴调用命令，无本地构建/旧测试重跑、无Git提交；服务器续建结果待回传。
+
+## 2026-10-24 带认证Java请求通过，准备Mill启动代理接入
+
+用户回传evidence/java-proxy-check-SttHGg：JAVA_PROXY_HTTP=200、JAVA_PROXY_READ_BYTES=128、JAVA_PROXY_FETCH_PASS、JAVA_PROXY_EXIT=0、TEE_EXIT=0；主机后缀67161。命令回显有一段错乱，结果标记完整；服务器源码哈希未提供。[回传摘要](../artifacts/scnet-mill-proxy-2026-10-24/received-review.json)。只证明该POM的显式代理认证请求成功，不证明Mill已接入或整核通过。
+
+新增本地证据目录内的ProxyAgent.java：复用探测的URI解码和限定代理Authenticator，转换为premain，设置https.proxyHost/Port/User/Password于JVM内存。作为临时启动辅助类，通过JAVA_TOOL_OPTIONS仅传jar路径，让Mill及其Java子进程读取当前环境凭据。无真实凭据写入文件/参数，保留HTTPS证书校验；不修改系统或工程源码，不创建持久代理配置。后续只在子shell启用，退出即不影响父shell。
+
+本地命令wsl.exe -d Ubuntu -- python3 /mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/artifacts/scnet-mill-proxy-2026-10-24/validate.py退出0；脚本调用javac、jar、java -javaagent进行无网络模拟测试，均0。验证启动加载、编码用户名/密码解析、匹配代理认证及拒绝其他代理主机；[完整argv与结果](../artifacts/scnet-mill-proxy-2026-10-24/local-validation.json)。测试为虚构凭据，不含用户秘密。
+
+服务器下一命令计划为timeout -k 5s 180s mill -i -j 2 resolve xiangshan.test.runMain，记录完整日志及PIPESTATUS。resolve只列出匹配任务，不执行该任务；加载构建定义仍可能下载依赖/编译build.sc并写cache/out，不能称纯只读或全部依赖验收。远端尚未执行；MILL_RESOLVE_EXIT=0并输出目标名后再继续整核。旧测试/NEMU未重跑，未提交Git。
+
+## 2026-10-24 当前服务器确认curl经代理成功、Java直连超时
+
+[network-check-aOkwar附件](../artifacts/scnet-java-proxy-2026-10-24/user-network-check-aOkwar.txt)与[前次构建尾段](../artifacts/scnet-java-proxy-2026-10-24/user-emu-build-lrYGG5-tail.txt)逐字节归档，[核验记录](../artifacts/scnet-java-proxy-2026-10-24/review.json)保存命令/版本/范围。当前提示符hostname后缀67161，与构建时72541不同；当前代理结果不直接证明旧会话配置完全相同。
+
+当前http_proxy/https_proxy为HTTP代理10.15.100.43:3120且带认证，未输出凭据。curl默认连接得到HTTP200、CONNECT200、remote_ip为代理，退出0；--noproxy '*'连接Maven超时，退出28。Java21.0.12.1各代理属性未设，ProxySelector为DIRECT，DNS解析成功，HttpURLConnection抛SocketTimeoutException；jshell与tee均0，但无JAVA_FETCH_PASS。附件命令回显有一段粘贴错乱，实际结果输出仍可核对，不补猜缺失命令文本。前次构建已使用repo.maven.apache.org但仍6任务下载超时，make2/tee0/build脚本1/resume1；未进入RTL生成。
+
+当前证据支持代理路径差异，不能把故障简单归因用户电脑断网或IPv6。新增[Java认证小探测源码](../artifacts/scnet-java-proxy-2026-10-24/ProxyProbe.java)，以直接粘贴命令交付，用户无需上传。程序从环境读取现有代理认证；URI用户信息解码、Authenticator只对指定代理主机/端口提供凭据，8秒连接/读取时限，凭据不写文件或命令行、不打印异常原文。只在该短时JVM允许Basic CONNECT认证；保留HTTPS证书验证、不改系统配置。返回HTTP200且读到数据才输出JAVA_PROXY_FETCH_PASS，其他HTTP退出3、异常退出2，外层timeout另记退出码。依据[Java21网络属性](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/net/doc-files/net-properties.html)及[Coursier代理文档](https://get-coursier.io/docs/2.1.25/other-proxy)。
+
+本地WSL javac21.0.12.1编译ProxyProbe.java到同证据目录classes/，退出0；未执行网络请求或构建。服务器认证探测待回传；探测成功也不等于Mill认证已配置或整核通过。未改整核源码、代理配置或旧证据，未提交Git。
+
+## 2026-10-24 NEMU产物前置通过，整核构建遇到Maven连接超时
+
+用户附件已[逐字节归档](../artifacts/scnet-maven-resume-2026-10-24/user-emu-build-CoM74T.txt)，核验见[review.json](../artifacts/scnet-maven-resume-2026-10-24/review.json)。cwd=/root/private_data/mj/xiangshan，执行bash build_scnet_emu.sh，START=2026-10-24T01:22:30+08:00，远端evidence/emu-build-CoM74T；脚本SHA与本地修正版一致。Mill -i --version退出0；源码三仓库HEAD匹配、status/暂存和未暂存diff空，五个NEMU依赖副本HEAD符合锁定记录。cgroup内存123480309760字节、当时使用4170805248、CPU配额600000/100000，磁盘显示214G可用，属于当次快照。
+
+NEMU库SHA256=026abb60f7d52081809d4d2ab08ed26078df41d8c0697e775e95ae5b194039f6；.config=64282bca051b5dbc5fca742f4fbca2ade937a70f3c4d2ec93c1f4836aca5d9be。readelf为x86-64 ELF64共享库，Python ctypes RTLD_NOW加载及difftest_init/memcpy/regcpy/exec符号检查退出0，未调用函数。Clang的-lz -lzstd -ldl链接及小程序运行均0，输出1.2.11 10505。此证据不等于NEMU/香山状态布局相容或指令测试通过，也不补猜先前NEMU make退出码。
+
+随后make emu按MinimalConfig/单核/EMU_TRACE=1/6G/-j4启动，调用mill -i xiangshan.test.runMain top.SimTop；约519秒显示6 tasks failed，均为repo1.maven.org Maven依赖连接超时。MAKE_EMU_EXIT=2、TEE_EXIT=0、EMU_BUILD_SCRIPT_EXIT=1；包装脚本用test检查make退出值造成不同总退出码，make原始值已保留。尚未到RTL生成、Verilator、emu链接或应用运行。不是源码编译诊断；旧默认Mill查询超时根因仍未确证。
+
+新增[resume_scnet_emu_maven.sh](../scripts/resume_scnet_emu_maven.sh)，仅本次进程树设COURSIER_REPOSITORIES=https://repo.maven.apache.org/maven2；以10秒连接/30秒总时限GET日志中的Mill linenumbers POM，记录HTTP/退出码/哈希，成功后调用未修改的build_scnet_emu.sh。依据[Coursier仓库配置](https://get-coursier.io/docs/2.1.25/other-repositories)及[Mill 0.12依赖说明](https://mill-build.org/mill/0.12.x/fundamentals/library-deps.html)，不将central别名保留为超时源。curl通过只证明curl路径，Java/Coursier及其他依赖仍由后续运行验证。不改版本、源码或env-toolchain，不清缓存/构建产物，不重编NEMU。
+
+本地执行wsl.exe -d Ubuntu -- bash -n /mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/scripts/resume_scnet_emu_maven.sh，退出0、LF检查通过；远端探测/恢复构建尚未执行。没有新功能测试、整合包同步或Git提交。
+
+## 2026-10-24 首轮整核入口止于Mill查询超时
+
+用户执行`bash build_scnet_emu.sh`，cwd=`/root/private_data/mj/xiangshan`，START=2026-10-24T01:17:42+08:00；原日志目录`evidence/emu-build-qo51i0`。脚本SHA256=2a37319c6bb13f03c22138a26f15d0c6eb573c819afc27d4e2a3a3eb86d39e26，与本地修改前版本一致，环境文件SHA与历史一致。make4.3/git2.34.1/clang++19.1.7/java21.0.12.1/verilator5.052版本查询均退出0；`timeout -k 5s 60s mill --version`无可见输出、退出124，FAILED_LINE=55，EMU_BUILD_SCRIPT_EXIT=124。[回传摘要及修正记录](../artifacts/scnet-mill-timeout-2026-10-24/review.json)。资源/Git/NEMU产物检查、链接小测试和make emu均尚未到达；不能将此失败归于NEMU或RTL编译。
+
+与既有B0成功查询相比，cwd不同；与锁定香山Makefile相比，版本检查缺少-i。依据[Mill 0.12参数文档](https://mill-build.org/mill/0.12.x/cli/flags.html)，-i隐含--no-server。修正检查在新证据目录执行mill -i --version，并关闭传给该查询的构建锁fd9，避免潜在后台进程继承锁。保留60秒超时，其他构建配置不变。后台服务/工作目录是待验证假设，尚无根因结论；不通过清缓存、重装或杀进程试错。
+
+本地运行`wsl.exe -d Ubuntu -- bash -n /mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/scripts/build_scnet_emu.sh`退出0，LF检查通过；脚本主体未执行，远端复测待用户运行。原脚本/三份文档修改前副本与diff在上述证据目录；无源码修改或Git提交。若修正版仍124或锁占用，保留新日志后检查实际进程，不无理由再次启动。
+
+## 2026-10-24 源码NEMU链接输出回传，准备授权的整核构建
+
+用户确认依赖下载成功，完整下载日志/退出码未回传；随后在`/root/private_data/mj/xiangshan/sources/xs-env/NEMU`执行`make git_commit= riscv64-xs-clang-ref_defconfig`和`make git_commit= CC=/usr/lib/llvm-19/bin/clang CXX=/usr/lib/llvm-19/bin/clang++ -j2`。输出包含kconfig/fixdep、NEMU C/C++、SoftFloat编译及参考库最终clang++链接，返回提示符且无可见错误；两条make数值退出码和库SHA未记录，不倒推0。见[回传摘要](../artifacts/scnet-emu-prep-2026-10-24/received-review.json)，非远端原日志。
+
+按锁定源码核对：首次.config不存在警告来自config.mk；空Flash路径来自Makefile:40的warning，CONFIG_SHARE下flash.c:87跳过镜像加载。因此无需据这两条警告改配置或重编。用户明确将环境一致性暂留并授权直接推进整核，先前“到构建前停止”限制已由本轮请求更新；本轮无APT动作。
+
+新增[build_scnet_emu.sh](../scripts/build_scnet_emu.sh)：先检查Git身份/修改、子模块版本、已有构建/emu、资源、NEMU配置/哈希、动态加载及四个基本DiffTest导出，再执行Clang C++的zlib/zstd链接小检查；成功后make emu生成SimTop RTL、Verilator转换和C++仿真器。MinimalConfig/单核/EMU_TRACE=1/JVM_XMX=6G/-j4，显式NO_DIFF=0/RELEASE=0/PLDM=0/EMU_THREADS=0/REMOTE=localhost。资源门槛12GiB可用cgroup余量及20GiB磁盘是本脚本保守准入值，不是硬件最低要求。make与tee退出码分别保存，之后检查emu哈希和--help，失败保留现场；已有emu时停止，未实现自动恢复/覆盖。
+
+本地两次bash -n（第二次对应最后脚本版本）均退出0，无脚本主体执行，未做服务器库加载/链接/构建。[准备记录](../artifacts/scnet-emu-prep-2026-10-24/preparation.json)保存最终脚本SHA与命令；旧测试未重跑，源码和旧证据未改，无Git提交。库加载/导出和emu --help都不验证寄存器布局或指令行为，Hello/VADD DiffTest仍待后续。源码读取最初一次PowerShell花括号路径语法失败，已用显式文件路径读取；该错误不涉及源码修改或构建。
+
+## 2026-10-24 NEMU依赖盘点回传与源码下载准备
+
+用户在`/root/private_data/mj/xiangshan`执行`bash check_scnet_nemu_deps.sh`，START=2026-10-24T00:56:41+08:00，NEMU_DEPS_EXIT=0，日志`evidence/nemu-deps-wOwFuB`。[回传摘要](../artifacts/nemu-deps-fetch-prep-2026-10-24/received-review.json)明确为消息转录摘要，非远端原日志下载。脚本SHA与本地一致；NEMU a48a11f，配置SHA已记录，无.config。工具缺失0、头文件/链接注意项0、源码缺项4。libstdc++-12-dev未装不单独构成缺项；已找到GCC11静态库。Jammy标识和glibc2.39并存得到新输出确认，原因/环境验收仍未确认，未运行APT。
+
+新增[fetch_scnet_nemu_deps.sh](../scripts/fetch_scnet_nemu_deps.sh)，仅新增softfloat/repo、nanopb、LibCheckpoint、gcpt_restore四个仓库及checkpoint的nanopb子模块，固定完整SHA、校验文件并保存日志/退出码。所有目标事先检查不存在；已有目录或失败停止并保留现场。依赖选择及GitHub API身份见[版本锁](../artifacts/nemu-deps-fetch-prep-2026-10-24/dependency-lock.json)：三个仓库按查询到的commit固定；两个nanopb副本均跟随LibCheckpoint gitlink。属于新候选依赖基线，未证明旧二进制使用这些版本，也未证明编译兼容。
+
+实际本地执行PowerShell命令`wsl.exe -d Ubuntu -- bash -n /mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/scripts/fetch_scnet_nemu_deps.sh`，退出0；仅语法检查，未执行主体、下载或编译。工具版本/完整命令/脚本SHA见[准备记录](../artifacts/nemu-deps-fetch-prep-2026-10-24/preparation.json)。服务器下载和编译结果待回传，不标记通过；旧测试未重跑，整核/AM源码和旧证据未修改，无Git提交。
+
+## 2026-10-24 NEMU工具与依赖盘点入口准备
+
+用户报告第0～3步完成；回传Hello/VADD的make image记录均到LD/OBJCOPY生成.bin，VADD有RWX链接警告。没有两次make数值退出码、镜像哈希或第0/1步日志，分别记录用户确认与可见输出，未重编或推断运行/DiffTest通过。
+
+新增[check_scnet_nemu_deps.sh](../scripts/check_scnet_nemu_deps.sh)：按锁定a48a11f的kconfig/build.mk/资源依赖脚本及clang-ref配置，盘点宿主工具、zlib/elf头文件、链接文件和四处resource源码。pkg-config/Python为辅助项；readline/SDL/ncurses/zstd/ccache不作为当前参考配置必装项。现有.config只读保留。依赖目录不是独立Git根时标记版本未知，避免误取父NEMU HEAD。
+
+实际本地命令：PowerShell执行`wsl.exe -d Ubuntu -- bash -n /mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/scripts/check_scnet_nemu_deps.sh`，退出0；未执行脚本主体。准备检查、修改前副本及文档差异见[本轮目录](../artifacts/nemu-deps-prep-2026-10-24/)。服务器盘点/安装/构建待后续；未改整核/AM源码、重跑旧测试或提交Git。
+
+## 2026-10-24 B1安装尾段复核与整核构建前路线
+
+用户附件从解包中段开始，原样归档为[安装尾段](../artifacts/scnet-precore-2026-10-24/user-cross-install-mt9SWh-tail.txt)；缺开始时间、实际OS、脚本SHA和APT候选前段。可确认安装命令及版本查询退出0、CROSS_INSTALL_PASS/CROSS_INSTALL_EXIT=0；实际GCC12.4.0-2ubuntu1~24.04cross1、binutils2.42-4ubuntu2.10、目标riscv64-linux-gnu，三份AM规则哈希OK，远端日志evidence/cross-install-mt9SWh。
+
+宿主binutils从2.38升级到2.42，libc6-dev:amd64/libc-bin/locales等出现2.39系列，与原22.04基线不一致。只能确认安装操作成功，不能标记环境验收通过；混源/环境变更原因与影响范围待完整日志和当前包状态。旧脚本只检查os-release，未约束候选包/依赖发行版，属于设计缺口；--no-remove不防止宿主升级。保存[原脚本](../artifacts/scnet-precore-2026-10-24/install_scnet_cross.before.sh)，本地canonical入口改为拒绝执行退出2，远端副本未修改。未尝试升级、降级或恢复操作。
+
+新增[只读审计入口](../scripts/audit_scnet_packages.py)，只采集OS/包/APT来源/优先级、dpkg审计、模拟依赖检查及原安装日志前段，写新证据目录；采集0不表示环境通过。服务器尚待执行。新增[完整路线](scnet-before-core.md)，包含环境核对→RV64/RVV小程序→Hello/VADD镜像→源码NEMU参考库→构建前盘点，后续为条件式计划，未运行。
+
+本地实际命令：PowerShell通过wsl.exe -d Ubuntu --调用本工作区artifacts/scnet-precore-2026-10-24/review.py。该脚本逐字节归档附件、只读刷新四个仓库Git状态、保存源码依据并按Python3.11语法解析审计脚本，退出0；[review-result.json](../artifacts/scnet-precore-2026-10-24/review-result.json)保存argv/输出/退出码。NEMU脚本含自动Git提交宏但默认条件下未定义，Makefile解析时则可能下载资源。首次误读注释#else而用__NOT_DEFINED=1做宏禁用检查，断言失败退出2，未调用Git；已纠正为git_commit=显式空宏，单独包含scripts/git.mk验证默认未定义及显式空宏均退出0。未解析完整NEMU Makefile或执行Git写操作。
+
+本轮没有执行服务器审计、APT动作、交叉编译、AM/NEMU/整核构建或旧测试。收尾检查记录见[final-check.json](../artifacts/scnet-precore-2026-10-24/final-check.json)，文档差异见[documentation.diff](../artifacts/scnet-precore-2026-10-24/documentation.diff)；受保护源码/旧证据保持不变，无Git提交或整合包同步。
+
+## 2026-10-23 收到B0 Mill检查成功结果，准备B1交叉编译器安装
+
+用户回传服务器命令`bash check_scnet_mill.sh`，调用cwd=/root/private_data/mj/xiangshan，查询cwd=/root/private_data/mj/xiangshan/evidence/mill-check-JDkqpZ，START=2026-10-23T23:26:48+08:00。Bash5.1.16/coreutils timeout8.32/Java21.0.12.1/Mill0.12.3。`MILL_VERSION_EXIT=0`、`MILL_ELAPSED_SECONDS=1`、`MILL_VERSION_CHECK_PASS`、`MILL_CHECK_EXIT=0`。
+
+脚本SHA256=b0c2913a591ce64f92e5958fe6acc91c6c4dbd3a8f848a298f2678c2984bba73，与本地一致；env-toolchain.sh=9738ed86b60a97358b10b0bd61862e432e9a2237b50da2231b3e625d639a203c，与A0一致。启动器62字节/SHA256=055d9275451776f430db270caca84d5f061b56dda984dff4d1afb6eef6680eb8，与安装脚本生成文本一致。发行包65455399字节，固定SHA-1检查OK，报告SHA256=336346091edc69b248c306ca51aaccb73d888d8bf525ce45e02df89db449b41d。
+
+[转存文本](../artifacts/scnet-migration-2026-10-23/b0-review/user-mill-check-JDkqpZ.txt)来自用户消息，不是远端run.log逐字节下载；远端目录`/root/private_data/mj/xiangshan/evidence/mill-check-JDkqpZ`。查询前无java/mill名称匹配进程，后有PID7874/PPID1、Sl、elapsed1、java；可能是Mill后台进程，名称不足以确定身份，未终止或查询其此刻存活。A0超时原因仍未知；只确认当前版本查询成功，未做Scala依赖解析或整核构建。
+
+本地实际命令（PowerShell，cwd为本工作区）：
+
+```powershell
+wsl.exe -d Ubuntu -- python3 /mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/artifacts/scnet-migration-2026-10-23/b0-review/review_received.py
+```
+
+[review-result.json](../artifacts/scnet-migration-2026-10-23/b0-review/review-result.json)保存上述核验及本机四个主仓库只读Git argv/cwd/输出/退出码；根目录非Git，探测128为预期，其余查询成功。三份AM规则与Linux学习副本及导入成员哈希一致：LINUX_GNU_TOOLCHAIN=1选择riscv64-linux-gnu-，Makefile.compile使用GCC同时处理C和.S。核验命令退出0。Windows广泛rg读取时先遇到未展开通配符/WSL符号链接访问错误，已改为WSL读取明确文件核对，不将失败读取当作通过。
+
+新增[install_scnet_cross.sh](../scripts/install_scnet_cross.sh)，为Jammy amd64安装gcc-12-riscv64-linux-gnu、binutils-riscv64-linux-gnu、libc6-dev-riscv64-cross及所需依赖；记录APT候选、模拟计划、实际命令退出码、安装版本/工具SHA256、AM规则未变。不改默认编译器或AM源码。选择依据及官方来源见[toolchain-selection.json](../artifacts/scnet-migration-2026-10-23/b0-review/toolchain-selection.json)。后续AM显式传CC=riscv64-linux-gnu-gcc-12、AS=riscv64-linux-gnu-gcc-12；与旧WSL GCC13.3工具链不同，服务器镜像需重新记录哈希并实跑。
+
+实际本地只执行安装脚本`bash -n`及LF检查，退出0；**没有执行APT安装、RV64/RVV小程序编译或整核构建**。脚本生成不代表服务器交叉编译器已齐备。用户B1安装回传成功后再做B2编译/链接/反汇编；无新镜像、参考库或随机种子，旧功能测试未重跑。同步PROGRESS、HANDOFF、本记录及迁移/工具指南；不提交Git、比赛或同步整合包。
+
+收尾命令`python3 artifacts/scnet-migration-2026-10-23/b0-review/finalize.py`在本机WSL执行，退出0；[final-check.json](../artifacts/scnet-migration-2026-10-23/b0-review/final-check.json)确认20项保护哈希未变、回传文本未变、安装脚本与语法检查版本一致、本地链接有效。[documentation.diff](../artifacts/scnet-migration-2026-10-23/b0-review/documentation.diff)保存本轮五份文档差异。四个主仓库HEAD保持锁定，xs-env原12脚本M及两个未跟踪目录保留，其余三个仓库status/两类diff为空。
+
+## 2026-10-23 收到A1b服务器导入成功结果，准备B0 Mill定点检查
+
+用户回传服务器Linux命令`python3 -u import-kit/import_scnet_sources.py`，cwd=/root/private_data/mj/xiangshan，START=2026-10-23T22:41:36.065895+08:00。工具Git2.34.1/GNU tar1.34；此次终端未单独打印Python版本，A0曾报告3.11.9。脚本SHA256=459606e03ffa204ccffbc8bf092f8969ed0d89cce02930236d77323e80cc4db0，与本地及import-kit相同。
+
+实际结果：两包归档SHA256及布局正确；xs-env 4748项、AM学习快照199项内容/模式/链接匹配，22仓库HEAD均与锁一致；36子模块状态为21已初始化/15未初始化，无+或U。xs-env原12脚本M保留，其余21仓库status为空；所有两类diff无统计项。根仓库有13条CRLF提示，不是导入失败或自动改写源码的证据。日志末尾SOURCE_IMPORT_PASS、IMPORT_EXIT=0；tar PID6829仅是已完成解压阶段的历史进程。
+
+远端日志目录`/root/private_data/mj/xiangshan/evidence/source-import-pnpyf4lq`。本地[原附件归档](../artifacts/scnet-migration-2026-10-23/a1b-received/user-source-import-pnpyf4lq.txt)与用户上传附件逐字节一致，SHA256=eb3c00d7e0bc3a70ad75b6373439984b19e60c803f89711e346d21d913a2d07b；不是助手直接下载的远端run.log，远端result.json/git-state.json未直接读取。
+
+本地实际核验命令（PowerShell，cwd为本工作区）：
+
+```powershell
+wsl.exe -d Ubuntu -- python3 /mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/artifacts/scnet-migration-2026-10-23/a1b-received/review_received.py
+```
+
+[核验摘要](../artifacts/scnet-migration-2026-10-23/a1b-received/review-result.json)保存附件解析、版本/状态对照、完整本机Git argv/输出/退出码、修改前文档与保护哈希，核验退出0。根工作区非Git，rev-parse返回128符合预期；本机xs-env仍有12脚本M和未跟踪.metals/verilator，XiangShan/NEMU/nexus-am状态及两类diff为空；未修改这些源码仓库。
+
+新增[check_scnet_mill.sh](../scripts/check_scnet_mill.sh)：仅核对当前Java、Mill路径/发行包哈希，在新证据目录执行一次限时60秒的Mill --version，保存退出码及进程名称快照；无项目任务/依赖安装/清缓存/重装。脚本可能触发版本工具自身的缓存或后台进程行为，前后进程名称会记录。实际只执行`bash -n scripts/check_scnet_mill.sh`及LF检查，退出0；服务器主体尚未运行，A0的124原因未确定。成功信号和停止条件见[迁移B0](scnet-migration.md)。
+
+本轮只归档用户证据、新增小检查脚本并同步PROGRESS/HANDOFF/verification及迁移/工具指南。不重新导入、运行旧RTL测试或启动整核构建；无新镜像/参考库/随机种子，未提交Git或同步整合包。下一步等用户Mill检查结果，再补交叉编译器。
+
+收尾命令为WSL/Python `python3 artifacts/scnet-migration-2026-10-23/a1b-received/finalize.py`，退出0。[final-check.json](../artifacts/scnet-migration-2026-10-23/a1b-received/final-check.json)记录17项受保护文件哈希未变、附件未变、新脚本与语法检查版本相同及本地链接检查；[documentation.diff](../artifacts/scnet-migration-2026-10-23/a1b-received/documentation.diff)保存本轮五份文档的修改差异。
+
+## 2026-10-23 收到A1a成功结果，准备并演练A1b导入入口
+
+用户回传命令 `bash check_scnet_source_archives.sh`，START=2026-10-23T21:52:29+08:00；cwd=/root/private_data/mj/xiangshan/cache/source-import-20261023。两包大小984487233/110677字节、sha256sum均OK，ARCHIVE_TRANSFER_CHECK_PASS、ARCHIVE_CHECK_EXIT=0，日志evidence/source-archive-check-4Kg1el。检查脚本SHA256=ae17b9d027432d7f993576d4ecba2e6674c8928c51aecb90d919cee4e414baee，与本地一致。[消息转存文本](../artifacts/scnet-migration-2026-10-23/a1b-preparation/user-archive-check-4Kg1el.txt)不是远端run.log逐字节下载；它只证明上传完整性与空目标检查，不证明解压或构建。
+
+新增 [import_scnet_sources.py](../scripts/import_scnet_sources.py) 和 [import-kit](../artifacts/scnet-migration-2026-10-23/import-kit/)：新目录解压、逐文件哈希/模式/链接、22仓库HEAD、36递归子模块状态和Git status/diff记录；全部输入清单用SHA256固定。使用GNU tar保留模式/符号链接、采用执行者所有权，不调用Python3.12的extractall(filter=...)。先验证全部包和路径，目标已有内容就拒绝，失败保留目录/标记/日志；不构建、安装、checkout、更新子模块或提交Git。
+
+准备阶段只读核对四个主仓库、递归子模块及旧清单，并保存修改前文档；[preparation.json](../artifacts/scnet-migration-2026-10-23/a1b-preparation/preparation.json)记录实际argv/输出/退出码。成员清单来自未修改的旧整合包；36子模块中21初始化、15未初始化、无+或U；22仓库HEAD使用旧归档版本锁。
+
+实际本地WSL命令（PowerShell以wsl.exe -d Ubuntu --发起，均未连接服务器）：
+
+```bash
+python3 artifacts/scnet-migration-2026-10-23/a1b-preparation/prepare_kit.py
+python3 artifacts/scnet-migration-2026-10-23/a1b-preparation/trial_import.py --attempt trial-02
+```
+
+最终[trial-02摘要](../artifacts/scnet-migration-2026-10-23/a1b-preparation/trial-02/trial-result.json)与[正向原始日志](../artifacts/scnet-migration-2026-10-23/a1b-preparation/trial-02/trial-console.log)：导入退出0；4748项xs-env成员及199项AM快照成员内容/模式/链接一致，22个仓库HEAD和36个子模块状态匹配。21个非根仓库status及两类diff为空；xs-env仍12脚本M、两类diff为空。包内不含原未跟踪.metals/verilator目录。新入口按锁定清单补回15个未初始化子模块的空目录，避免Git将缺少占位目录报为删除，不下载内容。
+
+[拒绝覆盖复验](../artifacts/scnet-migration-2026-10-23/a1b-preparation/trial-02/overwrite-refusal.log)实际退出1符合预期，原测试副本HEAD未变；汇总检查退出0。导入器SHA256=459606e03ffa204ccffbc8bf092f8969ed0d89cce02930236d77323e80cc4db0。临时副本仅在验证绝对路径及本脚本归属标记后删除，持久日志保留；原源码、原归档、旧功能证据不改动。
+
+验证边界：本地实际Python3.12.3/Git2.43.0，并按Python3.11语法解析；新入口只用3.11已有API，服务器Python3.11.9的实际运行尚待用户执行。没有新RTL/NEMU仿真、构建、镜像或随机种子；本次23秒左右的临时恢复耗时不是服务器耗时承诺或硬件性能。
+
+首次演练与采集问题保留在[attempt1-notes.json](../artifacts/scnet-migration-2026-10-23/a1b-preparation/attempt1-notes.json)：初版内容/HEAD核验成功，但发现15个空占位目录缺失引起Git D/M，现已补回；首次收尾采集仅在stdout检索实际位于stderr的拒绝信息而误判失败1。随后单独复验时原/tmp目录已不可见，原因未确定，复验脚本退出1。最终在新临时目录中同一进程完成完整正向/负向验证并清理，未覆盖首次记录。
+
+下一步仅让用户上传完整import-kit并执行A1b，回传SOURCE_IMPORT_PASS、IMPORT_EXIT=0及日志。本轮遵守“先不要启动构建”；Mill124和交叉编译器缺口尚未处理。
+
+## 2026-10-23 收到A0盘点结果，准备A1a源码归档上传核验
+
+用户粘贴服务器命令 `bash preflight_scnet_migration.sh` 的完整终端输出，cwd=/root/private_data/mj/xiangshan，START=2026-10-23T21:32:45+08:00，PREFLIGHT_EXIT=0，日志目录evidence/migration-preflight-mOZu6B。[转存文本](../artifacts/scnet-migration-2026-10-23/a0-review/user-preflight-mOZu6B.txt)来自用户消息，不是直接下载的远端run.log；脚本SHA256=fafb742c76ce263d584d230ce563457fd24cd94550d45171c451df383dd46bfa，与本地一致。
+
+四目录存在、sources无条目、GitHub引用查询退出0。Ubuntu22.04.5/x86_64；Git2.34.1、Python3.11.9、Java/Javac21.0.12.1、Clang19.1.7、Verilator5.052查询均退出0。Mill命令存在但20秒查询返回124；未确认原因或是否残留子进程，不把整体盘点0记为Mill通过。三个候选交叉编译器名称均NOT_FOUND，只证明当前PATH未找到这些名称。cgroup v1内存115GiB、CPU quota/period=6；Parastor挂载216G可用不是个人配额。
+
+本轮选择已有归档导入以保持版本/Git/子模块和AM测试应用；新增[check_scnet_source_archives.sh](../scripts/check_scnet_source_archives.sh)，只核对两份上传包SHA256及目标目录未占用，并保存日志，不解压/构建。旧包恢复脚本要求Python≥3.12，服务器3.11.9不直接使用它；A1b入口后续准备。Mill超时留作构建前必处理项。
+
+本地实际命令（PowerShell发起WSL）：
+
+```powershell
+wsl.exe -d Ubuntu -- python3 /mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/artifacts/scnet-migration-2026-10-23/a0-review/review_received.py
+```
+
+[review-result.json](../artifacts/scnet-migration-2026-10-23/a0-review/review-result.json)保存Python/Git版本、完整argv/cwd、四仓库身份/status/diff与退出码、原包哈希、A1a脚本bash -n/LF检查，核验退出0。两份源码归档与10-19清单匹配；本机源码/原包/旧证据保留，无新解压、功能测试或构建。远端A1a上传及校验尚待用户执行，尚未导入工程，助手未登录远端或提交Git。
+
+## 2026-10-23 服务器恢复登录与迁移A0准备
+
+用户确认恢复登录，要求按工程导入→交叉编译器→服务器Hello/VADD与源码NEMU基线→vdot接入逐步操作。新增[操作入口](scnet-migration.md)、[A0盘点脚本](../scripts/preflight_scnet_migration.sh)。脚本只读取远端目录、挂载/cgroup、工具版本与GitHub引用，写本次新证据目录；不克隆/解压/安装/构建，缺少交叉编译器及GitHub探测失败单独记录。PREFLIGHT_EXIT=0仅代表盘点完成。远端执行与输出尚待用户回传。
+
+本轮本地实际执行（PowerShell发起WSL/Python）：
+
+```powershell
+wsl.exe -d Ubuntu -- python3 /mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/artifacts/scnet-migration-2026-10-23/capture_local.py
+```
+
+结果：[local-preparation.json](../artifacts/scnet-migration-2026-10-23/local-preparation.json)，退出0；Python3.12.3、Git2.43.0。六仓库HEAD与既有锁定值一致；xs-env保留12脚本M及.metals/verilator未跟踪，两类diff为空，其余所查仓库status及两类diff为空。项目根Git探测128为预期。A0脚本bash -n退出0、LF换行；未在WSL执行脚本主体，也未重跑旧功能测试。
+
+已重新读取两份原源码归档的SHA256：xs-env-source-with-git.tar.gz为b04ba6b67443b02ecab923f5ad7b3eb237a485872a2d6e22e10359b3e1bccf4f（984487233字节）；nexus-am-learning.tar.gz为4e633ce218be9324c83c904cc444b49ba73a011ded0efb4746a37d1d6d2cf66e（110677字节），与10-19包内manifests/files.json一致。本轮未解压验证；旧恢复验证按10-19证据解读。原包未包含后来新增的vdot控制工程，补充包未生成。
+
+助手未登录服务器，未导入源码、安装工具、构建、提交Git或同步整合包。本轮仅准备第一步与更新当前交接状态。
+
+## 2026-10-23 准备vdot语义确认issue草稿
+
+新增[草稿和发布流程](vdot-issue-draft.md)，内容逐项对照v0.1的A01～A05及现有控制逻辑。通过GitHub连接器读取technical_qa.yml，blob=5bccdea14e0ee6bf48d8c62d0fa224623f9b1c57；[模板来源快照](../artifacts/vdot-issue-draft-2026-10-23/template-source.json)保留字段与来源。网页表单读取受工具URL限制未成功，发布流程的字段以模板源码为依据。仅本地草稿，未创建issue、评论或提交Git；无新仿真/构建。文档检查和规格/RTL保护哈希见[检查记录](../artifacts/vdot-issue-draft-2026-10-23/validation.json)。
+
+## 2026-10-23 XiangShanLab issues与控制边界核验
+
+按用户要求在线读取公开issues及评论，范围和逐项结论见[报告](reviews/xiangshanlab-issues-2026-10-23.md)。GitHub连接器查询73条issue，open/closed交叉核对58/15；全部评论接口成功，得到488条评论。正文/标题/评论检索未找到vdot四组边界的直接答复；相关#27/#91/#94/#104是方法、课程入口或任务要求，不能据此确认赛题语义。当前master赛题blob为d5eb631ce9198442cc20c2e30ff74b3e26b117df；另外核对RVV v1.0归约条文作为设计依据。
+
+新增[外部内容快照](../artifacts/xiangshanlab-issues-2026-10-23/github-snapshot.json)、[检索记录](../artifacts/xiangshanlab-issues-2026-10-23/search-log.json)及相关资料。连接器部分时间/身份字段未返回，附件图片未逐张OCR，Discussions/PR及其他渠道未穷尽；不宣称不存在其他答复。未创建issue/评论/PR或Star。
+
+PowerShell，cwd=D:\Mayyyyyy\WorkSpaces\日常工作区1\2026比赛规划\RISCV_vdot：
+
+```powershell
+python artifacts/xiangshanlab-issues-2026-10-23/audit.py before
+python artifacts/xiangshanlab-issues-2026-10-23/audit.py after
+```
+
+[前检查](../artifacts/xiangshanlab-issues-2026-10-23/audit-before.json)与[后检查](../artifacts/xiangshanlab-issues-2026-10-23/audit-after.json)保存完整argv、Python/Git版本、输出和退出码，以及源码/规格/旧运行摘要保护哈希。初次嵌套Bash引号命令失败，包装退出1；已记录，随后采用直接argv读取WSL Git。项目根非仓库退出128为预期。
+
+本轮只新增报告/资料证据及更新PROGRESS、HANDOFF、本验证记录。A01～A09未升级为确认；规格、模型、RTL、旧证据保持原样。无新仿真、构建、镜像/参考库、随机种子；旧功能测试未重跑，服务器未登录。
+
+## 2026-10-23 用户补充远端可用性与源码状态
+
+用户明确服务器资源被占用、目前无法登录；只安装了依赖和基础工具链，尚未导入香山源码和工程文件。
+目录暂定为/root/private_data/mj/xiangshan下sources、evidence、cache、tools。
+此项为用户报告，助手未远端核验；不推断具体占用进程、平台故障原因或恢复时间。
+此前verify成功仍按原日志范围保留，不升级为工程部署完成。
+
+本轮只同步当前安排：先本地准备版本锁、源码/子模块、测试和证据索引的迁移清单；
+待可登录后再检查远端目录/存储/交叉编译器并传输、构建和验收。
+迁移清单、工程打包与传输尚未执行，没有新SSH连接、安装、构建或功能测试。
+
+## 2026-10-23 收到服务器基础工具链verify成功输出
+
+用户提供10-22 20:15:06开始的远端终端记录。实际显示命令为
+Linux/Bash、cwd=/root/private_data/mj/xiangshan、bash install_scnet_toolchain.sh verify。
+系统Ubuntu22.04.5；Java/Javac21.0.12.1、Clang19.1.7、Mill0.12.3、Verilator5.052。
+输出包含Verilator调用Clang19编译并链接VToolchainSmoke，以及VERILATOR_SMOKE_OK、
+TOOLCHAIN_SMOKE_PASS、STAGE=verify EXIT_CODE=0。记录对应远端目录
+/root/private_data/mj/xiangshan/evidence/toolchain-verify-1tQbiW，
+并报告生成/root/private_data/mj/xiangshan/env-toolchain.sh。
+
+原附件逐字节复制到[本地归档](../artifacts/scnet-toolchain-2026-10-23/user-verify-20261022.txt)，
+SHA256=228684aefec9df89c839902ae51cabd13eaef13f5fd31284217845360d397c8d；
+[核验摘要](../artifacts/scnet-toolchain-2026-10-23/user-evidence-review.json)保存来源、版本、标记和边界。
+助手本地标记/哈希检查退出0，没有SSH连接或重新运行远端verify。
+远端安装器身份/完整run.log/工具二进制哈希未读取，四个安装阶段各自日志不在本次附件中；
+当前结论是工具版本可调用且极小RTL编译运行通过，不据此宣称全部阶段日志已审计。
+
+本安装脚本不安装RISC-V交叉编译器，也不克隆/构建香山或NEMU。
+服务器已有源码/提交、交叉编译器、整核Hello/VADD/DiffTest及环境持久化尚待盘点。
+资源115GiB/等效6CPU沿用此前用户输出，当前verify没有重测cgroup/个人存储配额。
+本轮只归档新证据并同步文档，旧安装脚本、整核/独立源码及旧日志未修改；无新构建、Git提交或整合包同步。
+
+## 2026-10-22 SCNet工具链准备
+
+用户终端确认Ubuntu22.04 x86_64、内存限制115GiB和CPU时间配额6；APT误配noble后已修正jammy，用户回报APT_REPAIR_EXIT=0、BASE_INSTALL_EXIT=0。此处属于用户提供的输出，不声称助手远程执行或已收集服务器完整日志。
+
+新增 [install_scnet_toolchain.sh](../scripts/install_scnet_toolchain.sh) 与 [操作指南](scnet-toolchain-setup.md)，分jdk/llvm/mill/verilator/verify阶段。目标JDK21、LLVM19、Mill0.12.3、Verilator5.052；服务器安装与工具链小测试尚未执行/回传。脚本不会构建香山或NEMU，不能据脚本存在认定整核环境通过。
+
+本地WSL仅执行 `bash -n scripts/install_scnet_toolchain.sh`（退出0）和 `bash scripts/install_scnet_toolchain.sh invalid-stage`（预期退出2，尚未进入安装/建目录路径）；检查文件为LF换行。下载端点只读验证：LLVM jammy-19 Release、Maven Mill0.12.3发行包及校验文件HTTP200；Mill包长度65455399字节，发布SHA-1为9e2bd55d01428d0e14e93327bcb94e7d6cd0fdc0。只读了发行包头部，未在本机下载/安装整套工具链。最终本地检查摘要见 [local-validation.json](../artifacts/scnet-toolchain-2026-10-22/local-validation.json)。
+
+服务器每阶段执行后会保存完整脚本副本/哈希、原始run.log、exit-code.txt及相关包版本/二进制哈希。基础APT操作的既有远端日志仍在用户此前的XS_APT_FIX目录；确切随机目录名未回传。未修改本机xs-env/XiangShan/NEMU或旧功能证据，未提交Git/比赛。
+
+## 2026-10-21 真实香山接入只读调查
+
+按用户要求完成[接口/修改候选/验证报告](../reports/stage2/vdot-xiangshan-integration-survey.md)。
+本轮没有修改香山、NEMU、独立vdot8源码或规格，没有elaboration、构建、功能测试或Git写操作。
+报告是静态调查和初版建议，不计正式C2.2/G2/G3通过；用户解释保持概览，不恢复逐拍测问。
+
+工作目录为WSL /mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot。
+实际采集入口（每项设置PYTHONDONTWRITEBYTECODE=1）：
+
+~~~bash
+python3 artifacts/vdot-integration-survey-2026-10-21/survey-01/collect_state.py --phase before
+python3 artifacts/vdot-integration-survey-2026-10-21/survey-01/capture_sources.py
+python3 artifacts/vdot-integration-survey-2026-10-21/survey-01/collect_state.py --phase after
+~~~
+
+[调查前JSON](../artifacts/vdot-integration-survey-2026-10-21/survey-01/state-before.json)
+保存Git2.43.0/Python3.12.3、完整argv/cwd、环境、stdout/stderr及退出码。
+GIT_OPTIONAL_LOCKS=0；工作区根探测128为非仓库的预期结果，五仓库Git读取均退出0。
+XiangShan16ae9dd、NEMUa48a11f、difftest62e4540、yunsuancadd3c2均detached且status及两类diff stat为空；
+xs-env b0b5064/master仍12脚本M及.metals/verilator未跟踪，两个diff stat空，未清理或修复。
+调查前无匹配构建进程，建议开发副本与NEMU .config/build仍不存在。
+
+[调查后JSON](../artifacts/vdot-integration-survey-2026-10-21/survey-01/state-after.json)
+记录23:04:15起的收尾读取，退出0：source_hashes_unchanged=true、git_state_unchanged=true，
+1,122份哈希及五仓库状态前后一致，仍无匹配构建进程。源文件保持不等于功能测试重跑。
+
+[源码采集JSON](../artifacts/vdot-integration-survey-2026-10-21/survey-01/source-evidence.json)
+保存51份源码快照/哈希、行号摘录及4项Git grep检索。
+首次采集因WSL无rg退出1，[失败摘要及原脚本](../artifacts/vdot-integration-survey-2026-10-21/survey-01/capture-attempt1.json)
+保留；仅改新证据目录内的采集器，改用只读Git grep后退出0，已有快照先核同哈希再复用。
+grep无匹配的退出1按预期处理，不冒称测试通过。未安装工具、未清理旧产物。
+
+核心发现：真实五源为vs1/vs2/oldVd/v0/VL；专用FU需保留RobPtr/pdest等身份。
+custom-0需同时加入精确向量指令分类、FuType/FuConfig分类；普通mask-vd0非法规则和MGU合并不适用本合同。
+建议VEC_VVV且强制一uop/一WB；合法vl0把oldVd写入新物理目标；Dirty/vstart由ROB正常提交驱动。
+redirect按ROB年龄和level选择取消，不能把redirect.valid直接当全局flush。
+固定延迟框架及压缩vtype/VL/vstart、聚合VS权限与独立接口存在差异，报告明确了适配与后续验收门槛。
+
+本轮输入程序镜像、NEMU参考库哈希、随机种子不适用（未运行功能测试）；
+源码身份由实际commit及1,122份已跟踪源码/配置/构建脚本的调查前后SHA256清单限定。
+本轮改动为新增报告/证据，以及PROGRESS、HANDOFF和本记录；原始测试数量与用户学习状态分别保留。
+
+## 2026-10-21 用户学习状态更正与后续安排
+
+用户明确：最近三轮控制时序回答有AI参与，本人尚未深入理解控制模块；当前只需整体职责，
+以后有需要再深入。因此下方历史“用户正确回答/推导”仅描述对话答案内容，
+**撤销由此作出的本人独立掌握同拍收发、flush或reset的判断**，停止逐拍理解检查。
+此前本人运行旧14项/1302组的事实、助手新增254语义场景/101拍协议通过的事实均不改变。
+
+本轮只读核对CONTROL、HANDOFF、PROGRESS和总计划的依赖，读取原run-result.json；
+Get-FileHash核验14份当前源码/合同及原trace均与该run哈希一致，命令退出0。
+未重跑测试、未修改硬件或旧证据、未调查真实整核接口/刷新整核Git状态。
+仅更新PROGRESS、HANDOFF和本记录，以文件修改前后哈希保留本轮范围。
+
+下一工程包建议：只读调查真实香山接入点并形成改动/接口/测试对应表。
+之后按依赖补独立控制的两项定向覆盖、准备WSL原生副本和源码NEMU基线，
+再实施RTL/NEMU扩展、整核DiffTest及RVV等价基线/性能；本轮未执行这些计划。
+
+## 2026-10-21 同步reset与flush差异学习核验
+
+当时对话答案正确推导了仅门控不清pending会使旧响应重新有效；用户随后说明答案有AI参与，不作本人独立掌握证据。
+本轮只读10-20原运行的Chisel89～102行、生成VdotControl.sv47～58行、
+测试255～257/303～318行及trace78～85、94～97；两份Scala、生成SV与trace的SHA256
+均匹配run-result.json，PowerShell核验退出0。无新仿真、无源码或原始证据修改；同步三份学习记录。
+
+实际沿前采样：cycle79 a036 valid1/ready0；80 reset1/flush0，req.ready=resp.valid=0，
+但resp.tag=a036、setHostVsDirty=1仍残留。该行先采样后clock.step，不能据此说同步复位失效。
+RegInit使用Bool reset，生成的always @(posedge clock)在reset分支令pending及全部response字段归0。
+cycle81实采tag/全部更新意图为0，83释放reset后req.ready1/resp.valid0；
+测试还在每次reset的clock.step之后断言全部响应字段为0，原协议测试通过。
+flush只有清pending，不清response数据；reset同时清两者。这是本模块约定，不推广到所有硬件。
+同时reset/flush的95～96也有原始采样，但本轮教学先聚焦79～83。
+当时提出的reset理解检查按用户最新安排停止追问；该内容已讲解，独立理解尚未验收。
+
+## 2026-10-20 flush取消槽内响应学习核验
+
+当时对话答案为旧a008被接收且无新请求时pending/resp.valid均0；用户随后说明有AI参与，不作独立掌握证据。
+本轮只读原RTL91～102行、测试287～300行及原trace的54～61，
+重新核对RTL/测试源码/trace SHA256均与run-20261020-204245-5a7b3a记录一致，
+PowerShell检查退出0，未重跑仿真；仅同步三份学习/交接记录。
+
+实际沿前接口：cycle55 a024 valid1/ready0；cycle56 reset0/flush1，
+req.valid1但req.ready0，resp.ready1但resp.valid0，双方均无握手。
+RTL的cancel组合门控当拍屏蔽握手，when(cancel)在沿上清pending；
+flush分支未赋值response，故57～59仍可采到tag=a024、setHostVsDirty=1，
+但valid始终0，不能据无效bits推断接收、物理写回或CSR提交。
+cycle59 flush已撤销、ready1而valid仍0，说明旧响应没有重新送出。
+记分板在56把取消数从1增为2，接受21/传递19均不变；这些计数不是DUT内部CSR。
+10-21对话中的相关推导内容正确，但按用户后续澄清不作独立理解验收；当前不继续逐拍追问。
+
+## 2026-10-20 cycle18同拍收发学习核验
+
+当时对话答案正确区分cycle18沿前旧a008/沿后新a009；用户随后说明有AI参与，不作本人独立掌握证据。
+本轮仅重新读取VdotControl.scala、VdotControlSpec.scala及原protocol-trace的cycle17～19，
+PowerShell Get-FileHash核对两份源码及trace均与该run记录一致，退出0；没有重跑仿真。
+本轮仅同步PROGRESS、HANDOFF及本验证记录，原源码和原始日志未改。
+
+沿前真实接口：cycle18 reset/flush=0，req.valid/ready=1、req.tag=a009；
+resp.valid/ready=1、resp.tag=a008、illegal=0。测试在写trace后才clock.step（测试253行）。
+pending_after=a009为记分板预测；下一次cycle19沿前真实resp.tag=a009、illegal=1，
+与寄存器替换相符。RTL92行允许消费旧响应时接受新请求，99行pending下一值为req.valid，
+101行response下一值为nextResponse，不能把Chisel寄存器赋值理解成立即覆盖沿前输出。
+随后对话答案“req.valid=0且resp.ready=1时沿后pending/resp.valid均0”同属AI辅助回答，现不作为独立掌握证据。
+
+## 2026-10-20 最小控制模块与定向验证
+
+本轮只在独立vdot8工程新增控制合同、RTL包装器、向量生成器、Scala测试与运行入口。
+旧reference_model、Dot8、旧测试/入口、规格JSON和旧证据未修改；旧14项/1302组未重跑。
+开发前[只读核验摘要](../artifacts/vdot8-control-2026-10-20/package-01/baseline-audit.json)
+记录42项匹配、Git状态及进程检查，审查退出0；摘要不是完整原始stdout日志。
+修改前17份文件快照与86份旧证据哈希在[保护清单](../artifacts/vdot8-control-2026-10-20/package-01/before-hashes.json)。
+
+工作包C0：形成[CONTROL.md](../exercises/vdot8/CONTROL.md)，解释每个字段、三类响应、
+同步reset>flush>收发的优先级，以及一拍寄存、单槽、同拍替换合同。
+静态对照execute及规格4/6/7节，没有运行旧测试；此设计步骤本身无功能测试退出码。
+完成信息、架构vd更新意图、物理写回、CSR提交分别定义，后两者不由独立模块实现。
+
+工作包C1：新增[VdotControl.scala](../exercises/vdot8/chisel/src/main/scala/vdot8/VdotControl.scala)、
+[generate_control_vectors.py](../exercises/vdot8/generate_control_vectors.py)、
+[VdotControlSpec.scala](../exercises/vdot8/chisel/src/test/scala/vdot8/VdotControlSpec.scala)及
+[运行入口](../scripts/run_vdot8_control_checks.py)，复用未修改的Dot8。
+请求携带完整64位控制状态及128位旧源/目标/mask；所有响应字段寄存。
+原因码1～9是单元诊断字段；真正illegal cause固定2。
+
+实际PowerShell入口（cwd为本工作区）：
+
+```powershell
+wsl -- env PYTHONDONTWRITEBYTECODE=1 python3 scripts/run_vdot8_control_checks.py
+```
+
+等价WSL/Bash操作（已运行过，不要求用户立即重复）：
+
+```bash
+cd /mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/run_vdot8_control_checks.py
+echo "VDOT_CONTROL_EXIT=$?"
+```
+
+参数默认stage=all，只选择新增控制suite；JVM上限2GB、ActiveProcessorCount=2、
+MAKEFLAGS=-j2，与旧入口共用项目互斥锁。每次建立新证据目录，不安装工具或调用emu。
+本轮[run-result.json](../artifacts/vdot8-control-2026-10-20/run-20261020-204245-5a7b3a/run-result.json)
+为completed/overall_passed=true/exit_code=0，外层工具也返回0；保存全部argv/cwd/环境、版本、
+源码快照、生成RTL、按语义/协议/负向三个测试目录定位的仿真执行文件及哈希。
+独立工程无Git commit，以源文件SHA256关联；AM镜像与NEMU参考库不适用。
+
+| 子步骤 | 预期/实际退出 | 实际结果与原始日志 |
+|---|---|---|
+| control-vectors | 0 / 0 | [254次完整软件状态映射](../artifacts/vdot8-control-2026-10-20/run-20261020-204245-5a7b3a/control-vectors.log)通过；这一步不是RTL仿真 |
+| control-positive | 0 / 0 | [两个ScalaTest](../artifacts/vdot8-control-2026-10-20/run-20261020-204245-5a7b3a/control-positive.log)通过：254语义场景、101拍协议；之后成功导出SystemVerilog |
+| control-negative | 1 / 1 | [故意错误期望](../artifacts/vdot8-control-2026-10-20/run-20261020-204245-5a7b3a/control-negative.log)：合法vl0的archVdWrite实际0，故意期待1，FailedExpectationException，定位测试348行 |
+
+工具：Python3.12.3、sbt1.12.4、Scala2.13.18、Chisel7.7.0、ScalaTest3.2.19、
+OpenJDK21.0.12.1、Verilator5.052、clang19.1.7、GNU Make4.3。固定种子2026102008。
+时间记录有差异：日历时间20:42:45～21:06:40、sbt正向日志1384s，
+collector的monotonic正向85.953s/负向31.184s；原因未核实，不用本轮时间作性能证据。
+
+254场景包含正常写93、合法无目的写40、非法121；分组为算术5、vl0旧值8、合法vl20、
+mask14、vta/vma8、host/guest VS64、单故障18、两故障优先级36、XLEN边界31、
+重叠18、随机控制32。详见[输入清单](../artifacts/vdot8-control-2026-10-20/run-20261020-204245-5a7b3a/control-vectors-manifest.json)；
+场景JSON另存完整旧32寄存器、原机器码、模型结果和意图应用后的状态核对。
+首八种非法原因分别覆盖vl0/vl8；第九种vl非法不可能同时vl0/vl8，取vl1/17。
+
+[逐拍trace](../artifacts/vdot8-control-2026-10-20/run-20261020-204245-5a7b3a/protocol-trace.tsv)
+记录101拍：接受32、传递25、取消7，末尾待响应0；身份集合相符，取消项无后续响应。
+`resp_*`为真实RTL接口采样；`pending_before/after`和计数为测试记分板，并非直接读取内部寄存器。
+每行是该次上升沿前接口值，`*_after`为该沿应产生的记分板状态。
+cycle13接受tag=a008的vl0，14～17反压保持，18同时传递a008并接受a009。
+cycle55的a024尚在反压；56设flush=1，虽然resp.ready与req.valid均1，
+req.ready/resp.valid均0，取消a024；无效bits中Dirty意图仍可为1，消费者必须用valid限定。
+
+范围：独立模块定向仿真，未穷举所有协议输入；SEW/LMUL非法编码本轮主要取1，
+2～7未孤立覆盖；真正取消的满槽周期ready取1，pending且ready仍0的取消组合尚未专门运行。
+这些列为后续定向补强，不影响已列场景的通过事实。重叠只证明旧快照输入/保持，
+未验证真实重命名、源依赖、物理寄存器写入、CSR/异常提交、选择性ROB冲刷。
+香山/NEMU/DiffTest/性能均未运行。新接口和trace的本人学习验收尚未完成。
+
+## 2026-10-20 用户完整独立RTL复现已核验
+
+用户在WSL/Bash本工作区执行 `python3 scripts/run_vdot8_checks.py --stage all`，提供RUN_DIR、FINAL PASS、VDOT_EXIT=0。[本次manifest](../artifacts/vdot8-2026-10-20/run-20261020-194543-993128/run-result.json)记录19:45:43～19:47:18、stage=all、completed/overall_passed=true/exit_code=0；保存完整argv、cwd、环境覆盖、工具版本、种子20261020及各步骤原始日志。该独立测试不使用AM镜像或NEMU参考库。
+
+六阶段依次为model-demo/model-positive/model-negative/generate-vectors/chisel-positive/chisel-negative，实际与预期退出均为0/0/1/0/0/1。软件14项通过，RTL1302组（directed10/position8/mask256/high_half4/random1024）通过；[正常日志](../artifacts/vdot8-2026-10-20/run-20261020-194543-993128/chisel-positive.log)出现All tests passed，[负向日志](../artifacts/vdot8-2026-10-20/run-20261020-194543-993128/chisel-negative.log)明确Observed=0、Expected=1及FailedExpectationException，指向Dot8Spec.scala:64。
+
+本次助手只读核对：9份当前源码与运行前后哈希一致，6份日志、生成RTL和两个仿真快照均匹配记录，原dot4保护检查为true；未额外启动测试或构建。工作区仍非Git仓库，根探测退出128；进程检查未见匹配构建。本人完整复现已确认，日志原理尚未单独口述验收；按用户要求继续控制学习，不重复运行。本轮只更新学习/交接文档及核验记录，未修改源代码或规格、同步整合包。
+
+下一步从v0.1模型execute定义三类语义控制：非法时报告cause2且不产生正常结果；合法vl0保留vd但按A08正常完成并更新VS；合法vl8～16产生完整128位结果，全零mask仍写零。控制输出名先作为教学设计名，尚未实现或映射到香山接口；架构保留vd与物理寄存器写使能必须分别处理。
+
+## 2026-10-20 独立RTL测试操作准备与日志教学
+
+用户正确回答第0项0xFE×0x03为−6、result低32位为0xFFFFFFFA，vm=0且mask=0时结果为0。本次读取测试入口、Dot8Spec和此前成功run的日志/manifest；9份当前源码哈希与该run一致，6份命令日志哈希匹配。原工作区Git根探测退出128（非Git仓库），检查时未见匹配的sbt/Verilator/vdot运行入口/emu进程。本次未执行功能测试或构建，未改动源码和规格；源码/日志核对不等于重新仿真。
+
+指导本人使用WSL入口 `python3 scripts/run_vdot8_checks.py --stage all`：每次生成新证据目录，包含软件检查、向量生成、独立RTL正常和故意错误期望测试。正常日志应显示 `PASS VDOT8_RTL count=1302 mask_cases=256 random_cases=1024`、`All tests passed.`；1个ScalaTest内部遍历1302组。负向全零输入实际为0，故意期望1；预期 `FailedExpectationException`、子进程退出1，总入口核对标记和退出码后才能FINAL PASS/退出0。缺工具、编译失败或其他失败不能当作这个负向检查通过。待用户提供本轮RUN_DIR、最终状态和退出码，再更新本人复现状态；此前自动测试仍为历史证据。
+
+## 2026-10-20 用户模型示例复现与位宽理解反馈
+
+用户在WSL/Bash、本工作区执行 `python3 exercises/vdot8/reference_model.py`，提供[终端截图](../artifacts/vdot8-2026-10-20/user-demo-5241a848.png)。可见四项输出：signed和为−4、masked和为16、vl_zero保留全部旧vd、vstart_illegal_even_vl_zero报告cause=2并保留状态；规格SHA256与v0.1一致。截图回到提示符，但未显示退出码及此次工具版本；不推定它们。原图按字节归档，SHA256为00a9cee11022b84f51fd0dae1f85c097f0fd1c6c629104da62ca46df9f8f8b5d，详细范围见[观察记录](../artifacts/vdot8-2026-10-20/user-demo-observation.json)。
+
+用户已解释截断后扩宽无法恢复丢失信息，点积每级加法须留足位宽；可能原值的数量不固定为两种。接下来阅读Dot8.scala和Dot8Spec.scala。此记录只证明本人四示例复现与这项理解，不代表本人已运行14项软件测试或1302组RTL输入。本次没有修改代码/规格、重跑模型/仿真、启动构建或同步整合包；下面的自动验证为此前助手执行的历史记录。
+
+## 2026-10-20 vdot8软件模型与独立算术验证
+
+用户已正确说明识别MASK位25应为0，并要求按v0.1完成本步。新增exercises/vdot8的Python参考模型/测试/向量生成器、独立Chisel Dot8与测试，以及scripts/run_vdot8_checks.py。没有改动香山/NEMU源码、旧dot4源码或规格JSON；没有执行整核vdot或DiffTest。
+
+实际运行命令（WSL/Bash，本工作区）：`python3 scripts/run_vdot8_checks.py --stage all`。最终[run-20261020-165334-332b8d](../artifacts/vdot8-2026-10-20/run-20261020-165334-332b8d/run-result.json)总入口退出0，软件14项正向测试与独立RTL1302组输入通过，Python/Chisel错误期望自测均以1退出且错误原因匹配。固定种子20261020，输入TSV、生成RTL、执行文件、全部源文件/规格哈希和具体argv/工具版本已归档；范围和链接见[独立验证报告](../reports/stage2/vdot8-standalone-validation.md)。
+
+首次[失败运行](../artifacts/vdot8-2026-10-20/run-20261020-164922-8f4403/run-result.json)在Verilator C++构建时缺少clang++ PATH，总退出1，未执行DUT。修复只在新入口子进程中补已有LLVM目录，并增加clang++探测；失败未删除。成功run使用Python3.12.3、JDK21.0.12.1、Verilator5.052、clang19.1.7、Make4.3；独立sbt/Scala/Chisel版本固定，未套用到整核。
+
+模型覆盖向量状态子集和异常事件，独立RTL只覆盖signed乘加/mask/完整输出；没有硬件vl/CSR/握手/flush验证，不将它计为三类整核测试或性能。用户本人尚未复现新模块，学习状态单列。
+
+交付核对退出0：9份文档266个本地链接存在，9份本轮源码与成功run快照匹配，输入/日志/生成RTL/仿真执行文件哈希匹配，10份旧dot4受保护文件不变。当前XiangShan/NEMU的HEAD/status/diff保持原状态，未见活动构建进程；见[delivery-check.json](../artifacts/vdot8-2026-10-20/delivery-check.json)。该核对没有重复运行功能仿真。
+
+## 2026-10-19 vdot编码审计与工程规格v0.1
+
+用户已正确说明vd字段在[11:7]、vl改变不改机器码。本轮新增[工程规格](vdot-spec-v0.1.md)、[参数JSON](../specs/vdot-v0.1.json)、[静态审计脚本](../scripts/check_vdot_encoding.py)和[审计报告](reviews/vdot-encoding-audit-2026-10-19.md)。A01～A09是明确的工程假设，用户尚未整体复核，也未获主办方确认；没有实现正式RTL/NEMU。
+
+WSL/Bash，工作目录为本工作区，实际命令：
+
+```bash
+python3 scripts/check_vdot_encoding.py --xs-env /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env --output artifacts/vdot-spec-v0.1-2026-10-19/encoding-audit.json
+```
+
+Python3.12.3、退出0。完整进程argv/cwd、Git命令、源码哈希与逐项解析结果见[原始JSON](../artifacts/vdot-spec-v0.1-2026-10-19/encoding-audit.json)。解析香山当前拼接的12个源表717个键，未解析0、候选交叠0；NEMU28个顶层宏模式交叠0。Rocket CUSTOM0定义交叠独立记录，它未进入本次主表。枚举vm和三个寄存器字段的65,536个位型，唯一性/字段反解及故意交叠对照通过；读取的6份源码前后哈希一致。
+
+证明范围只到当前源码表和编码算术，未elaborate、未编译、未运行emu或NEMU；65,536不是RTL执行用例数。规格中的20类语义/控制测试是待执行清单。新审计脚本只读源码并写指定JSON；重复检查请选新输出文件，勿覆盖原记录。
+
+规格交叉检查退出0：JSON与审计MATCH/MASK和两仓库commit一致、数值例子/边界一致、20类计划用例齐全；8份文档234个本地链接存在，6份读取源码保持原哈希，AGENTS和原sources.lock未改。[检查记录](../artifacts/vdot-spec-v0.1-2026-10-19/spec-validation.json)保存范围和修改前后哈希。文档/算术检查不代表语义用例已运行。
+
+## 2026-10-19 R0编码教学与自主设计边界
+
+用户已正确回答vm=1不受v0全零阻止、合法标准归约vl=0保留旧vd。本轮说明未规定项可形成项目设计约定，工程定稿与主办方确认分别记录；提出控制/编码草案，用户尚未选择，未修改RTL/NEMU。
+
+重新读取RISC-V主opcode表、OpenXiangShan赛题，以及当前XiangShan/NEMU译码相关5个源码文件。WSL Git设置GIT_OPTIONAL_LOCKS=0，两个仓库HEAD不变，status/未暂存/已暂存stat为空，命令退出0。完整argv、源码片段及哈希见[编码核验](../artifacts/spec-review-2026-10-19/encoding-lesson-review.json)。未重跑此前所有译码模式的静态搜索，也未elaborate/编译/仿真，不声称完整无冲突。
+
+对候选位型进行整数拼接与反解：无掩码v3/v2/v1为0x0220818b，位25改0为0x0020818b。它们尚非当前RTL/NEMU支持的指令。记录区分vm自由变化与固定无掩码的识别掩码；这些数值检查不是指令执行测试。
+
+本轮只更新原工作区规格/进度/交接/验证与审计记录，保留第一阶段录屏材料，未同步整合包、未对外发送问题。编码讨论无需服务器；后续整核构建/回归建议服务器。
+
+## 2026-10-19 R0向量控制教学
+
+用户已正确解释vd[31:19]的符号扩展与vd[127:32]的清零范围。本轮读取RVV1.0固定版本的Vector Start Index、Masking、元素分类及Reduction小节，核对普通逐元素规则与归约例外，并整理vl/mask/vstart/清零优先关系的主办方问题。原站HTML访问失败后，从RISC-V维护的归档仓库固定v1.0正文读取；来源见[规格表](instruction_spec.md)。
+
+只更新本工作区的规格及R0进度/交接信息，保留期间新增的第一阶段录屏材料与状态；未同步整合包。无源码修改、Git操作、构建、仿真或对外消息；没有把标准规则直接当作自定义vdot合同。数学例子与候选开发场景不属于测试通过证据。控制理解反馈待回复；布局Q01、控制与编码未冻结。本步本机即可完成，服务器建议用于后续整核控制/异常回归。
+
+更新日期：2026-10-19。本轮新增第一阶段录屏材料准备；没有重新构建或运行RTL仿真。历史实验、打包检查和R0讨论保留各自范围。
+
+## 2026-10-19 第一阶段录屏清单与讲稿
+
+用户确认10–12分钟，已形成操作清单、15段讲稿、8段波形操作卡、1份合并及8份分段GTKWave信号列表。新材料同时放入原工作区与CIE_XiangshanRISCV。原两份报告、16图、应用、源码、镜像和VCD未改。
+
+本轮通过WSL Python直接argv读取xs-env、XiangShan、NEMU及nexus-am的HEAD、分支、status和已/未暂存diff。XiangShan/NEMU/nexus-am仍是原HEAD且检查项为空；xs-env仍有12个脚本M和.metals/verilator未跟踪目录，未修复索引。最初shell循环因参数传递丢失变量失败，已改直接argv核验，未把探针失败解释成仓库损坏。
+
+重新计算两份报告、VCD、emu、预编译参考库和Hello/VADD镜像哈希，与既有证据匹配；读取原VCD头部核对126个所选业务信号，未运行仿真。父级exus_2输入字段使用io_in_bits_robIdx/pdest/fuOpType，内部VialuFix输出字段有ctrl前缀，已经分开。详见[输入核验](../artifacts/stage1-recording-2026-10-19/inputs.json)。
+
+Windows GTKWave 3.3.100以--exit --dump <包内VCD> --save <stage1-all.gtkw>读取原波形，退出0；日志报告0～16105ps。此检查证明文件可加载，不等于人工看过所有GUI排版。CLI版本/帮助、原始stdout/stderr及命令记录见[验证记录](../artifacts/stage1-recording-2026-10-19/validation.json)。录屏字号、窗口布局和音画仍待本人试录。
+
+运行入口仅做--dry-run和输入校验；清单命令做Bash语法及只读查询检查。未执行make、emu或波形重导。原包清单保存在manifests/history，当前清单记录本次文档增量；本轮不重复全量课程/源码压缩包校验。视频0/3和C1.2审阅缺口保持原状态。
+
+用户正确回答八项交错正负点积为−4，旧目的值100不参与累加。本轮记录这一理解反馈，并讲解八项和的范围[-130048,131072]、18位正数上限131071、最小19位，以及拟定19→32位符号扩展/高96位清零。−4的低32位为0xfffffffc。数值为数学计算核对，不是RTL/NEMU测试。
+
+仅更新原工作区的规格、看板、交接及本记录；整合包的文档快照未自动同步。未新运行构建/仿真或读取修改源码仓库；未冻结Q01、控制规则和编码。位宽/布局的用户理解仍待回复；本步不需要服务器。
+
+以下2026-10-19工程整合、搬迁运行与临时源码恢复验证为同日此前工作包的记录；本次位宽教学未重跑这些检查。历史实验和R0只读核验按各段原范围保留。
+
+## 2026-10-19 现有工程整合与搬迁复现
+
+目标目录为 D:/Mayyyyyy/WorkSpaces/CIE_XiangshanRISCV。复制已有资料与产物，补充README、交付目录、源码说明和包内复现脚本；原报告、源码、镜像、波形及实验日志不改动。归集记录与结果见[package-result.json](../artifacts/packaging-2026-10-19/package-result.json)。
+
+WSL/Bash，工作目录 /mnt/d/Mayyyyyy/WorkSpaces/CIE_XiangshanRISCV：
+
+```bash
+python3 reproduce/run_case.py hello
+python3 reproduce/run_case.py vadd4
+```
+
+两次脚本及emu均退出0，指定Hello输出和VADD四项结果正确，均含Difftest enabled与HIT GOOD TRAP。输入为本包runtime目录里的冻结emu、预编译参考库和镜像；Hello种子1/最大100000周期，VADD种子0/最大200000周期；无新波形、无重新构建。每次独立runs目录记录完整argv、cwd、NOOP_HOME、输入SHA256、原始日志及退出码；新输出不写回原xs-env。工具版本、实际目录和结果索引保存在包内validation/relocation.json。
+
+源码归档保留当前工作树、已初始化子模块及Git元数据；解压前后逐成员核对SHA256和符号链接，临时恢复后逐仓库rev-parse HEAD与版本清单一致。临时副本位于/tmp中新建的专用目录，检查后清理；没有创建正式开发副本、安装依赖或编译源NEMU。原工程尚未初始化的可选子模块明确列出，未联网补取。
+
+本轮确认的是已有成果在新位置可浏览、可加载与可恢复。VADD范围仍为e32/m1/VL4无掩码正数实例，不新增正式vdot功能、向量边界覆盖或性能结论。
+
+## 2026-10-19 R0规格讨论第1步
+
+范围：正式题意/规范阅读、当前源码与归档只读核验、规格和交接文档更新。未修改RTL/NEMU/测试程序，未运行构建、仿真或旧检查脚本，未执行外部提交/消息。
+
+- 重新查看官网10-15归档的语义原图及原始赛题响应；3份归档SHA256与原manifest一致。联网读取OpenXiangShan题库和RISC-V的v20260120主opcode表；官网原始响应仍是10-15快照，不标为本日重新抓取。
+- WSL/Bash环境通过Python3.12.3只读调用Git，设置GIT_OPTIONAL_LOCKS=0。当前XiangShan/NEMU为既有HEAD、detached，status、未暂存及已暂存diff stat为空；命令均退出0。完整Git argv、工作目录、结果、归档哈希与进程摘要见[source-check.json](../artifacts/spec-review-2026-10-19/source-check.json)。
+- 编码预查发现NEMU custom-1存在CONFIG_RV_AME条件占用；香山向量分类依赖OP-V。custom-0只列为候选，未冻结具体位型。来源位置及有限检查范围见[encoding-precheck.md](../artifacts/spec-review-2026-10-19/encoding-precheck.md)，静态检查不能代替完整译码生成或整核运行。
+- [规格表](instruction_spec.md)新增S01～S06数学结论、Q01～Q05待澄清问题和逐步教学顺序。低32位结果/高96位零仍是建议；vl/mask/vstart等未定，用户理解题尚待回复。算术极值是数学推导，不是RTL测试结果。
+- 本轮修改前7个指定文件哈希见[documents-before.json](../artifacts/spec-review-2026-10-19/documents-before.json)；后续[文档检查](../artifacts/spec-review-2026-10-19/document-check.json)记录链接及修改范围核对。源镜像/参考库没有在本轮重新计算哈希或运行，不将历史通过改写为本轮通过。
+
+服务器标注：规格、手算、编码静态检查可在本机做；整核重新生成/编译、批量回归和长波形建议使用服务器。服务器尚未获批，不阻塞本轮R0。
+
+## 2026-10-19 前端到译码确认与报告补充
+
+用户提供[5085ps截图](../artifacts/vadd4-frontend-2026-10-19/user-ifu-5085ps.png)，确认IFU输出位置10的PC0x80000148、指令0x021101d7、valid=ready=1、valid/enqEnable均0xD555，FTQflag0/value3（图中value为二进制011），IBuffer io_flush=0；据此判断5086ps沿接受。[图片来源及SHA256](../artifacts/vadd4-frontend-2026-10-19/ifu-user-confirmation.json)保存原样复制信息。
+
+助手以PowerShell内联Python经`wsl -d Ubuntu -- python3 -`只读扫描既有VCD到5082ps，退出0，抽取5079/5080/5081ps：[FTQ原始值](../artifacts/vadd4-frontend-2026-10-19/ftq-request-observations.json)。5079ps req valid=ready=1、startAddr0x80000134、nextStartAddr0x80000154、ftqIdx0/3；5080ps沿后请求接口已换为0/4、startAddr0x80000154。该次临时解析的Python版本未单独复查，未新跑RTL。用户随后确认5079ps请求，并提供[Marker=5080ps的沿后截图](../artifacts/vadd4-frontend-2026-10-19/user-ftq-marker5080ps.png)，此图Marker处是下一项0/4；[来源/哈希及本人确认](../artifacts/vadd4-frontend-2026-10-19/ftq-user-confirmation.json)区分沿前与沿后。ICache与入口衔接已在后续本人观察中确认，现一并补入报告；原采样文件保留其采样时的状态说明。
+
+助手只读抽取5083/5084/5085ps的ICache及IFU应答，[原始采样](../artifacts/vadd4-frontend-2026-10-19/icache-response-observations.json)与[数据排列核对](../artifacts/vadd4-frontend-2026-10-19/icache-data-layout.json)已归档。5083ps应答valid1、vaddr0=80000134、doubleline1、exception0/1均0；512位data低128位为020661a7_021101d7_0205e107_02056087，目标位于[95:64]。IFU.scala:458–507按64字节bank位置切分重复的data，f2_cut_ptr10/11为36/37，选择原data的半字4/5；IFU此拍f2_valid/fire均1，FTQ0/3。ICacheMainPipe.scala:53为Valid接口，537–555说明resp_valid来自s2_fire，不应另找resp_ready。临时探针退出0，未运行RTL；用户随后确认ICache应答，并提供[5083ps截图](../artifacts/vadd4-frontend-2026-10-19/user-icache-5083ps.png)；[确认记录](../artifacts/vadd4-frontend-2026-10-19/icache-user-confirmation.json)区分图中可见控制与截断的数据。内部f2_cut_data_10/11未出现在VCD，不将不存在的信号作为教学步骤。
+
+IBuffer到译码衔接补验：以[inspect_decode_bridge.py](../artifacts/vadd4-frontend-2026-10-19/inspect_decode_bridge.py)只读原VCD，Python版本、29个逐ps样本及全文件哈希见[observations](../artifacts/vadd4-frontend-2026-10-19/decode-bridge-observations.json)，完整argv/cwd/退出0及脚本哈希见[run](../artifacts/vadd4-frontend-2026-10-19/decode-bridge-run.json)。VCD SHA256仍为01dc7a20fcfd416acfb1c9874759ac460d8e7b6144d608e865da4a2d168059b8。5087ps IBuffer out5与CtrlBlock cfVec5为目标，cfVec5 valid=ready=1、decode.in5.ready=0、decodeFromFrontendAcceptNum=2；5088ps目标进入decodeBuf3，5090ps移到1，5092ps移到0，身份始终PC80000148/指令021101d7/FTQ0/3/offsetA。5111psdecode.in0 valid=ready=1，5112ps沿后decodeBufValid0=0、译码入口换PC8000014c。5085～5113ps的IBuffer flush和decode redirect均0。源码CtrlBlock.scala:414–502说明缓冲与压紧；IBuffer输出ready在本VCD未单列，使用直连的CtrlBlock.io_frontend_cfVec_5_ready核对。用户随后确认该段，提供5087ps入口、5093ps缓冲移动和5111ps接受沿前截图；[原图来源及人工确认](../artifacts/vadd4-frontend-2026-10-19/decode-bridge-user-confirmation.json)区分图中实际Marker和事件时刻。
+
+本次按已确认波形扩展[VADD报告](../reports/stage1/vadd-lifecycle.md)：前端小节、完整时间表、前端FTQ身份、接口字段/源码表、证据索引和结论已补齐。6张前端图原样复制进报告assets；原10图逐一校验哈希，原后端正文除小节/图号外逐字保持，构建运行附录保持不变。[图片清单](../artifacts/vadd4-frontend-2026-10-19/report-images.json)、[源码HEAD/相关diff/哈希](../artifacts/vadd4-frontend-2026-10-19/report-source-evidence.json)、[扩展结果](../artifacts/vadd4-frontend-2026-10-19/report-extension/extension-result.json)、[最终文档检查](../artifacts/vadd4-frontend-2026-10-19/report-extension/check-result.json)。修改前报告及受影响文档保存在同目录before；检查脚本和实际运行记录也在该目录。
+
+图2的Marker为5080ps，不能标成5079ps截图；图3数据总线被截断，[95:64]据原VCD及用户确认；图6红框是用户原图自带，显示不同时间段的槽位；图7为5111ps沿前，5112ps清零的是decodeBufValid_0而非所有valid。报告正文共16图，均在附录前。此工作包只整理既有波形证据，不是重新运行芯片仿真或新增性能测试。
+
+## 2026-10-19 第一阶段报告评审版修订
+
+用户确认A方案：正文说明方法、过程和结果，完整命令与证据索引放附录；VADD10张截图全部保留正文。平台说明仅包含实际源码、MinimalConfig、参考库与验证结果，并入第1.2项环境报告。
+
+已改写[环境报告](../reports/stage1/environment.md)与[VADD报告](../reports/stage1/vadd-lifecycle.md)，删去内部交接/复核叙述和重复信息，统一图注。详细平台比较移至[内部记录](reviews/platform-check-2026-10-19.md)。原稿按字节备份到artifacts/report-revision-2026-10-19/before，实验事实保持不变。
+
+检查6个Bash代码块语法、10张图的数量/顺序/正文位置、连续图号、关键波形数据、图片与原始资料哈希、本地引用和修改范围，见[检查记录](../artifacts/report-revision-2026-10-19/document-check.json)。未改源码、截图或原始日志，没有重跑仿真。工程进度和内部核验保留在本页、PROGRESS与HANDOFF。
+
+## 2026-10-19 初始安装与克隆记录补充
+
+用户提供六个来源：APT history.log、term.log、dpkg.log、Bash历史、xs-env父仓库reflog和PSReadLine历史。本轮用[提取脚本](../artifacts/deployment-history-2026-10-19/extract_records.py)在WSL Python中读取并保存[筛选记录](../artifacts/deployment-history-2026-10-19/filtered-records.json)及[可读摘录](../artifacts/deployment-history-2026-10-19/history-excerpts.txt)。脚本退出0；源码文件记录了完整输入路径和筛选逻辑，未整份复制个人历史。
+
+核对得到6个APT事务、54条term相关输出、28条dpkg installed状态、95条Bash相关命令、1条父仓库克隆事件和5条PowerShell线索。reflog确认2026-10-12 19:27:43 +0800克隆官方xs-env至b0b50648…；10-12的RISC-V工具链及LLVM/Clang安装有APT/term/dpkg交叉证据。当前时区为Asia/Shanghai，APT/dpkg原字段不带偏移，两份命令历史没有逐条时间和退出码。
+
+[交叉核对](../artifacts/deployment-history-2026-10-19/corroboration.json)确认六个来源哈希未变，三个安装脚本与父仓库HEAD字节一致，原XiangShan HEAD/status未变。既有build-retry.log明确clang++缺失与Error127；历史有补PATH命令，恢复构建及Hello成功沿用原证据。旧ALU注入日志记录差分ABORT，不能冒充当前代码失败，也不补写未知shell退出码。
+
+[环境报告](../reports/stage1/environment.md)已补时间线与版本区分：APT Verilator5.020不等于当前5.052；GCC元包13.2不等于具体编译器13.3；Mill下载脚本版本不能替代工程锁定版本。setup全程输出、源码安装确切完成时间和部分命令退出码仍未记录。文档与受保护文件检查见[本轮检查](../artifacts/deployment-history-2026-10-19/document-check.json)。
+
+## 2026-10-19 Meijie Hello核验与环境平台报告
+
+用户提供[原始目录](../artifacts/runs/S1-01/hello-meijie-20261019-120654-8FtdkQ/)。12:25:26在Linux AM apps/hello-meijie执行make ARCH=riscv64-xs LINUX_GNU_TOOLCHAIN=1 MARCH=rv64gcv -j2并退出0；12:34:11～12:34:19由原emu加载归档bin，--diff为ready-to-run库，--no-snapshot -C 100000 -s 1，退出0。完整argv/cwd、环境、时间、版本、日志、截图及7项哈希均有原记录。
+
+精确Meijie文字及172.26.232.122与当次IP一致，DiffTest和GOOD TRAP通过；新bin SHA256为195dca0c3a748fea70efa84e1d63cd3926098189f61fc6babe80214425b1f479。7项重算全部匹配，实时源码/bin与归档一致，25个用户证据文件未改动。该测试仅覆盖一个问候程序。
+
+[采集脚本](../artifacts/stage1-environment-review-2026-10-19/collect_evidence.py)在WSL Python3.12.3执行并退出0；只读Git/资源/版本/源码，归档14份日志和源码。[核验JSON](../artifacts/stage1-environment-review-2026-10-19/evidence-review.json)保存命令与输出；未构建、仿真或fetch，六个相关仓库status/stat为空。
+
+[公开API比较](../artifacts/stage1-environment-review-2026-10-19/upstream-and-host.json)与本地提交图确认16ae9ddc位于官方V2历史中，当次远端fe2288cb比它ahead680、behind0、merge-base等于16ae9ddc。WSL ls-remote曾25秒超时，Windows API后续成功，未更新本地引用。源码/构建日志确认MinimalConfig含L2、CHI=false，旧注释问题只在文档中纠正。
+
+已形成[环境初稿](../reports/stage1/environment.md)和[平台报告](reviews/platform-check-2026-10-19.md)。初始部署原日志尚未提供，其他具名配置未运行，正式vdot合同与视频未完成。[文档检查](../artifacts/stage1-environment-review-2026-10-19/document-check.json)记录修改范围与链接核验。
+
+## 2026-10-19 第一阶段剩余工作清单准备
+
+新增[剩余工作清单](stage1-remaining-checklist.md)，说明哪些准备不依赖Hello、当前缺项、环境采集命令、平台核验方法、报告结构、VADD交付复核、录屏顺序和本地材料检查。同步PROGRESS/HANDOFF、README及Hello清单入口。环境报告、平台验收结论、视频和待审材料包均未生成，清单不能代替它们。
+
+只读检查：WSL Git确认XiangShan为`16ae9ddcda54fc9a2fddffad73174cf793ac7814`、nexus-am为`086a238062fdfb3281b745a537b361983d0154b5`，两者status、diff --stat、diff --cached --stat为空且退出0。恢复构建日志、默认Hello日志及结果记录、build/dts和build/json均存在；复读VADD编译/运行记录的退出0属于历史证据，不是新仿真。当前WSL查找rg返回1，因此清单使用grep，无需为了采集额外安装工具。
+
+源码预查确认Configs.scala中KunminghuV2MinimalConfig在MinimalConfig之外组合L2CacheConfig、WithNKBL1D和WithCHI；该发现仅定义下一步比较内容，未据此完成平台合规结论。未执行清单中的环境采集、make构建、emu运行、波形重导或录屏。
+
+文档链接、Bash代码块语法、修改前后哈希及受保护文件检查见[本轮静态检查](../artifacts/stage1-remaining-checklist-2026-10-19/document-check.json)。原Hello、配置源码、VADD报告和所引用的原始退出记录保持不变。该检查仅验证文档结构和命令语法，不代表运行环境和第一阶段验收通过。
+
+## 2026-10-19 Hello Meijie 实操清单准备
+
+用户远程办公，要求实操留待回去执行。本轮产物为[操作清单](hello-meijie-checklist.md)、PROGRESS/HANDOFF状态同步及README入口（同时修正已知的基础练习链接）；没有创建定制Hello应用，没有修改原hello.c，没有运行make或emu。
+
+只读核验：原hello.c仍打印`Hello, XiangShan!`；WSL学习AM快照的Makefile.app/compile/check/lib、am/Makefile与libs/klib/Makefile存在；apps/hello-meijie不存在。Makefile.app确认NAME用于生成镜像名称，原riscv64-xs.mk确认生成elf/bin/txt；difftest的emu.cpp确认-C、-s、--no-snapshot参数含义。读取这些源码不能替代编译运行。
+
+清单计划复用MinimalConfig历史emu及ready-to-run预编译参考库，使用`MARCH=rv64gcv`沿用既有AM学习副本参数；姓名为用户指定的Meijie。IP使用当次实操采集值，原题归档未明确内外网类型，清单注明暂用WSL eth0 IPv4；不把10-19观测值写成未来固定IP。
+
+本轮只做文件、Markdown链接和Bash代码块语法检查，结果见[清单静态检查](../artifacts/hello-checklist-2026-10-19/document-check.json)。原Hello源码及Makefile的修改前后哈希对照纳入该记录。编译退出码、运行退出码、定制镜像哈希、GOOD TRAP和用户实操均为**未执行/待记录**；清单中的期望输出不是实测结果。
+
+## 2026-10-18 VADD执行文档与个人笔记只读检查
+
+产物：[执行过程文档](../reports/stage1/vadd-lifecycle.md)、[个人笔记审阅意见](reviews/vadd-notes-review-2026-10-18.md)。原笔记和14项附件均只读；其SHA256及图片来源见[输入审计](../artifacts/vadd4-report-2026-10-18/input-audit.json)。关键笔误为第129行目标应是pdest=0x33（51），图注另外区分5117ps派发/5261ps发射、5277ps映射准备/5278ps更新。
+
+复核现有emu、参考库、bin哈希均与原manifest一致；git HEAD未变，XiangShan自身status忽略子模块为空。使用本工作包[证据整理脚本](../artifacts/vadd4-report-2026-10-18/assemble_evidence.py)复制10张原图并逐一比对哈希，读取已有采样校验25组检查点，退出0；见[精简证据检查](../artifacts/vadd4-report-2026-10-18/evidence-check.json)、[截图来源清单](../artifacts/vadd4-report-2026-10-18/screenshots.json)。脚本运行于Windows捆绑Python，仅做归档处理；原VCD解析使用Python3.12.3。
+
+用户本人已确认5272ps物理写入、5274ps ROB退休、5278ps已提交映射，故更新学习状态。最后做本地链接、图片、原笔记/附件未修改及文档状态检查，完整命令/退出码和结果见[文档审计](../artifacts/vadd4-report-2026-10-18/document-audit.json)。本工作包是已有结果的文档交付，不是新的RTL测试、源码NEMU验收、正式vdot或完整G1通过。
+
+## 2026-10-11 历史记录的范围
+
+当日范围为学习资料核验和独立 `SignedAdder`、`Dot4`、`Dot4Pipe` 练习，不包含香山整核、NEMU 扩展、DiffTest 或比赛性能验证。以下环境数字属于当日，不用于描述 2026-10-15 的工具和资源。
+
+## 版本与环境
+
+- Lab 文档 commit：`41fbbb49a69622228eae7fa8fa8a9c77b1f8e3bd`，见 [版本记录](../sources.lock.json) 与 [资料核验](source_audit.md)。主仓库检出完成，按需波形工具子模块未初始化。
+- 工作区原来没有 Git 仓库；本次代码版本以 `artifacts/source-hashes.json` 的 SHA256 留档，源文件保持在工作区内。
+- Windows Icarus 位于 `C:/iverilog/bin/`；版本原始输出见 `artifacts/dot4/iverilog-version.log`，Node 版本见同目录 `node-version.log`。
+- WSL：Ubuntu 24.04.4 LTS、可见内存约 7.6 GiB、swap 2 GiB。现有 Python 3.12.3、Verilator 5.020、G++ 13.3.0、Make 4.3；本次经批准安装 OpenJDK 21.0.12.1 与 Icarus 12.0。只安装学习依赖，未安装整核开发环境。
+- Chisel 工程固定 Scala 2.13.18、Chisel/插件 7.7.0、ScalaTest 3.2.19、sbt 1.12.4。本地 launcher 在 `.tools/sbt/`，不要求系统 `sbt` 命令存在。
+- 练习在 WSL 的 `/mnt/d/.../RISCV_vdot` 小工程中运行。当时计划在服务器 Linux 文件系统开展整核开发；该计划已由下方 2026-10-15 的本机推进安排替代。学习模块构建用时不作为性能数据。
+
+## 已执行检查
+
+命令均从工作区根目录执行，Linux 命令通过 WSL Ubuntu 运行。
+
+| 命令 | 结果与证据 |
+|---|---|
+| `node scripts/generate_vectors.js --write`，随后 `--check` | 生成并核对 16 组定向＋1024 组随机数据，总计 1040，种子 20261011。JSON 与 hex 的数学结果和打包由 Python 独立核对。`artifacts/dot4/reference-js.log`。 |
+| `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run_local_checks.ps1` | exit 0。加法器 64 组；点积 1040 组及交换输入 1040 组；流水线接收 2084、消费 2083、复位丢弃 1。日志 `artifacts/dot4/iverilog-positive.log`，摘要 `summary.json`。 |
+| 上述入口自动执行 `+CORRUPT_EXPECTED=1` | 仿真 exit 1，明确出现 `got=0 expected=1` 的 FATAL。它是预期失败，验证检查器能抓住错误；正常数据没有被修改。`artifacts/dot4/iverilog-negative.log`。 |
+| `bash scripts/run_python_checks.sh` | exit 0。3 个 Python 测试通过，包括全部 1040 组共享数据与打包检查。故意期望 5、实际 4 返回 exit 1，匹配明确错误信息。`artifacts/dot4/reference-python.log`、`negative-python.log`。 |
+| `bash scripts/run_dot4.sh` | exit 0。Linux 入口复现相同算术、握手、复位检查，负面对照 exit 1。独立日志、工具版本、退出码及 VCD 在 `artifacts/dot4/linux/`。 |
+
+流水测试包含 1858 次同拍出入、332 次输出阻塞和 315 个空拍，固定握手种子 `0x6d2b79f5`。这些数字是该 testbench 的场景计数，不代表正式处理器性能。
+
+共享 `tests.hex` SHA256：`fdd14f71e4fa6cf8a87c593caefe54483241db8bffcfd3a4fb2f2db4be49f634`。Windows 波形为 `artifacts/dot4/dot4.vcd`，Linux 波形为 `artifacts/dot4/linux/dot4.vcd`。已生成波形，但未替用户完成 VCS/Verdi 操作或学习解释验收。
+
+## Chisel 验证
+
+入口 `bash scripts/run_chisel.sh` 返回 exit 0。5 个正向 ChiselSim/Verilator 测试通过：加法边界、组合点积的 8 组定向＋256 组随机输入、流水连续接收、反压与复位、264 项随机空拍/背压 scoreboard。正常测试中故意失败项取消，随后单独运行，明确显示实际 `SInt<32>(4)`、期望 `SInt<32>(5)`，sbt 返回 exit 1，检查器确认是结果不匹配。
+
+`SignedAdder`、`Dot4`、`Dot4Pipe` 的 SystemVerilog 均成功生成在 `exercises/dot4/chisel/generated/{adder,dot4,pipe}/`。日志 `artifacts/chisel/test-and-emit.log`、`intentional-failure.log` 与 `tool-versions.log`。Chisel 使用独立 Scala 整数模型及随机数据，不声称它运行了共享的全部 1040 组输入。
+
+## 2026-10-15 整核状态核验
+
+实际工程在 `D:/Mayyyyyy/WorkSpaces/VScode/xs-env`，WSL 路径为 `/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env`。以下 `XiangShan/...` 和 `nexus-am/...` 均相对于该工程，而非本规划工作区。组件 commit 记录在 [sources.lock.json](../sources.lock.json)。
+
+| 项目 | 核验结论 | 原始证据及限制 |
+|---|---|---|
+| 当前仿真器 | 已有可运行的 `MinimalConfig EMU_TRACE=1` 产物 | `XiangShan/build/hello-restored-check-result.txt` 记录 commit、配置、完整命令、exit 0 和 emu SHA256；当前文件哈希与记录相同。不是正式目标配置验收。 |
+| 默认 Hello 与差分验证 | 已通过 | `XiangShan/build/add-wave-hje1EO/run.log` 明确显示预编译参考库路径、`Difftest enabled`、`Hello, XiangShan!` 和 `HIT GOOD TRAP`；同目录 `result.txt` 为 `EMU_EXIT_CODE=0`。 |
+| NEMU 来源 | 使用预编译参考库 | 参考库为 `XiangShan/ready-to-run/riscv64-nemu-interpreter-so`；当前 NEMU 源码目录没有 `.config` 或 `build`，未见从该锁定源码构建参考库的证据。现有 Hello 通过不能替代 NEMU 源码构建和扩展验证。 |
+| 标量 ADD 波形 | 译码、重命名数值已核验 | `hello.vcd` 中目标 PC `0x80000122`、机器码 `0x006f0133`；4775 ps 译码源 x30/x6、目标 x2、ALU/add；4777 ps 重命名物理源 P10/P7、新目标 P11。两处对应 valid/ready 均为 1。用户已完成译码截图与概念回答，重命名学习验收仍待用户完成。 |
+| 波形查看配置 | VCD 存在，未见 `.gtkw` | `XiangShan/build/add-wave-hje1EO/hello.vcd` 为 789835104 字节；该目录中没有 GTKWave save 文件。操作入口见 [恢复指南](gtkwave-add-resume.md)。 |
+| 向量配置 | 当前源码默认 VLEN=128，DTS 声明 V 扩展 | `XiangShan/src/main/scala/xiangshan/Parameters.scala:61` 与 `build/dts`；尚无 VADD 实测证据，不能仅依据声明判为向量功能通过。 |
+
+已保存的 Hello 完整命令如下（PowerShell 中调用 WSL；这是已有记录，2026-10-15 未重跑）：
+
+```powershell
+wsl -d Ubuntu -- /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/emu -i /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/nexus-am/apps/hello/build/hello-riscv64-xs.bin --diff /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/ready-to-run/riscv64-nemu-interpreter-so --no-snapshot -C 100000
+```
+
+波形运行日志记录 582 条已计数指令、4538 cycle、4542 guest cycles、host 33353 ms。这些是这份 Hello 运行的记录，不能作为 vdot 指令延迟或加速比。导出波形时使用的命令见主对话；原始波形目录只保存 `run.log`、`result.txt`、`hello.vcd`，没有独立保存完整命令和全部工具版本的 manifest，下一次执行必须补齐。
+
+### 2026-10-15 重新计算的 SHA256
+
+| 工件 | SHA256 |
+|---|---|
+| `XiangShan/build/emu` | `9EE6CE3E8372C6345FC7219563C5AC63C9B3517ADB87DC347816D14F228FD7E2` |
+| `nexus-am/apps/hello/build/hello-riscv64-xs.bin` | `156BB3652E9E58B295A436706F6871A1869D84E9688A9B30D3CF172B234164BE` |
+| `XiangShan/ready-to-run/riscv64-nemu-interpreter-so` | `7AF2120ACEFA83B7299C91B99132F4087DD8AB0F7219461B9AEA48CE38891E03` |
+| `XiangShan/build/add-wave-hje1EO/hello.vcd` | `13D7564138335C30647DFBFB9DDD34236034FE4AD46CB045BE4552E366D8ADCC` |
+
+### 本机资源与构建记录
+
+用户已确认当前没有可用服务器；项目在本机 Windows＋WSL 推进，服务器仅作为可选加速条件。当前 WSL 配额为 10 GB 内存、8 GB swap，可见约 9.7 GiB 内存和 20 个逻辑 CPU；主机物理内存约 16.9 GB。已有整核工程位于 `/mnt/d`，后续迁移到 Linux 文件系统须保留当前成功产物、版本和改动，再核验新路径；迁移尚未执行。
+
+当前已探测 OpenJDK 21.0.12.1、Verilator 5.052、`riscv64-linux-gnu-gcc` 13.3.0；`clang-19`、`llvm-config-19` 存在。XiangShan 的 `.mill-version` 固定 0.12.3，运行 Mill 时必须在工程目录使用该锁定版本。在 `xs-env` 根执行版本探测会触发启动器寻找其他版本，其输出不代表香山构建工具链。
+
+`XiangShan/build/time.log` 和 `build-restore.log` 记录 2026-10-13 至 2026-10-14 的一次恢复构建：
+
+| 阶段 | 墙钟时间 | 本段记录的最大 RSS | 退出状态 |
+|---|---:|---:|---:|
+| Chisel / RTL 生成，JVM heap 6G | 12:46.00 | 7294032 KiB | 0 |
+| Verilator C++ 生成 | 5:58.18 | 7737048 KiB | 0 |
+| C++ 编译 | 17:59.77 | 1302172 KiB | 0 |
+
+三段累计约 36 分 44 秒。`build-restore.log` 显示只重新编译 1 个 Scala source，不能用此记录承诺 clean build 或其他配置的用时；C++ 的 RSS 数字也不是全部并发进程的总内存。未发现保存顶层 `BUILD_EXIT_CODE` 的独立文件，因此成功结论由这三段退出状态、当前 emu 和 Hello 运行证据共同限定。
+
+## 当前未完成事项
+
+- Meijie Hello已于10-19通过，见最新核验记录；原默认Hello保留，定制应用位于Linux AM快照的apps/hello-meijie。
+- 标量ADD内部队列逐项唤醒仍未完整核验；VADD已完成单例运行、用户复现、源唤醒到提交的波形核对和本地执行文档，当前缺口是正式平台对应关系与其余第一阶段材料。
+- MinimalConfig的V2谱系、实际构建与配置差异已核验；正式vdot合同待冻结，见[平台报告](reviews/platform-check-2026-10-19.md)。
+- 指令编码及完整向量控制契约、正式 vdot RTL/NEMU 扩展、源码构建参考库的兼容性、协同仿真、标准 RVV 基线和延迟分析：尚未完成。现有源码搜索与 Git 检查未见正式 vdot 实现。
+- 三阶段视频、最终报告与上传：尚未完成；外部发布、提交和发送消息须由用户明确授权。
+
+官方赛题和评分已在 2026-10-15 归档，见 [资料核验记录](source_audit.md)。独立练习、默认 Hello 和标量部分波形证据不能替代三阶段比赛验收。后续每次执行须同时记录源码 commit/dirty diff、配置、工具版本、完整命令、退出码、原始日志及二进制哈希。
+
+## 2026-10-18 VADD物理写回、ROB提交与提交映射核验
+
+用户自述已完成上一节操作，提供[5267ps执行输入截图](../artifacts/vadd4-execution-2026-10-18/user-execution-5267ps.png)。截图证明输入valid=ready=1、ROB1/10、pdest33及两组数据；该时刻输出valid0正常，不把它误作目标有效输出的截图。用户已理解元素排列，继续推进写回/提交。
+
+助手只读相同VCD，SHA256重新核对为`01dc7a20fcfd416acfb1c9874759ac460d8e7b6144d608e865da4a2d168059b8`，1395708089字节。Python3.12.3，脚本[inspect_vadd_writeback.py](../scripts/inspect_vadd_writeback.py)读取5265～5400ps每个稳定时间点；[原始样本/位宽](../artifacts/vadd4-writeback-2026-10-18/observations.json)、[完整argv/cwd/退出0](../artifacts/vadd4-writeback-2026-10-18/inspection-run.json)、[源码证据](../artifacts/vadd4-writeback-2026-10-18/source-evidence.json)、[样本一致性检查](../artifacts/vadd4-writeback-2026-10-18/sample-consistency.json)。XiangShan commit仍为16ae9ddcda54fc9a2fddffad73174cf793ac7814，检查的四个源码文件diff为空。配置、仿真器、参考库、镜像继承10-17记录，没有新构建或仿真。初次探索依赖/tmp中间文件失败，随后改为单次读取头部/波形的脚本并通过，见[investigation-note.txt](../artifacts/vadd4-writeback-2026-10-18/investigation-note.txt)。
+
+| 事件 | 波形证据 |
+|---|---|
+| 5269ps写回通路 | backend.inner_wbDataPath.io_fromVfExu_1_0_valid1，bits_robIdx1/10、pdest33、data_0=0x0000002c00000021000000160000000b；io_toVfPreg_1为wen1/vecWen1/addr33/相同数据 |
+| 5271ps存储写控制 | inner_dataPath.vfRegFilePart0..3.io_writePorts_1的wen均1、addr均33，data依次0B/16/21/2C；mem_51仍旧值 |
+| 5272ps物理存储更新 | 四片mem_51分别变0B/16/21/2C，每片32位，合成正确128位结果；0x33=十进制51 |
+| 5273→5274ps ROB提交 | inner_ctrlBlock.rob沿前isCommit=commitValid_0=1、robIdx_0=1/10，info_0.debug_pc80000148/debug_instr021101d7/debug_ldest3/debug_pdest33；5274ps沿后槽0已换ROB1/11、PC8000014c、commitValid_0=0 |
+| 5277→5278ps提交映射 | inner_ctrlBlock.rat.vecRat.io_archWritePorts_0沿前wen1/addr3/data33；arch_table_3在5278ps沿后由03变33 |
+
+DataPath.scala:357-359对向量RF写入地址/数据/使能打一拍，Regfile.scala:118-128按wen写mem、358-364按低到高位切分四片；RenameTable.scala:340-344由RAB提交信息写向量archWritePorts、158-167更新arch_table。故物理写回5272ps、ROB退休5274ps、提交映射落地5278ps是三个事件，不能互相替代。提交映射存编号，不重复搬运128位结果。[官方重命名说明](https://docs.xiangshan.cc/projects/design/zh-cn/kunminghu-v3/backend/CtrlBlock/Rename/)可作原理参考，当前路径/延迟以锁定源码及VCD为准。
+
+助手已完成目标从译码到提交的证据链；用户于本次文档整理前确认5272/5274/5278ps三个事件并提供最新截图。仅覆盖单个e32/m1/VL4无掩码正数样例，不据此宣称完整比赛第一阶段文档/视频、NEMU源码构建或正式vdot完成。下一学习步骤见[WAVE.md第五小节](../exercises/vadd4/WAVE.md)。
+
+## 2026-10-18 VADD派发、唤醒、发射和执行输出核验
+
+用户提供[5115ps重命名截图](../artifacts/vadd4-rename-2026-10-18/user-rename-5115ps.png)，本人确认ROB1/0x10、向量psrc0/1=0x32/0x30、pdest0x33，能区分编号与就绪/写入。助手继续只读同一VCD，SHA256重新计算仍为`01dc7a20fcfd416acfb1c9874759ac460d8e7b6144d608e865da4a2d168059b8`，大小1395708089字节；未新构建/仿真。Python3.12.3，[脚本](../scripts/inspect_vadd_execution.py)解析退出0，[完整argv/cwd/退出码](../artifacts/vadd4-execution-2026-10-18/inspection-run.json)、[23个原始样本及位宽](../artifacts/vadd4-execution-2026-10-18/observations.json)、[源码commit/hash/diff](../artifacts/vadd4-execution-2026-10-18/source-evidence.json)。XiangShan仍为16ae9ddcda54fc9a2fddffad73174cf793ac7814，检查的六个源码文件diff为空；配置/镜像/工具链继承10-17清单。
+
+所有层级从backend开始：
+
+| 稳定观察点 | scope / 接口 | 证据与边界 |
+|---|---|---|
+| 5117ps | inner_ctrlBlock.dispatch.io_toIssueQueues_16；inner_vfScheduler.IssueQueueVfmaVialuFixVfalu.io_enq_0 | valid=ready=1，PC80000148，ROB1/10、pdest33、psrc0/1=32/30、srcState0/1=0/0；5118ps接口接收 |
+| 5251 / 5257ps | 上述IQ.entries.othersEntriesComp_0.io_commonIn_wakeUpFromWB_4 | valid=vecWen=1，pdest依次30/32；5252ps源1状态变1，5258ps源0状态变1；是唤醒证据，非物理存储写入时刻证明 |
+| 5259ps | 同一entry | 身份仍匹配，所有源状态为1、canIssue1、issued0；5261ps issued1、canIssue0 |
+| 5261ps | IQ.io_deqDelay_0 | valid=ready=1、ROB1/10/pdest33，rf_0_0_addr32/rf_1_0_addr30；5262ps接口接收；common_src0/1在此为0，不当作实际加数 |
+| 5267ps | inner_vfExuBlock.exus_2.io_in | valid=ready=1、同一ROB/pdest、fuOpType40、src0=[10,20,30,40]、src1=[1,2,3,4]、vsew2/src4=4；5268ps接收 |
+| 5269ps | exus_2.VialuFix.io_out | valid=ready=1、同一ROB/pdest，res_data=0x0000002c00000021000000160000000b；mgu.io_in_info_vl4。输出在5268ps沿后已出现，5270ps接收；5271ps数据仍保留但valid0 |
+
+源码EntryBundles.scala:35-40/178-188/326对应源就绪、有效性/issued/blocked、写回与IQ唤醒；IssueQueue.scala:416-445有资源过滤；VecPipedFuncUnit.scala:62-66对应src0→vs1、src1→vs2。VialuFix内部ctrlPipe_1是延后一拍控制，不与当拍data_src直接匹配身份；用父级exus_2入口或输出ctrl标识跟踪。这里只检查本例必要状态变化，没有完整审计全部仲裁、取消、重发、旁路组合。
+
+教学步骤已补[WAVE.md第四小节](../exercises/vadd4/WAVE.md)。该工作包当时范围止于执行；后续写回/提交已核验并获得用户确认，见上节与完整报告。用户的5117ps图仅证明派发，5261ps发射另据VCD采样。G1仍未整体验收。通用原理可参照[官方IssueQueueEntries说明](https://docs.xiangshan.cc/projects/design/en/kunminghu-v2/backend/Schedule_And_Issue/IssueQueueEntries/)，本例信号名/时刻以本地VCD及锁定源码为准。
+
+## 2026-10-18 VADD向量重命名核验
+
+继续只读相同VCD，重新计算SHA256仍为`01dc7a20fcfd416acfb1c9874759ac460d8e7b6144d608e865da4a2d168059b8`，没有新构建/仿真。Python3.12.3，5115ps和5116ps两次解析均退出0。[5115ps原始样本](../artifacts/vadd4-rename-2026-10-18/observations.json)、[完整命令/退出码](../artifacts/vadd4-rename-2026-10-18/inspection-run.json)、[5116ps沿后样本](../artifacts/vadd4-rename-2026-10-18/after-edge.json)、[沿后解析命令/退出码](../artifacts/vadd4-rename-2026-10-18/after-edge-run.json)、[源码哈希/commit/diff](../artifacts/vadd4-rename-2026-10-18/source-evidence.json)。使用scripts/inspect_vcd_scope.py，scope=`TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rename`；版本/配置继承10-17VCD清单。
+
+5115ps：clock0/reset0，io_out_0的PC0x80000148/instr0x021101d7、valid1/ready1；源类型4/4、psrc0=0x32、psrc1=0x30，ldest3/pdest0x33、vecWen1/rfWen0、ROBflag1/value0x10。输入lsrc0=2/lsrc1=1，与输出物理源对应；向量读映射响应0x32/0x30，向量映射写端口wen1/addr3/data0x33。numUops1、uopIdx0、firstUop1/lastUop1。5116ps clock1，沿后out0 PC已前进至0x8000014c。
+
+映射结论：v1使用向量物理48(0x30)，v2使用向量物理50(0x32)，新v3目标为向量物理51(0x33)。这些属于向量寄存器域，不能与整数物理编号混配。源码Rename.scala:376-378选择向量RAT读响应、393-396分配向量目的、625-627产生映射写控制。未追踪spec_table内部实际更新时间；不据分配/源编号推断数据就绪或结果写入。下一阶段沿完整ROB1/0x10及pdest0x33追踪，不能沿用标量ADD标签。用户自述已完成译码观察，本节重命名看图待反馈。
+
+## 2026-10-18 VADD译码输出核验
+
+只读现有VCD，SHA256重新计算仍为`01dc7a20fcfd416acfb1c9874759ac460d8e7b6144d608e865da4a2d168059b8`，大小1395708089字节。没有新构建或仿真。Python3.12.3，解析退出0；脚本[inspect_vcd_scope.py](../scripts/inspect_vcd_scope.py)，[完整argv/退出码](../artifacts/vadd4-decode-2026-10-18/inspection-run.json)，[原始采样](../artifacts/vadd4-decode-2026-10-18/observations.json)，[源码commit/文件哈希/指令位域](../artifacts/vadd4-decode-2026-10-18/source-evidence.json)。波形的配置/镜像/工具链继承10-17记录。
+
+采样scope为`TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.decoders_0`，time=5111ps；输入/输出PC均0x80000148、instr均0x021101d7。输出lsrc0=2、lsrc1=1、ldest3；srcType0/1=4、vecWen1/rfWen0；vpu.vsew2/vlmul0/vm1/vta1/vma1/vstart0/vill0；fuType0x80000、fuOpType0x40。源顺序依据DecodeUnit.scala:857-866先RS1后RS2，以及汇编vadd.vv vd,vs2,vs1。SrcType.vp=4；VecDecoder.scala:189选择vialuF/vadd_vv。vtype字段由DecodeUnit.scala:1033-1038从配置输入复制，vm来自指令位25；不是将指令中的某个位段直接解释成SEW32。
+
+本scope未直接提供实际VL数据，不据vsew、vlmul或srcType推断VL=4。lsrc2=3与isDependOldVd0仅按通用旧vd接口解释，不推断实际读寄存器行为。本节确认译码控制输出，尚不证明源数据、物理重命名、执行结果或写回/提交。用户已自述定位入口握手，译码输出亲自看图待反馈。操作表见[WAVE.md第二小节](../exercises/vadd4/WAVE.md)。
+
+## 2026-10-17 VADD波形导出与译码入口定位
+
+用户提供[运行截图](../artifacts/vadd4-2026-10-17/user-pass.png)，显示实际参数VL4/SEW32/VLEN128、四项正确、PASS、DiffTest启用、GOOD TRAP；能解释SEW/VL及结果检查，截图未展示退出码。当前目标反汇编仍为0x80000148/0x021101d7。
+
+助手核对镜像、emu、参考库的SHA256均与下面首次运行manifest一致，再运行一次：相同镜像和参考库，加入`--dump-wave-full --wave-path=/home/lenovo1227/xiangshan-learning/waves/vadd4-kj2e3y6k/vadd4.vcd -b 0 -e 8000 -C 200000 -s 0 --no-snapshot`。完整argv/cwd/退出码见[run-result.json](../artifacts/vadd4-wave-2026-10-17/run-result.json)，[原始日志](../artifacts/vadd4-wave-2026-10-17/run.log)。退出0、四项正确、PASS、DiffTest启用、GOOD TRAP。未重新构建RTL；版本/配置与下面相同，仍是现有MinimalConfig和预编译参考库。
+
+VCD大小1395708089字节，SHA256 `01dc7a20fcfd416acfb1c9874759ac460d8e7b6144d608e865da4a2d168059b8`，timescale=1ps。VCD保留在WSL原生目录，没有重复复制到项目。-b/-e是仿真cycle边界，不是GTKWave的ps；导出前8000周期不代表记录了全部程序。
+
+解析代码[inspect_decode_pc.py](../scripts/inspect_decode_pc.py)，[完整解析命令/退出码](../artifacts/vadd4-wave-2026-10-17/inspection-run.json)，[原始信号采样](../artifacts/vadd4-wave-2026-10-17/decode-observations.json)。Python3.12.3，退出0。检查所有decode输入通道，用上升沿前稳定样本判定valid&&ready，匹配PC及指令字：
+
+- 5093ps：`TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.io_in_0`，PC=0x80000148，instr=0x021101d7，valid1/ready0。
+- 5111ps：同一通道相同PC/instr，clock0/reset0，valid1/ready1。
+- 5112ps：clock上升，目标被接收；沿后PC=0x8000014c、instr=0x020661a7。不能把沿后值误配到沿前握手。
+
+目标更早也在lane1/5/3等通道以valid1/ready0出现，未构成有效接收；本节不推断这些停顿/通道变化的内部原因。当前证明范围仅到译码入口，未追踪向量译码输出、重命名、执行/写回/提交。用户看图验收待反馈，操作说明见[WAVE.md](../exercises/vadd4/WAVE.md)。
+
+## 2026-10-17 四元素VADD应用运行
+
+本轮新增[程序与逐步复现说明](../exercises/vadd4/README.md)，执行目录为WSL `/home/lenovo1227/xiangshan-learning/nexus-am/apps/vadd4`。AM源码快照来自原nexus-am `086a238062fdfb3281b745a537b361983d0154b5`，包含Makefile系列、am、libs，未复用旧AM构建产物；[快照来源](../artifacts/vadd4-2026-10-17/am-copy.json)。原映射目录XiangShan与nexus-am在操作前完整git status输出为空，操作后忽略子模块的status亦为空；未重建整核、未修改原Hello/ADD产物。
+
+使用现有MinimalConfig `emu`（SHA256 `9ee6ce3e8372c6345fc7219563c5ac63c9b3517adb87dc347816d14f228fd7e2`），XiangShan `16ae9ddcda54fc9a2fddffad73174cf793ac7814`、difftest `62e4540c03c03aa947bdb67f4b6bf66f1a29c5d0`；ready-to-run `ed8c30e1ec8a9c9aa6b116ce54281235d00273fa`中的预编译参考库，SHA256 `7af2120acefa83b7299c91b99132f4087dd8ab0f7219461b9aea48ce38891e03`。工具为GCC13.3.0、binutils2.42、GNU Make4.3。详细源码/ELF/BIN/仿真器/库哈希、仓库状态和检查结果见[manifest.json](../artifacts/vadd4-2026-10-17/manifest.json)。
+
+编译完整argv/cwd/退出码：[build-run.json](../artifacts/vadd4-2026-10-17/build-run.json)；日志：[build.log](../artifacts/vadd4-2026-10-17/build.log)。命令在上述应用目录执行：
+
+```bash
+make ARCH=riscv64-xs LINUX_GNU_TOOLCHAIN=1 MARCH=rv64gcv AM_HOME=/home/lenovo1227/xiangshan-learning/nexus-am -j2
+```
+
+首次准备快照遗漏Makefile.lib，构建退出2，保留[首次失败日志](../artifacts/vadd4-2026-10-17/build-attempt1.log)及[退出记录](../artifacts/vadd4-2026-10-17/build-attempt1-run.json)。从同一commit补齐该文件后构建退出0。链接器有裸机ELF的RWX段警告，未阻止生成镜像；不将警告当作构建失败或运行成功依据。
+
+运行完整argv/cwd/退出码：[run-result.json](../artifacts/vadd4-2026-10-17/run-result.json)；完整原始日志：[run.log](../artifacts/vadd4-2026-10-17/run.log)。命令在原XiangShan目录执行：
+
+```bash
+/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/emu \
+  -i /home/lenovo1227/xiangshan-learning/nexus-am/apps/vadd4/build/vadd4-riscv64-xs.bin \
+  --diff /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/ready-to-run/riscv64-nemu-interpreter-so \
+  --no-snapshot -C 200000
+```
+
+退出码0；Difftest enabled；实际配置VL=4/SEW=32/LMUL=1/VLEN=128；四项逐项等于11/22/33/44；PASS；HIT GOOD TRAP at pc=0x8000023c。宿主时间日志24014ms（不是向量指令延迟）。[反汇编](../artifacts/vadd4-2026-10-17/vadd4-riscv64-xs.txt)确认目标PC=0x80000148、指令字0x021101d7、vadd.vv v3,v1,v2；不要把GOOD TRAP的PC当作VADD的PC。镜像6144字节，SHA256 `0fa5845070b3f954cf375cf571692326971cda6a994d1f20ee65a626d4357283`。
+
+范围：单个e32/m1/VL4无掩码正数例子，现有预编译库参与差分运行。未测试其他向量控制/异常/边界；未构建本地NEMU参考库；没有生成VADD波形或完成生命周期文档。用户亲自复现待反馈，S1-02只记部分工程进展，不据此宣称E0-03、G1或正式vdot通过。
+
+## 2026-10-16 ADD写回和提交补验
+
+基于同一789835104字节VCD，重新计算SHA256仍为`13d7564138335c30647dfbfb9ddd34236034fe4ad46cb045be4552e366d8adcc`。Python3.12.3解析退出码0；没有新的构建/RTL运行，commit和配置范围沿用下面既有VCD说明。代码：[inspect_add_writeback.py](../scripts/inspect_add_writeback.py)；原始12个逐ps样本：[writeback-observations.json](../artifacts/add-wave-2026-10-16/writeback-observations.json)；完整命令和退出码：[writeback-run.json](../artifacts/add-wave-2026-10-16/writeback-run.json)。复核命令（WSL/Bash）：
+
+```bash
+python3 /mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/scripts/inspect_add_writeback.py /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/add-wave-hje1EO/hello.vcd
+```
+
+以下实例均在`TOP.SimTop.l_soc.core_with_l2.core.backend`之下：
+
+| 稳定电平/边沿 | 证据 |
+|---|---|
+| 4801ps | inner_wbDataPath.io_fromIntExu_3_0的valid/ready=1、ROB=0/0x23、pdest=0xB；io_toIntPreg_3_wen=1/addr=0xB/data=0x8000a000 |
+| 4803ps | inner_dataPath.intRegFilePart0..3.io_writePorts_3_wen=1、addr=0xB；data分别为A000、8000、0000、0000；mem_11仍为旧值 |
+| 4804ps上升沿后 | 四个mem_11更新为上述分片，拼成P11=0x000000008000a000 |
+| 4805ps→4806ps上升沿 | inner_ctrlBlock.rob.io_commits_isCommit=1、commitValid_0=1、isWalk=0、robIdx_0_flag=0/value=0x23；info_0.debug_pc=0x80000122/debug_instr=0x006f0133/debug_ldest=2/debug_pdest=0xB，目标提交 |
+| 4809ps→4810ps上升沿后 | inner_ctrlBlock.rat.intRat.io_archWritePorts_0为wen=1/addr=2/data=0xB；arch_table_2变为0xB |
+| 4812ps | arch_table_2继续更新为0xD，不能要求后续始终保持P11 |
+
+源码对应：backend/datapath/DataPath.scala:335-337对整数RF写地址/数据/使能打一拍；backend/regfile/Regfile.scala:118-128以wen和addr更新存储，IntRegFileSplit按低到高位拆四片；backend/rob/Rob.scala:755-774区分isCommit和commitValid；backend/rename/RenameTable.scala:268-272以RAB提交信息写架构映射，158-167更新arch_table。故ALU输出、RF实际存储、ROB退休、RAB映射落地是不同事件。本条ADD以4806ps ROB退休界定架构提交，4810ps是延后映射表更新，不应混写成同一拍。助手已核验；用户本人看图/复述仍待反馈。内部IQ唤醒、VADD和正式vdot不在本次证明范围。
+
+## 2026-10-15 规划交付检查
+
+本轮形成开发总计划、要求矩阵、GPT执行协议和交接文件，并更新看板、学习路线、规格与版本索引。规则复核与技术路线复核分别进行；已修正两处任务循环依赖，并区分官方硬要求与建议的随机数量、流水候选和内部日期。
+
+使用WSL Python一次性静态检查，退出码0：13份文档、76个本地链接、11份来源归档SHA256及大小、6个仓库commit交叉对应；12项核心技术交付计数正确，评分合计100。结果见 [规划检查记录](../artifacts/planning-2026-10-15/planning-validation.json)。这是文档和归档检查，不是RTL、NEMU、VADD或vdot仿真测试。
+
+## 2026-10-16 已有ADD波形局部追踪
+
+仅解析既有 `add-wave-hje1EO/hello.vcd`，未构建或运行新的RTL仿真。VCD大小789835104字节，重新计算SHA256为`13d7564138335c30647dfbfb9ddd34236034fe4ad46cb045be4552e366d8adcc`，与10-15归档一致。基线为MinimalConfig、EMU_TRACE=1、XiangShan `16ae9ddcda54fc9a2fddffad73174cf793ac7814`。当前Windows Git报告rocket-chip子模块dirty，未对其归因；本节证明范围仅限上述既有VCD，不代表当前工作树重建结果。
+
+使用Python 3.12.3，解析退出码0，6个固定时刻/接口样本。完整命令argv、工具版本和退出码见[解析运行记录](../artifacts/add-wave-2026-10-16/inspection-run.json)，原始信号值见[观测JSON](../artifacts/add-wave-2026-10-16/observations.json)，解析代码见[inspect_add_wave.py](../scripts/inspect_add_wave.py)。WSL/Bash复核命令：
+
+```bash
+python3 /mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/scripts/inspect_add_wave.py /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/add-wave-hje1EO/hello.vcd
+```
+
+共同身份：PC=0x80000122（存在PC的接口）、编码0x006f0133、ROB flag=0/value=0x23、pdest=0xB。以下为记录时刻的稳定电平，不把它们直接写成握手沿时间。
+
+| 时间(ps) | backend下实例/接口 | 观察 |
+|---|---|---|
+| 4777 | inner_ctrlBlock.rename.io_out_0 | valid=ready=1，psrc=0xA/0x7，pdest=0xB |
+| 4779 | inner_ctrlBlock.dispatch.io_toIssueQueues_6 | valid=ready=1，两个srcState均0 |
+| 4779 | inner_intScheduler.IssueQueueAluCsrFenceDiv.io_enq_0 | 相同身份与源编号，valid=ready=1，两个srcState均0 |
+| 4797 | 同一IssueQueue的io_deqDelay_0 | common.robIdx=0/0x23，common.pdest=0xB，valid=ready=1 |
+| 4799 | inner_bypassNetwork.io_toExus_int_3_0 | 相同身份，src0=0，src1=0x8000a000，valid=ready=1 |
+| 4801 | inner_intExuBlock.exus_6.Alu | 输入/输出有效且ready；fuOpType=0x21，src0=0，src1=0x8000a000，res_data=0x8000a000 |
+
+源码解释：`SrcState`的0表示busy、1表示ready；派发查询BusyTable，入队后队列维护源状态并匹配写回/IQ唤醒。快速唤醒及旁路意味着不能要求所有源先写进物理寄存器再发射。本轮未逐个关联本条指令的内部entry唤醒事件、仲裁过程、写回端口和ROB提交。ALU结果有效不等于架构sp已提交。
+
+用户本人观察补验：10-16提交[4779ps派发截图](../artifacts/add-wave-2026-10-16/user-dispatch-4779ps.png)与[4801ps ALU截图](../artifacts/add-wave-2026-10-16/user-alu-4801ps.png)，信号与上述采样一致。本人正确说明ready=1表示队列可接收，srcState=0表示源尚未就绪；数据为0不能判断就绪。ALU截图上方保留的其他流水级PC/instr已前进，不能与当前ALU结果混配；当前目标身份由ALU的ROB value=0x23、pdest=0xB及前后关联确认，flag=0由原VCD核对。未新增仿真，未因此宣称完成物理写回或架构提交。
+
+2026-10-17 学习反馈：用户自述已观察4804ps上升沿后P11四个mem_11分片拼成0x8000a000，并正确解释4803ps wen=1与实际存储更新的区别。本轮无新增截图，无新增RTL仿真；ROB提交仍为下一项本人观察。本轮复读既有writeback-observations.json：4805ps提交槽0为ROB0/0x23、目标PC0x80000122、pdest0xB、isCommit=commitValid_0=1；4806ps沿后槽0已前进至ROB0/0x25、PC0x8000015e、pdest0xD，教学须强调按沿前身份判定提交，不按沿后槽内容反推。

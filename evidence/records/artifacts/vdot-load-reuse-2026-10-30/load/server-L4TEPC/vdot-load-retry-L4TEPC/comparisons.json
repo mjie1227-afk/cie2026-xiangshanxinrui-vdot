@@ -1,0 +1,63 @@
+{
+  "status": "review_required",
+  "items": [
+    {
+      "comparison": "same_implementation",
+      "kind": "native",
+      "before": "tu",
+      "after": "ta",
+      "before_cycles": 2239,
+      "after_cycles": 1235,
+      "ratio": 1.8129554655870446
+    },
+    {
+      "comparison": "same_implementation",
+      "kind": "native",
+      "before": "ta",
+      "after": "ta_rr",
+      "before_cycles": 1235,
+      "after_cycles": 1089,
+      "ratio": 1.1340679522497705
+    },
+    {
+      "comparison": "same_implementation",
+      "kind": "rvv_mf2",
+      "before": "tu",
+      "after": "ta",
+      "before_cycles": 2262,
+      "after_cycles": 1396,
+      "ratio": 1.6203438395415473
+    },
+    {
+      "comparison": "same_implementation",
+      "kind": "rvv_mf2",
+      "before": "ta",
+      "after": "ta_rr",
+      "before_cycles": 1396,
+      "after_cycles": 1355,
+      "ratio": 1.0302583025830259
+    },
+    {
+      "comparison": "same_schedule_rvv_over_native",
+      "mode": "tu",
+      "native_cycles": 2239,
+      "baseline_cycles": 2262,
+      "ratio": 1.0102724430549352
+    },
+    {
+      "comparison": "same_schedule_rvv_over_native",
+      "mode": "ta",
+      "native_cycles": 1235,
+      "baseline_cycles": 1396,
+      "ratio": 1.1303643724696357
+    },
+    {
+      "comparison": "same_schedule_rvv_over_native",
+      "mode": "ta_rr",
+      "native_cycles": 1089,
+      "baseline_cycles": 1355,
+      "ratio": 1.2442607897153353
+    }
+  ],
+  "scope": "same task within experiment; raw windows; no resource attribution"
+}

@@ -1,0 +1,31 @@
+--- 
++++ 
+@@ -150,11 +150,23 @@
+                     rc=subprocess.call(['git','-C',str(repo),*args],stdout=log,stderr=log,env=dict(env,GIT_OPTIONAL_LOCKS='0'))
+                     log.write('EXIT='+str(rc)+'\n');log.flush()
+                     if rc and repo!=AM:raise RuntimeError('Repository identity unavailable: '+str(repo))
+-        dest=AM/'apps'/APP;require(not dest.exists(),'Segment app already exists; preserve it and stop')
+-        shutil.copytree(package/APP,dest)
+-        cc='/usr/bin/riscv64-linux-gnu-gcc-12'
+-        (out/'compiler.txt').write_text(subprocess.check_output([cc,'--version'],text=True))
+-        stage('build',['make','-C',str(dest),'image','ARCH=riscv64-xs','LINUX_GNU_TOOLCHAIN=1','MARCH=rv64gcv','CC='+cc,'AS='+cc,'-j2'],300)
++        old=WORK/'evidence/vdot-load-m5fpvT'
++        prior=json.loads((old/'result.json').read_text())
++        require(APP=='vdot-load-v1','Unexpected app')
++        require(any(s['name']=='build' and s['exit']==0 for s in prior['stages']),'No successful prior build')
++        dest=AM/'apps'/APP
++        source_ids=json.loads((old/'application-source-identities.json').read_text())
++        for name in ('main.c','cases.S','Makefile'):
++            require(sha(dest/name)==sha(package/APP/name)==source_ids[name],'Application source changed: '+name)
++        old_ids=json.loads((old/'runtime-identities.json').read_text())
++        image_path=dest/'build'/f'{APP}-riscv64-xs.bin'
++        require(sha(image_path)==sha(old/image_path.name)==old_ids[str(image_path)],'Application image changed')
++        elf_path=image_path.with_suffix('.elf')
++        require(sha(elf_path)==sha(old/elf_path.name),'Application ELF changed')
++        shutil.copy2(old/'compiler.txt',out/'compiler.txt')
++        summary['stages'].append(dict(name='build_reuse',exit=0,origin=str(old),compiler_record='copied from prior build'))
++        dump(out/'build-reuse.json',dict(origin=str(old),source_sha256=source_ids,image_sha256=sha(image_path),elf_sha256=sha(elf_path)))
++        print('BUILD_REUSED=1',flush=True)
+         elf=dest/'build'/f'{APP}-riscv64-xs.elf';img=elf.with_suffix('.bin');image=img.read_bytes()
+         nm=subprocess.check_output(['riscv64-linux-gnu-nm','-n',str(elf)],text=True);(out/'symbols.nm').write_text(nm)
+         symbols={v[2]:int(v[0],16) for s in nm.splitlines() if len(v:=s.split())==3}

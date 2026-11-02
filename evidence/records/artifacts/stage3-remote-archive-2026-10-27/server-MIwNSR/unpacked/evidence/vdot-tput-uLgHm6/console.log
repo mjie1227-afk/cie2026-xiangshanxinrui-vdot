@@ -1,0 +1,57 @@
+RUNNING=build wall_limit=300
+BUILD_EXIT=0
+KERNEL={"name": "empty", "kind": "empty", "iterations": 0, "streams": 8, "payload_begin": "0x80000268", "payload_end": "0x80000268", "payload_words": 0, "payload_head": [], "destination_regs": [24, 25, 26, 27, 28, 29, 30, 31], "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}
+KERNEL={"name": "native_n8", "kind": "native", "iterations": 8, "streams": 8, "payload_begin": "0x8000055c", "payload_end": "0x8000057c", "payload_words": 8, "payload_head": ["0x2208c0b", "0x2208c8b", "0x2208d0b", "0x2208d8b", "0x2208e0b", "0x2208e8b", "0x2208f0b", "0x2208f8b"], "destination_regs": [24, 25, 26, 27, 28, 29, 30, 31], "payload_sha256": "be8c4f813af9e0363527abc9e27f4313a2def07bf9ea70a13597f21a5fc9bb64"}
+KERNEL={"name": "rvv_batch_m1_n8", "kind": "rvv_batch_m1", "iterations": 8, "streams": 8, "payload_begin": "0x80000870", "payload_end": "0x800008e4", "payload_words": 29, "payload_head": ["0xc1027057", "0x5e003257", "0x5e003c57", "0x5e003cd7", "0x5e003d57", "0x5e003dd7", "0x5e003e57", "0x5e003ed7", "0x5e003f57", "0x5e003fd7", "0xc0047057", "0xee112457"], "destination_regs": [24, 25, 26, 27, 28, 29, 30, 31], "payload_sha256": "ba46b86e155945e75b034246774ff11c651ebd6f54fdd8ec59e7dfe95e1d575f"}
+KERNEL={"name": "rvv_batch_mf2_n8", "kind": "rvv_batch_mf2", "iterations": 8, "streams": 8, "payload_begin": "0x80000bd8", "payload_end": "0x80000c4c", "payload_words": 29, "payload_head": ["0xc1027057", "0x5e003257", "0x5e003c57", "0x5e003cd7", "0x5e003d57", "0x5e003dd7", "0x5e003e57", "0x5e003ed7", "0x5e003f57", "0x5e003fd7", "0xc0747057", "0xee112457"], "destination_regs": [24, 25, 26, 27, 28, 29, 30, 31], "payload_sha256": "152a9bc9243772059bee3a28c438cdc121ddd3319c701eb50cd8b12ce1c26c5c"}
+KERNEL={"name": "native_n32", "kind": "native", "iterations": 32, "streams": 8, "payload_begin": "0x80000f40", "payload_end": "0x80000fc0", "payload_words": 32, "payload_head": ["0x2208c0b", "0x2208c8b", "0x2208d0b", "0x2208d8b", "0x2208e0b", "0x2208e8b", "0x2208f0b", "0x2208f8b", "0x2208c0b", "0x2208c8b", "0x2208d0b", "0x2208d8b"], "destination_regs": [24, 25, 26, 27, 28, 29, 30, 31], "payload_sha256": "740ce802e75d8be9a17641d66d88fcbb16b3d70a923b963a7017d02d93baa56c"}
+KERNEL={"name": "rvv_batch_m1_n32", "kind": "rvv_batch_m1", "iterations": 32, "streams": 8, "payload_begin": "0x800012b4", "payload_end": "0x80001400", "payload_words": 83, "payload_head": ["0xc1027057", "0x5e003257", "0x5e003c57", "0x5e003cd7", "0x5e003d57", "0x5e003dd7", "0x5e003e57", "0x5e003ed7", "0x5e003f57", "0x5e003fd7", "0xc0047057", "0xee112457"], "destination_regs": [24, 25, 26, 27, 28, 29, 30, 31], "payload_sha256": "2cee277daedc1ff401fbaa4a9d9f7aa981bf8d1ab6cafd2459f87a55a658fa5a"}
+KERNEL={"name": "rvv_batch_mf2_n32", "kind": "rvv_batch_mf2", "iterations": 32, "streams": 8, "payload_begin": "0x800016f4", "payload_end": "0x80001840", "payload_words": 83, "payload_head": ["0xc1027057", "0x5e003257", "0x5e003c57", "0x5e003cd7", "0x5e003d57", "0x5e003dd7", "0x5e003e57", "0x5e003ed7", "0x5e003f57", "0x5e003fd7", "0xc0747057", "0xee112457"], "destination_regs": [24, 25, 26, 27, 28, 29, 30, 31], "payload_sha256": "5ecc109f27d24b68cc30cc34d8dfb4b17b87263c11db25701de6fca77b1a261e"}
+KERNEL={"name": "native_n128", "kind": "native", "iterations": 128, "streams": 8, "payload_begin": "0x80001b34", "payload_end": "0x80001d34", "payload_words": 128, "payload_head": ["0x2208c0b", "0x2208c8b", "0x2208d0b", "0x2208d8b", "0x2208e0b", "0x2208e8b", "0x2208f0b", "0x2208f8b", "0x2208c0b", "0x2208c8b", "0x2208d0b", "0x2208d8b"], "destination_regs": [24, 25, 26, 27, 28, 29, 30, 31], "payload_sha256": "ee73a808e81e9e295f0e311f1e5e0c2707043b67e1a1e2ae5b5c3b3b1f37b133"}
+KERNEL={"name": "rvv_batch_m1_n128", "kind": "rvv_batch_m1", "iterations": 128, "streams": 8, "payload_begin": "0x80002028", "payload_end": "0x800024d4", "payload_words": 299, "payload_head": ["0xc1027057", "0x5e003257", "0x5e003c57", "0x5e003cd7", "0x5e003d57", "0x5e003dd7", "0x5e003e57", "0x5e003ed7", "0x5e003f57", "0x5e003fd7", "0xc0047057", "0xee112457"], "destination_regs": [24, 25, 26, 27, 28, 29, 30, 31], "payload_sha256": "718b486fcbd3b7403008dc4fe355248ccd9f618df0248b273db5e6ce577aea06"}
+KERNEL={"name": "rvv_batch_mf2_n128", "kind": "rvv_batch_mf2", "iterations": 128, "streams": 8, "payload_begin": "0x800027c8", "payload_end": "0x80002c74", "payload_words": 299, "payload_head": ["0xc1027057", "0x5e003257", "0x5e003c57", "0x5e003cd7", "0x5e003d57", "0x5e003dd7", "0x5e003e57", "0x5e003ed7", "0x5e003f57", "0x5e003fd7", "0xc0747057", "0xee112457"], "destination_regs": [24, 25, 26, 27, 28, 29, 30, 31], "payload_sha256": "576cdc0fc605deb241c0fc96b3d6d04cc34257bbbec966dcededa9d4f149a36a"}
+RUNNING=architecture wall_limit=3600
+PROGRESS stage=architecture elapsed_s=60 log_bytes=1076
+PROGRESS stage=architecture elapsed_s=120 log_bytes=1215
+PROGRESS stage=architecture elapsed_s=180 log_bytes=1343
+PROGRESS stage=architecture elapsed_s=240 log_bytes=1481
+PROGRESS stage=architecture elapsed_s=300 log_bytes=1608
+PROGRESS stage=architecture elapsed_s=360 log_bytes=1739
+PROGRESS stage=architecture elapsed_s=420 log_bytes=1864
+PROGRESS stage=architecture elapsed_s=480 log_bytes=2001
+PROGRESS stage=architecture elapsed_s=540 log_bytes=2149
+PROGRESS stage=architecture elapsed_s=600 log_bytes=2281
+PROGRESS stage=architecture elapsed_s=660 log_bytes=2414
+PROGRESS stage=architecture elapsed_s=720 log_bytes=2556
+PROGRESS stage=architecture elapsed_s=780 log_bytes=2688
+PROGRESS stage=architecture elapsed_s=840 log_bytes=2830
+PROGRESS stage=architecture elapsed_s=900 log_bytes=2964
+PROGRESS stage=architecture elapsed_s=960 log_bytes=3098
+PROGRESS stage=architecture elapsed_s=1020 log_bytes=3251
+PROGRESS stage=architecture elapsed_s=1080 log_bytes=3383
+PROGRESS stage=architecture elapsed_s=1140 log_bytes=3516
+PROGRESS stage=architecture elapsed_s=1200 log_bytes=3661
+PROGRESS stage=architecture elapsed_s=1260 log_bytes=3794
+PROGRESS stage=architecture elapsed_s=1320 log_bytes=3930
+PROGRESS stage=architecture elapsed_s=1380 log_bytes=4063
+PROGRESS stage=architecture elapsed_s=1440 log_bytes=4199
+PROGRESS stage=architecture elapsed_s=1500 log_bytes=4342
+ARCHITECTURE_EXIT=0
+The reference model is /root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so
+The first instruction of core 0 has commited. Difftest enabled.
+PASS VDOT_TPUT calls=40 samples=30 warmups=10 variants=10 outputs128=1 full32regs=1 state=1
+[PERF ][time=              417423] SimTop.l_soc.core_with_l2.l2top.inner.l2cache.slices_1.mshrCtl: mshr_latency_maxCore 0: [32mHIT GOOD TRAP at pc = 0x80003068
+TPUT_IDENTITIES={"/root/private_data/mj/xiangshan/vdot-mtval-fix-20261024/XiangShan/build/emu": "f9653532fd2a4b9f0d0cc08c131f7c258d4b62c46e672c6886d6643aad926850", "/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so": "11b9f6807c36ed860e0c64cc4e58d27216b19335ecde1ce5797ba2d1cd057b74", "/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/.config": "64282bca051b5dbc5fca742f4fbca2ade937a70f3c4d2ec93c1f4836aca5d9be", "/root/private_data/mj/xiangshan/evidence/vdot-build-80mKCD/boot-flash.bin": "fea548655a8b6eecacace83e2f4380a18b8aa83bce964c8aae4cffbe2f5a9724", "/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-throughput-v1/build/vdot-throughput-v1-riscv64-xs.bin": "e9610f34acc9eb2118d1850f802eab90f30adc40074641f88d3f91e86d8abeab"}
+TPUT_RAW={"variant": "empty", "kind": "empty", "iterations": 0, "samples": 3, "streams": 8, "raw_cycle_min": 88, "raw_cycle_median": 88, "raw_cycle_max": 88, "instret": 18}
+TPUT_RAW={"variant": "native_n8", "kind": "native", "iterations": 8, "samples": 3, "streams": 8, "raw_cycle_min": 96, "raw_cycle_median": 96, "raw_cycle_max": 96, "instret": 26}
+TPUT_RAW={"variant": "rvv_batch_m1_n8", "kind": "rvv_batch_m1", "iterations": 8, "samples": 3, "streams": 8, "raw_cycle_min": 186, "raw_cycle_median": 186, "raw_cycle_max": 186, "instret": 47}
+TPUT_RAW={"variant": "rvv_batch_mf2_n8", "kind": "rvv_batch_mf2", "iterations": 8, "samples": 3, "streams": 8, "raw_cycle_min": 159, "raw_cycle_median": 159, "raw_cycle_max": 159, "instret": 47}
+TPUT_RAW={"variant": "native_n32", "kind": "native", "iterations": 32, "samples": 3, "streams": 8, "raw_cycle_min": 120, "raw_cycle_median": 120, "raw_cycle_max": 120, "instret": 50}
+TPUT_RAW={"variant": "rvv_batch_m1_n32", "kind": "rvv_batch_m1", "iterations": 32, "samples": 3, "streams": 8, "raw_cycle_min": 330, "raw_cycle_median": 330, "raw_cycle_max": 330, "instret": 101}
+TPUT_RAW={"variant": "rvv_batch_mf2_n32", "kind": "rvv_batch_mf2", "iterations": 32, "samples": 3, "streams": 8, "raw_cycle_min": 232, "raw_cycle_median": 232, "raw_cycle_max": 232, "instret": 101}
+TPUT_RAW={"variant": "native_n128", "kind": "native", "iterations": 128, "samples": 3, "streams": 8, "raw_cycle_min": 216, "raw_cycle_median": 216, "raw_cycle_max": 216, "instret": 146}
+TPUT_RAW={"variant": "rvv_batch_m1_n128", "kind": "rvv_batch_m1", "iterations": 128, "samples": 3, "streams": 8, "raw_cycle_min": 906, "raw_cycle_median": 906, "raw_cycle_max": 906, "instret": 317}
+TPUT_RAW={"variant": "rvv_batch_mf2_n128", "kind": "rvv_batch_mf2", "iterations": 128, "samples": 3, "streams": 8, "raw_cycle_min": 519, "raw_cycle_median": 519, "raw_cycle_max": 519, "instret": 317}
+VDOT_TPUT_READY samples=30 warmups=10
+SCOPE=8stream_register_batch no_peak_claim no_end_to_end
+LOG_DIR=/root/private_data/mj/xiangshan/evidence/vdot-tput-uLgHm6

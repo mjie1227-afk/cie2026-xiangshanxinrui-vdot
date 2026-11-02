@@ -1,0 +1,157 @@
+[
+  {
+    "file": "accepted-segment.json",
+    "bytes": 1009,
+    "sha256": "c74af0b53084ebef14678e861da0d52dd57ea7a81a7b49095bb461efe7978cc7"
+  },
+  {
+    "file": "application-source/cases.S",
+    "bytes": 13913,
+    "sha256": "96a10e699959e09f994ee70600e71e2899fe51cf248713aea90ce68b105e218f"
+  },
+  {
+    "file": "application-source/main.c",
+    "bytes": 19248,
+    "sha256": "310b892a11fb414216309724e176ba8a72184122318e5a3fb12300ac141babbe"
+  },
+  {
+    "file": "application-source/Makefile",
+    "bytes": 107,
+    "sha256": "247b1737900114aab5850585f34b47a3e009b5dc61c2b483cffaf9106deb0e91"
+  },
+  {
+    "file": "application-source-identities.json",
+    "bytes": 246,
+    "sha256": "206b4ecc2ff6c2493572212252c57ff1208f3ccd91dda4934965953debf37176"
+  },
+  {
+    "file": "architecture-check.json",
+    "bytes": 195,
+    "sha256": "bbe04b859965ce17d1db3017dc04165514b584ac9cada385c63ccc50c6c51ea9"
+  },
+  {
+    "file": "architecture.argv.json",
+    "bytes": 455,
+    "sha256": "25c33c3c1205d58c04c0998235bfa19ea145f42d3fdccf1c2684e7f3390d9e76"
+  },
+  {
+    "file": "architecture.log",
+    "bytes": 3102134,
+    "sha256": "b577e4bf4a265ce4b56baccfdce1b362838a048b21a9481ab19cc46ca29a4a20"
+  },
+  {
+    "file": "build.argv.json",
+    "bytes": 274,
+    "sha256": "06ba283847c515e511c61ba5503cb74c953af444640a64a1d7b7a2fc94ae4191"
+  },
+  {
+    "file": "build.log",
+    "bytes": 1334,
+    "sha256": "1fc96be6b69749acf351f168ef395bd0d0c923ff130b5d36d831b7a122330cd2"
+  },
+  {
+    "file": "comparisons.json",
+    "bytes": 953,
+    "sha256": "5795db3b12eca5917eae9447007e282f86ddae8ba99e84cb9c7149df9b281e1f"
+  },
+  {
+    "file": "compiler.txt",
+    "bytes": 265,
+    "sha256": "355385b8017ba58b16b0cf85e2ea8edaa7ae3d357f963828ef280b0d536ae1a3"
+  },
+  {
+    "file": "console.log",
+    "bytes": 7205,
+    "sha256": "fecac6f2585b70cc12b584c78a1c29a084e5e56ae4cbceb7ce4b30928ed276ed"
+  },
+  {
+    "file": "disasm.txt",
+    "bytes": 127221,
+    "sha256": "a6994ccc732546d2ba93c4e488a3acc50aa78c39bd2a980bf35a6f1d1fec5b20"
+  },
+  {
+    "file": "environment.json",
+    "bytes": 227,
+    "sha256": "01f6082a63a1e9ce336c6afcdadff492ff6a090a5eb2d312d17d6980b20d35bf"
+  },
+  {
+    "file": "exit-status.txt",
+    "bytes": 95,
+    "sha256": "228bb6d04e61f0a57a0469517ffe5d0427210441b2a25f23de7911f6e2d278f0"
+  },
+  {
+    "file": "identity-after.json",
+    "bytes": 597,
+    "sha256": "411ef71585d965b3978a4b1eea04fe819125c81281fe56cd848d5f94d114b2da"
+  },
+  {
+    "file": "identity-before.json",
+    "bytes": 597,
+    "sha256": "411ef71585d965b3978a4b1eea04fe819125c81281fe56cd848d5f94d114b2da"
+  },
+  {
+    "file": "kernel-identities.json",
+    "bytes": 1464,
+    "sha256": "6a1b731218f4dbbb981800ec6d976b0c5e746df88e3f7c538f6ba7610d83a273"
+  },
+  {
+    "file": "matrix.json",
+    "bytes": 13589,
+    "sha256": "ab0b7087b026ba51a2a7a08ed3650f8a7cd68e30ba8d98994be31dd4d48269b9"
+  },
+  {
+    "file": "perf-context.json",
+    "bytes": 1552,
+    "sha256": "d63f29eacd66d32892e1d8c6255bf44986982a9af62f1307244d8e0ab31b53fc"
+  },
+  {
+    "file": "processes-before.txt",
+    "bytes": 384,
+    "sha256": "50c74662e372129dd86f276fcdd853c75c65f76cee1c638facdf3d38e456686d"
+  },
+  {
+    "file": "raw-statistics.json",
+    "bytes": 2322,
+    "sha256": "0d07ace5b688a47bb811f1b44ec9440def2132a1ac616dcb238a9fc3f9a44ee5"
+  },
+  {
+    "file": "repositories.txt",
+    "bytes": 16416,
+    "sha256": "621d6739b75e6bf80acdb24f6ab5d8343429385acaf5e51ab21997e3736b1231"
+  },
+  {
+    "file": "result.json",
+    "bytes": 993,
+    "sha256": "86ddd0c8bdc183a6145a108a17d2a55ea0f503d5d48132f16b7213c72e3ca21b"
+  },
+  {
+    "file": "runtime-identities.json",
+    "bytes": 781,
+    "sha256": "0b1c684c1ed97a5d2ce32302043ceb9948fca288456c24598c15452c867f5d68"
+  },
+  {
+    "file": "samples.csv",
+    "bytes": 1570,
+    "sha256": "d68e18993a2fe0a0c5b0ed91d066f3a50c8615e3fb7ee69b8dbe84e02aeac53e"
+  },
+  {
+    "file": "samples.json",
+    "bytes": 9641,
+    "sha256": "ae3440fe95d87a49e5c6b96044f410b6b8038a7110f3047650f9999c1df9e70e"
+  },
+  {
+    "file": "symbols.nm",
+    "bytes": 2760,
+    "sha256": "e8833c61627ff5dfa963bb170505f003af466192e09fef7edd4bd02cd32eb82d"
+  },
+  {
+    "file": "vdot-tile-v1-riscv64-xs.bin",
+    "bytes": 11768,
+    "sha256": "a95345da01961102dc61f8a2345da8d1beb25a15dce1080edcb72390c18255c5"
+  },
+  {
+    "file": "vdot-tile-v1-riscv64-xs.elf",
+    "bytes": 59896,
+    "sha256": "e8e6f03258cd3e31c208e066e40ffaad7b84cfbef061ca66ad385646b372d88f"
+  }
+]

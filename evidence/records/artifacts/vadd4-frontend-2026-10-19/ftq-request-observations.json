@@ -1,0 +1,57 @@
+{
+  "scope": "TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ftq",
+  "vcd": "/home/lenovo1227/xiangshan-learning/waves/vadd4-kj2e3y6k/vadd4.vcd",
+  "samples": [
+    {
+      "time_ps": 5079,
+      "signals_hex": {
+        "clock": "0x0",
+        "reset": "0x0",
+        "io_toIfu_req_ready": "0x1",
+        "io_toIfu_req_valid": "0x1",
+        "io_toIfu_req_bits_startAddr": "0x80000134",
+        "io_toIfu_req_bits_nextStartAddr": "0x80000154",
+        "io_toIfu_req_bits_ftqIdx_flag": "0x0",
+        "io_toIfu_req_bits_ftqIdx_value": "0x3",
+        "io_toIfu_req_bits_ftqOffset_valid": "0x0",
+        "io_toIfu_req_bits_ftqOffset_bits": "0xf"
+      }
+    },
+    {
+      "time_ps": 5080,
+      "signals_hex": {
+        "clock": "0x1",
+        "reset": "0x0",
+        "io_toIfu_req_ready": "0x1",
+        "io_toIfu_req_valid": "0x1",
+        "io_toIfu_req_bits_startAddr": "0x80000154",
+        "io_toIfu_req_bits_nextStartAddr": "0x80000174",
+        "io_toIfu_req_bits_ftqIdx_flag": "0x0",
+        "io_toIfu_req_bits_ftqIdx_value": "0x4",
+        "io_toIfu_req_bits_ftqOffset_valid": "0x0",
+        "io_toIfu_req_bits_ftqOffset_bits": "0xf"
+      }
+    },
+    {
+      "time_ps": 5081,
+      "signals_hex": {
+        "clock": "0x0",
+        "reset": "0x0",
+        "io_toIfu_req_ready": "0x1",
+        "io_toIfu_req_valid": "0x1",
+        "io_toIfu_req_bits_startAddr": "0x80000154",
+        "io_toIfu_req_bits_nextStartAddr": "0x80000174",
+        "io_toIfu_req_bits_ftqIdx_flag": "0x0",
+        "io_toIfu_req_bits_ftqIdx_value": "0x4",
+        "io_toIfu_req_bits_ftqOffset_valid": "0x0",
+        "io_toIfu_req_bits_ftqOffset_bits": "0xf"
+      }
+    }
+  ],
+  "inspection": {
+    "method": "Read-only inline Python parser, invoked from PowerShell via wsl -d Ubuntu -- python3 -, scanning the existing VCD to 5082 ps; no RTL simulation",
+    "exit_code": 0,
+    "python_version": "not re-queried in this invocation",
+    "scope_limit": "FTQ request snapshots only; user has confirmed IFU output, not yet personally confirmed this FTQ request."
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "16ae9ddcda54fc9a2fddffad73174cf793ac7814\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--short",
+        "--ignore-submodules=all"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--",
+        "src/main/scala/xiangshan/frontend/Frontend.scala",
+        "src/main/scala/xiangshan/frontend/FrontendBundle.scala",
+        "src/main/scala/xiangshan/frontend/IFU.scala",
+        "src/main/scala/xiangshan/frontend/IBuffer.scala",
+        "src/main/scala/xiangshan/frontend/icache/ICacheMainPipe.scala",
+        "src/main/scala/xiangshan/backend/CtrlBlock.scala"
+      ],
+      "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "files": {
+    "src/main/scala/xiangshan/frontend/Frontend.scala": "36270c5cd7bb98271447b3cc926a299a3ca290657268c84be7be05654497a594",
+    "src/main/scala/xiangshan/frontend/FrontendBundle.scala": "1e24923f7b44651389b6a560754324e363dc8e13860b45c64f732e497da8d21b",
+    "src/main/scala/xiangshan/frontend/IFU.scala": "d600cabcca462561dc5cdef1991d4348d97a3e0a9df9934df1355fd04a83d57a",
+    "src/main/scala/xiangshan/frontend/IBuffer.scala": "991d5e3abc9855b24e934b99634b7cf81073c72c4af8a35317d9f69d39d72da9",
+    "src/main/scala/xiangshan/frontend/icache/ICacheMainPipe.scala": "8d885be990a963481d194efb1e97e0f8aea064792a6271cb8ddba1f017613c0d",
+    "src/main/scala/xiangshan/backend/CtrlBlock.scala": "80c873f65548222885fee00e1e4637a604f1c934196af2683cbab2284a7faa6e"
+  }
+}

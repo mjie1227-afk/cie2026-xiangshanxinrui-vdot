@@ -1,0 +1,75 @@
+{
+  "status": "dependency-chain-accepted-in-defined-scope",
+  "review_date": "2026-10-26",
+  "source": "user-server-output.txt; remote raw sample files not downloaded",
+  "remote_run": "/root/private_data/mj/xiangshan/evidence/vdot-chain-KiI3xX",
+  "package_run": "/root/private_data/mj/xiangshan/evidence/vdot-chain-package-Xp9Mc4",
+  "build_exit": 0,
+  "architecture_exit": 0,
+  "script_exit": 0,
+  "tee_exit": 0,
+  "good_trap_pc": "0x8000195a",
+  "calls": 40,
+  "warmups": 10,
+  "measured_samples": 30,
+  "samples_each": 3,
+  "explicit_reference_and_difftest": true,
+  "full128_and_selected_state_checks": true,
+  "all_10_emitted_payloads_match_local_words_and_hashes": true,
+  "seed": 1,
+  "wall_limit_seconds": 3600,
+  "guest_cycle_limit": 1000000,
+  "last_progress_seconds": 1440,
+  "host_elapsed_seconds": null,
+  "scope": "fixed VL8/e8/m1/vm1 positive v1 RAW recurrence; all per-operation RVV configuration/zero/restore retained",
+  "accepted_claim": "raw intervals and finite-difference costs of this complete-operation dependency chain",
+  "not_claimed": [
+    "FU-only latency",
+    "independent throughput",
+    "optimized batch baseline acceleration",
+    "end-to-end application speedup"
+  ],
+  "derived": [
+    {
+      "kind": "native",
+      "raw_cycles": {
+        "1": 81,
+        "8": 130,
+        "32": 298
+      },
+      "cycles_per_added_operation_1_to_8": 7.0,
+      "cycles_per_added_operation_8_to_32": 7.0,
+      "observed_intercept": 74.0,
+      "fit_scope": "exact at measured N=1,8,32 only"
+    },
+    {
+      "kind": "rvv_m1",
+      "raw_cycles": {
+        "1": 130,
+        "8": 515,
+        "32": 1835
+      },
+      "cycles_per_added_operation_1_to_8": 55.0,
+      "cycles_per_added_operation_8_to_32": 55.0,
+      "observed_intercept": 75.0,
+      "fit_scope": "exact at measured N=1,8,32 only",
+      "slope_ratio_to_native": 7.857142857142857,
+      "n32_total_interval_ratio_to_native": 6.157718120805369
+    },
+    {
+      "kind": "rvv_mf2",
+      "raw_cycles": {
+        "1": 122,
+        "8": 451,
+        "32": 1579
+      },
+      "cycles_per_added_operation_1_to_8": 47.0,
+      "cycles_per_added_operation_8_to_32": 47.0,
+      "observed_intercept": 75.0,
+      "fit_scope": "exact at measured N=1,8,32 only",
+      "slope_ratio_to_native": 6.714285714285714,
+      "n32_total_interval_ratio_to_native": 5.298657718120805
+    }
+  ],
+  "best_rvv_measured": "rvv_mf2"
+}

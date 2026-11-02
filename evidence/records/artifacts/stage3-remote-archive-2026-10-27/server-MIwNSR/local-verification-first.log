@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "D:\Mayyyyyy\WorkSpaces\�ճ�������1\2026�����滮\RISCV_vdot\scripts\verify_stage3_archive.py", line 192, in <module>
+    main()
+    ~~~~^^
+  File "D:\Mayyyyyy\WorkSpaces\�ճ�������1\2026�����滮\RISCV_vdot\scripts\verify_stage3_archive.py", line 89, in main
+    need(digest(data('collect.py')) == digest((ROOT / 'scripts/collect_stage3_remote.py').read_bytes()), 'Archived collector differs')
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Mayyyyyy\WorkSpaces\�ճ�������1\2026�����滮\RISCV_vdot\scripts\verify_stage3_archive.py", line 30, in need
+    raise ValueError(message)
+ValueError: Archived collector differs

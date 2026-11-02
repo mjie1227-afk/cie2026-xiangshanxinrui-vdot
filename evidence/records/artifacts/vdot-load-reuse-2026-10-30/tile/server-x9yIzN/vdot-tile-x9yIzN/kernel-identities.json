@@ -1,0 +1,52 @@
+[
+  {
+    "name": "empty",
+    "code_sha256": "be765865340518ac28b4a3e2f4fe6b524ed8b91e4bf10c721944dd58bb327cb9",
+    "payload_begin": "0x800001ec",
+    "payload_end": "0x800001ec",
+    "group": 0,
+    "mode": "empty",
+    "expected_instret": 6,
+    "static_instructions": 0
+  },
+  {
+    "name": "native_independent",
+    "code_sha256": "5a4dd2bd5492214461230a0df4d2f60c12739b6b5c0df910d5879adc6a889dce",
+    "payload_begin": "0x80000330",
+    "payload_end": "0x800003e4",
+    "group": 32,
+    "mode": "independent",
+    "expected_instret": 950,
+    "static_instructions": 45
+  },
+  {
+    "name": "rvv_mf2_independent",
+    "code_sha256": "907bda00436e97e7f15180faa5cb0cb6f9620f927935b902e3f00f9a0d9acb3f",
+    "payload_begin": "0x80000528",
+    "payload_end": "0x80000604",
+    "group": 32,
+    "mode": "independent",
+    "expected_instret": 1115,
+    "static_instructions": 55
+  },
+  {
+    "name": "native_reuse",
+    "code_sha256": "b1193de555d558a006fb685bb4a69fc2f98b074f6f06a5e25c024e8c2bb1ebef",
+    "payload_begin": "0x80000748",
+    "payload_end": "0x800007dc",
+    "group": 32,
+    "mode": "reuse",
+    "expected_instret": 694,
+    "static_instructions": 37
+  },
+  {
+    "name": "rvv_mf2_reuse",
+    "code_sha256": "3aa52e7688eea9d5570dddfd3550cd2db0c4a91a3cc057d5a46c7a5a75ec0292",
+    "payload_begin": "0x80000920",
+    "payload_end": "0x800009dc",
+    "group": 32,
+    "mode": "reuse",
+    "expected_instret": 859,
+    "static_instructions": 47
+  }
+]

@@ -1,0 +1,2622 @@
+{
+  "status": "pass",
+  "cwd": "/mnt/d/Mayyyyyy/WorkSpaces/\u65e5\u5e38\u5de5\u4f5c\u533a1/2026\u6bd4\u8d5b\u89c4\u5212/RISCV_vdot",
+  "scope": "local application + reference only, no RTL simulation",
+  "build_argv": [
+    "make",
+    "-C",
+    "/home/lenovo1227/xs-vdot-dev/nexus-am/apps/vdot-rvv-equiv-v1-words",
+    "image",
+    "ARCH=riscv64-xs",
+    "LINUX_GNU_TOOLCHAIN=1",
+    "MARCH=rv64gcv",
+    "CC=riscv64-linux-gnu-gcc",
+    "AS=riscv64-linux-gnu-gcc",
+    "-j2"
+  ],
+  "AM_HOME": "/home/lenovo1227/xs-vdot-dev/nexus-am",
+  "build_exit": 0,
+  "reference_sha256": "5ba6caf77513904c6ea541c4c145720a6bebe63f983eefa5b73e53441069c872",
+  "image_sha256": "c457fb76bb300f12efabcdb99cc060582640c2cb76c9dacda9549489cf84a578",
+  "cases": [
+    {
+      "case": 0,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 0,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 0,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 1,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 1,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 1,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 2,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 2,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 2,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 3,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 3,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 3,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 4,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 4,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 4,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 5,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 5,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 5,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 6,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 6,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 6,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 7,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 7,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 7,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 8,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 8,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 8,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 9,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 9,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 9,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 10,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 10,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 10,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 11,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 11,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 11,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 12,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 12,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 12,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 13,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 13,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 13,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 14,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 14,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 14,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 15,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 15,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 15,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 16,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 16,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 16,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 17,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 17,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 17,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 18,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 18,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 18,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 19,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 19,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 19,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 20,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 20,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 20,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 21,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 21,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 21,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 22,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 22,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 22,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 23,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 23,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 23,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 24,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 24,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 24,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 25,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 25,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 25,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 26,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 26,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 26,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 27,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 27,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 27,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 28,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 28,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 28,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 29,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 29,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 29,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 30,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 30,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 30,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 31,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 31,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 31,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 32,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 32,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 32,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 33,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 33,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 33,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 34,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 34,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 34,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 35,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 35,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 35,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 36,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 36,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 36,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 37,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 37,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 37,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 38,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 38,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 38,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 39,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 39,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 39,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 40,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 40,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 40,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 41,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 41,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 41,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 42,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 42,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 42,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 43,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 43,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 43,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 44,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 44,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 44,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 45,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 45,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 45,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 46,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 46,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 46,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 47,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 47,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 47,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 48,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 48,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 48,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 49,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 49,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 49,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 50,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 50,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 50,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 51,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 51,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 51,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 52,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 52,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 52,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 53,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 53,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 53,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 54,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 54,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 54,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 55,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 55,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 55,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 56,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 56,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 56,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 57,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 57,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 57,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 58,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 58,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 58,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 59,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 59,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 59,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 60,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 60,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 60,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 61,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 61,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 61,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 62,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 62,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 62,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 63,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 63,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 63,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 64,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 64,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 64,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 65,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 65,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 65,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 66,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 66,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 66,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 67,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 67,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 67,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 68,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 68,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 68,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 69,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 69,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 69,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 70,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 70,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 70,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 71,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 71,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 71,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 72,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 72,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 72,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 73,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 73,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 73,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 74,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 74,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 74,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 75,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 75,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 75,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 76,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 76,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 76,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 77,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 77,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 77,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 78,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 78,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 78,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 79,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 79,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 79,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 80,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 80,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 80,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 81,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 81,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 81,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 82,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 82,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 82,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 83,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 83,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 83,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 84,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 84,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 84,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 85,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 85,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 85,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 86,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 86,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 86,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 87,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 87,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 87,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 88,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 88,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 88,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 89,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 89,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 89,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 90,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 90,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 90,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 91,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 91,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 91,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 92,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 92,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 92,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 93,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 93,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 93,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 94,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 94,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 94,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 95,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 95,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 95,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 96,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 96,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 96,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 97,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 97,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 97,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 98,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 98,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 98,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 99,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 99,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 99,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 100,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 100,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 100,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 101,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 101,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 101,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 102,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 102,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 102,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 103,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 103,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 103,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 104,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 104,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 104,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 105,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 105,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 105,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 106,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 106,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 106,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 107,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 107,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 107,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 108,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 108,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 108,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 109,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 109,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 109,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 110,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 110,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 110,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 111,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 111,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 111,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 112,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 112,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 112,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 113,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 113,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 113,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 114,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 114,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 114,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 115,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 115,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 115,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 116,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 116,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 116,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 117,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 117,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 117,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 118,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 118,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 118,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 119,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 119,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 119,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 120,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 120,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 120,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 121,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 121,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 121,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 122,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 122,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 122,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 123,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 123,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 123,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 124,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 124,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 124,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 125,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 125,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 125,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 126,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 126,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 126,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 127,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 127,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 127,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 128,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 128,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 128,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 129,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 129,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 129,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 130,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 130,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 130,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 131,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 131,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 131,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 132,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 132,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 132,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 133,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 133,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 133,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 134,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 134,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 134,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 135,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 135,
+      "variant": "rvv_m1",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 135,
+      "variant": "rvv_mf2",
+      "steps": 44,
+      "pass": true
+    },
+    {
+      "case": 136,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 136,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 136,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 137,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 137,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 137,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 138,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 138,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 138,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 139,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 139,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 139,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 140,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 140,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 140,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 141,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 141,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 141,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 142,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 142,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 142,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 143,
+      "variant": "native",
+      "steps": 43,
+      "pass": true
+    },
+    {
+      "case": 143,
+      "variant": "rvv_m1",
+      "steps": 51,
+      "pass": true
+    },
+    {
+      "case": 143,
+      "variant": "rvv_mf2",
+      "steps": 51,
+      "pass": true
+    }
+  ],
+  "main": {
+    "return": 0,
+    "steps": 92422,
+    "putc_intercepted": true
+  },
+  "negative_check": "in-memory expected byte flip rejected",
+  "negative_return": 1
+}

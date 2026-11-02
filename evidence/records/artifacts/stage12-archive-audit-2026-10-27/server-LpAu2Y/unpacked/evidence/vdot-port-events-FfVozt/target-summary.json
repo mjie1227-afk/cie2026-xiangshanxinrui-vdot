@@ -1,0 +1,174 @@
+[
+  {
+    "id": 0,
+    "pc": 2147484016,
+    "instruction": 2182160471,
+    "rob": [
+      0,
+      45
+    ],
+    "pdest": 2,
+    "rename_edge": 15502,
+    "events": [
+      {
+        "kind": "rename_handshake",
+        "edge_time": 15502,
+        "lane": 0,
+        "timer_before": 7701,
+        "target_id": 0
+      },
+      {
+        "kind": "iq_offer",
+        "edge_time": 15630,
+        "port": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.io_fromVfIQ_2_0",
+        "ready": 1,
+        "target_id": 0
+      },
+      {
+        "kind": "exu_in_fire",
+        "edge_time": 15636,
+        "scope": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_4",
+        "ready": 1,
+        "data": null,
+        "target_id": 0
+      },
+      {
+        "kind": "exu_out_fire",
+        "edge_time": 15654,
+        "scope": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_4",
+        "ready": 1,
+        "data": 193493894915827753725904445729816656208,
+        "target_id": 0
+      },
+      {
+        "kind": "writeback_to_ctrl",
+        "edge_time": 15654,
+        "port": "io_toCtrlBlock_writeback_17",
+        "target_id": 0
+      },
+      {
+        "kind": "rob_commit",
+        "edge_time": 15658,
+        "lane": 0,
+        "target_id": 0
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "pc": 2147484020,
+    "instruction": 2130315,
+    "rob": [
+      0,
+      46
+    ],
+    "pdest": 56,
+    "rename_edge": 15504,
+    "events": [
+      {
+        "kind": "rename_handshake",
+        "edge_time": 15504,
+        "lane": 0,
+        "timer_before": 7702,
+        "target_id": 1
+      },
+      {
+        "kind": "iq_offer",
+        "edge_time": 15658,
+        "port": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.io_fromVfIQ_0_0",
+        "ready": 1,
+        "target_id": 1
+      },
+      {
+        "kind": "exu_in_fire",
+        "edge_time": 15664,
+        "scope": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus",
+        "ready": 1,
+        "data": null,
+        "target_id": 1
+      },
+      {
+        "kind": "exu_out_fire",
+        "edge_time": 15668,
+        "scope": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus",
+        "ready": 1,
+        "data": 4294966548,
+        "target_id": 1
+      },
+      {
+        "kind": "writeback_to_ctrl",
+        "edge_time": 15668,
+        "port": "io_toCtrlBlock_writeback_13",
+        "target_id": 1
+      },
+      {
+        "kind": "rob_commit",
+        "edge_time": 15672,
+        "lane": 0,
+        "target_id": 1
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "pc": 2147484024,
+    "instruction": 1376264791,
+    "rob": [
+      0,
+      47
+    ],
+    "pdest": 57,
+    "rename_edge": 15506,
+    "events": [
+      {
+        "kind": "rename_handshake",
+        "edge_time": 15506,
+        "lane": 0,
+        "timer_before": 7703,
+        "target_id": 2
+      },
+      {
+        "kind": "iq_offer",
+        "edge_time": 15658,
+        "port": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.io_fromVfIQ_0_1",
+        "ready": 0,
+        "target_id": 2
+      },
+      {
+        "kind": "iq_offer",
+        "edge_time": 15662,
+        "port": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.io_fromVfIQ_0_1",
+        "ready": 1,
+        "target_id": 2
+      },
+      {
+        "kind": "exu_in_fire",
+        "edge_time": 15668,
+        "scope": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_1",
+        "ready": 1,
+        "data": null,
+        "target_id": 2
+      },
+      {
+        "kind": "exu_out_fire",
+        "edge_time": 15672,
+        "scope": "TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_1",
+        "ready": 1,
+        "data": 260215927645423530869795116801079640064,
+        "target_id": 2
+      },
+      {
+        "kind": "writeback_to_ctrl",
+        "edge_time": 15672,
+        "port": "io_toCtrlBlock_writeback_14",
+        "target_id": 2
+      },
+      {
+        "kind": "rob_commit",
+        "edge_time": 15676,
+        "lane": 0,
+        "target_id": 2
+      }
+    ]
+  }
+]

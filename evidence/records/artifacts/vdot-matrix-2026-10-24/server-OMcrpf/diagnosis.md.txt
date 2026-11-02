@@ -1,0 +1,23 @@
+# 异常矩阵首次失败：mtval 指令信息缺口
+
+后续状态：修复后的f9653532…emu已在vdot-mtval-build-xYGYlZ通过原异常64例及所有必要回归，参考库和镜像不变；[整核验收](../../vdot-mtval-fix-2026-10-24/server-xYGYlZ/review.json)。以下是旧失败的定位过程，保留追溯，不再作为待采集或待修复指令。
+
+用户回传中，60例/15种相等关系的重叠测试已通过显式源码NEMU、DiffTest、GOOD TRAP和退出0。异常应用构建0、运行1，总退出1；五项固定产物前后身份检查通过。完整远端日志未下载；[回传](user-output.txt)、[核验](review.json)。
+
+失败原文：`mtval different at pc = 0x0080000218, right=0x0020818b, wrong=0`。当前 DiffTest `refproxy.cpp:214–224` 明确 right 为参考值、wrong 为DUT值。参考端指令是 masked vdot.vv v3,v2,v1。后续[上下文回传](context-confirmed/user-context.txt)补齐case0 legal-before PASS、参考mcause=2/mepc=0x8000021c及服务器ELF映射；结合顺序矩阵和VL1/vm0已锁定case1 short-1-vm0。故障指令是0x8000021c处0x0020818b；比较PC 0x80000218实际是前一条sd t0,40(s0)。寄存器/CSR转储为参考端，不能当作直接读出的DUT全状态。ABORT PC=0x8000016e与比较PC不同，不能互相替代。
+
+已核对当前本地接入源码（与先前交付方案一致，未在本轮修改）：
+
+- `backend/fu/wrapper/VDot.scala:26–31` 在执行阶段按真实VL产生illegalInstr，短VL不经过译码非法判定。
+- `backend/decode/VecExceptionGen.scala:296–299` 的vdot译码非法条件只含vtype/SEW/LMUL/vstart；`DecodeStage.scala:128–134,294–295` 只有已译码非法指令才进入trapInstInfo。
+- `backend/fu/NewCSR/TrapInstMod.scala` 输入为译码trapInstInfo、CSR执行异常faultCsrUop和ROB flush；本次VDot执行异常没有接入携带指令位的通道。
+- `TrapEntryMEvent.scala:55,71,82–90,122` 对非法指令选择trapInst；记录无效时值为0。
+- NEMU `.config:97` 为CONFIG_TVAL_EX_II=y；`system/intr.c:288–290` 因而对EX_II/EX_VI写cpu.instr。该配置此前固定SHA与服务器用户记录一致。
+
+这些证据支持“新增VDot执行期非法没有同时交付异常指令位”这一强推断；本轮无波形，未证明具体流水拍。不能把它简化为整个香山都选择mtval=0，也不能把NEMU开关关闭视为已修复接入缺口。
+
+失败上下文及服务器ELF映射现已补齐，不再重复采集。下一步修复设计应把准确机器码及指令身份接入异常记录/提交路径，并验证flush、年轻指令覆盖、压缩指令和CSR异常优先级不受影响。不能在译码时简单把所有合法vdot塞进单槽异常记录器，也不能用测试程序提前写mtval掩盖差异。
+
+当前固定emu/参考库不能通过这个失败点；本轮按用户“沿用现有emu和源码NEMU”的要求保留它们，没有改变配置、关闭比较或发起重建。整核修复若需要新emu，应另存新版本并保留本次60例成功及失败证据。剩余异常用例未验收，后续依赖/竞争/取消和性能尚未推进。
+
+异常镜像SHA256=e52ef47823bee34fded28c9d0aa96b924a17fff6fda52ca36aa7ccf4f2f19302；实际argv已回传，固定emu/源码库/Flash、seed1、300万周期/1800秒与入口一致。内部TrapInstMod有效位仍是源码推断，尚未局部测试或波形实测。后续需以实际执行期非法及对应原始机器码/FTQ身份设计补丁，先局部验证，再另存emu并在原NEMU下验收；本轮未实施补丁或构建。

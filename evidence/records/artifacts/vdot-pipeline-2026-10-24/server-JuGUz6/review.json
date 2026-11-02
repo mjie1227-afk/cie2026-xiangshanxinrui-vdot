@@ -1,0 +1,111 @@
+{
+  "status": "PASS: directed architectural suite only",
+  "source": "user terminal excerpt; full remote logs not downloaded",
+  "attachment_sha256": "4748399895dc39afd8e704578759685d3723f70c47bc1744fdb1ffd26935989a",
+  "log_dir": "/root/private_data/mj/xiangshan/evidence/vdot-pipeline-JuGUz6",
+  "package_dir": "/root/private_data/mj/xiangshan/evidence/vdot-pipeline-package-bL1TRV",
+  "package_expected_sha256": "ec78621c3a8c4d227c35b3829780aed093a191e95c0b0defab0bbe4410ea7d6a",
+  "package_and_source_checks": "reported OK",
+  "stages": {
+    "vdot-deps-build": {
+      "exit": 0,
+      "end": "2026-10-24T21:46:03+08:00",
+      "start": "2026-10-24T21:46:01+08:00",
+      "wall_seconds": 2.0
+    },
+    "vdot-mixed-build": {
+      "exit": 0,
+      "end": "2026-10-24T21:46:04+08:00",
+      "start": "2026-10-24T21:46:03+08:00",
+      "wall_seconds": 1.0
+    },
+    "vdot-cancel-csr-build": {
+      "exit": 0,
+      "end": "2026-10-24T21:46:05+08:00",
+      "start": "2026-10-24T21:46:04+08:00",
+      "wall_seconds": 1.0
+    },
+    "vdot-deps": {
+      "exit": 0,
+      "end": "2026-10-24T21:50:13+08:00",
+      "start": "2026-10-24T21:46:06+08:00",
+      "wall_seconds": 247.0
+    },
+    "vdot-mixed": {
+      "exit": 0,
+      "end": "2026-10-24T21:53:22+08:00",
+      "start": "2026-10-24T21:50:15+08:00",
+      "wall_seconds": 187.0
+    },
+    "vdot-cancel-csr": {
+      "exit": 0,
+      "end": "2026-10-24T22:00:33+08:00",
+      "start": "2026-10-24T21:53:24+08:00",
+      "wall_seconds": 429.0
+    }
+  },
+  "apps": {
+    "vdot-deps": {
+      "exit": 0,
+      "accepted": true,
+      "reference": "/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so",
+      "difftest_enabled": true,
+      "good_trap_pc": "0x80000f54",
+      "marker": "PASS VDOT_DEPS cases=48 programs=12",
+      "image_sha256": "0d0daaabbfaeb77556a559d88bf036182f604529588f4602dca73ebeb8dac593",
+      "identity_record": "/root/private_data/mj/xiangshan/evidence/vdot-pipeline-JuGUz6/vdot-deps/identity.sha256"
+    },
+    "vdot-mixed": {
+      "exit": 0,
+      "accepted": true,
+      "reference": "/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so",
+      "difftest_enabled": true,
+      "good_trap_pc": "0x80001562",
+      "marker": "PASS VDOT_MIXED cases=32 programs=8",
+      "image_sha256": "166675d3c93d1dfc11178c8ce26a7301af88d6f91030e5cfae6bbfc0dcd094c6",
+      "identity_record": "/root/private_data/mj/xiangshan/evidence/vdot-pipeline-JuGUz6/vdot-mixed/identity.sha256"
+    },
+    "vdot-cancel-csr": {
+      "exit": 0,
+      "accepted": true,
+      "reference": "/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so",
+      "difftest_enabled": true,
+      "good_trap_pc": "0x80001568",
+      "marker": "PASS VDOT_CANCEL_CSR cases=40 branch=32 precise_trap=8",
+      "image_sha256": "3e0f4efa7cf32376768f72d52c78beb526bf4f3f12f16dab9f43a433c2e322bc",
+      "identity_record": "/root/private_data/mj/xiangshan/evidence/vdot-pipeline-JuGUz6/vdot-cancel-csr/identity.sha256"
+    }
+  },
+  "total_cases": 120,
+  "fixed_artifacts": "emu/reference/config/flash checks OK before run; after check exit0",
+  "emu_sha256": "f9653532fd2a4b9f0d0cc08c131f7c258d4b62c46e672c6886d6643aad926850",
+  "reference_sha256": "11b9f6807c36ed860e0c64cc4e58d27216b19335ecde1ce5797ba2d1cd057b74",
+  "overall_exit": 0,
+  "identities_after_exit": 0,
+  "final_marker": "VDOT_PIPELINE_ARCH_PASS",
+  "seed": 1,
+  "seed_evidence": "validated runner; seed lines not displayed in filtered excerpt",
+  "new_image_identity_values": "user supplied saved identity files; source echo transcribed in context-confirmed/user-output.txt; no live remote rehash by assistant",
+  "limitations": [
+    "no direct proof of simultaneous FU/port contention",
+    "no direct proof target VDot speculatively issued/completed then selectively canceled",
+    "no cycle-correlated CSR commit/ROB/physical destination waveform evidence",
+    "no equivalent RVV performance comparison"
+  ],
+  "next": "run a text-only bounded prefix locator for cancel_0, then choose a short waveform window; no full-suite replay",
+  "probe_symbols": {
+    "vdot-deps": {
+      "pipeline_0": "0x8000012c"
+    },
+    "vdot-mixed": {
+      "pipeline_0": "0x8000012c",
+      "pipeline_1": "0x80000364"
+    },
+    "vdot-cancel-csr": {
+      "cancel_0": "0x8000012c",
+      "cancel_branch_0": "0x80000204",
+      "cancel_wrongpath_0": "0x80000208",
+      "cancel_fault_8": "0x80000f80"
+    }
+  }
+}

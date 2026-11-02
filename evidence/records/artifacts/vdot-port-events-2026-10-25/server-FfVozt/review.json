@@ -1,0 +1,53 @@
+{
+  "status": "single-preissue-shared-port-contention-accepted",
+  "evidence_basis": "user-returned qualified trace/identity/coverage records, source-grounded signal mapping; no new local waveform scan",
+  "remote_dir": "/root/private_data/mj/xiangshan/evidence/vdot-port-events-FfVozt",
+  "script_exit": 0,
+  "tee_exit": 0,
+  "accepted_scope": "one VDot/VIOTA pair jointly requests pre-issue VfWB port0; one granted and one blocked, later both execute and retire",
+  "vdot": {
+    "pc": "0x80000174",
+    "word": "0x0020818b",
+    "rob": [
+      0,
+      46
+    ],
+    "pdest": 56,
+    "rename": 15504,
+    "request_grant": 15658,
+    "exu_in": 15664,
+    "exu_out_ctrl_wb": 15668,
+    "commit": 15672
+  },
+  "viota": {
+    "pc": "0x80000178",
+    "word": "0x52082257",
+    "rob": [
+      0,
+      47
+    ],
+    "pdest": 57,
+    "rename": 15506,
+    "request_blocked": 15658,
+    "later_grant": 15662,
+    "exu_in": 15668,
+    "exu_out_ctrl_wb": 15672,
+    "commit": 15676
+  },
+  "redirects_covering_pair": [],
+  "all_12_resource_valid_coverage": 2280,
+  "physical_writeback_co_requests": 0,
+  "physical_slots_ready_unknown_resources": [
+    10,
+    11
+  ],
+  "limitations": [
+    "not physical-result same-cycle collision",
+    "not all FU combinations or fairness proof",
+    "IQ readiness can also depend on read ports or busy tables; no exclusive blocking-cause claim",
+    "no continuous valid-hold claim between 15658 and 15662; no one-cycle-stall claim",
+    "out_ready is source constant, chosen not observed; grant resolved from actual input valid/ready",
+    "GTKWave user opened wave; detailed manual checkpoint and report screenshot pending"
+  ],
+  "next": "GTKWave 15650..15666ps seven-signal pre-issue arbiter checkpoint, then identity/completion view"
+}

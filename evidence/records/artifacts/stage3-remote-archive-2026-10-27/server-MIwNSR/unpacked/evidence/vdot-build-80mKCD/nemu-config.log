@@ -1,0 +1,21 @@
+make: Entering directory '/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU'
+/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/scripts/config.mk:20: \033[1;31mWarning: .config does not exists!\033[0m
+/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/scripts/config.mk:21: \033[1;31mTo build the project, first run 'make menuconfig'.\033[0m
+make[1]: Entering directory '/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/tools/kconfig'
++ CC confdata.c
++ CC expr.c
++ CC preprocess.c
++ CC symbol.c
++ CC util.c
++ YACC build/parser.tab.h
++ LEX build/lexer.lex.c
++ CC build/lexer.lex.c
++ CC build/parser.tab.c
++ CC conf.c
++ g++ /root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/tools/kconfig/build/conf
+make[1]: Leaving directory '/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/tools/kconfig'
+make[1]: Entering directory '/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/tools/fixdep'
++ CC fixdep.c
++ g++ /root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/tools/fixdep/build/fixdep
+make[1]: Leaving directory '/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/tools/fixdep'
+make: Leaving directory '/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU'

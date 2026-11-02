@@ -1,0 +1,78 @@
+-e 
+[mill] Generating Verilog files...
+Tue, 13 Oct 2026 23:38:00 +0800
+	Command being timed: "mill -i -Djvm-xmx=6G -Djvm-xss=256m xiangshan.test.runMain top.SimTop --target-dir build/rtl --config MinimalConfig --issue E.b --firtool-opt --repl-seq-mem --repl-seq-mem-file=SimTop.sv.conf --num-cores 1 --dump-fir --target systemverilog --split-verilog --firtool-opt -O=release --disable-annotation-unknown --lowering-options=explicitBitcast,disallowLocalVariables,disallowPortDeclSharing,locationInfoStyle=none --enable-difftest --full-stacktrace"
+	User time (seconds): 1417.84
+	System time (seconds): 237.69
+	Percent of CPU this job got: 216%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 12:46.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7294032
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 67898
+	Minor (reclaiming a frame) page faults: 4536405
+	Voluntary context switches: 6292240
+	Involuntary context switches: 94572
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+-e 
+[verilator] Generating C++ files...
+Tue, 13 Oct 2026 23:53:24 +0800
+	Command being timed: "verilator --exe -O3 --cc --top-module SimTop +define+VERILATOR=1 +define+PRINTF_COND=1 +define+RANDOMIZE_REG_INIT +define+RANDOMIZE_MEM_INIT +define+RANDOMIZE_GARBAGE_ASSIGN +define+RANDOMIZE_DELAY=0 -Wno-STMTDLY -Wno-WIDTH --max-num-width 150000 --assert --x-assign unique --output-split 30000 --output-split-cfuncs 30000 -I/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/rtl -I/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/generated-src -CFLAGS -I/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/common -I/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/config -DNOOP_HOME=\"/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan\" -I/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/generated-src -I/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/plugin/include -I/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/difftest -I/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build -DENABLE_CHISEL_DB -I/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build -DENABLE_CONSTANTIN -DREF_PROXY=NemuProxy -DREF_HOME=\"/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/NEMU\" -I/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/plugin/spikedasm -I/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/verilator -DVERILATOR -DNUM_CORES=1 --std=c++17 -DVERILATOR_4_210 -LDFLAGS -lsqlite3 -lz -lzstd -ldl -CFLAGS $(PGO_CFLAGS) -LDFLAGS $(PGO_LDFLAGS) -o /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/emu +define+DIFFTEST --instr-count-dpi 1 --no-timing +define+VERILATOR_5 --quiet-stats --trace -Mdir /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/emu-compile /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/rtl/SimTop.sv /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/vsrc/common/assert.v /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/vsrc/common/ref.v /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/vsrc/common/SimJTAG.v /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/common/common.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/common/compress.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/common/coverage.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/common/device.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/common/dut.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/common/elfloader.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/common/flash.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/common/golden.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/common/keyboard.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/common/lightsss.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/common/main.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/common/mpool.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/common/perf.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/common/query.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/common/ram.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/common/remote_bitbang.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/common/sdcard.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/common/SimJTAG.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/common/uart.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/common/vga.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/generated-src/difftest-dpic.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/difftest/difftest.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/difftest/difftrace.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/difftest/goldenmem.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/difftest/refproxy.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/chisel_db.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/constantin.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/plugin/spikedasm/spikedasm.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/verilator/emu.cpp /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/difftest/src/test/csrc/verilator/snapshot.cpp"
+	User time (seconds): 273.82
+	System time (seconds): 34.91
+	Percent of CPU this job got: 86%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:58.18
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7737048
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 4145806
+	Voluntary context switches: 175629
+	Involuntary context switches: 1851
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+-e 
+[c++] Compiling C++ files...
+Tue, 13 Oct 2026 23:59:23 +0800
+	Command being timed: "make -s VM_PARALLEL_BUILDS=1 OPT_SLOW=-O0 OPT_FAST=-O3 PGO_CFLAGS= PGO_LDFLAGS= -C /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/emu-compile -f /mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env/XiangShan/build/emu-compile/VSimTop.mk"
+	User time (seconds): 3426.40
+	System time (seconds): 167.83
+	Percent of CPU this job got: 332%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 17:59.77
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1302172
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 7823
+	Minor (reclaiming a frame) page faults: 54593091
+	Voluntary context switches: 867950
+	Involuntary context switches: 11294
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

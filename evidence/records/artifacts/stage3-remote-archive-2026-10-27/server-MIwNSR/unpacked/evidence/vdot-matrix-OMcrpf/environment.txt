@@ -1,0 +1,25 @@
+CWD=/root/private_data/mj/xiangshan
+AM_HOME=/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am
+NEMU_HOME=/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU
+2026-10-24T17:08:14+08:00
+riscv64-linux-gnu-gcc-12 (Ubuntu 12.4.0-2ubuntu1~24.04) 12.4.0
+REPO=/root/private_data/mj/xiangshan/vdot-dev-20261024/XiangShan
+/root/private_data/mj/xiangshan/vdot-dev-20261024/XiangShan
+16ae9ddcda54fc9a2fddffad73174cf793ac7814
+ M src/main/scala/xiangshan/Parameters.scala
+ M src/main/scala/xiangshan/backend/decode/DecodeUnit.scala
+ M src/main/scala/xiangshan/backend/decode/Instructions.scala
+ M src/main/scala/xiangshan/backend/decode/VecDecoder.scala
+ M src/main/scala/xiangshan/backend/decode/VecExceptionGen.scala
+ M src/main/scala/xiangshan/backend/decode/isa/bitfield/RiscvInst.scala
+ M src/main/scala/xiangshan/backend/fu/FuConfig.scala
+ M src/main/scala/xiangshan/backend/fu/FuType.scala
+?? src/main/scala/xiangshan/backend/fu/wrapper/VDot.scala
+?? src/test/scala/xiangshan/backend/fu/VDotLocalTest.scala
+REPO=/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU
+/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU
+a48a11f208ff81ad765591d83271d1b339fb3861
+ M src/isa/riscv64/include/isa-all-instr.h
+ M src/isa/riscv64/instr/decode.c
+ M src/isa/riscv64/instr/rvv/vcompute.h
+?? src/isa/riscv64/instr/rvv/vdot.h

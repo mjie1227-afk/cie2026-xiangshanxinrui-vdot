@@ -1,0 +1,3 @@
+COLLECTOR_EXIT=0
+TEE_EXIT=0
+ARCHIVE_DIR=/root/private_data/mj/xiangshan/evidence/stage2-missing-archive-LpAu2Y

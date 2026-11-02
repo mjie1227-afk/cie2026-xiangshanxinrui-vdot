@@ -1,0 +1,127 @@
+[
+  {
+    "file": "accepted-e2e.json",
+    "bytes": 996,
+    "sha256": "8f8f9f62c47228041609fea1384ed46f060b07109e37f6656b6442d2716f7c3e"
+  },
+  {
+    "file": "architecture-check.json",
+    "bytes": 195,
+    "sha256": "bbe04b859965ce17d1db3017dc04165514b584ac9cada385c63ccc50c6c51ea9"
+  },
+  {
+    "file": "architecture.argv.json",
+    "bytes": 461,
+    "sha256": "903dd60b157c7b697013315db51629714aa3576bfc01dddf81816eed6aa552c5"
+  },
+  {
+    "file": "architecture.log",
+    "bytes": 3100619,
+    "sha256": "3d2070eebd0e6b4dd61330d79fc7c5e00ef17a5fbb25796fa9f7fd6dff39b19c"
+  },
+  {
+    "file": "build.argv.json",
+    "bytes": 277,
+    "sha256": "9cc99920d8dc45b61b71dc8f221df738763858aebbfa4a910d0c9b1713d291a8"
+  },
+  {
+    "file": "build.log",
+    "bytes": 1355,
+    "sha256": "61c6e2cd7323b255ec70607d2dc90bef85c23f6f1cf55b4771584c08dc88107d"
+  },
+  {
+    "file": "comparisons.json",
+    "bytes": 2300,
+    "sha256": "a8f05e5fc576088cd6206e560a0be97e165617bd29b8ef35380748b22db17265"
+  },
+  {
+    "file": "compiler.txt",
+    "bytes": 265,
+    "sha256": "355385b8017ba58b16b0cf85e2ea8edaa7ae3d357f963828ef280b0d536ae1a3"
+  },
+  {
+    "file": "console.log",
+    "bytes": 11948,
+    "sha256": "351a5be747b3476b886eac4da7857d6fa6206dfd31c0ead1bcc12515d3e7be09"
+  },
+  {
+    "file": "disasm.txt",
+    "bytes": 229628,
+    "sha256": "209dd45f238e8ce5eb52eda8b01937a96bfd509c1eb7f1329360de92645f3f90"
+  },
+  {
+    "file": "environment.json",
+    "bytes": 230,
+    "sha256": "ff1331beb9c1bdf9dbc6142c4b78fee4a1a4e15f3236b775c204c447c21a0fe2"
+  },
+  {
+    "file": "exit-status.txt",
+    "bytes": 98,
+    "sha256": "5bbfb634771e148eea1fda44d74d2e2b281aa044fc179c3391d01f1268b7e19f"
+  },
+  {
+    "file": "identity-after.json",
+    "bytes": 597,
+    "sha256": "411ef71585d965b3978a4b1eea04fe819125c81281fe56cd848d5f94d114b2da"
+  },
+  {
+    "file": "identity-before.json",
+    "bytes": 597,
+    "sha256": "411ef71585d965b3978a4b1eea04fe819125c81281fe56cd848d5f94d114b2da"
+  },
+  {
+    "file": "kernel-identities.json",
+    "bytes": 3925,
+    "sha256": "32f9d52bf7f260f27358bd109843be4a3f527091fd0ee6790acaa2349df13d84"
+  },
+  {
+    "file": "matrix.json",
+    "bytes": 40695,
+    "sha256": "e8aa5dfc376d86bd6d3c70650c90a049a731d027f665ab89add231592772a842"
+  },
+  {
+    "file": "perf-context.json",
+    "bytes": 1551,
+    "sha256": "ebf18fdfdfd6355e11b7647364d5dc12b00a66aecea2a9bc8b7e0716371d094e"
+  },
+  {
+    "file": "processes-before.txt",
+    "bytes": 337,
+    "sha256": "eadf5b366d4f89e2da4af7d909afdf2b4ebbf7adf8715237fb7ad54d5e2a0063"
+  },
+  {
+    "file": "raw-statistics.json",
+    "bytes": 4827,
+    "sha256": "b91b250ed0e5f38d85c520a27f2f8707d184167b2b191d06c7478c14ec0c18fd"
+  },
+  {
+    "file": "repositories.txt",
+    "bytes": 16416,
+    "sha256": "621d6739b75e6bf80acdb24f6ab5d8343429385acaf5e51ab21997e3736b1231"
+  },
+  {
+    "file": "result.json",
+    "bytes": 1009,
+    "sha256": "c74af0b53084ebef14678e861da0d52dd57ea7a81a7b49095bb461efe7978cc7"
+  },
+  {
+    "file": "runtime-identities.json",
+    "bytes": 787,
+    "sha256": "1604e4c71e8f320cc7459aa4f60f2078cf47af44ea951333db9085d5a2714ca1"
+  },
+  {
+    "file": "samples.csv",
+    "bytes": 1192,
+    "sha256": "780d83896b3b1ec3f94adf6c202db2c881ff9cd969a869f1544d0cac38fccaf3"
+  },
+  {
+    "file": "samples.json",
+    "bytes": 7175,
+    "sha256": "e690be86025908e890d7dc877a74ab3b5365a9af2401c6c538730fb631200b9a"
+  },
+  {
+    "file": "symbols.nm",
+    "bytes": 6421,
+    "sha256": "6003a9b26d5955901bf5eb0ecc206197bebf94c1b081d9f09e2cb00bbde922aa"
+  }
+]

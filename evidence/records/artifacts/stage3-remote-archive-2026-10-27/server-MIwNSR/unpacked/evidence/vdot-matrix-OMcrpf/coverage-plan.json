@@ -1,0 +1,977 @@
+{
+  "partitions": [
+    [
+      1,
+      2,
+      3
+    ],
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      1,
+      0,
+      2
+    ],
+    [
+      1,
+      2,
+      0
+    ],
+    [
+      1,
+      1,
+      2
+    ],
+    [
+      1,
+      2,
+      1
+    ],
+    [
+      2,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      0
+    ]
+  ],
+  "exceptions": [
+    {
+      "name": "legal-before",
+      "cfg": [
+        8,
+        0,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 8,
+      "vt": 0,
+      "legal": true
+    },
+    {
+      "name": "short-1-vm0",
+      "cfg": [
+        1,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "vl": 1,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "short-1-vm1",
+      "cfg": [
+        1,
+        0,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 1,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "short-2-vm0",
+      "cfg": [
+        2,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "vl": 2,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "short-2-vm1",
+      "cfg": [
+        2,
+        0,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 2,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "short-3-vm0",
+      "cfg": [
+        3,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "vl": 3,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "short-3-vm1",
+      "cfg": [
+        3,
+        0,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 3,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "short-4-vm0",
+      "cfg": [
+        4,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "vl": 4,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "short-4-vm1",
+      "cfg": [
+        4,
+        0,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 4,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "short-5-vm0",
+      "cfg": [
+        5,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "vl": 5,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "short-5-vm1",
+      "cfg": [
+        5,
+        0,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 5,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "short-6-vm0",
+      "cfg": [
+        6,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "vl": 6,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "short-6-vm1",
+      "cfg": [
+        6,
+        0,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 6,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "short-7-vm0",
+      "cfg": [
+        7,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "vl": 7,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "short-7-vm1",
+      "cfg": [
+        7,
+        0,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 7,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "sew-1-vl0",
+      "cfg": [
+        0,
+        8,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 0,
+      "vt": 8,
+      "legal": false
+    },
+    {
+      "name": "sew-1-vl8",
+      "cfg": [
+        8,
+        8,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 8,
+      "vt": 8,
+      "legal": false
+    },
+    {
+      "name": "sew-2-vl0",
+      "cfg": [
+        0,
+        16,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 0,
+      "vt": 16,
+      "legal": false
+    },
+    {
+      "name": "sew-2-vl8",
+      "cfg": [
+        8,
+        16,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 4,
+      "vt": 16,
+      "legal": false
+    },
+    {
+      "name": "sew-3-vl0",
+      "cfg": [
+        0,
+        24,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 0,
+      "vt": 24,
+      "legal": false
+    },
+    {
+      "name": "sew-3-vl8",
+      "cfg": [
+        8,
+        24,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 2,
+      "vt": 24,
+      "legal": false
+    },
+    {
+      "name": "sew-4-vl0",
+      "cfg": [
+        0,
+        32,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 0,
+      "vt": 9223372036854775808,
+      "legal": false
+    },
+    {
+      "name": "sew-4-vl8",
+      "cfg": [
+        8,
+        32,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 0,
+      "vt": 9223372036854775808,
+      "legal": false
+    },
+    {
+      "name": "sew-5-vl0",
+      "cfg": [
+        0,
+        40,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 0,
+      "vt": 9223372036854775808,
+      "legal": false
+    },
+    {
+      "name": "sew-5-vl8",
+      "cfg": [
+        8,
+        40,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 0,
+      "vt": 9223372036854775808,
+      "legal": false
+    },
+    {
+      "name": "sew-6-vl0",
+      "cfg": [
+        0,
+        48,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 0,
+      "vt": 9223372036854775808,
+      "legal": false
+    },
+    {
+      "name": "sew-6-vl8",
+      "cfg": [
+        8,
+        48,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 0,
+      "vt": 9223372036854775808,
+      "legal": false
+    },
+    {
+      "name": "sew-7-vl0",
+      "cfg": [
+        0,
+        56,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 0,
+      "vt": 9223372036854775808,
+      "legal": false
+    },
+    {
+      "name": "sew-7-vl8",
+      "cfg": [
+        8,
+        56,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 0,
+      "vt": 9223372036854775808,
+      "legal": false
+    },
+    {
+      "name": "lmul-1-vl0",
+      "cfg": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        0
+      ],
+      "vl": 0,
+      "vt": 1,
+      "legal": false
+    },
+    {
+      "name": "lmul-1-vl8",
+      "cfg": [
+        8,
+        1,
+        0,
+        2,
+        0,
+        0
+      ],
+      "vl": 8,
+      "vt": 1,
+      "legal": false
+    },
+    {
+      "name": "lmul-2-vl0",
+      "cfg": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        0
+      ],
+      "vl": 0,
+      "vt": 2,
+      "legal": false
+    },
+    {
+      "name": "lmul-2-vl8",
+      "cfg": [
+        8,
+        2,
+        0,
+        2,
+        0,
+        0
+      ],
+      "vl": 8,
+      "vt": 2,
+      "legal": false
+    },
+    {
+      "name": "lmul-3-vl0",
+      "cfg": [
+        0,
+        3,
+        0,
+        2,
+        0,
+        0
+      ],
+      "vl": 0,
+      "vt": 3,
+      "legal": false
+    },
+    {
+      "name": "lmul-3-vl8",
+      "cfg": [
+        8,
+        3,
+        0,
+        2,
+        0,
+        0
+      ],
+      "vl": 8,
+      "vt": 3,
+      "legal": false
+    },
+    {
+      "name": "lmul-4-vl0",
+      "cfg": [
+        0,
+        4,
+        0,
+        2,
+        0,
+        0
+      ],
+      "vl": 0,
+      "vt": 9223372036854775808,
+      "legal": false
+    },
+    {
+      "name": "lmul-4-vl8",
+      "cfg": [
+        8,
+        4,
+        0,
+        2,
+        0,
+        0
+      ],
+      "vl": 0,
+      "vt": 9223372036854775808,
+      "legal": false
+    },
+    {
+      "name": "lmul-5-vl0",
+      "cfg": [
+        0,
+        5,
+        0,
+        2,
+        0,
+        0
+      ],
+      "vl": 0,
+      "vt": 5,
+      "legal": false
+    },
+    {
+      "name": "lmul-5-vl8",
+      "cfg": [
+        8,
+        5,
+        0,
+        2,
+        0,
+        0
+      ],
+      "vl": 2,
+      "vt": 5,
+      "legal": false
+    },
+    {
+      "name": "lmul-6-vl0",
+      "cfg": [
+        0,
+        6,
+        0,
+        2,
+        0,
+        0
+      ],
+      "vl": 0,
+      "vt": 6,
+      "legal": false
+    },
+    {
+      "name": "lmul-6-vl8",
+      "cfg": [
+        8,
+        6,
+        0,
+        2,
+        0,
+        0
+      ],
+      "vl": 4,
+      "vt": 6,
+      "legal": false
+    },
+    {
+      "name": "lmul-7-vl0",
+      "cfg": [
+        0,
+        7,
+        0,
+        2,
+        0,
+        0
+      ],
+      "vl": 0,
+      "vt": 7,
+      "legal": false
+    },
+    {
+      "name": "lmul-7-vl8",
+      "cfg": [
+        8,
+        7,
+        0,
+        2,
+        0,
+        0
+      ],
+      "vl": 8,
+      "vt": 7,
+      "legal": false
+    },
+    {
+      "name": "start-1-vl0-vm0",
+      "cfg": [
+        0,
+        0,
+        1,
+        2,
+        0,
+        0
+      ],
+      "vl": 0,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "start-1-vl0-vm1",
+      "cfg": [
+        0,
+        0,
+        1,
+        2,
+        0,
+        1
+      ],
+      "vl": 0,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "start-1-vl8-vm0",
+      "cfg": [
+        8,
+        0,
+        1,
+        2,
+        0,
+        0
+      ],
+      "vl": 8,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "start-1-vl8-vm1",
+      "cfg": [
+        8,
+        0,
+        1,
+        2,
+        0,
+        1
+      ],
+      "vl": 8,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "start-7-vl0-vm0",
+      "cfg": [
+        0,
+        0,
+        7,
+        2,
+        0,
+        0
+      ],
+      "vl": 0,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "start-7-vl0-vm1",
+      "cfg": [
+        0,
+        0,
+        7,
+        2,
+        0,
+        1
+      ],
+      "vl": 0,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "start-7-vl8-vm0",
+      "cfg": [
+        8,
+        0,
+        7,
+        2,
+        0,
+        0
+      ],
+      "vl": 8,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "start-7-vl8-vm1",
+      "cfg": [
+        8,
+        0,
+        7,
+        2,
+        0,
+        1
+      ],
+      "vl": 8,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "start-127-vl0-vm0",
+      "cfg": [
+        0,
+        0,
+        127,
+        2,
+        0,
+        0
+      ],
+      "vl": 0,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "start-127-vl0-vm1",
+      "cfg": [
+        0,
+        0,
+        127,
+        2,
+        0,
+        1
+      ],
+      "vl": 0,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "start-127-vl8-vm0",
+      "cfg": [
+        8,
+        0,
+        127,
+        2,
+        0,
+        0
+      ],
+      "vl": 8,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "start-127-vl8-vm1",
+      "cfg": [
+        8,
+        0,
+        127,
+        2,
+        0,
+        1
+      ],
+      "vl": 8,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "vs-off-vl0-vm0",
+      "cfg": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "vl": 0,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "vs-off-vl0-vm1",
+      "cfg": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "vl": 0,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "vs-off-vl8-vm0",
+      "cfg": [
+        8,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "vl": 8,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "vs-off-vl8-vm1",
+      "cfg": [
+        8,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "vl": 8,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "reserved-type-100",
+      "cfg": [
+        8,
+        256,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 0,
+      "vt": 9223372036854775808,
+      "legal": false
+    },
+    {
+      "name": "reserved-type-8000000000000000",
+      "cfg": [
+        8,
+        9223372036854775808,
+        0,
+        2,
+        0,
+        1
+      ],
+      "vl": 0,
+      "vt": 9223372036854775808,
+      "legal": false
+    },
+    {
+      "name": "encoding-neighbor-1",
+      "cfg": [
+        8,
+        0,
+        0,
+        2,
+        1,
+        1
+      ],
+      "vl": 8,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "encoding-neighbor-2",
+      "cfg": [
+        8,
+        0,
+        0,
+        2,
+        2,
+        1
+      ],
+      "vl": 8,
+      "vt": 0,
+      "legal": false
+    },
+    {
+      "name": "legal-after",
+      "cfg": [
+        8,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "vl": 8,
+      "vt": 0,
+      "legal": true
+    }
+  ]
+}

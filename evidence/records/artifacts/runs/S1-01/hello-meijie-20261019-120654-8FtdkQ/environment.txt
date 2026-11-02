@@ -1,0 +1,24 @@
+2026-10-19T12:16:59+08:00
+AM_HOME=/home/lenovo1227/xiangshan-learning/nexus-am
+XS_ENV=/mnt/d/Mayyyyyy/WorkSpaces/VScode/xs-env
+HELLO_DIR=/home/lenovo1227/xiangshan-learning/nexus-am/apps/hello-meijie
+IP_SOURCE=WSL eth0 IPv4
+REFERENCE_SOURCE=ready-to-run prebuilt library
+AM_PROVENANCE=existing snapshot from nexus-am 086a238062fdfb3281b745a537b361983d0154b5; not a Git checkout
+Linux LAPTOP-25CPL8L6 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+GNU Make 4.3
+Built for x86_64-pc-linux-gnu
+Copyright (C) 1988-2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+riscv64-linux-gnu-gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+GNU ld (GNU Binutils for Ubuntu) 2.42
+Copyright (C) 2024 Free Software Foundation, Inc.
+This program is free software; you may redistribute it under the terms of
+the GNU General Public License version 3 or (at your option) a later version.
+This program has absolutely no warranty.

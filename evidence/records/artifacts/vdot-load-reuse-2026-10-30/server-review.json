@@ -1,0 +1,1005 @@
+{
+  "status": "accepted",
+  "experiments": {
+    "load": {
+      "status": "accepted",
+      "experiment": "load",
+      "review_date": "2026-10-30",
+      "raw_directory": "vdot-load-retry-L4TEPC",
+      "original_files": 35,
+      "checks": [
+        {
+          "name": "matrix matches local delivered matrix",
+          "passed": true
+        },
+        {
+          "name": "package digest",
+          "passed": true
+        },
+        {
+          "name": "matrix matches archive",
+          "passed": true
+        },
+        {
+          "name": "runner matches local source",
+          "passed": true
+        },
+        {
+          "name": "source archive/hash/local main.c",
+          "passed": true
+        },
+        {
+          "name": "source archive/hash/local cases.S",
+          "passed": true
+        },
+        {
+          "name": "source archive/hash/local Makefile",
+          "passed": true
+        },
+        {
+          "name": "accepted prior run matches local archive",
+          "passed": true
+        },
+        {
+          "name": "core reference config flash before/after match baseline",
+          "passed": true
+        },
+        {
+          "name": "downloaded BIN matches runtime identity",
+          "passed": true
+        },
+        {
+          "name": "completed result totals",
+          "passed": true
+        },
+        {
+          "name": "all recorded stages exit zero",
+          "passed": true
+        },
+        {
+          "name": "wrapper exit zero",
+          "passed": true
+        },
+        {
+          "name": "recovery only replaces application build block",
+          "passed": true
+        },
+        {
+          "name": "recovery original runner hash",
+          "passed": true
+        },
+        {
+          "name": "reused source BIN ELF hashes",
+          "passed": true
+        },
+        {
+          "name": "recovery stage and no tee",
+          "passed": true
+        },
+        {
+          "name": "runtime argv",
+          "passed": true
+        },
+        {
+          "name": "recomputed runtime matches",
+          "passed": true
+        },
+        {
+          "name": "PASS DiffTest reference GOOD TRAP without failure or limit",
+          "passed": true
+        },
+        {
+          "name": "all raw samples equal JSON and CSV",
+          "passed": true
+        },
+        {
+          "name": "warmup/formal totals",
+          "passed": true
+        },
+        {
+          "name": "statistics and comparisons recalculated",
+          "passed": true
+        },
+        {
+          "name": "console stats and identities",
+          "passed": true
+        },
+        {
+          "name": "user-paste stats and identities",
+          "passed": true
+        },
+        {
+          "name": "BIN kernels and timing boundaries match delivered machine code",
+          "passed": true
+        },
+        {
+          "name": "disassembly matches BIN empty",
+          "passed": true
+        },
+        {
+          "name": "disassembly matches BIN native_tu",
+          "passed": true
+        },
+        {
+          "name": "disassembly matches BIN rvv_mf2_tu",
+          "passed": true
+        },
+        {
+          "name": "disassembly matches BIN native_ta",
+          "passed": true
+        },
+        {
+          "name": "disassembly matches BIN rvv_mf2_ta",
+          "passed": true
+        },
+        {
+          "name": "disassembly matches BIN native_ta_rr",
+          "passed": true
+        },
+        {
+          "name": "disassembly matches BIN rvv_mf2_ta_rr",
+          "passed": true
+        },
+        {
+          "name": "ELF architecture",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80000000",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80001590",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80001898",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x8000189a",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x800018b4",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x800018cc",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x800018d8",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80001904",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80001906",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x800019ca",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80001cfa",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80001fe2",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x8000233c",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80002344",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80002a52",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80002a88",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x800036c8",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80003780",
+          "passed": true
+        },
+        {
+          "name": "ELF symbols match kernel nm records",
+          "passed": true
+        },
+        {
+          "name": "nine complete full-run counters match log",
+          "passed": true
+        },
+        {
+          "name": "wrapper and emulator elapsed time agree",
+          "passed": true
+        },
+        {
+          "name": "raw files unchanged by review",
+          "passed": true
+        }
+      ],
+      "calls": 98,
+      "warmups": 35,
+      "formal_samples": 63,
+      "statistics": [
+        {
+          "variant": "empty",
+          "kind": "empty",
+          "mode": "empty",
+          "group": 0,
+          "dot_operations": 0,
+          "outputs": 0,
+          "dynamic_vector_loads": 0,
+          "final_output_bytes": 0,
+          "samples": 9,
+          "raw_cycle_min": 100,
+          "raw_cycle_median": 100,
+          "raw_cycle_max": 101,
+          "instret": 6,
+          "formal_cycles": [
+            100,
+            100,
+            100,
+            101,
+            100,
+            100,
+            100,
+            100,
+            100
+          ]
+        },
+        {
+          "variant": "native_tu",
+          "kind": "native",
+          "mode": "tu",
+          "group": 16,
+          "dot_operations": 128,
+          "outputs": 8,
+          "dynamic_vector_loads": 256,
+          "final_output_bytes": 128,
+          "samples": 9,
+          "raw_cycle_min": 2238,
+          "raw_cycle_median": 2239,
+          "raw_cycle_max": 2241,
+          "instret": 843,
+          "formal_cycles": [
+            2239,
+            2240,
+            2240,
+            2239,
+            2240,
+            2238,
+            2238,
+            2238,
+            2241
+          ]
+        },
+        {
+          "variant": "rvv_mf2_tu",
+          "kind": "rvv_mf2",
+          "mode": "tu",
+          "group": 16,
+          "dot_operations": 128,
+          "outputs": 8,
+          "dynamic_vector_loads": 256,
+          "final_output_bytes": 128,
+          "samples": 9,
+          "raw_cycle_min": 2260,
+          "raw_cycle_median": 2262,
+          "raw_cycle_max": 2262,
+          "instret": 997,
+          "formal_cycles": [
+            2262,
+            2261,
+            2260,
+            2262,
+            2262,
+            2262,
+            2262,
+            2262,
+            2260
+          ]
+        },
+        {
+          "variant": "native_ta",
+          "kind": "native",
+          "mode": "ta",
+          "group": 16,
+          "dot_operations": 128,
+          "outputs": 8,
+          "dynamic_vector_loads": 256,
+          "final_output_bytes": 128,
+          "samples": 9,
+          "raw_cycle_min": 1231,
+          "raw_cycle_median": 1235,
+          "raw_cycle_max": 1236,
+          "instret": 843,
+          "formal_cycles": [
+            1235,
+            1236,
+            1236,
+            1231,
+            1236,
+            1235,
+            1235,
+            1235,
+            1236
+          ]
+        },
+        {
+          "variant": "rvv_mf2_ta",
+          "kind": "rvv_mf2",
+          "mode": "ta",
+          "group": 16,
+          "dot_operations": 128,
+          "outputs": 8,
+          "dynamic_vector_loads": 256,
+          "final_output_bytes": 128,
+          "samples": 9,
+          "raw_cycle_min": 1392,
+          "raw_cycle_median": 1396,
+          "raw_cycle_max": 1398,
+          "instret": 997,
+          "formal_cycles": [
+            1398,
+            1397,
+            1396,
+            1392,
+            1396,
+            1393,
+            1398,
+            1398,
+            1396
+          ]
+        },
+        {
+          "variant": "native_ta_rr",
+          "kind": "native",
+          "mode": "ta_rr",
+          "group": 16,
+          "dot_operations": 128,
+          "outputs": 8,
+          "dynamic_vector_loads": 256,
+          "final_output_bytes": 128,
+          "samples": 9,
+          "raw_cycle_min": 1087,
+          "raw_cycle_median": 1089,
+          "raw_cycle_max": 1090,
+          "instret": 843,
+          "formal_cycles": [
+            1089,
+            1087,
+            1089,
+            1090,
+            1089,
+            1089,
+            1089,
+            1088,
+            1089
+          ]
+        },
+        {
+          "variant": "rvv_mf2_ta_rr",
+          "kind": "rvv_mf2",
+          "mode": "ta_rr",
+          "group": 16,
+          "dot_operations": 128,
+          "outputs": 8,
+          "dynamic_vector_loads": 256,
+          "final_output_bytes": 128,
+          "samples": 9,
+          "raw_cycle_min": 1352,
+          "raw_cycle_median": 1355,
+          "raw_cycle_max": 1357,
+          "instret": 997,
+          "formal_cycles": [
+            1357,
+            1354,
+            1352,
+            1357,
+            1355,
+            1357,
+            1357,
+            1354,
+            1352
+          ]
+        }
+      ],
+      "comparisons": [
+        {
+          "comparison": "same_implementation",
+          "kind": "native",
+          "before": "tu",
+          "after": "ta",
+          "before_cycles": 2239,
+          "after_cycles": 1235,
+          "ratio": 1.8129554655870446,
+          "time_reduction_percent": 44.841447074586874
+        },
+        {
+          "comparison": "same_implementation",
+          "kind": "native",
+          "before": "ta",
+          "after": "ta_rr",
+          "before_cycles": 1235,
+          "after_cycles": 1089,
+          "ratio": 1.1340679522497705,
+          "time_reduction_percent": 11.821862348178136
+        },
+        {
+          "comparison": "same_implementation",
+          "kind": "rvv_mf2",
+          "before": "tu",
+          "after": "ta",
+          "before_cycles": 2262,
+          "after_cycles": 1396,
+          "ratio": 1.6203438395415473,
+          "time_reduction_percent": 38.284703801945184
+        },
+        {
+          "comparison": "same_implementation",
+          "kind": "rvv_mf2",
+          "before": "ta",
+          "after": "ta_rr",
+          "before_cycles": 1396,
+          "after_cycles": 1355,
+          "ratio": 1.0302583025830259,
+          "time_reduction_percent": 2.936962750716332
+        },
+        {
+          "comparison": "same_schedule_rvv_over_native",
+          "mode": "tu",
+          "native_cycles": 2239,
+          "baseline_cycles": 2262,
+          "ratio": 1.0102724430549352,
+          "time_reduction_percent": 1.0167992926613634
+        },
+        {
+          "comparison": "same_schedule_rvv_over_native",
+          "mode": "ta",
+          "native_cycles": 1235,
+          "baseline_cycles": 1396,
+          "ratio": 1.1303643724696357,
+          "time_reduction_percent": 11.532951289398286
+        },
+        {
+          "comparison": "same_schedule_rvv_over_native",
+          "mode": "ta_rr",
+          "native_cycles": 1089,
+          "baseline_cycles": 1355,
+          "ratio": 1.2442607897153353,
+          "time_reduction_percent": 19.630996309963102
+        }
+      ],
+      "architecture_wall_seconds": 4002.807,
+      "emulator_host_seconds": 4002.743,
+      "good_trap_pc": "0x800018a2",
+      "application_sha256": "6436b127636a046afa8e9451270be3a48023ff21f4b86a0c1c194e41d217f54f",
+      "elf_sha256": "329aa7a1ac6a24deac9ed185f09026b4d60146a0d88308b66febe0aeb0ee36b0",
+      "full_run_counters": [
+        {
+          "time": 1131402,
+          "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+          "counter": "clock_cycle",
+          "value": 1131403
+        },
+        {
+          "time": 1131402,
+          "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+          "counter": "commitInstr",
+          "value": 479448
+        },
+        {
+          "time": 1131402,
+          "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+          "counter": "waitFenCycle",
+          "value": 3045
+        },
+        {
+          "time": 1131402,
+          "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+          "counter": "waitLoadCycle",
+          "value": 439148
+        },
+        {
+          "time": 1131402,
+          "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+          "counter": "waitStoreCycle",
+          "value": 390421
+        },
+        {
+          "time": 1131402,
+          "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+          "counter": "sbuffer_req_valid",
+          "value": 43684
+        },
+        {
+          "time": 1131402,
+          "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+          "counter": "sbuffer_req_fire",
+          "value": 25980
+        },
+        {
+          "time": 1131402,
+          "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+          "counter": "dcache_req_valid",
+          "value": 6477
+        },
+        {
+          "time": 1131402,
+          "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+          "counter": "dcache_req_fire",
+          "value": 6475
+        }
+      ],
+      "note": "恢复运行复用已构建镜像；本地缺少首次中断运行的完整目录及原构建耗时。当前源码、BIN、ELF与恢复记录匹配，完整重新仿真的结果独立验收；此缺项不影响本次性能比较。",
+      "new_simulation": false,
+      "scope": "same-task prewarmed raw windows; fixed seed; no per-resource causal attribution"
+    },
+    "tile": {
+      "status": "accepted",
+      "experiment": "tile",
+      "review_date": "2026-10-30",
+      "raw_directory": "vdot-tile-x9yIzN",
+      "original_files": 31,
+      "checks": [
+        {
+          "name": "matrix matches local delivered matrix",
+          "passed": true
+        },
+        {
+          "name": "package digest",
+          "passed": true
+        },
+        {
+          "name": "matrix matches archive",
+          "passed": true
+        },
+        {
+          "name": "runner matches local source",
+          "passed": true
+        },
+        {
+          "name": "source archive/hash/local main.c",
+          "passed": true
+        },
+        {
+          "name": "source archive/hash/local cases.S",
+          "passed": true
+        },
+        {
+          "name": "source archive/hash/local Makefile",
+          "passed": true
+        },
+        {
+          "name": "accepted prior run matches local archive",
+          "passed": true
+        },
+        {
+          "name": "core reference config flash before/after match baseline",
+          "passed": true
+        },
+        {
+          "name": "downloaded BIN matches runtime identity",
+          "passed": true
+        },
+        {
+          "name": "completed result totals",
+          "passed": true
+        },
+        {
+          "name": "all recorded stages exit zero",
+          "passed": true
+        },
+        {
+          "name": "wrapper exit zero",
+          "passed": true
+        },
+        {
+          "name": "build and tee exit zero",
+          "passed": true
+        },
+        {
+          "name": "runtime argv",
+          "passed": true
+        },
+        {
+          "name": "recomputed runtime matches",
+          "passed": true
+        },
+        {
+          "name": "PASS DiffTest reference GOOD TRAP without failure or limit",
+          "passed": true
+        },
+        {
+          "name": "all raw samples equal JSON and CSV",
+          "passed": true
+        },
+        {
+          "name": "warmup/formal totals",
+          "passed": true
+        },
+        {
+          "name": "statistics and comparisons recalculated",
+          "passed": true
+        },
+        {
+          "name": "console stats and identities",
+          "passed": true
+        },
+        {
+          "name": "user-paste stats and identities",
+          "passed": true
+        },
+        {
+          "name": "BIN kernels and timing boundaries match delivered machine code",
+          "passed": true
+        },
+        {
+          "name": "disassembly matches BIN empty",
+          "passed": true
+        },
+        {
+          "name": "disassembly matches BIN native_independent",
+          "passed": true
+        },
+        {
+          "name": "disassembly matches BIN rvv_mf2_independent",
+          "passed": true
+        },
+        {
+          "name": "disassembly matches BIN native_reuse",
+          "passed": true
+        },
+        {
+          "name": "disassembly matches BIN rvv_mf2_reuse",
+          "passed": true
+        },
+        {
+          "name": "ELF architecture",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80000000",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80000a60",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80000d5e",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80000d60",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80000d7a",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80000d92",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80000d9e",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80000dca",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80000dcc",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80000e90",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x800011c0",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x800014a8",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80001802",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x8000180a",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80001f18",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80001f50",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80002768",
+          "passed": true
+        },
+        {
+          "name": "ELF allocated section matches BIN 0x80002840",
+          "passed": true
+        },
+        {
+          "name": "ELF symbols match kernel nm records",
+          "passed": true
+        },
+        {
+          "name": "nine complete full-run counters match log",
+          "passed": true
+        },
+        {
+          "name": "wrapper and emulator elapsed time agree",
+          "passed": true
+        },
+        {
+          "name": "raw files unchanged by review",
+          "passed": true
+        }
+      ],
+      "calls": 70,
+      "warmups": 25,
+      "formal_samples": 45,
+      "statistics": [
+        {
+          "variant": "empty",
+          "kind": "empty",
+          "mode": "empty",
+          "group": 0,
+          "dot_operations": 0,
+          "outputs": 0,
+          "dynamic_vector_loads": 0,
+          "final_output_bytes": 0,
+          "samples": 9,
+          "raw_cycle_min": 100,
+          "raw_cycle_median": 100,
+          "raw_cycle_max": 101,
+          "instret": 6,
+          "formal_cycles": [
+            100,
+            100,
+            100,
+            100,
+            101,
+            100,
+            100,
+            100,
+            100
+          ]
+        },
+        {
+          "variant": "native_independent",
+          "kind": "native",
+          "mode": "independent",
+          "group": 32,
+          "dot_operations": 128,
+          "outputs": 4,
+          "dynamic_vector_loads": 256,
+          "final_output_bytes": 64,
+          "samples": 9,
+          "raw_cycle_min": 1076,
+          "raw_cycle_median": 1077,
+          "raw_cycle_max": 1087,
+          "instret": 950,
+          "formal_cycles": [
+            1076,
+            1076,
+            1079,
+            1077,
+            1076,
+            1080,
+            1077,
+            1080,
+            1087
+          ]
+        },
+        {
+          "variant": "rvv_mf2_independent",
+          "kind": "rvv_mf2",
+          "mode": "independent",
+          "group": 32,
+          "dot_operations": 128,
+          "outputs": 4,
+          "dynamic_vector_loads": 256,
+          "final_output_bytes": 64,
+          "samples": 9,
+          "raw_cycle_min": 1262,
+          "raw_cycle_median": 1268,
+          "raw_cycle_max": 1270,
+          "instret": 1115,
+          "formal_cycles": [
+            1262,
+            1262,
+            1269,
+            1266,
+            1269,
+            1268,
+            1270,
+            1262,
+            1269
+          ]
+        },
+        {
+          "variant": "native_reuse",
+          "kind": "native",
+          "mode": "reuse",
+          "group": 32,
+          "dot_operations": 128,
+          "outputs": 4,
+          "dynamic_vector_loads": 128,
+          "final_output_bytes": 64,
+          "samples": 9,
+          "raw_cycle_min": 787,
+          "raw_cycle_median": 790,
+          "raw_cycle_max": 792,
+          "instret": 694,
+          "formal_cycles": [
+            790,
+            788,
+            789,
+            792,
+            787,
+            790,
+            790,
+            787,
+            790
+          ]
+        },
+        {
+          "variant": "rvv_mf2_reuse",
+          "kind": "rvv_mf2",
+          "mode": "reuse",
+          "group": 32,
+          "dot_operations": 128,
+          "outputs": 4,
+          "dynamic_vector_loads": 128,
+          "final_output_bytes": 64,
+          "samples": 9,
+          "raw_cycle_min": 1041,
+          "raw_cycle_median": 1043,
+          "raw_cycle_max": 1044,
+          "instret": 859,
+          "formal_cycles": [
+            1043,
+            1044,
+            1044,
+            1041,
+            1044,
+            1042,
+            1041,
+            1043,
+            1044
+          ]
+        }
+      ],
+      "comparisons": [
+        {
+          "comparison": "same_implementation",
+          "kind": "native",
+          "before": "independent",
+          "after": "reuse",
+          "before_cycles": 1077,
+          "after_cycles": 790,
+          "ratio": 1.3632911392405063,
+          "time_reduction_percent": 26.64809656453111
+        },
+        {
+          "comparison": "same_implementation",
+          "kind": "rvv_mf2",
+          "before": "independent",
+          "after": "reuse",
+          "before_cycles": 1268,
+          "after_cycles": 1043,
+          "ratio": 1.2157238734419942,
+          "time_reduction_percent": 17.744479495268138
+        },
+        {
+          "comparison": "same_schedule_rvv_over_native",
+          "mode": "independent",
+          "native_cycles": 1077,
+          "baseline_cycles": 1268,
+          "ratio": 1.1773444753946147,
+          "time_reduction_percent": 15.063091482649838
+        },
+        {
+          "comparison": "same_schedule_rvv_over_native",
+          "mode": "reuse",
+          "native_cycles": 790,
+          "baseline_cycles": 1043,
+          "ratio": 1.320253164556962,
+          "time_reduction_percent": 24.256951102588687
+        }
+      ],
+      "architecture_wall_seconds": 2768.5,
+      "emulator_host_seconds": 2768.446,
+      "good_trap_pc": "0x80000d68",
+      "application_sha256": "a95345da01961102dc61f8a2345da8d1beb25a15dce1080edcb72390c18255c5",
+      "elf_sha256": "e8e6f03258cd3e31c208e066e40ffaad7b84cfbef061ca66ad385646b372d88f",
+      "full_run_counters": [
+        {
+          "time": 780545,
+          "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+          "counter": "clock_cycle",
+          "value": 780546
+        },
+        {
+          "time": 780545,
+          "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+          "counter": "commitInstr",
+          "value": 331391
+        },
+        {
+          "time": 780545,
+          "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+          "counter": "waitFenCycle",
+          "value": 2091
+        },
+        {
+          "time": 780545,
+          "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+          "counter": "waitLoadCycle",
+          "value": 303200
+        },
+        {
+          "time": 780545,
+          "path": "SimTop.l_soc.core_with_l2.core.backend.inner.ctrlBlock.rob",
+          "counter": "waitStoreCycle",
+          "value": 273231
+        },
+        {
+          "time": 780545,
+          "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+          "counter": "sbuffer_req_valid",
+          "value": 30397
+        },
+        {
+          "time": 780545,
+          "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+          "counter": "sbuffer_req_fire",
+          "value": 18048
+        },
+        {
+          "time": 780545,
+          "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+          "counter": "dcache_req_valid",
+          "value": 4717
+        },
+        {
+          "time": 780545,
+          "path": "SimTop.l_soc.core_with_l2.core.memBlock.inner.sbuffer",
+          "counter": "dcache_req_fire",
+          "value": 4714
+        }
+      ],
+      "note": "新应用构建和完整运行均有日志。",
+      "new_simulation": false,
+      "scope": "same-task prewarmed raw windows; fixed seed; no per-resource causal attribution"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+--- before/reports/archive-status.md
++++ reports/archive-status.md
+@@ -60,4 +60,4 @@
+ 
+ 仅复制/压缩/校验已有文件，不执行原分析脚本、不启动emu或构建。缺必需文件、记录的VCD大小不符、源变化、空间不足或成员哈希不符则停止，保留诊断，不自动重新采波形。两份VCD会被读取以生成归档哈希和压缩包，这是迁移取证，不是重新分析波形事件。
+ 
+-本地小夹具已验证JSONL和指定缺失VCD入包、相同内容跳过、其他VCD排除及源不变；Bash语法检查通过。服务器补包尚未执行，不记为缺口已闭合。成功需同时有`STAGE2_MISSING_ARCHIVE_READY`、`COLLECTOR_EXIT=0`、`TEE_EXIT=0`和`STAGE2_MISSING_ARCHIVE_SCRIPT_EXIT=0`。下载补包后再核验；截图和录屏继续后置。
++本地小夹具已验证JSONL和指定缺失VCD入包、相同内容跳过、其他VCD排除及源不变；Bash语法检查通过。LpAu2Y回传显示远端补包成功：128来源文件、包90483004字节、collector/tee/script均0；[本地接收目录](../artifacts/stage12-archive-audit-2026-10-27/server-LpAu2Y/README.md)已建，下载与成员校验尚未完成，不记为本地缺口已闭合。成功需同时有`STAGE2_MISSING_ARCHIVE_READY`、`COLLECTOR_EXIT=0`、`TEE_EXIT=0`和`STAGE2_MISSING_ARCHIVE_SCRIPT_EXIT=0`。下载补包后再核验；截图和录屏继续后置。
+--- before/docs/HANDOFF.md
++++ docs/HANDOFF.md
+@@ -6,7 +6,7 @@
+ 
+ MIwNSR的5个文件已本地核验：包2233424字节/SHA48882ae4…，268成员/264来源文件/10运行目录一致；四组162调用（36预热/126正式）原日志/JSON/CSV逐条一致，36组统计未变。[结果](../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/local-verification.json)与同目录unpacked/evidence/保存完整原件。不重复下载、打包或仿真。首次校验因开发文件与实际heredoc末尾换行不同停止，已核对实际交付命令逐字一致，原包未改。
+ 
+-[归档清单](../reports/archive-status.md)：第一阶段主报告70处本地引用均存在，原VADD VCD仍在本机WSL、大小匹配，未扫描内容；旧顶层构建退出码当时未记录，不补造。第二阶段主要架构/修复日志已落地，尚缺10个代表性取证目录的完整事件/日志及Cpa0HX、FNmKGI两份VCD（原始合计934773320字节）。[仅补缺失项命令](../artifacts/stage12-archive-audit-2026-10-27/server-paste-command.txt)已通过夹具及Bash语法检查，服务器未执行。已有EfQru1 VCD保留，不重复打包。
++[归档清单](../reports/archive-status.md)：第一阶段主报告70处本地引用均存在，原VADD VCD仍在本机WSL、大小匹配，未扫描内容；旧顶层构建退出码当时未记录，不补造。第二阶段主要架构/修复日志已落地，尚缺10个代表性取证目录的完整事件/日志及Cpa0HX、FNmKGI两份VCD（原始合计934773320字节）。[补包命令](../artifacts/stage12-archive-audit-2026-10-27/server-paste-command.txt)已在服务器完成LpAu2Y：128来源文件、包90483004字节、SHA0a834faa…，collector/tee/script均0。[接收目录](../artifacts/stage12-archive-audit-2026-10-27/server-LpAu2Y/README.md)已建，等待5文件下载和本地核验，不重复执行命令。已有EfQru1 VCD保留，不重复打包。
+ 
+ 截图和录屏由用户后续统一处理，[V3稿](../recording/stage3/README.md)与已有图继续复用。G3仍缺视频与最终包，不计整阶段通过。三类性能继续分别报告6.71/2.40/1.0009，小数组基本持平，不默认追加实验。
+ 
+--- before/PROGRESS.md
++++ PROGRESS.md
+@@ -63,7 +63,7 @@
+ ## 3. 下一次的前三步
+ 
+ 1. MIwNSR已本地核验：264来源文件、162调用、36组统计一致，不重复打包或仿真。
+-2. 按[归档清单](reports/archive-status.md)执行[仅补缺失项命令](artifacts/stage12-archive-audit-2026-10-27/server-paste-command.txt)，补第二阶段10个代表性目录的原始事件/日志和两份VCD；服务器尚未执行。
++2. LpAu2Y第二阶段补包已在服务器完成，包约90.48 MB；按[接收说明](artifacts/stage12-archive-audit-2026-10-27/server-LpAu2Y/README.md)下载5文件并核验，不重复归档或仿真。
+ 3. 补包下载校验后推进最终材料。截图和录屏由用户后续统一处理，G3暂不计完整通过。
+ 
+ 用户写作要求：A标准评审结构，保留原10图并加入6张已确认前端图，平台说明并入1.2环境报告；正文面向评委和人类读者，内部核验及交接信息另存。
+--- before/reports/stage3/README.md
++++ reports/stage3/README.md
+@@ -37,6 +37,6 @@
+ 
+ ## 4 当前待办
+ 
+-1. MIwNSR完整日志与样本已本地核验，不重复下载、打包或仿真。[第一、二阶段归档核对](../archive-status.md)发现第二阶段10个代表性目录仍缺完整原件及两份VCD；[仅补缺失项命令](../../artifacts/stage12-archive-audit-2026-10-27/server-paste-command.txt)已准备，服务器尚未执行。
++1. MIwNSR完整日志与样本已本地核验，不重复下载、打包或仿真。[第一、二阶段归档核对](../archive-status.md)发现第二阶段10个代表性目录仍缺完整原件及两份VCD；LpAu2Y远端补包回传成功，[接收目录](../../artifacts/stage12-archive-audit-2026-10-27/server-LpAu2Y/README.md)等待下载与本地核验，不重复执行命令。
+ 2. 补包执行后下载并核验。已有第一阶段VADD和第二阶段端口竞争VCD继续保留，不重复迁移。
+ 3. 截图与录屏由用户后续统一处理；图像、V3和最终包核验完成后再判断G3。三类性能分列，不默认开启额外实验。
+--- before/docs/development-history.md
++++ docs/development-history.md
+@@ -298,7 +298,7 @@
+ 
+ 新增[归档核验器](../scripts/verify_stage3_archive.py)，检查5个下载文件、包成员与manifest/SHA256SUMS，然后对照原architecture.log、samples.json和CSV。264来源文件及4个清单/脚本一致，162调用（36预热/126正式）的顺序/instret/consumer正确，36组统计复算一致。原mtval失败退出1与修复回归0保留；安全解包到server-MIwNSR/unpacked，不覆盖原件。首次检查因heredoc多一个末尾换行停止，改为比较实际交付命令后逐字一致，原压缩包未修改，两次日志均保留。
+ 
+-补齐等价680.930秒、依赖链1486.244秒、八路1537.081秒；预检start/end差1479秒、分辨率1秒，分别记录。随后核对四份主报告109处本地引用均存在；第一阶段VADD VCD在本机WSL，大小匹配，未读内容。第二阶段仍缺完整事件原件，新增[缺口核对与命令生成器](../scripts/prepare_stage12_archive_gaps.py)，仅补10个代表性目录及两份VCD，同路径相同内容小文件自动跳过，已有端口竞争VCD不重取。夹具/Bash语法通过，补包尚未在服务器执行。范围见[归档状态](../reports/archive-status.md)。本轮无构建、仿真或波形事件重分析，截图/录屏后置。
++补齐等价680.930秒、依赖链1486.244秒、八路1537.081秒；预检start/end差1479秒、分辨率1秒，分别记录。随后核对四份主报告109处本地引用均存在；第一阶段VADD VCD在本机WSL，大小匹配，未读内容。第二阶段仍缺完整事件原件，新增[缺口核对与命令生成器](../scripts/prepare_stage12_archive_gaps.py)，仅补10个代表性目录及两份VCD，同路径相同内容小文件自动跳过，已有端口竞争VCD不重取。夹具/Bash语法通过；随后用户回传LpAu2Y，128来源文件/1050781192字节，压缩包90483004字节、SHA0a834faa…、collector/tee/script均0。[接收目录](../artifacts/stage12-archive-audit-2026-10-27/server-LpAu2Y/README.md)等待5文件下载与本地核验。范围见[归档状态](../reports/archive-status.md)。本轮无构建、仿真或波形事件重分析，截图/录屏后置。
+ 
+ ## 21 回顾、截图与后续记录方法
+ 
+--- before/docs/verification.md
++++ docs/verification.md
+@@ -1,4 +1,8 @@
+ # 实现与验证记录
++
++## 2026-10-27 LpAu2Y第二阶段补包回传（本地待接收）
++
++[回传选段](../artifacts/stage12-archive-audit-2026-10-27/server-LpAu2Y/user-returned-summary.txt)与[接收状态](../artifacts/stage12-archive-audit-2026-10-27/server-LpAu2Y/review.json)：10目录/128来源文件/1050781192字节，7项排除详情待读文件；压缩包90483004字节，SHA256=0a834faa0e83f1c27dbfa7f836f5e62bca0342332d5a0b375a3dcbb56ab2e07b。READY及collector/tee/script均0。真实归档及元数据尚未接收，本地verified=false；未重跑仿真。
+ 
+ ## 2026-10-27 MIwNSR本地核验及阶段1/2归档缺口
+ 

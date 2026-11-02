@@ -1,0 +1,18 @@
+{
+  "source_image": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\codex-clipboard-d9d4f182-50d6-41c2-a54a-37dea5e13b6d.png",
+  "archived_image": "artifacts\\vadd4-frontend-2026-10-19\\user-ifu-5085ps.png",
+  "sha256": "d29359323cf0b206aabddaf1acefd42b621dd69bce96403508f405b9b7290c99",
+  "marker_ps": 5085,
+  "user_confirmed": {
+    "valid": 1,
+    "ready": 1,
+    "pc": "0x80000148",
+    "instruction": "0x021101d7",
+    "valid_mask": "0xd555",
+    "enqEnable": "0xd555",
+    "ftq_flag": 0,
+    "ftq_value": 3,
+    "ibuffer_flush": 0
+  },
+  "scope": "User confirmed IFU output before 5086 ps acceptance edge. FTQ request is the next lesson; report not yet updated."
+}

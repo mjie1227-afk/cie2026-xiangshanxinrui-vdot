@@ -1,0 +1,418 @@
+{
+  "status": "accepted_saved_run",
+  "new_simulation": false,
+  "raw_directory": "artifacts/vdot-segment-2026-10-29/server-Pw1wQ8/vdot-segment-Pw1wQ8",
+  "checks": [
+    {
+      "name": "matrix identical to delivered matrix",
+      "pass": true
+    },
+    {
+      "name": "matrix identical to package",
+      "pass": true
+    },
+    {
+      "name": "runner matches delivered file",
+      "pass": true
+    },
+    {
+      "name": "fixed artifacts before and after identical",
+      "pass": true
+    },
+    {
+      "name": "runtime core reference config flash match baseline",
+      "pass": true
+    },
+    {
+      "name": "build and simulation succeeded",
+      "pass": true
+    },
+    {
+      "name": "independent script and tee exit zero",
+      "pass": true
+    },
+    {
+      "name": "runtime argv uses recorded artifacts and limits",
+      "pass": true
+    },
+    {
+      "name": "runtime parser reproduces saved result",
+      "pass": true
+    },
+    {
+      "name": "PASS DiffTest GOOD TRAP without limits or errors",
+      "pass": true
+    },
+    {
+      "name": "good trap address",
+      "pass": true
+    },
+    {
+      "name": "52 raw samples agree with JSON",
+      "pass": true
+    },
+    {
+      "name": "52 raw samples agree with CSV",
+      "pass": true
+    },
+    {
+      "name": "13 distributions recomputed",
+      "pass": true
+    },
+    {
+      "name": "10 ratios recomputed",
+      "pass": true
+    },
+    {
+      "name": "13 warmups and 39 formal samples",
+      "pass": true
+    },
+    {
+      "name": "console statistics",
+      "pass": true
+    },
+    {
+      "name": "console identities",
+      "pass": true
+    },
+    {
+      "name": "console kernel identities",
+      "pass": true
+    },
+    {
+      "name": "console ready",
+      "pass": true
+    },
+    {
+      "name": "user paste statistics",
+      "pass": true
+    },
+    {
+      "name": "user paste identities",
+      "pass": true
+    },
+    {
+      "name": "user paste kernel identities",
+      "pass": true
+    },
+    {
+      "name": "user paste ready",
+      "pass": true
+    },
+    {
+      "name": "complete disassembly empty",
+      "pass": true
+    },
+    {
+      "name": "complete disassembly native_g8_register",
+      "pass": true
+    },
+    {
+      "name": "complete disassembly rvv_m1_g8_register",
+      "pass": true
+    },
+    {
+      "name": "complete disassembly rvv_mf2_g8_register",
+      "pass": true
+    },
+    {
+      "name": "complete disassembly native_g8_materialized",
+      "pass": true
+    },
+    {
+      "name": "complete disassembly rvv_m1_g8_materialized",
+      "pass": true
+    },
+    {
+      "name": "complete disassembly rvv_mf2_g8_materialized",
+      "pass": true
+    },
+    {
+      "name": "complete disassembly native_g16_register",
+      "pass": true
+    },
+    {
+      "name": "complete disassembly rvv_m1_g16_register",
+      "pass": true
+    },
+    {
+      "name": "complete disassembly rvv_mf2_g16_register",
+      "pass": true
+    },
+    {
+      "name": "complete disassembly native_g16_materialized",
+      "pass": true
+    },
+    {
+      "name": "complete disassembly rvv_m1_g16_materialized",
+      "pass": true
+    },
+    {
+      "name": "complete disassembly rvv_mf2_g16_materialized",
+      "pass": true
+    },
+    {
+      "name": "13 functions and timer boundaries match local checked machine code",
+      "pass": true
+    },
+    {
+      "name": "all nine saved full-run counters match log",
+      "pass": true
+    },
+    {
+      "name": "original raw files unchanged",
+      "pass": true
+    }
+  ],
+  "raw_files": 25,
+  "calls": 52,
+  "warmups": 13,
+  "formal_samples": 39,
+  "groups": 13,
+  "whole_image_sha256": "bd034d3d3bebae84c68d26d5b2d52c6420f26ea89c41178621a217321c0aac8b",
+  "identity_scope": "saved server hashes; no local ELF/BIN downloaded; 13 function bytes independently reconstructed from disassembly",
+  "stages": [
+    {
+      "name": "build",
+      "exit": 0,
+      "wall_seconds": 3.974
+    },
+    {
+      "name": "architecture",
+      "exit": 0,
+      "wall_seconds": 2951.748
+    }
+  ],
+  "comparisons": [
+    {
+      "comparison": "implementation_register_schedule",
+      "group": 8,
+      "baseline": "rvv_m1",
+      "native_cycles": 2282,
+      "baseline_cycles": 2275,
+      "ratio": 0.9969325153374233
+    },
+    {
+      "comparison": "implementation_register_schedule",
+      "group": 8,
+      "baseline": "rvv_mf2",
+      "native_cycles": 2282,
+      "baseline_cycles": 2321,
+      "ratio": 1.0170902716914987
+    },
+    {
+      "comparison": "materialized_over_register_same_output",
+      "group": 8,
+      "kind": "native",
+      "register_cycles": 2282,
+      "materialized_cycles": 3031,
+      "ratio": 1.3282208588957056
+    },
+    {
+      "comparison": "materialized_over_register_same_output",
+      "group": 8,
+      "kind": "rvv_m1",
+      "register_cycles": 2275,
+      "materialized_cycles": 3394,
+      "ratio": 1.491868131868132
+    },
+    {
+      "comparison": "materialized_over_register_same_output",
+      "group": 8,
+      "kind": "rvv_mf2",
+      "register_cycles": 2321,
+      "materialized_cycles": 3312,
+      "ratio": 1.4269711331322705
+    },
+    {
+      "comparison": "implementation_register_schedule",
+      "group": 16,
+      "baseline": "rvv_m1",
+      "native_cycles": 2240,
+      "baseline_cycles": 2360,
+      "ratio": 1.0535714285714286
+    },
+    {
+      "comparison": "implementation_register_schedule",
+      "group": 16,
+      "baseline": "rvv_mf2",
+      "native_cycles": 2240,
+      "baseline_cycles": 2333,
+      "ratio": 1.0415178571428572
+    },
+    {
+      "comparison": "materialized_over_register_same_output",
+      "group": 16,
+      "kind": "native",
+      "register_cycles": 2240,
+      "materialized_cycles": 3026,
+      "ratio": 1.3508928571428571
+    },
+    {
+      "comparison": "materialized_over_register_same_output",
+      "group": 16,
+      "kind": "rvv_m1",
+      "register_cycles": 2360,
+      "materialized_cycles": 3443,
+      "ratio": 1.4588983050847457
+    },
+    {
+      "comparison": "materialized_over_register_same_output",
+      "group": 16,
+      "kind": "rvv_mf2",
+      "register_cycles": 2333,
+      "materialized_cycles": 3263,
+      "ratio": 1.3986283754822117
+    }
+  ],
+  "rounds": [
+    {
+      "name": "empty",
+      "warm": 100,
+      "cycles": [
+        100,
+        100,
+        100
+      ],
+      "instret": 6,
+      "consumer": 1928
+    },
+    {
+      "name": "native_g8_register",
+      "warm": 3131,
+      "cycles": [
+        2383,
+        2282,
+        2282
+      ],
+      "instret": 859,
+      "consumer": 96
+    },
+    {
+      "name": "rvv_m1_g8_register",
+      "warm": 2497,
+      "cycles": [
+        2427,
+        2273,
+        2275
+      ],
+      "instret": 1013,
+      "consumer": 96
+    },
+    {
+      "name": "rvv_mf2_g8_register",
+      "warm": 2454,
+      "cycles": [
+        2454,
+        2320,
+        2321
+      ],
+      "instret": 1013,
+      "consumer": 96
+    },
+    {
+      "name": "native_g8_materialized",
+      "warm": 3077,
+      "cycles": [
+        3169,
+        3030,
+        3031
+      ],
+      "instret": 1388,
+      "consumer": 96
+    },
+    {
+      "name": "rvv_m1_g8_materialized",
+      "warm": 3441,
+      "cycles": [
+        3440,
+        3394,
+        3394
+      ],
+      "instret": 1542,
+      "consumer": 96
+    },
+    {
+      "name": "rvv_mf2_g8_materialized",
+      "warm": 3311,
+      "cycles": [
+        3312,
+        3312,
+        3313
+      ],
+      "instret": 1542,
+      "consumer": 96
+    },
+    {
+      "name": "native_g16_register",
+      "warm": 2353,
+      "cycles": [
+        2296,
+        2240,
+        2240
+      ],
+      "instret": 843,
+      "consumer": 1984
+    },
+    {
+      "name": "rvv_m1_g16_register",
+      "warm": 2437,
+      "cycles": [
+        2438,
+        2359,
+        2360
+      ],
+      "instret": 997,
+      "consumer": 1984
+    },
+    {
+      "name": "rvv_mf2_g16_register",
+      "warm": 2403,
+      "cycles": [
+        2405,
+        2333,
+        2333
+      ],
+      "instret": 997,
+      "consumer": 1984
+    },
+    {
+      "name": "native_g16_materialized",
+      "warm": 3087,
+      "cycles": [
+        3079,
+        3026,
+        3026
+      ],
+      "instret": 1372,
+      "consumer": 1984
+    },
+    {
+      "name": "rvv_m1_g16_materialized",
+      "warm": 3451,
+      "cycles": [
+        3444,
+        3443,
+        3443
+      ],
+      "instret": 1526,
+      "consumer": 1984
+    },
+    {
+      "name": "rvv_mf2_g16_materialized",
+      "warm": 3324,
+      "cycles": [
+        3312,
+        3263,
+        3262
+      ],
+      "instret": 1526,
+      "consumer": 1984
+    }
+  ],
+  "limitations": [
+    "three formal samples per variant in one fixed-seed run",
+    "whole-application counters do not attribute per-kernel bottlenecks",
+    "group8/group16 and old independent-output array have different output tasks"
+  ]
+}

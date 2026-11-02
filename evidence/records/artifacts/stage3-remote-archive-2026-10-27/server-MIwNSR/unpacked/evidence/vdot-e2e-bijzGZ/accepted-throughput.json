@@ -1,0 +1,30 @@
+{
+  "status": "vdot-throughput-raw-results-review-required",
+  "scope": "eight fixed-source destination streams; RVV initial clears, two configurations per eight operations and final restore included",
+  "performance_measured": true,
+  "cwd": "/root/private_data/mj/xiangshan",
+  "argv": [
+    "/root/private_data/mj/xiangshan/evidence/vdot-tput-package-KF8KeG/package/run.py",
+    "/root/private_data/mj/xiangshan/evidence/vdot-tput-package-KF8KeG/package",
+    "/root/private_data/mj/xiangshan/evidence/vdot-tput-uLgHm6"
+  ],
+  "python": "3.11.9 (main, Apr  5 2026, 19:32:29) [GCC 11.4.0]",
+  "seed": 1,
+  "stages": [
+    {
+      "name": "build",
+      "exit": 0,
+      "wall_seconds": 2.022
+    },
+    {
+      "name": "architecture",
+      "exit": 0,
+      "wall_seconds": 1537.081
+    }
+  ],
+  "calls": 40,
+  "samples": 30,
+  "warmups": 10,
+  "final_speedup_accepted": false,
+  "application": "/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-throughput-v1/build/vdot-throughput-v1-riscv64-xs.bin"
+}

@@ -1,0 +1,177 @@
+[
+  {
+    "file": "accepted-segment.json",
+    "bytes": 1009,
+    "sha256": "c74af0b53084ebef14678e861da0d52dd57ea7a81a7b49095bb461efe7978cc7"
+  },
+  {
+    "file": "application-source/cases.S",
+    "bytes": 28862,
+    "sha256": "96f48b60305671a4ee3a474b7ad75bc7754b7489cbe1cdf2fabecf22ded0705e"
+  },
+  {
+    "file": "application-source/main.c",
+    "bytes": 35013,
+    "sha256": "e2c736c0779ff7cc27214d896be30701837d5e741d0852aad2d0ed3a84aabf34"
+  },
+  {
+    "file": "application-source/Makefile",
+    "bytes": 107,
+    "sha256": "82d1d19f24e4b349cdf27323821ef2f5299e451ba166b57ed254d1dab07ab5c5"
+  },
+  {
+    "file": "application-source-identities.json",
+    "bytes": 246,
+    "sha256": "f21cf3f87f9dbbd21689cc03830f3eedb3ae20c16dca0b9a3c331be7892fbfd2"
+  },
+  {
+    "file": "architecture-check.json",
+    "bytes": 195,
+    "sha256": "bbe04b859965ce17d1db3017dc04165514b584ac9cada385c63ccc50c6c51ea9"
+  },
+  {
+    "file": "architecture.argv.json",
+    "bytes": 455,
+    "sha256": "662fbe58e6240e9a7297f803347fbdc2a60d66d2f4b8c8542505b8624bc0e434"
+  },
+  {
+    "file": "architecture.log",
+    "bytes": 3104560,
+    "sha256": "66206375510f5cd306eae9b7a8fdf72fa33a709edb5dd86ead2ec78dee9bfd76"
+  },
+  {
+    "file": "build-reuse.json",
+    "bytes": 520,
+    "sha256": "bce1131cd7a742911123719bfb69f3f688311e816e891c42016eb72933f1c195"
+  },
+  {
+    "file": "comparisons.json",
+    "bytes": 1538,
+    "sha256": "6185e54ec2f4cf7cc37c418391d742aeb20c701fded654199d26d8fc0c8de953"
+  },
+  {
+    "file": "compiler.txt",
+    "bytes": 265,
+    "sha256": "355385b8017ba58b16b0cf85e2ea8edaa7ae3d357f963828ef280b0d536ae1a3"
+  },
+  {
+    "file": "console.log",
+    "bytes": 9489,
+    "sha256": "cbda78d6c66de844bb94885d2fce75645770afc9719e4a7d93471d0fa45ed4ab"
+  },
+  {
+    "file": "disasm.txt",
+    "bytes": 162969,
+    "sha256": "5544f68e85fbeddf39b918c036e07f7dd425690e1fb921c4b7bf366f7b3567f9"
+  },
+  {
+    "file": "environment.json",
+    "bytes": 233,
+    "sha256": "24ba11fe95d9ddac7c724e14bbb108f04f936d46d207a0ec644d29320acdd746"
+  },
+  {
+    "file": "exit-status.txt",
+    "bytes": 90,
+    "sha256": "832ef930647a81a14520d27b6212b4c7dcc9838dfa381e3a9bc96eb04549b45b"
+  },
+  {
+    "file": "identity-after.json",
+    "bytes": 597,
+    "sha256": "411ef71585d965b3978a4b1eea04fe819125c81281fe56cd848d5f94d114b2da"
+  },
+  {
+    "file": "identity-before.json",
+    "bytes": 597,
+    "sha256": "411ef71585d965b3978a4b1eea04fe819125c81281fe56cd848d5f94d114b2da"
+  },
+  {
+    "file": "kernel-identities.json",
+    "bytes": 2000,
+    "sha256": "5988ae72733525e71f7a8bf3dafbdced7045beb1db7e38b4b1bc337ff663c569"
+  },
+  {
+    "file": "launcher.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "file": "launcher.pid",
+    "bytes": 5,
+    "sha256": "1d6a7f59bfedf8942828c5b8e944e1c21a20f0bc8de58d4ccc1529876639e177"
+  },
+  {
+    "file": "matrix.json",
+    "bytes": 23579,
+    "sha256": "6c3a5d965c9b9fe8a2d9f4463ceb175e87fadb7c378760d1df4246b8f127e6c0"
+  },
+  {
+    "file": "perf-context.json",
+    "bytes": 1562,
+    "sha256": "b796149007166388b57ce854a0e2f2c4139f0e1b9c7476fef1e0237a8f39a26a"
+  },
+  {
+    "file": "processes-before.txt",
+    "bytes": 396,
+    "sha256": "cb274a2b7b3cccd1b83d57660c82ce09e5a0b8b5000d5a958241023aa6e6fdd3"
+  },
+  {
+    "file": "raw-statistics.json",
+    "bytes": 3225,
+    "sha256": "d783b5f5a5689281492c9812c1f38b19d3f0216ceae0e5496dc2982a758288c1"
+  },
+  {
+    "file": "recovery-origin.json",
+    "bytes": 372,
+    "sha256": "a11513c4d3d21cc80f01dde1c3000bc8bd8627a1813b7284e4299dd8d514163f"
+  },
+  {
+    "file": "repositories.txt",
+    "bytes": 16416,
+    "sha256": "621d6739b75e6bf80acdb24f6ab5d8343429385acaf5e51ab21997e3736b1231"
+  },
+  {
+    "file": "result.json",
+    "bytes": 1104,
+    "sha256": "6cbf670c4018ae89693b09a52f0c74b8431a1fe2ad6b88fc95570833826b6d86"
+  },
+  {
+    "file": "resume-run.py",
+    "bytes": 17051,
+    "sha256": "8310f12dd5a0d6baabefd3e2670e073444912f3b807af41bfff4dabb8a78129b"
+  },
+  {
+    "file": "run-retry.sh",
+    "bytes": 675,
+    "sha256": "fa2d66b020d216b8740a237d44bd893aca351fd0027f4d3f9af14bbd0c8e0e37"
+  },
+  {
+    "file": "runtime-identities.json",
+    "bytes": 781,
+    "sha256": "9770f1779a2e432542c102eff5afc53848ec9bab1481a918ce6e32f86bb9ff03"
+  },
+  {
+    "file": "samples.csv",
+    "bytes": 2194,
+    "sha256": "47594bc3a773d8b49f6af24a7a571a3806930e025432f4e5c51d544b165eb9c3"
+  },
+  {
+    "file": "samples.json",
+    "bytes": 13513,
+    "sha256": "60ce81524678b73d3316e930b1f7fc915f743a18f7d64141bfbd2bef38b9ef57"
+  },
+  {
+    "file": "symbols.nm",
+    "bytes": 3235,
+    "sha256": "d9adb5e4dcb0c8686c1c8ea8bad9ceaf74281bcf963a0af93db96f0633923765"
+  },
+  {
+    "file": "vdot-load-v1-riscv64-xs.bin",
+    "bytes": 16696,
+    "sha256": "6436b127636a046afa8e9451270be3a48023ff21f4b86a0c1c194e41d217f54f"
+  },
+  {
+    "file": "vdot-load-v1-riscv64-xs.elf",
+    "bytes": 67504,
+    "sha256": "329aa7a1ac6a24deac9ed185f09026b4d60146a0d88308b66febe0aeb0ee36b0"
+  }
+]

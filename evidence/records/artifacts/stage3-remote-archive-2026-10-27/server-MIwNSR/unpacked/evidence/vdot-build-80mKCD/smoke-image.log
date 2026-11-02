@@ -1,0 +1,47 @@
+make: Entering directory '/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-smoke'
+# Building vdot-smoke [riscv64-xs] with AM_HOME {/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am}
++ CC main.c
++ AS vdot.S
+make[1]: Entering directory '/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am'
+make[1]: Entering directory '/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/libs/klib'
+# Building lib-klib [riscv64-xs]
++ CC src/atomic.c
+make[2]: Entering directory '/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/am'
+# Building lib-am [riscv64-xs]
++ CC src/cpp.c
++ CC src/noop/isa/riscv/trm.c
++ CC src/int64.c
++ AS src/nemu/common/mainargs.S
++ CC src/noop/isa/riscv/perf.c
++ CC src/io.c
++ CC src/noop/common/uartlite.c
++ CC src/noop/common/serial-16550.c
++ CC src/printf.c
++ CC src/nemu/isa/riscv/cte.c
++ AS src/nemu/isa/riscv/trap.S
++ CC src/nemu/isa/riscv/cte64.c
++ AS src/nemu/isa/riscv/mtime.S
++ CC src/nemu/isa/riscv/vme.c
++ CC src/stdlib.c
++ CC src/string.c
++ CC src/xs/common/ioe.c
++ CC src/noop/common/input.c
++ AR -> build/klib-riscv64-xs.a
++ CC src/noop/common/timer.c
+make[1]: Leaving directory '/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/libs/klib'
++ CC src/noop/isa/riscv/instr.c
++ CC src/xs/isa/riscv/mpe.c
++ CC src/xs/isa/riscv/clint.c
++ CC src/xs/isa/riscv/pmp.c
++ CC src/xs/isa/riscv/plic.c
++ CC src/xs/isa/riscv/pma.c
++ CC src/xs/isa/riscv/cache.c
++ AS src/nemu/isa/riscv/boot/start.S
++ AR -> build/am-riscv64-xs.a
+make[2]: Leaving directory '/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/am'
+make[1]: Leaving directory '/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am'
+# Creating binary image [riscv64-xs]
++ LD -> build/vdot-smoke-riscv64-xs.elf
+riscv64-linux-gnu-ld: warning: /root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-smoke/build/vdot-smoke-riscv64-xs.elf has a LOAD segment with RWX permissions
++ OBJCOPY -> build/vdot-smoke-riscv64-xs.bin
+make: Leaving directory '/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-smoke'

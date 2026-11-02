@@ -1,0 +1,30 @@
+{
+  "status": "rvv-equivalence-architecture-pass",
+  "scope": "legal-input equivalence for native VDot and two standard-RVV sequences; no timing",
+  "performance_measured": false,
+  "cwd": "/root/private_data/mj/xiangshan",
+  "argv": [
+    "/root/private_data/mj/xiangshan/evidence/vdot-rvv-package-tiSvHU/package/run.py",
+    "/root/private_data/mj/xiangshan/evidence/vdot-rvv-package-tiSvHU/package",
+    "/root/private_data/mj/xiangshan/evidence/vdot-rvv-equiv-8nvimb"
+  ],
+  "python": "3.11.9 (main, Apr  5 2026, 19:32:29) [GCC 11.4.0]",
+  "seed": 1,
+  "stages": [
+    {
+      "name": "build",
+      "exit": 0,
+      "wall_seconds": 3.726
+    },
+    {
+      "name": "architecture",
+      "exit": 0,
+      "wall_seconds": 680.93
+    }
+  ],
+  "cases": 144,
+  "kernel_calls": 432,
+  "baselines": 2,
+  "application": "/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-rvv-equiv-v1/build/vdot-rvv-equiv-v1-riscv64-xs.bin",
+  "coverage": "VL0/8/16, vm0/1, four tail/mask policies, six datasets; kernel-boundary full128 and selected CSR state"
+}

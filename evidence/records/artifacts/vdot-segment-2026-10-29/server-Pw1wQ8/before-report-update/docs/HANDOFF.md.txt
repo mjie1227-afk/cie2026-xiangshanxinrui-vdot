@@ -1,0 +1,54 @@
+# 当前交接
+
+更新：2026-10-29。第三阶段指定功能、等价和三类性能测量已有证据；bijzGZ只读回传已核验。三份报告、逐轮附录、V3稿和交付索引已整理。当前新增用户明确授权的分段长点积补测；旧成功基线保留。
+
+## 立即下一步
+
+用户于2026-10-29明确要求补齐低存储频率的访存性能实验。新增 [vdot-segment-v1](../benchmarks/rvv-baseline/vdot-segment-v1/README.md)，G=8/16、三条路径、register/materialized相同最终输出对照。已本地编译并用原源码NEMU完成26个函数检查、完整52调用及错误期望负向检查；[交付检查](../artifacts/vdot-segment-2026-10-29/delivery-check.json)通过。下一步由用户在服务器粘贴[完整命令](../artifacts/vdot-segment-2026-10-29/server-paste-command.txt)，只编译新应用并使用原emu/NEMU运行，保存新evidence目录；[操作说明](../artifacts/vdot-segment-2026-10-29/README.md)。服务器尚未运行，不能写入新硬件加速比；失败先保留LOG_DIR，不重跑旧应用或重建核心。
+
+正式正文候选稿已完成第二轮整改，入口为 [docs_final v0.4](../docs_final/README.md)，与学习资料分离。核心构建运行命令、源码/信号导航、VdotCfg、ROB 异常编码重建与 NEMU 译码入口已纳入正文；性能正文同时给出周期、退休指令数、计数表、趋势图及实测截图。每阶段仅保留一份复现环境、哈希与材料路径索引附录，三份 HTML/PDF 分别为 29、31、26 页，共 86 页，对应系统位置①②③。源码摘录、原统计、链接和渲染检查通过，50 份引用图像保持原字节；[整改与检查记录](../artifacts/docs-final-reader-revision-2026-10-29/README.md)保存修改前副本和验证结果。小数组末尾一次 fence、全程计数范围及分段补测待服务器结果的状态保留。下一步人工审阅合订稿、制作三视频和完成作品包；本轮仅修订文档，新增仿真仍仅限上述已授权的新应用。
+
+MIwNSR的5个文件已本地核验：包2233424字节/SHA48882ae4…，268成员/264来源文件/10运行目录一致；四组162调用（36预热/126正式）原日志/JSON/CSV逐条一致，36组统计未变。[结果](../artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/local-verification.json)与同目录unpacked/evidence/保存完整原件。不重复下载、打包或仿真。首次校验因开发文件与实际heredoc末尾换行不同停止，已核对实际交付命令逐字一致，原包未改。
+
+[归档清单](../reports/archive-status.md)：第一阶段主报告原引用材料及VADD VCD已在本机，历史未记录字段仍披露。LpAu2Y现已本地核验：包90483004字节/SHA0a834faa…、132成员/128来源文件/1050781192字节；两份缺失VCD和代表性完整事件已解包至server-LpAu2Y/unpacked/evidence。3项相同内容JSON仍保存在原本地目录，另排除3个pycache和已有端口VCD，详见[验证结果](../artifacts/stage12-archive-audit-2026-10-27/server-LpAu2Y/local-verification.json)。不重复下载、打包、仿真或运行原分析器。
+
+2026-10-27官网要求核对结果保持：[提交对照与当前缺口](submission-review-2026-10-27.md)。最后3张补图已核对入文：F07的REF快照与差分错误配套F02a修复后通过图，S3-F02完整校准/运行信息配套原PASS/退出码图。[补图记录](../artifacts/material-readiness-2026-10-27/README.md)。主要证据图已齐，不再以旧“截图待补”条目要求重截。
+
+F05/F06/F08/F09/F10代表性波形原图继续复用，按可读性合并，图注保留Base换算、沿前/沿后、未入画字段的原记录来源。当前主线为docs_final候选稿最终审阅与导出、V2完整讲解稿及V1/V2/V3制作、可复现候选包和提交规则检查。已归档验收视频0/3，V1/V3已有稿、V2只有操作卡；已有三份 PDF 合订候选稿，尚未形成正式答辩 PPT 或最终提交回执。F12/诊断图和综合STA为可选增强，不默认启动新仿真。A01～A09工程约定、最终VS/实际结果写回碰撞等覆盖边界仍披露，不宣称整阶段已交付。
+
+## 当前证据与范围
+
+- [mtval修复与整核回归](../artifacts/vdot-mtval-fix-2026-10-24/server-xYGYlZ/review.json)：异常64（62陷阱+2合法）、重叠60、smoke7及Hello/VADD通过。旧96ffa51e…emu留作失败追溯，新测试使用f9653532…。
+- [架构流水套件](../artifacts/vdot-pipeline-2026-10-24/server-JuGUz6/review.json)：依赖48、混发32、分支/异常CSR40通过。
+- [单例投机取消](../artifacts/vdot-window-supplement-2026-10-25/server-fgpWCe/review.json)：VDot ROB1/27 pdest61执行/完成后被较老分支覆盖，复用前未退休；9次身份拒绝均为分支通路缺pdest，不是VDot冲突。不外推其他取消时刻。
+- [CSR请求](../artifacts/vdot-csr-commit-window-2026-10-25/server-aReAEz/review.json)：2280沿零差异，验证退休→ROB dirty_vs→CSR接收请求；不等于最终VS寄存器全部副作用逐拍验证。
+- [共享端口竞争](../artifacts/vdot-port-events-2026-10-25/server-FfVozt/review.json)：VDot ROB0/46 pdest56与VIOTA ROB0/47 pdest57在15658共同请求发射前端口0，一获准一受阻；VIOTA15662获准，两者15672/15676提交。12实例valid采样完整；实际结果写回没有共同请求，部分端口ready未知。只接受本例，不称全FU组合/公平性通过。
+- [GUI补图](../artifacts/vdot-gtk-review-2026-10-26/step3-retirement-instruction/review.json)：用户已看仲裁身份、双EXU输出及退休机器码。最新Marker15671直接显示VDot，VIOTA机器码/ROB/pdest在后续时段可见，完整PC仍引用脚本；已按边界归档，不继续索要重复截图。
+- [8nvimb整核等价验收](../artifacts/vdot-rvv-equivalence-2026-10-26/server-8nvimb/review.json)：144例/432调用/两基线、显式参考库、DiffTest、GOOD TRAP PC80000858及构建/运行/脚本/tee0，应用bf29b936…，原基线身份未变。静态native1条/RVV9条不是加速比。
+- [RVV等价报告](../reports/stage3/rvv-equivalence.md)：合法M态e8/m1、vstart0，VL0/8/16、vm0/1、四策略、六数据集。临时v8/v9/v16与t0可破坏，不声称任意寄存器别名、非法状态或虚拟化的透明替换；原VDot异常/重叠验收另存。该批证明等价；性能测量另见[性能报告](../reports/stage3/performance.md)。
+
+## 必要路径与固定产物
+
+| 用途 | 路径 |
+|---|---|
+| 规划工作区（非Git） | D:\Mayyyyyy\WorkSpaces\日常工作区1\2026比赛规划\RISCV_vdot |
+| 本机Linux正式开发副本 | /home/lenovo1227/xs-vdot-dev/{XiangShan,NEMU,nexus-am}；保留既有dirty内容 |
+| 服务器根 | /root/private_data/mj/xiangshan；助手无远端会话，用户手动粘贴命令 |
+| 当前emu（相对服务器根） | vdot-mtval-fix-20261024/XiangShan/build/emu |
+| 源码参考库 | vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so |
+| 共享Flash | evidence/vdot-build-80mKCD/boot-flash.bin，必须显式-F |
+| 最近竞争VCD | evidence/vdot-port-wave-EfQru1/port-window.vcd；本地waveforms/vdot-port-EfQru1/port-window.vcd，481830060字节 |
+
+固定SHA256：emu `f9653532fd2a4b9f0d0cc08c131f7c258d4b62c46e672c6886d6643aad926850`；源码NEMU `11b9f6807c36ed860e0c64cc4e58d27216b19335ecde1ce5797ba2d1cd057b74`；Flash `fea548655a8b6eecacace83e2f4380a18b8aa83bce964c8aae4cffbe2f5a9724`。其他身份留在[成功清单](../artifacts/vdot-mtval-fix-2026-10-24/server-xYGYlZ/accepted-identities.sha256)。
+
+## 不可丢失的决定
+
+- 语义按[vdot v0.1](vdot-spec-v0.1.md)：前8项signed INT8点积，低32位结果/高96位0，VL0保留旧目的；合法VL8～16均只算前8项；A01～A09仍为工程约定。独立dot4只是练习。
+- 当前MinimalConfig/单核/EMU_TRACE=1；XiangShan基HEAD16ae9dd、NEMU a48a11f，叠加正式VDot与mtval修改。源码/补丁见第二阶段报告，不仅凭HEAD复现。
+- emu短参数-D曾打印帮助并退出0，使用--stat-cycles=1000并检查启动/参考库/提交；PERF中的fail计数不能当运行FAIL。
+- 波形沿前/沿后分清，PC/word加完整ROB/pdest及分配时间才关联动态实例；实际写回组合仲裁按已核对的同一后端域采样。旧脚本失败与原波形保留，不自动重跑。
+- [第二阶段报告](../reports/stage2/README.md)、[截图清单](stage2-evidence-checklist.md)随开发同步；先说明全局位置，再解释细节。用户用Windows GTKWave，已完成本例动手核对，不重复基础步骤。
+- 2026-10-26用户要求讲清开发操作：先说修改哪些文件、编译什么、运行谁和原因，再给命令并解释关键部分；简明自然，不用脚本包装替代过程说明。
+- [开发过程总录](development-history.md)覆盖环境、接入、修复、波形、等价、三类计时与材料收尾；后续更新对应章节。RVV逐文件/命令解释见[专项说明](rvv-development-walkthrough.md)。总录用于回顾，不作为每次恢复必读全文。
+
+详细历史按需查[验证记录](verification.md)。本次精简前交接完整保存在[修改前副本](../artifacts/vdot-rvv-equivalence-2026-10-26/docs-before/docs/HANDOFF.md)，不要恢复时全量重读。当前没有助手启动的后台任务；下一次重型运行前再按需查进程。

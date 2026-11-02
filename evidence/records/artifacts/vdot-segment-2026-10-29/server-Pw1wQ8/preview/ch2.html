@@ -1,0 +1,124 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>vdot.vv语义合同与总体方案</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#eef2f5;color:#243747;font-family:"Microsoft YaHei",sans-serif;line-height:1.8}main{max-width:1180px;margin:24px auto;padding:32px 44px 60px;background:white}h1{font-size:29px;line-height:1.4;margin:18px 0 24px}h2{font-size:23px;border-bottom:1px solid #cddbe5;padding-top:12px;margin-top:32px}h3{font-size:19px;margin-top:26px}h4{font-size:17px}p,li{font-size:16px}li{margin:5px 0}a{color:#146787;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}table{border-collapse:collapse;width:100%;table-layout:auto;margin:16px 0 25px}th,td{border:1px solid #cedbe4;padding:8px 10px;text-align:left;font-size:14px;vertical-align:top;overflow-wrap:anywhere}th{background:#edf4f7}td[style*="text-align:right"],th[style*="text-align:right"]{white-space:nowrap}pre{background:#f2f6f8;border-left:3px solid #2d728f;padding:15px;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.65;font-size:13px}code{font-family:Consolas,"Microsoft YaHei",monospace;overflow-wrap:anywhere}img{max-width:100%;height:auto;display:block;margin:18px auto 8px}figure{margin:22px 0}figcaption{font-size:14px;color:#455f70;line-height:1.65}blockquote{border-left:3px solid #7699aa;padding-left:15px;margin:18px 0;color:#45616f}nav{font-size:14px;border-bottom:1px solid #dce5eb;padding-bottom:14px}nav a{margin-right:20px}hr{border:0;border-top:1px solid #dce5eb;margin:28px 0}.cover{padding-bottom:25px}.chapter{margin-top:50px}.source-ref{color:#536a77;font-size:0.9em;overflow-wrap:anywhere}.toc{padding:20px;background:#f3f7fa}.toc li{margin:8px 0}@page{size:A4;margin:18mm 15mm 17mm}@media print{body{background:white;line-height:1.65}main{margin:0;padding:0;max-width:none}nav{display:none}.cover{break-after:page}.chapter{break-before:page;margin-top:0}h1{font-size:22pt}h2{font-size:16pt;margin-top:20px}h3{font-size:13pt}h4{font-size:11pt}p,li{font-size:10pt}td,th{font-size:8.5pt;padding:5px 6px}table{margin:10px 0 16px;break-inside:avoid;break-before:avoid}thead{display:table-header-group}tr{break-inside:avoid}pre{font-size:7.8pt;line-height:1.5;padding:9px;break-inside:auto}figure{break-inside:avoid;margin:12px 0}figure img{max-height:195mm;object-fit:contain}figcaption{font-size:8.5pt}h1,h2,h3,h4,.table-caption{break-after:avoid}.wave-evidence{break-inside:avoid}p{orphans:3;widows:3}.source-ref{font-size:8pt}a{color:#146787}blockquote{margin:10px 0}td[style*="text-align:right"]{white-space:normal}}@media print{pre{break-inside:avoid}.materials table{break-inside:auto;break-before:auto}.materials>p{break-after:avoid}.materials th:first-child,.materials td:first-child{width:13mm}.materials td{font-size:8pt}hr{margin:10px 0}}.materials td:last-child code{word-break:break-all}.materials th:nth-child(2){min-width:35mm}.materials table:last-of-type th:nth-child(2){width:40mm}@media print{.materials h1{font-size:20pt}.materials table{break-inside:auto}.materials table:first-of-type th:first-child{width:34mm}.materials table:nth-of-type(2) th:first-child{width:38mm}.materials td:last-child{line-height:1.6}.materials p{break-after:auto}}@media print{.chapter p:has(+ pre){break-after:avoid}.chapter img[alt*="Hello终端"]{max-height:140mm;width:auto}}</style><main><nav><a href="index.html">总目录</a><a href="ch5.html">数据通路</a><a href="ch8.html">协同仿真</a><a href="ch10.html">延迟与性能</a></nav><h1 id="vdotvv语义合同与总体方案">vdot.vv语义合同与总体方案</h1>
+<p><strong>本文要点</strong></p>
+<ul>
+<li><code>vdot.vv</code> 计算前 8 项有符号 INT8 点积；低 32 位保存结果，高 96 位清零。</li>
+<li>复用香山向量重命名、调度和退休机制，VDot 功能单元采用两拍流水。</li>
+<li>RTL 与 NEMU 分别实现同一合同，应用期望值和 DiffTest 分层检查。</li>
+<li>掩码、VL、重叠和异常行为以 A01～A09 工程约定明确，适用于锁定的单核 MinimalConfig。</li>
+</ul>
+<h2 id="1-对象">1 对象</h2>
+<p>实现固定八项有符号 INT8 点积，复用香山向量流水线；NEMU 单独实现同一语义，应用通过独立期望值检查，整核 DiffTest 比较架构状态。基版本为 XiangShan <code>16ae9ddc</code>，叠加 VDot 与 mtval 修复；当前使用单核 MinimalConfig、VLEN=128。默认参数与实验配置不可混用：本配置 ROB 为 48 槽，默认参数中的 160 槽不是本次实验值，见<a href="file:///D:/Mayyyyyy/WorkSpaces/%E6%97%A5%E5%B8%B8%E5%B7%A5%E4%BD%9C%E5%8C%BA1/2026%E6%AF%94%E8%B5%9B%E8%A7%84%E5%88%92/RISCV_vdot/docs/reviews/platform-check-2026-10-19.md">配置核对</a>。</p>
+<figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTgwIiBoZWlnaHQ9IjgzMCIgdmlld0JveD0iMCAwIDExODAgODMwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9InZkb3Tor63kuYnjgIHlrp7njrDkuI7pqozor4HlhbPns7siPg0KPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2Y1ZjdmYSIvPg0KPGcgZm9udC1mYW1pbHk9Ik1pY3Jvc29mdCBZYUhlaSwgTm90byBTYW5zIENKSyBTQywgc2Fucy1zZXJpZiI+DQo8dGV4dCB4PSI0MCIgeT0iNTIiIGZvbnQtc2l6ZT0iMjgiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMxNzMwNDciPnZkb3Tor63kuYnjgIHlrp7njrDkuI7pqozor4HlhbPns7s8L3RleHQ+DQo8dGV4dCB4PSI0MCIgeT0iODgiIGZvbnQtc2l6ZT0iMTciIGZpbGw9IiM1MjYzNzUiPuWQhOWxguajgOafpeWvueixoeS4jeWQjO+8m+a1i+ivlemAmui/h+iMg+WbtOS7peeUqOS+i+OAgemFjee9ruWPiui/kOihjOi6q+S7veS4uuWHhuOAgjwvdGV4dD4NCjxyZWN0IHg9IjQwIiB5PSIxMjAiIHdpZHRoPSIxMTAwIiBoZWlnaHQ9IjE0NSIgcng9IjEwIiBmaWxsPSJ3aGl0ZSIgc3Ryb2tlPSIjYzdkM2RmIi8+DQo8cmVjdCB4PSI0MCIgeT0iMTIwIiB3aWR0aD0iMTEwMCIgaGVpZ2h0PSI0NCIgcng9IjEwIiBmaWxsPSIjMzU1NDZlIi8+DQo8dGV4dCB4PSI2MCIgeT0iMTQ5IiBmb250LXNpemU9IjIxIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSI+5YWx5ZCM6K+t5LmJ5ZCI5ZCMPC90ZXh0Pg0KPHRleHQgeD0iNjAiIHk9IjE5OCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzIwMzc0YiI+5Zu65a6a5YmNOOWvuXNpZ25lZCBJTlQ477yb5L2OMzLkvY3nu5PmnpzjgIHpq5g5NuS9jembtu+8m+WQiOazlVZMMOS/neeVmeaXp+ebrueahDwvdGV4dD4NCjx0ZXh0IHg9IjYwIiB5PSIyMjkiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMyMDM3NGIiPkEwMe+9nkEwOeS4uuW3peeoi+e6puWumu+8m+aOqeeggeOAgeW8guW4uOS8mOWFiOe6p+OAgemHjeWPoOWSjENTUuihjOS4uuaMieWQiOWQjOWkhOeQhjwvdGV4dD4NCjxyZWN0IHg9IjQwIiB5PSIyOTAiIHdpZHRoPSI1MzUiIGhlaWdodD0iMTc1IiByeD0iMTAiIGZpbGw9IndoaXRlIiBzdHJva2U9IiNjN2QzZGYiLz4NCjxyZWN0IHg9IjQwIiB5PSIyOTAiIHdpZHRoPSI1MzUiIGhlaWdodD0iNDQiIHJ4PSIxMCIgZmlsbD0iIzUzNjBhMSIvPg0KPHRleHQgeD0iNjAiIHk9IjMxOSIgZm9udC1zaXplPSIyMSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0id2hpdGUiPlJUTOWunueOsDwvdGV4dD4NCjx0ZXh0IHg9IjYwIiB5PSIzNjgiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMyMDM3NGIiPlZEb3TkuKTmi41GVe+8m+S6lOe7hOi+k+WFpemcgOaxgu+8m+aMguaOpVZGRVgwPC90ZXh0Pg0KPHRleHQgeD0iNjAiIHk9IjM5OSIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzIwMzc0YiI+6K+R56CB44CBb2xkVmTkvp3otZbjgIFST0Llj5bmtojkuI5tdHZhbOS/oeaBr+mAmui3rzwvdGV4dD4NCjx0ZXh0IHg9IjYwIiB5PSI0MzAiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMyMDM3NGIiPkNoaXNlbOWxleW8gCDihpIgVmVyaWxhdG9yL0MrKyDihpIgZW11PC90ZXh0Pg0KPHJlY3QgeD0iNjA1IiB5PSIyOTAiIHdpZHRoPSI1MzUiIGhlaWdodD0iMTc1IiByeD0iMTAiIGZpbGw9IndoaXRlIiBzdHJva2U9IiNjN2QzZGYiLz4NCjxyZWN0IHg9IjYwNSIgeT0iMjkwIiB3aWR0aD0iNTM1IiBoZWlnaHQ9IjQ0IiByeD0iMTAiIGZpbGw9IiMyNzY4ODciLz4NCjx0ZXh0IHg9IjYyNSIgeT0iMzE5IiBmb250LXNpemU9IjIxIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSI+TkVNVeWPguiAg+WunueOsDwvdGV4dD4NCjx0ZXh0IHg9IjYyNSIgeT0iMzY4IiBmb250LXNpemU9IjE4IiBmaWxsPSIjMjAzNzRiIj7nsr7noa7or5HnoIHjgIHlkIjms5XmgKfmo4Dmn6XjgIHmupAv5o6p56CB5b+r54WnPC90ZXh0Pg0KPHRleHQgeD0iNjI1IiB5PSIzOTkiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMyMDM3NGIiPuWujOaVtOebrueahOW4g+WxgOS4juebuOWFs+WQkemHj1ZT54q25oCB5pu05pawPC90ZXh0Pg0KPHRleHQgeD0iNjI1IiB5PSI0MzAiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMyMDM3NGIiPk5FTVXmupDnoIHkuI7phY3nva4g4oaSIOe8luivkSDihpIg5Y+C6ICD5YWx5Lqr5bqTPC90ZXh0Pg0KPHJlY3QgeD0iNDAiIHk9IjQ5MCIgd2lkdGg9IjExMDAiIGhlaWdodD0iMTQ1IiByeD0iMTAiIGZpbGw9IndoaXRlIiBzdHJva2U9IiNjN2QzZGYiLz4NCjxyZWN0IHg9IjQwIiB5PSI0OTAiIHdpZHRoPSIxMTAwIiBoZWlnaHQ9IjQ0IiByeD0iMTAiIGZpbGw9IiMyMzc1NjIiLz4NCjx0ZXh0IHg9IjYwIiB5PSI1MTkiIGZvbnQtc2l6ZT0iMjEiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IndoaXRlIj7lupTnlKjoh6rmo4DkuI7mlbTmoLhEaWZmVGVzdDwvdGV4dD4NCjx0ZXh0IHg9IjYwIiB5PSI1NjgiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMyMDM3NGIiPlJJU0MtVuW3peWFt+mTvueUn+aIkOmVnOWDj++8m2VtdeWKoOi9vemVnOWDj+OAgeWbuuWumuWPguiAg+W6k+WSjEZsYXNoPC90ZXh0Pg0KPHRleHQgeD0iNjAiIHk9IjU5OSIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzIwMzc0YiI+5bqU55So5q+U6L6D54us56uL5pyf5pyb77ybRGlmZlRlc3TlnKjmnrbmnoTlkIzmraXngrnmr5TovoPlr7zlh7rnirbmgIHvvJtWQ0Tov73ouKrpgInlrprliqjmgIHlrp7kvos8L3RleHQ+DQo8cmVjdCB4PSI0MCIgeT0iNjYwIiB3aWR0aD0iMTEwMCIgaGVpZ2h0PSIxNDUiIHJ4PSIxMCIgZmlsbD0id2hpdGUiIHN0cm9rZT0iI2M3ZDNkZiIvPg0KPHJlY3QgeD0iNDAiIHk9IjY2MCIgd2lkdGg9IjExMDAiIGhlaWdodD0iNDQiIHJ4PSIxMCIgZmlsbD0iIzU5Njc3NiIvPg0KPHRleHQgeD0iNjAiIHk9IjY4OSIgZm9udC1zaXplPSIyMSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0id2hpdGUiPuagh+WHhuetieS7t+S4juWIhuWxguaAp+iDvTwvdGV4dD4NCjx0ZXh0IHg9IjYwIiB5PSI3MzgiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMyMDM3NGIiPlJWVuWGheaguO+8muWbuuWumlZMOOS5mOazleOAgea4heWujOaVtOebrueahC/pm7bnp43lrZDjgIHkuIDmrKHlvZLnuqbjgIHmgaLlpI3lhaXlj6PphY3nva48L3RleHQ+DQo8dGV4dCB4PSI2MCIgeT0iNzY5IiBmb250LXNpemU9IjE4IiBmaWxsPSIjMjAzNzRiIj4xNDTkvosvNDMy6LCD55So6K+B5piO5oyH5a6a562J5Lu36IyD5Zu077yb5oCn6IO95Y+m5rWL5L6d6LWW6ZO+44CB5YWr6Lev5om55aSE55CG5ZKM6aKE54Ot5bCP5pWw57uEPC90ZXh0Pg0KPC9nPjwvc3ZnPg0K" alt="应用期望值检查与RTL和NEMU架构状态差分共同构成的验证关系" /><figcaption>图 2-1　RTL 和 NEMU 分别实现语义，应用与 DiffTest 提供不同层次的检查；性能测量使用已固定的运行产物。</figcaption></figure>
+<h2 id="2-方法">2 方法</h2>
+<h3 id="21-运算和输出">2.1 运算和输出</h3>
+<p>以寄存器低位为第 0 项，令 a_i、b_i 为两个源寄存器第 i 个有符号字节，m_i = vm OR v0[i]。在非零合法 VL 下：</p>
+<pre><code class="language-text">S = Σ(i=0..7) m_i × a_i × b_i
+vd[31:0]   = sign_extend_32(S)
+vd[127:32] = 0
+</code></pre>
+<p>不累加旧 vd，VL 为 8～16 时均只取前 8 项。合法 VL=0 保持全部旧目的。单项乘积范围为−16256～16384，需要 16 位有符号数；八项和为−130048～131072，需要 19 位有符号数。19 位结果只符号扩展到 32 位，随后拼接高 96 位零。</p>
+<h3 id="22-编码">2.2 编码</h3>
+<p class="table-caption">表 2-1　指令编码字段。</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>位</th>
+<th>取值或含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>funct6</td>
+<td>31:26</td>
+<td><code>0b000000</code></td>
+</tr>
+<tr>
+<td>vm</td>
+<td>25</td>
+<td>1 为无掩码；0 使用旧 v0 低 8 位</td>
+</tr>
+<tr>
+<td>vs2 / vs1</td>
+<td>24:20 / 19:15</td>
+<td>两个源寄存器编号</td>
+</tr>
+<tr>
+<td>funct3</td>
+<td>14:12</td>
+<td><code>0b000</code></td>
+</tr>
+<tr>
+<td>vd</td>
+<td>11:7</td>
+<td>目的寄存器编号</td>
+</tr>
+<tr>
+<td>opcode</td>
+<td>6:0</td>
+<td><code>0b0001011</code>（<code>0x0b</code>），custom-0</td>
+</tr>
+</tbody>
+</table>
+<p>识别条件为<code>(word &amp; 0xfc00707f) == 0x0000000b</code>。vd=3、vs1=1、vs2=2 时，无掩码指令字为<code>0x0220818b</code>，掩码形式为<code>0x0020818b</code>。工具链通过 <code>.word</code> 发出机器码，应用因此可以在现有汇编器上使用该自定义指令。</p>
+<p>静态审计遍历 65,536 种寄存器/掩码位型，对锁定源码的 12 张香山主译码表 717 项和 28 个 NEMU 顶层模式检查，无交叠；依赖中未进入主表的 CUSTOM0 定义另列。范围和解析结果见<a href="file:///D:/Mayyyyyy/WorkSpaces/%E6%97%A5%E5%B8%B8%E5%B7%A5%E4%BD%9C%E5%8C%BA1/2026%E6%AF%94%E8%B5%9B%E8%A7%84%E5%88%92/RISCV_vdot/docs/reviews/vdot-encoding-audit-2026-10-19.md">编码审计</a>，该结果对应所列版本的译码表。</p>
+<h3 id="23-工程约定-a01a09">2.3 工程约定 A01～A09</h3>
+<p>下表来自<a href="file:///D:/Mayyyyyy/WorkSpaces/%E6%97%A5%E5%B8%B8%E5%B7%A5%E4%BD%9C%E5%8C%BA1/2026%E6%AF%94%E8%B5%9B%E8%A7%84%E5%88%92/RISCV_vdot/docs/vdot-spec-v0.1.md">版本化合同</a>及<a href="file:///D:/Mayyyyyy/WorkSpaces/%E6%97%A5%E5%B8%B8%E5%B7%A5%E4%BD%9C%E5%8C%BA1/2026%E6%AF%94%E8%B5%9B%E8%A7%84%E5%88%92/RISCV_vdot/specs/vdot-v0.1.json">机器可读规格</a>。题面未逐项确定的行为属于项目选择，尚无主办方逐项确认。</p>
+<p>这些约定使固定八项点积具有确定的输入范围和完整目的布局，也让 RTL 与 NEMU 能在同一接口上比较。VL=0 的“保持旧值”尤其需要区分架构寄存器和物理寄存器：重命名已经为目的分配了新物理位置，旧值仍在旧位置，因此译码必须声明 oldVd 依赖，执行时把旧值传给新位置，退休后逻辑目的才继续看到原内容。若仅关闭写使能，新位置就没有获得应当保留的数据。</p>
+<p>A08 对合法 VL=0 仍置 VS=Dirty，是本项目统一参考模型和硬件状态行为的约定；它与目的值是否改变分别定义。硬件沿正常退休路径产生 Dirty 请求，使投机执行与架构状态更新保持分离。</p>
+<p class="table-caption">表 2-2　版本化语义合同的工程约定。</p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>本项目约定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A01</td>
+<td>结果低 32 位补码、高 96 位零；低 32 位布局是项目选择</td>
+</tr>
+<tr>
+<td>A02</td>
+<td>SEW=8、LMUL=1；VL=0 保持目的，VL=8～16 计算前 8 项，VL=1～7 非法</td>
+</tr>
+<tr>
+<td>A03</td>
+<td>支持 vm=0/1；vm=0 按 v0 低 8 位筛选乘积</td>
+</tr>
+<tr>
+<td>A04</td>
+<td>非零 vstart 非法，不支持点积内部部分和恢复</td>
+</tr>
+<tr>
+<td>A05</td>
+<td>非零合法计算产生完整 128 位结果，不使用普通 tail/mask 旧值合并</td>
+</tr>
+<tr>
+<td>A06</td>
+<td>支持单寄存器源/目的重叠，包括掩码形式 vd=v0；先读旧状态再写结果</td>
+</tr>
+<tr>
+<td>A07</td>
+<td>使用上述 custom-0 精确编码</td>
+</tr>
+<tr>
+<td>A08</td>
+<td>合法指令（含 VL=0）使相关向量 VS 状态置 Dirty；架构更新遵循退休路径</td>
+</tr>
+<tr>
+<td>A09</td>
+<td>沿用锁定 V2 谱系和单核 MinimalConfig；其他配置需单独验收</td>
+</tr>
+</tbody>
+</table>
+<p>vta/vma 组合不改变本指令的确定性完整结果布局。非法状态先于 VL=0 保持判断：先检查向量权限和类型，再检查 vstart 与 VL，之后才选择保持或计算。触发非法指令异常时，目的向量寄存器及 <code>vl/vtype/vstart</code> 保持原值，陷阱路径更新 <code>mcause</code> 与 <code>mepc</code>。本实现还将故障指令编码送入 <code>mtval</code>，与所选 NEMU 参考行为一致；这也是第 6、8 章修复和验证的内容。</p>
+<h2 id="3-结果">3 结果</h2>
+<p>RTL 在译码中保留向量分类、oldVd 依赖、单 uop 和单写回属性，在 VFEX0 加入两拍 VDot。NEMU 在写目的前快照源和掩码，处理寄存器重叠。二者经应用期望值、差分和代表波形验证。</p>
+<p>具体实现、构建关系和覆盖范围分别见<a href="ch5.html">数据通路</a>、<a href="ch6.html">整核控制</a>、<a href="ch8.html">NEMU与DiffTest</a>。</p>
+<h2 id="4-总结与实验边界">4 总结与实验边界</h2>
+<p>固定八项运算、确定性的完整结果布局和明确的非法状态优先级共同构成 RTL 与参考模型的一致性基础。A01～A09 为本项目对未逐项规定行为的选择；其他 VLEN、SEW 或数据类型需要重新定义合同并验证。</p>
+<hr />
+<p>文档编号：VDOT-SPEC</p>
+</main></html>

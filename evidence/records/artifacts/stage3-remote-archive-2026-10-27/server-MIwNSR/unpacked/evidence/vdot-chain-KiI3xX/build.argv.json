@@ -1,0 +1,12 @@
+[
+  "make",
+  "-C",
+  "/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-chain-v1",
+  "image",
+  "ARCH=riscv64-xs",
+  "LINUX_GNU_TOOLCHAIN=1",
+  "MARCH=rv64gcv",
+  "CC=/usr/bin/riscv64-linux-gnu-gcc-12",
+  "AS=/usr/bin/riscv64-linux-gnu-gcc-12",
+  "-j2"
+]

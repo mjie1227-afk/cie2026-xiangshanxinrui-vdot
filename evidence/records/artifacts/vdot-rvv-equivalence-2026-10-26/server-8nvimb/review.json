@@ -1,0 +1,30 @@
+{
+  "status": "specified-RVV-kernel-equivalence-accepted",
+  "date": "2026-10-26",
+  "basis": "user-provided runtime plus known identity/checker guards; full remote log not downloaded",
+  "remote_dir": "/root/private_data/mj/xiangshan/evidence/vdot-rvv-equiv-8nvimb",
+  "exits": {
+    "build": 0,
+    "architecture": 0,
+    "script": 0,
+    "tee": 0
+  },
+  "cases": 144,
+  "kernel_calls": 432,
+  "baselines": 2,
+  "reference_explicit": true,
+  "difftest_enabled": true,
+  "good_trap_pc": "0x80000858",
+  "coverage": "legal M-mode VL0/8/16, vm0/1, four policies, six datasets; full v0-v3 and specified kernel-end CSR state",
+  "static_words": {
+    "native": 1,
+    "rvv_m1": 9,
+    "rvv_mf2": 9
+  },
+  "performance_measured": false,
+  "limits": [
+    "not arbitrary-register alias/illegal-input or virtualized-state equivalence",
+    "not performance proof; static words are not cycles",
+    "temporary registers are reserved clobbers as documented"
+  ]
+}

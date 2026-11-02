@@ -1,0 +1,56 @@
+{
+  "status": "mixed-resource-observations-review-required",
+  "scope": "mixed identity and per-resource request analysis",
+  "simulator_invoked": false,
+  "contention_accepted": false,
+  "cwd": "/root/private_data/mj/xiangshan",
+  "argv": [
+    "/root/private_data/mj/xiangshan/evidence/vdot-mixed-resources-9k3waS/analyze.py",
+    "/root/private_data/mj/xiangshan/evidence/vdot-mixed-resources-9k3waS"
+  ],
+  "python": "3.11.9 (main, Apr  5 2026, 19:32:29) [GCC 11.4.0]",
+  "header": {
+    "bytes": 44460958,
+    "sha256": "146957d140cdca8bb777900b7a742278e9abea7862b4a68a9b8f45b043dfdd82"
+  },
+  "root_rising_edges": 2280,
+  "target_count": 4,
+  "event_counts": {
+    "redirect": 56,
+    "rename_handshake": 4,
+    "rob_tag_reused": 1,
+    "iq_offer": 3,
+    "exu_in_fire": 3,
+    "exu_out_fire": 3,
+    "wb_input_valid_ready_unknown_or_low": 3,
+    "writeback_to_ctrl": 3,
+    "rob_commit": 3
+  },
+  "resource_count": 12,
+  "co_request_events": 0,
+  "vdot_or_selected_events": 0,
+  "explicit_arbitration_events": 0,
+  "clock_offsets": {
+    "timer_1": [
+      98
+    ],
+    "cycleCnt_1": [
+      102
+    ],
+    "timer_0": [
+      99
+    ],
+    "cycleCnt_0": [
+      103
+    ]
+  },
+  "identity_rejections": {},
+  "mapping_conflicts": 0,
+  "limitations": [
+    "Missing resource fields or identity maps remain gaps",
+    "IQ ready alone does not identify blocking resource",
+    "All-live identities after redirect are retained until reuse; review redirect overlap before accepting a contention claim",
+    "No co-request in discovered arbiters does not prove absence of earlier busy-table conflicts"
+  ],
+  "elapsed_seconds": 49.297
+}

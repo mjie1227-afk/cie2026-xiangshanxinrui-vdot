@@ -1,0 +1,17 @@
+[
+  "/root/private_data/mj/xiangshan/vdot-mtval-fix-20261024/XiangShan/build/emu",
+  "-i",
+  "/root/private_data/mj/xiangshan/vdot-dev-20261024/nexus-am/apps/vdot-port-contend-v1/build/vdot-port-contend-v1-riscv64-xs.bin",
+  "--diff=/root/private_data/mj/xiangshan/vdot-dev-20261024/NEMU/build/riscv64-nemu-interpreter-so",
+  "-F",
+  "/root/private_data/mj/xiangshan/evidence/vdot-build-80mKCD/boot-flash.bin",
+  "--seed=1",
+  "--no-snapshot",
+  "--dump-wave-full",
+  "--wave-path=/root/private_data/mj/xiangshan/evidence/vdot-port-wave-EfQru1/port-window.vcd",
+  "--dump-commit-trace",
+  "--log-begin=5978",
+  "--log-end=8258",
+  "--max-cycles=9000",
+  "--stat-cycles=1000"
+]

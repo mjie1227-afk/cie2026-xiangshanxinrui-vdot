@@ -1,0 +1,3 @@
+cwd=/home/lenovo1227/xiangshan-learning/nexus-am/apps/hello-meijie
+command=make ARCH=riscv64-xs LINUX_GNU_TOOLCHAIN=1 MARCH=rv64gcv -j2
+AM_HOME=/home/lenovo1227/xiangshan-learning/nexus-am
