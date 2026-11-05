@@ -26,8 +26,8 @@ def bundle_files():
   dirs[:]=[name for name in dirs if not local_directory(parts+(name,))]
   for name in names:
    p=parent/name
-   # LFS video bodies use videos/manifest.json, independently of the build payload.
-   # Keep their README, metadata and checksum list in the source bundle.
+   # LFS video bodies are downloaded separately from the build payload.
+   # Keep the viewing instructions in the source bundle.
    if parts and parts[0]=='videos' and p.suffix.lower() in EXTERNAL_VIDEO_SUFFIXES:continue
    if not name.endswith('.pyc') and p.is_file():files.append(p)
  return sorted(files,key=lambda p:p.relative_to(ROOT).as_posix())

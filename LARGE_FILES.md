@@ -12,4 +12,4 @@ python3 tools/prepare_recording.py
 
 GTKWave视图和打开命令在[波形复查入口](recording/README.md)。可选端口竞争小节使用仓库内保存的截图，不要求额外下载端口VCD。
 
-`work/`、`runs/`和`recording/outputs/`为本地生成目录，不进入提交清单。emu、NEMU共享库和应用镜像通过源码构建；三份技术报告PDF、图片和压缩波形属于已准备的交付文件。3份成片分别为108.7、124.6、208.0 MiB，由Git LFS随仓库管理；入口与身份见[视频索引](videos/README.md)。`MANIFEST.sha256`覆盖源码与复现材料，视频使用 `videos/SHA256SUMS.txt` 和 `python tools/verify_videos.py` 单独校验。完整交付ZIP包含原始视频，Docker编译目录只复制源码清单中的文件，无需携带视频。
+`work/`、`runs/`和`recording/outputs/`为本地生成目录，不进入提交清单。emu、NEMU共享库和应用镜像通过源码构建；三份技术报告PDF、图片和压缩波形属于已准备的交付文件。3份成片由Git LFS随仓库管理，克隆后运行 `git lfs pull` 下载，再直接打开MP4观看，文件名与时长见[视频目录](videos/README.md)。完整交付ZIP包含原始视频，Docker编译目录无需携带视频。

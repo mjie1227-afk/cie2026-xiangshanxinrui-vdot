@@ -2,7 +2,7 @@
 
 本仓库包含已应用VDot修改的XiangShan、NEMU、nexus-am和17个测试应用。按下列步骤可在Docker Linux环境中，从源码完成编译、功能验证和性能测试。已有实测结果及原始日志见[验证记录](VALIDATION.md)。
 
-三阶段演示视频由Git LFS随仓库管理，克隆后运行 `git lfs pull` 和 `python tools/verify_videos.py` 获取并校验，详见[视频索引](videos/README.md)。下面的编译和测试流程不依赖视频文件。
+三阶段演示视频由Git LFS随仓库管理，克隆后运行 `git lfs pull` 即可下载观看，详见[视频目录](videos/README.md)。下面的编译和测试流程不依赖视频文件。
 
 ## 1 准备环境
 

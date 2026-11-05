@@ -36,7 +36,7 @@ class RecordingAndManifestTests(unittest.TestCase):
         self.assertEqual(found,set(keep))
 
     def test_lfs_videos_separate_from_build_payload_but_indexes_preserved(self):
-        keep=['videos/README.md','videos/manifest.json','videos/SHA256SUMS.txt','docs/unexpected.mp4']
+        keep=['videos/README.md','docs/README.md','docs/unexpected.mp4']
         excluded=['videos/stage1.mp4','videos/stage2.MP4','videos/subdir/stage3.mkv']
         for name in keep+excluded:self.write(name)
         with patch.object(verify_bundle,'ROOT',self.root):

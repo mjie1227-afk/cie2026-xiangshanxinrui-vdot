@@ -54,7 +54,7 @@
 
 仓库包含已应用VDot和mtval修改的完整XiangShan、NEMU、nexus-am及所需源码依赖。准备脚本直接生成编译目录，无需再次应用补丁；首次环境搭建和编译需要联网获取工具及Scala/Chisel依赖。源码组织和许可证见[SOURCE_TREE.md](SOURCE_TREE.md)，已有测试结果与日志见[验证说明](VALIDATION.md)。
 
-3份演示视频使用 Git LFS 随仓库管理。克隆后运行 `git lfs pull` 获取视频，再用 `python tools/verify_videos.py` 核对文件；详情见[视频索引](videos/README.md)。
+3份演示视频使用 Git LFS 随仓库管理。克隆后运行 `git lfs pull`，即可打开MP4观看；详情见[视频目录](videos/README.md)。
 
 ## 许可证与上游版本
 
