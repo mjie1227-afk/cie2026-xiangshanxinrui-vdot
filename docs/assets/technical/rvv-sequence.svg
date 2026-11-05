@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800">
+<defs><marker id="arr-ink" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#172C43"/></marker><marker id="arr-muted" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#566C7F"/></marker><marker id="arr-line" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C9D6DF"/></marker><marker id="arr-grid" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E8EEF2"/></marker><marker id="arr-paper" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFFFFF"/></marker><marker id="arr-teal" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#087F8C"/></marker><marker id="arr-teal_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E6F3F3"/></marker><marker id="arr-blue" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#3567A3"/></marker><marker id="arr-blue_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EDF3FA"/></marker><marker id="arr-purple" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#7659A3"/></marker><marker id="arr-purple_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#F1EDF7"/></marker><marker id="arr-amber" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C57A23"/></marker><marker id="arr-amber_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFF4E4"/></marker><marker id="arr-red" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#B85348"/></marker><marker id="arr-red_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FCEEEB"/></marker><marker id="arr-gray" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EFF3F6"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Segoe UI",sans-serif} .mono{font-family:Consolas,"Microsoft YaHei",monospace}</style>
+<rect width="1280" height="800" fill="white"/>
+<rect x="36" y="32" width="6" height="54" rx="2" fill="#087F8C"/>
+<text x="60" y="54" font-size="32" fill="#172C43" font-weight="650" text-anchor="start">相同结果的两种实现方式</text>
+<text x="60" y="88" font-size="20" fill="#566C7F" font-weight="400" text-anchor="start">非零路径的静态指令组织；临时寄存器和入口配置按第 8 章约定</text>
+<path d="M40,751 L1240,751" fill="none" stroke="#C9D6DF" stroke-width="1" stroke-linejoin="round"/>
+<text x="42" y="778" font-size="16" fill="#566C7F" font-weight="400" text-anchor="start">VDOT / XIANGSHAN KUNMINGHU V2</text>
+<text x="1238" y="778" font-size="16" fill="#566C7F" font-weight="400" text-anchor="end">设计示意</text>
+<rect x="48" y="139" width="1184" height="34" rx="6" fill="#E6F3F3"/>
+<text x="640.0" y="163" font-size="18" fill="#087F8C" font-weight="650" text-anchor="middle">VDot：1 条自定义指令完成八项乘积归约与完整目的更新</text>
+<rect x="48" y="196" width="1184" height="94" rx="12" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="640" y="232" font-size="27" fill="#087F8C" font-weight="650" text-anchor="middle" class="mono">vdot.vv v3, v2, v1, v0.t</text>
+<text x="640" y="266" font-size="22" fill="#172C43" font-weight="400" text-anchor="middle">源低八项 → 按位掩码 → 精确求和 → 低 32 位结果 / 高 96 位零</text>
+<text x="48" y="346" font-size="26" fill="#3567A3" font-weight="650" text-anchor="start">RVV：9 条指令完成配置、运算与恢复</text>
+<rect x="48" y="382" width="220" height="161" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="66" y="416" font-size="22" fill="#3567A3" font-weight="650" text-anchor="start">长度判断</text>
+<text x="66" y="449" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">beqz a3</text>
+<rect x="48" y="561" width="220" height="34" rx="6" fill="#EDF3FA"/>
+<text x="158.0" y="585" font-size="18" fill="#3567A3" font-weight="650" text-anchor="middle">1 条</text>
+<path d="M272,460 L282,460" fill="none" stroke="#3567A3" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<rect x="288" y="382" width="220" height="161" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="306" y="416" font-size="22" fill="#3567A3" font-weight="650" text-anchor="start">加宽乘法</text>
+<text x="306" y="449" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">vsetivli</text>
+<text x="306" y="478" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">vwmul.vv</text>
+<rect x="288" y="561" width="220" height="34" rx="6" fill="#EDF3FA"/>
+<text x="398.0" y="585" font-size="18" fill="#3567A3" font-weight="650" text-anchor="middle">2 条</text>
+<path d="M512,460 L522,460" fill="none" stroke="#3567A3" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<rect x="528" y="382" width="220" height="161" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="546" y="416" font-size="22" fill="#3567A3" font-weight="650" text-anchor="start">清零目的与种子</text>
+<text x="546" y="449" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">vsetivli</text>
+<text x="546" y="478" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">2 × vmv.v.i</text>
+<rect x="528" y="561" width="220" height="34" rx="6" fill="#EDF3FA"/>
+<text x="638.0" y="585" font-size="18" fill="#3567A3" font-weight="650" text-anchor="middle">3 条</text>
+<path d="M752,460 L762,460" fill="none" stroke="#3567A3" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<rect x="768" y="382" width="220" height="161" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="786" y="416" font-size="22" fill="#3567A3" font-weight="650" text-anchor="start">加宽归约</text>
+<text x="786" y="449" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">vsetivli</text>
+<text x="786" y="478" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">vwredsum.vs</text>
+<rect x="768" y="561" width="220" height="34" rx="6" fill="#EDF3FA"/>
+<text x="878.0" y="585" font-size="18" fill="#3567A3" font-weight="650" text-anchor="middle">2 条</text>
+<path d="M992,460 L1002,460" fill="none" stroke="#3567A3" stroke-width="1.6" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<rect x="1008" y="382" width="220" height="161" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="1026" y="416" font-size="22" fill="#3567A3" font-weight="650" text-anchor="start">配置恢复</text>
+<text x="1026" y="449" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">vsetvl</text>
+<rect x="1008" y="561" width="220" height="34" rx="6" fill="#EDF3FA"/>
+<text x="1118.0" y="585" font-size="18" fill="#3567A3" font-weight="650" text-anchor="middle">1 条</text>
+<rect x="48" y="633" width="575" height="91" rx="10" fill="#FFF4E4" stroke="#C57A23" stroke-width="1.6"/>
+<text x="66" y="667" font-size="22" fill="#C57A23" font-weight="650" text-anchor="start">RVV-m1</text>
+<text x="66" y="700" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">乘法 e8/m1 → 乘积 v8/v9 → 归约 e16/m2</text>
+<rect x="657" y="633" width="575" height="91" rx="10" fill="#F1EDF7" stroke="#7659A3" stroke-width="1.6"/>
+<text x="675" y="667" font-size="22" fill="#7659A3" font-weight="650" text-anchor="start">RVV-mf2</text>
+<text x="675" y="700" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">乘法 e8/mf2 → 乘积 v8 → 归约 e16/m1</text>
+</svg>

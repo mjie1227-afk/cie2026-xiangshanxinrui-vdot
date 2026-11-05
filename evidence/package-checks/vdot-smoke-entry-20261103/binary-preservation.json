@@ -1,0 +1,16 @@
+{
+  "before": {
+    "work/build/XiangShan/build/emu": "1f864f954fd7beb6bff061bd3a2d6dfac3511c0f506edf9c8db2fa5f0efe76fb",
+    "work/build/NEMU/build/riscv64-nemu-interpreter-so": "dde66037fc1998e98770d2e6621fc7539c07bce193c3c76e3e49b879667195ce",
+    "work/build/nexus-am/apps/vdot-smoke/build/vdot-smoke-riscv64-xs.bin": "16c13108cb0880c04cf49ca855893284ae772968292828b990328a01b0def68a",
+    "configs/boot-flash.bin": "fea548655a8b6eecacace83e2f4380a18b8aa83bce964c8aae4cffbe2f5a9724"
+  },
+  "after": {
+    "work/build/XiangShan/build/emu": "1f864f954fd7beb6bff061bd3a2d6dfac3511c0f506edf9c8db2fa5f0efe76fb",
+    "work/build/NEMU/build/riscv64-nemu-interpreter-so": "dde66037fc1998e98770d2e6621fc7539c07bce193c3c76e3e49b879667195ce",
+    "work/build/nexus-am/apps/vdot-smoke/build/vdot-smoke-riscv64-xs.bin": "16c13108cb0880c04cf49ca855893284ae772968292828b990328a01b0def68a",
+    "configs/boot-flash.bin": "fea548655a8b6eecacace83e2f4380a18b8aa83bce964c8aae4cffbe2f5a9724"
+  },
+  "unchanged": true,
+  "backup": "/validation/cie2026-xiangshanxinrui-vdot/work/delivery-sync/866787e9ed6e4dc3a557f7b54d44cf75"
+}

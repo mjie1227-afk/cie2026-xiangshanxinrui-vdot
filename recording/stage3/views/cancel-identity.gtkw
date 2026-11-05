@@ -1,0 +1,40 @@
+[*] Saved original VCD. Signal selection only; no waveform transformation.
+[size] 1700 1000
+[signals_width] 690
+[sst_width] 230
+@200
+-clock
+@28
+TOP.clock
+@200
+-rename lane0 VDot and lane1 branch
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rename.io_out_0_valid
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rename.io_out_0_ready
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rename.io_out_0_bits_pc[49:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rename.io_out_0_bits_instr[31:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rename.io_out_0_bits_robIdx_flag
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rename.io_out_0_bits_robIdx_value[5:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rename.io_out_0_bits_pdest[7:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rename.io_out_1_valid
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rename.io_out_1_ready
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rename.io_out_1_bits_pc[49:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rename.io_out_1_bits_instr[31:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rename.io_out_1_bits_robIdx_flag
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rename.io_out_1_bits_robIdx_value[5:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rename.io_out_1_bits_pdest[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

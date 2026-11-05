@@ -1,0 +1,60 @@
+[
+  {
+    "stage": "init",
+    "argv": [
+      "C:\\Users\\Lenovo\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-X",
+      "utf8",
+      "D:\\Mayyyyyy\\WorkSpaces\\\u65e5\u5e38\u5de5\u4f5c\u533a1\\2026\u6bd4\u8d5b\u89c4\u5212\\RISCV_vdot\\artifacts\\fullcore-local-2026-11-03\\controller-workflow\\repository\\tools\\container.py",
+      "init"
+    ],
+    "exit_code": 0
+  },
+  {
+    "stage": "check",
+    "argv": [
+      "C:\\Users\\Lenovo\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-X",
+      "utf8",
+      "D:\\Mayyyyyy\\WorkSpaces\\\u65e5\u5e38\u5de5\u4f5c\u533a1\\2026\u6bd4\u8d5b\u89c4\u5212\\RISCV_vdot\\artifacts\\fullcore-local-2026-11-03\\controller-workflow\\repository\\tools\\container.py",
+      "check"
+    ],
+    "exit_code": 0
+  },
+  {
+    "stage": "status",
+    "argv": [
+      "C:\\Users\\Lenovo\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-X",
+      "utf8",
+      "D:\\Mayyyyyy\\WorkSpaces\\\u65e5\u5e38\u5de5\u4f5c\u533a1\\2026\u6bd4\u8d5b\u89c4\u5212\\RISCV_vdot\\artifacts\\fullcore-local-2026-11-03\\controller-workflow\\repository\\tools\\container.py",
+      "status"
+    ],
+    "exit_code": 0
+  },
+  {
+    "stage": "exec",
+    "argv": [
+      "C:\\Users\\Lenovo\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-X",
+      "utf8",
+      "D:\\Mayyyyyy\\WorkSpaces\\\u65e5\u5e38\u5de5\u4f5c\u533a1\\2026\u6bd4\u8d5b\u89c4\u5212\\RISCV_vdot\\artifacts\\fullcore-local-2026-11-03\\controller-workflow\\repository\\tools\\container.py",
+      "exec",
+      "python3",
+      "-c",
+      "import os,platform;print(platform.system());print(os.getcwd())"
+    ],
+    "exit_code": 0
+  },
+  {
+    "stage": "collect",
+    "argv": [
+      "C:\\Users\\Lenovo\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-X",
+      "utf8",
+      "D:\\Mayyyyyy\\WorkSpaces\\\u65e5\u5e38\u5de5\u4f5c\u533a1\\2026\u6bd4\u8d5b\u89c4\u5212\\RISCV_vdot\\artifacts\\fullcore-local-2026-11-03\\controller-workflow\\repository\\tools\\container.py",
+      "collect"
+    ],
+    "exit_code": 0
+  }
+]

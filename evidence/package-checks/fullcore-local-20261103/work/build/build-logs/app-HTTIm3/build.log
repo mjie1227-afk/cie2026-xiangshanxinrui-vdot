@@ -1,0 +1,17 @@
+make: Entering directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/apps/vdot-segment-v1'
+# Building vdot-segment-v1 [riscv64-xs] with AM_HOME {/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am}
+make[1]: Entering directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am'
+make[1]: Entering directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/libs/klib'
+# Building lib-klib [riscv64-xs]
+make[2]: Entering directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/am'
+make[1]: Leaving directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/libs/klib'
+# Building lib-am [riscv64-xs]
++ AS src/nemu/common/mainargs.S
++ AR -> build/am-riscv64-xs.a
+make[2]: Leaving directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/am'
+make[1]: Leaving directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am'
+# Creating binary image [riscv64-xs]
++ LD -> build/vdot-segment-v1-riscv64-xs.elf
+riscv64-linux-gnu-ld: warning: /validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/apps/vdot-segment-v1/build/vdot-segment-v1-riscv64-xs.elf has a LOAD segment with RWX permissions
++ OBJCOPY -> build/vdot-segment-v1-riscv64-xs.bin
+make: Leaving directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/apps/vdot-segment-v1'

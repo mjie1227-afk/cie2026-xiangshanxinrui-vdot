@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="775" viewBox="0 0 1280 775">
+<defs><marker id="arr-ink" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#172C43"/></marker><marker id="arr-muted" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#566C7F"/></marker><marker id="arr-line" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C9D6DF"/></marker><marker id="arr-grid" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E8EEF2"/></marker><marker id="arr-paper" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFFFFF"/></marker><marker id="arr-teal" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#087F8C"/></marker><marker id="arr-teal_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E6F3F3"/></marker><marker id="arr-blue" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#3567A3"/></marker><marker id="arr-blue_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EDF3FA"/></marker><marker id="arr-purple" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#7659A3"/></marker><marker id="arr-purple_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#F1EDF7"/></marker><marker id="arr-amber" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C57A23"/></marker><marker id="arr-amber_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFF4E4"/></marker><marker id="arr-red" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#B85348"/></marker><marker id="arr-red_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FCEEEB"/></marker><marker id="arr-gray" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EFF3F6"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Segoe UI",sans-serif} .mono{font-family:Consolas,"Microsoft YaHei",monospace}</style>
+<rect width="1280" height="775" fill="white"/>
+<rect x="36" y="32" width="6" height="54" rx="2" fill="#087F8C"/>
+<text x="60" y="54" font-size="32" fill="#172C43" font-weight="650" text-anchor="start">VDot 在向量后端中的接入位置</text>
+<text x="60" y="88" font-size="20" fill="#566C7F" font-weight="400" text-anchor="start">数据沿既有调度与写回路径流动；新增点积 FU 及异常指令字传递</text>
+<path d="M40,726 L1240,726" fill="none" stroke="#C9D6DF" stroke-width="1" stroke-linejoin="round"/>
+<text x="42" y="753" font-size="16" fill="#566C7F" font-weight="400" text-anchor="start">VDOT / XIANGSHAN KUNMINGHU V2</text>
+<text x="1238" y="753" font-size="16" fill="#566C7F" font-weight="400" text-anchor="end">设计示意</text>
+<rect x="48" y="145" width="260" height="108" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="66" y="179" font-size="24" fill="#3567A3" font-weight="650" text-anchor="start">译码与重命名</text>
+<text x="66" y="212" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">单微操作 · oldVd 依赖</text>
+<rect x="380" y="145" width="260" height="108" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="398" y="179" font-size="24" fill="#3567A3" font-weight="650" text-anchor="start">向量发射队列</text>
+<text x="398" y="212" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">源 / mask / VL 就绪</text>
+<rect x="712" y="145" width="520" height="108" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="730" y="179" font-size="24" fill="#3567A3" font-weight="650" text-anchor="start">源读取与控制传递</text>
+<text x="730" y="212" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">vs1 · vs2 · oldVd · v0 · VL / 类型</text>
+<path d="M318,199 L367,199" fill="none" stroke="#3567A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<path d="M650,199 L700,199" fill="none" stroke="#3567A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<rect x="48" y="303" width="1184" height="209" rx="14" fill="#EFF3F6"/>
+<text x="69" y="337" font-size="23" fill="#566C7F" font-weight="650" text-anchor="start">向量执行单元</text>
+<rect x="78" y="363" width="600" height="113" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="96" y="397" font-size="25" fill="#087F8C" font-weight="650" text-anchor="start">VFEX0</text>
+<text x="96" y="430" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">既有执行功能</text>
+<text x="355" y="434" font-size="28" fill="#087F8C" font-weight="650" text-anchor="start">+</text>
+<rect x="403" y="392" width="251" height="63" rx="9" fill="#087F8C"/>
+<text x="528" y="434" font-size="25" fill="#FFFFFF" font-weight="650" text-anchor="middle">VDot · 8 路点积</text>
+<rect x="755" y="363" width="445" height="113" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="773" y="397" font-size="24" fill="#3567A3" font-weight="650" text-anchor="start">其他向量执行单元</text>
+<text x="773" y="430" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">按既有拓扑执行其他指令</text>
+<path d="M971,261 L971,283 L527,283 L527,355" fill="none" stroke="#3567A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<rect x="48" y="563" width="325" height="102" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="66" y="597" font-size="24" fill="#087F8C" font-weight="650" text-anchor="start">向量写回 / 物理寄存器</text>
+<text x="66" y="630" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">完整 128 位结果</text>
+<rect x="453" y="563" width="325" height="102" rx="10" fill="#F1EDF7" stroke="#7659A3" stroke-width="1.6"/>
+<text x="471" y="597" font-size="24" fill="#7659A3" font-weight="650" text-anchor="start">ROB 按序退休</text>
+<text x="471" y="630" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">完成、异常与取消控制</text>
+<rect x="858" y="563" width="374" height="102" rx="10" fill="#F1EDF7" stroke="#7659A3" stroke-width="1.6"/>
+<text x="876" y="597" font-size="24" fill="#7659A3" font-weight="650" text-anchor="start">架构状态更新</text>
+<text x="876" y="630" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">提交映射 · VS-dirty 请求</text>
+<path d="M528,485 L528,536 L210,536 L210,555" fill="none" stroke="#087F8C" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<path d="M528,485 L528,536 L615,536 L615,555" fill="none" stroke="#7659A3" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5 4" marker-end="url(#arr-purple)"/>
+<text x="640" y="543" font-size="18" fill="#7659A3" font-weight="400" text-anchor="start">完成通知</text>
+<path d="M788,614 L846,614" fill="none" stroke="#7659A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-purple)"/>
+</svg>

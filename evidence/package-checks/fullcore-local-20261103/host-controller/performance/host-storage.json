@@ -1,0 +1,20 @@
+[
+  {
+    "name": "docker-storage",
+    "path": "D:\\DockerData\\DockerDesktopWSL",
+    "free_bytes": 226870837248,
+    "minimum_bytes": 10737418240
+  },
+  {
+    "name": "project-files",
+    "path": "D:\\Mayyyyyy\\WorkSpaces\\\u65e5\u5e38\u5de5\u4f5c\u533a1\\2026\u6bd4\u8d5b\u89c4\u5212\\RISCV_vdot\\submission_ready\\cie2026-xiangshanxinrui-vdot",
+    "free_bytes": 226870837248,
+    "minimum_bytes": 3221225472
+  },
+  {
+    "name": "windows-system-drive",
+    "path": "C:\\",
+    "free_bytes": 17276694528,
+    "minimum_bytes": 12884901888
+  }
+]

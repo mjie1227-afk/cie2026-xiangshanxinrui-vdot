@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="810" viewBox="0 0 1280 810">
+<defs><marker id="arr-ink" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#172C43"/></marker><marker id="arr-muted" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#566C7F"/></marker><marker id="arr-line" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C9D6DF"/></marker><marker id="arr-grid" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E8EEF2"/></marker><marker id="arr-paper" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFFFFF"/></marker><marker id="arr-teal" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#087F8C"/></marker><marker id="arr-teal_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E6F3F3"/></marker><marker id="arr-blue" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#3567A3"/></marker><marker id="arr-blue_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EDF3FA"/></marker><marker id="arr-purple" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#7659A3"/></marker><marker id="arr-purple_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#F1EDF7"/></marker><marker id="arr-amber" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C57A23"/></marker><marker id="arr-amber_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFF4E4"/></marker><marker id="arr-red" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#B85348"/></marker><marker id="arr-red_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FCEEEB"/></marker><marker id="arr-gray" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EFF3F6"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Segoe UI",sans-serif} .mono{font-family:Consolas,"Microsoft YaHei",monospace}</style>
+<rect width="1280" height="810" fill="white"/>
+<rect x="36" y="32" width="6" height="54" rx="2" fill="#087F8C"/>
+<text x="60" y="54" font-size="32" fill="#172C43" font-weight="650" text-anchor="start">按位选择八项乘积，写入一个完整向量</text>
+<text x="60" y="88" font-size="20" fill="#566C7F" font-weight="400" text-anchor="start">A = [1,2,3,4,5,6,7,8]；B 的八项均为 1；vm=0，mask=0x55</text>
+<path d="M40,761 L1240,761" fill="none" stroke="#C9D6DF" stroke-width="1" stroke-linejoin="round"/>
+<text x="42" y="788" font-size="16" fill="#566C7F" font-weight="400" text-anchor="start">VDOT / XIANGSHAN KUNMINGHU V2</text>
+<text x="1238" y="788" font-size="16" fill="#566C7F" font-weight="400" text-anchor="end">设计示意</text>
+<text x="48" y="150" font-size="20" fill="#566C7F" font-weight="400" text-anchor="start">元素 i</text>
+<text x="276" y="150" font-size="21" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">0</text>
+<text x="398" y="150" font-size="21" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">1</text>
+<text x="520" y="150" font-size="21" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">2</text>
+<text x="642" y="150" font-size="21" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">3</text>
+<text x="764" y="150" font-size="21" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">4</text>
+<text x="886" y="150" font-size="21" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">5</text>
+<text x="1008" y="150" font-size="21" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">6</text>
+<text x="1130" y="150" font-size="21" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">7</text>
+<text x="48" y="225" font-size="24" fill="#172C43" font-weight="650" text-anchor="start">aᵢ × bᵢ</text>
+<rect x="227" y="185" width="98" height="66" rx="7" fill="#E6F3F3"/>
+<text x="276" y="229" font-size="30" fill="#087F8C" font-weight="400" text-anchor="middle" class="mono">1</text>
+<path d="M276,255 L276,279" fill="none" stroke="#087F8C" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="349" y="185" width="98" height="66" rx="7" fill="#EFF3F6"/>
+<text x="398" y="229" font-size="30" fill="#566C7F" font-weight="400" text-anchor="middle" class="mono">2</text>
+<path d="M398,255 L398,279" fill="none" stroke="#566C7F" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr-muted)"/>
+<rect x="471" y="185" width="98" height="66" rx="7" fill="#E6F3F3"/>
+<text x="520" y="229" font-size="30" fill="#087F8C" font-weight="400" text-anchor="middle" class="mono">3</text>
+<path d="M520,255 L520,279" fill="none" stroke="#087F8C" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="593" y="185" width="98" height="66" rx="7" fill="#EFF3F6"/>
+<text x="642" y="229" font-size="30" fill="#566C7F" font-weight="400" text-anchor="middle" class="mono">4</text>
+<path d="M642,255 L642,279" fill="none" stroke="#566C7F" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr-muted)"/>
+<rect x="715" y="185" width="98" height="66" rx="7" fill="#E6F3F3"/>
+<text x="764" y="229" font-size="30" fill="#087F8C" font-weight="400" text-anchor="middle" class="mono">5</text>
+<path d="M764,255 L764,279" fill="none" stroke="#087F8C" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="837" y="185" width="98" height="66" rx="7" fill="#EFF3F6"/>
+<text x="886" y="229" font-size="30" fill="#566C7F" font-weight="400" text-anchor="middle" class="mono">6</text>
+<path d="M886,255 L886,279" fill="none" stroke="#566C7F" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr-muted)"/>
+<rect x="959" y="185" width="98" height="66" rx="7" fill="#E6F3F3"/>
+<text x="1008" y="229" font-size="30" fill="#087F8C" font-weight="400" text-anchor="middle" class="mono">7</text>
+<path d="M1008,255 L1008,279" fill="none" stroke="#087F8C" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="1081" y="185" width="98" height="66" rx="7" fill="#EFF3F6"/>
+<text x="1130" y="229" font-size="30" fill="#566C7F" font-weight="400" text-anchor="middle" class="mono">8</text>
+<path d="M1130,255 L1130,279" fill="none" stroke="#566C7F" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr-muted)"/>
+<text x="48" y="325" font-size="24" fill="#172C43" font-weight="650" text-anchor="start">mask[i]</text>
+<rect x="227" y="285" width="98" height="66" rx="7" fill="#E6F3F3"/>
+<text x="276" y="329" font-size="30" fill="#087F8C" font-weight="400" text-anchor="middle" class="mono">1</text>
+<path d="M276,355 L276,379" fill="none" stroke="#087F8C" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="349" y="285" width="98" height="66" rx="7" fill="#EFF3F6"/>
+<text x="398" y="329" font-size="30" fill="#566C7F" font-weight="400" text-anchor="middle" class="mono">0</text>
+<path d="M398,355 L398,379" fill="none" stroke="#566C7F" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr-muted)"/>
+<rect x="471" y="285" width="98" height="66" rx="7" fill="#E6F3F3"/>
+<text x="520" y="329" font-size="30" fill="#087F8C" font-weight="400" text-anchor="middle" class="mono">1</text>
+<path d="M520,355 L520,379" fill="none" stroke="#087F8C" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="593" y="285" width="98" height="66" rx="7" fill="#EFF3F6"/>
+<text x="642" y="329" font-size="30" fill="#566C7F" font-weight="400" text-anchor="middle" class="mono">0</text>
+<path d="M642,355 L642,379" fill="none" stroke="#566C7F" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr-muted)"/>
+<rect x="715" y="285" width="98" height="66" rx="7" fill="#E6F3F3"/>
+<text x="764" y="329" font-size="30" fill="#087F8C" font-weight="400" text-anchor="middle" class="mono">1</text>
+<path d="M764,355 L764,379" fill="none" stroke="#087F8C" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="837" y="285" width="98" height="66" rx="7" fill="#EFF3F6"/>
+<text x="886" y="329" font-size="30" fill="#566C7F" font-weight="400" text-anchor="middle" class="mono">0</text>
+<path d="M886,355 L886,379" fill="none" stroke="#566C7F" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr-muted)"/>
+<rect x="959" y="285" width="98" height="66" rx="7" fill="#E6F3F3"/>
+<text x="1008" y="329" font-size="30" fill="#087F8C" font-weight="400" text-anchor="middle" class="mono">1</text>
+<path d="M1008,355 L1008,379" fill="none" stroke="#087F8C" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="1081" y="285" width="98" height="66" rx="7" fill="#EFF3F6"/>
+<text x="1130" y="329" font-size="30" fill="#566C7F" font-weight="400" text-anchor="middle" class="mono">0</text>
+<path d="M1130,355 L1130,379" fill="none" stroke="#566C7F" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr-muted)"/>
+<text x="48" y="425" font-size="24" fill="#172C43" font-weight="650" text-anchor="start">参与归约</text>
+<rect x="227" y="385" width="98" height="66" rx="7" fill="#E6F3F3"/>
+<text x="276" y="429" font-size="30" fill="#087F8C" font-weight="400" text-anchor="middle" class="mono">1</text>
+<rect x="349" y="385" width="98" height="66" rx="7" fill="#EFF3F6"/>
+<text x="398" y="429" font-size="30" fill="#566C7F" font-weight="400" text-anchor="middle" class="mono">0</text>
+<rect x="471" y="385" width="98" height="66" rx="7" fill="#E6F3F3"/>
+<text x="520" y="429" font-size="30" fill="#087F8C" font-weight="400" text-anchor="middle" class="mono">3</text>
+<rect x="593" y="385" width="98" height="66" rx="7" fill="#EFF3F6"/>
+<text x="642" y="429" font-size="30" fill="#566C7F" font-weight="400" text-anchor="middle" class="mono">0</text>
+<rect x="715" y="385" width="98" height="66" rx="7" fill="#E6F3F3"/>
+<text x="764" y="429" font-size="30" fill="#087F8C" font-weight="400" text-anchor="middle" class="mono">5</text>
+<rect x="837" y="385" width="98" height="66" rx="7" fill="#EFF3F6"/>
+<text x="886" y="429" font-size="30" fill="#566C7F" font-weight="400" text-anchor="middle" class="mono">0</text>
+<rect x="959" y="385" width="98" height="66" rx="7" fill="#E6F3F3"/>
+<text x="1008" y="429" font-size="30" fill="#087F8C" font-weight="400" text-anchor="middle" class="mono">7</text>
+<rect x="1081" y="385" width="98" height="66" rx="7" fill="#EFF3F6"/>
+<text x="1130" y="429" font-size="30" fill="#566C7F" font-weight="400" text-anchor="middle" class="mono">0</text>
+<text x="640" y="501" font-size="29" fill="#087F8C" font-weight="650" text-anchor="middle">1 + 3 + 5 + 7 = 16</text>
+<text x="48" y="551" font-size="18" fill="#566C7F" font-weight="400" text-anchor="start" class="mono">127</text>
+<text x="909" y="551" font-size="18" fill="#566C7F" font-weight="400" text-anchor="start" class="mono">32</text>
+<text x="947" y="551" font-size="18" fill="#566C7F" font-weight="400" text-anchor="start" class="mono">31</text>
+<text x="1228" y="551" font-size="18" fill="#566C7F" font-weight="400" text-anchor="end" class="mono">0</text>
+<rect x="48" y="565" width="888" height="74" rx="0" fill="#EFF3F6" stroke="#C9D6DF" stroke-width="1.6"/>
+<rect x="936" y="565" width="296" height="74" rx="0" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="492" y="610" font-size="27" fill="#172C43" font-weight="400" text-anchor="middle">高 96 位 = 0</text>
+<text x="1084" y="610" font-size="25" fill="#087F8C" font-weight="400" text-anchor="middle" class="mono">0x00000010</text>
+<text x="48" y="691" font-size="21" fill="#566C7F" font-weight="400" text-anchor="start">合法非零 VL + 零掩码 → 完整 128 位清零</text>
+<text x="48" y="728" font-size="21" fill="#566C7F" font-weight="400" text-anchor="start">合法 VL=0 → 完整旧目的保持</text>
+</svg>

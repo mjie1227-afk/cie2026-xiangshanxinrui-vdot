@@ -1,0 +1,148 @@
+{
+  "status": "passed",
+  "scope": "Complete offline source preparation, application copies, build resource listing, synthetic gzip and mock recording processes. No RTL/NEMU compilation or simulation.",
+  "cwd": "/tmp/cie-source-prepare-check-7ctnz87c/repository",
+  "argv": [
+    "/mnt/d/Mayyyyyy/WorkSpaces/日常工作区1/2026比赛规划/RISCV_vdot/artifacts/submission-full-source-2026-11-02/check_preparation.py"
+  ],
+  "python": "3.12.3",
+  "prepared_workspace": "/tmp/cie-source-prepare-check-7ctnz87c/repository/work/build",
+  "checks": [
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/prepare_sources.py",
+        "--plan"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "stdout": "{\n  \"repository\": \"/tmp/cie-source-prepare-check-7ctnz87c/repository\",\n  \"destination\": \"/tmp/cie-source-prepare-check-7ctnz87c/repository/work/build\",\n  \"source_files\": 4750,\n  \"network_required_for_source_preparation\": false,\n  \"patches_already_applied\": true,\n  \"repositories\": [\n    {\n      \"name\": \"XiangShan\",\n      \"path\": \"\",\n      \"url\": \"https://github.com/OpenXiangShan/XiangShan\",\n      \"commit\": \"16ae9ddcda54fc9a2fddffad73174cf793ac7814\",\n      \"tracked_files\": 462\n    },\n    {\n      \"name\": \"XiangShan\",\n      \"path\": \"coupledL2\",\n      \"url\": \"https://github.com/OpenXiangShan/coupledL2\",\n      \"commit\": \"82079f4081bbc1f0221c790fbf8a29b1f23f48b8\",\n      \"tracked_files\": 84\n    },\n    {\n      \"name\": \"XiangShan\",\n      \"path\": \"difftest\",\n      \"url\": \"https://github.com/OpenXiangShan/difftest.git\",\n      \"commit\": \"62e4540c03c03aa947bdb67f4b6bf66f1a29c5d0\",\n      \"tracked_files\": 124\n    },\n    {\n      \"name\": \"XiangShan\",\n      \"path\": \"fudian\",\n      \"url\": \"https://github.com/OpenXiangShan/fudian.git\",\n      \"commit\": \"e1bd4695ca7beb36a5ce7357e9527ad9e95b9ec1\",\n      \"tracked_files\": 34\n    },\n    {\n      \"name\": \"XiangShan\",\n      \"path\": \"huancun\",\n      \"url\": \"https://github.com/OpenXiangshan/huancun.git\",\n      \"commit\": \"90aaf5935206ff322e461c3d021436c20dd0ac85\",\n      \"tracked_files\": 72\n    },\n    {\n      \"name\": \"XiangShan\",\n      \"path\": \"openLLC\",\n      \"url\": \"https://github.com/OpenXiangShan/OpenLLC.git\",\n      \"commit\": \"614ceb4c5d39d32e6ae786693a35da429ea32c12\",\n      \"tracked_files\": 39\n    },\n    {\n      \"name\": \"XiangShan\",\n      \"path\": \"openLLC/openNCB\",\n      \"url\": \"https://github.com/OpenXiangShan/OpenNCB\",\n      \"commit\": \"546a621ed82302db1bd1edc900b17ba55682c15c\",\n      \"tracked_files\": 96\n    },\n    {\n      \"name\": \"XiangShan\",\n      \"path\": \"ready-to-run\",\n      \"url\": \"https://github.com/OpenXiangShan/ready-to-run\",\n      \"commit\": \"ed8c30e1ec8a9c9aa6b116ce54281235d00273fa\",\n      \"tracked_files\": 19\n    },\n    {\n      \"name\": \"XiangShan\",\n      \"path\": \"rocket-chip\",\n      \"url\": \"https://github.com/OpenXiangShan/rocket-chip.git\",\n      \"commit\": \"bea0af5d855a871699b907c1988961141bbf28e7\",\n      \"tracked_files\": 401\n    },\n    {\n      \"name\": \"XiangShan\",\n      \"path\": \"rocket-chip/cde\",\n      \"url\": \"https://github.com/chipsalliance/cde.git\",\n      \"commit\": \"52768c97a27b254c0cc0ac9401feb55b29e18c28\",\n      \"tracked_files\": 15\n    },\n    {\n      \"name\": \"XiangShan\",\n      \"path\": \"rocket-chip/hardfloat\",\n      \"url\": \"https://github.com/ucb-bar/berkeley-hardfloat.git\",\n      \"commit\": \"d93aa570806013dea479a92ba9bb33d1f2d4f69f\",\n      \"tracked_files\": 137\n    },\n    {\n      \"name\": \"XiangShan\",\n      \"path\": \"src/main/resources/aia\",\n      \"url\": \"https://github.com/OpenXiangShan/OpenAIA.git\",\n      \"commit\": \"9464aee3c77b021a037f28aa1b3fe53c71b516f6\",\n      \"tracked_files\": 20\n    },\n    {\n      \"name\": \"XiangShan\",\n      \"path\": \"utility\",\n      \"url\": \"https://github.com/OpenXiangShan/utility\",\n      \"commit\": \"a8ca0c6564865ee69b564d431ecbc52074ba8060\",\n      \"tracked_files\": 62\n    },\n    {\n      \"name\": \"XiangShan\",\n      \"path\": \"yunsuan\",\n      \"url\": \"https://github.com/OpenXiangShan/YunSuan.git\",\n      \"commit\": \"cadd3c2f43096e253d61296b33ac697be8354e29\",\n      \"tracked_files\": 125\n    },\n    {\n      \"name\": \"NEMU\",\n      \"path\": \"\",\n      \"url\": \"https://github.com/OpenXiangShan/NEMU\",\n      \"commit\": \"a48a11f208ff81ad765591d83271d1b339fb3861\",\n      \"tracked_files\": 538\n    },\n    {\n      \"name\": \"NEMU\",\n      \"path\": \"resource/softfloat/repo\",\n      \"url\": \"https://github.com/ucb-bar/berkeley-softfloat-3.git\",\n      \"commit\": \"32eb3295a3c814c1551f94ebc29eed1dec3cb3b1\",\n      \"tracked_files\": 503\n    },\n    {\n      \"name\": \"NEMU\",\n      \"path\": \"resource/nanopb\",\n      \"url\": \"https://github.com/nanopb/nanopb.git\",\n      \"commit\": \"671672b4d7994a9b07a307ae654885c7202ae886\",\n      \"tracked_files\": 611\n    },\n    {\n      \"name\": \"NEMU\",\n      \"path\": \"resource/LibCheckpoint\",\n      \"url\": \"https://github.com/OpenXiangShan/LibCheckpoint.git\",\n      \"commit\": \"1d8905cc2803c242ef257569128c2e68bf4272aa\",\n      \"tracked_files\": 29\n    },\n    {\n      \"name\": \"NEMU\",\n      \"path\": \"resource/gcpt_restore\",\n      \"url\": \"https://github.com/OpenXiangShan/LibCheckpointAlpha.git\",\n      \"commit\": \"5169da768d18f4682a489eaabe7c071df6d6ef88\",\n      \"tracked_files\": 9\n    },\n    {\n      \"name\": \"NEMU\",\n      \"path\": \"resource/LibCheckpoint/resource/nanopb\",\n      \"url\": \"https://github.com/nanopb/nanopb.git\",\n      \"commit\": \"671672b4d7994a9b07a307ae654885c7202ae886\",\n      \"tracked_files\": 611\n    },\n    {\n      \"name\": \"nexus-am\",\n      \"path\": \"\",\n      \"url\": \"https://github.com/OpenXiangShan/nexus-am\",\n      \"commit\": \"086a238062fdfb3281b745a537b361983d0154b5\",\n      \"tracked_files\": 748\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/prepare_sources.py"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "stdout": "SOURCE_PREPARE_OK /tmp/cie-source-prepare-check-7ctnz87c/repository/work/build\n",
+      "stderr": ""
+    },
+    {
+      "name": "complete source bytes, modes and symlinks",
+      "entries": 4750,
+      "passed": true
+    },
+    {
+      "name": "all applications copied exactly",
+      "applications": 17,
+      "passed": true
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/prepare_sources.py"
+      ],
+      "exit_code": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "usage: prepare_sources.py [-h] [--plan] [destination]\nprepare_sources.py: error: Destination already exists; keep it and choose a new directory: /tmp/cie-source-prepare-check-7ctnz87c/repository/work/build\n"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/check_helpers.py"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "stdout": "{\n  \"scope\": \"Synthetic logs and mock-process handling only; no processor build or simulation.\",\n  \"cwd\": \"/tmp/cie-source-prepare-check-7ctnz87c/repository\",\n  \"argv\": [\n    \"/usr/bin/python3\",\n    \"/tmp/cie-source-prepare-check-7ctnz87c/repository/tools/check_helpers.py\"\n  ],\n  \"python\": \"3.12.3\",\n  \"temporary_records\": \"/tmp/vdot-helper-check-txp0faok\",\n  \"checks\": [\n    {\n      \"name\": \"complete-success\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"nonzero-process-exit\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"missing-DiffTest\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"missing-GOOD-TRAP\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"missing-app-PASS\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"wrong-reference\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"failure-marker\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"timeout\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"missing-input-refused\",\n      \"passed\": true,\n      \"exit\": 2\n    },\n    {\n      \"name\": \"existing-restore-directory-refused\",\n      \"passed\": true,\n      \"exit\": 2\n    },\n    {\n      \"name\": \"build-shell-syntax\",\n      \"passed\": true,\n      \"exit\": 0\n    },\n    {\n      \"name\": \"mock-process-success\",\n      \"passed\": true,\n      \"runner_exit\": 0,\n      \"recorded_exit\": 0,\n      \"child_stopped\": true\n    },\n    {\n      \"name\": \"mock-process-failure\",\n      \"passed\": true,\n      \"runner_exit\": 1,\n      \"recorded_exit\": 9,\n      \"child_stopped\": true\n    },\n    {\n      \"name\": \"mock-process-timeout\",\n      \"passed\": true,\n      \"runner_exit\": 1,\n      \"recorded_exit\": 124,\n      \"child_stopped\": true\n    },\n    {\n      \"name\": \"mock-process-interrupt\",\n      \"passed\": true,\n      \"runner_exit\": 1,\n      \"recorded_exit\": 130,\n      \"child_stopped\": true\n    }\n  ],\n  \"passed\": 15,\n  \"failed\": 0\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "DiffTest build resource list",
+      "files": 124,
+      "passed": true
+    },
+    {
+      "name": "no nested Git metadata initialized",
+      "passed": true
+    },
+    {
+      "name": "split gzip stream lossless reconstruction",
+      "passed": true
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/recording_case.py",
+        "hello",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "stdout": "Run directory: /tmp/cie-source-prepare-check-7ctnz87c/repository/runs/recording-hello-20261102-221016-16c3f5\nARGV=[\"/usr/bin/python3\", \"/tmp/cie-source-prepare-check-7ctnz87c/repository/tools/run_case.py\", \"hello-meijie\", \"--emu\", \"/tmp/cie-source-prepare-check-7ctnz87c/repository/work/build/XiangShan/build/emu\", \"--reference\", \"/tmp/cie-source-prepare-check-7ctnz87c/repository/work/build/NEMU/build/riscv64-nemu-interpreter-so\", \"--image\", \"/tmp/cie-source-prepare-check-7ctnz87c/repository/work/build/nexus-am/apps/hello-meijie/build/hello-meijie-riscv64-xs.bin\", \"--output\", \"/tmp/cie-source-prepare-check-7ctnz87c/repository/runs/recording-hello-20261102-221016-16c3f5\", \"--max-cycles\", \"3000000\", \"--timeout\", \"1800\"]\n{\n  \"argv\": [\n    \"/tmp/cie-source-prepare-check-7ctnz87c/repository/work/build/XiangShan/build/emu\",\n    \"-i\",\n    \"/tmp/cie-source-prepare-check-7ctnz87c/repository/work/build/nexus-am/apps/hello-meijie/build/hello-meijie-riscv64-xs.bin\",\n    \"--diff=/tmp/cie-source-prepare-check-7ctnz87c/repository/work/build/NEMU/build/riscv64-nemu-interpreter-so\",\n    \"-F\",\n    \"/tmp/cie-source-prepare-check-7ctnz87c/repository/configs/boot-flash.bin\",\n    \"--seed=1\",\n    \"--max-cycles=3000000\",\n    \"--no-snapshot\"\n  ],\n  \"cwd\": \"/tmp/cie-source-prepare-check-7ctnz87c/repository/runs/recording-hello-20261102-221016-16c3f5\",\n  \"identities\": {\n    \"emu\": {\n      \"path\": \"/tmp/cie-source-prepare-check-7ctnz87c/repository/work/build/XiangShan/build/emu\",\n      \"sha256\": \"d98d2b9d1dd959ffe800382979097aa7473fc45e4b856a20e075242d97071d2d\"\n    },\n    \"reference\": {\n      \"path\": \"/tmp/cie-source-prepare-check-7ctnz87c/repository/work/build/NEMU/build/riscv64-nemu-interpreter-so\",\n      \"sha256\": \"6a278161eb0cf3c35d6377ef2fad2370db6a687cec7f1ae10f6cacc727c530ca\"\n    },\n    \"image\": {\n      \"path\": \"/tmp/cie-source-prepare-check-7ctnz87c/repository/work/build/nexus-am/apps/hello-meijie/build/hello-meijie-riscv64-xs.bin\",\n      \"sha256\": \"c86e00657132b69342d355ba069b18a1a9814205f26895495093738bb03b3e79\"\n    },\n    \"flash\": {\n      \"path\": \"/tmp/cie-source-prepare-check-7ctnz87c/repository/configs/boot-flash.bin\",\n      \"sha256\": \"fea548655a8b6eecacace83e2f4380a18b8aa83bce964c8aae4cffbe2f5a9724\"\n    }\n  },\n  \"status\": \"inputs checked; not executed\"\n}\nRUNNER_EXIT_CODE=0\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/recording_case.py",
+        "hello"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "stdout": "Run directory: /tmp/cie-source-prepare-check-7ctnz87c/repository/runs/recording-hello-20261102-221017-c22a75\nARGV=[\"/usr/bin/python3\", \"/tmp/cie-source-prepare-check-7ctnz87c/repository/tools/run_case.py\", \"hello-meijie\", \"--emu\", \"/tmp/cie-source-prepare-check-7ctnz87c/repository/work/build/XiangShan/build/emu\", \"--reference\", \"/tmp/cie-source-prepare-check-7ctnz87c/repository/work/build/NEMU/build/riscv64-nemu-interpreter-so\", \"--image\", \"/tmp/cie-source-prepare-check-7ctnz87c/repository/work/build/nexus-am/apps/hello-meijie/build/hello-meijie-riscv64-xs.bin\", \"--output\", \"/tmp/cie-source-prepare-check-7ctnz87c/repository/runs/recording-hello-20261102-221017-c22a75\", \"--max-cycles\", \"3000000\", \"--timeout\", \"1800\"]\n{\n  \"passed\": true,\n  \"exit_code\": 0,\n  \"checks\": {\n    \"process_exit_zero\": true,\n    \"application_marker\": true,\n    \"difftest_enabled\": true,\n    \"good_trap\": true,\n    \"reference_path\": true,\n    \"no_failure_marker\": true\n  },\n  \"run_directory\": \"/tmp/cie-source-prepare-check-7ctnz87c/repository/runs/recording-hello-20261102-221017-c22a75\"\n}\nRUNNER_EXIT_CODE=0\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/recording_case.py",
+        "hello",
+        "--result",
+        "/tmp/cie-source-prepare-check-7ctnz87c/repository/runs/recording-hello-20261102-221017-c22a75"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "stdout": "LOG_DIRECTORY=/tmp/cie-source-prepare-check-7ctnz87c/repository/runs/recording-hello-20261102-221017-c22a75\nDifftest enabled.\nhello xiangshan, I am Meijie, IP address: 172.26.232.122\nHIT GOOD TRAP\nEMU_EXIT_CODE=0\nRUNNER_EXIT_CODE=0\nRUN_CHECK=PASS\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/recording_case.py",
+        "vadd4",
+        "--result",
+        "/tmp/cie-source-prepare-check-7ctnz87c/repository/runs/recording-hello-20261102-221017-c22a75"
+      ],
+      "exit_code": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "usage: recording_case.py [-h] [--dry-run] [--result RESULT] {hello,vadd4}\nrecording_case.py: error: Run case does not match the requested result.\n"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/recording_case.py",
+        "hello",
+        "--result",
+        "/tmp/cie-source-prepare-check-7ctnz87c/repository/runs/recording-hello-20261102-221017-c22a75"
+      ],
+      "exit_code": 1,
+      "expected_exit": 1,
+      "passed": true,
+      "stdout": "LOG_DIRECTORY=/tmp/cie-source-prepare-check-7ctnz87c/repository/runs/recording-hello-20261102-221017-c22a75\nDifftest enabled.\nhello xiangshan, I am Meijie, IP address: 172.26.232.122\nHIT GOOD TRAP\nEMU_EXIT_CODE=0\nRUNNER_EXIT_CODE=1\nRUN_CHECK=FAIL\n",
+      "stderr": ""
+    }
+  ],
+  "checks_passed": 14
+}

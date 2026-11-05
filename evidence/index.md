@@ -1,6 +1,6 @@
 # 报告材料路径对照
 
-HTML/PDF 附录保留原工程路径；下表对应本仓库内的位置。原始 Markdown 记录以 `.md.txt` 保存原文，报告正文的可点击引用已更新。大型 VCD、仿真器和生成镜像不进入 Git；代码恢复与运行见仓库复现说明。
+HTML/PDF 附录保留原工程路径；下表对应本仓库内的位置。原始 Markdown 记录以 `.md.txt` 保存原文，报告正文的可点击引用已更新。报告引用的VCD以压缩分卷保存在recording/data；仿真器和应用镜像在work/build中构建。当前操作命令见仓库REPRODUCE.md和recording/README.md。
 
 | 原工程路径 | 本仓库文件或目录 |
 | --- | --- |

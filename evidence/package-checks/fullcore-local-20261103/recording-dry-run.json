@@ -1,0 +1,7 @@
+{
+  "vadd_exit": 0,
+  "hello_exit": 0,
+  "container": "cie-vdot-run-f1c7494bad85",
+  "cwd": "/validation/cie2026-xiangshanxinrui-vdot",
+  "scope": "Input identities and command construction only; simulation covered by smoke and functional suites"
+}

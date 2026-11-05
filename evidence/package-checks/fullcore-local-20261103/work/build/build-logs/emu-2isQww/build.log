@@ -1,0 +1,9 @@
+make: Entering directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/XiangShan'
+mkdir -p build/rtl
+Tue, 03 Nov 2026 04:13:03 +0000
+time -avp -o ./build/time.log mill -i -Djvm-xmx=6G -Djvm-xss=256m xiangshan.test.runMain top.SimTop    \
+	--target-dir build/rtl --config MinimalConfig --issue E.b --firtool-opt "--repl-seq-mem --repl-seq-mem-file=SimTop.sv.conf"		\
+	--num-cores 1 --dump-fir --target systemverilog --split-verilog --firtool-opt "-O=release --disable-annotation-unknown --lowering-options=explicitBitcast,disallowLocalVariables,disallowPortDeclSharing,locationInfoStyle=none"  --enable-difftest --full-stacktrace
+/bin/sh: 1: time: not found
+make: *** [Makefile:224: build/rtl/SimTop.sv] Error 127
+make: Leaving directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/XiangShan'

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="725" viewBox="0 0 1280 725">
+<defs><marker id="arr-ink" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#172C43"/></marker><marker id="arr-muted" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#566C7F"/></marker><marker id="arr-line" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C9D6DF"/></marker><marker id="arr-grid" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E8EEF2"/></marker><marker id="arr-paper" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFFFFF"/></marker><marker id="arr-teal" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#087F8C"/></marker><marker id="arr-teal_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E6F3F3"/></marker><marker id="arr-blue" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#3567A3"/></marker><marker id="arr-blue_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EDF3FA"/></marker><marker id="arr-purple" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#7659A3"/></marker><marker id="arr-purple_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#F1EDF7"/></marker><marker id="arr-amber" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C57A23"/></marker><marker id="arr-amber_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFF4E4"/></marker><marker id="arr-red" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#B85348"/></marker><marker id="arr-red_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FCEEEB"/></marker><marker id="arr-gray" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EFF3F6"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Segoe UI",sans-serif} .mono{font-family:Consolas,"Microsoft YaHei",monospace}</style>
+<rect width="1280" height="725" fill="white"/>
+<rect x="36" y="32" width="6" height="54" rx="2" fill="#087F8C"/>
+<text x="60" y="54" font-size="32" fill="#172C43" font-weight="650" text-anchor="start">等价验证用例如何组成</text>
+<text x="60" y="88" font-size="20" fill="#566C7F" font-weight="400" text-anchor="start">同一组输入配置分别执行 VDot、RVV-m1 和 RVV-mf2</text>
+<path d="M40,676 L1240,676" fill="none" stroke="#C9D6DF" stroke-width="1" stroke-linejoin="round"/>
+<text x="42" y="703" font-size="16" fill="#566C7F" font-weight="400" text-anchor="start">VDOT / XIANGSHAN KUNMINGHU V2</text>
+<text x="1238" y="703" font-size="16" fill="#566C7F" font-weight="400" text-anchor="end">设计示意</text>
+<rect x="48" y="150" width="254" height="166" rx="12" fill="#EDF3FA"/>
+<text x="73" y="214" font-size="54" fill="#3567A3" font-weight="650" text-anchor="start">6</text>
+<text x="73" y="254" font-size="25" fill="#172C43" font-weight="650" text-anchor="start">组输入数据</text>
+<text x="73" y="290" font-size="17" fill="#566C7F" font-weight="400" text-anchor="start">正数 / 混合符号 / 边界</text>
+<text x="330" y="245" font-size="30" fill="#566C7F" font-weight="400" text-anchor="middle">×</text>
+<rect x="358" y="150" width="254" height="166" rx="12" fill="#E6F3F3"/>
+<text x="383" y="214" font-size="54" fill="#087F8C" font-weight="650" text-anchor="start">2</text>
+<text x="383" y="254" font-size="25" fill="#172C43" font-weight="650" text-anchor="start">种 vm</text>
+<text x="383" y="290" font-size="17" fill="#566C7F" font-weight="400" text-anchor="start">无掩码 / 有掩码</text>
+<text x="640" y="245" font-size="30" fill="#566C7F" font-weight="400" text-anchor="middle">×</text>
+<rect x="668" y="150" width="254" height="166" rx="12" fill="#F1EDF7"/>
+<text x="693" y="214" font-size="54" fill="#7659A3" font-weight="650" text-anchor="start">3</text>
+<text x="693" y="254" font-size="25" fill="#172C43" font-weight="650" text-anchor="start">种 VL</text>
+<text x="693" y="290" font-size="17" fill="#566C7F" font-weight="400" text-anchor="start">0 / 8 / 16</text>
+<text x="950" y="245" font-size="30" fill="#566C7F" font-weight="400" text-anchor="middle">×</text>
+<rect x="978" y="150" width="254" height="166" rx="12" fill="#FFF4E4"/>
+<text x="1003" y="214" font-size="54" fill="#C57A23" font-weight="650" text-anchor="start">4</text>
+<text x="1003" y="254" font-size="25" fill="#172C43" font-weight="650" text-anchor="start">种 vta/vma</text>
+<text x="1003" y="290" font-size="17" fill="#566C7F" font-weight="400" text-anchor="start">四种策略组合</text>
+<path d="M640,326 L640,365" fill="none" stroke="#566C7F" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-muted)"/>
+<rect x="48" y="385" width="500" height="98" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="66" y="419" font-size="29" fill="#3567A3" font-weight="650" text-anchor="start">144 种输入配置</text>
+<text x="66" y="452" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">6 × 2 × 3 × 4</text>
+<text x="633" y="445" font-size="32" fill="#566C7F" font-weight="400" text-anchor="middle">× 3</text>
+<rect x="720" y="385" width="512" height="98" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="738" y="419" font-size="29" fill="#087F8C" font-weight="650" text-anchor="start">432 次内核调用</text>
+<text x="738" y="452" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">VDot / RVV-m1 / RVV-mf2</text>
+<rect x="48" y="538" width="1184" height="107" rx="12" fill="#EFF3F6"/>
+<text x="73" y="576" font-size="23" fill="#172C43" font-weight="650" text-anchor="start">比较内容</text>
+<text x="73" y="614" font-size="23" fill="#172C43" font-weight="400" text-anchor="start">v0–v3 共 64 字节；VL / vtype / VS / vstart / vcsr / fflags</text>
+</svg>

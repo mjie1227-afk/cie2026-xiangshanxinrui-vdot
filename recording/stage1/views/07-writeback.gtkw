@@ -1,0 +1,32 @@
+[*] Existing 2026-10-17 VADD VCD; recording signal selection only.
+[size] 1500 900
+[signals_width] 580
+[sst_width] 260
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.clock
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.reset
+@200
+-07-writeback Physical vector register write
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.vfRegFilePart0.io_writePorts_1_wen
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.vfRegFilePart0.io_writePorts_1_addr[7:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.vfRegFilePart0.io_writePorts_1_data[31:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.vfRegFilePart0.mem_51[31:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.vfRegFilePart1.io_writePorts_1_data[31:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.vfRegFilePart1.mem_51[31:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.vfRegFilePart2.io_writePorts_1_data[31:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.vfRegFilePart2.mem_51[31:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.vfRegFilePart3.io_writePorts_1_data[31:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_dataPath.vfRegFilePart3.mem_51[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

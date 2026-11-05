@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="700" viewBox="0 0 1280 700">
+<defs><marker id="arr-ink" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#172C43"/></marker><marker id="arr-muted" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#566C7F"/></marker><marker id="arr-line" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C9D6DF"/></marker><marker id="arr-grid" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E8EEF2"/></marker><marker id="arr-paper" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFFFFF"/></marker><marker id="arr-teal" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#087F8C"/></marker><marker id="arr-teal_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E6F3F3"/></marker><marker id="arr-blue" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#3567A3"/></marker><marker id="arr-blue_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EDF3FA"/></marker><marker id="arr-purple" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#7659A3"/></marker><marker id="arr-purple_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#F1EDF7"/></marker><marker id="arr-amber" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C57A23"/></marker><marker id="arr-amber_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFF4E4"/></marker><marker id="arr-red" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#B85348"/></marker><marker id="arr-red_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FCEEEB"/></marker><marker id="arr-gray" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EFF3F6"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Segoe UI",sans-serif} .mono{font-family:Consolas,"Microsoft YaHei",monospace}</style>
+<rect width="1280" height="700" fill="white"/>
+<rect x="36" y="32" width="6" height="54" rx="2" fill="#087F8C"/>
+<text x="60" y="54" font-size="32" fill="#172C43" font-weight="650" text-anchor="start">完成、退休与分支取消的两条事件链</text>
+<text x="60" y="88" font-size="20" fill="#566C7F" font-weight="400" text-anchor="start">相同 PC 0x80000208 / word 0x0220818b；使用 ROB 和 pdest 区分动态实例</text>
+<path d="M40,651 L1240,651" fill="none" stroke="#C9D6DF" stroke-width="1" stroke-linejoin="round"/>
+<text x="42" y="678" font-size="16" fill="#566C7F" font-weight="400" text-anchor="start">VDOT / XIANGSHAN KUNMINGHU V2</text>
+<text x="1238" y="678" font-size="16" fill="#566C7F" font-weight="400" text-anchor="end">已记录事件 · 事件顺序图</text>
+<text x="48" y="153" font-size="24" fill="#087F8C" font-weight="650" text-anchor="start">正常实例  ROB 1/36 · pdest 62</text>
+<rect x="48" y="188" width="254" height="105" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="66" y="222" font-size="25" fill="#087F8C" font-weight="650" text-anchor="start">分配</text>
+<text x="66" y="255" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">14208 ps</text>
+<path d="M310,239 L346,239" fill="none" stroke="#087F8C" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="358" y="188" width="254" height="105" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="376" y="222" font-size="25" fill="#087F8C" font-weight="650" text-anchor="start">FU 输入</text>
+<text x="376" y="255" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">14220 ps</text>
+<path d="M620,239 L656,239" fill="none" stroke="#087F8C" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="668" y="188" width="254" height="105" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="686" y="222" font-size="25" fill="#087F8C" font-weight="650" text-anchor="start">FU 完成</text>
+<text x="686" y="255" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">14224 ps</text>
+<path d="M930,239 L966,239" fill="none" stroke="#087F8C" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="978" y="188" width="254" height="105" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="996" y="222" font-size="25" fill="#087F8C" font-weight="650" text-anchor="start">ROB 退休</text>
+<text x="996" y="255" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">14272 ps</text>
+<rect x="48" y="317" width="1184" height="34" rx="6" fill="#E6F3F3"/>
+<text x="640.0" y="341" font-size="18" fill="#087F8C" font-weight="650" text-anchor="middle">FU 输入 → 完成：2 周期             FU 输入 → 退休：26 周期</text>
+<text x="48" y="412" font-size="24" fill="#C57A23" font-weight="650" text-anchor="start">投机实例  ROB 1/27 · pdest 61</text>
+<rect x="48" y="444" width="220" height="105" rx="10" fill="#FFF4E4" stroke="#C57A23" stroke-width="1.6"/>
+<text x="66" y="478" font-size="20" fill="#C57A23" font-weight="650" text-anchor="start">分配</text>
+<text x="66" y="511" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">16892 ps</text>
+<path d="M270,496 L281,496" fill="none" stroke="#C57A23" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arr-amber)"/>
+<rect x="288" y="444" width="220" height="105" rx="10" fill="#FFF4E4" stroke="#C57A23" stroke-width="1.6"/>
+<text x="306" y="478" font-size="20" fill="#C57A23" font-weight="650" text-anchor="start">FU 输入</text>
+<text x="306" y="511" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">16904 ps</text>
+<path d="M510,496 L521,496" fill="none" stroke="#C57A23" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arr-amber)"/>
+<rect x="528" y="444" width="220" height="105" rx="10" fill="#FFF4E4" stroke="#C57A23" stroke-width="1.6"/>
+<text x="546" y="478" font-size="20" fill="#C57A23" font-weight="650" text-anchor="start">FU 完成</text>
+<text x="546" y="511" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">16908 ps</text>
+<path d="M750,496 L761,496" fill="none" stroke="#C57A23" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arr-amber)"/>
+<rect x="768" y="444" width="220" height="105" rx="10" fill="#FFF4E4" stroke="#C57A23" stroke-width="1.6"/>
+<text x="786" y="478" font-size="20" fill="#C57A23" font-weight="650" text-anchor="start">较老分支 redirect</text>
+<text x="786" y="511" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">16952 ps</text>
+<path d="M990,496 L1001,496" fill="none" stroke="#C57A23" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arr-amber)"/>
+<rect x="1008" y="444" width="220" height="105" rx="10" fill="#FFF4E4" stroke="#C57A23" stroke-width="1.6"/>
+<text x="1026" y="478" font-size="20" fill="#C57A23" font-weight="650" text-anchor="start">原 ROB 身份复用</text>
+<text x="1026" y="511" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">16970 ps</text>
+<rect x="48" y="580" width="1184" height="34" rx="6" fill="#FFF4E4"/>
+<text x="640.0" y="604" font-size="18" fill="#C57A23" font-weight="650" text-anchor="middle">已完成计算；较老分支纠正路径后，该实例在原 ROB 身份复用前没有有效退休。</text>
+</svg>

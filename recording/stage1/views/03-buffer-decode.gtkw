@@ -1,0 +1,54 @@
+[*] Existing 2026-10-17 VADD VCD; recording signal selection only.
+[size] 1500 900
+[signals_width] 580
+[sst_width] 260
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.clock
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.reset
+@200
+-03-buffer-decode Decode buffer and decode acceptance
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decodeBufValid_3
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decodeBufBits_3_pc[49:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decodeBufValid_1
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decodeBufBits_1_pc[49:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decodeBufValid_0
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decodeBufBits_0_pc[49:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decodeBufBits_0_instr[31:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.io_in_0_valid
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.io_in_0_ready
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.io_in_0_bits_pc[49:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.io_in_0_bits_instr[31:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.io_in_0_bits_ftqPtr_flag
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.io_in_0_bits_ftqPtr_value[2:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.io_in_0_bits_ftqOffset[3:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.io_redirect
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.decoders_0.io_deq_decodedInst_lsrc_0[5:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.decoders_0.io_deq_decodedInst_lsrc_1[5:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.decoders_0.io_deq_decodedInst_ldest[5:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.decoders_0.io_deq_decodedInst_vecWen
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.decoders_0.io_deq_decodedInst_vpu_vsew[1:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.decoders_0.io_deq_decodedInst_vpu_vlmul[2:0]
+[pattern_trace] 1
+[pattern_trace] 0

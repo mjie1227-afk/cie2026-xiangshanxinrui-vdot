@@ -1,0 +1,16 @@
+make: Entering directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/XiangShan'
+make -C ./difftest emu SIM_TOP=SimTop DESIGN_DIR=/validation/cie2026-xiangshanxinrui-vdot/work/build/XiangShan NUM_CORES=1 RTL_SUFFIX=sv
+make[1]: Entering directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/XiangShan/difftest'
+Tue, 03 Nov 2026 04:52:50 +0000
+Building emu...
+make[2]: Entering directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/XiangShan/difftest'
+time -avp -o /validation/cie2026-xiangshanxinrui-vdot/work/build/XiangShan/build/time.log make -s VM_PARALLEL_BUILDS=1 OPT_SLOW="-O0" \
+					OPT_FAST=-O3 \
+					PGO_CFLAGS= \
+					PGO_LDFLAGS= \
+					-C /validation/cie2026-xiangshanxinrui-vdot/work/build/XiangShan/build/emu-compile -f /validation/cie2026-xiangshanxinrui-vdot/work/build/XiangShan/build/emu-compile/VSimTop.mk 
+make[3]: Entering directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/XiangShan/build/emu-compile'
+make[3]: Leaving directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/XiangShan/build/emu-compile'
+make[2]: Leaving directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/XiangShan/difftest'
+make[1]: Leaving directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/XiangShan/difftest'
+make: Leaving directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/XiangShan'

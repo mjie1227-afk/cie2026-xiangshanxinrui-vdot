@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-11-03T12:29:03.093064+08:00",
+  "new_location": "D:\\DockerData\\DockerDesktopWSL",
+  "old_data_disk_exists": false,
+  "disk_free_bytes": {
+    "C:/": 22790168576,
+    "D:/": 248655781888
+  },
+  "image_id": "sha256:e35de5c21ba1e4a891a02d5f60d881ec6f8188de217bb1410ba300e962100e26",
+  "volumes": [
+    "cie-vdot-envtest-8bbc7145b4",
+    "cie-vdot-envtest-8bbc7145b4-cache",
+    "cie-vdot-envtest-e87db082a6",
+    "cie-vdot-envtest-e87db082a6-cache"
+  ],
+  "containers_running": [],
+  "authorization": "User explicitly approved D:\\DockerData; migrated through Docker Desktop Resources > Advanced UI."
+}

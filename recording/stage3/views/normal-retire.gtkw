@@ -1,0 +1,20 @@
+[*] Original VCD; normal lane 1 retirement view.
+[size] 1700 1000
+[signals_width] 750
+[sst_width] 230
+@28
+TOP.clock
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rob.io_commits_isCommit
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rob.io_commits_commitValid_1
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rob.io_commits_robIdx_1_flag
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rob.io_commits_robIdx_1_value[5:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rob.io_commits_info_1_debug_pc[49:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rob.io_commits_info_1_debug_instr[31:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rob.io_commits_info_1_debug_pdest[7:0]

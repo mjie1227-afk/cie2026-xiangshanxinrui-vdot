@@ -1,0 +1,19 @@
+make: Entering directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/apps/vadd4'
+# Building vadd4 [riscv64-xs] with AM_HOME {/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am}
++ CC main.c
++ AS vadd4.S
+make[1]: Entering directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am'
+make[1]: Entering directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/libs/klib'
+make[2]: Entering directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/am'
+# Building lib-klib [riscv64-xs]
+# Building lib-am [riscv64-xs]
+make[1]: Leaving directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/libs/klib'
++ AS src/nemu/common/mainargs.S
++ AR -> build/am-riscv64-xs.a
+make[2]: Leaving directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/am'
+make[1]: Leaving directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am'
+# Creating binary image [riscv64-xs]
++ LD -> build/vadd4-riscv64-xs.elf
+riscv64-linux-gnu-ld: warning: /validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/apps/vadd4/build/vadd4-riscv64-xs.elf has a LOAD segment with RWX permissions
++ OBJCOPY -> build/vadd4-riscv64-xs.bin
+make: Leaving directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/apps/vadd4'

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="690" viewBox="0 0 1280 690">
+<defs><marker id="arr-ink" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#172C43"/></marker><marker id="arr-muted" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#566C7F"/></marker><marker id="arr-line" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C9D6DF"/></marker><marker id="arr-grid" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E8EEF2"/></marker><marker id="arr-paper" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFFFFF"/></marker><marker id="arr-teal" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#087F8C"/></marker><marker id="arr-teal_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E6F3F3"/></marker><marker id="arr-blue" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#3567A3"/></marker><marker id="arr-blue_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EDF3FA"/></marker><marker id="arr-purple" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#7659A3"/></marker><marker id="arr-purple_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#F1EDF7"/></marker><marker id="arr-amber" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C57A23"/></marker><marker id="arr-amber_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFF4E4"/></marker><marker id="arr-red" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#B85348"/></marker><marker id="arr-red_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FCEEEB"/></marker><marker id="arr-gray" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EFF3F6"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Segoe UI",sans-serif} .mono{font-family:Consolas,"Microsoft YaHei",monospace}</style>
+<rect width="1280" height="690" fill="white"/>
+<rect x="36" y="32" width="6" height="54" rx="2" fill="#087F8C"/>
+<text x="60" y="54" font-size="32" fill="#172C43" font-weight="650" text-anchor="start">从源码到整核仿真</text>
+<text x="60" y="88" font-size="20" fill="#566C7F" font-weight="400" text-anchor="start">第一阶段：RTL 仿真器、测试镜像与预编译参考库分别准备</text>
+<path d="M40,641 L1240,641" fill="none" stroke="#C9D6DF" stroke-width="1" stroke-linejoin="round"/>
+<text x="42" y="668" font-size="16" fill="#566C7F" font-weight="400" text-anchor="start">VDOT / XIANGSHAN KUNMINGHU V2</text>
+<text x="1238" y="668" font-size="16" fill="#566C7F" font-weight="400" text-anchor="end">设计示意</text>
+<text x="48" y="179" font-size="21" fill="#3567A3" font-weight="650" text-anchor="start">硬件模型</text>
+<rect x="185" y="147" width="255" height="85" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="203" y="181" font-size="22" fill="#3567A3" font-weight="650" text-anchor="start">XiangShan / Chisel</text>
+<text x="312" y="208" font-size="18" fill="#566C7F" font-weight="400" text-anchor="middle">Mill</text>
+<path d="M450,189 L568,189" fill="none" stroke="#3567A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<rect x="580" y="147" width="260" height="85" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="598" y="181" font-size="24" fill="#3567A3" font-weight="650" text-anchor="start">emu</text>
+<text x="710" y="208" font-size="17" fill="#566C7F" font-weight="400" text-anchor="middle">Mill → RTL → Verilator</text>
+<path d="M850,189 L900,189 L900,335 L940,335" fill="none" stroke="#3567A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<text x="48" y="324" font-size="21" fill="#087F8C" font-weight="650" text-anchor="start">测试程序</text>
+<rect x="185" y="292" width="255" height="85" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="203" y="326" font-size="22" fill="#087F8C" font-weight="650" text-anchor="start">AM 应用 / C + 汇编</text>
+<text x="312" y="353" font-size="18" fill="#566C7F" font-weight="400" text-anchor="middle">应用独立编译</text>
+<path d="M450,334 L568,334" fill="none" stroke="#087F8C" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="580" y="292" width="260" height="85" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="598" y="326" font-size="24" fill="#087F8C" font-weight="650" text-anchor="start">测试镜像 .bin</text>
+<text x="710" y="353" font-size="17" fill="#566C7F" font-weight="400" text-anchor="middle">ELF 定位指令；BIN 用于加载</text>
+<path d="M850,334 L900,334 L900,335 L940,335" fill="none" stroke="#087F8C" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<text x="48" y="469" font-size="21" fill="#7659A3" font-weight="650" text-anchor="start">参考模型</text>
+<rect x="185" y="437" width="255" height="85" rx="10" fill="#F1EDF7" stroke="#7659A3" stroke-width="1.6"/>
+<text x="203" y="471" font-size="22" fill="#7659A3" font-weight="650" text-anchor="start">ready-to-run</text>
+<text x="312" y="498" font-size="18" fill="#566C7F" font-weight="400" text-anchor="middle">锁定共享库版本</text>
+<path d="M450,479 L568,479" fill="none" stroke="#7659A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-purple)"/>
+<rect x="580" y="437" width="260" height="85" rx="10" fill="#F1EDF7" stroke="#7659A3" stroke-width="1.6"/>
+<text x="598" y="471" font-size="24" fill="#7659A3" font-weight="650" text-anchor="start">参考库 .so</text>
+<text x="710" y="498" font-size="17" fill="#566C7F" font-weight="400" text-anchor="middle">第一阶段使用预编译 NEMU</text>
+<path d="M850,479 L900,479 L900,335 L940,335" fill="none" stroke="#7659A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-purple)"/>
+<rect x="950" y="255" width="275" height="165" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="968" y="289" font-size="25" fill="#087F8C" font-weight="650" text-anchor="start">整核协同运行</text>
+<text x="968" y="322" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">emu 加载测试镜像</text>
+<text x="968" y="351" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">--diff 连接 NEMU</text>
+<text x="968" y="380" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">程序自检 + DiffTest</text>
+<text x="48" y="602" font-size="19" fill="#566C7F" font-weight="650" text-anchor="start">构建关系</text>
+<text x="185" y="602" font-size="23" fill="#172C43" font-weight="400" text-anchor="start">修改应用 → 重编测试镜像       修改硬件 → 重编仿真器</text>
+</svg>

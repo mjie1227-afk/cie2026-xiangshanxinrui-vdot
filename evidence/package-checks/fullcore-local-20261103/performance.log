@@ -1,0 +1,121 @@
+CONTAINER_LOG=D:\Mayyyyyy\WorkSpaces\日常工作区1\2026比赛规划\RISCV_vdot\submission_ready\cie2026-xiangshanxinrui-vdot\work\container-logs\performance-hvpsqwhu
+HOST_DISK docker-storage: 211.29 GiB free (D:\DockerData\DockerDesktopWSL)
+HOST_DISK project-files: 211.29 GiB free (D:\Mayyyyyy\WorkSpaces\日常工作区1\2026比赛规划\RISCV_vdot\submission_ready\cie2026-xiangshanxinrui-vdot)
+HOST_DISK windows-system-drive: 16.09 GiB free (C:\)
+SUITE_DIRECTORY=/validation/cie2026-xiangshanxinrui-vdot/runs/performance-42571a4f4b0e46a3b63635ab4eb26b93
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-x9iJBo
+BUILD_EXIT_CODE=0
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-x9iJBo
+{
+  "passed": true,
+  "exit_code": 0,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "run_directory": "/validation/cie2026-xiangshanxinrui-vdot/runs/performance-42571a4f4b0e46a3b63635ab4eb26b93/vdot-timing-pilot-v1"
+}
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-ZGHhpg
+BUILD_EXIT_CODE=0
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-ZGHhpg
+{
+  "passed": true,
+  "exit_code": 0,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "run_directory": "/validation/cie2026-xiangshanxinrui-vdot/runs/performance-42571a4f4b0e46a3b63635ab4eb26b93/vdot-chain-v1"
+}
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-VXcuK8
+BUILD_EXIT_CODE=0
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-VXcuK8
+{
+  "passed": true,
+  "exit_code": 0,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "run_directory": "/validation/cie2026-xiangshanxinrui-vdot/runs/performance-42571a4f4b0e46a3b63635ab4eb26b93/vdot-throughput-v1"
+}
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-d0SBCd
+BUILD_EXIT_CODE=0
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-d0SBCd
+{
+  "passed": true,
+  "exit_code": 0,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "run_directory": "/validation/cie2026-xiangshanxinrui-vdot/runs/performance-42571a4f4b0e46a3b63635ab4eb26b93/vdot-e2e-v1"
+}
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-HTTIm3
+BUILD_EXIT_CODE=0
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-HTTIm3
+{
+  "passed": true,
+  "exit_code": 0,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "run_directory": "/validation/cie2026-xiangshanxinrui-vdot/runs/performance-42571a4f4b0e46a3b63635ab4eb26b93/vdot-segment-v1"
+}
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-nl65mu
+BUILD_EXIT_CODE=0
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-nl65mu
+{
+  "passed": true,
+  "exit_code": 0,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "run_directory": "/validation/cie2026-xiangshanxinrui-vdot/runs/performance-42571a4f4b0e46a3b63635ab4eb26b93/vdot-load-v1"
+}
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-XUFbHq
+BUILD_EXIT_CODE=0
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-XUFbHq
+{
+  "passed": true,
+  "exit_code": 0,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "run_directory": "/validation/cie2026-xiangshanxinrui-vdot/runs/performance-42571a4f4b0e46a3b63635ab4eb26b93/vdot-tile-v1"
+}
+ACCEPTANCE_FILE=/validation/cie2026-xiangshanxinrui-vdot/runs/performance-42571a4f4b0e46a3b63635ab4eb26b93/acceptance.json
+SUITE_PASS performance 7/7
+REPRODUCE_STAGE=performance PASS
+CONTAINER_EXIT_CODE=0

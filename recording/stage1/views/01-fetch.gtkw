@@ -1,0 +1,42 @@
+[*] Existing 2026-10-17 VADD VCD; recording signal selection only.
+[size] 1500 900
+[signals_width] 580
+[sst_width] 260
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.clock
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.reset
+@200
+-01-fetch FTQ request and ICache response
+@28
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ftq.io_toIfu_req_valid
+@28
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ftq.io_toIfu_req_ready
+@28
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ftq.io_toIfu_req_bits_ftqIdx_flag
+@22
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ftq.io_toIfu_req_bits_ftqIdx_value[2:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ftq.io_toIfu_req_bits_startAddr[49:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ftq.io_toIfu_req_bits_nextStartAddr[49:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_icache.io_fetch_resp_valid
+@22
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_icache.io_fetch_resp_bits_vaddr_0[49:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_icache.io_fetch_resp_bits_doubleline
+@22
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_icache.io_fetch_resp_bits_exception_0[1:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_icache.io_fetch_resp_bits_exception_1[1:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_icache.io_fetch_resp_bits_data[511:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ifu.f2_ftq_req_ftqIdx_flag
+@22
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ifu.f2_ftq_req_ftqIdx_value[2:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ifu.f2_fire
+[pattern_trace] 1
+[pattern_trace] 0

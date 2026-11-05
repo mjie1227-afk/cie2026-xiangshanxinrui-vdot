@@ -1,0 +1,106 @@
+{
+  "staging": "/tmp/cie-full-source-19huhrkv",
+  "repositories": 21,
+  "files": 4744,
+  "source_bytes": 71694915,
+  "symlinks": 23,
+  "upstream_git_controls_renamed": 43,
+  "unused_upstream_gitlinks": [
+    {
+      "project": "XiangShan",
+      "path": "coupledL2/HuanCun",
+      "commit": "8faa17c9f7115782da1bd1665bd95587fba525ec",
+      "use": "Upstream standalone/test dependency, not used by this integrated build."
+    },
+    {
+      "project": "XiangShan",
+      "path": "coupledL2/rocket-chip",
+      "commit": "90ae9a9314d444ade097fd5a471916869559b4fd",
+      "use": "Upstream standalone/test dependency, not used by this integrated build."
+    },
+    {
+      "project": "XiangShan",
+      "path": "coupledL2/utility",
+      "commit": "992ce71166405de47c93102100a897726bd93bac",
+      "use": "Upstream standalone/test dependency, not used by this integrated build."
+    },
+    {
+      "project": "XiangShan",
+      "path": "fudian/berkeley-softfloat-3",
+      "commit": "b64af41c3276f97f0e181920400ee056b9c88037",
+      "use": "Upstream standalone/test dependency, not used by this integrated build."
+    },
+    {
+      "project": "XiangShan",
+      "path": "fudian/berkeley-testfloat-3",
+      "commit": "06b20075dd3c1a5d0dd007a93643282832221612",
+      "use": "Upstream standalone/test dependency, not used by this integrated build."
+    },
+    {
+      "project": "XiangShan",
+      "path": "huancun/Utility",
+      "commit": "de50694f6ffb48780a4b4665907442b3e4dd0d6d",
+      "use": "Upstream standalone/test dependency, not used by this integrated build."
+    },
+    {
+      "project": "XiangShan",
+      "path": "huancun/rocket-chip",
+      "commit": "e64b744b1490992bd038aaf9ca628f0e29fa0e59",
+      "use": "Upstream standalone/test dependency, not used by this integrated build."
+    },
+    {
+      "project": "XiangShan",
+      "path": "openLLC/coupledL2",
+      "commit": "d3b04fef92092f9b27023bea57cc2ca99a8ffea0",
+      "use": "Upstream standalone/test dependency, not used by this integrated build."
+    },
+    {
+      "project": "XiangShan",
+      "path": "openLLC/rocket-chip",
+      "commit": "bb4baf85c5bd4b55ffdcda12a75648fef212ab69",
+      "use": "Upstream standalone/test dependency, not used by this integrated build."
+    },
+    {
+      "project": "XiangShan",
+      "path": "openLLC/utility",
+      "commit": "342e0ad98bf24bf550f4d44099bd64875145d07c",
+      "use": "Upstream standalone/test dependency, not used by this integrated build."
+    },
+    {
+      "project": "XiangShan",
+      "path": "openLLC/openNCB/external/rocket-chip",
+      "commit": "c0955429aa3d9fe2be560f28599ece700fb0466c",
+      "use": "Upstream standalone/test dependency, not used by this integrated build."
+    },
+    {
+      "project": "XiangShan",
+      "path": "rocket-chip/torture",
+      "commit": "99d8b2b441ecaa18b852505bb7718ee04e2753f5",
+      "use": "Upstream standalone/test dependency, not used by this integrated build."
+    },
+    {
+      "project": "XiangShan",
+      "path": "rocket-chip/hardfloat/berkeley-softfloat-3",
+      "commit": "5c06db33fc1e2130f67c045327b0ec949032df1d",
+      "use": "Upstream standalone/test dependency, not used by this integrated build."
+    },
+    {
+      "project": "XiangShan",
+      "path": "rocket-chip/hardfloat/berkeley-testfloat-3",
+      "commit": "06b20075dd3c1a5d0dd007a93643282832221612",
+      "use": "Upstream standalone/test dependency, not used by this integrated build."
+    },
+    {
+      "project": "XiangShan",
+      "path": "utility/rocket-chip",
+      "commit": "175dfe096e3b7c630f93ef328df1cf0b2ed55de1",
+      "use": "Upstream standalone/test dependency, not used by this integrated build."
+    },
+    {
+      "project": "NEMU",
+      "path": "resource/simpoint/simpoint_repo",
+      "commit": "e51a936d7fddfa03c81692039f184ab6c437e99e",
+      "use": "Upstream standalone/test dependency, not used by this integrated build."
+    }
+  ]
+}

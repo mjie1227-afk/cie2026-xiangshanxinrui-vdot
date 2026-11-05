@@ -1,0 +1,15 @@
+test_existing_unrelated_file_is_preserved (test_checkpoint_toolchain.ToolchainTest.test_existing_unrelated_file_is_preserved) ... ok
+test_explicit_prefix_with_only_gcc12 (test_checkpoint_toolchain.ToolchainTest.test_explicit_prefix_with_only_gcc12) ... ok
+test_invalid_explicit_prefix_does_not_silently_fallback (test_checkpoint_toolchain.ToolchainTest.test_invalid_explicit_prefix_does_not_silently_fallback) ... ok
+test_missing_binutils_stops_before_alias_creation (test_checkpoint_toolchain.ToolchainTest.test_missing_binutils_stops_before_alias_creation) ... ok
+test_versioned_only_and_idempotent (test_checkpoint_toolchain.ToolchainTest.test_versioned_only_and_idempotent) ... ok
+test_complete_suite (test_verify_results.AcceptanceTest.test_complete_suite) ... ok
+test_missing_case_rejected (test_verify_results.AcceptanceTest.test_missing_case_rejected) ... ok
+test_mixed_reference_rejected (test_verify_results.AcceptanceTest.test_mixed_reference_rejected) ... ok
+test_modified_log_rejected (test_verify_results.AcceptanceTest.test_modified_log_rejected) ... ok
+test_stored_pass_does_not_override_raw_failure (test_verify_results.AcceptanceTest.test_stored_pass_does_not_override_raw_failure) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.017s
+
+OK

@@ -1,0 +1,4 @@
+make: Entering directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU'
+Makefile:40: You have set CONFIG_FLASH_IMG_PATH option, but the specified path '""' does not exist!
++ ccache clang++ /validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/build/riscv64-nemu-interpreter-so
+make: Leaving directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU'

@@ -1,0 +1,129 @@
+{
+  "date": "2026-11-03T15:17:05.063240+08:00",
+  "image_id": "sha256:cd7692ee604581015af9dfa59ad694eb4315a1170d2a315f80eae0213543a62c",
+  "binary_identities": {
+    "emu": "1f864f954fd7beb6bff061bd3a2d6dfac3511c0f506edf9c8db2fa5f0efe76fb",
+    "reference": "dde66037fc1998e98770d2e6621fc7539c07bce193c3c76e3e49b879667195ce",
+    "flash": "fea548655a8b6eecacace83e2f4380a18b8aa83bce964c8aae4cffbe2f5a9724"
+  },
+  "dockerfile_sha256": "eeabfe7d83cc2a3b4913532871c56f8cd4dd2bdd12790ac7612486d7d30a27d8",
+  "source": "Submitted complete source tree; no historical emulator binary reused.",
+  "build": "Built from source in an isolated Linux volume. Resumed generated RTL/model files after fixing missing GNU time and SQLite development packages.",
+  "build_exit_code": 0,
+  "suites": {
+    "smoke": {
+      "passed": 3,
+      "expected": 3,
+      "elapsed_seconds": 85.31,
+      "acceptance": "runs/smoke-fd0f09e2f8db4b869aaee0a033c12da1/acceptance.json",
+      "durations": [
+        {
+          "case": "hello-meijie",
+          "seconds": 7.75
+        },
+        {
+          "case": "vadd4",
+          "seconds": 23.12
+        },
+        {
+          "case": "vdot-smoke",
+          "seconds": 51.93
+        }
+      ]
+    },
+    "functional": {
+      "passed": 10,
+      "expected": 10,
+      "elapsed_seconds": 1088.79,
+      "acceptance": "runs/functional-15d1110f8ae94c2ab9c9023b8856f762/acceptance.json",
+      "durations": [
+        {
+          "case": "hello-meijie",
+          "seconds": 7.81
+        },
+        {
+          "case": "vadd4",
+          "seconds": 22.21
+        },
+        {
+          "case": "vdot-smoke",
+          "seconds": 71.46
+        },
+        {
+          "case": "vdot-exceptions",
+          "seconds": 372.73
+        },
+        {
+          "case": "vdot-overlap",
+          "seconds": 47.81
+        },
+        {
+          "case": "vdot-deps",
+          "seconds": 80.89
+        },
+        {
+          "case": "vdot-mixed",
+          "seconds": 59.61
+        },
+        {
+          "case": "vdot-cancel-csr",
+          "seconds": 133.73
+        },
+        {
+          "case": "vdot-port-contend-v1",
+          "seconds": 58.61
+        },
+        {
+          "case": "vdot-rvv-equiv-v1",
+          "seconds": 227.52
+        }
+      ]
+    },
+    "performance": {
+      "passed": 7,
+      "expected": 7,
+      "elapsed_seconds": 6134.15,
+      "acceptance": "runs/performance-42571a4f4b0e46a3b63635ab4eb26b93/acceptance.json",
+      "durations": [
+        {
+          "case": "vdot-timing-pilot-v1",
+          "seconds": 462.54
+        },
+        {
+          "case": "vdot-chain-v1",
+          "seconds": 458.02
+        },
+        {
+          "case": "vdot-throughput-v1",
+          "seconds": 477.95
+        },
+        {
+          "case": "vdot-e2e-v1",
+          "seconds": 519.91
+        },
+        {
+          "case": "vdot-segment-v1",
+          "seconds": 928.63
+        },
+        {
+          "case": "vdot-load-v1",
+          "seconds": 2348.68
+        },
+        {
+          "case": "vdot-tile-v1",
+          "seconds": 926.58
+        }
+      ]
+    }
+  },
+  "scope": "Actual application, DiffTest, GOOD TRAP and exit checks. Historical performance figures in the report remain historical; current samples are in these raw logs.",
+  "host": "Windows Docker Desktop WSL2, linux/amd64, about 9.7 GiB RAM + 8 GiB swap, VDOT_JOBS=2; Docker storage on D drive.",
+  "server": "No new server run in this audit; existing native toolchain route retained.",
+  "host_sleep": {
+    "sleep_time": "2026-11-03T06:27:49.4723370Z",
+    "note": "Host sleep occurred during vdot-load-v1; wall-clock durations include this pause. No power settings changed.",
+    "source": "Windows System event / Power-Troubleshooter ID1",
+    "elapsed_seconds": 965.240895,
+    "wake_time": "2026-11-03T06:43:54.7132320Z"
+  }
+}

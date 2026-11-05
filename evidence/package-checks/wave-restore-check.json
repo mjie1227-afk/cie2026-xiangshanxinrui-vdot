@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "scope": "All three original VCDs restored by repository helper and verified by uncompressed SHA256; GTKWave command paths checked without opening GUI.",
+  "vcd_bytes": 2330481409,
+  "records": [
+    {
+      "cwd": "/tmp/cie-source-prepare-check-7ctnz87c/repository",
+      "argv": [
+        "/usr/bin/python3",
+        "tools/prepare_recording.py"
+      ],
+      "exit_code": 0,
+      "stdout": "WAVE_READY /tmp/cie-source-prepare-check-7ctnz87c/repository/work/waveforms/vadd4.vcd\nWAVE_READY /tmp/cie-source-prepare-check-7ctnz87c/repository/work/waveforms/vdot-cancel.vcd\nWAVE_READY /tmp/cie-source-prepare-check-7ctnz87c/repository/work/waveforms/vdot-mixed.vcd\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/tmp/cie-source-prepare-check-7ctnz87c/repository",
+      "argv": [
+        "/usr/bin/python3",
+        "tools/open_wave.py",
+        "1",
+        "01-fetch",
+        "--check-only"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"vcd\": \"/tmp/cie-source-prepare-check-7ctnz87c/repository/work/waveforms/vadd4.vcd\",\n  \"view\": \"/tmp/cie-source-prepare-check-7ctnz87c/repository/recording/stage1/views/01-fetch.gtkw\",\n  \"argv\": [\n    \"/mnt/c/iverilog/gtkwave/bin/gtkwave.exe\",\n    \"--dump\",\n    \"\\\\\\\\wsl.localhost\\\\Ubuntu\\\\tmp\\\\cie-source-prepare-check-7ctnz87c\\\\repository\\\\work\\\\waveforms\\\\vadd4.vcd\",\n    \"--save\",\n    \"\\\\\\\\wsl.localhost\\\\Ubuntu\\\\tmp\\\\cie-source-prepare-check-7ctnz87c\\\\repository\\\\recording\\\\stage1\\\\views\\\\01-fetch.gtkw\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/tmp/cie-source-prepare-check-7ctnz87c/repository",
+      "argv": [
+        "/usr/bin/python3",
+        "tools/open_wave.py",
+        "3",
+        "normal-identity",
+        "--check-only"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"vcd\": \"/tmp/cie-source-prepare-check-7ctnz87c/repository/work/waveforms/vdot-cancel.vcd\",\n  \"view\": \"/tmp/cie-source-prepare-check-7ctnz87c/repository/recording/stage3/views/normal-identity.gtkw\",\n  \"argv\": [\n    \"/mnt/c/iverilog/gtkwave/bin/gtkwave.exe\",\n    \"--dump\",\n    \"\\\\\\\\wsl.localhost\\\\Ubuntu\\\\tmp\\\\cie-source-prepare-check-7ctnz87c\\\\repository\\\\work\\\\waveforms\\\\vdot-cancel.vcd\",\n    \"--save\",\n    \"\\\\\\\\wsl.localhost\\\\Ubuntu\\\\tmp\\\\cie-source-prepare-check-7ctnz87c\\\\repository\\\\recording\\\\stage3\\\\views\\\\normal-identity.gtkw\"\n  ]\n}\n",
+      "stderr": ""
+    }
+  ]
+}

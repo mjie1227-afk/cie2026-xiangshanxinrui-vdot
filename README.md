@@ -1,20 +1,36 @@
 # 香山芯锐：昆明湖 V2 自定义 vdot.vv
 
-2026 CIE 全国 RISC-V 高水平创新及应用大赛参赛工程。队伍：**香山芯锐**；GitHub：**mjie1227-afk**。
+2026 CIE 全国 RISC-V 高水平创新及应用大赛参赛工程。
 
-本项目在香山昆明湖 V2 的向量后端增加固定八项有符号 INT8 点积指令，并扩展 NEMU 参考模型。源码、测试程序、标准 RVV 基线、技术报告和已保存实验记录均在本仓库中。
+## 团队与项目信息
 
-## 阅读与代码入口
+- **团队名称**：香山芯锐
+- **参赛单位**：西安电子科技大学集成电路学部
+- **队伍成员**：梅杰、张磊磊
+- **赛题**：面向边缘 AI 大语言模型推理的 RISC-V 自定义 vdot 指令设计
+
+本项目在香山昆明湖 V2 的向量后端集成专用点积单元，通过 `vdot.vv` 完成固定八项有符号 INT8 点积，为边缘 LLM 的量化线性计算提供算子级加速。项目同步扩展 NEMU 参考模型，完成整核差分验证，并使用标准 RVV 等价实现比较指令延迟与含访存内核的性能。
+
+## 阶段完成情况
+
+- [x] **阶段一：环境部署与运行验证**。完成 Hello/VADD 程序运行，并结合波形追踪 VADD 的取指、译码、重命名、执行、写回与退休过程。
+- [x] **阶段二：VDot 指令设计与实现**。完成指令规格、专用功能单元 RTL 和整核接入，验证正数、负数及边界输入。
+- [x] **阶段三：协同仿真与性能评估**。完成 NEMU 扩展、整核 DiffTest、标准 RVV 等价验证，以及依赖链、吞吐和含访存任务的性能测量。
+
+三阶段技术报告和演示视频均已整理，源码、测试程序与原始实验记录通过下方入口查看。
+
+## 仓库内容
 
 | 内容 | 入口 |
 | --- | --- |
 | 三阶段技术报告 | [报告导航](docs/README.md)，含 Markdown、图片内嵌 HTML 和 PDF |
-| XiangShan 修改 | [完整补丁](patches/XiangShan-full.patch)、[15 个修改/新增文件](src/XiangShan/) |
-| NEMU 扩展 | [补丁](patches/NEMU.patch)、[4 个修改/新增文件](src/NEMU/) |
+| XiangShan 修改 | [已应用修改的完整源码](src/XiangShan/) · [改动补丁](patches/XiangShan-full.patch) |
+| NEMU 扩展 | [已应用修改的完整源码](src/NEMU/) · [改动补丁](patches/NEMU.patch) |
+| 应用运行环境 | [完整 nexus-am](src/nexus-am/) |
 | 功能与性能应用 | [17 个应用](apps/README.md) |
-| 恢复源码、编译和运行 | [复现步骤](REPRODUCE.md) |
+| 源码准备、编译和运行 | [复现步骤](REPRODUCE.md) |
 | 原始证据与路径对照 | [证据索引](evidence/index.md)、[验证说明](VALIDATION.md) |
-| 大型波形及录屏 | [大文件说明](LARGE_FILES.md)、[视频状态](videos/README.md) |
+| 原始波形及成片 | [压缩波形说明](LARGE_FILES.md) · [三阶段视频](videos/README.md) |
 
 ## 实现和主要结果
 
@@ -32,20 +48,14 @@
 
 后三项各有自己的输出任务和计时窗口。详细样本、预热与方法见[第 9 章](docs/正文/09_延迟测量与软件优化分析.md)。
 
-## 快速检查
+## 编译与复现
 
-在本仓库根目录执行，Windows PowerShell 和 Linux 均可：
+从新下载的仓库开始，按[复现指南](REPRODUCE.md)依次完成环境准备、编译、基础测试、功能测试、性能测试和结果导出。Windows PowerShell和Linux使用同一套脚本，工具链由Docker环境自动安装。每一步的成功标志和结果位置均在指南中列出。
 
-```text
-python tools/verify_bundle.py
-```
+仓库包含已应用VDot和mtval修改的完整XiangShan、NEMU、nexus-am及所需源码依赖。准备脚本直接生成编译目录，无需再次应用补丁；首次环境搭建和编译需要联网获取工具及Scala/Chisel依赖。源码组织和许可证见[SOURCE_TREE.md](SOURCE_TREE.md)，已有测试结果与日志见[验证说明](VALIDATION.md)。
 
-该命令检查交付文件与来源哈希、报告引用、关键代码和文件大小，不运行硬件。真正的编译/整核运行见 [REPRODUCE.md](REPRODUCE.md)。
+3份演示视频使用 Git LFS 随仓库管理。克隆后运行 `git lfs pull` 获取视频，再用 `python tools/verify_videos.py` 核对文件；详情见[视频索引](videos/README.md)。
 
-仓库按“锁定上游版本＋完整改动补丁＋修改文件快照”交付。恢复工具在新的 Linux 目录中取得上游和依赖，再应用补丁；上游源码和构建缓存无需重复放进本作品仓库。
-
-## 交付状态
-
-代码、应用、报告和保存的运行证据已整理；本地完成补丁恢复及交付检查。三段录屏仍在制作，当前为 0/3 已验收成片，完成后补入视频链接。公开仓库上传、官方密文 PR 和官网提交以实际操作及回执为准。
+## 许可证与上游版本
 
 上游修改文件保留原版权说明，XiangShan 与 NEMU 的许可证分别保存在 [LICENSES](LICENSES/)。完整上游及依赖版本见 [upstream-lock.json](configs/upstream-lock.json)。

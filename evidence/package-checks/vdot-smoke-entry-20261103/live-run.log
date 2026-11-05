@@ -1,0 +1,34 @@
+CONTAINER_LOG=D:\Mayyyyyy\WorkSpaces\日常工作区1\2026比赛规划\RISCV_vdot\submission_ready\cie2026-xiangshanxinrui-vdot\work\container-logs\exec-m4siic74
+HOST_DISK docker-storage: 215.71 GiB free (D:\DockerData\DockerDesktopWSL)
+HOST_DISK project-files: 215.71 GiB free (D:\Mayyyyyy\WorkSpaces\日常工作区1\2026比赛规划\RISCV_vdot\submission_ready\cie2026-xiangshanxinrui-vdot)
+HOST_DISK windows-system-drive: 21.08 GiB free (C:\)
+Run directory: /validation/cie2026-xiangshanxinrui-vdot/runs/recording-vdot-smoke-20261103-143400-09cb7b
+ARGV=["/usr/bin/python3", "/validation/cie2026-xiangshanxinrui-vdot/tools/run_case.py", "vdot-smoke", "--emu", "/validation/cie2026-xiangshanxinrui-vdot/work/build/XiangShan/build/emu", "--reference", "/validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/build/riscv64-nemu-interpreter-so", "--image", "/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/apps/vdot-smoke/build/vdot-smoke-riscv64-xs.bin", "--output", "/validation/cie2026-xiangshanxinrui-vdot/runs/recording-vdot-smoke-20261103-143400-09cb7b", "--max-cycles", "3000000", "--timeout", "1800"]
+{
+  "passed": true,
+  "exit_code": 0,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "run_directory": "/validation/cie2026-xiangshanxinrui-vdot/runs/recording-vdot-smoke-20261103-143400-09cb7b"
+}
+LOG_DIRECTORY=/validation/cie2026-xiangshanxinrui-vdot/runs/recording-vdot-smoke-20261103-143400-09cb7b
+The first instruction of core 0 has commited. Difftest enabled. 
+PASS vdot case=0 vl=8 vm=1 sum=36 full128=OK VS=Dirty
+PASS vdot case=1 vl=8 vm=1 sum=131072 full128=OK VS=Dirty
+PASS vdot case=2 vl=8 vm=1 sum=-130048 full128=OK VS=Dirty
+PASS vdot case=3 vl=8 vm=0 sum=16 full128=OK VS=Dirty
+PASS vdot case=4 vl=8 vm=0 sum=0 full128=OK VS=Dirty
+PASS vdot case=5 vl=0 vm=1 sum=36 full128=OK VS=Dirty
+PASS vdot case=6 vl=16 vm=1 sum=36 full128=OK VS=Dirty
+PASS VDOT_SMOKE cases=7
+[PERF ][time=               52628] SimTop.l_soc.core_with_l2.l2top.inner.l2cache.slices_1.mshrCtl: mshr_latency_maxCore 0: HIT GOOD TRAP at pc = 0x8000040c
+EMU_EXIT_CODE=0
+RUNNER_EXIT_CODE=0
+RUN_CHECK=PASS
+CONTAINER_EXIT_CODE=0

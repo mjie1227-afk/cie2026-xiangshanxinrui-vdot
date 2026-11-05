@@ -1,0 +1,50 @@
+[*] Existing 2026-10-17 VADD VCD; recording signal selection only.
+[size] 1500 900
+[signals_width] 580
+[sst_width] 260
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.clock
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.reset
+@200
+-05-wakeup-issue Source readiness and issue handshake
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVfalu.entries.othersEntriesComp_0.io_commonOut_valid
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVfalu.entries.othersEntriesComp_0.entryReg_status_robIdx_flag
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVfalu.entries.othersEntriesComp_0.entryReg_status_robIdx_value[5:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVfalu.entries.othersEntriesComp_0.entryReg_payload_pdest[7:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVfalu.entries.othersEntriesComp_0.entryReg_status_srcStatus_0_psrc[7:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVfalu.entries.othersEntriesComp_0.entryReg_status_srcStatus_0_srcState
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVfalu.entries.othersEntriesComp_0.entryReg_status_srcStatus_1_psrc[7:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVfalu.entries.othersEntriesComp_0.entryReg_status_srcStatus_1_srcState
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVfalu.entries.othersEntriesComp_0.io_commonIn_wakeUpFromWB_4_valid
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVfalu.entries.othersEntriesComp_0.io_commonIn_wakeUpFromWB_4_bits_pdest[7:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVfalu.entries.othersEntriesComp_0.io_commonIn_wakeUpFromWB_4_bits_vecWen
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVfalu.entries.othersEntriesComp_0.io_commonOut_canIssue
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVfalu.io_deqDelay_0_valid
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVfalu.io_deqDelay_0_ready
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVfalu.io_deqDelay_0_bits_common_robIdx_flag
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVfalu.io_deqDelay_0_bits_common_robIdx_value[5:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVfalu.io_deqDelay_0_bits_common_pdest[7:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVfalu.io_deqDelay_0_bits_rf_0_0_addr[7:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfScheduler.IssueQueueVfmaVialuFixVfalu.io_deqDelay_0_bits_rf_1_0_addr[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

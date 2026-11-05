@@ -1,0 +1,155 @@
+{
+  "suite": "functional",
+  "expected": 10,
+  "passed": 10,
+  "passed_all": true,
+  "common_identities": {
+    "emu": "1f864f954fd7beb6bff061bd3a2d6dfac3511c0f506edf9c8db2fa5f0efe76fb",
+    "reference": "dde66037fc1998e98770d2e6621fc7539c07bce193c3c76e3e49b879667195ce",
+    "flash": "fea548655a8b6eecacace83e2f4380a18b8aa83bce964c8aae4cffbe2f5a9724"
+  },
+  "results": [
+    {
+      "case": "hello-meijie",
+      "passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "application_marker": true,
+        "difftest_enabled": true,
+        "good_trap": true,
+        "reference_path": true,
+        "no_failure_marker": true
+      },
+      "image_sha256": "b030d57b9cfae6dda5cd4b36eff128cd54779ed418698ff8a729d404fa801069",
+      "log": "hello-meijie/run.log"
+    },
+    {
+      "case": "vadd4",
+      "passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "application_marker": true,
+        "difftest_enabled": true,
+        "good_trap": true,
+        "reference_path": true,
+        "no_failure_marker": true
+      },
+      "image_sha256": "7ee5178738a4835bb0186c7720dd186b9dacb4298895bb6d880e5b1e7ddbcd90",
+      "log": "vadd4/run.log"
+    },
+    {
+      "case": "vdot-smoke",
+      "passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "application_marker": true,
+        "difftest_enabled": true,
+        "good_trap": true,
+        "reference_path": true,
+        "no_failure_marker": true
+      },
+      "image_sha256": "16c13108cb0880c04cf49ca855893284ae772968292828b990328a01b0def68a",
+      "log": "vdot-smoke/run.log"
+    },
+    {
+      "case": "vdot-exceptions",
+      "passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "application_marker": true,
+        "difftest_enabled": true,
+        "good_trap": true,
+        "reference_path": true,
+        "no_failure_marker": true
+      },
+      "image_sha256": "e52ef47823bee34fded28c9d0aa96b924a17fff6fda52ca36aa7ccf4f2f19302",
+      "log": "vdot-exceptions/run.log"
+    },
+    {
+      "case": "vdot-overlap",
+      "passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "application_marker": true,
+        "difftest_enabled": true,
+        "good_trap": true,
+        "reference_path": true,
+        "no_failure_marker": true
+      },
+      "image_sha256": "5d52e699063f61693b5fa8cc606a7641ae3436c5816e150ee59a0f416b2b21f8",
+      "log": "vdot-overlap/run.log"
+    },
+    {
+      "case": "vdot-deps",
+      "passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "application_marker": true,
+        "difftest_enabled": true,
+        "good_trap": true,
+        "reference_path": true,
+        "no_failure_marker": true
+      },
+      "image_sha256": "0d0daaabbfaeb77556a559d88bf036182f604529588f4602dca73ebeb8dac593",
+      "log": "vdot-deps/run.log"
+    },
+    {
+      "case": "vdot-mixed",
+      "passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "application_marker": true,
+        "difftest_enabled": true,
+        "good_trap": true,
+        "reference_path": true,
+        "no_failure_marker": true
+      },
+      "image_sha256": "166675d3c93d1dfc11178c8ce26a7301af88d6f91030e5cfae6bbfc0dcd094c6",
+      "log": "vdot-mixed/run.log"
+    },
+    {
+      "case": "vdot-cancel-csr",
+      "passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "application_marker": true,
+        "difftest_enabled": true,
+        "good_trap": true,
+        "reference_path": true,
+        "no_failure_marker": true
+      },
+      "image_sha256": "3e0f4efa7cf32376768f72d52c78beb526bf4f3f12f16dab9f43a433c2e322bc",
+      "log": "vdot-cancel-csr/run.log"
+    },
+    {
+      "case": "vdot-port-contend-v1",
+      "passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "application_marker": true,
+        "difftest_enabled": true,
+        "good_trap": true,
+        "reference_path": true,
+        "no_failure_marker": true
+      },
+      "image_sha256": "10a092fca6208cbb1387976e57c0894d6762f8128c3a7e7ed190dd62beadb039",
+      "log": "vdot-port-contend-v1/run.log"
+    },
+    {
+      "case": "vdot-rvv-equiv-v1",
+      "passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "application_marker": true,
+        "difftest_enabled": true,
+        "good_trap": true,
+        "reference_path": true,
+        "no_failure_marker": true
+      },
+      "image_sha256": "bf29b9367a4b9045b139224bb5b2b6502bdeae005969abdc6129ba0fd6c76010",
+      "log": "vdot-rvv-equiv-v1/run.log"
+    }
+  ],
+  "failed_cases": [],
+  "scope": "Raw application markers, DiffTest, trap and exit checks; performance values remain in each raw log."
+}

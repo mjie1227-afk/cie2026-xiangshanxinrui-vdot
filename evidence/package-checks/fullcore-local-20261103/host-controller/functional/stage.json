@@ -1,0 +1,31 @@
+{
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--platform",
+    "linux/amd64",
+    "--mount",
+    "type=volume,source=cie-vdot-envtest-8bbc7145b4,target=/validation",
+    "--mount",
+    "type=volume,source=cie-vdot-envtest-8bbc7145b4-cache,target=/cache",
+    "-e",
+    "HOME=/cache/home",
+    "-e",
+    "VDOT_JOBS=2",
+    "-e",
+    "VDOT_APP_JOBS=2",
+    "-w",
+    "/validation/cie2026-xiangshanxinrui-vdot",
+    "--name",
+    "cie-vdot-run-f1c7494bad85",
+    "cie-vdot-env:20261103",
+    "bash",
+    "tools/reproduce.sh",
+    "functional"
+  ],
+  "cwd": "D:\\Mayyyyyy\\WorkSpaces\\\u65e5\u5e38\u5de5\u4f5c\u533a1\\2026\u6bd4\u8d5b\u89c4\u5212\\RISCV_vdot\\submission_ready\\cie2026-xiangshanxinrui-vdot",
+  "started_at": "2026-11-03T13:15:47.484297+08:00",
+  "exit_code": 0,
+  "finished_at": "2026-11-03T13:33:56.272357+08:00"
+}

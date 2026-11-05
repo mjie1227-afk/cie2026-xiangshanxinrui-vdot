@@ -1,0 +1,18 @@
+{
+  "scope": "Mill build-definition and resource enumeration only; no RTL generation, C++ emulator compilation or simulation.",
+  "cwd": "/tmp/cie-source-prepare-check-7ctnz87c/repository/work/build/XiangShan",
+  "argv": [
+    "mill",
+    "-i",
+    "show",
+    "xiangshan.resources"
+  ],
+  "environment": {
+    "COURSIER_REPOSITORIES": "https://repo.maven.apache.org/maven2",
+    "JAVA_OPTS": "-Xmx2G"
+  },
+  "exit_code": 0,
+  "seconds": 13.111,
+  "log": "mill-resources.log",
+  "nested_git": false
+}

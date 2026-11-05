@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="665" viewBox="0 0 1280 665">
+<defs><marker id="arr-ink" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#172C43"/></marker><marker id="arr-muted" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#566C7F"/></marker><marker id="arr-line" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C9D6DF"/></marker><marker id="arr-grid" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E8EEF2"/></marker><marker id="arr-paper" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFFFFF"/></marker><marker id="arr-teal" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#087F8C"/></marker><marker id="arr-teal_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E6F3F3"/></marker><marker id="arr-blue" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#3567A3"/></marker><marker id="arr-blue_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EDF3FA"/></marker><marker id="arr-purple" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#7659A3"/></marker><marker id="arr-purple_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#F1EDF7"/></marker><marker id="arr-amber" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C57A23"/></marker><marker id="arr-amber_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFF4E4"/></marker><marker id="arr-red" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#B85348"/></marker><marker id="arr-red_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FCEEEB"/></marker><marker id="arr-gray" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EFF3F6"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Segoe UI",sans-serif} .mono{font-family:Consolas,"Microsoft YaHei",monospace}</style>
+<rect width="1280" height="665" fill="white"/>
+<rect x="36" y="32" width="6" height="54" rx="2" fill="#087F8C"/>
+<text x="60" y="54" font-size="32" fill="#172C43" font-weight="650" text-anchor="start">含访存实验的三种输出形式</text>
+<text x="60" y="88" font-size="20" fill="#566C7F" font-weight="400" text-anchor="start">三个任务均包含 128 次八项点积；各自比较相同输出下的软件组织</text>
+<path d="M40,616 L1240,616" fill="none" stroke="#C9D6DF" stroke-width="1" stroke-linejoin="round"/>
+<text x="42" y="643" font-size="16" fill="#566C7F" font-weight="400" text-anchor="start">VDOT / XIANGSHAN KUNMINGHU V2</text>
+<text x="1238" y="643" font-size="16" fill="#566C7F" font-weight="400" text-anchor="end">设计示意</text>
+<rect x="48" y="148" width="364" height="385" rx="13" fill="#EDF3FA"/>
+<text x="70" y="191" font-size="24" fill="#3567A3" font-weight="650" text-anchor="start">逐点完整输出</text>
+<rect x="74" y="235" width="64" height="40" rx="5" fill="white" stroke="#3567A3" stroke-width="1.6"/>
+<text x="106" y="263" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">C0</text>
+<rect x="151" y="235" width="64" height="40" rx="5" fill="white" stroke="#3567A3" stroke-width="1.6"/>
+<text x="183" y="263" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">C1</text>
+<rect x="228" y="235" width="64" height="40" rx="5" fill="white" stroke="#3567A3" stroke-width="1.6"/>
+<text x="260" y="263" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">C2</text>
+<rect x="305" y="235" width="64" height="40" rx="5" fill="white" stroke="#3567A3" stroke-width="1.6"/>
+<text x="337" y="263" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">C3</text>
+<rect x="74" y="291" width="64" height="40" rx="5" fill="white" stroke="#3567A3" stroke-width="1.6"/>
+<text x="106" y="319" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">C4</text>
+<rect x="151" y="291" width="64" height="40" rx="5" fill="white" stroke="#3567A3" stroke-width="1.6"/>
+<text x="183" y="319" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">C5</text>
+<rect x="228" y="291" width="64" height="40" rx="5" fill="white" stroke="#3567A3" stroke-width="1.6"/>
+<text x="260" y="319" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">C6</text>
+<rect x="305" y="291" width="64" height="40" rx="5" fill="white" stroke="#3567A3" stroke-width="1.6"/>
+<text x="337" y="319" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">C7</text>
+<text x="229" y="373" font-size="24" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">… C127</text>
+<text x="70" y="448" font-size="25" fill="#172C43" font-weight="650" text-anchor="start">128 个向量结果</text>
+<text x="70" y="493" font-size="34" fill="#3567A3" font-weight="650" text-anchor="start">2048 字节</text>
+<rect x="458" y="148" width="364" height="385" rx="13" fill="#E6F3F3"/>
+<text x="480" y="191" font-size="24" fill="#087F8C" font-weight="650" text-anchor="start">G=16 分段归约</text>
+<rect x="484" y="235" width="64" height="40" rx="5" fill="white" stroke="#087F8C" stroke-width="1.6"/>
+<text x="516" y="263" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">S0</text>
+<rect x="561" y="235" width="64" height="40" rx="5" fill="white" stroke="#087F8C" stroke-width="1.6"/>
+<text x="593" y="263" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">S1</text>
+<rect x="638" y="235" width="64" height="40" rx="5" fill="white" stroke="#087F8C" stroke-width="1.6"/>
+<text x="670" y="263" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">S2</text>
+<rect x="715" y="235" width="64" height="40" rx="5" fill="white" stroke="#087F8C" stroke-width="1.6"/>
+<text x="747" y="263" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">S3</text>
+<rect x="484" y="291" width="64" height="40" rx="5" fill="white" stroke="#087F8C" stroke-width="1.6"/>
+<text x="516" y="319" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">S4</text>
+<rect x="561" y="291" width="64" height="40" rx="5" fill="white" stroke="#087F8C" stroke-width="1.6"/>
+<text x="593" y="319" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">S5</text>
+<rect x="638" y="291" width="64" height="40" rx="5" fill="white" stroke="#087F8C" stroke-width="1.6"/>
+<text x="670" y="319" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">S6</text>
+<rect x="715" y="291" width="64" height="40" rx="5" fill="white" stroke="#087F8C" stroke-width="1.6"/>
+<text x="747" y="319" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">S7</text>
+<text x="639" y="373" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle">每 16 次点积合为一个段和</text>
+<text x="480" y="448" font-size="25" fill="#172C43" font-weight="650" text-anchor="start">8 个段和向量</text>
+<text x="480" y="493" font-size="34" fill="#087F8C" font-weight="650" text-anchor="start">128 字节</text>
+<rect x="868" y="148" width="364" height="385" rx="13" fill="#F1EDF7"/>
+<text x="890" y="191" font-size="24" fill="#7659A3" font-weight="650" text-anchor="start">2×2、K=256 小块</text>
+<rect x="933" y="231" width="105" height="52" rx="6" fill="white" stroke="#7659A3" stroke-width="1.6"/>
+<text x="985" y="265" font-size="22" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">C00</text>
+<rect x="1058" y="231" width="105" height="52" rx="6" fill="white" stroke="#7659A3" stroke-width="1.6"/>
+<text x="1110" y="265" font-size="22" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">C01</text>
+<rect x="933" y="297" width="105" height="52" rx="6" fill="white" stroke="#7659A3" stroke-width="1.6"/>
+<text x="985" y="331" font-size="22" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">C10</text>
+<rect x="1058" y="297" width="105" height="52" rx="6" fill="white" stroke="#7659A3" stroke-width="1.6"/>
+<text x="1110" y="331" font-size="22" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">C11</text>
+<text x="1049" y="386" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle">沿 K 维累加</text>
+<text x="890" y="448" font-size="25" fill="#172C43" font-weight="650" text-anchor="start">4 个累加结果</text>
+<text x="890" y="493" font-size="34" fill="#7659A3" font-weight="650" text-anchor="start">64 字节</text>
+<text x="48" y="588" font-size="24" fill="#172C43" font-weight="400" text-anchor="start">每个输出均保存完整 128 位：低 32 位为和，其余位为零。</text>
+</svg>

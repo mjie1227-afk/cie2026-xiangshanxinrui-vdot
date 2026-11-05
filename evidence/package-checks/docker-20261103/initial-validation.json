@@ -1,0 +1,156 @@
+{
+  "image_tag": "cie-vdot-env:20261103",
+  "volume": "cie-vdot-envtest-8bbc7145b4",
+  "cache_volume": "cie-vdot-envtest-8bbc7145b4-cache",
+  "steps": [
+    {
+      "name": "image-identity",
+      "argv": [
+        "docker",
+        "image",
+        "inspect",
+        "cie-vdot-env:20261103",
+        "--format",
+        "{{.Id}} {{.Os}}/{{.Architecture}}"
+      ],
+      "host_cwd": "D:\\Mayyyyyy\\WorkSpaces\\日常工作区1\\2026比赛规划\\RISCV_vdot",
+      "start": "2026-11-03T11:52:11.105974+08:00",
+      "exit_code": 0,
+      "end": "2026-11-03T11:52:11.368496+08:00"
+    },
+    {
+      "name": "create-volume",
+      "argv": [
+        "docker",
+        "volume",
+        "create",
+        "cie-vdot-envtest-8bbc7145b4"
+      ],
+      "host_cwd": "D:\\Mayyyyyy\\WorkSpaces\\日常工作区1\\2026比赛规划\\RISCV_vdot",
+      "start": "2026-11-03T11:52:11.370839+08:00",
+      "exit_code": 0,
+      "end": "2026-11-03T11:52:11.565270+08:00"
+    },
+    {
+      "name": "create-cache",
+      "argv": [
+        "docker",
+        "volume",
+        "create",
+        "cie-vdot-envtest-8bbc7145b4-cache"
+      ],
+      "host_cwd": "D:\\Mayyyyyy\\WorkSpaces\\日常工作区1\\2026比赛规划\\RISCV_vdot",
+      "start": "2026-11-03T11:52:11.566156+08:00",
+      "exit_code": 0,
+      "end": "2026-11-03T11:52:11.764381+08:00"
+    },
+    {
+      "name": "fresh-copy",
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "--platform",
+        "linux/amd64",
+        "--mount",
+        "type=volume,source=cie-vdot-envtest-8bbc7145b4,target=/validation",
+        "--mount",
+        "type=volume,source=cie-vdot-envtest-8bbc7145b4-cache,target=/cache",
+        "-e",
+        "HOME=/cache/home",
+        "--mount",
+        "type=bind,source=D:\\Mayyyyyy\\WorkSpaces\\日常工作区1\\2026比赛规划\\RISCV_vdot\\artifacts\\docker-env-validation-2026-11-03,target=/input,readonly",
+        "cie-vdot-env:20261103",
+        "python3",
+        "-m",
+        "zipfile",
+        "-e",
+        "/input/test-input.zip",
+        "/validation"
+      ],
+      "host_cwd": "D:\\Mayyyyyy\\WorkSpaces\\日常工作区1\\2026比赛规划\\RISCV_vdot",
+      "start": "2026-11-03T11:52:11.765438+08:00",
+      "exit_code": 0,
+      "end": "2026-11-03T11:52:19.110674+08:00"
+    },
+    {
+      "name": "bundle-check",
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "--platform",
+        "linux/amd64",
+        "--mount",
+        "type=volume,source=cie-vdot-envtest-8bbc7145b4,target=/validation",
+        "--mount",
+        "type=volume,source=cie-vdot-envtest-8bbc7145b4-cache,target=/cache",
+        "-e",
+        "HOME=/cache/home",
+        "-w",
+        "/validation/cie2026-xiangshanxinrui-vdot",
+        "cie-vdot-env:20261103",
+        "python3",
+        "tools/verify_bundle.py"
+      ],
+      "host_cwd": "D:\\Mayyyyyy\\WorkSpaces\\日常工作区1\\2026比赛规划\\RISCV_vdot",
+      "start": "2026-11-03T11:52:19.112152+08:00",
+      "exit_code": 0,
+      "end": "2026-11-03T11:52:21.639383+08:00"
+    },
+    {
+      "name": "environment-check",
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "--platform",
+        "linux/amd64",
+        "--mount",
+        "type=volume,source=cie-vdot-envtest-8bbc7145b4,target=/validation",
+        "--mount",
+        "type=volume,source=cie-vdot-envtest-8bbc7145b4-cache,target=/cache",
+        "-e",
+        "HOME=/cache/home",
+        "-w",
+        "/validation/cie2026-xiangshanxinrui-vdot",
+        "cie-vdot-env:20261103",
+        "bash",
+        "tools/reproduce.sh",
+        "check"
+      ],
+      "host_cwd": "D:\\Mayyyyyy\\WorkSpaces\\日常工作区1\\2026比赛规划\\RISCV_vdot",
+      "start": "2026-11-03T11:52:21.641338+08:00",
+      "exit_code": 0,
+      "end": "2026-11-03T11:52:34.322324+08:00"
+    },
+    {
+      "name": "nemu-build",
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "--platform",
+        "linux/amd64",
+        "--mount",
+        "type=volume,source=cie-vdot-envtest-8bbc7145b4,target=/validation",
+        "--mount",
+        "type=volume,source=cie-vdot-envtest-8bbc7145b4-cache,target=/cache",
+        "-e",
+        "HOME=/cache/home",
+        "-w",
+        "/validation/cie2026-xiangshanxinrui-vdot",
+        "cie-vdot-env:20261103",
+        "bash",
+        "tools/build.sh",
+        "/validation/cie2026-xiangshanxinrui-vdot/work/build",
+        "nemu"
+      ],
+      "host_cwd": "D:\\Mayyyyyy\\WorkSpaces\\日常工作区1\\2026比赛规划\\RISCV_vdot",
+      "start": "2026-11-03T11:52:34.323334+08:00",
+      "exit_code": 2,
+      "end": "2026-11-03T11:52:35.131789+08:00"
+    }
+  ],
+  "scope": "Fresh source copy; environment probes; NEMU and 3 application builds. No full-core emu build or simulation."
+}

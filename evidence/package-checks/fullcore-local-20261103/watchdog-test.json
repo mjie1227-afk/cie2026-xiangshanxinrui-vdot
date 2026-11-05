@@ -1,0 +1,7 @@
+{
+  "name": "cie-vdot-guard-test-0f2d32a5",
+  "test_elapsed_seconds": 10.37956390006002,
+  "watchdog_exit": 75,
+  "test_container_remaining": false,
+  "scope": "Simulated low-space condition; no actual disk fill, unrelated containers untouched"
+}

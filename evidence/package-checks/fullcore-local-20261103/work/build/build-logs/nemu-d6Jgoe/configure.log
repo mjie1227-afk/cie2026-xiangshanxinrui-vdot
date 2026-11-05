@@ -1,0 +1,7 @@
+make: Entering directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/tools/kconfig'
+make: Nothing to be done for 'app'.
+make: Leaving directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/tools/kconfig'
+make: Entering directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/tools/fixdep'
+make: Nothing to be done for 'app'.
+make: Leaving directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/tools/fixdep'
+NEMU_CONFIG_OK

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="755" viewBox="0 0 1280 755">
+<defs><marker id="arr-ink" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#172C43"/></marker><marker id="arr-muted" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#566C7F"/></marker><marker id="arr-line" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C9D6DF"/></marker><marker id="arr-grid" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E8EEF2"/></marker><marker id="arr-paper" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFFFFF"/></marker><marker id="arr-teal" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#087F8C"/></marker><marker id="arr-teal_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E6F3F3"/></marker><marker id="arr-blue" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#3567A3"/></marker><marker id="arr-blue_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EDF3FA"/></marker><marker id="arr-purple" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#7659A3"/></marker><marker id="arr-purple_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#F1EDF7"/></marker><marker id="arr-amber" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C57A23"/></marker><marker id="arr-amber_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFF4E4"/></marker><marker id="arr-red" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#B85348"/></marker><marker id="arr-red_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FCEEEB"/></marker><marker id="arr-gray" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EFF3F6"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Segoe UI",sans-serif} .mono{font-family:Consolas,"Microsoft YaHei",monospace}</style>
+<rect width="1280" height="755" fill="white"/>
+<rect x="36" y="32" width="6" height="54" rx="2" fill="#087F8C"/>
+<text x="60" y="54" font-size="32" fill="#172C43" font-weight="650" text-anchor="start">VADD 的周期分布与末段时序</text>
+<text x="60" y="88" font-size="20" fill="#566C7F" font-weight="400" text-anchor="start">相对周期 0 = FTQ 请求在 5080 ps 被接受；本次 VCD 每周期 2 ps</text>
+<path d="M40,706 L1240,706" fill="none" stroke="#C9D6DF" stroke-width="1" stroke-linejoin="round"/>
+<text x="42" y="733" font-size="16" fill="#566C7F" font-weight="400" text-anchor="start">VDOT / XIANGSHAN KUNMINGHU V2</text>
+<text x="1238" y="733" font-size="16" fill="#566C7F" font-weight="400" text-anchor="end">已记录事件 · 周期标尺</text>
+<text x="48" y="154" font-size="23" fill="#172C43" font-weight="650" text-anchor="start">完整过程</text>
+<rect x="85.0" y="185" width="203.29999999999998" height="65" rx="0" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="186.64999999999998" y="224" font-size="20" fill="#3567A3" font-weight="400" text-anchor="middle">前端与派发</text>
+<rect x="288.29999999999995" y="185" width="770.4" height="65" rx="0" fill="#FFF4E4" stroke="#C57A23" stroke-width="1.6"/>
+<text x="673.5" y="224" font-size="20" fill="#C57A23" font-weight="400" text-anchor="middle">等待源就绪与发射调度</text>
+<rect x="1058.6999999999998" y="185" width="85.6" height="65" rx="0" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<path d="M85.0,253 L85.0,267" fill="none" stroke="#566C7F" stroke-width="1" stroke-linejoin="round"/>
+<text x="85.0" y="293" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">0</text>
+<path d="M288.29999999999995,253 L288.29999999999995,267" fill="none" stroke="#566C7F" stroke-width="1" stroke-linejoin="round"/>
+<text x="288.29999999999995" y="293" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">19</text>
+<path d="M620.0,253 L620.0,267" fill="none" stroke="#566C7F" stroke-width="1" stroke-linejoin="round"/>
+<text x="620.0" y="293" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">50</text>
+<path d="M1058.6999999999998,253 L1058.6999999999998,267" fill="none" stroke="#566C7F" stroke-width="1" stroke-linejoin="round"/>
+<text x="1058.6999999999998" y="293" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">91</text>
+<path d="M1144.3,253 L1144.3,267" fill="none" stroke="#566C7F" stroke-width="1" stroke-linejoin="round"/>
+<text x="1144.3" y="293" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">99</text>
+<text x="1223" y="321" font-size="18" fill="#566C7F" font-weight="400" text-anchor="end">周期</text>
+<path d="M1058.6999999999998,180 L1058.6999999999998,338" fill="none" stroke="#087F8C" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="5 5"/>
+<text x="48" y="365" font-size="23" fill="#172C43" font-weight="650" text-anchor="start">末段放大：91–99 周期</text>
+<path d="M90,475 L1154,475" fill="none" stroke="#087F8C" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="90" cy="475" r="7" fill="#087F8C"/>
+<path d="M90,475 L90,433" fill="none" stroke="#087F8C" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="90" y="410" font-size="20" fill="#172C43" font-weight="650" text-anchor="middle">发射接受</text>
+<text x="90" y="439" font-size="18" fill="#566C7F" font-weight="400" text-anchor="middle" class="mono">5262 ps</text>
+<text x="90" y="620" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">91</text>
+<circle cx="489" cy="475" r="7" fill="#087F8C"/>
+<path d="M489,475 L489,517" fill="none" stroke="#087F8C" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="489" y="540" font-size="20" fill="#172C43" font-weight="650" text-anchor="middle">FU 输入</text>
+<text x="489" y="569" font-size="18" fill="#566C7F" font-weight="400" text-anchor="middle" class="mono">5268 ps</text>
+<text x="489" y="620" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">94</text>
+<circle cx="622" cy="475" r="7" fill="#087F8C"/>
+<path d="M622,475 L622,433" fill="none" stroke="#087F8C" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="622" y="410" font-size="20" fill="#172C43" font-weight="650" text-anchor="middle">FU 输出</text>
+<text x="622" y="439" font-size="18" fill="#566C7F" font-weight="400" text-anchor="middle" class="mono">5270 ps</text>
+<text x="622" y="620" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">95</text>
+<circle cx="755" cy="475" r="7" fill="#087F8C"/>
+<path d="M755,475 L755,517" fill="none" stroke="#087F8C" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="755" y="540" font-size="20" fill="#172C43" font-weight="650" text-anchor="middle">物理写入</text>
+<text x="755" y="569" font-size="18" fill="#566C7F" font-weight="400" text-anchor="middle" class="mono">5272 ps</text>
+<text x="755" y="620" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">96</text>
+<circle cx="888" cy="475" r="7" fill="#087F8C"/>
+<path d="M888,475 L888,433" fill="none" stroke="#087F8C" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="888" y="410" font-size="20" fill="#172C43" font-weight="650" text-anchor="middle">ROB 退休</text>
+<text x="888" y="439" font-size="18" fill="#566C7F" font-weight="400" text-anchor="middle" class="mono">5274 ps</text>
+<text x="888" y="620" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">97</text>
+<circle cx="1154" cy="475" r="7" fill="#087F8C"/>
+<path d="M1154,475 L1154,517" fill="none" stroke="#087F8C" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="1154" y="540" font-size="20" fill="#172C43" font-weight="650" text-anchor="middle">提交映射更新</text>
+<text x="1154" y="569" font-size="18" fill="#566C7F" font-weight="400" text-anchor="middle" class="mono">5278 ps</text>
+<text x="1154" y="620" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">99</text>
+<text x="48" y="674" font-size="22" fill="#172C43" font-weight="400" text-anchor="start">源 1 / 源 0 分别在相对周期 86 / 89 就绪；FU 输入到输出为 1 周期。</text>
+</svg>

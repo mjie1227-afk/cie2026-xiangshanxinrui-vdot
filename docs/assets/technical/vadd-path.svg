@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="780" viewBox="0 0 1280 780">
+<defs><marker id="arr-ink" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#172C43"/></marker><marker id="arr-muted" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#566C7F"/></marker><marker id="arr-line" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C9D6DF"/></marker><marker id="arr-grid" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E8EEF2"/></marker><marker id="arr-paper" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFFFFF"/></marker><marker id="arr-teal" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#087F8C"/></marker><marker id="arr-teal_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E6F3F3"/></marker><marker id="arr-blue" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#3567A3"/></marker><marker id="arr-blue_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EDF3FA"/></marker><marker id="arr-purple" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#7659A3"/></marker><marker id="arr-purple_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#F1EDF7"/></marker><marker id="arr-amber" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C57A23"/></marker><marker id="arr-amber_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFF4E4"/></marker><marker id="arr-red" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#B85348"/></marker><marker id="arr-red_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FCEEEB"/></marker><marker id="arr-gray" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EFF3F6"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Segoe UI",sans-serif} .mono{font-family:Consolas,"Microsoft YaHei",monospace}</style>
+<rect width="1280" height="780" fill="white"/>
+<rect x="36" y="32" width="6" height="54" rx="2" fill="#087F8C"/>
+<text x="60" y="54" font-size="32" fill="#172C43" font-weight="650" text-anchor="start">同一条 VADD 的追踪路径</text>
+<text x="60" y="88" font-size="20" fill="#566C7F" font-weight="400" text-anchor="start">PC 0x80000148 · word 0x021101d7 · ROB 1/16 · pdest 51</text>
+<path d="M40,731 L1240,731" fill="none" stroke="#C9D6DF" stroke-width="1" stroke-linejoin="round"/>
+<text x="42" y="758" font-size="16" fill="#566C7F" font-weight="400" text-anchor="start">VDOT / XIANGSHAN KUNMINGHU V2</text>
+<text x="1238" y="758" font-size="16" fill="#566C7F" font-weight="400" text-anchor="end">设计示意</text>
+<rect x="40" y="133" width="1200" height="165" rx="14" fill="#EDF3FA"/>
+<text x="62" y="163" font-size="23" fill="#3567A3" font-weight="650" text-anchor="start">前端 · 定位指令</text>
+<rect x="40" y="323" width="1200" height="165" rx="14" fill="#E6F3F3"/>
+<text x="62" y="353" font-size="23" fill="#087F8C" font-weight="650" text-anchor="start">后端 · 跟踪执行</text>
+<rect x="40" y="513" width="1200" height="165" rx="14" fill="#F1EDF7"/>
+<text x="62" y="543" font-size="23" fill="#7659A3" font-weight="650" text-anchor="start">提交 · 更新架构映射</text>
+<rect x="64" y="196" width="260" height="74" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="82" y="230" font-size="23" fill="#3567A3" font-weight="650" text-anchor="start">FTQ</text>
+<text x="194" y="252" font-size="17" fill="#172C43" font-weight="400" text-anchor="middle">0/3 · 起点 0x80000134</text>
+<path d="M330,232 L354,232" fill="none" stroke="#3567A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<rect x="361" y="196" width="260" height="74" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="379" y="230" font-size="23" fill="#3567A3" font-weight="650" text-anchor="start">ICache / IFU</text>
+<text x="491" y="252" font-size="17" fill="#172C43" font-weight="400" text-anchor="middle">半字位置 10</text>
+<path d="M627,232 L651,232" fill="none" stroke="#3567A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<rect x="658" y="196" width="260" height="74" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="676" y="230" font-size="23" fill="#3567A3" font-weight="650" text-anchor="start">IBuffer</text>
+<text x="788" y="252" font-size="17" fill="#172C43" font-weight="400" text-anchor="middle">输出槽 5</text>
+<path d="M924,232 L948,232" fill="none" stroke="#3567A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<rect x="955" y="196" width="260" height="74" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="973" y="230" font-size="23" fill="#3567A3" font-weight="650" text-anchor="start">Decode</text>
+<text x="1085" y="252" font-size="17" fill="#172C43" font-weight="400" text-anchor="middle">目标指令解码</text>
+<rect x="64" y="386" width="260" height="74" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="82" y="420" font-size="22" fill="#087F8C" font-weight="650" text-anchor="start">Rename</text>
+<text x="194" y="442" font-size="17" fill="#172C43" font-weight="400" text-anchor="middle">psrc 50 / 48 → pdest 51</text>
+<path d="M330,422 L354,422" fill="none" stroke="#087F8C" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="361" y="386" width="260" height="74" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="379" y="420" font-size="22" fill="#087F8C" font-weight="650" text-anchor="start">Issue queue</text>
+<text x="491" y="442" font-size="17" fill="#172C43" font-weight="400" text-anchor="middle">等待两路源就绪</text>
+<path d="M627,422 L651,422" fill="none" stroke="#087F8C" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="658" y="386" width="260" height="74" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="676" y="420" font-size="22" fill="#087F8C" font-weight="650" text-anchor="start">VialuFix / EXU2</text>
+<text x="788" y="442" font-size="17" fill="#172C43" font-weight="400" text-anchor="middle">接受操作数并计算</text>
+<path d="M924,422 L948,422" fill="none" stroke="#087F8C" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="955" y="386" width="260" height="74" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="973" y="420" font-size="22" fill="#087F8C" font-weight="650" text-anchor="start">向量寄存器堆</text>
+<text x="1085" y="442" font-size="17" fill="#172C43" font-weight="400" text-anchor="middle">写入物理寄存器 51</text>
+<path d="M1090,277 L1090,302 L194,302 L194,380" fill="none" stroke="#566C7F" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-muted)"/>
+<rect x="250" y="577" width="285" height="74" rx="10" fill="#F1EDF7" stroke="#7659A3" stroke-width="1.6"/>
+<text x="268" y="611" font-size="24" fill="#7659A3" font-weight="650" text-anchor="start">ROB 按序退休</text>
+<text x="392" y="633" font-size="18" fill="#172C43" font-weight="400" text-anchor="middle" class="mono">isCommit &amp;&amp; commitValid</text>
+<rect x="690" y="577" width="380" height="74" rx="10" fill="#F1EDF7" stroke="#7659A3" stroke-width="1.6"/>
+<text x="708" y="611" font-size="24" fill="#7659A3" font-weight="650" text-anchor="start">RAB / 向量已提交映射</text>
+<text x="880" y="642" font-size="19" fill="#172C43" font-weight="400" text-anchor="middle">逻辑 v3 → 物理寄存器 51</text>
+<path d="M1085,466 L1085,493 L392,493 L392,571" fill="none" stroke="#566C7F" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-muted)"/>
+<path d="M545,614 L678,614" fill="none" stroke="#7659A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-purple)"/>
+</svg>

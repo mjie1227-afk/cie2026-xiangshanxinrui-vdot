@@ -1,0 +1,57 @@
+{
+  "suite": "smoke",
+  "expected": 3,
+  "passed": 3,
+  "passed_all": true,
+  "common_identities": {
+    "emu": "1f864f954fd7beb6bff061bd3a2d6dfac3511c0f506edf9c8db2fa5f0efe76fb",
+    "reference": "dde66037fc1998e98770d2e6621fc7539c07bce193c3c76e3e49b879667195ce",
+    "flash": "fea548655a8b6eecacace83e2f4380a18b8aa83bce964c8aae4cffbe2f5a9724"
+  },
+  "results": [
+    {
+      "case": "hello-meijie",
+      "passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "application_marker": true,
+        "difftest_enabled": true,
+        "good_trap": true,
+        "reference_path": true,
+        "no_failure_marker": true
+      },
+      "image_sha256": "b030d57b9cfae6dda5cd4b36eff128cd54779ed418698ff8a729d404fa801069",
+      "log": "hello-meijie/run.log"
+    },
+    {
+      "case": "vadd4",
+      "passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "application_marker": true,
+        "difftest_enabled": true,
+        "good_trap": true,
+        "reference_path": true,
+        "no_failure_marker": true
+      },
+      "image_sha256": "7ee5178738a4835bb0186c7720dd186b9dacb4298895bb6d880e5b1e7ddbcd90",
+      "log": "vadd4/run.log"
+    },
+    {
+      "case": "vdot-smoke",
+      "passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "application_marker": true,
+        "difftest_enabled": true,
+        "good_trap": true,
+        "reference_path": true,
+        "no_failure_marker": true
+      },
+      "image_sha256": "16c13108cb0880c04cf49ca855893284ae772968292828b990328a01b0def68a",
+      "log": "vdot-smoke/run.log"
+    }
+  ],
+  "failed_cases": [],
+  "scope": "Raw application markers, DiffTest, trap and exit checks; performance values remain in each raw log."
+}

@@ -1,0 +1,16 @@
+{
+  "image": "cie-vdot-env:20261103",
+  "image_id": "sha256:cd7692ee604581015af9dfa59ad694eb4315a1170d2a315f80eae0213543a62c",
+  "volume": "cie-vdot-envtest-8bbc7145b4",
+  "cache_volume": "cie-vdot-envtest-8bbc7145b4-cache",
+  "container_root": "/validation/cie2026-xiangshanxinrui-vdot",
+  "source_manifest_sha256": "58af78dd6aec60bc724a64fc95c221bdf01f2ae5519f9622a8930575eddbbcc2",
+  "ready": true,
+  "origin": "Adopted the independent Linux validation volume; source was prepared from the submitted archive and documented build entry fixes were applied. No historical emulator reused.",
+  "last_log_dir": "D:\\Mayyyyyy\\WorkSpaces\\\u65e5\u5e38\u5de5\u4f5c\u533a1\\2026\u6bd4\u8d5b\u89c4\u5212\\RISCV_vdot\\submission_ready\\cie2026-xiangshanxinrui-vdot\\work\\container-logs\\performance-hvpsqwhu",
+  "last_container": "cie-vdot-run-995e6de2fb5a",
+  "last_stage": "performance",
+  "previous_image_id": "sha256:e35de5c21ba1e4a891a02d5f60d881ec6f8188de217bb1410ba300e962100e26",
+  "updated_at": "2026-11-03T12:52:46.414913+08:00",
+  "update_reason": "Add SQLite development dependency and compile/link preflight; retain generated RTL and model files."
+}

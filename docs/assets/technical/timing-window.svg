@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="630" viewBox="0 0 1280 630">
+<defs><marker id="arr-ink" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#172C43"/></marker><marker id="arr-muted" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#566C7F"/></marker><marker id="arr-line" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C9D6DF"/></marker><marker id="arr-grid" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E8EEF2"/></marker><marker id="arr-paper" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFFFFF"/></marker><marker id="arr-teal" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#087F8C"/></marker><marker id="arr-teal_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E6F3F3"/></marker><marker id="arr-blue" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#3567A3"/></marker><marker id="arr-blue_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EDF3FA"/></marker><marker id="arr-purple" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#7659A3"/></marker><marker id="arr-purple_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#F1EDF7"/></marker><marker id="arr-amber" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C57A23"/></marker><marker id="arr-amber_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFF4E4"/></marker><marker id="arr-red" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#B85348"/></marker><marker id="arr-red_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FCEEEB"/></marker><marker id="arr-gray" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EFF3F6"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Segoe UI",sans-serif} .mono{font-family:Consolas,"Microsoft YaHei",monospace}</style>
+<rect width="1280" height="630" fill="white"/>
+<rect x="36" y="32" width="6" height="54" rx="2" fill="#087F8C"/>
+<text x="60" y="54" font-size="32" fill="#172C43" font-weight="650" text-anchor="start">计时边界与两组计数读数</text>
+<text x="60" y="88" font-size="20" fill="#566C7F" font-weight="400" text-anchor="start">B 表示 CSRRW 写 mscratch；C 读取 mcycle，I 读取 minstret</text>
+<path d="M40,581 L1240,581" fill="none" stroke="#C9D6DF" stroke-width="1" stroke-linejoin="round"/>
+<text x="42" y="608" font-size="16" fill="#566C7F" font-weight="400" text-anchor="start">VDOT / XIANGSHAN KUNMINGHU V2</text>
+<text x="1238" y="608" font-size="16" fill="#566C7F" font-weight="400" text-anchor="end">设计示意</text>
+<text x="48" y="153" font-size="22" fill="#566C7F" font-weight="400" text-anchor="start">窗口外：装入输入 / 配置 / 预热</text>
+<rect x="48" y="210" width="65" height="77" rx="7" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="80.5" y="258" font-size="22" fill="#3567A3" font-weight="650" text-anchor="middle">B</text>
+<path d="M116,248 L127,248" fill="none" stroke="#566C7F" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#arr-muted)"/>
+<rect x="132" y="210" width="65" height="77" rx="7" fill="#F1EDF7" stroke="#7659A3" stroke-width="1.6"/>
+<text x="164.5" y="258" font-size="22" fill="#7659A3" font-weight="650" text-anchor="middle">C0</text>
+<path d="M200,248 L211,248" fill="none" stroke="#566C7F" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#arr-muted)"/>
+<rect x="216" y="210" width="65" height="77" rx="7" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="248.5" y="258" font-size="22" fill="#3567A3" font-weight="650" text-anchor="middle">B</text>
+<path d="M284,248 L295,248" fill="none" stroke="#566C7F" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#arr-muted)"/>
+<rect x="300" y="210" width="65" height="77" rx="7" fill="#F1EDF7" stroke="#7659A3" stroke-width="1.6"/>
+<text x="332.5" y="258" font-size="22" fill="#7659A3" font-weight="650" text-anchor="middle">I0</text>
+<path d="M368,248 L379,248" fill="none" stroke="#566C7F" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#arr-muted)"/>
+<rect x="384" y="210" width="65" height="77" rx="7" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="416.5" y="258" font-size="22" fill="#3567A3" font-weight="650" text-anchor="middle">B</text>
+<path d="M452,248 L463,248" fill="none" stroke="#566C7F" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#arr-muted)"/>
+<rect x="468" y="210" width="210" height="77" rx="7" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="573.0" y="258" font-size="22" fill="#087F8C" font-weight="650" text-anchor="middle">被测负载</text>
+<path d="M681,248 L692,248" fill="none" stroke="#566C7F" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#arr-muted)"/>
+<rect x="697" y="210" width="136" height="77" rx="7" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="765.0" y="258" font-size="22" fill="#3567A3" font-weight="650" text-anchor="middle">结果消费</text>
+<path d="M836,248 L847,248" fill="none" stroke="#566C7F" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#arr-muted)"/>
+<rect x="852" y="210" width="65" height="77" rx="7" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="884.5" y="258" font-size="22" fill="#3567A3" font-weight="650" text-anchor="middle">B</text>
+<path d="M920,248 L931,248" fill="none" stroke="#566C7F" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#arr-muted)"/>
+<rect x="936" y="210" width="65" height="77" rx="7" fill="#F1EDF7" stroke="#7659A3" stroke-width="1.6"/>
+<text x="968.5" y="258" font-size="22" fill="#7659A3" font-weight="650" text-anchor="middle">I1</text>
+<path d="M1004,248 L1015,248" fill="none" stroke="#566C7F" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#arr-muted)"/>
+<rect x="1020" y="210" width="65" height="77" rx="7" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="1052.5" y="258" font-size="22" fill="#3567A3" font-weight="650" text-anchor="middle">B</text>
+<path d="M1088,248 L1099,248" fill="none" stroke="#566C7F" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#arr-muted)"/>
+<rect x="1104" y="210" width="65" height="77" rx="7" fill="#F1EDF7" stroke="#7659A3" stroke-width="1.6"/>
+<text x="1136.5" y="258" font-size="22" fill="#7659A3" font-weight="650" text-anchor="middle">C1</text>
+<path d="M1172,248 L1183,248" fill="none" stroke="#566C7F" stroke-width="1.2" stroke-linejoin="round" marker-end="url(#arr-muted)"/>
+<rect x="1188" y="210" width="44" height="77" rx="7" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="1210.0" y="258" font-size="22" fill="#3567A3" font-weight="650" text-anchor="middle">B</text>
+<path d="M164,307 L164,367 L1136,367 L1136,307" fill="none" stroke="#7659A3" stroke-width="2" stroke-linejoin="round"/>
+<rect x="440.0" y="348" width="420" height="39" rx="0" fill="white"/>
+<text x="650.0" y="375" font-size="25" fill="#7659A3" font-weight="650" text-anchor="middle">Δmcycle = C1 − C0</text>
+<path d="M332,307 L332,445 L968,445 L968,307" fill="none" stroke="#3567A3" stroke-width="2" stroke-linejoin="round"/>
+<rect x="440.0" y="426" width="420" height="39" rx="0" fill="white"/>
+<text x="650.0" y="453" font-size="25" fill="#3567A3" font-weight="650" text-anchor="middle">Δminstret = I1 − I0</text>
+<text x="48" y="526" font-size="22" fill="#172C43" font-weight="400" text-anchor="start">窗口后：保存读数并恢复 mscratch；含存储内核在结束前执行 fence 与结果读回。</text>
+</svg>

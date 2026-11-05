@@ -1,0 +1,54 @@
+{
+  "waveforms": [
+    {
+      "id": "vadd4",
+      "output": "work/waveforms/vadd4.vcd",
+      "bytes": 1395708089,
+      "sha256": "01dc7a20fcfd416acfb1c9874759ac460d8e7b6144d608e865da4a2d168059b8",
+      "compressed_bytes": 120250938,
+      "compressed_sha256": "6f16cbcbaef0a8cffd5f2e767bed24fbef3520c41eab683fbe7d7804210ceb3c",
+      "archives": [
+        {
+          "path": "recording/data/vadd4.vcd.gz.part01",
+          "bytes": 83886080,
+          "sha256": "5dcd2a3e567fb49f6481df760c7a3e45928b5137fc5c6d959b34011ede16de82"
+        },
+        {
+          "path": "recording/data/vadd4.vcd.gz.part02",
+          "bytes": 36364858,
+          "sha256": "6a9606152044c5c634e386dd4ec40dc46419d8edfcc3326fde9de694d40e780f"
+        }
+      ]
+    },
+    {
+      "id": "vdot-cancel",
+      "output": "work/waveforms/vdot-cancel.vcd",
+      "bytes": 457224402,
+      "sha256": "7377354c121a915619bbe33739707f45053f6c55db22c417754f8f1ecc38fee6",
+      "compressed_bytes": 41280786,
+      "compressed_sha256": "c8c6b9a6e4cc2ac394f4126ee15fbced4c1862308f301b6970d915d674ed2a92",
+      "archives": [
+        {
+          "path": "recording/data/vdot-cancel.vcd.gz",
+          "bytes": 41280786,
+          "sha256": "c8c6b9a6e4cc2ac394f4126ee15fbced4c1862308f301b6970d915d674ed2a92"
+        }
+      ]
+    },
+    {
+      "id": "vdot-mixed",
+      "output": "work/waveforms/vdot-mixed.vcd",
+      "bytes": 477548918,
+      "sha256": "74e01963c75b8debaa8b4be72e9b9a3f1d295710bc51ba901186353b2dfa0e25",
+      "compressed_bytes": 44965306,
+      "compressed_sha256": "e9617a62cb9ce6f607f823e82e906ae33ce94dc83f5f8f5e83bb0e99038b372e",
+      "archives": [
+        {
+          "path": "recording/data/vdot-mixed.vcd.gz",
+          "bytes": 44965306,
+          "sha256": "e9617a62cb9ce6f607f823e82e906ae33ce94dc83f5f8f5e83bb0e99038b372e"
+        }
+      ]
+    }
+  ]
+}

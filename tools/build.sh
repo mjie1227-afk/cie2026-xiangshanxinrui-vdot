@@ -1,16 +1,20 @@
 #!/usr/bin/env bash
-# Explicit, logged build steps for a fresh source tree prepared by restore_sources.py.
+# Explicit, logged build steps for a fresh source tree prepared by prepare_sources.py.
 set -euo pipefail
 vdot_work=$(realpath "${1:?Usage: build.sh WORKDIR nemu|emu|app [APP]}")
 vdot_kind=${2:?Choose nemu, emu or app}
-test -f "$vdot_work/vdot-restored.json" || { echo 'Expected a tree created by restore_sources.py'; exit 2; }
+test -f "$vdot_work/vdot-restored.json" || { echo 'Expected a tree created by prepare_sources.py'; exit 2; }
 export NOOP_HOME="$vdot_work/XiangShan" NEMU_HOME="$vdot_work/NEMU" AM_HOME="$vdot_work/nexus-am"
 export COURSIER_REPOSITORIES="${COURSIER_REPOSITORIES:-https://repo.maven.apache.org/maven2}"
 mkdir -p "$vdot_work/build-logs"
 vdot_log=$(mktemp -d "$vdot_work/build-logs/${vdot_kind}-XXXXXX")
 printf 'BUILD_LOG=%s\n' "$vdot_log"
 case "$vdot_kind" in
- nemu) vdot_argv=(make -C "$NEMU_HOME" -j"${VDOT_JOBS:-4}");;
+ nemu)
+   vdot_tools=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+   CPT_CROSS_COMPILE=$(python3 "$vdot_tools/checkpoint_toolchain.py")
+   export CPT_CROSS_COMPILE
+   vdot_argv=(make -C "$NEMU_HOME" -j"${VDOT_JOBS:-4}");;
  emu)
    vdot_cc=${VDOT_CC:-$(command -v clang-19 || command -v clang)}
    vdot_cxx=${VDOT_CXX:-$(command -v clang++-19 || command -v clang++)}
@@ -26,6 +30,7 @@ esac
 {
  date -Iseconds
  printf 'PWD=%s\nNOOP_HOME=%s\nNEMU_HOME=%s\nAM_HOME=%s\n' "$PWD" "$NOOP_HOME" "$NEMU_HOME" "$AM_HOME"
+ printf 'CPT_CROSS_COMPILE=%s\n' "${CPT_CROSS_COMPILE:-}"
  printf '%q ' "${vdot_argv[@]}"; printf '\n'
  uname -a
  java -version 2>&1 || true
@@ -36,10 +41,20 @@ esac
  done
 } > "$vdot_log/environment.txt"
 set +e
-"${vdot_argv[@]}" > "$vdot_log/build.log" 2>&1
-vdot_rc=$?
+vdot_rc=0
+if [[ "$vdot_kind" == nemu ]]; then
+  cp "$NEMU_HOME/.config" "$vdot_log/nemu.config.before"
+  bash "$vdot_tools/configure_nemu.sh" "$NEMU_HOME" > "$vdot_log/configure.log" 2>&1
+  vdot_rc=$?
+  cp "$NEMU_HOME/.config" "$vdot_log/nemu.config.after"
+  if (( vdot_rc != 0 )); then tail -n 35 "$vdot_log/configure.log"; fi
+fi
+if (( vdot_rc == 0 )); then
+  "${vdot_argv[@]}" > "$vdot_log/build.log" 2>&1
+  vdot_rc=$?
+fi
 set -e
 printf '%s\n' "$vdot_rc" > "$vdot_log/exit-code.txt"
 printf 'BUILD_EXIT_CODE=%s\nBUILD_LOG=%s\n' "$vdot_rc" "$vdot_log"
-if (( vdot_rc != 0 )); then tail -n 35 "$vdot_log/build.log"; fi
+if (( vdot_rc != 0 )) && [[ -f "$vdot_log/build.log" ]]; then tail -n 35 "$vdot_log/build.log"; fi
 exit "$vdot_rc"

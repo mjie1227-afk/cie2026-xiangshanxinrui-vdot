@@ -1,0 +1,4 @@
+dde66037fc1998e98770d2e6621fc7539c07bce193c3c76e3e49b879667195ce  work/build/NEMU/build/riscv64-nemu-interpreter-so
+b030d57b9cfae6dda5cd4b36eff128cd54779ed418698ff8a729d404fa801069  work/build/nexus-am/apps/hello-meijie/build/hello-meijie-riscv64-xs.bin
+7ee5178738a4835bb0186c7720dd186b9dacb4298895bb6d880e5b1e7ddbcd90  work/build/nexus-am/apps/vadd4/build/vadd4-riscv64-xs.bin
+16c13108cb0880c04cf49ca855893284ae772968292828b990328a01b0def68a  work/build/nexus-am/apps/vdot-smoke/build/vdot-smoke-riscv64-xs.bin

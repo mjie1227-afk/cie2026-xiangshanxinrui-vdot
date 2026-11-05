@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="745" viewBox="0 0 1280 745">
+<defs><marker id="arr-ink" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#172C43"/></marker><marker id="arr-muted" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#566C7F"/></marker><marker id="arr-line" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C9D6DF"/></marker><marker id="arr-grid" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E8EEF2"/></marker><marker id="arr-paper" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFFFFF"/></marker><marker id="arr-teal" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#087F8C"/></marker><marker id="arr-teal_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E6F3F3"/></marker><marker id="arr-blue" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#3567A3"/></marker><marker id="arr-blue_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EDF3FA"/></marker><marker id="arr-purple" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#7659A3"/></marker><marker id="arr-purple_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#F1EDF7"/></marker><marker id="arr-amber" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C57A23"/></marker><marker id="arr-amber_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFF4E4"/></marker><marker id="arr-red" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#B85348"/></marker><marker id="arr-red_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FCEEEB"/></marker><marker id="arr-gray" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EFF3F6"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Segoe UI",sans-serif} .mono{font-family:Consolas,"Microsoft YaHei",monospace}</style>
+<rect width="1280" height="745" fill="white"/>
+<rect x="36" y="32" width="6" height="54" rx="2" fill="#087F8C"/>
+<text x="60" y="54" font-size="32" fill="#172C43" font-weight="650" text-anchor="start">执行期异常的指令字恢复路径</text>
+<text x="60" y="88" font-size="20" fill="#566C7F" font-weight="400" text-anchor="start">示例：short-1-vm0 → mcause=2，mtval=0x0020818b</text>
+<path d="M40,696 L1240,696" fill="none" stroke="#C9D6DF" stroke-width="1" stroke-linejoin="round"/>
+<text x="42" y="723" font-size="16" fill="#566C7F" font-weight="400" text-anchor="start">VDOT / XIANGSHAN KUNMINGHU V2</text>
+<text x="1238" y="723" font-size="16" fill="#566C7F" font-weight="400" text-anchor="end">设计示意</text>
+<rect x="48" y="153" width="365" height="130" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="66" y="187" font-size="25" fill="#3567A3" font-weight="650" text-anchor="start">ROB 分配时保存</text>
+<text x="66" y="220" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">vm + vs2 + vs1 + vd = 16 位</text>
+<text x="66" y="249" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">另存类型位与 ROB 代际位</text>
+<rect x="460" y="153" width="365" height="130" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="478" y="187" font-size="25" fill="#3567A3" font-weight="650" text-anchor="start">ROB 槽位记录</text>
+<text x="478" y="220" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">每槽 18 位 × 48 槽</text>
+<text x="478" y="249" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">864 个存储字段位</text>
+<rect x="872" y="153" width="360" height="130" rx="10" fill="#F1EDF7" stroke="#7659A3" stroke-width="1.6"/>
+<text x="890" y="187" font-size="24" fill="#7659A3" font-weight="650" text-anchor="start">队首异常匹配</text>
+<text x="890" y="220" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">非法指令 · 非中断</text>
+<text x="890" y="249" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">类型 + flag/value 匹配</text>
+<path d="M420,218 L447,218" fill="none" stroke="#3567A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<path d="M832,218 L859,218" fill="none" stroke="#3567A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<path d="M1051,290 L1051,340 L230,340 L230,387" fill="none" stroke="#7659A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-purple)"/>
+<rect x="48" y="398" width="365" height="130" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="66" y="432" font-size="25" fill="#087F8C" font-weight="650" text-anchor="start">重建 32 位指令字</text>
+<text x="66" y="465" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">固定字段 + 保存的可变字段</text>
+<text x="66" y="494" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">得到原故障指令编码</text>
+<rect x="460" y="398" width="365" height="130" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="478" y="432" font-size="24" fill="#087F8C" font-weight="650" text-anchor="start">与 ROB 异常同步寄存</text>
+<text x="478" y="465" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">有效位与指令字同拍传递</text>
+<text x="478" y="494" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">VdotTrapInstSelect</text>
+<rect x="872" y="398" width="360" height="130" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="890" y="432" font-size="25" fill="#087F8C" font-weight="650" text-anchor="start">CSR 接收</text>
+<text x="890" y="465" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">选择匹配的 trapInst</text>
+<text x="890" y="494" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">mtval ← 0x0020818b</text>
+<path d="M420,463 L447,463" fill="none" stroke="#087F8C" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<path d="M832,463 L859,463" fill="none" stroke="#087F8C" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<text x="48" y="601" font-size="23" fill="#172C43" font-weight="650" text-anchor="start">故障 PC：mepc = 0x8000021c</text>
+<text x="48" y="640" font-size="22" fill="#566C7F" font-weight="400" text-anchor="start">最近差分位置：0x80000218；故障指令地址由 mepc 指定。</text>
+</svg>

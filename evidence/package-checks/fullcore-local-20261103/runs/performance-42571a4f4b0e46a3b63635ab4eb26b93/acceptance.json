@@ -1,0 +1,113 @@
+{
+  "suite": "performance",
+  "expected": 7,
+  "passed": 7,
+  "passed_all": true,
+  "common_identities": {
+    "emu": "1f864f954fd7beb6bff061bd3a2d6dfac3511c0f506edf9c8db2fa5f0efe76fb",
+    "reference": "dde66037fc1998e98770d2e6621fc7539c07bce193c3c76e3e49b879667195ce",
+    "flash": "fea548655a8b6eecacace83e2f4380a18b8aa83bce964c8aae4cffbe2f5a9724"
+  },
+  "results": [
+    {
+      "case": "vdot-timing-pilot-v1",
+      "passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "application_marker": true,
+        "difftest_enabled": true,
+        "good_trap": true,
+        "reference_path": true,
+        "no_failure_marker": true
+      },
+      "image_sha256": "8545abf1afb71ec405a8c81bada3fe5054a332964436eb7976a824edaf91bda6",
+      "log": "vdot-timing-pilot-v1/run.log"
+    },
+    {
+      "case": "vdot-chain-v1",
+      "passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "application_marker": true,
+        "difftest_enabled": true,
+        "good_trap": true,
+        "reference_path": true,
+        "no_failure_marker": true
+      },
+      "image_sha256": "13088ad74214b3c7626d675e09a30a130089ec5feeff9ee8434a373c16ea1217",
+      "log": "vdot-chain-v1/run.log"
+    },
+    {
+      "case": "vdot-throughput-v1",
+      "passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "application_marker": true,
+        "difftest_enabled": true,
+        "good_trap": true,
+        "reference_path": true,
+        "no_failure_marker": true
+      },
+      "image_sha256": "e9610f34acc9eb2118d1850f802eab90f30adc40074641f88d3f91e86d8abeab",
+      "log": "vdot-throughput-v1/run.log"
+    },
+    {
+      "case": "vdot-e2e-v1",
+      "passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "application_marker": true,
+        "difftest_enabled": true,
+        "good_trap": true,
+        "reference_path": true,
+        "no_failure_marker": true
+      },
+      "image_sha256": "8786fb22c9ca4fe32ae07d13078a8c619bedd2f5832897a6d494d02a268ec762",
+      "log": "vdot-e2e-v1/run.log"
+    },
+    {
+      "case": "vdot-segment-v1",
+      "passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "application_marker": true,
+        "difftest_enabled": true,
+        "good_trap": true,
+        "reference_path": true,
+        "no_failure_marker": true
+      },
+      "image_sha256": "bd034d3d3bebae84c68d26d5b2d52c6420f26ea89c41178621a217321c0aac8b",
+      "log": "vdot-segment-v1/run.log"
+    },
+    {
+      "case": "vdot-load-v1",
+      "passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "application_marker": true,
+        "difftest_enabled": true,
+        "good_trap": true,
+        "reference_path": true,
+        "no_failure_marker": true
+      },
+      "image_sha256": "6436b127636a046afa8e9451270be3a48023ff21f4b86a0c1c194e41d217f54f",
+      "log": "vdot-load-v1/run.log"
+    },
+    {
+      "case": "vdot-tile-v1",
+      "passed": true,
+      "checks": {
+        "process_exit_zero": true,
+        "application_marker": true,
+        "difftest_enabled": true,
+        "good_trap": true,
+        "reference_path": true,
+        "no_failure_marker": true
+      },
+      "image_sha256": "a95345da01961102dc61f8a2345da8d1beb25a15dce1080edcb72390c18255c5",
+      "log": "vdot-tile-v1/run.log"
+    }
+  ],
+  "failed_cases": [],
+  "scope": "Raw application markers, DiffTest, trap and exit checks; performance values remain in each raw log."
+}

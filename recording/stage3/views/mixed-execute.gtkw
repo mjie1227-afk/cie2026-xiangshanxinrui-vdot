@@ -1,0 +1,58 @@
+[*] Saved original VCD. Signal selection only; no waveform transformation.
+[size] 1700 1000
+[signals_width] 690
+[sst_width] 230
+@200
+-clock
+@28
+TOP.clock
+@200
+-EXU2 VADD
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_2.io_in_valid
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_2.io_in_ready
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_2.io_in_bits_robIdx_flag
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_2.io_in_bits_robIdx_value[5:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_2.io_in_bits_pdest[7:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_2.io_out_valid
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_2.io_out_ready
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_2.io_out_bits_robIdx_flag
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_2.io_out_bits_robIdx_value[5:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_2.io_out_bits_pdest[7:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus_2.io_out_bits_data_0[127:0]
+@200
+-EXU0 VMUL and VDot
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_in_valid
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_in_ready
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_in_bits_robIdx_flag
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_in_bits_robIdx_value[5:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_in_bits_pdest[7:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_out_valid
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_out_ready
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_out_bits_robIdx_flag
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_out_bits_robIdx_value[5:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_out_bits_pdest[7:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_vfExuBlock.exus.io_out_bits_data_0[127:0]
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-03T22:40:40.921026+08:00",
+  "status": "passed",
+  "command": "python tools/container.py exec python3 tools/recording_case.py vdot-smoke",
+  "case": "vdot-smoke",
+  "cases": 7,
+  "run_directory": "/validation/cie2026-xiangshanxinrui-vdot/runs/recording-vdot-smoke-20261103-143400-09cb7b",
+  "wall_seconds": 63.71,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "image_id": "sha256:cd7692ee604581015af9dfa59ad694eb4315a1170d2a315f80eae0213543a62c",
+  "binary_identities": {
+    "emu": {
+      "path": "/validation/cie2026-xiangshanxinrui-vdot/work/build/XiangShan/build/emu",
+      "sha256": "1f864f954fd7beb6bff061bd3a2d6dfac3511c0f506edf9c8db2fa5f0efe76fb"
+    },
+    "reference": {
+      "path": "/validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/build/riscv64-nemu-interpreter-so",
+      "sha256": "dde66037fc1998e98770d2e6621fc7539c07bce193c3c76e3e49b879667195ce"
+    },
+    "image": {
+      "path": "/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/apps/vdot-smoke/build/vdot-smoke-riscv64-xs.bin",
+      "sha256": "16c13108cb0880c04cf49ca855893284ae772968292828b990328a01b0def68a"
+    },
+    "flash": {
+      "path": "/validation/cie2026-xiangshanxinrui-vdot/configs/boot-flash.bin",
+      "sha256": "fea548655a8b6eecacace83e2f4380a18b8aa83bce964c8aae4cffbe2f5a9724"
+    }
+  },
+  "helper_tests": 5,
+  "hello_vadd_smoke_input_checks": "passed",
+  "result_view": "passed",
+  "compiled_binaries_preserved": true,
+  "manifest_fix": "Known local IDE/output directories pruned before enumeration; declared source files must remain listed; host and Linux payload verified before session hash update.",
+  "build_metadata_change": "Metals import adds a .gitignore.upstream fallback only when exported .gitignore is absent. The prepared Linux .gitignore exists and matches the exported bytes. No RTL, NEMU or application source changed; no core rebuild performed."
+}

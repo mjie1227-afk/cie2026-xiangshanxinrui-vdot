@@ -1,0 +1,46 @@
+{
+    "date":  "2026-11-03",
+    "timezone":  "Asia/Shanghai",
+    "scope":  "Windows VS Code Metals build import and editor diagnostics; no RTL elaboration, emulator build, simulation, or full regression rerun",
+    "cwd":  "D:\\Mayyyyyy\\WorkSpaces\\日常工作区1\\2026比赛规划\\RISCV_vdot\\submission_ready\\cie2026-xiangshanxinrui-vdot\\src\\XiangShan",
+    "argv":  [
+                 "D:\\Mayyyyyy\\WorkSpaces\\日常工作区1\\2026比赛规划\\RISCV_vdot\\submission_ready\\cie2026-xiangshanxinrui-vdot\\.metals\\mill.bat",
+                 "-i",
+                 "--import",
+                 "ivy:com.lihaoyi::mill-contrib-bloop:",
+                 "mill.contrib.bloop.Bloop/install"
+             ],
+    "exit_code":  null,
+    "exit_code_note":  "Launched by Metals UI; shell exit code was not captured directly. Completion is evidenced by Bloop configuration files and Imported build log.",
+    "status":  "import_succeeded",
+    "metals":  "1.6.9",
+    "mill":  "0.12.3",
+    "build_server":  "Bloop 2.0.19",
+    "scala":  "2.13.15",
+    "chisel":  "6.6.0",
+    "bloop_config_count":  18,
+    "import_completed_at":  "2026-11-03T21:29:39+08:00",
+    "doctor":  {
+                   "build_definition":  "mill",
+                   "xiangshan_diagnostics":  "enabled",
+                   "xiangshan_interactive":  "enabled",
+                   "semanticdb":  "initial indexing in progress",
+                   "java_sources":  "not installed; Java source navigation warning"
+               },
+    "ui_observed":  {
+                        "file":  "src/XiangShan/src/main/scala/xiangshan/backend/fu/wrapper/VDot.scala",
+                        "original_import_error":  "cleared",
+                        "original_until_warnings":  "cleared",
+                        "workspace_errors":  0,
+                        "workspace_warnings":  1,
+                        "background_scala_compilation":  "still running at observation; complete compile result not claimed"
+                    },
+    "checks":  {
+                   "packaging_patch_check":  "PASS with git apply --check --ignore-space-change against configs/upstream-build",
+                   "modified_source_metadata_and_manifest":  "PASS",
+                   "renamed_difftest_resource_sha256_match":  "PASS"
+               },
+    "build_sc_sha256":  "75d78831a5ed55b0f70c047a4751a85f33dfc1cf4fd363cdad4fb8e041c244ed",
+    "vdot_scala_sha256":  "359b92c824981b09043497776ca8e5d2d608e490486cd5806701c902fe025fb8",
+    "raw_log":  "evidence/package-checks/metals-import-20261103.log"
+}

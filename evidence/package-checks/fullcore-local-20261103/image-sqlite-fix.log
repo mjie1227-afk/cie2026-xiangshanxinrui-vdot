@@ -1,0 +1,123 @@
+CONTAINER_LOG=D:\Mayyyyyy\WorkSpaces\日常工作区1\2026比赛规划\RISCV_vdot\submission_ready\cie2026-xiangshanxinrui-vdot\work\container-logs\image-3lx_hnwl
+HOST_DISK docker-storage: 216.79 GiB free (D:\DockerData\DockerDesktopWSL)
+HOST_DISK project-files: 216.79 GiB free (D:\Mayyyyyy\WorkSpaces\日常工作区1\2026比赛规划\RISCV_vdot\submission_ready\cie2026-xiangshanxinrui-vdot)
+HOST_DISK windows-system-drive: 16.19 GiB free (C:\)
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.02kB 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:24.04
+#2 ...
+
+#3 [auth] library/ubuntu:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:24.04
+#2 DONE 2.8s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/7] FROM docker.io/library/ubuntu:24.04@sha256:fe81560990fae86dc4743202b2cb4d3df98d0bcf949173cecef15ce1127ef852
+#5 resolve docker.io/library/ubuntu:24.04@sha256:fe81560990fae86dc4743202b2cb4d3df98d0bcf949173cecef15ce1127ef852 0.0s done
+#5 DONE 0.1s
+
+#6 [3/7] RUN mkdir -p /opt/mill &&     curl -fL --retry 3 https://repo.maven.apache.org/maven2/com/lihaoyi/mill-dist/0.12.3/mill-dist-0.12.3.jar -o /opt/mill/mill.jar &&     echo '9e2bd55d01428d0e14e93327bcb94e7d6cd0fdc0  /opt/mill/mill.jar' | sha1sum -c - &&     printf '#!/bin/sh\nexec sh /opt/mill/mill.jar "$@"\n' > /opt/mill/mill && chmod 755 /opt/mill/mill &&     mill --version
+#6 CACHED
+
+#7 [4/7] RUN apt-get update && apt-get install -y --no-install-recommends libfl-dev &&     test -f /usr/include/FlexLexer.h && rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [2/7] RUN apt-get update && apt-get install -y --no-install-recommends     ca-certificates curl git make build-essential python3 perl autoconf flex bison util-linux     help2man ccache zlib1g-dev liblz4-dev libreadline-dev libsdl2-dev libzstd-dev     openjdk-21-jdk-headless clang-19 lld-19 llvm-19     gcc-12-riscv64-linux-gnu binutils-riscv64-linux-gnu     libc6-dev-riscv64-cross && rm -rf /var/lib/apt/lists/*
+#8 CACHED
+
+#9 [5/7] RUN git clone --depth 1 --branch v5.052 https://github.com/verilator/verilator.git /tmp/verilator &&     cd /tmp/verilator && autoconf && ./configure --prefix=/opt/verilator CC=clang CXX=clang++ &&     make -j4 && make install && verilator --version && rm -rf /tmp/verilator
+#9 CACHED
+
+#10 [6/7] RUN apt-get update && apt-get install -y --no-install-recommends time libsqlite3-dev &&     rm -rf /var/lib/apt/lists/* && dpkg-query -W > /opt/installed-packages.txt
+#10 2.080 Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+#10 2.795 Get:2 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+#10 3.102 Get:3 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [55.6 kB]
+#10 4.409 Get:4 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+#10 4.885 Get:5 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1420 kB]
+#10 5.950 Get:6 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+#10 6.722 Get:7 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1551 kB]
+#10 7.440 Get:8 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+#10 9.604 Get:9 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [2132 kB]
+#10 10.28 Get:10 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1808 kB]
+#10 12.32 Get:11 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+#10 17.14 Get:12 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+#10 20.89 Get:13 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [2172 kB]
+#10 23.48 Get:14 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1741 kB]
+#10 26.29 Get:15 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2240 kB]
+#10 27.62 Get:16 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [61.7 kB]
+#10 29.74 Get:17 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [49.0 kB]
+#10 30.41 Get:18 http://archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Packages [669 B]
+#10 31.62 Get:19 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [36.0 kB]
+#10 31.74 Fetched 33.7 MB in 31s (1088 kB/s)
+#10 31.74 Reading package lists...
+#10 32.76 Reading package lists...
+#10 33.45 Building dependency tree...
+#10 33.59 Reading state information...
+#10 33.77 Suggested packages:
+#10 33.77   sqlite3-doc
+#10 33.87 The following NEW packages will be installed:
+#10 33.87   libsqlite3-dev time
+#10 35.17 0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+#10 35.17 Need to get 956 kB of archives.
+#10 35.17 After this operation, 3532 kB of additional disk space will be used.
+#10 35.17 Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 time amd64 1.9-0.2build1 [45.2 kB]
+#10 37.57 Get:2 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libsqlite3-dev amd64 3.45.1-1ubuntu2.8 [911 kB]
+#10 37.87 debconf: delaying package configuration, since apt-utils is not installed
+#10 37.91 Fetched 956 kB in 4s (257 kB/s)
+#10 37.98 Selecting previously unselected package time.
+#10 37.98 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 21017 files and directories currently installed.)
+#10 38.10 Preparing to unpack .../time_1.9-0.2build1_amd64.deb ...
+#10 38.11 Unpacking time (1.9-0.2build1) ...
+#10 38.17 Selecting previously unselected package libsqlite3-dev:amd64.
+#10 38.18 Preparing to unpack .../libsqlite3-dev_3.45.1-1ubuntu2.8_amd64.deb ...
+#10 38.19 Unpacking libsqlite3-dev:amd64 (3.45.1-1ubuntu2.8) ...
+#10 38.29 Setting up time (1.9-0.2build1) ...
+#10 38.31 Setting up libsqlite3-dev:amd64 (3.45.1-1ubuntu2.8) ...
+#10 DONE 38.5s
+
+#11 [7/7] WORKDIR /workspace
+#11 DONE 0.2s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 0.5s done
+#12 exporting manifest sha256:01fdcc78d0b06effe83e0e3d82415709d70387dcbb6e821fe24fb415d070c572 0.0s done
+#12 exporting config sha256:bf7d08ec286e40b77a76531fa65e8a676e9d083182383313eb8eb214534ca3f4 0.0s done
+#12 exporting attestation manifest sha256:c90cdc8f24d44e9de7c5e83bdbf37b9ebd7024f04a1da0e2a724d9336f3aba23
+#12 exporting attestation manifest sha256:c90cdc8f24d44e9de7c5e83bdbf37b9ebd7024f04a1da0e2a724d9336f3aba23 0.0s done
+#12 exporting manifest list sha256:cd7692ee604581015af9dfa59ad694eb4315a1170d2a315f80eae0213543a62c 0.0s done
+#12 naming to docker.io/library/cie-vdot-env:20261103 done
+#12 unpacking to docker.io/library/cie-vdot-env:20261103
+#12 unpacking to docker.io/library/cie-vdot-env:20261103 0.2s done
+#12 DONE 1.0s
+CONTAINER_EXIT_CODE=0

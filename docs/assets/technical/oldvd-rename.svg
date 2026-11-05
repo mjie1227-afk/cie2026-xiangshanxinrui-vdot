@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="650" viewBox="0 0 1280 650">
+<defs><marker id="arr-ink" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#172C43"/></marker><marker id="arr-muted" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#566C7F"/></marker><marker id="arr-line" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C9D6DF"/></marker><marker id="arr-grid" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E8EEF2"/></marker><marker id="arr-paper" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFFFFF"/></marker><marker id="arr-teal" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#087F8C"/></marker><marker id="arr-teal_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E6F3F3"/></marker><marker id="arr-blue" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#3567A3"/></marker><marker id="arr-blue_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EDF3FA"/></marker><marker id="arr-purple" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#7659A3"/></marker><marker id="arr-purple_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#F1EDF7"/></marker><marker id="arr-amber" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C57A23"/></marker><marker id="arr-amber_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFF4E4"/></marker><marker id="arr-red" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#B85348"/></marker><marker id="arr-red_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FCEEEB"/></marker><marker id="arr-gray" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EFF3F6"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Segoe UI",sans-serif} .mono{font-family:Consolas,"Microsoft YaHei",monospace}</style>
+<rect width="1280" height="650" fill="white"/>
+<rect x="36" y="32" width="6" height="54" rx="2" fill="#087F8C"/>
+<text x="60" y="54" font-size="32" fill="#172C43" font-weight="650" text-anchor="start">VL=0 的“保持”如何经过重命名</text>
+<text x="60" y="88" font-size="20" fill="#566C7F" font-weight="400" text-anchor="start">示例逻辑寄存器 v3：旧物理版本 P10，新分配版本 P51</text>
+<path d="M40,601 L1240,601" fill="none" stroke="#C9D6DF" stroke-width="1" stroke-linejoin="round"/>
+<text x="42" y="628" font-size="16" fill="#566C7F" font-weight="400" text-anchor="start">VDOT / XIANGSHAN KUNMINGHU V2</text>
+<text x="1238" y="628" font-size="16" fill="#566C7F" font-weight="400" text-anchor="end">设计示意</text>
+<text x="48" y="159" font-size="25" fill="#3567A3" font-weight="650" text-anchor="start">01  重命名</text>
+<rect x="48" y="185" width="365" height="285" rx="13" fill="#EDF3FA"/>
+<text x="458" y="159" font-size="25" fill="#087F8C" font-weight="650" text-anchor="start">02  执行保持路径</text>
+<rect x="458" y="185" width="365" height="285" rx="13" fill="#E6F3F3"/>
+<text x="868" y="159" font-size="25" fill="#7659A3" font-weight="650" text-anchor="start">03  按序退休</text>
+<rect x="868" y="185" width="365" height="285" rx="13" fill="#F1EDF7"/>
+<rect x="72" y="209" width="317" height="90" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="90" y="243" font-size="23" fill="#3567A3" font-weight="650" text-anchor="start">旧映射 v3 → P10</text>
+<text x="90" y="276" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">oldVd 作为源依赖</text>
+<rect x="72" y="340" width="317" height="90" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="90" y="374" font-size="23" fill="#3567A3" font-weight="650" text-anchor="start">新目的 v3 → P51</text>
+<text x="90" y="407" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">分配新的物理寄存器</text>
+<rect x="482" y="209" width="317" height="90" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="500" y="243" font-size="23" fill="#087F8C" font-weight="650" text-anchor="start">读取 P10 的 128 位值</text>
+<text x="500" y="276" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">等待旧版本就绪</text>
+<rect x="482" y="340" width="317" height="90" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="500" y="374" font-size="23" fill="#087F8C" font-weight="650" text-anchor="start">将 oldVd 写入 P51</text>
+<text x="500" y="407" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">完整旧值复制</text>
+<path d="M640,306 L640,332" fill="none" stroke="#087F8C" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="892" y="265" width="317" height="110" rx="10" fill="#F1EDF7" stroke="#7659A3" stroke-width="1.6"/>
+<text x="910" y="299" font-size="23" fill="#7659A3" font-weight="650" text-anchor="start">提交映射 v3 → P51</text>
+<text x="910" y="332" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">新版本保存同一份数据</text>
+<path d="M396,252 L439,252 L439,252 L474,252" fill="none" stroke="#3567A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<path d="M806,385 L851,385 L851,320 L884,320" fill="none" stroke="#087F8C" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="48" y="520" width="1184" height="56" rx="8" fill="#EFF3F6"/>
+<text x="640" y="556" font-size="25" fill="#172C43" font-weight="400" text-anchor="middle">架构结果保持不变；物理目的版本从 P10 更新为 P51。</text>
+</svg>

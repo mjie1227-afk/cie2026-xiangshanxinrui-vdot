@@ -1,0 +1,124 @@
+--- a/XiangShan/build.sc
++++ b/XiangShan/build.sc
+@@ -280,48 +280,24 @@
+ 
+   override def scalacOptions = super.scalacOptions() ++ Agg("-deprecation", "-feature")
+ 
+-  def publishVersion: T[String] = VcsVersion.vcsState().format(
+-    revHashDigits = 8,
+-    dirtyHashDigits = 0,
+-    commitCountPad = -1,
+-    countSep = "",
+-    tagModifier = (tag: String) => "[Rr]elease.*".r.findFirstMatchIn(tag) match {
+-      case Some(_) => "Kunminghu-Release-" + LocalDateTime.now().format(
+-                                 DateTimeFormatter.ofPattern("MMM-dd-yyyy").withLocale(new Locale("en")))
+-      case None => "Kunminghu-dev"
+-    },
+-    /* add "username, buildhost, buildtime" for non-release version */
+-    untaggedSuffix = " (%s@%s) # %s".format(
+-      System.getProperty("user.name"),
+-      java.net.InetAddress.getLocalHost().getHostName(),
+-      LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMM dd hh:mm:ss yyyy").withLocale(new Locale("en")))),
+-  )
+-
+-  // gitStatus changes frequently and unpredictably. Use `Task.Input` here.
++  // Distribution snapshot: build metadata does not require nested Git repositories.
++  def publishVersion: T[String] = T {
++    os.read(pwd / ".delivery-build-info" / "publishVersion").trim
++  }
++
+   def gitStatus: T[String] = Task.Input {
+-    val gitRevParseBuilder = new ProcessBuilder("git", "rev-parse", "HEAD")
+-    val gitRevParseProcess = gitRevParseBuilder.start()
+-    val shaReader = new BufferedReader(new InputStreamReader(gitRevParseProcess.getInputStream))
+-    val sha = shaReader.readLine()
+-
+-    val gitStatusBuilder = new ProcessBuilder("git", "status", "-uno", "--porcelain")
+-    val gitStatusProcess = gitStatusBuilder.start()
+-    val gitStatusReader = new BufferedReader(new InputStreamReader(gitStatusProcess.getInputStream))
+-    val status = gitStatusReader.readLine()
+-    val gitDirty = if (status == null) 0 else 1 
+-
+-    val str =
+-      s"""|SHA=$sha
+-          |dirty=$gitDirty
+-          |""".stripMargin
+-    str
++    os.read(pwd / ".delivery-build-info" / "gitStatus")
+   }
+ 
+   def packDifftestResources(destDir: os.Path): Unit = {
+-    // package difftest source as resources, only git tracked files were collected
+-    val difftest_srcs = os.proc("git", "ls-files").call(cwd = pwd / "difftest").out
+-                          .text().split("\n").filter(_.nonEmpty).toSeq
+-                          .map(os.RelPath(_))
++    // Exact vendored DiffTest file list, independent of the enclosing repository.
++    val difftest_srcs = os.read.lines(pwd / ".delivery-build-info" / "difftest-files")
++                          .filter(_.nonEmpty).map(os.RelPath(_))
+     difftest_srcs.foreach { f =>
+-      os.copy(pwd / "difftest" / f, destDir / "difftest-src" / f, createFolders = true)
++      val original = pwd / "difftest" / f
++      // Source snapshots rename .gitignore; prepared Linux trees restore its name.
++      val source = if (f == os.RelPath(".gitignore") && !os.exists(original))
++        pwd / "difftest" / ".gitignore.upstream"
++      else original
++      os.copy(source, destDir / "difftest-src" / f, createFolders = true)
+     }
+@@ -338,7 +314,7 @@
+   override def resources = T.sources {
+     os.write(T.dest / "publishVersion", publishVersion())
+     os.write(T.dest / "gitStatus", gitStatus())
+-    os.write(T.dest / "gitModules", os.proc("git", "submodule", "status").call().out.text())
++    os.write(T.dest / "gitModules", os.read(pwd / ".delivery-build-info" / "gitModules"))
+     packDifftestResources(T.dest)
+     super.resources() ++ Seq(PathRef(T.dest))
+   }
+--- a/XiangShan/Makefile
++++ b/XiangShan/Makefile
+@@ -206,8 +206,8 @@
+ 		--num-cores $(NUM_CORES) $(TOPMAIN_ARGS)
+ ifeq ($(CHISEL_TARGET),systemverilog)
+ 	$(MEM_GEN_SEP) "$(MEM_GEN)" "$@.conf" "$(@D)"
+-	@git log -n 1 >> .__head__
+-	@git diff >> .__diff__
++	@cat .delivery-build-info/git-log >> .__head__
++	@cat .delivery-build-info/git-diff >> .__diff__
+ 	@sed -i 's/^/\/\// ' .__head__
+ 	@sed -i 's/^/\/\//' .__diff__
+ 	@cat .__head__ .__diff__ $@ > .__out__
+@@ -226,8 +226,8 @@
+ 		--num-cores $(NUM_CORES) $(SIM_ARGS) --full-stacktrace
+ ifeq ($(CHISEL_TARGET),systemverilog)
+ 	$(MEM_GEN_SEP) "$(MEM_GEN)" "$@.conf" "$(@D)"
+-	@git log -n 1 >> .__head__
+-	@git diff >> .__diff__
++	@cat .delivery-build-info/git-log >> .__head__
++	@cat .delivery-build-info/git-diff >> .__diff__
+ 	@sed -i 's/^/\/\// ' .__head__
+ 	@sed -i 's/^/\/\//' .__diff__
+ 	@cat .__head__ .__diff__ $@ > .__out__
+--- a/NEMU/scripts/git.mk
++++ b/NEMU/scripts/git.mk
+@@ -1,21 +1,3 @@
+-STUID = 191220000
+-STUNAME = 张三
+-
+-# DO NOT modify the following code!!!
+-
+-GITFLAGS = -q --author='tracer-ics2020 <tracer@njuics.org>' --no-verify --allow-empty
+-
+-#ifndef __ICS_EXPORT
+-ifdef __NOT_DEFINED
+-#else
+-# prototype: git_commit(msg)
++# Source distribution: builds do not stage or commit the enclosing work repository.
+ define git_commit
+-	-@git add $(NEMU_HOME)/.. -A --ignore-errors
+-	-@while (test -e .git/index.lock); do sleep 0.1; done
+-	-@(echo "> $(1)" && echo $(STUID) && hostnamectl && uptime) | git commit -F - $(GITFLAGS)
+-	-@sync
+ endef
+-#endif
+-#ifndef __ICS_EXPORT
+-endif
+-#endif

@@ -1,0 +1,35 @@
+make: Entering directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU'
++ CC src/cpu/cpu-exec.c
++ CC src/nemu-main.c
++ CC src/cpu/difftest/ame/msync.c
++ CC src/cpu/difftest/ame/amuctrl.c
+In file included from src/nemu-main.c:16:
+/validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/include/common.h:25:10: fatal error: generated/autoconf.h: No such file or directory
+   25 | #include <generated/autoconf.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+In file included from /validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/include/cpu/cpu.h:19,
+                 from src/cpu/cpu-exec.c:18:
+/validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/include/common.h:25:10: fatal error: generated/autoconf.h: No such file or directory
+   25 | #include <generated/autoconf.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+In file included from /validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/include/ame/event.h:4,
+                 from /validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/include/cpu/difftest/ame/amuctrl.h:4,
+                 from src/cpu/difftest/ame/amuctrl.c:1:
+/validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/include/common.h:25:10: fatal error: generated/autoconf.h: No such file or directory
+   25 | #include <generated/autoconf.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+In file included from /validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/include/cpu/difftest/ame/msync.h:4,
+                 from src/cpu/difftest/ame/msync.c:1:
+/validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/include/common.h:25:10: fatal error: generated/autoconf.h: No such file or directory
+   25 | #include <generated/autoconf.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+compilation terminated.
+compilation terminated.
+compilation terminated.
+make: *** [/validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/scripts/build.mk:66: /validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/build/obj-x86-nemu-/src/nemu-main.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [/validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/scripts/build.mk:66: /validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/build/obj-x86-nemu-/src/cpu/cpu-exec.o] Error 1
+make: *** [/validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/scripts/build.mk:66: /validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/build/obj-x86-nemu-/src/cpu/difftest/ame/msync.o] Error 1
+make: *** [/validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/scripts/build.mk:66: /validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/build/obj-x86-nemu-/src/cpu/difftest/ame/amuctrl.o] Error 1
+make: Leaving directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU'

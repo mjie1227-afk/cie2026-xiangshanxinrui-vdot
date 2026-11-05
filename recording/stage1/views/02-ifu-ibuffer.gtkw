@@ -1,0 +1,48 @@
+[*] Existing 2026-10-17 VADD VCD; recording signal selection only.
+[size] 1500 900
+[signals_width] 580
+[sst_width] 260
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.clock
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.reset
+@200
+-02-ifu-ibuffer IFU to IBuffer and backend entrance
+@28
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ifu.io_toIbuffer_valid
+@28
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ifu.io_toIbuffer_ready
+@22
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ifu.io_toIbuffer_bits_pc_10[49:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ifu.io_toIbuffer_bits_instrs_10[31:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ifu.io_toIbuffer_bits_valid[15:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ifu.io_toIbuffer_bits_enqEnable[15:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ifu.io_toIbuffer_bits_ftqPtr_flag
+@22
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ifu.io_toIbuffer_bits_ftqPtr_value[2:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ibuffer.io_flush
+@28
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ibuffer.io_out_5_valid
+@22
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ibuffer.io_out_5_bits_pc[49:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ibuffer.io_out_5_bits_instr[31:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ibuffer.io_out_5_bits_ftqPtr_flag
+@22
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ibuffer.io_out_5_bits_ftqPtr_value[2:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.frontend.inner_ibuffer.io_out_5_bits_ftqOffset[3:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.io_frontend_cfVec_5_valid
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.io_frontend_cfVec_5_ready
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.io_in_5_ready
+[pattern_trace] 1
+[pattern_trace] 0

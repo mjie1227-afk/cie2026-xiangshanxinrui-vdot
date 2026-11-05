@@ -1,0 +1,182 @@
+{
+  "repository": "/validation/cie2026-xiangshanxinrui-vdot",
+  "destination": "/validation/cie2026-xiangshanxinrui-vdot/work/build",
+  "source_files": 4750,
+  "network_required_for_source_preparation": false,
+  "patches_already_applied": true,
+  "repositories": [
+    {
+      "name": "XiangShan",
+      "path": "",
+      "url": "https://github.com/OpenXiangShan/XiangShan",
+      "commit": "16ae9ddcda54fc9a2fddffad73174cf793ac7814",
+      "tracked_files": 462
+    },
+    {
+      "name": "XiangShan",
+      "path": "coupledL2",
+      "url": "https://github.com/OpenXiangShan/coupledL2",
+      "commit": "82079f4081bbc1f0221c790fbf8a29b1f23f48b8",
+      "tracked_files": 84
+    },
+    {
+      "name": "XiangShan",
+      "path": "difftest",
+      "url": "https://github.com/OpenXiangShan/difftest.git",
+      "commit": "62e4540c03c03aa947bdb67f4b6bf66f1a29c5d0",
+      "tracked_files": 124
+    },
+    {
+      "name": "XiangShan",
+      "path": "fudian",
+      "url": "https://github.com/OpenXiangShan/fudian.git",
+      "commit": "e1bd4695ca7beb36a5ce7357e9527ad9e95b9ec1",
+      "tracked_files": 34
+    },
+    {
+      "name": "XiangShan",
+      "path": "huancun",
+      "url": "https://github.com/OpenXiangshan/huancun.git",
+      "commit": "90aaf5935206ff322e461c3d021436c20dd0ac85",
+      "tracked_files": 72
+    },
+    {
+      "name": "XiangShan",
+      "path": "openLLC",
+      "url": "https://github.com/OpenXiangShan/OpenLLC.git",
+      "commit": "614ceb4c5d39d32e6ae786693a35da429ea32c12",
+      "tracked_files": 39
+    },
+    {
+      "name": "XiangShan",
+      "path": "openLLC/openNCB",
+      "url": "https://github.com/OpenXiangShan/OpenNCB",
+      "commit": "546a621ed82302db1bd1edc900b17ba55682c15c",
+      "tracked_files": 96
+    },
+    {
+      "name": "XiangShan",
+      "path": "ready-to-run",
+      "url": "https://github.com/OpenXiangShan/ready-to-run",
+      "commit": "ed8c30e1ec8a9c9aa6b116ce54281235d00273fa",
+      "tracked_files": 19
+    },
+    {
+      "name": "XiangShan",
+      "path": "rocket-chip",
+      "url": "https://github.com/OpenXiangShan/rocket-chip.git",
+      "commit": "bea0af5d855a871699b907c1988961141bbf28e7",
+      "tracked_files": 401
+    },
+    {
+      "name": "XiangShan",
+      "path": "rocket-chip/cde",
+      "url": "https://github.com/chipsalliance/cde.git",
+      "commit": "52768c97a27b254c0cc0ac9401feb55b29e18c28",
+      "tracked_files": 15
+    },
+    {
+      "name": "XiangShan",
+      "path": "rocket-chip/hardfloat",
+      "url": "https://github.com/ucb-bar/berkeley-hardfloat.git",
+      "commit": "d93aa570806013dea479a92ba9bb33d1f2d4f69f",
+      "tracked_files": 137
+    },
+    {
+      "name": "XiangShan",
+      "path": "src/main/resources/aia",
+      "url": "https://github.com/OpenXiangShan/OpenAIA.git",
+      "commit": "9464aee3c77b021a037f28aa1b3fe53c71b516f6",
+      "tracked_files": 20
+    },
+    {
+      "name": "XiangShan",
+      "path": "utility",
+      "url": "https://github.com/OpenXiangShan/utility",
+      "commit": "a8ca0c6564865ee69b564d431ecbc52074ba8060",
+      "tracked_files": 62
+    },
+    {
+      "name": "XiangShan",
+      "path": "yunsuan",
+      "url": "https://github.com/OpenXiangShan/YunSuan.git",
+      "commit": "cadd3c2f43096e253d61296b33ac697be8354e29",
+      "tracked_files": 125
+    },
+    {
+      "name": "NEMU",
+      "path": "",
+      "url": "https://github.com/OpenXiangShan/NEMU",
+      "commit": "a48a11f208ff81ad765591d83271d1b339fb3861",
+      "tracked_files": 538
+    },
+    {
+      "name": "NEMU",
+      "path": "resource/softfloat/repo",
+      "url": "https://github.com/ucb-bar/berkeley-softfloat-3.git",
+      "commit": "32eb3295a3c814c1551f94ebc29eed1dec3cb3b1",
+      "tracked_files": 503
+    },
+    {
+      "name": "NEMU",
+      "path": "resource/nanopb",
+      "url": "https://github.com/nanopb/nanopb.git",
+      "commit": "671672b4d7994a9b07a307ae654885c7202ae886",
+      "tracked_files": 611
+    },
+    {
+      "name": "NEMU",
+      "path": "resource/LibCheckpoint",
+      "url": "https://github.com/OpenXiangShan/LibCheckpoint.git",
+      "commit": "1d8905cc2803c242ef257569128c2e68bf4272aa",
+      "tracked_files": 29
+    },
+    {
+      "name": "NEMU",
+      "path": "resource/gcpt_restore",
+      "url": "https://github.com/OpenXiangShan/LibCheckpointAlpha.git",
+      "commit": "5169da768d18f4682a489eaabe7c071df6d6ef88",
+      "tracked_files": 9
+    },
+    {
+      "name": "NEMU",
+      "path": "resource/LibCheckpoint/resource/nanopb",
+      "url": "https://github.com/nanopb/nanopb.git",
+      "commit": "671672b4d7994a9b07a307ae654885c7202ae886",
+      "tracked_files": 611
+    },
+    {
+      "name": "nexus-am",
+      "path": "",
+      "url": "https://github.com/OpenXiangShan/nexus-am",
+      "commit": "086a238062fdfb3281b745a537b361983d0154b5",
+      "tracked_files": 748
+    }
+  ],
+  "argv": [
+    "tools/prepare_sources.py"
+  ],
+  "cwd": "/validation/cie2026-xiangshanxinrui-vdot",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "source_tree_sha256": "c7b354e276a7831cf78846e492e982779c10245232319f08b75175f247005992",
+  "applications": [
+    "vadd4",
+    "vdot-smoke",
+    "vdot-exceptions",
+    "vdot-overlap",
+    "vdot-deps",
+    "vdot-mixed",
+    "vdot-cancel-csr",
+    "vdot-port-contend-v1",
+    "vdot-chain-v1",
+    "vdot-e2e-v1",
+    "vdot-load-v1",
+    "vdot-rvv-equiv-v1",
+    "vdot-segment-v1",
+    "vdot-throughput-v1",
+    "vdot-tile-v1",
+    "vdot-timing-pilot-v1",
+    "hello-meijie"
+  ],
+  "status": "sources prepared; not built or simulated"
+}

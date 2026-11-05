@@ -1,0 +1,36 @@
+[*] Existing 2026-10-17 VADD VCD; recording signal selection only.
+[size] 1500 900
+[signals_width] 580
+[sst_width] 260
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.clock
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.decode.reset
+@200
+-08-retire-map ROB retirement and committed mapping
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rob.io_commits_isCommit
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rob.io_commits_commitValid_0
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rob.io_commits_robIdx_0_flag
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rob.io_commits_robIdx_0_value[5:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rob.io_commits_info_0_debug_pc[49:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rob.io_commits_info_0_debug_instr[31:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rob.io_commits_info_0_debug_ldest[5:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rob.io_commits_info_0_debug_pdest[7:0]
+@28
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rat.vecRat.io_archWritePorts_0_wen
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rat.vecRat.io_archWritePorts_0_addr[5:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rat.vecRat.io_archWritePorts_0_data[7:0]
+@22
+TOP.SimTop.l_soc.core_with_l2.core.backend.inner_ctrlBlock.rat.vecRat.arch_table_3[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

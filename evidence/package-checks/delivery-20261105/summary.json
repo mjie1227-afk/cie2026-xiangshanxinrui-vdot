@@ -1,0 +1,177 @@
+{
+  "date": "2026-11-05",
+  "cwd": "repository root",
+  "scope": "Full video/audio decoding, 18 sampled frames, Git LFS clean/smudge roundtrip and 10 helper checks. No hardware build or simulation.",
+  "helper_check": {
+    "argv": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/tests",
+      "-p",
+      "test_recording_manifest.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "tests": 6,
+    "log": "helper-tests.log"
+  },
+  "videos": [
+    {
+      "stage": 1,
+      "filename": "第一阶段的操作过程录屏.mp4",
+      "sha256": "0ef7b51e9d9d02f75a64a23fee185ecaf2cdaad850d19bc66abd9c1250f86870",
+      "bytes": 113951414,
+      "duration_seconds": 574.88,
+      "decode_exit_code": 0,
+      "audio_level_lines": [
+        "[Parsed_volumedetect_0 @ 000001fe2cad5fc0] mean_volume: -40.1 dB",
+        "[Parsed_volumedetect_0 @ 000001fe2cad5fc0] max_volume: -11.9 dB"
+      ],
+      "argv": [
+        "ffmpeg",
+        "-nostdin",
+        "-nostats",
+        "-v",
+        "info",
+        "-xerror",
+        "-threads",
+        "2",
+        "-i",
+        "videos/第一阶段的操作过程录屏.mp4",
+        "-map",
+        "0:v:0",
+        "-map",
+        "0:a:0",
+        "-af",
+        "volumedetect",
+        "-f",
+        "null",
+        "-"
+      ],
+      "decode_log": "video-1-decode.log",
+      "sample_times": [
+        3,
+        114.976,
+        229.952,
+        344.928,
+        459.904,
+        569.88
+      ]
+    },
+    {
+      "stage": 2,
+      "filename": "第二阶段的设计文档和基础测试文档.mp4",
+      "sha256": "da160b99275d46371751a804738a9a1e81fe039294032fc4af3d6a41c7ea6a5a",
+      "bytes": 130665812,
+      "duration_seconds": 622.435011,
+      "decode_exit_code": 0,
+      "audio_level_lines": [
+        "[Parsed_volumedetect_0 @ 0000017a8c818cc0] mean_volume: -40.7 dB",
+        "[Parsed_volumedetect_0 @ 0000017a8c818cc0] max_volume: -3.7 dB"
+      ],
+      "argv": [
+        "ffmpeg",
+        "-nostdin",
+        "-nostats",
+        "-v",
+        "info",
+        "-xerror",
+        "-threads",
+        "2",
+        "-i",
+        "videos/第二阶段的设计文档和基础测试文档.mp4",
+        "-map",
+        "0:v:0",
+        "-map",
+        "0:a:0",
+        "-af",
+        "volumedetect",
+        "-f",
+        "null",
+        "-"
+      ],
+      "decode_log": "video-2-decode.log",
+      "sample_times": [
+        3,
+        124.487,
+        248.974,
+        373.461,
+        497.948,
+        617.435
+      ]
+    },
+    {
+      "stage": 3,
+      "filename": "第三阶段的基于波形仿真和性能分析录屏.mp4",
+      "sha256": "909ec38649bcac15703f67bdbf1466ab6ba210f7a343377ddb9cb51bdd1fe577",
+      "bytes": 218128146,
+      "duration_seconds": 922.251995,
+      "decode_exit_code": 0,
+      "audio_level_lines": [
+        "[Parsed_volumedetect_0 @ 000001ff2c4f5c40] mean_volume: -39.8 dB",
+        "[Parsed_volumedetect_0 @ 000001ff2c4f5c40] max_volume: -15.7 dB"
+      ],
+      "argv": [
+        "ffmpeg",
+        "-nostdin",
+        "-nostats",
+        "-v",
+        "info",
+        "-xerror",
+        "-threads",
+        "2",
+        "-i",
+        "videos/第三阶段的基于波形仿真和性能分析录屏.mp4",
+        "-map",
+        "0:v:0",
+        "-map",
+        "0:a:0",
+        "-af",
+        "volumedetect",
+        "-f",
+        "null",
+        "-"
+      ],
+      "decode_log": "video-3-decode.log",
+      "sample_times": [
+        3,
+        184.45,
+        368.901,
+        553.351,
+        737.802,
+        917.252
+      ]
+    }
+  ],
+  "video_helper_check": {
+    "argv": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/tests",
+      "-p",
+      "test_verify_videos.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "tests": 4,
+    "log": "video-helper-tests.log"
+  },
+  "lfs_check": {
+    "log": "lfs-check.json",
+    "files": 3,
+    "clean_smudge_hashes_match": true,
+    "network_upload": false
+  }
+}

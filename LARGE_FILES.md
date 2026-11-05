@@ -1,16 +1,15 @@
-# 大型波形与生成文件
+# 波形、构建文件与视频
 
-作品 Git 仓库包含完整指令改动、测试源代码、报告图片、原始日志与样本。以下大型波形保留在原工程中，未放入 Git；GitHub 普通 Git 单文件上限为 100 MiB，分发这些文件可另用 Release 或按复现步骤重新导出。[GitHub 官方说明](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github)
+三阶段报告引用的历史波形已包含在`recording/data/`，均为原始VCD的gzip压缩数据。VADD压缩文件分为两个小于100 MiB的分卷，其余两份各为单文件。文件列表与还原信息见[波形记录](recording/waveforms.json)。
 
-| 波形 | 原文件大小 | 原始来源 |
-| --- | --- | --- |
-| VADD 生命周期 | 1395708089 字节 | 第一阶段 `vadd4.vcd`，2026-10-17 运行 |
-| 正常执行/分支取消/CSR | 457224402 字节 | `vdot-wave-window-Cpa0HX/cancel-window.vcd` |
-| VADD/VMUL/VDot 混发 | 477548918 字节 | `vdot-mixed-wave-FNmKGI/mixed-window.vcd` |
-| VDot/VIOTA 发射前竞争 | 481830060 字节 | `vdot-port-EfQru1/port-window.vcd` |
+在仓库根目录执行：
 
-对应截图、事件记录与实际应用源代码已随仓库提供。报告第 3、6 章解释所选实例的身份、信号、窗口与读数；原始来源和本地证据的对应关系见[证据索引](evidence/index.md)。
+```bash
+python3 tools/prepare_recording.py
+```
 
-编译生成的 emu、NEMU 共享库、ELF/BIN、构建缓存和中间压缩包同样不进入 Git。`configs/boot-flash.bin` 为 16 字节启动代码，与保存的实验 Flash 哈希一致，单独随仓库提供。
+脚本自动读取分卷、解压并校验完整VCD。输出为`work/waveforms/vadd4.vcd`、`vdot-cancel.vcd`和`vdot-mixed.vcd`，合计约2.33 GB。要只解压一份，可追加`--only vadd4`、`--only vdot-cancel`或`--only vdot-mixed`；`--check-only`只核对压缩文件或已有解压文件。
 
-如另外上传波形或视频到 Release，请在本页补充实际下载链接、文件大小及 SHA256。当前没有发布大文件下载链接。
+GTKWave视图和打开命令在[波形复查入口](recording/README.md)。可选端口竞争小节使用仓库内保存的截图，不要求额外下载端口VCD。
+
+`work/`、`runs/`和`recording/outputs/`为本地生成目录，不进入提交清单。emu、NEMU共享库和应用镜像通过源码构建；三份技术报告PDF、图片和压缩波形属于已准备的交付文件。3份成片分别为108.7、124.6、208.0 MiB，由Git LFS随仓库管理；入口与身份见[视频索引](videos/README.md)。`MANIFEST.sha256`覆盖源码与复现材料，视频使用 `videos/SHA256SUMS.txt` 和 `python tools/verify_videos.py` 单独校验。完整交付ZIP包含原始视频，Docker编译目录只复制源码清单中的文件，无需携带视频。

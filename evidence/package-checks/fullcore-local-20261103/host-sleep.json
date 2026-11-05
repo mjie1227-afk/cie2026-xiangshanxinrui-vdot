@@ -1,0 +1,7 @@
+{
+  "sleep_time": "2026-11-03T06:27:49.4723370Z",
+  "note": "Host sleep occurred during vdot-load-v1; wall-clock durations include this pause. No power settings changed.",
+  "source": "Windows System event / Power-Troubleshooter ID1",
+  "elapsed_seconds": 965.240895,
+  "wake_time": "2026-11-03T06:43:54.7132320Z"
+}

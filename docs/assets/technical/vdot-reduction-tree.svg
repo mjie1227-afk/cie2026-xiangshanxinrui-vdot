@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="910" viewBox="0 0 1280 910">
+<defs><marker id="arr-ink" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#172C43"/></marker><marker id="arr-muted" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#566C7F"/></marker><marker id="arr-line" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C9D6DF"/></marker><marker id="arr-grid" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E8EEF2"/></marker><marker id="arr-paper" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFFFFF"/></marker><marker id="arr-teal" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#087F8C"/></marker><marker id="arr-teal_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E6F3F3"/></marker><marker id="arr-blue" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#3567A3"/></marker><marker id="arr-blue_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EDF3FA"/></marker><marker id="arr-purple" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#7659A3"/></marker><marker id="arr-purple_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#F1EDF7"/></marker><marker id="arr-amber" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C57A23"/></marker><marker id="arr-amber_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFF4E4"/></marker><marker id="arr-red" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#B85348"/></marker><marker id="arr-red_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FCEEEB"/></marker><marker id="arr-gray" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EFF3F6"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Segoe UI",sans-serif} .mono{font-family:Consolas,"Microsoft YaHei",monospace}</style>
+<rect width="1280" height="910" fill="white"/>
+<rect x="36" y="32" width="6" height="54" rx="2" fill="#087F8C"/>
+<text x="60" y="54" font-size="32" fill="#172C43" font-weight="650" text-anchor="start">八路乘法与两拍归约数据通路</text>
+<text x="60" y="88" font-size="20" fill="#566C7F" font-weight="400" text-anchor="start">实线为算术数据；虚线为随流水传递的 oldVd 与控制信息</text>
+<path d="M40,861 L1240,861" fill="none" stroke="#C9D6DF" stroke-width="1" stroke-linejoin="round"/>
+<text x="42" y="888" font-size="16" fill="#566C7F" font-weight="400" text-anchor="start">VDOT / XIANGSHAN KUNMINGHU V2</text>
+<text x="1238" y="888" font-size="16" fill="#566C7F" font-weight="400" text-anchor="end">设计示意</text>
+<rect x="40" y="125" width="392" height="620" rx="12" fill="#EDF3FA"/>
+<rect x="446" y="125" width="794" height="620" rx="12" fill="#E6F3F3"/>
+<text x="62" y="165" font-size="24" fill="#3567A3" font-weight="650" text-anchor="start">第 1 拍 · 提取 / 乘法 / 掩码</text>
+<text x="468" y="165" font-size="24" fill="#087F8C" font-weight="650" text-anchor="start">第 2 拍 · 归约 / 格式化</text>
+<rect x="63" y="208" width="270" height="44" rx="6" fill="white" stroke="#C9D6DF" stroke-width="1.6"/>
+<text x="198" y="237" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle">a0 × b0 → mask 选择</text>
+<path d="M340,230 L374,230" fill="none" stroke="#3567A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<rect x="63" y="270" width="270" height="44" rx="6" fill="white" stroke="#C9D6DF" stroke-width="1.6"/>
+<text x="198" y="299" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle">a1 × b1 → mask 选择</text>
+<path d="M340,292 L374,292" fill="none" stroke="#3567A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<rect x="63" y="332" width="270" height="44" rx="6" fill="white" stroke="#C9D6DF" stroke-width="1.6"/>
+<text x="198" y="361" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle">a2 × b2 → mask 选择</text>
+<path d="M340,354 L374,354" fill="none" stroke="#3567A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<rect x="63" y="394" width="270" height="44" rx="6" fill="white" stroke="#C9D6DF" stroke-width="1.6"/>
+<text x="198" y="423" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle">a3 × b3 → mask 选择</text>
+<path d="M340,416 L374,416" fill="none" stroke="#3567A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<rect x="63" y="456" width="270" height="44" rx="6" fill="white" stroke="#C9D6DF" stroke-width="1.6"/>
+<text x="198" y="485" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle">a4 × b4 → mask 选择</text>
+<path d="M340,478 L374,478" fill="none" stroke="#3567A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<rect x="63" y="518" width="270" height="44" rx="6" fill="white" stroke="#C9D6DF" stroke-width="1.6"/>
+<text x="198" y="547" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle">a5 × b5 → mask 选择</text>
+<path d="M340,540 L374,540" fill="none" stroke="#3567A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<rect x="63" y="580" width="270" height="44" rx="6" fill="white" stroke="#C9D6DF" stroke-width="1.6"/>
+<text x="198" y="609" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle">a6 × b6 → mask 选择</text>
+<path d="M340,602 L374,602" fill="none" stroke="#3567A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<rect x="63" y="642" width="270" height="44" rx="6" fill="white" stroke="#C9D6DF" stroke-width="1.6"/>
+<text x="198" y="671" font-size="20" fill="#172C43" font-weight="400" text-anchor="middle">a7 × b7 → mask 选择</text>
+<path d="M340,664 L374,664" fill="none" stroke="#3567A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<rect x="382" y="198" width="32" height="500" rx="4" fill="#3567A3"/>
+<text x="398" y="724" font-size="22" fill="#3567A3" font-weight="650" text-anchor="middle">S1</text>
+<path d="M418,230 L454,230 L454,261.0 L480,261.0" fill="none" stroke="#087F8C" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<path d="M418,292 L454,292 L454,261.0 L480,261.0" fill="none" stroke="#087F8C" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="491" y="231.0" width="145" height="60" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="509" y="265.0" font-size="22" fill="#087F8C" font-weight="650" text-anchor="start">17 位 +&amp;</text>
+<path d="M418,354 L454,354 L454,385.0 L480,385.0" fill="none" stroke="#087F8C" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<path d="M418,416 L454,416 L454,385.0 L480,385.0" fill="none" stroke="#087F8C" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="491" y="355.0" width="145" height="60" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="509" y="389.0" font-size="22" fill="#087F8C" font-weight="650" text-anchor="start">17 位 +&amp;</text>
+<path d="M418,478 L454,478 L454,509.0 L480,509.0" fill="none" stroke="#087F8C" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<path d="M418,540 L454,540 L454,509.0 L480,509.0" fill="none" stroke="#087F8C" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="491" y="479.0" width="145" height="60" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="509" y="513.0" font-size="22" fill="#087F8C" font-weight="650" text-anchor="start">17 位 +&amp;</text>
+<path d="M418,602 L454,602 L454,633.0 L480,633.0" fill="none" stroke="#087F8C" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<path d="M418,664 L454,664 L454,633.0 L480,633.0" fill="none" stroke="#087F8C" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="491" y="603.0" width="145" height="60" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="509" y="637.0" font-size="22" fill="#087F8C" font-weight="650" text-anchor="start">17 位 +&amp;</text>
+<path d="M641,261.0 L672,261.0 L672,323.0 L700,323.0" fill="none" stroke="#087F8C" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<path d="M641,385.0 L672,385.0 L672,323.0 L700,323.0" fill="none" stroke="#087F8C" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="711" y="293.0" width="145" height="60" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="729" y="327.0" font-size="22" fill="#087F8C" font-weight="650" text-anchor="start">18 位 +&amp;</text>
+<path d="M641,509.0 L672,509.0 L672,571.0 L700,571.0" fill="none" stroke="#087F8C" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<path d="M641,633.0 L672,633.0 L672,571.0 L700,571.0" fill="none" stroke="#087F8C" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="711" y="541.0" width="145" height="60" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="729" y="575.0" font-size="22" fill="#087F8C" font-weight="650" text-anchor="start">18 位 +&amp;</text>
+<path d="M862,323.0 L893,323.0 L893,447.0 L920,447.0" fill="none" stroke="#087F8C" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<path d="M862,571.0 L893,571.0 L893,447.0 L920,447.0" fill="none" stroke="#087F8C" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="931" y="417.0" width="145" height="60" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="949" y="451.0" font-size="22" fill="#087F8C" font-weight="650" text-anchor="start">19 位 +&amp;</text>
+<path d="M1082,447.0 L1110,447.0" fill="none" stroke="#087F8C" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<rect x="1120" y="350" width="88" height="195" rx="9" fill="white" stroke="#087F8C" stroke-width="1.6"/>
+<text x="1164" y="386" font-size="21" fill="#172C43" font-weight="400" text-anchor="middle">符号</text>
+<text x="1164" y="415" font-size="21" fill="#172C43" font-weight="400" text-anchor="middle">扩展</text>
+<text x="1164" y="444" font-size="21" fill="#172C43" font-weight="400" text-anchor="middle">至 32</text>
+<text x="1164" y="473" font-size="21" fill="#172C43" font-weight="400" text-anchor="middle">高 96</text>
+<text x="1164" y="502" font-size="21" fill="#172C43" font-weight="400" text-anchor="middle">补零</text>
+<rect x="1120" y="580" width="88" height="44" rx="5" fill="#087F8C"/>
+<text x="1164" y="610" font-size="23" fill="#FFFFFF" font-weight="650" text-anchor="middle">S2</text>
+<path d="M1164,551 L1164,572" fill="none" stroke="#087F8C" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<text x="62" y="779" font-size="22" fill="#7659A3" font-weight="650" text-anchor="start">oldVd / VL / ROB / 有效位</text>
+<path d="M396,771 L1025,771" fill="none" stroke="#7659A3" stroke-width="2" stroke-linejoin="round" stroke-dasharray="7 5" marker-end="url(#arr-purple)"/>
+<rect x="1040" y="750" width="192" height="83" rx="10" fill="#F1EDF7" stroke="#7659A3" stroke-width="1.6"/>
+<text x="1058" y="784" font-size="22" fill="#7659A3" font-weight="650" text-anchor="start">末级选择</text>
+<text x="1058" y="817" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">结果 / oldVd</text>
+<path d="M1164,630 L1164,738" fill="none" stroke="#087F8C" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<text x="62" y="825" font-size="22" fill="#172C43" font-weight="400" text-anchor="start">逐级位宽：8×16 → 4×17 → 2×18 → 1×19 → 32 + 96 = 128 位</text>
+</svg>

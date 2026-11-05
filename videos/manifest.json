@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-05",
+  "delivery": "Git LFS in videos/*.mp4; video bodies are verified by tools/verify_videos.py independently of the source/build manifest.",
+  "repository": "https://github.com/mjie1227-afk/cie2026-xiangshanxinrui-vdot",
+  "validation": "Full audio/video decoding passed; six frames per video inspected. Recording completion reported by the author. No full editorial or spoken-content review claimed.",
+  "videos": [
+    {
+      "stage": 1,
+      "filename": "第一阶段的操作过程录屏.mp4",
+      "bytes": 113951414,
+      "sha256": "0ef7b51e9d9d02f75a64a23fee185ecaf2cdaad850d19bc66abd9c1250f86870",
+      "duration_seconds": 574.88,
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30/1"
+        },
+        {
+          "index": 1,
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "sample_rate": "44100",
+          "channels": 2,
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "decode_exit_code": 0
+    },
+    {
+      "stage": 2,
+      "filename": "第二阶段的设计文档和基础测试文档.mp4",
+      "bytes": 130665812,
+      "sha256": "da160b99275d46371751a804738a9a1e81fe039294032fc4af3d6a41c7ea6a5a",
+      "duration_seconds": 622.435011,
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30/1"
+        },
+        {
+          "index": 1,
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "sample_rate": "44100",
+          "channels": 2,
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "decode_exit_code": 0
+    },
+    {
+      "stage": 3,
+      "filename": "第三阶段的基于波形仿真和性能分析录屏.mp4",
+      "bytes": 218128146,
+      "sha256": "909ec38649bcac15703f67bdbf1466ab6ba210f7a343377ddb9cb51bdd1fe577",
+      "duration_seconds": 922.251995,
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30/1"
+        },
+        {
+          "index": 1,
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "sample_rate": "44100",
+          "channels": 2,
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "decode_exit_code": 0
+    }
+  ]
+}

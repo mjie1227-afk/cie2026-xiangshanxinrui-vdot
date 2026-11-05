@@ -1,0 +1,1168 @@
+{
+  "edition": "docs_final5",
+  "date": "2026-11-04",
+  "documents": [
+    {
+      "source": "docs_final5/assets/architecture/co-verification-architecture.png",
+      "destination": "docs/assets/architecture/co-verification-architecture.png",
+      "source_sha256": "e1cfa604195f80a7c601ebd82d2624be943433a53de23b6728d9fe33401fbf7d",
+      "destination_sha256": "e1cfa604195f80a7c601ebd82d2624be943433a53de23b6728d9fe33401fbf7d",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/architecture/co-verification-architecture.svg",
+      "destination": "docs/assets/architecture/co-verification-architecture.svg",
+      "source_sha256": "7b2baca78d17130ad097b344bc311746bd11838bccf38e81854cbbcc45e440ee",
+      "destination_sha256": "7b2baca78d17130ad097b344bc311746bd11838bccf38e81854cbbcc45e440ee",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/architecture/dev-roadmap-stages.png",
+      "destination": "docs/assets/architecture/dev-roadmap-stages.png",
+      "source_sha256": "a6316cb7138f98545ced12ec0b75903ef13bfa00b23c93daeaf6d57ef8d2db06",
+      "destination_sha256": "a6316cb7138f98545ced12ec0b75903ef13bfa00b23c93daeaf6d57ef8d2db06",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/architecture/dev-roadmap-stages.svg",
+      "destination": "docs/assets/architecture/dev-roadmap-stages.svg",
+      "source_sha256": "77f28c9334cad97d3d468f41676974830cfe256c8c0d70659ffd1e8f0ecd095c",
+      "destination_sha256": "77f28c9334cad97d3d468f41676974830cfe256c8c0d70659ffd1e8f0ecd095c",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/architecture/vdot-datapath.png",
+      "destination": "docs/assets/architecture/vdot-datapath.png",
+      "source_sha256": "fd4f80303a6d3106e86b05ea00374fd24d9f0333c707d5baf3cefaf0d09bdea0",
+      "destination_sha256": "fd4f80303a6d3106e86b05ea00374fd24d9f0333c707d5baf3cefaf0d09bdea0",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/architecture/vdot-datapath.svg",
+      "destination": "docs/assets/architecture/vdot-datapath.svg",
+      "source_sha256": "1561f73e1dfd00131bdbc54963ccddffe3741423f3376d321258ff6caa9b29b5",
+      "destination_sha256": "1561f73e1dfd00131bdbc54963ccddffe3741423f3376d321258ff6caa9b29b5",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage1/01-program-pass.png",
+      "destination": "docs/assets/stage1/01-program-pass.png",
+      "source_sha256": "80d5d0d5a4c7c596b40339c6fc2d9ba0ab72c7ed5ceb5efde5b747556b376774",
+      "destination_sha256": "80d5d0d5a4c7c596b40339c6fc2d9ba0ab72c7ed5ceb5efde5b747556b376774",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage1/02-decode-5111ps.png",
+      "destination": "docs/assets/stage1/02-decode-5111ps.png",
+      "source_sha256": "484d57a77e0dec9c85e23f007d6bc67b2ccd93b49880a56a4a951c415e441331",
+      "destination_sha256": "484d57a77e0dec9c85e23f007d6bc67b2ccd93b49880a56a4a951c415e441331",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage1/03-rename-5115ps.png",
+      "destination": "docs/assets/stage1/03-rename-5115ps.png",
+      "source_sha256": "c6dd9488c31e3d9c02aac96594d6e76c8201b1ebc42016db2c55098878501918",
+      "destination_sha256": "c6dd9488c31e3d9c02aac96594d6e76c8201b1ebc42016db2c55098878501918",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage1/04-dispatch-5117ps.png",
+      "destination": "docs/assets/stage1/04-dispatch-5117ps.png",
+      "source_sha256": "8dfb00c25d80a3708762f981044a21a765bf8cfb690e606ebee48b22a1db2b73",
+      "destination_sha256": "8dfb00c25d80a3708762f981044a21a765bf8cfb690e606ebee48b22a1db2b73",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage1/05-execution-input-5267ps.png",
+      "destination": "docs/assets/stage1/05-execution-input-5267ps.png",
+      "source_sha256": "a98c1f4856c7265dabc0ad0537ef1e724caa1261170931ce37fbad8755797d0c",
+      "destination_sha256": "a98c1f4856c7265dabc0ad0537ef1e724caa1261170931ce37fbad8755797d0c",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage1/06-execution-output-5269ps.png",
+      "destination": "docs/assets/stage1/06-execution-output-5269ps.png",
+      "source_sha256": "b5b444914cbe1abaff4ab43a129fc6a0a2cee4e667937b27f44597dc84e33dac",
+      "destination_sha256": "b5b444914cbe1abaff4ab43a129fc6a0a2cee4e667937b27f44597dc84e33dac",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage1/07-physical-write-marker5274ps.png",
+      "destination": "docs/assets/stage1/07-physical-write-marker5274ps.png",
+      "source_sha256": "7644d3bf3a7edc11e637931fed933b9c8b63e53d5fef11eccf4ad3ac58e06dd9",
+      "destination_sha256": "7644d3bf3a7edc11e637931fed933b9c8b63e53d5fef11eccf4ad3ac58e06dd9",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage1/08-rob-before-5273ps.png",
+      "destination": "docs/assets/stage1/08-rob-before-5273ps.png",
+      "source_sha256": "0dafd4b7b6e1ba5365b678f6b3de70e0e200338dca0c2c3631cb8fc61bc4e2f3",
+      "destination_sha256": "0dafd4b7b6e1ba5365b678f6b3de70e0e200338dca0c2c3631cb8fc61bc4e2f3",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage1/09-map-before-5277ps.png",
+      "destination": "docs/assets/stage1/09-map-before-5277ps.png",
+      "source_sha256": "3fc906392f081048c1bd2f10a5a0bcca671de149dc768e4866a8253030340cad",
+      "destination_sha256": "3fc906392f081048c1bd2f10a5a0bcca671de149dc768e4866a8253030340cad",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage1/10-map-after-5278ps.png",
+      "destination": "docs/assets/stage1/10-map-after-5278ps.png",
+      "source_sha256": "19981a67d9057c3c9c3eb2e381caad03b85e41fc609e6772bc8b8aa8696a4eef",
+      "destination_sha256": "19981a67d9057c3c9c3eb2e381caad03b85e41fc609e6772bc8b8aa8696a4eef",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage1/frontend-decode-accept-5111ps.png",
+      "destination": "docs/assets/stage1/frontend-decode-accept-5111ps.png",
+      "source_sha256": "25f5f7877adf87fcf8505667f520523ddfdd6eba6b13b3dc8cbc67eb22df4090",
+      "destination_sha256": "25f5f7877adf87fcf8505667f520523ddfdd6eba6b13b3dc8cbc67eb22df4090",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage1/frontend-decode-buffer-5093ps.png",
+      "destination": "docs/assets/stage1/frontend-decode-buffer-5093ps.png",
+      "source_sha256": "dffd58dcfb8a1482e3a300e91074e5e920629a94e17e81ee5eb8987bf61827e3",
+      "destination_sha256": "dffd58dcfb8a1482e3a300e91074e5e920629a94e17e81ee5eb8987bf61827e3",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage1/frontend-ftq-marker5080ps.png",
+      "destination": "docs/assets/stage1/frontend-ftq-marker5080ps.png",
+      "source_sha256": "3248f396bb36b20bd96807b158437d357c9c8d50d3180d17f62df0be597b4b6b",
+      "destination_sha256": "3248f396bb36b20bd96807b158437d357c9c8d50d3180d17f62df0be597b4b6b",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage1/frontend-ibuffer-5087ps.png",
+      "destination": "docs/assets/stage1/frontend-ibuffer-5087ps.png",
+      "source_sha256": "c9a97913bd329224955b59d21003a49df36ef28af8c4fbf40e268442c585ae4b",
+      "destination_sha256": "c9a97913bd329224955b59d21003a49df36ef28af8c4fbf40e268442c585ae4b",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage1/frontend-icache-5083ps.png",
+      "destination": "docs/assets/stage1/frontend-icache-5083ps.png",
+      "source_sha256": "20eff7cd2bd660e7f1bd6b65a93c3153d2cd26e52f59d55f0a6dfe13aa0f9368",
+      "destination_sha256": "20eff7cd2bd660e7f1bd6b65a93c3153d2cd26e52f59d55f0a6dfe13aa0f9368",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage1/frontend-ifu-5085ps.png",
+      "destination": "docs/assets/stage1/frontend-ifu-5085ps.png",
+      "source_sha256": "d29359323cf0b206aabddaf1acefd42b621dd69bce96403508f405b9b7290c99",
+      "destination_sha256": "d29359323cf0b206aabddaf1acefd42b621dd69bce96403508f405b9b7290c99",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage1/hello-meijie-result.png",
+      "destination": "docs/assets/stage1/hello-meijie-result.png",
+      "source_sha256": "44d0e0086f88e923d2a46e8fc5ed1941050917184405b5a80bfca6ce50012c13",
+      "destination_sha256": "44d0e0086f88e923d2a46e8fc5ed1941050917184405b5a80bfca6ce50012c13",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage1/vadd-path-overview.png",
+      "destination": "docs/assets/stage1/vadd-path-overview.png",
+      "source_sha256": "f7374ba0d78d65465b0cf4b30d468f99a056685d9c7d98ddcb4650d36c9ab39e",
+      "destination_sha256": "f7374ba0d78d65465b0cf4b30d468f99a056685d9c7d98ddcb4650d36c9ab39e",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage1/vadd-path-overview.svg",
+      "destination": "docs/assets/stage1/vadd-path-overview.svg",
+      "source_sha256": "8baf86b8d44c449c4450378deccacdaa091c16edf4b452f6ff28c046b0307dff",
+      "destination_sha256": "8baf86b8d44c449c4450378deccacdaa091c16edf4b452f6ff28c046b0307dff",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/completed-redirected-summary.png",
+      "destination": "docs/assets/stage2/completed-redirected-summary.png",
+      "source_sha256": "ba653173a3fd7c9b72f6e8aaa6e7f2d92fd29b223732ca1b86a089fbe24a39cc",
+      "destination_sha256": "ba653173a3fd7c9b72f6e8aaa6e7f2d92fd29b223732ca1b86a089fbe24a39cc",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/contention-execution-complete.png",
+      "destination": "docs/assets/stage2/contention-execution-complete.png",
+      "source_sha256": "842f1468d57470d40fead36d0ad4ded685821f41c0ed512a237e4a65cc84e271",
+      "destination_sha256": "842f1468d57470d40fead36d0ad4ded685821f41c0ed512a237e4a65cc84e271",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/contention-retirement-instructions.png",
+      "destination": "docs/assets/stage2/contention-retirement-instructions.png",
+      "source_sha256": "ad88de355711424e2c8b3b744c865ac13b2afca4ae7eb4b413a50e923bb2d675",
+      "destination_sha256": "ad88de355711424e2c8b3b744c865ac13b2afca4ae7eb4b413a50e923bb2d675",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/contention-retirement-vdot-partial.png",
+      "destination": "docs/assets/stage2/contention-retirement-vdot-partial.png",
+      "source_sha256": "915c111e6ed38643da92c36fe016f6aa8a5acb414c41d89389428223f7036204",
+      "destination_sha256": "915c111e6ed38643da92c36fe016f6aa8a5acb414c41d89389428223f7036204",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/csr-canceled.png",
+      "destination": "docs/assets/stage2/csr-canceled.png",
+      "source_sha256": "9a816c917e20fada79f2f40d2080f1f7a6888f23fe287505c2142bbc29ada7af",
+      "destination_sha256": "9a816c917e20fada79f2f40d2080f1f7a6888f23fe287505c2142bbc29ada7af",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/csr-normal-commit.png",
+      "destination": "docs/assets/stage2/csr-normal-commit.png",
+      "source_sha256": "1305d6691777f59c8e82a389def78c82e286a57069e32a21cbc96fa343e4e80c",
+      "destination_sha256": "1305d6691777f59c8e82a389def78c82e286a57069e32a21cbc96fa343e4e80c",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/exception-regression.png",
+      "destination": "docs/assets/stage2/exception-regression.png",
+      "source_sha256": "b74ecf98bfe231d9d216cad98a257eed30cf419eeee7442e487d0b0afe70d669",
+      "destination_sha256": "b74ecf98bfe231d9d216cad98a257eed30cf419eeee7442e487d0b0afe70d669",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/mixed-identity-retire.png",
+      "destination": "docs/assets/stage2/mixed-identity-retire.png",
+      "source_sha256": "97d0a33cde8f84a262129aa3c3e2d1b7a8b54d7a4d6e36f1021da9459bcb0c05",
+      "destination_sha256": "97d0a33cde8f84a262129aa3c3e2d1b7a8b54d7a4d6e36f1021da9459bcb0c05",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/mixed-lifecycle.png",
+      "destination": "docs/assets/stage2/mixed-lifecycle.png",
+      "source_sha256": "38ca1b3b689fcc77ffaed7ce72cb060e2606a4e1a91909a9895aa3b19aa8e8ff",
+      "destination_sha256": "38ca1b3b689fcc77ffaed7ce72cb060e2606a4e1a91909a9895aa3b19aa8e8ff",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/mtval-before-difference.png",
+      "destination": "docs/assets/stage2/mtval-before-difference.png",
+      "source_sha256": "78289243ef6d0326c1799db7cf9ed906f29a65923a645c306301eb1346930e5d",
+      "destination_sha256": "78289243ef6d0326c1799db7cf9ed906f29a65923a645c306301eb1346930e5d",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/mtval-before-reference.png",
+      "destination": "docs/assets/stage2/mtval-before-reference.png",
+      "source_sha256": "f6be050295d3327ab9feee6198e716ba2a1d555d28b611361eea3c8856fdeb4b",
+      "destination_sha256": "f6be050295d3327ab9feee6198e716ba2a1d555d28b611361eea3c8856fdeb4b",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/normal-vdot-execute.png",
+      "destination": "docs/assets/stage2/normal-vdot-execute.png",
+      "source_sha256": "d60292f1b992a00ecedafbf2b52cb100dcb7842285f218b213268c97840c38e2",
+      "destination_sha256": "d60292f1b992a00ecedafbf2b52cb100dcb7842285f218b213268c97840c38e2",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/normal-vdot-identity.png",
+      "destination": "docs/assets/stage2/normal-vdot-identity.png",
+      "source_sha256": "06ef1f93678a3b2b2e3ce51c7898dd590c1cc7a8981525173af4e8b517bf20f1",
+      "destination_sha256": "06ef1f93678a3b2b2e3ce51c7898dd590c1cc7a8981525173af4e8b517bf20f1",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/normal-vdot-retire.png",
+      "destination": "docs/assets/stage2/normal-vdot-retire.png",
+      "source_sha256": "1f42cbc4071cff70dd6410d097003ad0c627ee5e3475dc8419636f9b762e631c",
+      "destination_sha256": "1f42cbc4071cff70dd6410d097003ad0c627ee5e3475dc8419636f9b762e631c",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/overlap-regression.png",
+      "destination": "docs/assets/stage2/overlap-regression.png",
+      "source_sha256": "d98fbf63e89eeacce506b83dd79ee7843a9b4c67016f2c48713ddaa77da1c6a5",
+      "destination_sha256": "d98fbf63e89eeacce506b83dd79ee7843a9b4c67016f2c48713ddaa77da1c6a5",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/pipeline-branch-csr.png",
+      "destination": "docs/assets/stage2/pipeline-branch-csr.png",
+      "source_sha256": "19ed45a9e081552e4fa2f7b705fdda6be27801faaca6ea3a1bda39cfc5f89b1e",
+      "destination_sha256": "19ed45a9e081552e4fa2f7b705fdda6be27801faaca6ea3a1bda39cfc5f89b1e",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/pipeline-dependencies.png",
+      "destination": "docs/assets/stage2/pipeline-dependencies.png",
+      "source_sha256": "4428a687ef5cbe6704e691073447a8a3eeee8a51d88792327402ced61865f0f1",
+      "destination_sha256": "4428a687ef5cbe6704e691073447a8a3eeee8a51d88792327402ced61865f0f1",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/pipeline-mixed.png",
+      "destination": "docs/assets/stage2/pipeline-mixed.png",
+      "source_sha256": "0cca211534bd24cc9d0e9cd41c9db6a7aa84fa7e3020e23c3b21d586d93c9d7f",
+      "destination_sha256": "0cca211534bd24cc9d0e9cd41c9db6a7aa84fa7e3020e23c3b21d586d93c9d7f",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/preissue-contention-identity.png",
+      "destination": "docs/assets/stage2/preissue-contention-identity.png",
+      "source_sha256": "20fea8c4e3e01a7f783bd062f095d7a54a78ff068e4c2f93a4d2c91aaf333b58",
+      "destination_sha256": "20fea8c4e3e01a7f783bd062f095d7a54a78ff068e4c2f93a4d2c91aaf333b58",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/preissue-contention-overview.png",
+      "destination": "docs/assets/stage2/preissue-contention-overview.png",
+      "source_sha256": "4d94973531e8a1f189151fb27f9e64a5d0234671b76b7d14c29d22691bbb455b",
+      "destination_sha256": "4d94973531e8a1f189151fb27f9e64a5d0234671b76b7d14c29d22691bbb455b",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/resource-route-coverage.png",
+      "destination": "docs/assets/stage2/resource-route-coverage.png",
+      "source_sha256": "9d4227fd999e4e91cb0ea95f8f03295773823bb84bbd95532bd5f513fadfd934",
+      "destination_sha256": "9d4227fd999e4e91cb0ea95f8f03295773823bb84bbd95532bd5f513fadfd934",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/smoke-results.png",
+      "destination": "docs/assets/stage2/smoke-results.png",
+      "source_sha256": "edd05e3aa914deeb3661021a5ecdcaadf21a358f2d627a72a58a62faa228afd4",
+      "destination_sha256": "edd05e3aa914deeb3661021a5ecdcaadf21a358f2d627a72a58a62faa228afd4",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/speculative-vdot-execute.png",
+      "destination": "docs/assets/stage2/speculative-vdot-execute.png",
+      "source_sha256": "de0f8ce92f518d25666328fc691a3afff98fc7fc8436ebf56bf3db2c06e39602",
+      "destination_sha256": "de0f8ce92f518d25666328fc691a3afff98fc7fc8436ebf56bf3db2c06e39602",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/speculative-vdot-identity.png",
+      "destination": "docs/assets/stage2/speculative-vdot-identity.png",
+      "source_sha256": "7921a8a9e560cd1fbd87e2956819bb462be20e14d479ee71a7cff078857c194e",
+      "destination_sha256": "7921a8a9e560cd1fbd87e2956819bb462be20e14d479ee71a7cff078857c194e",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/speculative-vdot-redirect-retire.png",
+      "destination": "docs/assets/stage2/speculative-vdot-redirect-retire.png",
+      "source_sha256": "24a3f7ee6999c54262e0a111f3bfae63a3a41ca4c1de718cfaad2a93a304fc6a",
+      "destination_sha256": "24a3f7ee6999c54262e0a111f3bfae63a3a41ca4c1de718cfaad2a93a304fc6a",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/vdot-integration-overview.png",
+      "destination": "docs/assets/stage2/vdot-integration-overview.png",
+      "source_sha256": "6140bbb660613e42a5208cbd4756214b2752c99fd15dc99d957e752fb74eda80",
+      "destination_sha256": "6140bbb660613e42a5208cbd4756214b2752c99fd15dc99d957e752fb74eda80",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/vdot-integration-overview.svg",
+      "destination": "docs/assets/stage2/vdot-integration-overview.svg",
+      "source_sha256": "099e095f20c6508d77f33f5ab57be5bb8243cc0727a68405c3a6afe201ec63f4",
+      "destination_sha256": "099e095f20c6508d77f33f5ab57be5bb8243cc0727a68405c3a6afe201ec63f4",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/VDot两拍数据通路.png",
+      "destination": "docs/assets/stage2/VDot两拍数据通路.png",
+      "source_sha256": "e503eda538c01f065635095afd1580052ffece581f1e341f27ac4e24d57eb061",
+      "destination_sha256": "e503eda538c01f065635095afd1580052ffece581f1e341f27ac4e24d57eb061",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage2/VDot两拍数据通路.svg",
+      "destination": "docs/assets/stage2/VDot两拍数据通路.svg",
+      "source_sha256": "52ddd51dee126ecc0b1762768e7d443a94a854d9303a59ac6e6214dd5d77d18e",
+      "destination_sha256": "52ddd51dee126ecc0b1762768e7d443a94a854d9303a59ac6e6214dd5d77d18e",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/dependent-chain-results.png",
+      "destination": "docs/assets/stage3/dependent-chain-results.png",
+      "source_sha256": "2ee3275ff3a911396791b9988a5694f57887e07a7e689ffed0ab281f5c07eba4",
+      "destination_sha256": "2ee3275ff3a911396791b9988a5694f57887e07a7e689ffed0ab281f5c07eba4",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/e2e-array-results.png",
+      "destination": "docs/assets/stage3/e2e-array-results.png",
+      "source_sha256": "2a13d5ed53e4facb8e6d0e63940b60aac4466d67572b8f122d0cab12936d0181",
+      "destination_sha256": "2a13d5ed53e4facb8e6d0e63940b60aac4466d67572b8f122d0cab12936d0181",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/rvv-equivalence-pass.png",
+      "destination": "docs/assets/stage3/rvv-equivalence-pass.png",
+      "source_sha256": "4409eeb8704f8804943ef4ab279afe42993e37323d94aa061b55e862ac41ce31",
+      "destination_sha256": "4409eeb8704f8804943ef4ab279afe42993e37323d94aa061b55e862ac41ce31",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/S3-F03-dependent-chain.png",
+      "destination": "docs/assets/stage3/S3-F03-dependent-chain.png",
+      "source_sha256": "d4b66191f22d728d407c24d802bbdf186754dbdf9e96c429fbc419ffbe827930",
+      "destination_sha256": "d4b66191f22d728d407c24d802bbdf186754dbdf9e96c429fbc419ffbe827930",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/S3-F03-dependent-chain.svg",
+      "destination": "docs/assets/stage3/S3-F03-dependent-chain.svg",
+      "source_sha256": "254f6df41b419920a7e2af3d135e0957fe065aed8c3a3aeed4c0f7e4d2c62c62",
+      "destination_sha256": "254f6df41b419920a7e2af3d135e0957fe065aed8c3a3aeed4c0f7e4d2c62c62",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/S3-F04-throughput-batch.png",
+      "destination": "docs/assets/stage3/S3-F04-throughput-batch.png",
+      "source_sha256": "c5c15da2a9ce78b05857b5921c25ef2728f18c719a6f5d6325d981b495308f8c",
+      "destination_sha256": "c5c15da2a9ce78b05857b5921c25ef2728f18c719a6f5d6325d981b495308f8c",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/S3-F04-throughput-batch.svg",
+      "destination": "docs/assets/stage3/S3-F04-throughput-batch.svg",
+      "source_sha256": "85f3ad7ed79b7dd79dcded129750406a670d7a2bf2afff74cf0ed21dab908418",
+      "destination_sha256": "85f3ad7ed79b7dd79dcded129750406a670d7a2bf2afff74cf0ed21dab908418",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/S3-F05-e2e-array.png",
+      "destination": "docs/assets/stage3/S3-F05-e2e-array.png",
+      "source_sha256": "af5ebb7ca85bdf5eae8db31dd9256720d2cad4197e8e73df35eb60b49080df81",
+      "destination_sha256": "af5ebb7ca85bdf5eae8db31dd9256720d2cad4197e8e73df35eb60b49080df81",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/S3-F05-e2e-array.svg",
+      "destination": "docs/assets/stage3/S3-F05-e2e-array.svg",
+      "source_sha256": "6248e1cbc52ab61385feaeb7d9656586f72dcb3e7c47b37e2ec8fba637af2a1e",
+      "destination_sha256": "6248e1cbc52ab61385feaeb7d9656586f72dcb3e7c47b37e2ec8fba637af2a1e",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/throughput-batch-results.png",
+      "destination": "docs/assets/stage3/throughput-batch-results.png",
+      "source_sha256": "af8a5f052528daa192943840e2c3bfcfa15f5654db7e09f1c1d2adc589367820",
+      "destination_sha256": "af8a5f052528daa192943840e2c3bfcfa15f5654db7e09f1c1d2adc589367820",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/timing-calibration-complete.png",
+      "destination": "docs/assets/stage3/timing-calibration-complete.png",
+      "source_sha256": "ec7b5cb97a28c79e590794313e27a0dfc82a6600818b2ecd74a64efcfa23789c",
+      "destination_sha256": "ec7b5cb97a28c79e590794313e27a0dfc82a6600818b2ecd74a64efcfa23789c",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/timing-calibration-partial.png",
+      "destination": "docs/assets/stage3/timing-calibration-partial.png",
+      "source_sha256": "a6eef93d7739ea6617d671a21d692c0d5df2c590fc19681a772346e2aa0c3ceb",
+      "destination_sha256": "a6eef93d7739ea6617d671a21d692c0d5df2c590fc19681a772346e2aa0c3ceb",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/依赖链测量.png",
+      "destination": "docs/assets/stage3/依赖链测量.png",
+      "source_sha256": "95012f7bcffd22f32966dc5d8b1a5a33e6a95fdd020633bc1c527806d80d0441",
+      "destination_sha256": "95012f7bcffd22f32966dc5d8b1a5a33e6a95fdd020633bc1c527806d80d0441",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/依赖链测量.svg",
+      "destination": "docs/assets/stage3/依赖链测量.svg",
+      "source_sha256": "cc6d391bf7dca71e4c2c567c52afe83306f54fe9241b72ccae891c2770e49b6c",
+      "destination_sha256": "cc6d391bf7dca71e4c2c567c52afe83306f54fe9241b72ccae891c2770e49b6c",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/八路批处理测量.png",
+      "destination": "docs/assets/stage3/八路批处理测量.png",
+      "source_sha256": "5bbc732f4e09eebeeb701d9207831d11ce11e617d02ccd06e54b7a69e2840c83",
+      "destination_sha256": "5bbc732f4e09eebeeb701d9207831d11ce11e617d02ccd06e54b7a69e2840c83",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/八路批处理测量.svg",
+      "destination": "docs/assets/stage3/八路批处理测量.svg",
+      "source_sha256": "2eeb0677bf109526dd0ad47abf0dbd3349e3d589b30f793fcab2973e18023e85",
+      "destination_sha256": "2eeb0677bf109526dd0ad47abf0dbd3349e3d589b30f793fcab2973e18023e85",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/分段归约对照.png",
+      "destination": "docs/assets/stage3/分段归约对照.png",
+      "source_sha256": "1bee0cf85f8547ed3b376aba4095b762280d9ef3e17184446d86f76c74cd3168",
+      "destination_sha256": "1bee0cf85f8547ed3b376aba4095b762280d9ef3e17184446d86f76c74cd3168",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/分段归约对照.svg",
+      "destination": "docs/assets/stage3/分段归约对照.svg",
+      "source_sha256": "9943372c4808700893c221a0bc90dee3c627b4e73bbc279214025a5907611c4f",
+      "destination_sha256": "9943372c4808700893c221a0bc90dee3c627b4e73bbc279214025a5907611c4f",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/小块复用对照.png",
+      "destination": "docs/assets/stage3/小块复用对照.png",
+      "source_sha256": "ad614a9a3e67aee59e36a42c24822c2743425f823a3800974d8dc6b7c612a1c8",
+      "destination_sha256": "ad614a9a3e67aee59e36a42c24822c2743425f823a3800974d8dc6b7c612a1c8",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/小块复用对照.svg",
+      "destination": "docs/assets/stage3/小块复用对照.svg",
+      "source_sha256": "bc61c683f043f670e9a4e66614b82c4b9760e64cc7bfab2d7481677fb2394af8",
+      "destination_sha256": "bc61c683f043f670e9a4e66614b82c4b9760e64cc7bfab2d7481677fb2394af8",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/小数组测量.png",
+      "destination": "docs/assets/stage3/小数组测量.png",
+      "source_sha256": "29d7dfc491ae90cb1d4a3d484546064771fde617aa1b71e0a457af112e38bf75",
+      "destination_sha256": "29d7dfc491ae90cb1d4a3d484546064771fde617aa1b71e0a457af112e38bf75",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/小数组测量.svg",
+      "destination": "docs/assets/stage3/小数组测量.svg",
+      "source_sha256": "cc620db41fc8929835307f344dc888eeedb3926c7ff8a2d0958646e5b456ca12",
+      "destination_sha256": "cc620db41fc8929835307f344dc888eeedb3926c7ff8a2d0958646e5b456ca12",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/输入加载对照.png",
+      "destination": "docs/assets/stage3/输入加载对照.png",
+      "source_sha256": "ce00d37a5502aa0071621cce2c4efde822b3085f14c741627bdab076bf4ea85d",
+      "destination_sha256": "ce00d37a5502aa0071621cce2c4efde822b3085f14c741627bdab076bf4ea85d",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/stage3/输入加载对照.svg",
+      "destination": "docs/assets/stage3/输入加载对照.svg",
+      "source_sha256": "36bf9ac0b359eeeabbb821e47a1c5c31fffd1f9964ff5934a19b300a7e4ff757",
+      "destination_sha256": "36bf9ac0b359eeeabbb821e47a1c5c31fffd1f9964ff5934a19b300a7e4ff757",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/build-flow.png",
+      "destination": "docs/assets/technical/build-flow.png",
+      "source_sha256": "1cefb34c89b4a20e38f2e23b6f258f9126633564e0721ffc2297e359edc27c12",
+      "destination_sha256": "1cefb34c89b4a20e38f2e23b6f258f9126633564e0721ffc2297e359edc27c12",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/build-flow.svg",
+      "destination": "docs/assets/technical/build-flow.svg",
+      "source_sha256": "0ffc7add879704ad8f54ed928426133dd22071b0d11fe2674ba7bce1b90d481c",
+      "destination_sha256": "0ffc7add879704ad8f54ed928426133dd22071b0d11fe2674ba7bce1b90d481c",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/co-verification.png",
+      "destination": "docs/assets/technical/co-verification.png",
+      "source_sha256": "47ffc05189d9c8d531c1746e13c32e35ea6bfbce5dbe65af87934a1bdd8feef6",
+      "destination_sha256": "47ffc05189d9c8d531c1746e13c32e35ea6bfbce5dbe65af87934a1bdd8feef6",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/co-verification.svg",
+      "destination": "docs/assets/technical/co-verification.svg",
+      "source_sha256": "09bf848f16f28e9bbca5b4c11e780d126090c9fc28806813eb4f6e79c5964fa8",
+      "destination_sha256": "09bf848f16f28e9bbca5b4c11e780d126090c9fc28806813eb4f6e79c5964fa8",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/equivalence-cases.png",
+      "destination": "docs/assets/technical/equivalence-cases.png",
+      "source_sha256": "14536b9f22f68d4ea3d02c8474b404d487fa3b1fae727b94ac3e44bfce682b70",
+      "destination_sha256": "14536b9f22f68d4ea3d02c8474b404d487fa3b1fae727b94ac3e44bfce682b70",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/equivalence-cases.svg",
+      "destination": "docs/assets/technical/equivalence-cases.svg",
+      "source_sha256": "a6b38a4ceffbe0d7e50c94940f3b7d4db8af1ce4b3fe8a2ed0c6c3adf22da730",
+      "destination_sha256": "a6b38a4ceffbe0d7e50c94940f3b7d4db8af1ce4b3fe8a2ed0c6c3adf22da730",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/mask-layout.png",
+      "destination": "docs/assets/technical/mask-layout.png",
+      "source_sha256": "e2dcb8b928f24098f7de5c6a9b644d521afd7d1c53dd0e741ed511d49f464ccd",
+      "destination_sha256": "e2dcb8b928f24098f7de5c6a9b644d521afd7d1c53dd0e741ed511d49f464ccd",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/mask-layout.svg",
+      "destination": "docs/assets/technical/mask-layout.svg",
+      "source_sha256": "90bb5bcf936b68b4a011fe3ee40d9bc7bb0d5c9ddc8e5c23a9e751cf34ea9e2e",
+      "destination_sha256": "90bb5bcf936b68b4a011fe3ee40d9bc7bb0d5c9ddc8e5c23a9e751cf34ea9e2e",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/mtval-recovery.png",
+      "destination": "docs/assets/technical/mtval-recovery.png",
+      "source_sha256": "1dc5498f50b51de42367c3f69e600d1c64ffd2fc4cd72e50b93111a662c6b592",
+      "destination_sha256": "1dc5498f50b51de42367c3f69e600d1c64ffd2fc4cd72e50b93111a662c6b592",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/mtval-recovery.svg",
+      "destination": "docs/assets/technical/mtval-recovery.svg",
+      "source_sha256": "f250571551d760eeb6fcc9089dc9704abc7e1c5fa479ec1aa9a085233d639e52",
+      "destination_sha256": "f250571551d760eeb6fcc9089dc9704abc7e1c5fa479ec1aa9a085233d639e52",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/oldvd-rename.png",
+      "destination": "docs/assets/technical/oldvd-rename.png",
+      "source_sha256": "73e7139fcff603e9d7ead4fd44b76e2c75a9f7d672e51ac2455c06d3edcdfe0f",
+      "destination_sha256": "73e7139fcff603e9d7ead4fd44b76e2c75a9f7d672e51ac2455c06d3edcdfe0f",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/oldvd-rename.svg",
+      "destination": "docs/assets/technical/oldvd-rename.svg",
+      "source_sha256": "639e21fd34580f09fe61b85dc63ed5d08a0ef83bbe2401ab469aff0a74ffcdeb",
+      "destination_sha256": "639e21fd34580f09fe61b85dc63ed5d08a0ef83bbe2401ab469aff0a74ffcdeb",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/output-contracts.png",
+      "destination": "docs/assets/technical/output-contracts.png",
+      "source_sha256": "6b9410d2bdd802f9a8c20d4518df485632b775b19767c1bc7a7f8eeeef0a6dfd",
+      "destination_sha256": "6b9410d2bdd802f9a8c20d4518df485632b775b19767c1bc7a7f8eeeef0a6dfd",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/output-contracts.svg",
+      "destination": "docs/assets/technical/output-contracts.svg",
+      "source_sha256": "3ef931225e5c56e133fbe5dbb6e1b390f7d009aa12e1dee90cd76c87a579f986",
+      "destination_sha256": "3ef931225e5c56e133fbe5dbb6e1b390f7d009aa12e1dee90cd76c87a579f986",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/perf-chain.png",
+      "destination": "docs/assets/technical/perf-chain.png",
+      "source_sha256": "c83c3585ed4d4eb6a39d420bd76c75f302d0656a0f7f5d53045dc46dd8563bf8",
+      "destination_sha256": "c83c3585ed4d4eb6a39d420bd76c75f302d0656a0f7f5d53045dc46dd8563bf8",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/perf-chain.svg",
+      "destination": "docs/assets/technical/perf-chain.svg",
+      "source_sha256": "e891d598bf66799bafba0feb64b4d994e17e43eacc3e226b7f267f80515511fa",
+      "destination_sha256": "e891d598bf66799bafba0feb64b4d994e17e43eacc3e226b7f267f80515511fa",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/perf-e2e.png",
+      "destination": "docs/assets/technical/perf-e2e.png",
+      "source_sha256": "62929cd1641f880243f6c4fde94f642079c9dbe0f9e9cc6cbfaeae3705238fe3",
+      "destination_sha256": "62929cd1641f880243f6c4fde94f642079c9dbe0f9e9cc6cbfaeae3705238fe3",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/perf-e2e.svg",
+      "destination": "docs/assets/technical/perf-e2e.svg",
+      "source_sha256": "b200bc8ef691696328c8acd1476e7f90c0e9e0383164b0306823d552e575d9a3",
+      "destination_sha256": "b200bc8ef691696328c8acd1476e7f90c0e9e0383164b0306823d552e575d9a3",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/perf-load.png",
+      "destination": "docs/assets/technical/perf-load.png",
+      "source_sha256": "74ec0c9a19ac70d48fdb5c7c09e211016d4cae92e60173aec68b3309cf052a26",
+      "destination_sha256": "74ec0c9a19ac70d48fdb5c7c09e211016d4cae92e60173aec68b3309cf052a26",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/perf-load.svg",
+      "destination": "docs/assets/technical/perf-load.svg",
+      "source_sha256": "81bb9a889fd9582a5c362bfbe56b65e0728ae968c46eee280c5852ae18af9622",
+      "destination_sha256": "81bb9a889fd9582a5c362bfbe56b65e0728ae968c46eee280c5852ae18af9622",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/perf-segment.png",
+      "destination": "docs/assets/technical/perf-segment.png",
+      "source_sha256": "e0712676e7d6a816f8b62524445bd1d98945667e8e1f8e9374f5896874855fb6",
+      "destination_sha256": "e0712676e7d6a816f8b62524445bd1d98945667e8e1f8e9374f5896874855fb6",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/perf-segment.svg",
+      "destination": "docs/assets/technical/perf-segment.svg",
+      "source_sha256": "37c52cfed98e417d46d0421b33a22ae7b3496606d68c4aac220572d283d16ab4",
+      "destination_sha256": "37c52cfed98e417d46d0421b33a22ae7b3496606d68c4aac220572d283d16ab4",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/perf-throughput.png",
+      "destination": "docs/assets/technical/perf-throughput.png",
+      "source_sha256": "3f8f321ce1681ba1513ad6a3595796185fa56647ddd50cb6198d31ab4b227e3c",
+      "destination_sha256": "3f8f321ce1681ba1513ad6a3595796185fa56647ddd50cb6198d31ab4b227e3c",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/perf-throughput.svg",
+      "destination": "docs/assets/technical/perf-throughput.svg",
+      "source_sha256": "8f45bc434028f907327f474a8d176a7c6bbd5966dbd6f84d5019f0ab7ad1a990",
+      "destination_sha256": "8f45bc434028f907327f474a8d176a7c6bbd5966dbd6f84d5019f0ab7ad1a990",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/perf-tile.png",
+      "destination": "docs/assets/technical/perf-tile.png",
+      "source_sha256": "6e0a1c372fc0f02dae6ba951c9bcb644800c1b8d4eda080bd82b932f02d7ebdc",
+      "destination_sha256": "6e0a1c372fc0f02dae6ba951c9bcb644800c1b8d4eda080bd82b932f02d7ebdc",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/perf-tile.svg",
+      "destination": "docs/assets/technical/perf-tile.svg",
+      "source_sha256": "51b5766c1fefa3e98a1da41b08a86da4ac7c58d13869a5dd09245674a0246736",
+      "destination_sha256": "51b5766c1fefa3e98a1da41b08a86da4ac7c58d13869a5dd09245674a0246736",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/rvv-sequence.png",
+      "destination": "docs/assets/technical/rvv-sequence.png",
+      "source_sha256": "4040c8fa07617e3dd76ea91731bf2646ad8b1cb3b02bf0433932f6c41686f54d",
+      "destination_sha256": "4040c8fa07617e3dd76ea91731bf2646ad8b1cb3b02bf0433932f6c41686f54d",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/rvv-sequence.svg",
+      "destination": "docs/assets/technical/rvv-sequence.svg",
+      "source_sha256": "8326ad0e6205c60408992c8bb98bd010487a7b6de28c9395fbe695aa68e1cf46",
+      "destination_sha256": "8326ad0e6205c60408992c8bb98bd010487a7b6de28c9395fbe695aa68e1cf46",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/tile-reuse.png",
+      "destination": "docs/assets/technical/tile-reuse.png",
+      "source_sha256": "bb871b365a6363175a4d6666f7bdbd0ccbc6bf88477f2040120a4b1131784222",
+      "destination_sha256": "bb871b365a6363175a4d6666f7bdbd0ccbc6bf88477f2040120a4b1131784222",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/tile-reuse.svg",
+      "destination": "docs/assets/technical/tile-reuse.svg",
+      "source_sha256": "8d2872ab18195ffbdb495557bf4a01b4e79c43eb259dd2500bf347f3336f3581",
+      "destination_sha256": "8d2872ab18195ffbdb495557bf4a01b4e79c43eb259dd2500bf347f3336f3581",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/timing-window.png",
+      "destination": "docs/assets/technical/timing-window.png",
+      "source_sha256": "1ff09ec4dcc776d0977451e451f527133e0739c96b9313daefae57ffdceef297",
+      "destination_sha256": "1ff09ec4dcc776d0977451e451f527133e0739c96b9313daefae57ffdceef297",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/timing-window.svg",
+      "destination": "docs/assets/technical/timing-window.svg",
+      "source_sha256": "d906176b664dc9052a57cd940c6809266a6631020d7bdad18dff262560553f59",
+      "destination_sha256": "d906176b664dc9052a57cd940c6809266a6631020d7bdad18dff262560553f59",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/vadd-path.png",
+      "destination": "docs/assets/technical/vadd-path.png",
+      "source_sha256": "c7ccbea351d2ae745fc4514c1db3176a9a7a3f46e761b2e3eba4520db5ea7758",
+      "destination_sha256": "c7ccbea351d2ae745fc4514c1db3176a9a7a3f46e761b2e3eba4520db5ea7758",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/vadd-path.svg",
+      "destination": "docs/assets/technical/vadd-path.svg",
+      "source_sha256": "1364c768105f017ea8ca0b8b7f0990e181dd020533ea36917333707146c346d1",
+      "destination_sha256": "1364c768105f017ea8ca0b8b7f0990e181dd020533ea36917333707146c346d1",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/vadd-timeline.png",
+      "destination": "docs/assets/technical/vadd-timeline.png",
+      "source_sha256": "78f5b5818450ac9a95b0646c6656aea9212d786a931eac7ebcdc3c958107ac44",
+      "destination_sha256": "78f5b5818450ac9a95b0646c6656aea9212d786a931eac7ebcdc3c958107ac44",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/vadd-timeline.svg",
+      "destination": "docs/assets/technical/vadd-timeline.svg",
+      "source_sha256": "48a7042e48d6d173289dc906124f22867986adad010ff09c83521e2831ab939e",
+      "destination_sha256": "48a7042e48d6d173289dc906124f22867986adad010ff09c83521e2831ab939e",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/vdot-backend.png",
+      "destination": "docs/assets/technical/vdot-backend.png",
+      "source_sha256": "b00cacfdee01f01228e933356813e9ade3a55c2d189987c793f56fa13d2d0bc2",
+      "destination_sha256": "b00cacfdee01f01228e933356813e9ade3a55c2d189987c793f56fa13d2d0bc2",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/vdot-backend.svg",
+      "destination": "docs/assets/technical/vdot-backend.svg",
+      "source_sha256": "77089d6ba767280c47f6f1c124f8e677247c12bc1b5742f10193db00eb562536",
+      "destination_sha256": "77089d6ba767280c47f6f1c124f8e677247c12bc1b5742f10193db00eb562536",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/vdot-encoding.png",
+      "destination": "docs/assets/technical/vdot-encoding.png",
+      "source_sha256": "5d516f893752be40ae1e0edec06e20b6e2fdb6f61fd3a4a61e2cd8f2d45067a8",
+      "destination_sha256": "5d516f893752be40ae1e0edec06e20b6e2fdb6f61fd3a4a61e2cd8f2d45067a8",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/vdot-encoding.svg",
+      "destination": "docs/assets/technical/vdot-encoding.svg",
+      "source_sha256": "93fa9336a1122c6cae699a5da2f14061d67598109d0b7eab29093d7172b30c7f",
+      "destination_sha256": "93fa9336a1122c6cae699a5da2f14061d67598109d0b7eab29093d7172b30c7f",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/vdot-lifecycle.png",
+      "destination": "docs/assets/technical/vdot-lifecycle.png",
+      "source_sha256": "b13a5f1e681d9cc8d8d2ba3824daa52af554ff2cc1a6b35caa525fbf200c98a5",
+      "destination_sha256": "b13a5f1e681d9cc8d8d2ba3824daa52af554ff2cc1a6b35caa525fbf200c98a5",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/vdot-lifecycle.svg",
+      "destination": "docs/assets/technical/vdot-lifecycle.svg",
+      "source_sha256": "f0eb6fa96081bd2c713101ed55caab44f1fbaad4cf3f0ddeda9f3499c1d1c1eb",
+      "destination_sha256": "f0eb6fa96081bd2c713101ed55caab44f1fbaad4cf3f0ddeda9f3499c1d1c1eb",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/vdot-reduction-tree.png",
+      "destination": "docs/assets/technical/vdot-reduction-tree.png",
+      "source_sha256": "f459b7024cfe16c8edf74a9b99017fb4e2c4fcd9912766d04bf07985572b3b03",
+      "destination_sha256": "f459b7024cfe16c8edf74a9b99017fb4e2c4fcd9912766d04bf07985572b3b03",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/assets/technical/vdot-reduction-tree.svg",
+      "destination": "docs/assets/technical/vdot-reduction-tree.svg",
+      "source_sha256": "94b6dbfbc1888365b5d936d18357208aebad48aa0d915ef16c323f9c6a5866e5",
+      "destination_sha256": "94b6dbfbc1888365b5d936d18357208aebad48aa0d915ef16c323f9c6a5866e5",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/正文/01_项目概述与任务对应.md",
+      "destination": "docs/正文/01_项目概述与任务对应.md",
+      "source_sha256": "6ffcb3af8fa28d0b5da4e30b231dfded4b6c1de6578c6a11bc36c162651b9fd8",
+      "destination_sha256": "0c0566ce5f2d4a07bcee9c82feff4b01ab03d89284c48d58f28ac099550638af",
+      "copied_without_content_change": false,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/正文/02_环境部署与运行验证.md",
+      "destination": "docs/正文/02_环境部署与运行验证.md",
+      "source_sha256": "c60d8d6c25f418b412f21e050607d89e47671b4d2a0495e857623c76fea61065",
+      "destination_sha256": "85bde8b65c52ae493b1da2f09ddd43a2f2fe48fd21c8a4627da63f828a76bff0",
+      "copied_without_content_change": false,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/正文/03_VADD指令执行过程.md",
+      "destination": "docs/正文/03_VADD指令执行过程.md",
+      "source_sha256": "944424c45ce98766e54fa9e2bb43eb7bed619e37ad5c26f30131cc017f2a89ea",
+      "destination_sha256": "33b7b1dc86ee622b592e4039b41540413190ade7fa0dec0c8ab2a5c31166ddf0",
+      "copied_without_content_change": false,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/正文/04_指令规格与微架构设计.md",
+      "destination": "docs/正文/04_指令规格与微架构设计.md",
+      "source_sha256": "c5d46b0617fd6884efde21217a5b33c71beffd5906bab64fdae280cc8675e5a7",
+      "destination_sha256": "c242eb660522f3e4ee81fe9d2702f2a1f4f68cf65d6db6f657145c7034a6b6e7",
+      "copied_without_content_change": false,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/正文/05_RTL实现与整核接入.md",
+      "destination": "docs/正文/05_RTL实现与整核接入.md",
+      "source_sha256": "60f0201d834d4a998a8a1906e50407c2c0ecc93c88d688ed9401d78f3fb13446",
+      "destination_sha256": "2c87db40789af9a026c4f0656ea023cb90d9aed76a6f185b19d0c012bf6c0cd1",
+      "copied_without_content_change": false,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/正文/06_功能测试与补充时序验证.md",
+      "destination": "docs/正文/06_功能测试与补充时序验证.md",
+      "source_sha256": "ca07035b16bfcf83ed13326c46a3a26919e22766e41d7c9079b0d6ee6677e41e",
+      "destination_sha256": "68766acce147430cc9c0e0b2e17e72029232fa18aeab6580c383535f0d20cb96",
+      "copied_without_content_change": false,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/正文/07_NEMU扩展与差分验证.md",
+      "destination": "docs/正文/07_NEMU扩展与差分验证.md",
+      "source_sha256": "0aa26990a55c05df900c6edb1a441f7920101177369913f257281a168f2f11a9",
+      "destination_sha256": "cc3d86bcefc639b961a32dbd7547af59017802afa9ab99b62bbffbd0662401bf",
+      "copied_without_content_change": false,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/正文/08_标准RVV等价基线.md",
+      "destination": "docs/正文/08_标准RVV等价基线.md",
+      "source_sha256": "4fb7d783f6b77b6790aac7a02a5d3f09ea992f7da79059bbfb5e71e2761f6970",
+      "destination_sha256": "5368584d8c4d80ab967b4be3a245c4aece93789a520850ec7084e4c339883a3b",
+      "copied_without_content_change": false,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/正文/09_延迟测量与软件优化分析.md",
+      "destination": "docs/正文/09_延迟测量与软件优化分析.md",
+      "source_sha256": "618e05831c1eb062ddd441b0ff77054005270e0f58a3af4663d24723725446b5",
+      "destination_sha256": "bb6aa47d60e5add4a191d03e4f1603d529410bf3756aacb50955674123cea34c",
+      "copied_without_content_change": false,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/附录/阶段一_环境与波形索引.md",
+      "destination": "docs/附录/阶段一_环境与波形索引.md",
+      "source_sha256": "4274f27b795cb32339bac5fc7507d5d71c4109f3628562709e8800d2c9477a4c",
+      "destination_sha256": "97233efd42b2fe9baf492f8120bcc3abf848b45b906421168c361193e78d6bc6",
+      "copied_without_content_change": false,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/附录/阶段三_模型与性能索引.md",
+      "destination": "docs/附录/阶段三_模型与性能索引.md",
+      "source_sha256": "27ed70b602332567ebf379bde4ed5fcff898954e1c95b868bb24bc9fffedf28b",
+      "destination_sha256": "d3fb90fa0ff1ab016599cb63458dd6e889d4aca92cfe321ecabe9c80cdb9d328",
+      "copied_without_content_change": false,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/附录/阶段二_源码与验证索引.md",
+      "destination": "docs/附录/阶段二_源码与验证索引.md",
+      "source_sha256": "4a50e7d9e65f46f28bb0f950234d469a9829e293f5714eb14908e3c2c397db88",
+      "destination_sha256": "407fe66037cbb560c2464588837ecf6406f0191695cc0b70858dbbac9b192ff4",
+      "copied_without_content_change": false,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/合订版/阶段一_环境与向量执行过程.html",
+      "destination": "docs/合订版/阶段一_环境与向量执行过程.html",
+      "source_sha256": "dc0c237b69ce9740f0f03f97a941b5bd2af82008a69b1d60de877e7f9cfadda4",
+      "destination_sha256": "e2527e13dd72a726e2b10440a155ae8bbc488c4bdda5d47ef02cfe65fc7abcd9",
+      "copied_without_content_change": false,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/合订版/阶段一_环境与向量执行过程.md",
+      "destination": "docs/合订版/阶段一_环境与向量执行过程.md",
+      "source_sha256": "d28e7f940bb686bc5243d7df217ed84a24e4222210fcbf977fa49f243cc65dca",
+      "destination_sha256": "e09a41e0f21f43cd6ebb169e81ee40ea1dcf0a5f0469d73ac4ea110c5f48ad40",
+      "copied_without_content_change": false,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/合订版/阶段一_环境与向量执行过程.pdf",
+      "destination": "docs/合订版/阶段一_环境与向量执行过程.pdf",
+      "source_sha256": "c048ae307d9ba90c8962f1d2c18d50c1a308409a691451b4bc54ccef1f84310e",
+      "destination_sha256": "c048ae307d9ba90c8962f1d2c18d50c1a308409a691451b4bc54ccef1f84310e",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/合订版/阶段三_协同验证与性能分析.html",
+      "destination": "docs/合订版/阶段三_协同验证与性能分析.html",
+      "source_sha256": "f0ca65673150434f9b1b36a63f1cbf581437bf38ea917a09abd01da35cd71e65",
+      "destination_sha256": "b719abdb517a786736c76921c9973de465fc44c42043b61493d06f42cb3450d4",
+      "copied_without_content_change": false,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/合订版/阶段三_协同验证与性能分析.md",
+      "destination": "docs/合订版/阶段三_协同验证与性能分析.md",
+      "source_sha256": "eea56c766e894e60d97fc5aef60d636c952c677a2cf9da605e63920d3d15fae0",
+      "destination_sha256": "2afaf7777b9dd70c3e732e4cd97bf35d6eae5eea32d361e22f7fec08abb75a18",
+      "copied_without_content_change": false,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/合订版/阶段三_协同验证与性能分析.pdf",
+      "destination": "docs/合订版/阶段三_协同验证与性能分析.pdf",
+      "source_sha256": "b971aa020df9962984abf8e47176e759932415d41c014d5411765204629814aa",
+      "destination_sha256": "b971aa020df9962984abf8e47176e759932415d41c014d5411765204629814aa",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/合订版/阶段二_指令设计与功能验证.html",
+      "destination": "docs/合订版/阶段二_指令设计与功能验证.html",
+      "source_sha256": "d52e127519fee4e6637993972290758fffdcba1966920227e2a51017c751e5c4",
+      "destination_sha256": "779a182b8b224654e87016da9ca677502014fa296ddf4e1056b4f179935f2134",
+      "copied_without_content_change": false,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/合订版/阶段二_指令设计与功能验证.md",
+      "destination": "docs/合订版/阶段二_指令设计与功能验证.md",
+      "source_sha256": "85cee7f48d05b36400e56139c3a535be2f5d1634af8179742e73efb04f369b30",
+      "destination_sha256": "91e3dbb8c02fb6ed5980d743e93140c33fbfe05e6a609c6238ef9f871143651d",
+      "copied_without_content_change": false,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/合订版/阶段二_指令设计与功能验证.pdf",
+      "destination": "docs/合订版/阶段二_指令设计与功能验证.pdf",
+      "source_sha256": "c5c6e6f7f6345888cef5e0feaa4ed4f208d1be9c7e6617d970d149d9d743a4d9",
+      "destination_sha256": "c5c6e6f7f6345888cef5e0feaa4ed4f208d1be9c7e6617d970d149d9d743a4d9",
+      "copied_without_content_change": true,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/图示索引.md",
+      "destination": "docs/图示索引.md",
+      "source_sha256": "caf4ddccbaafbf5897ed17216a5cee95613b4f6dc5c73a88a53f604732b1ea10",
+      "destination_sha256": "f74e4771da6da0be46e8c9f3164bd0b90a2fc5695384db2db9029cfa076bd996",
+      "copied_without_content_change": false,
+      "pdf_local_links_rebased": 0
+    },
+    {
+      "source": "docs_final5/图示总览.html",
+      "destination": "docs/图示总览.html",
+      "source_sha256": "bd96808a8d7f7b4103d128797832aed5167e6274921c6865828f41bed96c29b5",
+      "destination_sha256": "1bf8905020280b38cd440133cc944a5db500608945d5c181954218306eed184a",
+      "copied_without_content_change": false,
+      "pdf_local_links_rebased": 0
+    }
+  ],
+  "additional_evidence": [],
+  "scope": "Technical reports only. Concise performance conclusion with INT8 linear-layer relevance; personal narration remains outside the submission repository."
+}

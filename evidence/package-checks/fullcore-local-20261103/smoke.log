@@ -1,0 +1,57 @@
+CONTAINER_LOG=D:\Mayyyyyy\WorkSpaces\日常工作区1\2026比赛规划\RISCV_vdot\submission_ready\cie2026-xiangshanxinrui-vdot\work\container-logs\smoke-ailthvhe
+HOST_DISK docker-storage: 211.29 GiB free (D:\DockerData\DockerDesktopWSL)
+HOST_DISK project-files: 211.29 GiB free (D:\Mayyyyyy\WorkSpaces\日常工作区1\2026比赛规划\RISCV_vdot\submission_ready\cie2026-xiangshanxinrui-vdot)
+HOST_DISK windows-system-drive: 16.13 GiB free (C:\)
+SUITE_DIRECTORY=/validation/cie2026-xiangshanxinrui-vdot/runs/smoke-fd0f09e2f8db4b869aaee0a033c12da1
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-lce0SB
+BUILD_EXIT_CODE=0
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-lce0SB
+{
+  "passed": true,
+  "exit_code": 0,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "run_directory": "/validation/cie2026-xiangshanxinrui-vdot/runs/smoke-fd0f09e2f8db4b869aaee0a033c12da1/hello-meijie"
+}
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-9d1BAz
+BUILD_EXIT_CODE=0
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-9d1BAz
+{
+  "passed": true,
+  "exit_code": 0,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "run_directory": "/validation/cie2026-xiangshanxinrui-vdot/runs/smoke-fd0f09e2f8db4b869aaee0a033c12da1/vadd4"
+}
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-0Am91o
+BUILD_EXIT_CODE=0
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-0Am91o
+{
+  "passed": true,
+  "exit_code": 0,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "run_directory": "/validation/cie2026-xiangshanxinrui-vdot/runs/smoke-fd0f09e2f8db4b869aaee0a033c12da1/vdot-smoke"
+}
+ACCEPTANCE_FILE=/validation/cie2026-xiangshanxinrui-vdot/runs/smoke-fd0f09e2f8db4b869aaee0a033c12da1/acceptance.json
+SUITE_PASS smoke 3/3
+REPRODUCE_STAGE=smoke PASS
+CONTAINER_EXIT_CODE=0

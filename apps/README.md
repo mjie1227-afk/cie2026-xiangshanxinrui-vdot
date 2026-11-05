@@ -1,6 +1,6 @@
 # 测试与基准应用
 
-各目录包含实际使用的 C 检查器、汇编和 AM Makefile。将应用放入锁定版本 nexus-am 的 `apps/` 后编译；[恢复工具](../tools/restore_sources.py)会执行这一复制步骤。
+各目录包含实际使用的 C 检查器、汇编和 AM Makefile。将应用放入锁定版本 nexus-am 的 `apps/` 后编译；[源码准备工具](../tools/prepare_sources.py)会执行这一复制步骤。
 
 | 应用 | 用途 | 保存记录中的规模 |
 | --- | --- | --- |

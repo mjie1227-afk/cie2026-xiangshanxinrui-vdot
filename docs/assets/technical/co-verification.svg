@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="805" viewBox="0 0 1280 805">
+<defs><marker id="arr-ink" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#172C43"/></marker><marker id="arr-muted" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#566C7F"/></marker><marker id="arr-line" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C9D6DF"/></marker><marker id="arr-grid" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E8EEF2"/></marker><marker id="arr-paper" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFFFFF"/></marker><marker id="arr-teal" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#087F8C"/></marker><marker id="arr-teal_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#E6F3F3"/></marker><marker id="arr-blue" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#3567A3"/></marker><marker id="arr-blue_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EDF3FA"/></marker><marker id="arr-purple" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#7659A3"/></marker><marker id="arr-purple_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#F1EDF7"/></marker><marker id="arr-amber" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C57A23"/></marker><marker id="arr-amber_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFF4E4"/></marker><marker id="arr-red" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#B85348"/></marker><marker id="arr-red_bg" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FCEEEB"/></marker><marker id="arr-gray" markerWidth="8" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#EFF3F6"/></marker></defs>
+<style>text{font-family:"Microsoft YaHei","Segoe UI",sans-serif} .mono{font-family:Consolas,"Microsoft YaHei",monospace}</style>
+<rect width="1280" height="805" fill="white"/>
+<rect x="36" y="32" width="6" height="54" rx="2" fill="#087F8C"/>
+<text x="60" y="54" font-size="32" fill="#172C43" font-weight="650" text-anchor="start">RTL、NEMU 与独立期望的验证关系</text>
+<text x="60" y="88" font-size="20" fill="#566C7F" font-weight="400" text-anchor="start">同一份指令规格；应用检查结果，DiffTest 比较同步点的架构状态</text>
+<path d="M40,756 L1240,756" fill="none" stroke="#C9D6DF" stroke-width="1" stroke-linejoin="round"/>
+<text x="42" y="783" font-size="16" fill="#566C7F" font-weight="400" text-anchor="start">VDOT / XIANGSHAN KUNMINGHU V2</text>
+<text x="1238" y="783" font-size="16" fill="#566C7F" font-weight="400" text-anchor="end">设计示意</text>
+<rect x="324" y="138" width="632" height="95" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="342" y="172" font-size="25" fill="#3567A3" font-weight="650" text-anchor="start">共同规格 v0.1</text>
+<text x="342" y="205" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">八项 signed INT8 · 结果布局 · 掩码 / VL / 异常</text>
+<path d="M500,240 L500,273 L270,273 L270,301" fill="none" stroke="#3567A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<path d="M780,240 L780,273 L1010,273 L1010,301" fill="none" stroke="#3567A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<rect x="48" y="312" width="444" height="151" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="66" y="346" font-size="25" fill="#087F8C" font-weight="650" text-anchor="start">DUT · XiangShan RTL</text>
+<text x="66" y="379" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">译码 → VDot FU → 写回 → 退休</text>
+<text x="66" y="408" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">实际乱序执行与精确异常</text>
+<text x="66" y="437" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">Verilator / emu</text>
+<rect x="788" y="312" width="444" height="151" rx="10" fill="#F1EDF7" stroke="#7659A3" stroke-width="1.6"/>
+<text x="806" y="346" font-size="25" fill="#7659A3" font-weight="650" text-anchor="start">REF · NEMU</text>
+<text x="806" y="379" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">custom-0 译码 → vdot 语义</text>
+<text x="806" y="408" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">按架构规则执行与更新状态</text>
+<text x="806" y="437" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">参考共享库</text>
+<rect x="531" y="342" width="218" height="93" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="549" y="376" font-size="25" fill="#3567A3" font-weight="650" text-anchor="start">DiffTest</text>
+<text x="549" y="409" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">状态比较</text>
+<path d="M500,388 L520,388" fill="none" stroke="#087F8C" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-teal)"/>
+<path d="M780,388 L760,388" fill="none" stroke="#7659A3" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr-purple)"/>
+<text x="640" y="493" font-size="21" fill="#172C43" font-weight="650" text-anchor="middle">退休 / 异常等同步点</text>
+<rect x="48" y="535" width="1184" height="71" rx="10" fill="#EFF3F6"/>
+<text x="640" y="579" font-size="25" fill="#172C43" font-weight="400" text-anchor="middle">架构比较：PC · 向量寄存器 · 相关 CSR</text>
+<rect x="48" y="639" width="575" height="95" rx="10" fill="#E6F3F3" stroke="#087F8C" stroke-width="1.6"/>
+<text x="66" y="673" font-size="23" fill="#087F8C" font-weight="650" text-anchor="start">应用自检</text>
+<text x="66" y="706" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">独立数学期望 → 完整目的与状态检查</text>
+<rect x="657" y="639" width="575" height="95" rx="10" fill="#EDF3FA" stroke="#3567A3" stroke-width="1.6"/>
+<text x="675" y="673" font-size="23" fill="#3567A3" font-weight="650" text-anchor="start">内部事件分析</text>
+<text x="675" y="706" font-size="20" fill="#172C43" font-weight="400" text-anchor="start">VCD → 操作数 / 握手 / ROB / 物理目的</text>
+</svg>

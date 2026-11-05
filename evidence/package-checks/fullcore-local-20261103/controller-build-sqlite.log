@@ -1,0 +1,106 @@
+CONTAINER_LOG=D:\Mayyyyyy\WorkSpaces\日常工作区1\2026比赛规划\RISCV_vdot\submission_ready\cie2026-xiangshanxinrui-vdot\work\container-logs\build-2ws9t_n3
+HOST_DISK docker-storage: 214.20 GiB free (D:\DockerData\DockerDesktopWSL)
+HOST_DISK project-files: 214.20 GiB free (D:\Mayyyyyy\WorkSpaces\日常工作区1\2026比赛规划\RISCV_vdot\submission_ready\cie2026-xiangshanxinrui-vdot)
+HOST_DISK windows-system-drive: 16.15 GiB free (C:\)
+REPOSITORY=/validation/cie2026-xiangshanxinrui-vdot
+BUILD_WORK=/validation/cie2026-xiangshanxinrui-vdot/work/build
+ENV_CHECK_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/environment-checks/20261103-045247-vz7g5epf
+OK   linux-source-location: /validation/cie2026-xiangshanxinrui-vdot
+OK   prepared-vdot-restored.json: /validation/cie2026-xiangshanxinrui-vdot/work/build/vdot-restored.json
+OK   prepared-XiangShan-build.sc: /validation/cie2026-xiangshanxinrui-vdot/work/build/XiangShan/build.sc
+OK   prepared-XiangShan-.mill-version: /validation/cie2026-xiangshanxinrui-vdot/work/build/XiangShan/.mill-version
+OK   prepared-NEMU-.config: /validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/.config
+OK   prepared-nexus-am-Makefile: /validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/Makefile
+CHECK java-path -> /usr/lib/jvm/java-21-openjdk-amd64/bin/java
+OK   java-path: openjdk version "21.0.12.1" 2026-08-18
+CHECK java-for-mill -> /usr/lib/jvm/java-21-openjdk-amd64/bin/java
+OK   java-for-mill: openjdk version "21.0.12.1" 2026-08-18
+CHECK javac -> /usr/lib/jvm/java-21-openjdk-amd64/bin/javac
+OK   javac: javac 21.0.12.1
+CHECK verilator -> /opt/verilator/bin/verilator
+OK   verilator: Verilator 5.052 2026-09-05 rev v5.052
+CHECK emu-cc -> /usr/lib/llvm-19/bin/clang-19
+OK   emu-cc: Ubuntu clang version 19.1.1 (1ubuntu1~24.04.2)
+CHECK emu-cxx -> /usr/bin/clang++-19
+OK   emu-cxx: Ubuntu clang version 19.1.1 (1ubuntu1~24.04.2)
+CHECK nemu-cc -> /usr/lib/llvm-19/bin/clang
+OK   nemu-cc: Ubuntu clang version 19.1.1 (1ubuntu1~24.04.2)
+CHECK nemu-cxx -> /usr/lib/llvm-19/bin/clang++
+OK   nemu-cxx: Ubuntu clang version 19.1.1 (1ubuntu1~24.04.2)
+CHECK make -> /usr/bin/make
+OK   make: GNU Make 4.3
+CHECK gnu-time -> /usr/bin/time
+OK   gnu-time: time (GNU Time) UNKNOWN
+CHECK git -> /usr/bin/git
+OK   git: git version 2.43.0
+CHECK python -> /usr/bin/python3
+OK   python: Python 3.12.3
+CHECK perl -> /usr/bin/perl
+OK   perl: This is perl 5, version 38, subversion 2 (v5.38.2) built for x86_64-linux-gnu-thread-multi
+CHECK flex -> /usr/bin/flex
+OK   flex: flex 2.6.4
+CHECK bison -> /usr/bin/bison
+OK   bison: bison (GNU Bison) 3.8.2
+CHECK mill -> /opt/mill/mill
+OK   mill: Mill Build Tool version 0.12.3
+CHECK riscv-gcc -> /usr/bin/riscv64-linux-gnu-gcc-12
+OK   riscv-gcc: 12.4.0
+CHECK riscv-ld -> /usr/bin/riscv64-linux-gnu-ld
+OK   riscv-ld: GNU ld (GNU Binutils for Ubuntu) 2.42
+CHECK riscv-objcopy -> /usr/bin/riscv64-linux-gnu-objcopy
+OK   riscv-objcopy: GNU objcopy (GNU Binutils for Ubuntu) 2.42
+CHECK riscv-objdump -> /usr/bin/riscv64-linux-gnu-objdump
+OK   riscv-objdump: GNU objdump (GNU Binutils for Ubuntu) 2.42
+CHECK riscv-ar -> /usr/bin/riscv64-linux-gnu-ar
+OK   riscv-ar: GNU ar (GNU Binutils for Ubuntu) 2.42
+OK   checkpoint-selection: {"gcc": "/usr/bin/riscv64-linux-gnu-gcc-12", "ld": "/usr/bin/riscv64-linux-gnu-ld", "objcopy": "/usr/bin/riscv64-linux-gnu-objcopy", "objdump": "/usr/bin/riscv64-linux-gnu-objdump"}
+CHECK checkpoint-gcc -> /validation/cie2026-xiangshanxinrui-vdot/work/toolchains/b21f796dd548dd3f/bin/riscv64-linux-gnu-gcc
+OK   checkpoint-gcc: riscv64-linux-gnu-gcc (Ubuntu 12.4.0-2ubuntu1~24.04) 12.4.0
+CHECK checkpoint-ld -> /validation/cie2026-xiangshanxinrui-vdot/work/toolchains/b21f796dd548dd3f/bin/riscv64-linux-gnu-ld
+OK   checkpoint-ld: GNU ld (GNU Binutils for Ubuntu) 2.42
+CHECK checkpoint-objcopy -> /validation/cie2026-xiangshanxinrui-vdot/work/toolchains/b21f796dd548dd3f/bin/riscv64-linux-gnu-objcopy
+OK   checkpoint-objcopy: GNU objcopy (GNU Binutils for Ubuntu) 2.42
+CHECK checkpoint-objdump -> /validation/cie2026-xiangshanxinrui-vdot/work/toolchains/b21f796dd548dd3f/bin/riscv64-linux-gnu-objdump
+OK   checkpoint-objdump: GNU objdump (GNU Binutils for Ubuntu) 2.42
+CHECK jdk-compile -> /usr/lib/jvm/java-21-openjdk-amd64/bin/javac
+OK   jdk-compile: (no stdout)
+CHECK jdk-run -> /usr/lib/jvm/java-21-openjdk-amd64/bin/java
+OK   jdk-run: JDK_OK
+CHECK nemu-c-compile -> /usr/lib/llvm-19/bin/clang
+OK   nemu-c-compile: (no stdout)
+CHECK emu-c-compile -> /usr/lib/llvm-19/bin/clang-19
+OK   emu-c-compile: (no stdout)
+CHECK host-link -> /usr/bin/clang++-19
+OK   host-link: (no stdout)
+CHECK host-run -> /validation/cie2026-xiangshanxinrui-vdot/work/environment-checks/20261103-045247-vz7g5epf/probe
+OK   host-run: 1.3
+CHECK nemu-shared-link -> /usr/lib/llvm-19/bin/clang++
+OK   nemu-shared-link: (no stdout)
+CHECK sqlite-link -> /usr/bin/clang++-19
+OK   sqlite-link: (no stdout)
+CHECK sqlite-run -> /validation/cie2026-xiangshanxinrui-vdot/work/environment-checks/20261103-045247-vz7g5epf/sqlite-probe
+OK   sqlite-run: (no stdout)
+CHECK rvv-assemble -> /usr/bin/riscv64-linux-gnu-gcc-12
+OK   rvv-assemble: (no stdout)
+CHECK rvv-link -> /usr/bin/riscv64-linux-gnu-ld
+OK   rvv-link: (no stdout)
+CHECK rvv-binary -> /usr/bin/riscv64-linux-gnu-objcopy
+OK   rvv-binary: (no stdout)
+CHECK verilator-build -> /opt/verilator/bin/verilator
+OK   verilator-build: make: Entering directory '/validation/cie2026-xiangshanxinrui-vdot/work/environment-checks/20261103-045247-vz7g5epf/obj_dir'
+CHECK verilator-run -> /validation/cie2026-xiangshanxinrui-vdot/work/environment-checks/20261103-045247-vz7g5epf/obj_dir/VProbe
+OK   verilator-run: (no stdout)
+OK   disk-space: 938.6 GiB free; preflight threshold 20 GiB
+OK   VDOT_JOBS: 2
+OK   VDOT_APP_JOBS: 2
+NOTE: Scala/Maven dependency completeness is checked by the subsequent build; Mill --version alone does not check it.
+ENV_CHECK_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/environment-checks/20261103-045247-vz7g5epf
+ENV_CHECK=PASS
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/nemu-d6Jgoe
+BUILD_EXIT_CODE=0
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/nemu-d6Jgoe
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/emu-PU0z3p
+BUILD_EXIT_CODE=0
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/emu-PU0z3p
+REPRODUCE_STAGE=build PASS
+CONTAINER_EXIT_CODE=0

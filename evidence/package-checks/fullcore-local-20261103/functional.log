@@ -1,0 +1,169 @@
+CONTAINER_LOG=D:\Mayyyyyy\WorkSpaces\日常工作区1\2026比赛规划\RISCV_vdot\submission_ready\cie2026-xiangshanxinrui-vdot\work\container-logs\functional-8vyw3hbi
+HOST_DISK docker-storage: 211.29 GiB free (D:\DockerData\DockerDesktopWSL)
+HOST_DISK project-files: 211.29 GiB free (D:\Mayyyyyy\WorkSpaces\日常工作区1\2026比赛规划\RISCV_vdot\submission_ready\cie2026-xiangshanxinrui-vdot)
+HOST_DISK windows-system-drive: 16.13 GiB free (C:\)
+SUITE_DIRECTORY=/validation/cie2026-xiangshanxinrui-vdot/runs/functional-15d1110f8ae94c2ab9c9023b8856f762
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-uVgegy
+BUILD_EXIT_CODE=0
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-uVgegy
+{
+  "passed": true,
+  "exit_code": 0,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "run_directory": "/validation/cie2026-xiangshanxinrui-vdot/runs/functional-15d1110f8ae94c2ab9c9023b8856f762/hello-meijie"
+}
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-lKIMK6
+BUILD_EXIT_CODE=0
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-lKIMK6
+{
+  "passed": true,
+  "exit_code": 0,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "run_directory": "/validation/cie2026-xiangshanxinrui-vdot/runs/functional-15d1110f8ae94c2ab9c9023b8856f762/vadd4"
+}
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-VAKeKY
+BUILD_EXIT_CODE=0
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-VAKeKY
+{
+  "passed": true,
+  "exit_code": 0,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "run_directory": "/validation/cie2026-xiangshanxinrui-vdot/runs/functional-15d1110f8ae94c2ab9c9023b8856f762/vdot-smoke"
+}
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-zrICkV
+BUILD_EXIT_CODE=0
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-zrICkV
+{
+  "passed": true,
+  "exit_code": 0,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "run_directory": "/validation/cie2026-xiangshanxinrui-vdot/runs/functional-15d1110f8ae94c2ab9c9023b8856f762/vdot-exceptions"
+}
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-re97g7
+BUILD_EXIT_CODE=0
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-re97g7
+{
+  "passed": true,
+  "exit_code": 0,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "run_directory": "/validation/cie2026-xiangshanxinrui-vdot/runs/functional-15d1110f8ae94c2ab9c9023b8856f762/vdot-overlap"
+}
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-lyEx4g
+BUILD_EXIT_CODE=0
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-lyEx4g
+{
+  "passed": true,
+  "exit_code": 0,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "run_directory": "/validation/cie2026-xiangshanxinrui-vdot/runs/functional-15d1110f8ae94c2ab9c9023b8856f762/vdot-deps"
+}
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-jjtE0Z
+BUILD_EXIT_CODE=0
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-jjtE0Z
+{
+  "passed": true,
+  "exit_code": 0,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "run_directory": "/validation/cie2026-xiangshanxinrui-vdot/runs/functional-15d1110f8ae94c2ab9c9023b8856f762/vdot-mixed"
+}
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-Ebk4k9
+BUILD_EXIT_CODE=0
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-Ebk4k9
+{
+  "passed": true,
+  "exit_code": 0,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "run_directory": "/validation/cie2026-xiangshanxinrui-vdot/runs/functional-15d1110f8ae94c2ab9c9023b8856f762/vdot-cancel-csr"
+}
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-2HPuCr
+BUILD_EXIT_CODE=0
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-2HPuCr
+{
+  "passed": true,
+  "exit_code": 0,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "run_directory": "/validation/cie2026-xiangshanxinrui-vdot/runs/functional-15d1110f8ae94c2ab9c9023b8856f762/vdot-port-contend-v1"
+}
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-Mei1gM
+BUILD_EXIT_CODE=0
+BUILD_LOG=/validation/cie2026-xiangshanxinrui-vdot/work/build/build-logs/app-Mei1gM
+{
+  "passed": true,
+  "exit_code": 0,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "run_directory": "/validation/cie2026-xiangshanxinrui-vdot/runs/functional-15d1110f8ae94c2ab9c9023b8856f762/vdot-rvv-equiv-v1"
+}
+ACCEPTANCE_FILE=/validation/cie2026-xiangshanxinrui-vdot/runs/functional-15d1110f8ae94c2ab9c9023b8856f762/acceptance.json
+SUITE_PASS functional 10/10
+REPRODUCE_STAGE=functional PASS
+CONTAINER_EXIT_CODE=0

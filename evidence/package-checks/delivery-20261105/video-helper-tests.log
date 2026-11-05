@@ -1,0 +1,9 @@
+test_downloaded_body_matches (test_verify_videos.VideoChecks.test_downloaded_body_matches) ... ok
+test_missing_body_is_rejected (test_verify_videos.VideoChecks.test_missing_body_is_rejected) ... ok
+test_pointer_is_not_accepted_as_video (test_verify_videos.VideoChecks.test_pointer_is_not_accepted_as_video) ... ok
+test_same_size_corruption_is_rejected (test_verify_videos.VideoChecks.test_same_size_corruption_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.054s
+
+OK

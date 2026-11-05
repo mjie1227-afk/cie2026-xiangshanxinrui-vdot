@@ -1,0 +1,54 @@
+{
+  "case": "vdot-smoke",
+  "argv": [
+    "/validation/cie2026-xiangshanxinrui-vdot/work/build/XiangShan/build/emu",
+    "-i",
+    "/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/apps/vdot-smoke/build/vdot-smoke-riscv64-xs.bin",
+    "--diff=/validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/build/riscv64-nemu-interpreter-so",
+    "-F",
+    "/validation/cie2026-xiangshanxinrui-vdot/configs/boot-flash.bin",
+    "--seed=1",
+    "--max-cycles=20000000",
+    "--no-snapshot"
+  ],
+  "cwd": "/validation/cie2026-xiangshanxinrui-vdot/runs/smoke-fd0f09e2f8db4b869aaee0a033c12da1/vdot-smoke",
+  "environment": {
+    "NOOP_HOME": "/validation/cie2026-xiangshanxinrui-vdot/runs/smoke-fd0f09e2f8db4b869aaee0a033c12da1/vdot-smoke"
+  },
+  "seed": 1,
+  "cycle_limit": 20000000,
+  "wall_timeout_seconds": 7200,
+  "started_at": "2026-11-03T05:14:40.215518+00:00",
+  "python": "3.12.3",
+  "identities": {
+    "emu": {
+      "path": "/validation/cie2026-xiangshanxinrui-vdot/work/build/XiangShan/build/emu",
+      "sha256": "1f864f954fd7beb6bff061bd3a2d6dfac3511c0f506edf9c8db2fa5f0efe76fb"
+    },
+    "reference": {
+      "path": "/validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU/build/riscv64-nemu-interpreter-so",
+      "sha256": "dde66037fc1998e98770d2e6621fc7539c07bce193c3c76e3e49b879667195ce"
+    },
+    "image": {
+      "path": "/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/apps/vdot-smoke/build/vdot-smoke-riscv64-xs.bin",
+      "sha256": "16c13108cb0880c04cf49ca855893284ae772968292828b990328a01b0def68a"
+    },
+    "flash": {
+      "path": "/validation/cie2026-xiangshanxinrui-vdot/configs/boot-flash.bin",
+      "sha256": "fea548655a8b6eecacace83e2f4380a18b8aa83bce964c8aae4cffbe2f5a9724"
+    }
+  },
+  "log": "run.log",
+  "exit_code": 0,
+  "checks": {
+    "process_exit_zero": true,
+    "application_marker": true,
+    "difftest_enabled": true,
+    "good_trap": true,
+    "reference_path": true,
+    "no_failure_marker": true
+  },
+  "passed": true,
+  "finished_at": "2026-11-03T05:15:32.145235+00:00",
+  "log_sha256": "4d21b1685bc21ebf7882a0de2d7a4cf8b7956a72933db8c4bcae67ed72f8efde"
+}

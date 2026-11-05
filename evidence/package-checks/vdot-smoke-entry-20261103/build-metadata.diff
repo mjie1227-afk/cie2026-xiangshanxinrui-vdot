@@ -1,0 +1,19 @@
+--- validated-container/build.sc
+
++++ host/build.sc
+
+@@ -294,7 +294,12 @@
+
+     val difftest_srcs = os.read.lines(pwd / ".delivery-build-info" / "difftest-files")
+                           .filter(_.nonEmpty).map(os.RelPath(_))
+     difftest_srcs.foreach { f =>
+-      os.copy(pwd / "difftest" / f, destDir / "difftest-src" / f, createFolders = true)
++      val original = pwd / "difftest" / f
++      // Source snapshots rename .gitignore; prepared Linux trees restore its name.
++      val source = if (f == os.RelPath(".gitignore") && !os.exists(original))
++        pwd / "difftest" / ".gitignore.upstream"
++      else original
++      os.copy(source, destDir / "difftest-src" / f, createFolders = true)
+     }
+ 
+     // package ready-to-run binary as resources

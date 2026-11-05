@@ -25,3 +25,17 @@ submission.asc
 *.7z
 *.tar.gz
 !configs/boot-flash.bin
+
+# Vendored upstream source/fixtures and compressed recording evidence are intentional.
+!src/**
+/recording/outputs/
+
+# Local Metals/Mill IDE state (after the vendored-source inclusion above).
+**/.metals/
+**/.scala-build/
+**/.bloop/
+**/.bsp/
+/src/XiangShan/out/
+
+# Final MP4 videos are tracked with Git LFS.
+!/videos/*.mp4

@@ -1,0 +1,45 @@
+make: Entering directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/apps/hello-meijie'
+# Building hello-meijie [riscv64-xs] with AM_HOME {/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am}
+make[1]: Entering directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am'
++ CC hello.c
+make[2]: Entering directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/am'
+# Building lib-am [riscv64-xs]
++ CC src/noop/isa/riscv/trm.c
+make[1]: Entering directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/libs/klib'
+# Building lib-klib [riscv64-xs]
++ AS src/nemu/common/mainargs.S
++ CC src/noop/isa/riscv/perf.c
++ CC src/io.c
++ CC src/noop/common/uartlite.c
++ CC src/cpp.c
++ CC src/noop/common/serial-16550.c
++ CC src/stdlib.c
++ CC src/nemu/isa/riscv/cte.c
++ CC src/atomic.c
++ CC src/printf.c
++ AS src/nemu/isa/riscv/trap.S
++ CC src/nemu/isa/riscv/cte64.c
++ AS src/nemu/isa/riscv/mtime.S
++ CC src/nemu/isa/riscv/vme.c
++ CC src/xs/common/ioe.c
++ CC src/noop/common/input.c
++ CC src/noop/common/timer.c
++ CC src/noop/isa/riscv/instr.c
++ CC src/string.c
++ CC src/xs/isa/riscv/mpe.c
++ CC src/xs/isa/riscv/clint.c
++ CC src/xs/isa/riscv/pmp.c
++ CC src/int64.c
++ CC src/xs/isa/riscv/plic.c
++ AR -> build/klib-riscv64-xs.a
+make[1]: Leaving directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/libs/klib'
++ CC src/xs/isa/riscv/pma.c
++ CC src/xs/isa/riscv/cache.c
++ AS src/nemu/isa/riscv/boot/start.S
++ AR -> build/am-riscv64-xs.a
+make[2]: Leaving directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/am'
+make[1]: Leaving directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am'
+# Creating binary image [riscv64-xs]
++ LD -> build/hello-meijie-riscv64-xs.elf
++ OBJCOPY -> build/hello-meijie-riscv64-xs.bin
+make: Leaving directory '/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/apps/hello-meijie'

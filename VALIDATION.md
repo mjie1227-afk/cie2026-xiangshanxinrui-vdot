@@ -1,53 +1,59 @@
-# 验证记录与版本对应
+# 源码、工具与材料核对
 
-本页记录 2026-11-02 整理作品仓库时的检查。硬件结论来自仓库保留的成功运行记录，本次未重新编译处理器或运行整核仿真。
+2026-11-02将作品目录改为完整源码交付，配套源码、运行工具与技术报告。11月2日检查覆盖源码准备、构建入口、辅助工具与材料；11月3日新增Docker整核构建及17个应用的实际复现，记录见下文。
 
-## 源码与补丁
+## 完整源码与应用
 
-从实际 Git 对象导出锁定版本的干净源码到新的 Linux 临时目录，分别执行 `git apply --check` 和 `git apply`。XiangShan 的 15 个文件、NEMU 的 4 个文件与正式修复后的快照 SHA256 全部一致。原开发目录及其未提交修改保持原样。
+从锁定Git对象导出XiangShan、NEMU、nexus-am及构建依赖，共21个版本固定的源码目录，再应用既有正式补丁。19个实现文件与已验证快照一致。Windows可移植目录的权限、符号链接和文件身份由[source-tree.json](configs/source-tree.json)登记；原始补丁与基线仍保留。
 
-- [补丁检查原始记录](evidence/package-checks/patch-validation.json)：命令、退出码、上游版本和临时目录。
-- [源文件哈希](configs/source-snapshots.json)：19 个修改/新增文件。
-- [上游与依赖版本](configs/upstream-lock.json)：XiangShan、NEMU、nexus-am 及实际使用的依赖。
+在新的Linux临时仓库中实际执行`tools/prepare_sources.py`，逐项检查4750个源码/构建信息条目、23个符号链接、执行权限及17个应用复制。检查通过，已有目标目录会被拒绝，不创建嵌套Git仓库。[完整准备检查](evidence/package-checks/full-source-preparation.json)
 
-15 个阶段二/三应用的 45 个构建输入已与保存的服务器交付包或交付目录逐文件比较，交付版本字节一致。Windows 副本中有 24 个文件仅换行格式不同，本仓库采用当时交付包内的 LF 原件。Hello、VADD 来自既有阶段一源码，其复制来源和哈希另列在来源清单中。
+应用的原始版本依据继续保留：[应用源码核对](evidence/package-checks/app-source-check.json)、[实现文件检查记录](configs/source-snapshots.json)、[既有补丁恢复记录](evidence/package-checks/patch-validation.json)。NEMU配置和16字节启动Flash与已保存成功版本一致。
 
-- [应用源码核对](evidence/package-checks/app-source-check.json)
-- [复制来源清单](evidence/source-manifest.json)：记录输入文件来源；报告 Markdown 的链接在复制后按本仓库目录调整，交付文件最终哈希以根目录清单为准。
+## 构建入口与运行工具
 
-NEMU 配置与既有服务器配置一致；16 字节 Flash 按锁定 DiffTest 源码中的启动内容生成，并与成功实验 Flash 的 SHA256 一致：`fea548655a8b6eecacace83e2f4380a18b8aa83bce964c8aae4cffbe2f5a9724`。
+在上述无嵌套Git的目录执行`mill -i show xiangshan.resources`，退出0；Mill构建定义能够加载，DiffTest的124个资源文件按保存清单正确枚举。[检查参数与退出状态](evidence/package-checks/mill-resources-check.json)、[原始日志](evidence/package-checks/mill-resources.log)
 
-## 新增复现工具
+轻量工具检查使用合成日志和小型模拟进程，覆盖成功、失败、超时、Ctrl+C、已有目录保护和Bash语法。新增单用例入口检查包括Hello参数与路径、dry-run不执行、指定运行目录读取、错误用例拒绝、异常退出状态显示。完整源码准备检查中的14项流程检查包含这些步骤，以及原有15项辅助检查；这不代表重新运行硬件。[流程记录](evidence/package-checks/full-source-preparation.json)
 
-新增工具用于在新目录恢复源码、分步编译及保存单次运行记录。15 项辅助检查通过，包含日志判定、缺失输入、已有目录保护、Bash 语法，以及模拟进程的正常退出、失败、超时和 Ctrl+C 清理。检查使用人工构造的日志和小型模拟进程，原始结果见 [helper-check.json](evidence/package-checks/helper-check.json)。
+## 2026-11-03 环境与应用编译先行检查
 
-在 **Linux / WSL Bash**、本仓库根目录可以重复这些轻量检查：
+在Docker Desktop中构建环境镜像，并在独立Linux数据卷内从提交材料准备源码。环境检查、NEMU以及Hello/VADD/VDot-smoke应用编译均通过，NEMU参考库的动态加载与必要导出符号检查通过。此次没有编译整核emu或运行DiffTest仿真。
 
-```bash
-python3 tools/check_helpers.py
-```
+实测发现并修复了Verilator缺少`libfl-dev`、首次NEMU构建缺少配置生成步骤的问题。NEMU配置同步前后内容一致。软件包版本、原始构建日志与检查结果见[容器验证摘要](evidence/package-checks/docker-20261103/summary.json)及[复现环境说明](environment/README.md)。
 
-成功结果为 `failed: 0`，退出码 0。源码恢复工具的完整网络下载流程与后续重型构建未在本次打包中重跑；补丁的实际应用已经按上节完成。
+## 2026-11-03 本机整核与验收流程实测
 
-## 交付文件
+在独立Linux数据卷内，从本仓库源码构建NEMU参考库和整核emu。构建配置为单核MinimalConfig、EMU_TRACE=1、NO_DIFF=0、JVM_XMX=6G、2路编译。本轮补齐GNU time与SQLite开发库后增量续建，保留已生成的RTL、C++及日志，最终构建退出0；没有复用历史emu二进制。
 
-在 **PowerShell 或 Linux**、本仓库根目录执行：
+| 组别 | 实际结果 | 原始验收记录 |
+|---|---|---|
+| 基础 | 3/3通过 | [acceptance.json](evidence/package-checks/fullcore-local-20261103/runs/smoke-fd0f09e2f8db4b869aaee0a033c12da1/acceptance.json) |
+| 完整功能 | 10/10通过 | [acceptance.json](evidence/package-checks/fullcore-local-20261103/runs/functional-15d1110f8ae94c2ab9c9023b8856f762/acceptance.json) |
+| 性能 | 7/7通过 | [acceptance.json](evidence/package-checks/fullcore-local-20261103/runs/performance-42571a4f4b0e46a3b63635ab4eb26b93/acceptance.json) |
 
-```text
-python tools/verify_bundle.py
-```
+三组共20次仿真，覆盖17个不同应用，包含功能组对基础3项的重复运行。每项均从原始日志核对应用标志、DiffTest、参考库路径、GOOD TRAP与退出状态。性能数值保留在本次run.log中，报告中的历史测量表未被替换。[完整摘要及耗时](evidence/package-checks/fullcore-local-20261103/summary.json)
 
-成功结果为 `bundle-check-passed`，`errors` 为空，退出码 0。检查包括最终文件清单、19 个源文件哈希、本地 Markdown 链接、17 个应用的 Makefile 源文件引用和普通 Git 单文件大小限制。
+独立新副本实测通过容器初始化、环境检查、状态查询、命令执行与结果导出。辅助工具10项单元测试通过；模拟低磁盘条件的实际容器停止测试通过，退出75，未填满磁盘。[入口检查](evidence/package-checks/fullcore-local-20261103/controller-workflow.json)、[单元测试](evidence/package-checks/fullcore-local-20261103/helper-tests.log)、[空间保护测试](evidence/package-checks/fullcore-local-20261103/watchdog-test.json)
 
-更新视频链接或其他文件后，先审阅改动，再重建清单并检查：
+实际安装版本、构建及仿真原始日志均保存在本次证据目录。
 
-```text
-python tools/make_manifest.py
-python tools/verify_bundle.py
-```
+## 波形还原
 
-## 实验结果入口
+三份历史VCD均完成压缩、还原与完整性检查。又在新Linux目录使用仓库的`prepare_recording.py`实际还原三份VCD，验证VADD分卷连续读取，随后检查Windows GTKWave的WSL路径转换。[波形还原检查](evidence/package-checks/wave-restore-check.json)
 
-原始运行、统计和图表沿用三阶段报告中的编号。完整入口见 [evidence/index.md](evidence/index.md)；阶段二包括 mtval 修复回归、异常、重叠、流水及代表性波形事件；阶段三包括 RVV 等价、依赖链、批处理、小数组、分段归约、加载优化和 2×2 输入复用。
+## 2026-11-03 VDot-smoke 单条命令与清单修复
 
-三段录屏当前仍为 0/3 已验收成片；视频链接和在线提交状态见 [videos/README.md](videos/README.md)及根目录说明。
+`recording_case.py`新增`vdot-smoke`入口，支持输入检查、正式运行和按指定目录回看结果。正式运行结束后直接显示七例PASS、DiffTest、GOOD TRAP和退出状态，并保留原有ANSI颜色清理。通过`container.py exec`实际运行七例全部通过，用时约64秒；同一目录的结果回看通过，Hello/VADD输入检查也通过。[实测记录](evidence/package-checks/vdot-smoke-entry-20261103/summary.json)
+
+清单枚举在进入目录前排除Metals、Scala CLI、Bloop、BSP和Mill输出等本地缓存，同时继续校验所有4750个声明的源码条目。五项针对性检查通过，覆盖缓存排除、正常源码保留、逐例显示、错误用例拒绝和失败状态显示。宿主机和Linux工作区分别校验通过后同步会话清单；已有仿真器、参考库、应用镜像和运行记录保留，未重编整核。[检查日志](evidence/package-checks/vdot-smoke-entry-20261103/helper-tests.log)
+
+## 2026-11-05 录屏文件检查
+
+3份成片已完成全长音视频解码，退出码均为0；每份视频抽查6处画面，均能显示对应源码、报告、运行结果或波形。视频均为1920×1080、30帧/秒，包含H.264视频与AAC音轨。时长、文件大小和SHA256见[视频清单](videos/manifest.json)。本次检查覆盖文件解码与画面抽样，未逐句审听全部讲解。[检查记录与原始解码日志](evidence/package-checks/delivery-20261105/summary.json)
+
+源码清单保留视频索引及校验值，不重复计算Git LFS视频正文的校验值。源码清单与视频清单分离检查同时确认源码、视频索引及其他目录的文件仍被枚举；新增4项视频校验检查覆盖正常视频、LFS指针、文件缺失与同大小内容损坏；3份视频的LFS clean/smudge往返哈希一致。已有整核构建和验收记录继续保留。
+
+## 材料入口
+
+各项检查的参数、输出和退出状态保存在上述原始记录中。复现操作见[复现指南](REPRODUCE.md)，实验材料见[证据索引](evidence/index.md)，成片状态见[视频入口](videos/README.md)。

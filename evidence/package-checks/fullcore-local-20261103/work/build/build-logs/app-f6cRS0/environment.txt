@@ -1,0 +1,14 @@
+2026-11-03T05:07:41+00:00
+PWD=/validation/cie2026-xiangshanxinrui-vdot
+NOOP_HOME=/validation/cie2026-xiangshanxinrui-vdot/work/build/XiangShan
+NEMU_HOME=/validation/cie2026-xiangshanxinrui-vdot/work/build/NEMU
+AM_HOME=/validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am
+CPT_CROSS_COMPILE=
+make -C /validation/cie2026-xiangshanxinrui-vdot/work/build/nexus-am/apps/vdot-smoke image ARCH=riscv64-xs LINUX_GNU_TOOLCHAIN=1 MARCH=rv64gcv CC=/usr/bin/riscv64-linux-gnu-gcc-12 AS=/usr/bin/riscv64-linux-gnu-gcc-12 -j2 
+Linux 891a4d17e953 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+openjdk version "21.0.12.1" 2026-08-18
+OpenJDK Runtime Environment (build 21.0.12.1+1-1-24.04.4-Ubuntu)
+OpenJDK 64-Bit Server VM (build 21.0.12.1+1-1-24.04.4-Ubuntu, mixed mode, sharing)
+Verilator 5.052 2026-09-05 rev v5.052
+GNU Make 4.3
+riscv64-linux-gnu-gcc-12 (Ubuntu 12.4.0-2ubuntu1~24.04) 12.4.0

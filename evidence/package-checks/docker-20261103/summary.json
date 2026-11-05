@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-03",
+  "image": "sha256:540853c8aa55c8f3e82486110b5b709349c34d865fe9db691721602e0454d47e 2768854340 linux/amd64",
+  "platform": "Docker Desktop Linux amd64, Windows host; independent Docker Linux volumes",
+  "docker_memory_bytes": 10426904576,
+  "environment_check": "PASS",
+  "nemu_build_exit_code": 0,
+  "nemu_shared_library_load": "PASS; expected DiffTest symbols present, no DiffTest simulation run",
+  "application_builds": {
+    "hello-meijie": 0,
+    "vadd4": 0,
+    "vdot-smoke": 0
+  },
+  "fixes": [
+    "Install libfl-dev for FlexLexer.h when building Verilator",
+    "Generate NEMU auto.conf/autoconf.h from the existing .config before compiling"
+  ],
+  "nemu_config_unchanged": true,
+  "full_core_emu_built": false,
+  "full_core_simulation_run": false,
+  "volume": "cie-vdot-envtest-8bbc7145b4",
+  "cache_volume": "cie-vdot-envtest-8bbc7145b4-cache",
+  "retained_incomplete_copy_volume": "cie-vdot-envtest-e87db082a6",
+  "note": "Slow Windows bind file copy was stopped intentionally; archive extraction used instead. Source was copied fresh and build-entry fix then applied; all build/probe results retain their original logs."
+}
