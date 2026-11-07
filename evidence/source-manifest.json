@@ -992,8 +992,8 @@
   {
     "source": "artifacts\\vdot-mtval-fix-2026-10-24\\delivery-v2\\package-checks.json",
     "destination": "evidence/records/artifacts/vdot-mtval-fix-2026-10-24/delivery-v2/package-checks.json",
-    "bytes": 204,
-    "sha256": "1f8370c32c825a7688e4e44cdbbd069753105f9eabcc66a8559bfd2be66430ab"
+    "bytes": 205,
+    "sha256": "82c44b222b50d158b4a8e36df1380c2a42fcd33df75e1651135ba2f29899ed61"
   },
   {
     "source": "artifacts\\vdot-mtval-fix-2026-10-24\\delivery-v2\\pinned.sha256",
@@ -1346,8 +1346,8 @@
   {
     "source": "artifacts\\vadd4-frontend-2026-10-19\\ifu-cut-probe-inline.py",
     "destination": "evidence/records/artifacts/vadd4-frontend-2026-10-19/ifu-cut-probe-inline.py",
-    "bytes": 1170,
-    "sha256": "cb36a19e086777962e36e15ee4c9a76239c7283861560fa1e1192c2030a2b2b9"
+    "bytes": 1171,
+    "sha256": "01ee737d80190716649d68f096f592c8f51ade1aba131471cd2158e57b7e5f85"
   },
   {
     "source": "artifacts\\vadd4-frontend-2026-10-19\\ifu-user-confirmation.json",
@@ -3176,8 +3176,8 @@
   {
     "source": "artifacts\\stage3-remote-archive-2026-10-27\\server-MIwNSR\\user-returned-summary.txt",
     "destination": "evidence/records/artifacts/stage3-remote-archive-2026-10-27/server-MIwNSR/user-returned-summary.txt",
-    "bytes": 940,
-    "sha256": "e49025d60ea8adead6f237bce8d498422322986e7be7c3c45178dbcf151dff3c"
+    "bytes": 942,
+    "sha256": "fba49a15ab892976de0bb71a6db330d47bc71785b73a7f22e6c0fc9c85426335"
   },
   {
     "source": "artifacts\\vdot-integration-2026-10-24\\delivery\\payload\\NEMU.patch",
@@ -3272,8 +3272,8 @@
   {
     "source": "artifacts\\vdot-segment-2026-10-29\\server-Pw1wQ8\\user-output.txt",
     "destination": "evidence/records/artifacts/vdot-segment-2026-10-29/server-Pw1wQ8/user-output.txt",
-    "bytes": 13882,
-    "sha256": "3196cb546f9ddb1b48972da896d7583315e9945361d69ba504736b7663e5eab4"
+    "bytes": 13883,
+    "sha256": "9c8f90e6fb265c2c8ad08e674fc0ea5140951afd329cb987f2880a03dc312a23"
   },
   {
     "source": "artifacts\\vdot-segment-2026-10-29\\server-Pw1wQ8\\vdot-segment-Pw1wQ8\\accepted-e2e.json",
@@ -3446,8 +3446,8 @@
   {
     "source": "artifacts\\vdot-load-reuse-2026-10-30\\load\\server-L4TEPC\\user-output.txt",
     "destination": "evidence/records/artifacts/vdot-load-reuse-2026-10-30/load/server-L4TEPC/user-output.txt",
-    "bytes": 9741,
-    "sha256": "c3f441e12e90870529c5b27ac5bf60d32e66bebc031f5d2724e5d8e7516c6462"
+    "bytes": 9743,
+    "sha256": "2c129be41aa87e71effa94daa2bfd43318fbde8e15bd81b60ee72cce8b57ffc8"
   },
   {
     "source": "artifacts\\vdot-load-reuse-2026-10-30\\load\\server-L4TEPC\\vdot-load-retry-L4TEPC\\accepted-segment.json",
@@ -3662,8 +3662,8 @@
   {
     "source": "artifacts\\vdot-load-reuse-2026-10-30\\tile\\server-x9yIzN\\user-output.txt",
     "destination": "evidence/records/artifacts/vdot-load-reuse-2026-10-30/tile/server-x9yIzN/user-output.txt",
-    "bytes": 9028,
-    "sha256": "14e744e1ef285fee8b8b3bcad80c471ed3659f78fb53eadddb4d51f7c28272fd"
+    "bytes": 9029,
+    "sha256": "f96d1aaa8ea997fa8568dbb493759846ea014a532c6232d4f9ca959b0cc978e8"
   },
   {
     "source": "artifacts\\vdot-load-reuse-2026-10-30\\tile\\server-x9yIzN\\vdot-tile-x9yIzN\\accepted-segment.json",

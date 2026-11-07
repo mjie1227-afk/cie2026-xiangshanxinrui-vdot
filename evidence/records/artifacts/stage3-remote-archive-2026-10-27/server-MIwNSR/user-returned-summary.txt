@@ -21,3 +21,4 @@ COLLECTOR_EXIT=0
 TEE_EXIT=0
 ARCHIVE_DIR=/root/private_data/mj/xiangshan/evidence/stage3-log-archive-MIwNSR
 STAGE3_ARCHIVE_SCRIPT_EXIT=0
+
