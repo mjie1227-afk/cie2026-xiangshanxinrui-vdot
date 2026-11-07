@@ -77,3 +77,4 @@ def main():
  result={'status':'bundle-check-passed' if not errors else 'bundle-check-failed','scope':'File, source and documentation checks only; no hardware execution.','manifest_files':count,'complete_source_entries':len(source_tree['entries']),'local_links':links,'files':len(files),'total_bytes':sum(p.stat().st_size for p in files),'largest_file_bytes':max(p.stat().st_size for p in files),'errors':errors}
  print(json.dumps(result,ensure_ascii=False,indent=2));return int(bool(errors))
 if __name__=='__main__':raise SystemExit(main())
+

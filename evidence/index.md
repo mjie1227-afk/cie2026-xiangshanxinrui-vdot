@@ -583,3 +583,4 @@ HTML/PDF 附录保留原工程路径；下表对应本仓库内的位置。原�
 | `exercises/vdot-smoke/main.c` | [apps/vdot-smoke/main.c](../apps/vdot-smoke/main.c) |
 | `exercises/vdot-smoke/vdot.S` | [apps/vdot-smoke/vdot.S](../apps/vdot-smoke/vdot.S) |
 | `specs/vdot-v0.1.json` | [specs/vdot-v0.1.json](../specs/vdot-v0.1.json) |
+

@@ -90,3 +90,4 @@ OPT_RAW={"variant": "rvv_mf2_ta_rr", "kind": "rvv_mf2", "mode": "ta_rr", "group"
 VDOT_OPT_READY experiment=load samples=63 warmups=35
 SCOPE=prewarmed_load_or_tile equal_output_control no_cold_DRAM_claim
 LOG_DIR=/root/private_data/mj/xiangshan/evidence/vdot-load-retry-L4TEPC
+

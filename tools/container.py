@@ -218,3 +218,4 @@ if __name__ == '__main__':
     except (OSError, ValueError, subprocess.CalledProcessError) as error:
         print('CONTAINER_ERROR: ' + str(error), file=sys.stderr)
         raise SystemExit(2)
+

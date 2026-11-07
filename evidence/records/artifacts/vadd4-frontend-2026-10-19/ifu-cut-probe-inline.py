@@ -24,3 +24,4 @@ with p.open() as f:
    i=line[1:].strip()
    if i in ids:vals[i]=int(line[0]) if line[0] in '01' else None
 print(json.dumps({'scope':scope,'time_ps':time,'signals_hex':{n:hex(vals[i]) if vals.get(i) is not None else None for n,i in sig.items()},'missing':sorted(names-set(sig))},ensure_ascii=True))
+

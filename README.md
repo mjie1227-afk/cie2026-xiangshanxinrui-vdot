@@ -59,3 +59,4 @@
 ## 许可证与上游版本
 
 上游修改文件保留原版权说明，XiangShan 与 NEMU 的许可证分别保存在 [LICENSES](LICENSES/)。完整上游及依赖版本见 [upstream-lock.json](configs/upstream-lock.json)。
+
