@@ -23,7 +23,7 @@
 
 | 内容 | 入口 |
 | --- | --- |
-| 三阶段技术报告 | [报告导航](docs/README.md)，含 Markdown、图片内嵌 HTML 和 PDF |
+| 三阶段技术报告 | [报告导航](docs/README.md)，含 Markdown 和 PDF |
 | XiangShan 修改 | [已应用修改的完整源码](src/XiangShan/) · [改动补丁](patches/XiangShan-full.patch) |
 | NEMU 扩展 | [已应用修改的完整源码](src/NEMU/) · [改动补丁](patches/NEMU.patch) |
 | 应用运行环境 | [完整 nexus-am](src/nexus-am/) |

@@ -9,8 +9,13 @@ def main():
     if sys.platform!='linux':ap.error('Run this command through Ubuntu WSL or Linux.')
     if dest.exists():ap.error('Destination exists; use that copy or choose a new name: '+str(dest))
     if dest.is_relative_to('/mnt') or dest.is_relative_to(ROOT):ap.error('Choose a new Linux filesystem directory outside the source copy.')
-    rows=(ROOT/'MANIFEST.sha256').read_text(encoding='utf8').splitlines()
-    paths=[line.split('  ',1)[1] for line in rows]+['MANIFEST.sha256']
+    manifest=ROOT/'MANIFEST.sha256'
+    if manifest.is_file():
+        rows=manifest.read_text(encoding='utf8').splitlines()
+        paths=[line.split('  ',1)[1] for line in rows]+['MANIFEST.sha256']
+    else:
+        from verify_bundle import bundle_files
+        paths=[p.relative_to(ROOT).as_posix() for p in bundle_files()]
     for rel in paths:
         source=(ROOT/rel).resolve()
         target=(dest/rel).resolve()

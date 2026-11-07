@@ -8,7 +8,7 @@
 
 ## 7.1 NEMU 与 RTL 共用 v0.1 指令规格
 
-参考模型与 RTL 遵循同一份项目 v0.1 指令规格，合法配置范围和状态更新规则一致[〔1〕](<../../evidence/records/docs/vdot-spec-v0.1.md.txt>)。
+参考模型与 RTL 遵循同一份项目 v0.1 指令规格，合法配置范围和状态更新规则一致〔1〕。
 
 在向量执行权限可用的前提下，合法配置要求 vill=0、SEW=8、LMUL=1、vstart=0，VL 为 0 或 8～16，vtype 保留高位为零。合法非零 VL 固定计算源低八项，精确和写入低 32 位、高 96 位清零；合法 VL=0 保持完整旧目的。类型、权限和重启条件的检查排在长度分支之前。
 
@@ -78,7 +78,7 @@ def_EHelper(vdot) {
 
 DiffTest 通过 regcpy 在两侧传递状态。本配置的状态交换区共 1400 字节，其中向量寄存器区从第 800 字节开始，占 512 字节，对应 32 个 128 位寄存器。参考库 API 测试先写入指定状态，执行一条指令，再读回比较；整核测试则让真实程序驱动 RTL 与 NEMU，检查完整执行过程[〔4〕](<../../evidence/records/artifacts/scnet-abi-2026-10-24/abi-review.json>)。
 
-验收同时查看参考库路径、DiffTest 启用、应用 PASS、GOOD TRAP 和被测程序退出码；脚本及日志收集的退出状态单列记录。完整构建与运行命令入口见交付与复现记录[〔5〕](<../../evidence/records/reports/stage3/delivery.md.txt>)。
+验收同时查看参考库路径、DiffTest 启用、应用 PASS、GOOD TRAP 和被测程序退出码；脚本及日志收集的退出状态单列记录。完整构建与运行命令入口见交付与复现记录〔5〕。
 
 ## 7.4 API 268 例与整核四类套件
 
@@ -150,7 +150,7 @@ VL=1 的非法条件是在执行期判断出来的。原有 trapInstInfo 主要�
 
 图 7-4　修复后异常套件正常结束，应用 PASS、GOOD TRAP 和退出状态共同确认本次回归结果。
 
-该回归保留了失败快照、故障指令定位、RTL 修复和原用例复测记录。诊断与反汇编依据见差分诊断记录，具体修改见修复说明[〔9〕](<../../evidence/records/artifacts/vdot-matrix-2026-10-24/server-OMcrpf/diagnosis.md.txt>)[〔10〕](<../../evidence/records/artifacts/vdot-mtval-fix-2026-10-24/README.md.txt>)。
+该回归保留了失败快照、故障指令定位、RTL 修复和原用例复测记录。诊断与反汇编依据见差分诊断记录，具体修改见修复说明〔9〕〔10〕。
 
 ## 7.6 OVERLAP 与 PIPELINE 的运行记录
 

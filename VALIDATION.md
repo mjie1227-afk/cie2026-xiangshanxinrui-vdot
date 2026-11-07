@@ -12,7 +12,7 @@
 
 ## 构建入口与运行工具
 
-在上述无嵌套Git的目录执行`mill -i show xiangshan.resources`，退出0；Mill构建定义能够加载，DiffTest的124个资源文件按保存清单正确枚举。[检查参数与退出状态](evidence/package-checks/mill-resources-check.json)、[原始日志](evidence/package-checks/mill-resources.log)
+在上述无嵌套Git的目录执行`mill -i show xiangshan.resources`，退出0；Mill构建定义能够加载，DiffTest的124个资源文件按保存清单正确枚举。[检查参数与退出状态](evidence/package-checks/mill-resources-check.json)
 
 轻量工具检查使用合成日志和小型模拟进程，覆盖成功、失败、超时、Ctrl+C、已有目录保护和Bash语法。新增单用例入口检查包括Hello参数与路径、dry-run不执行、指定运行目录读取、错误用例拒绝、异常退出状态显示。完整源码准备检查中的14项流程检查包含这些步骤，以及原有15项辅助检查；这不代表重新运行硬件。[流程记录](evidence/package-checks/full-source-preparation.json)
 
