@@ -1,7 +1,0 @@
-{
-  "result.json": "ebda7ccf0b77b8f2a8cdd5112eede3366add5120df72342628c4bae03afbc94a",
-  "runtime-identities.json": "e588b5ef17912985144ac587bc3ab3ed842f8bd3079851491db3dda7b32d5c4b",
-  "architecture-check.json": "bbe04b859965ce17d1db3017dc04165514b584ac9cada385c63ccc50c6c51ea9",
-  "identity-before.json": "411ef71585d965b3978a4b1eea04fe819125c81281fe56cd848d5f94d114b2da",
-  "identity-after.json": "411ef71585d965b3978a4b1eea04fe819125c81281fe56cd848d5f94d114b2da"
-}

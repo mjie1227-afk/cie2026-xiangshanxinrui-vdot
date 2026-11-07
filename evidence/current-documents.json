@@ -1075,14 +1075,6 @@
       "pdf_local_links_rebased": 0
     },
     {
-      "source": "docs_final5/合订版/阶段一_环境与向量执行过程.html",
-      "destination": "docs/合订版/阶段一_环境与向量执行过程.html",
-      "source_sha256": "dc0c237b69ce9740f0f03f97a941b5bd2af82008a69b1d60de877e7f9cfadda4",
-      "destination_sha256": "e2527e13dd72a726e2b10440a155ae8bbc488c4bdda5d47ef02cfe65fc7abcd9",
-      "copied_without_content_change": false,
-      "pdf_local_links_rebased": 0
-    },
-    {
       "source": "docs_final5/合订版/阶段一_环境与向量执行过程.md",
       "destination": "docs/合订版/阶段一_环境与向量执行过程.md",
       "source_sha256": "d28e7f940bb686bc5243d7df217ed84a24e4222210fcbf977fa49f243cc65dca",
@@ -1099,14 +1091,6 @@
       "pdf_local_links_rebased": 0
     },
     {
-      "source": "docs_final5/合订版/阶段三_协同验证与性能分析.html",
-      "destination": "docs/合订版/阶段三_协同验证与性能分析.html",
-      "source_sha256": "f0ca65673150434f9b1b36a63f1cbf581437bf38ea917a09abd01da35cd71e65",
-      "destination_sha256": "b719abdb517a786736c76921c9973de465fc44c42043b61493d06f42cb3450d4",
-      "copied_without_content_change": false,
-      "pdf_local_links_rebased": 0
-    },
-    {
       "source": "docs_final5/合订版/阶段三_协同验证与性能分析.md",
       "destination": "docs/合订版/阶段三_协同验证与性能分析.md",
       "source_sha256": "eea56c766e894e60d97fc5aef60d636c952c677a2cf9da605e63920d3d15fae0",
@@ -1120,14 +1104,6 @@
       "source_sha256": "b971aa020df9962984abf8e47176e759932415d41c014d5411765204629814aa",
       "destination_sha256": "b971aa020df9962984abf8e47176e759932415d41c014d5411765204629814aa",
       "copied_without_content_change": true,
-      "pdf_local_links_rebased": 0
-    },
-    {
-      "source": "docs_final5/合订版/阶段二_指令设计与功能验证.html",
-      "destination": "docs/合订版/阶段二_指令设计与功能验证.html",
-      "source_sha256": "d52e127519fee4e6637993972290758fffdcba1966920227e2a51017c751e5c4",
-      "destination_sha256": "779a182b8b224654e87016da9ca677502014fa296ddf4e1056b4f179935f2134",
-      "copied_without_content_change": false,
       "pdf_local_links_rebased": 0
     },
     {
@@ -1151,14 +1127,6 @@
       "destination": "docs/图示索引.md",
       "source_sha256": "caf4ddccbaafbf5897ed17216a5cee95613b4f6dc5c73a88a53f604732b1ea10",
       "destination_sha256": "f74e4771da6da0be46e8c9f3164bd0b90a2fc5695384db2db9029cfa076bd996",
-      "copied_without_content_change": false,
-      "pdf_local_links_rebased": 0
-    },
-    {
-      "source": "docs_final5/图示总览.html",
-      "destination": "docs/图示总览.html",
-      "source_sha256": "bd96808a8d7f7b4103d128797832aed5167e6274921c6865828f41bed96c29b5",
-      "destination_sha256": "1bf8905020280b38cd440133cc944a5db500608945d5c181954218306eed184a",
       "copied_without_content_change": false,
       "pdf_local_links_rebased": 0
     }

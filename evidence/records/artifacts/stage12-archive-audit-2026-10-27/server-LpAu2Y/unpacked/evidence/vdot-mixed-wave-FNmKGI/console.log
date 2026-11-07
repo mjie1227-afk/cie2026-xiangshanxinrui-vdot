@@ -1,8 +1,0 @@
-CAPTURING_MIXED begin=4978 end=7258 stop=8000 both_edges=true wall_limit=600s
-CAPTURE_EMU_EXIT=0
-WAVE_BYTES=477548918
-VCD_TIMES={"timescale_declaration": "$timescale 1ps $end", "first_vcd_timestamp": 10060, "last_vcd_timestamp": 14621}
-SIGNAL_GROUP_COUNTS={"clock_counter": 3465, "redirect_flush": 9573, "commit_identity": 8523, "decode_rename": 2457, "issue_writeback": 25881, "csr_state": 555, "vdot_record": 198, "issue_wb_busy": 480, "vector_execute": 22086, "vdot_fu": 14339, "writeback_arbitration": 11425}
-TARGET_COMMIT_ROWS=[{"line": 38748, "pc": "0x800001b8", "instruction": "0x2110257"}, {"line": 38749, "pc": "0x800001bc", "instruction": "0x961122d7"}, {"line": 38750, "pc": "0x800001c0", "instruction": "0x20818b"}]
-VDOT_MIXED_BOUNDED_WAVE_CAPTURED
-LOG_DIR=/root/private_data/mj/xiangshan/evidence/vdot-mixed-wave-FNmKGI

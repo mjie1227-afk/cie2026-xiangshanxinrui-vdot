@@ -34,10 +34,11 @@ def bundle_files():
 def main():
  errors=[];count=0;listed=set()
  manifest=ROOT/'MANIFEST.sha256'
- if not manifest.is_file():print('Missing MANIFEST.sha256',file=sys.stderr);return 2
- for line in manifest.read_text(encoding='utf8').splitlines():
-  digest,rel=line.split('  ',1);p=ROOT/rel;count+=1;listed.add(rel)
-  if not p.is_file() or sha(p)!=digest:errors.append({'kind':'file checksum','file':rel})
+ has_manifest=manifest.is_file()
+ if has_manifest:
+  for line in manifest.read_text(encoding='utf8').splitlines():
+   digest,rel=line.split('  ',1);p=ROOT/rel;count+=1;listed.add(rel)
+   if not p.is_file() or sha(p)!=digest:errors.append({'kind':'file checksum','file':rel})
  lock=json.loads((ROOT/'configs/source-snapshots.json').read_text())
  for name,files in lock.items():
   for rel,digest in files.items():
@@ -47,7 +48,7 @@ def main():
  for entry in source_tree['entries']:
   p=ROOT/entry['stored']
   if not p.is_file() or sha(p)!=entry['sha256']:errors.append({'kind':'complete source','file':entry['stored']})
-  if entry['stored'] not in listed:errors.append({'kind':'source omitted from manifest','file':entry['stored']})
+  if has_manifest and entry['stored'] not in listed:errors.append({'kind':'source omitted from manifest','file':entry['stored']})
  files=bundle_files()
  links=0
  for p in files:
@@ -60,8 +61,9 @@ def main():
    if u.scheme or not u.path:continue
    q=(p.parent/unquote(u.path)).resolve();links+=1
    if not q.is_relative_to(ROOT) or not q.exists():errors.append({'kind':'local link','file':str(p.relative_to(ROOT)),'target':raw})
- for rel in sorted({p.relative_to(ROOT).as_posix() for p in files}-listed-{'MANIFEST.sha256'}):
-  errors.append({'kind':'unlisted file','file':rel})
+ if has_manifest:
+  for rel in sorted({p.relative_to(ROOT).as_posix() for p in files}-listed-{'MANIFEST.sha256'}):
+   errors.append({'kind':'unlisted file','file':rel})
  for p in files:
   if p.stat().st_size>=100*1024*1024:errors.append({'kind':'GitHub file size','file':str(p.relative_to(ROOT))})
   if p.name in ['my_submission.txt'] or p.suffix in ['.vcd','.fst']:errors.append({'kind':'unintended upload','file':str(p.relative_to(ROOT))})

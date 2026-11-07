@@ -1,6 +1,0 @@
-{
-    "metals.customProjectRoot": "src/XiangShan",
-    "files.watcherExclude": {
-        "**/target/**": true
-    }
-}

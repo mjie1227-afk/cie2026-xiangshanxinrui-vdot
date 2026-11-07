@@ -60,7 +60,7 @@ wave_rc=$?
 printf 'EMU_EXIT_CODE=%s\n' "$wave_rc" | tee "$wave_dir/result.txt"
 ```
 
-`--dump-wave-full` 导出完整层级，`-b/-e` 选择仿真 cycle 窗口，`-C` 限制总周期，`-s 0` 与归档运行的种子一致。首次运行和导波形运行均通过 DiffTest，退出码为 0。复现时可利用生成的 ELF/反汇编定位符号，再在 GTKWave 中载入 VCD；操作入口见原波形指南[〔6〕](<../../evidence/records/exercises/vadd4/WAVE.md.txt>)。
+`--dump-wave-full` 导出完整层级，`-b/-e` 选择仿真 cycle 窗口，`-C` 限制总周期，`-s 0` 与归档运行的种子一致。首次运行和导波形运行均通过 DiffTest，退出码为 0。复现时可利用生成的 ELF/反汇编定位符号，再在 GTKWave 中载入 VCD；操作入口见原波形指南〔6〕。
 
 ## 3.2 动态指令标识与时序总览
 

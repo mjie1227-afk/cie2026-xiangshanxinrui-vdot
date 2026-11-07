@@ -28,6 +28,27 @@ def digest(path):
     return h.hexdigest()
 
 
+def delivery_rels():
+    manifest = ROOT / 'MANIFEST.sha256'
+    if manifest.is_file():
+        files = [line.split('  ', 1)[1] for line in manifest.read_text(encoding='utf8').splitlines()]
+        return files + ['MANIFEST.sha256']
+    from verify_bundle import bundle_files
+    return [p.relative_to(ROOT).as_posix() for p in bundle_files()]
+
+
+def source_fingerprint():
+    manifest = ROOT / 'MANIFEST.sha256'
+    if manifest.is_file():
+        return digest(manifest)
+    h = hashlib.sha256()
+    for rel in delivery_rels():
+        h.update(rel.encode('utf-8'))
+        h.update(digest(ROOT / rel).encode('ascii'))
+        h.update(b'\n')
+    return h.hexdigest()
+
+
 def image_info(image):
     p = subprocess.run(['docker', 'image', 'inspect', image], capture_output=True, text=True, check=True)
     info = json.loads(p.stdout)[0]
@@ -142,13 +163,13 @@ def main():
         state = dict(image=image, image_id=info['Id'], volume='cie-vdot-' + token,
                      cache_volume='cie-vdot-' + token + '-cache',
                      container_root='/validation/' + ROOT.name,
-                     source_manifest_sha256=digest(ROOT / 'MANIFEST.sha256'), ready=False)
+                     source_manifest_sha256=source_fingerprint(), ready=False)
         STATE.write_text(json.dumps(state, indent=2) + '\n', encoding='utf8')
         for key in ['volume', 'cache_volume']: run(['docker', 'volume', 'create', state[key]], folder, key)
         archive = folder / 'repository.zip'
         with zipfile.ZipFile(archive, 'x', zipfile.ZIP_DEFLATED, compresslevel=1) as z:
-            files = [line.split('  ', 1)[1] for line in (ROOT / 'MANIFEST.sha256').read_text(encoding='utf8').splitlines()]
-            for rel in files + ['MANIFEST.sha256']:
+            files = delivery_rels()
+            for rel in files:
                 source = (ROOT / rel).resolve()
                 if not source.is_relative_to(ROOT): raise ValueError('Unsafe manifest path: ' + rel)
                 z.write(source, ROOT.name + '/' + rel)
@@ -166,7 +187,7 @@ def main():
         state = json.loads(STATE.read_text(encoding='utf8'))
         if not state.get('ready'): raise ValueError('Initialization incomplete; preserve logs and inspect before retrying.')
         if args.stage not in ['collect']:
-            if digest(ROOT / 'MANIFEST.sha256') != state['source_manifest_sha256']:
+            if source_fingerprint() != state['source_manifest_sha256']:
                 raise ValueError('Repository manifest changed since init. Keep this session for logs; use a fresh repository copy for new source.')
             if image_info(state['image'])['Id'] != state['image_id']:
                 raise ValueError('Image tag changed since init; original session is preserved.')
